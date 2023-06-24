@@ -870,7 +870,7 @@ to learn some new tricks.</p>
 <span class="typ-punct">)</span>
 
 <span class="typ-func">#</span><span class="typ-func">lorem</span><span class="typ-punct">(</span><span class="typ-num">600</span><span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/IgwEmS9GlmLaDeQkQVUTdn.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/fRKB0sVb57neWweDQ4VGIl.png" alt="Preview" width="480" height="190"/></div></div>
 <p>You are already familiar with most of what is going on here. We set the text
 size to <code><span class="typ-num">11pt</span></code> and the font to Linux Libertine. We also enable paragraph
 justification and set the page size to US letter.</p>
@@ -891,7 +891,7 @@ align it and increase its font weight by enclosing it in <code><span class="typ-
   <span class="typ-strong">*A fluid dynamic model
   for glacier flow*</span>
 <span class="typ-punct">]</span><span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/lWmediPKdP87rHKQjjHuhB.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/ztwtuwvdY5t0TOnMxKjhcj.png" alt="Preview" width="480" height="190"/></div></div>
 <p>This looks right. We used the <code>text</code> function to override the previous text
 set rule locally, increasing the size to 17pt for the function's argument. Let's
 also add the author list: Since we are writing this paper together with our
@@ -909,7 +909,7 @@ supervisor, we'll add our own and their name.</p>
     <span class="typ-func">#</span><span class="typ-func">link</span><span class="typ-punct">(</span><span class="typ-str">&quot;mailto:doe@artos.edu&quot;</span><span class="typ-punct">)</span>
   <span class="typ-punct">]</span>
 <span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/Eg4zBFsaGqV0uop9yfnsH3.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/MoyDhCQOdVJsnyz8MYGKtg.png" alt="Preview" width="480" height="190"/></div></div>
 <p>The two author blocks are laid out next to each other. We use the
 <a href="/docs/reference/layout/grid/"><code>grid</code></a> function to create this layout. With a grid, we can control
 exactly how large each column is and which content goes into which cell. The
@@ -930,7 +930,7 @@ be set ragged and centered.</p>
   <span class="typ-strong">*Abstract*</span> <span class="typ-escape">\</span>
   <span class="typ-func">#</span><span class="typ-func">lorem</span><span class="typ-punct">(</span><span class="typ-num">80</span><span class="typ-punct">)</span>
 <span class="typ-punct">]</span>
-</code></pre><div class="preview"><img src="/assets/docs/BNrhxqiWuzTbXe0FpTLL9d.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/BWEqWzjIb4riHEeUaiFUfd.png" alt="Preview" width="480" height="190"/></div></div>
 <p>Well done! One notable thing is that we used a set rule within the content
 argument of <code>align</code> to turn off justification for the abstract. This does not
 affect the remainder of the document even though it was specified after the
@@ -960,7 +960,7 @@ keyword:</p>
 
 <span class="typ-escape">...</span>
 
-</code></pre><div class="preview"><img src="/assets/docs/PBSW4yRjjEQfaPgOfVzf0k.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/MiuJEzu7hury0hczOgjtPD.png" alt="Preview" width="480" height="190"/></div></div>
 <p>After we bound the content to the <code>title</code> variable, we can use it in functions
 and also within markup (prefixed by <code>#</code>, like functions). This way, if we decide
 on another title, we can easily change it in one place.</p>
@@ -986,7 +986,7 @@ content. In our case, it passes it on to the <code>columns</code> function.</p>
 
 <span class="typ-heading">= Related Work</span>
 <span class="typ-func">#</span><span class="typ-func">lorem</span><span class="typ-punct">(</span><span class="typ-num">200</span><span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/2XGtNd2xqLyuUwykfNq494.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/E5qR83KQgNTKKTHOlEFGgR.png" alt="Preview" width="480" height="190"/></div></div>
 <p>Now there is only one thing left to do: Style our headings. We need to make them
 centered and use small capitals. Because the <code>heading</code> function does not offer
 a way to set any of that, we need to write our own heading show rule.</p>
@@ -997,7 +997,7 @@ a way to set any of that, we need to write our own heading show rule.</p>
 <span class="typ-punct">]</span>
 
 <span class="typ-escape">...</span>
-</code></pre><div class="preview"><img src="/assets/docs/fWrWqAqpwI77GUeiOEM6P0.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/0GFCnaV6Msz1wtUANJLpIV.png" alt="Preview" width="480" height="190"/></div></div>
 <p>This looks great! We used a show rule that applies to all headings. We give it a
 function that gets passed the heading as a parameter. That parameter can be used
 as content but it also has some fields like <code>title</code>, <code>numbers</code>, and <code>level</code> from
@@ -1027,7 +1027,7 @@ differentiate between section and subsection headings:</p>
   style<span class="typ-punct">:</span> <span class="typ-str">&quot;italic&quot;</span><span class="typ-punct">,</span>
   it<span class="typ-punct">.</span>body <span class="typ-op">+</span> <span class="typ-punct">[</span>.<span class="typ-punct">]</span><span class="typ-punct">,</span>
 <span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/x3IAgGlXy48iQpMLKAFnLL.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/Z05qzzjDzOu4HH9NMQwEaa.png" alt="Preview" width="480" height="190"/></div></div>
 <p>This looks great! We wrote two show rules that each selectively apply to the
 first and second level headings. We used a <code>where</code> selector to filter the
 headings by their level. We then rendered the subsection headings as run-ins. We
