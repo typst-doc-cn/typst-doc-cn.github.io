@@ -3,6 +3,11 @@ description: Typst's tutorial.
 ---
 
 # 使用 Typst 写作
+让我们开始吧！假设你被任命取为一所大学写一份技术报告，它将包含文字、数学公式、标题和图表。
+一开始，请在 Typst App 上创建一个新项目。You'll be taken to the editor where
+you see two panels: A source panel where you compose your document and a
+preview panel where you see the rendered document.
+
 Let's get started! Suppose you got assigned to write a technical report for
 university. It will contain prose, maths, headings, and figures. To get started,
 you create a new project on the Typst app. You'll be taken to the editor where
