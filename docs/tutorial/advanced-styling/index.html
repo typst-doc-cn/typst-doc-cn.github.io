@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>高级样式 – Typst 中文文档</title>
+  <meta name="description" content="Typst's tutorial.">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#239dad">
+  <meta property="og:url" content="https://typst.app/docs/tutorial/advanced-styling/">
+  <meta property="og:title" content="高级样式 – Typst 中文文档">
+  <meta property="og:site_name" content="Typst">
+  <meta property="og:description" content="Typst's tutorial.">
+  <meta property="og:type">
+  <meta property="og:image" content="https://typst.app/assets/social.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:site" content="@typstapp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://typst.app/docs/tutorial/advanced-styling/">
+  <meta name="twitter:image:alt"
+    content="The left side of a text editor with colorful cursors, as well as the text &#x27;Compose papers faster, Typst&#x27;">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.ico">
+  <!-- <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon.ico"> -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#239dad">
+  <link rel="manifest" href="/assets/site.webmanifest">
+  <link rel="stylesheet" href="/styles/default.css">
+  <link rel="stylesheet" href="/styles/docs.css">
+  <link rel="stylesheet" href="/styles/docs-cn.css">
+  <link rel="preload" href="/assets/fonts/HKGrotesk-Regular.woff2" as="font">
+  <link rel="preload" href="/assets/fonts/HKGrotesk-Bold.woff2" as="font">
+  <link rel="preload" href="/assets/fonts/HKGrotesk-SemiBold.woff2" as="font">
+  <link rel="preload" href="/assets/fonts/CascadiaMono-Regular-Sub.woff2" as="font">
+  <link rel="preload" href="/assets/images/blur.webp" as="image">
+</head>
+
+<body class="no-js docs has-outline">
+  <div class="alert">
+    <div class="alert-content">
+      <span><b>注意：</b>该中文文档为社区驱动的非官网文档，可能存在错译、漏译或过时等问题，请以官网文档 <a href="https://typst.app/docs/">Documentation</a>
+        为准，如发现错漏，也欢迎您的贡献。</span>
+      <br />
+      <span><b>Warning:</b> the Chinese document is a community-driven non-official document, there may be mistranslation, omission or outdated problems, please refer to <a href="https://typst.app/docs/">the official website documentation</a>.</span>
+    </div>
+  </div>
+  <header class="boring">
+    <div><a href="/docs" class="logo-box"><svg width="91" height="35" viewBox="0 0 91 35" role="img"
+          aria-labelledby="logo-label">
+          <title id="logo-label">Typst</title>
+          <use href="/assets/images/typst.svg#logo"></use>
+        </svg><span>中文文档</span></a><button class="hamburger"><img alt="Open navigation"
+          src="/assets/icons/16-hamburger-dark.svg" width="16" height="16"></button>
+      <nav>
+        <ul>
+          <li class="social"><a href="https://twitter.com/typstapp/"><svg width="16" height="16" role="img"
+                aria-labelledby="svg-twitter-label">
+                <title id="svg-twitter-label">Twitter</title>
+                <use href="/assets/icons/social.svg#twitter"></use>
+              </svg></a></li>
+          <li class="social"><a href="https://discord.gg/2uDybryKPe"><svg width="16" height="16" role="img"
+                aria-labelledby="svg-discord-label">
+                <title id="svg-discord-label">Discord</title>
+                <use href="/assets/icons/social.svg#discord"></use>
+              </svg></a></li>
+          <li class="social"><a href="https://github.com/typst-doc-cn/typst-doc-cn"><svg width="16" height="16" role="img"
+                aria-labelledby="svg-github-label">
+                <title id="svg-github-label">GitHub</title>
+                <use href="/assets/icons/social.svg#github"></use>
+              </svg></a></li>
+          <li class="social"><a href="https://www.linkedin.com/company/typst/"><svg width="16" height="16" role="img"
+                aria-labelledby="svg-linkedin-label">
+                <title id="svg-linkedin-label">LinkedIn</title>
+                <use href="/assets/icons/social.svg#linkedin"></use>
+              </svg></a></li>
+          <li class="secondary"><a href="https://typst.app/">主页</a></li>
+          <!-- <li class="secondary"><a href="/signin/" class="sign-in">Sign in</a></li>
+          <li><a href="/signup" id="header-btn" class="nav-btn btn">Sign up</a></li> -->
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="main-grid">
+    <nav class="folding"><a href="/docs" class="title-row"><svg width="91" height="35" viewBox="0 0 91 35" role="img"
+          aria-labelledby="logo-label-nav">
+          <title id="logo-label-nav">Typst</title>
+          <use href="/assets/images/typst.svg#logo"></use>
+        </svg><span>中文文档</span></a>
+      <!-- <button class="close"><img alt="Close" src="/assets/icons/16-close-dark.svg"
+          width="16" height="16"></button> -->
+      <div class="search"><img src="/assets/icons/16-search-gray.svg" alt="Search" width="16" height="16"><input
+          type="search" placeholder="搜索" id="docs-search"></div>
+      <ul class="search-results hidden" id="search-results"></ul>
+      <ul>
+        
+        
+        <li>
+          <a href="/docs/" >概览</a>
+          
+        </li>
+        
+        
+        <li>
+          <a href="/docs/tutorial/" >教程</a>
+          
+          <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+          <ul>
+            
+            
+            <li>
+              <a href="/docs/tutorial/writing-in-typst/" >使用 Typst 写作</a>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/tutorial/formatting/" >格式</a>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/tutorial/advanced-styling/"  aria-current="page" >高级样式</a>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/tutorial/making-a-template/" >制作模板</a>
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        
+        <li>
+          <a href="/docs/reference/" >参考</a>
+          
+          <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+          <ul>
+            
+            
+            <li class="category">Language</li>
+            
+            <li>
+              <a href="/docs/reference/syntax/" >语法</a>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/styling/" >样式</a>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/scripting/" >脚本</a>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/types/" >类型</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/types/none/" >None</a></li>
+                
+                
+                <li><a href="/docs/reference/types/auto/" >Auto</a></li>
+                
+                
+                <li><a href="/docs/reference/types/boolean/" >Boolean</a></li>
+                
+                
+                <li><a href="/docs/reference/types/integer/" >Integer</a></li>
+                
+                
+                <li><a href="/docs/reference/types/float/" >Float</a></li>
+                
+                
+                <li><a href="/docs/reference/types/length/" >Length</a></li>
+                
+                
+                <li><a href="/docs/reference/types/angle/" >Angle</a></li>
+                
+                
+                <li><a href="/docs/reference/types/ratio/" >Ratio</a></li>
+                
+                
+                <li><a href="/docs/reference/types/relative-length/" >Relative Length</a></li>
+                
+                
+                <li><a href="/docs/reference/types/fraction/" >Fraction</a></li>
+                
+                
+                <li><a href="/docs/reference/types/color/" >Color</a></li>
+                
+                
+                <li><a href="/docs/reference/types/datetime/" >Datetime</a></li>
+                
+                
+                <li><a href="/docs/reference/types/symbol/" >Symbol</a></li>
+                
+                
+                <li><a href="/docs/reference/types/string/" >String</a></li>
+                
+                
+                <li><a href="/docs/reference/types/content/" >Content</a></li>
+                
+                
+                <li><a href="/docs/reference/types/array/" >Array</a></li>
+                
+                
+                <li><a href="/docs/reference/types/dictionary/" >Dictionary</a></li>
+                
+                
+                <li><a href="/docs/reference/types/function/" >Function</a></li>
+                
+                
+                <li><a href="/docs/reference/types/arguments/" >Arguments</a></li>
+                
+                
+                <li><a href="/docs/reference/types/selector/" >Selector</a></li>
+                
+                
+                <li><a href="/docs/reference/types/module/" >Module</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li class="category">Content</li>
+            
+            <li>
+              <a href="/docs/reference/text/" >文本</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/text/lorem/" >Blind Text</a></li>
+                
+                
+                <li><a href="/docs/reference/text/emph/" >Emphasis</a></li>
+                
+                
+                <li><a href="/docs/reference/text/linebreak/" >Line Break</a></li>
+                
+                
+                <li><a href="/docs/reference/text/lower/" >Lowercase</a></li>
+                
+                
+                <li><a href="/docs/reference/text/overline/" >Overline</a></li>
+                
+                
+                <li><a href="/docs/reference/text/raw/" >Raw Text / Code</a></li>
+                
+                
+                <li><a href="/docs/reference/text/smallcaps/" >Small Capitals</a></li>
+                
+                
+                <li><a href="/docs/reference/text/smartquote/" >Smart Quote</a></li>
+                
+                
+                <li><a href="/docs/reference/text/strike/" >Strikethrough</a></li>
+                
+                
+                <li><a href="/docs/reference/text/strong/" >Strong Emphasis</a></li>
+                
+                
+                <li><a href="/docs/reference/text/sub/" >Subscript</a></li>
+                
+                
+                <li><a href="/docs/reference/text/super/" >Superscript</a></li>
+                
+                
+                <li><a href="/docs/reference/text/text/" >Text</a></li>
+                
+                
+                <li><a href="/docs/reference/text/underline/" >Underline</a></li>
+                
+                
+                <li><a href="/docs/reference/text/upper/" >Uppercase</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/math/" >数学</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/math/accent/" >Accent</a></li>
+                
+                
+                <li><a href="/docs/reference/math/attach/" >Attach</a></li>
+                
+                
+                <li><a href="/docs/reference/math/binom/" >Binomial</a></li>
+                
+                
+                <li><a href="/docs/reference/math/cancel/" >Cancel</a></li>
+                
+                
+                <li><a href="/docs/reference/math/cases/" >Cases</a></li>
+                
+                
+                <li><a href="/docs/reference/math/equation/" >Equation</a></li>
+                
+                
+                <li><a href="/docs/reference/math/frac/" >Fraction</a></li>
+                
+                
+                <li><a href="/docs/reference/math/lr/" >Left/Right</a></li>
+                
+                
+                <li><a href="/docs/reference/math/mat/" >Matrix</a></li>
+                
+                
+                <li><a href="/docs/reference/math/roots/" >Roots</a></li>
+                
+                
+                <li><a href="/docs/reference/math/sizes/" >Sizes</a></li>
+                
+                
+                <li><a href="/docs/reference/math/styles/" >Styles</a></li>
+                
+                
+                <li><a href="/docs/reference/math/op/" >Text Operator</a></li>
+                
+                
+                <li><a href="/docs/reference/math/underover/" >Under/Over</a></li>
+                
+                
+                <li><a href="/docs/reference/math/variants/" >Variants</a></li>
+                
+                
+                <li><a href="/docs/reference/math/vec/" >Vector</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/layout/" >布局</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/layout/align/" >Align</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/block/" >Block</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/box/" >Box</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/list/" >Bullet List</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/colbreak/" >Column Break</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/columns/" >Columns</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/grid/" >Grid</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/hide/" >Hide</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/measure/" >Measure</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/move/" >Move</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/enum/" >Numbered List</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/pad/" >Padding</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/page/" >Page</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/pagebreak/" >Page Break</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/par/" >Paragraph</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/parbreak/" >Paragraph Break</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/place/" >Place</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/repeat/" >Repeat</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/rotate/" >Rotate</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/scale/" >Scale</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/h/" >Spacing (H)</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/v/" >Spacing (V)</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/stack/" >Stack</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/table/" >Table</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/terms/" >Term List</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/visualize/" >可视化</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/visualize/circle/" >Circle</a></li>
+                
+                
+                <li><a href="/docs/reference/visualize/ellipse/" >Ellipse</a></li>
+                
+                
+                <li><a href="/docs/reference/visualize/image/" >Image</a></li>
+                
+                
+                <li><a href="/docs/reference/visualize/line/" >Line</a></li>
+                
+                
+                <li><a href="/docs/reference/visualize/path/" >Path</a></li>
+                
+                
+                <li><a href="/docs/reference/visualize/polygon/" >Polygon</a></li>
+                
+                
+                <li><a href="/docs/reference/visualize/rect/" >Rectangle</a></li>
+                
+                
+                <li><a href="/docs/reference/visualize/square/" >Square</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/meta/" >元信息</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/meta/bibliography/" >Bibliography</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/cite/" >Citation</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/counter/" >Counter</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/document/" >Document</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/figure/" >Figure</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/footnote/" >Footnote</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/heading/" >Heading</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/layout/" >Layout</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/link/" >Link</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/locate/" >Locate</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/numbering/" >Numbering</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/outline/" >Outline</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/query/" >Query</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/ref/" >Reference</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/selector/" >Selector</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/state/" >State</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/style/" >Style</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/symbols/" >符号</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/symbols/sym/" >General</a></li>
+                
+                
+                <li><a href="/docs/reference/symbols/emoji/" >Emoji</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li class="category">Compute</li>
+            
+            <li>
+              <a href="/docs/reference/foundations/" >基础</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/foundations/assert/" >Assert</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/eval/" >Evaluate</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/panic/" >Panic</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/repr/" >Representation</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/type/" >Type</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/calculate/" >计算</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/calculate/abs/" >Absolute</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/acos/" >Arccosine</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/asin/" >Arcsine</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/atan/" >Arctangent</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/binom/" >Binomial</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/clamp/" >Clamp</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/cos/" >Cosine</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/even/" >Even</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/exp/" >Exponential</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/fact/" >Factorial</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/atan2/" >Four-quadrant Arctangent</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/fract/" >Fractional</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/gcd/" >Greatest Common Divisor</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/cosh/" >Hyperbolic cosine</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/sinh/" >Hyperbolic sine</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/tanh/" >Hyperbolic tangent</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/lcm/" >Least Common Multiple</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/log/" >Logarithm</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/max/" >Maximum</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/min/" >Minimum</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/ln/" >Natural Logarithm</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/odd/" >Odd</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/perm/" >Permutation</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/pow/" >Power</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/quo/" >Quotient</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/rem/" >Remainder</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/round/" >Round</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/floor/" >Round down</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/ceil/" >Round up</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/sin/" >Sine</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/sqrt/" >Square Root</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/tan/" >Tangent</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/trunc/" >Truncate</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/construct/" >构造</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/construct/cmyk/" >CMYK</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/datetime/" >Datetime</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/float/" >Float</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/int/" >Integer</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/label/" >Label</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/luma/" >Luma</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/rgb/" >RGB</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/range/" >Range</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/regex/" >Regex</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/str/" >String</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/symbol/" >Symbol</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/data-loading/" >数据加载</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/data-loading/csv/" >CSV</a></li>
+                
+                
+                <li><a href="/docs/reference/data-loading/json/" >JSON</a></li>
+                
+                
+                <li><a href="/docs/reference/data-loading/read/" >Read</a></li>
+                
+                
+                <li><a href="/docs/reference/data-loading/toml/" >TOML</a></li>
+                
+                
+                <li><a href="/docs/reference/data-loading/xml/" >XML</a></li>
+                
+                
+                <li><a href="/docs/reference/data-loading/yaml/" >YAML</a></li>
+                
+              </ul>
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        
+        <li>
+          <a href="/docs/guides/" >指南</a>
+          
+          <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+          <ul>
+            
+            
+            <li>
+              <a href="/docs/guides/guide-for-latex-users/" >LaTeX 用户指南</a>
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        
+        <li>
+          <a href="/docs/changelog/" >更新日志</a>
+          
+        </li>
+        
+        
+        <li>
+          <a href="/docs/community/" >社区</a>
+          
+        </li>
+        
+      </ul>
+
+    </nav>
+    <main>
+      <ul class="breadcrumbs" aria-label="Breadcrumbs">
+        <li class="root"><a href="/docs/"><img src="/assets/icons/16-docs-dark.svg" alt="Docs" width="16"
+              height="16"></a></li>
+
+        
+        <li aria-hidden="true"><img src="/assets/icons/16-arrow-right.svg" width="16" height="16" alt=""></li>
+        <li><a href="/docs/tutorial/">教程</a></li>
+        
+        <li aria-hidden="true"><img src="/assets/icons/16-arrow-right.svg" width="16" height="16" alt=""></li>
+        <li><a href="/docs/tutorial/advanced-styling/">高级样式</a></li>
+        
+      </ul>
+
+      
+
+<h1>高级样式</h1>
+<p>In the previous two chapters of this tutorial, you have learned how to write a
+document in Typst and how to change its formatting. The report you wrote
+throughout the last two chapters got a straight A and your supervisor wants to
+base a conference paper on it! The report will of course have to comply with the
+conference's style guide. Let's see how we can achieve that.</p>
+<p>Before we start, let's create a team, invite your supervisor and add them to the
+team. You can do this by going back to the app dashboard with the four-circles
+icon in the top left corner of the editor. Then, choose the plus icon in the
+left toolbar and create a team. Finally, click on the new team and go to its
+settings by clicking 'manage team' next to the team name. Now you can invite
+your supervisor by email.</p>
+<p><img src="/assets/docs/3-advanced-team-settings.png" alt="The team settings" /></p>
+<p>Next, move your project into the team: Open it, going to its settings by
+choosing the gear icon in the left toolbar and selecting your new team from the
+owners dropdown. Don't forget to save your changes!</p>
+<p>Now, your supervisor can also edit the project and you can both see the changes
+in real time. You can join our <a href="https://discord.gg/2uDybryKPe">Discord server</a>
+to find others with preview access and try teams with them!</p>
+<h2 id="guidelines">The conference guidelines</h2>
+<p>The layout guidelines are available on the conference website. Let's take a look
+at them:</p>
+<ul>
+<li>The font should be an 11pt serif font</li>
+<li>The title should be in 17pt and bold</li>
+<li>The paper contains a single-column abstract and two-column main text</li>
+<li>The abstract should be centered</li>
+<li>The main text should be justified</li>
+<li>First level section headings should be 13pt, centered, and rendered in small
+capitals</li>
+<li>Second level headings are run-ins, italicized and have the same size as the
+body text</li>
+<li>Finally, the pages should be US letter sized, numbered in the center of the
+footer and the top left corner of each page should contain the title of the
+paper</li>
+</ul>
+<p>We already know how to do many of these things, but for some of them, we'll need
+to learn some new tricks.</p>
+<h2 id="set-rules">Writing the right set rules</h2>
+<p>Let's start by writing some set rules for the document.</p>
+<div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">page</span><span class="typ-punct">(</span>
+  paper<span class="typ-punct">:</span> <span class="typ-str">&quot;us-letter&quot;</span><span class="typ-punct">,</span>
+  header<span class="typ-punct">:</span> <span class="typ-func">align</span><span class="typ-punct">(</span>right<span class="typ-punct">)</span><span class="typ-punct">[</span>
+    A fluid dynamic model for
+    glacier flow
+  <span class="typ-punct">]</span><span class="typ-punct">,</span>
+  numbering<span class="typ-punct">:</span> <span class="typ-str">&quot;1&quot;</span><span class="typ-punct">,</span>
+<span class="typ-punct">)</span>
+<span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">par</span><span class="typ-punct">(</span>justify<span class="typ-punct">:</span> <span class="typ-key">true</span><span class="typ-punct">)</span>
+<span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>
+  font<span class="typ-punct">:</span> <span class="typ-str">&quot;Linux Libertine&quot;</span><span class="typ-punct">,</span>
+  size<span class="typ-punct">:</span> <span class="typ-num">11pt</span><span class="typ-punct">,</span>
+<span class="typ-punct">)</span>
+
+<span class="typ-func">#</span><span class="typ-func">lorem</span><span class="typ-punct">(</span><span class="typ-num">600</span><span class="typ-punct">)</span>
+</code></pre><div class="preview"><img src="/assets/docs/GFZzJEEE5OV7BrNgVmmco7.png" alt="Preview" width="480" height="190"/></div></div>
+<p>You are already familiar with most of what is going on here. We set the text
+size to <code><span class="typ-num">11pt</span></code> and the font to Linux Libertine. We also enable paragraph
+justification and set the page size to US letter.</p>
+<p>The <code>header</code> argument is new: With it, we can provide content to fill the top
+margin of every page. In the header, we specify our paper's title as requested
+by the conference style guide. We use the <code>align</code> function to align the text to
+the right.</p>
+<p>Last but not least is the <code>numbering</code> argument. Here, we can provide a
+<a href="/docs/reference/meta/numbering/">numbering pattern</a> that defines how to number the pages. By
+setting into to <code><span class="typ-str">&quot;1&quot;</span></code>, Typst only displays the bare page number. Setting it to
+<code><span class="typ-str">&quot;(1/1)&quot;</span></code> would have displayed the current page and total number of pages
+surrounded by parentheses. And we could even have provided a completely custom
+function here to format things to our liking.</p>
+<h2 id="title-and-abstract">Creating a title and abstract</h2>
+<p>Now, let's add a title and an abstract. We'll start with the title. We center
+align it and increase its font weight by enclosing it in <code><span class="typ-strong">*stars*</span></code>.</p>
+<div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">align</span><span class="typ-punct">(</span>center<span class="typ-punct">,</span> <span class="typ-func">text</span><span class="typ-punct">(</span><span class="typ-num">17pt</span><span class="typ-punct">)</span><span class="typ-punct">[</span>
+  <span class="typ-strong">*A fluid dynamic model
+  for glacier flow*</span>
+<span class="typ-punct">]</span><span class="typ-punct">)</span>
+</code></pre><div class="preview"><img src="/assets/docs/noRZTrD15K3F41AovZCywn.png" alt="Preview" width="480" height="190"/></div></div>
+<p>This looks right. We used the <code>text</code> function to override the previous text
+set rule locally, increasing the size to 17pt for the function's argument. Let's
+also add the author list: Since we are writing this paper together with our
+supervisor, we'll add our own and their name.</p>
+<div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">grid</span><span class="typ-punct">(</span>
+  columns<span class="typ-punct">:</span> <span class="typ-punct">(</span><span class="typ-num">1fr</span><span class="typ-punct">,</span> <span class="typ-num">1fr</span><span class="typ-punct">)</span><span class="typ-punct">,</span>
+  <span class="typ-func">align</span><span class="typ-punct">(</span>center<span class="typ-punct">)</span><span class="typ-punct">[</span>
+    Therese Tungsten <span class="typ-escape">\</span>
+    Artos Institute <span class="typ-escape">\</span>
+    <span class="typ-func">#</span><span class="typ-func">link</span><span class="typ-punct">(</span><span class="typ-str">&quot;mailto:tung@artos.edu&quot;</span><span class="typ-punct">)</span>
+  <span class="typ-punct">]</span><span class="typ-punct">,</span>
+  <span class="typ-func">align</span><span class="typ-punct">(</span>center<span class="typ-punct">)</span><span class="typ-punct">[</span>
+    Dr. John Doe <span class="typ-escape">\</span>
+    Artos Institute <span class="typ-escape">\</span>
+    <span class="typ-func">#</span><span class="typ-func">link</span><span class="typ-punct">(</span><span class="typ-str">&quot;mailto:doe@artos.edu&quot;</span><span class="typ-punct">)</span>
+  <span class="typ-punct">]</span>
+<span class="typ-punct">)</span>
+</code></pre><div class="preview"><img src="/assets/docs/Y8eaHK8KR1meh4D3Mf2iFw.png" alt="Preview" width="480" height="190"/></div></div>
+<p>The two author blocks are laid out next to each other. We use the
+<a href="/docs/reference/layout/grid/"><code>grid</code></a> function to create this layout. With a grid, we can control
+exactly how large each column is and which content goes into which cell. The
+<code>columns</code> argument takes an array of <a href="/docs/reference/types/relative-length/">relative lengths</a>
+or <a href="/docs/reference/types/fraction/">fractions</a>. In this case, we passed it two equal fractional
+sizes, telling it to split the available space into two equal columns. We then
+passed two content arguments to the grid function. The first with our own
+details, and the second with our supervisors'. We again use the <code>align</code> function
+to center the content within the column. The grid takes an arbitrary number of
+content arguments specifying the cells. Rows are added automatically, but they
+can also be manually sized with the <code>rows</code> argument.</p>
+<p>Now, let's add the abstract. Remember that the conference wants the abstract to
+be set ragged and centered.</p>
+<div class="previewed-code"><pre><code><span class="typ-escape">...</span>
+
+<span class="typ-func">#</span><span class="typ-func">align</span><span class="typ-punct">(</span>center<span class="typ-punct">)</span><span class="typ-punct">[</span>
+  <span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">par</span><span class="typ-punct">(</span>justify<span class="typ-punct">:</span> <span class="typ-key">false</span><span class="typ-punct">)</span>
+  <span class="typ-strong">*Abstract*</span> <span class="typ-escape">\</span>
+  <span class="typ-func">#</span><span class="typ-func">lorem</span><span class="typ-punct">(</span><span class="typ-num">80</span><span class="typ-punct">)</span>
+<span class="typ-punct">]</span>
+</code></pre><div class="preview"><img src="/assets/docs/8q2NywLSdKVcI03RmPXw5y.png" alt="Preview" width="480" height="190"/></div></div>
+<p>Well done! One notable thing is that we used a set rule within the content
+argument of <code>align</code> to turn off justification for the abstract. This does not
+affect the remainder of the document even though it was specified after the
+first set rule because content blocks <em>scope</em> styling. Anything set within a
+content block will only affect the content within that block.</p>
+<p>Another tweak could be to save the paper title in a variable, so that we do not
+have to type it twice, for header and title. We can do that with the <code><span class="typ-key">let</span></code>
+keyword:</p>
+<div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> title <span class="typ-op">=</span> <span class="typ-punct">[</span>
+  A fluid dynamic model
+  for glacier flow
+<span class="typ-punct">]</span>
+
+<span class="typ-escape">...</span>
+
+<span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">page</span><span class="typ-punct">(</span>
+  header<span class="typ-punct">:</span> <span class="typ-func">align</span><span class="typ-punct">(</span>
+    right <span class="typ-op">+</span> horizon<span class="typ-punct">,</span>
+    title
+  <span class="typ-punct">)</span><span class="typ-punct">,</span>
+  <span class="typ-op">..</span><span class="typ-punct">.</span>
+<span class="typ-punct">)</span>
+
+<span class="typ-func">#</span><span class="typ-func">align</span><span class="typ-punct">(</span>center<span class="typ-punct">,</span> <span class="typ-func">text</span><span class="typ-punct">(</span><span class="typ-num">17pt</span><span class="typ-punct">)</span><span class="typ-punct">[</span>
+  <span class="typ-strong">*<span class="typ-pol">#</span><span class="typ-pol">title</span>*</span>
+<span class="typ-punct">]</span><span class="typ-punct">)</span>
+
+<span class="typ-escape">...</span>
+
+</code></pre><div class="preview"><img src="/assets/docs/6WIVdw821RQQH2nd8QIQCf.png" alt="Preview" width="480" height="190"/></div></div>
+<p>After we bound the content to the <code>title</code> variable, we can use it in functions
+and also within markup (prefixed by <code>#</code>, like functions). This way, if we decide
+on another title, we can easily change it in one place.</p>
+<h2 id="columns-and-headings">Adding columns and headings</h2>
+<p>The paper above unfortunately looks like a wall of lead. To fix that, let's add
+some headings and switch our paper to a two-column layout. The
+<a href="/docs/reference/layout/columns/"><code>columns</code></a> function takes a number and content, and layouts the
+content into the specified number of columns. Since we want everything after the
+abstract to be in two columns, we need to apply the column function to our whole
+document.</p>
+<p>Instead of wrapping the whole document in a giant function call, we can use an
+&quot;everything&quot; show rule. To write such a show rule, put a colon directly behind
+the show keyword and then provide a function. This function is given the rest of
+the document as a parameter. We have called the parameter <code>rest</code> here, but you
+are free to choose any name. The function can then do anything with this
+content. In our case, it passes it on to the <code>columns</code> function.</p>
+<div class="previewed-code"><pre><code><span class="typ-escape">...</span>
+
+<span class="typ-key">#</span><span class="typ-key">show</span><span class="typ-punct">:</span> rest <span class="typ-op">=&gt;</span> <span class="typ-func">columns</span><span class="typ-punct">(</span><span class="typ-num">2</span><span class="typ-punct">,</span> rest<span class="typ-punct">)</span>
+
+<span class="typ-heading">= Introduction</span>
+<span class="typ-func">#</span><span class="typ-func">lorem</span><span class="typ-punct">(</span><span class="typ-num">300</span><span class="typ-punct">)</span>
+
+<span class="typ-heading">= Related Work</span>
+<span class="typ-func">#</span><span class="typ-func">lorem</span><span class="typ-punct">(</span><span class="typ-num">200</span><span class="typ-punct">)</span>
+</code></pre><div class="preview"><img src="/assets/docs/PjApNbCNSUfIwSM6cHOIEd.png" alt="Preview" width="480" height="190"/></div></div>
+<p>Now there is only one thing left to do: Style our headings. We need to make them
+centered and use small capitals. Because the <code>heading</code> function does not offer
+a way to set any of that, we need to write our own heading show rule.</p>
+<div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">show</span> <span class="typ-func">heading</span><span class="typ-punct">:</span> it <span class="typ-op">=&gt;</span> <span class="typ-punct">[</span>
+  <span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">align</span><span class="typ-punct">(</span>center<span class="typ-punct">)</span>
+  <span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span><span class="typ-num">12pt</span><span class="typ-punct">,</span> weight<span class="typ-punct">:</span> <span class="typ-str">&quot;regular&quot;</span><span class="typ-punct">)</span>
+  <span class="typ-func">#</span><span class="typ-func">block</span><span class="typ-punct">(</span><span class="typ-func">smallcaps</span><span class="typ-punct">(</span>it<span class="typ-punct">.</span>body<span class="typ-punct">)</span><span class="typ-punct">)</span>
+<span class="typ-punct">]</span>
+
+<span class="typ-escape">...</span>
+</code></pre><div class="preview"><img src="/assets/docs/dVqAtxQU2zRMrtAcEadmEa.png" alt="Preview" width="480" height="190"/></div></div>
+<p>This looks great! We used a show rule that applies to all headings. We give it a
+function that gets passed the heading as a parameter. That parameter can be used
+as content but it also has some fields like <code>title</code>, <code>numbers</code>, and <code>level</code> from
+which we can compose a custom look. Here, we are center-aligning, setting the
+font weight to <code><span class="typ-str">&quot;regular&quot;</span></code> because headings are bold by default, and use the
+<a href="/docs/reference/text/smallcaps/"><code>smallcaps</code></a> function to render the heading's title in small capitals.</p>
+<p>The only remaining problem is that all headings look the same now. The
+&quot;Motivation&quot; and &quot;Problem Statement&quot; subsections ought to be italic run in
+headers, but right now, they look indistinguishable from the section headings. We
+can fix that by using a <code>where</code> selector on our set rule: This is a
+<a href="/docs/reference/scripting/#methods">method</a> we can call on headings (and other
+elements) that allows us to filter them by their level. We can use it to
+differentiate between section and subsection headings:</p>
+<div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">show</span> heading<span class="typ-punct">.</span><span class="typ-func">where</span><span class="typ-punct">(</span>
+  level<span class="typ-punct">:</span> <span class="typ-num">1</span>
+<span class="typ-punct">)</span><span class="typ-punct">:</span> it <span class="typ-op">=&gt;</span> <span class="typ-func">block</span><span class="typ-punct">(</span>width<span class="typ-punct">:</span> <span class="typ-num">100%</span><span class="typ-punct">)</span><span class="typ-punct">[</span>
+  <span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">align</span><span class="typ-punct">(</span>center<span class="typ-punct">)</span>
+  <span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span><span class="typ-num">12pt</span><span class="typ-punct">,</span> weight<span class="typ-punct">:</span> <span class="typ-str">&quot;regular&quot;</span><span class="typ-punct">)</span>
+  <span class="typ-func">#</span><span class="typ-func">smallcaps</span><span class="typ-punct">(</span>it<span class="typ-punct">.</span>body<span class="typ-punct">)</span>
+<span class="typ-punct">]</span>
+
+<span class="typ-key">#</span><span class="typ-key">show</span> heading<span class="typ-punct">.</span><span class="typ-func">where</span><span class="typ-punct">(</span>
+  level<span class="typ-punct">:</span> <span class="typ-num">2</span>
+<span class="typ-punct">)</span><span class="typ-punct">:</span> it <span class="typ-op">=&gt;</span> <span class="typ-func">text</span><span class="typ-punct">(</span>
+  size<span class="typ-punct">:</span> <span class="typ-num">11pt</span><span class="typ-punct">,</span>
+  weight<span class="typ-punct">:</span> <span class="typ-str">&quot;regular&quot;</span><span class="typ-punct">,</span>
+  style<span class="typ-punct">:</span> <span class="typ-str">&quot;italic&quot;</span><span class="typ-punct">,</span>
+  it<span class="typ-punct">.</span>body <span class="typ-op">+</span> <span class="typ-punct">[</span>.<span class="typ-punct">]</span><span class="typ-punct">,</span>
+<span class="typ-punct">)</span>
+</code></pre><div class="preview"><img src="/assets/docs/fO2Y2tB3tEPlERpTmTxfVk.png" alt="Preview" width="480" height="190"/></div></div>
+<p>This looks great! We wrote two show rules that each selectively apply to the
+first and second level headings. We used a <code>where</code> selector to filter the
+headings by their level. We then rendered the subsection headings as run-ins. We
+also automatically add a period to the end of the subsection headings.</p>
+<p>Let's review the conference's style guide:</p>
+<ul>
+<li>The font should be an 11pt serif font ✓</li>
+<li>The title should be in 17pt and bold ✓</li>
+<li>The paper contains a single-column abstract and two-column main text ✓</li>
+<li>The abstract should be centered ✓</li>
+<li>The main text should be justified ✓</li>
+<li>First level section headings should be centered, rendered in small caps and in 13pt ✓</li>
+<li>Second level headings are run-ins, italicized and have the same size as the
+body text ✓</li>
+<li>Finally, the pages should be US letter sized, numbered in the center and the
+top left corner of each page should contain the title of the paper ✓</li>
+</ul>
+<p>We are now in compliance with all of these styles and can submit the paper to
+the conference! The finished paper looks like this:</p>
+<p><img
+  src="/assets/docs/3-advanced-paper.png"
+  alt="The finished paper"
+  style="box-shadow: 0 4px 12px rgb(89 85 101 / 20%); width: 500px; max-width: 100%; display: block; margin: 24px auto;"
+></p>
+<h2 id="review">Review</h2>
+<p>You have now learned how to create headers and footers, how to use functions and
+scopes to locally override styles, how to create more complex layouts with the <a href="/docs/reference/layout/grid/"><code>grid</code></a> function and how to write show rules for individual functions, and the whole document. You also learned how to use the
+<a href="/docs/reference/styling/#show-rules"><code>where</code> selector</a> to filter the headings by their level.</p>
+<p>The paper was a great success! You've met a lot of like-minded researchers at
+the conference and are planning a project which you hope to publish at the same
+venue next year. You'll need to write a new paper using the same style guide
+though, so maybe now you want to create a time-saving template for you and your
+team?</p>
+<p>In the next section, we will learn how to create templates that can be reused in
+multiple documents. This is a more advanced topic, so feel free to come back
+to it later if you don't feel up to it right now.</p>
+
+
+
+      
+      <div class="page-end-buttons"><a href="/docs/tutorial/formatting/" class="previous"><img
+            src="/assets/icons/16-arrow-right.svg" alt="←">
+          <div><span class="page-title">格式</span><span class="hint">上一页</span></div>
+        </a><a href="/docs/tutorial/making-a-template/" class="next"><img src="/assets/icons/16-arrow-right.svg" alt="→">
+          <div><span class="page-title">制作模板</span><span class="hint">下一页</span></div>
+        </a></div>
+      
+    </main>
+
+    
+    <nav id="page-overview"><strong>目录</strong>
+      <ul>
+        
+        <li data-assoc="guidelines"><a href="#guidelines">Guidelines</a>
+          <ul></ul>
+        </li>
+        
+        <li data-assoc="set-rules"><a href="#set-rules">Set Rules</a>
+          <ul></ul>
+        </li>
+        
+        <li data-assoc="title-and-abstract"><a href="#title-and-abstract">Title And Abstract</a>
+          <ul></ul>
+        </li>
+        
+        <li data-assoc="columns-and-headings"><a href="#columns-and-headings">Columns And Headings</a>
+          <ul></ul>
+        </li>
+        
+        <li data-assoc="review"><a href="#review">Review</a>
+          <ul></ul>
+        </li>
+        
+      </ul>
+    </nav>
+    
+  </div>
+  <footer>
+    <div>
+      <ul>
+        <li><a href="https://typst.app/">主页</a></li>
+        <li><a href="/docs/">中文文档</a></li>
+        <li><a href="https://typst.app/about/">关于我们</a></li>
+        <li><a href="https://typst.app/contact/">联系</a></li>
+        <li><a href="https://typst.app/privacy/">隐私</a></li>
+        <li><a href="https://typst.app/terms/">服务条款</a></li>
+        <li><a href="https://typst.app/legal/">法律说明</a></li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li><a href="https://typst.app/blog/">博客</a></li>
+        <li><a href="https://twitter.com/typstapp/">Twitter</a></li>
+        <li><a href="https://discord.gg/2uDybryKPe">Discord</a></li>
+        <li><a href="https://www.linkedin.com/company/typst/">LinkedIn</a></li>
+        <li><a href="https://instagram.com/typstapp/">Instagram</a></li>
+        <li><a href="https://github.com/typst-doc-cn/typst-doc-cn">GitHub</a></li>
+      </ul>
+    </div>
+    <div>
+      <p>Made in Berlin</p>
+    </div>
+  </footer>
+  <script src="/scripts/docs.js?bust=20230520"></script>
+  <script src="/scripts/analytics.js" defer=""></script>
+</body>
+
+</html>

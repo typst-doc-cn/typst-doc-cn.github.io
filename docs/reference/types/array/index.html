@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Array – Typst 中文文档</title>
+  <meta name="description" content="`array` 类型文档。">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#239dad">
+  <meta property="og:url" content="https://typst.app/docs/reference/types/array/">
+  <meta property="og:title" content="Array – Typst 中文文档">
+  <meta property="og:site_name" content="Typst">
+  <meta property="og:description" content="`array` 类型文档。">
+  <meta property="og:type">
+  <meta property="og:image" content="https://typst.app/assets/social.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:site" content="@typstapp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://typst.app/docs/reference/types/array/">
+  <meta name="twitter:image:alt"
+    content="The left side of a text editor with colorful cursors, as well as the text &#x27;Compose papers faster, Typst&#x27;">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.ico">
+  <!-- <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon.ico"> -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#239dad">
+  <link rel="manifest" href="/assets/site.webmanifest">
+  <link rel="stylesheet" href="/styles/default.css">
+  <link rel="stylesheet" href="/styles/docs.css">
+  <link rel="stylesheet" href="/styles/docs-cn.css">
+  <link rel="preload" href="/assets/fonts/HKGrotesk-Regular.woff2" as="font">
+  <link rel="preload" href="/assets/fonts/HKGrotesk-Bold.woff2" as="font">
+  <link rel="preload" href="/assets/fonts/HKGrotesk-SemiBold.woff2" as="font">
+  <link rel="preload" href="/assets/fonts/CascadiaMono-Regular-Sub.woff2" as="font">
+  <link rel="preload" href="/assets/images/blur.webp" as="image">
+</head>
+
+<body class="no-js docs has-outline">
+  <div class="alert">
+    <div class="alert-content">
+      <span><b>注意：</b>该中文文档为社区驱动的非官网文档，可能存在错译、漏译或过时等问题，请以官网文档 <a href="https://typst.app/docs/">Documentation</a>
+        为准，如发现错漏，也欢迎您的贡献。</span>
+      <br />
+      <span><b>Warning:</b> the Chinese document is a community-driven non-official document, there may be mistranslation, omission or outdated problems, please refer to <a href="https://typst.app/docs/">the official website documentation</a>.</span>
+    </div>
+  </div>
+  <header class="boring">
+    <div><a href="/docs" class="logo-box"><svg width="91" height="35" viewBox="0 0 91 35" role="img"
+          aria-labelledby="logo-label">
+          <title id="logo-label">Typst</title>
+          <use href="/assets/images/typst.svg#logo"></use>
+        </svg><span>中文文档</span></a><button class="hamburger"><img alt="Open navigation"
+          src="/assets/icons/16-hamburger-dark.svg" width="16" height="16"></button>
+      <nav>
+        <ul>
+          <li class="social"><a href="https://twitter.com/typstapp/"><svg width="16" height="16" role="img"
+                aria-labelledby="svg-twitter-label">
+                <title id="svg-twitter-label">Twitter</title>
+                <use href="/assets/icons/social.svg#twitter"></use>
+              </svg></a></li>
+          <li class="social"><a href="https://discord.gg/2uDybryKPe"><svg width="16" height="16" role="img"
+                aria-labelledby="svg-discord-label">
+                <title id="svg-discord-label">Discord</title>
+                <use href="/assets/icons/social.svg#discord"></use>
+              </svg></a></li>
+          <li class="social"><a href="https://github.com/typst-doc-cn/typst-doc-cn"><svg width="16" height="16" role="img"
+                aria-labelledby="svg-github-label">
+                <title id="svg-github-label">GitHub</title>
+                <use href="/assets/icons/social.svg#github"></use>
+              </svg></a></li>
+          <li class="social"><a href="https://www.linkedin.com/company/typst/"><svg width="16" height="16" role="img"
+                aria-labelledby="svg-linkedin-label">
+                <title id="svg-linkedin-label">LinkedIn</title>
+                <use href="/assets/icons/social.svg#linkedin"></use>
+              </svg></a></li>
+          <li class="secondary"><a href="https://typst.app/">主页</a></li>
+          <!-- <li class="secondary"><a href="/signin/" class="sign-in">Sign in</a></li>
+          <li><a href="/signup" id="header-btn" class="nav-btn btn">Sign up</a></li> -->
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="main-grid">
+    <nav class="folding"><a href="/docs" class="title-row"><svg width="91" height="35" viewBox="0 0 91 35" role="img"
+          aria-labelledby="logo-label-nav">
+          <title id="logo-label-nav">Typst</title>
+          <use href="/assets/images/typst.svg#logo"></use>
+        </svg><span>中文文档</span></a>
+      <!-- <button class="close"><img alt="Close" src="/assets/icons/16-close-dark.svg"
+          width="16" height="16"></button> -->
+      <div class="search"><img src="/assets/icons/16-search-gray.svg" alt="Search" width="16" height="16"><input
+          type="search" placeholder="搜索" id="docs-search"></div>
+      <ul class="search-results hidden" id="search-results"></ul>
+      <ul>
+        
+        
+        <li>
+          <a href="/docs/" >概览</a>
+          
+        </li>
+        
+        
+        <li>
+          <a href="/docs/tutorial/" >教程</a>
+          
+          <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+          <ul>
+            
+            
+            <li>
+              <a href="/docs/tutorial/writing-in-typst/" >使用 Typst 写作</a>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/tutorial/formatting/" >格式</a>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/tutorial/advanced-styling/" >高级样式</a>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/tutorial/making-a-template/" >制作模板</a>
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        
+        <li>
+          <a href="/docs/reference/" >参考</a>
+          
+          <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+          <ul>
+            
+            
+            <li class="category">Language</li>
+            
+            <li>
+              <a href="/docs/reference/syntax/" >语法</a>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/styling/" >样式</a>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/scripting/" >脚本</a>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/types/" >类型</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/types/none/" >None</a></li>
+                
+                
+                <li><a href="/docs/reference/types/auto/" >Auto</a></li>
+                
+                
+                <li><a href="/docs/reference/types/boolean/" >Boolean</a></li>
+                
+                
+                <li><a href="/docs/reference/types/integer/" >Integer</a></li>
+                
+                
+                <li><a href="/docs/reference/types/float/" >Float</a></li>
+                
+                
+                <li><a href="/docs/reference/types/length/" >Length</a></li>
+                
+                
+                <li><a href="/docs/reference/types/angle/" >Angle</a></li>
+                
+                
+                <li><a href="/docs/reference/types/ratio/" >Ratio</a></li>
+                
+                
+                <li><a href="/docs/reference/types/relative-length/" >Relative Length</a></li>
+                
+                
+                <li><a href="/docs/reference/types/fraction/" >Fraction</a></li>
+                
+                
+                <li><a href="/docs/reference/types/color/" >Color</a></li>
+                
+                
+                <li><a href="/docs/reference/types/datetime/" >Datetime</a></li>
+                
+                
+                <li><a href="/docs/reference/types/symbol/" >Symbol</a></li>
+                
+                
+                <li><a href="/docs/reference/types/string/" >String</a></li>
+                
+                
+                <li><a href="/docs/reference/types/content/" >Content</a></li>
+                
+                
+                <li><a href="/docs/reference/types/array/"  aria-current="page" >Array</a></li>
+                
+                
+                <li><a href="/docs/reference/types/dictionary/" >Dictionary</a></li>
+                
+                
+                <li><a href="/docs/reference/types/function/" >Function</a></li>
+                
+                
+                <li><a href="/docs/reference/types/arguments/" >Arguments</a></li>
+                
+                
+                <li><a href="/docs/reference/types/selector/" >Selector</a></li>
+                
+                
+                <li><a href="/docs/reference/types/module/" >Module</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li class="category">Content</li>
+            
+            <li>
+              <a href="/docs/reference/text/" >文本</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/text/lorem/" >Blind Text</a></li>
+                
+                
+                <li><a href="/docs/reference/text/emph/" >Emphasis</a></li>
+                
+                
+                <li><a href="/docs/reference/text/linebreak/" >Line Break</a></li>
+                
+                
+                <li><a href="/docs/reference/text/lower/" >Lowercase</a></li>
+                
+                
+                <li><a href="/docs/reference/text/overline/" >Overline</a></li>
+                
+                
+                <li><a href="/docs/reference/text/raw/" >Raw Text / Code</a></li>
+                
+                
+                <li><a href="/docs/reference/text/smallcaps/" >Small Capitals</a></li>
+                
+                
+                <li><a href="/docs/reference/text/smartquote/" >Smart Quote</a></li>
+                
+                
+                <li><a href="/docs/reference/text/strike/" >Strikethrough</a></li>
+                
+                
+                <li><a href="/docs/reference/text/strong/" >Strong Emphasis</a></li>
+                
+                
+                <li><a href="/docs/reference/text/sub/" >Subscript</a></li>
+                
+                
+                <li><a href="/docs/reference/text/super/" >Superscript</a></li>
+                
+                
+                <li><a href="/docs/reference/text/text/" >Text</a></li>
+                
+                
+                <li><a href="/docs/reference/text/underline/" >Underline</a></li>
+                
+                
+                <li><a href="/docs/reference/text/upper/" >Uppercase</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/math/" >数学</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/math/accent/" >Accent</a></li>
+                
+                
+                <li><a href="/docs/reference/math/attach/" >Attach</a></li>
+                
+                
+                <li><a href="/docs/reference/math/binom/" >Binomial</a></li>
+                
+                
+                <li><a href="/docs/reference/math/cancel/" >Cancel</a></li>
+                
+                
+                <li><a href="/docs/reference/math/cases/" >Cases</a></li>
+                
+                
+                <li><a href="/docs/reference/math/equation/" >Equation</a></li>
+                
+                
+                <li><a href="/docs/reference/math/frac/" >Fraction</a></li>
+                
+                
+                <li><a href="/docs/reference/math/lr/" >Left/Right</a></li>
+                
+                
+                <li><a href="/docs/reference/math/mat/" >Matrix</a></li>
+                
+                
+                <li><a href="/docs/reference/math/roots/" >Roots</a></li>
+                
+                
+                <li><a href="/docs/reference/math/sizes/" >Sizes</a></li>
+                
+                
+                <li><a href="/docs/reference/math/styles/" >Styles</a></li>
+                
+                
+                <li><a href="/docs/reference/math/op/" >Text Operator</a></li>
+                
+                
+                <li><a href="/docs/reference/math/underover/" >Under/Over</a></li>
+                
+                
+                <li><a href="/docs/reference/math/variants/" >Variants</a></li>
+                
+                
+                <li><a href="/docs/reference/math/vec/" >Vector</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/layout/" >布局</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/layout/align/" >Align</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/block/" >Block</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/box/" >Box</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/list/" >Bullet List</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/colbreak/" >Column Break</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/columns/" >Columns</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/grid/" >Grid</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/hide/" >Hide</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/measure/" >Measure</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/move/" >Move</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/enum/" >Numbered List</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/pad/" >Padding</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/page/" >Page</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/pagebreak/" >Page Break</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/par/" >Paragraph</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/parbreak/" >Paragraph Break</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/place/" >Place</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/repeat/" >Repeat</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/rotate/" >Rotate</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/scale/" >Scale</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/h/" >Spacing (H)</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/v/" >Spacing (V)</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/stack/" >Stack</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/table/" >Table</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/terms/" >Term List</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/visualize/" >可视化</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/visualize/circle/" >Circle</a></li>
+                
+                
+                <li><a href="/docs/reference/visualize/ellipse/" >Ellipse</a></li>
+                
+                
+                <li><a href="/docs/reference/visualize/image/" >Image</a></li>
+                
+                
+                <li><a href="/docs/reference/visualize/line/" >Line</a></li>
+                
+                
+                <li><a href="/docs/reference/visualize/path/" >Path</a></li>
+                
+                
+                <li><a href="/docs/reference/visualize/polygon/" >Polygon</a></li>
+                
+                
+                <li><a href="/docs/reference/visualize/rect/" >Rectangle</a></li>
+                
+                
+                <li><a href="/docs/reference/visualize/square/" >Square</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/meta/" >元信息</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/meta/bibliography/" >Bibliography</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/cite/" >Citation</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/counter/" >Counter</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/document/" >Document</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/figure/" >Figure</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/footnote/" >Footnote</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/heading/" >Heading</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/layout/" >Layout</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/link/" >Link</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/locate/" >Locate</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/numbering/" >Numbering</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/outline/" >Outline</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/query/" >Query</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/ref/" >Reference</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/selector/" >Selector</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/state/" >State</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/style/" >Style</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/symbols/" >符号</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/symbols/sym/" >General</a></li>
+                
+                
+                <li><a href="/docs/reference/symbols/emoji/" >Emoji</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li class="category">Compute</li>
+            
+            <li>
+              <a href="/docs/reference/foundations/" >基础</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/foundations/assert/" >Assert</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/eval/" >Evaluate</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/panic/" >Panic</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/repr/" >Representation</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/type/" >Type</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/calculate/" >计算</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/calculate/abs/" >Absolute</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/acos/" >Arccosine</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/asin/" >Arcsine</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/atan/" >Arctangent</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/binom/" >Binomial</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/clamp/" >Clamp</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/cos/" >Cosine</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/even/" >Even</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/exp/" >Exponential</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/fact/" >Factorial</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/atan2/" >Four-quadrant Arctangent</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/fract/" >Fractional</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/gcd/" >Greatest Common Divisor</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/cosh/" >Hyperbolic cosine</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/sinh/" >Hyperbolic sine</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/tanh/" >Hyperbolic tangent</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/lcm/" >Least Common Multiple</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/log/" >Logarithm</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/max/" >Maximum</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/min/" >Minimum</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/ln/" >Natural Logarithm</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/odd/" >Odd</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/perm/" >Permutation</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/pow/" >Power</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/quo/" >Quotient</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/rem/" >Remainder</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/round/" >Round</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/floor/" >Round down</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/ceil/" >Round up</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/sin/" >Sine</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/sqrt/" >Square Root</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/tan/" >Tangent</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/trunc/" >Truncate</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/construct/" >构造</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/construct/cmyk/" >CMYK</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/datetime/" >Datetime</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/float/" >Float</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/int/" >Integer</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/label/" >Label</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/luma/" >Luma</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/rgb/" >RGB</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/range/" >Range</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/regex/" >Regex</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/str/" >String</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/symbol/" >Symbol</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/data-loading/" >数据加载</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/data-loading/csv/" >CSV</a></li>
+                
+                
+                <li><a href="/docs/reference/data-loading/json/" >JSON</a></li>
+                
+                
+                <li><a href="/docs/reference/data-loading/read/" >Read</a></li>
+                
+                
+                <li><a href="/docs/reference/data-loading/toml/" >TOML</a></li>
+                
+                
+                <li><a href="/docs/reference/data-loading/xml/" >XML</a></li>
+                
+                
+                <li><a href="/docs/reference/data-loading/yaml/" >YAML</a></li>
+                
+              </ul>
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        
+        <li>
+          <a href="/docs/guides/" >指南</a>
+          
+          <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+          <ul>
+            
+            
+            <li>
+              <a href="/docs/guides/guide-for-latex-users/" >LaTeX 用户指南</a>
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        
+        <li>
+          <a href="/docs/changelog/" >更新日志</a>
+          
+        </li>
+        
+        
+        <li>
+          <a href="/docs/community/" >社区</a>
+          
+        </li>
+        
+      </ul>
+
+    </nav>
+    <main>
+      <ul class="breadcrumbs" aria-label="Breadcrumbs">
+        <li class="root"><a href="/docs/"><img src="/assets/icons/16-docs-dark.svg" alt="Docs" width="16"
+              height="16"></a></li>
+
+        
+        <li aria-hidden="true"><img src="/assets/icons/16-arrow-right.svg" width="16" height="16" alt=""></li>
+        <li><a href="/docs/reference/">参考</a></li>
+        
+        <li aria-hidden="true"><img src="/assets/icons/16-arrow-right.svg" width="16" height="16" alt=""></li>
+        <li><a href="/docs/reference/types/">类型</a></li>
+        
+        <li aria-hidden="true"><img src="/assets/icons/16-arrow-right.svg" width="16" height="16" alt=""></li>
+        <li><a href="/docs/reference/types/array/">Array</a></li>
+        
+      </ul>
+
+      
+
+<h1 id="summary"><span class="pill pill-obj">array</span></h1>
+<p>A sequence of values.</p>
+<p>You can construct an array by enclosing a comma-separated sequence of values
+in parentheses. The values do not have to be of the same type.</p>
+<p>You can access and update array items with the <code>.at()</code> method. Indices are
+zero-based and negative indices wrap around to the end of the array. You can
+iterate over an array using a <a href="/docs/reference/scripting/#loops">for loop</a>.
+Arrays can be added together with the <code>+</code> operator,
+<a href="/docs/reference/scripting/#blocks">joined together</a> and multiplied with
+integers.</p>
+<p><strong>Note:</strong> An array of length one needs a trailing comma, as in <code><span class="typ-punct">(</span><span class="typ-num">1</span><span class="typ-punct">,</span><span class="typ-punct">)</span></code>. This is
+to disambiguate from a simple parenthesized expressions like <code><span class="typ-punct">(</span><span class="typ-num">1</span> <span class="typ-op">+</span> <span class="typ-num">2</span><span class="typ-punct">)</span> <span class="typ-op">*</span> <span class="typ-num">3</span></code>.
+An empty array is written as <code><span class="typ-punct">(</span><span class="typ-punct">)</span></code>.</p>
+<h2>Example</h2>
+<div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> values <span class="typ-op">=</span> <span class="typ-punct">(</span><span class="typ-num">1</span><span class="typ-punct">,</span> <span class="typ-num">7</span><span class="typ-punct">,</span> <span class="typ-num">4</span><span class="typ-punct">,</span> <span class="typ-op">-</span><span class="typ-num">3</span><span class="typ-punct">,</span> <span class="typ-num">2</span><span class="typ-punct">)</span>
+
+<span class="typ-pol">#</span><span class="typ-pol">values</span><span class="typ-punct">.</span><span class="typ-func">at</span><span class="typ-punct">(</span><span class="typ-num">0</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
+<span class="typ-punct">#</span><span class="typ-punct">(</span>values<span class="typ-punct">.</span><span class="typ-func">at</span><span class="typ-punct">(</span><span class="typ-num">0</span><span class="typ-punct">)</span> <span class="typ-op">=</span> <span class="typ-num">3</span><span class="typ-punct">)</span>
+<span class="typ-pol">#</span><span class="typ-pol">values</span><span class="typ-punct">.</span><span class="typ-func">at</span><span class="typ-punct">(</span><span class="typ-op">-</span><span class="typ-num">1</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
+<span class="typ-pol">#</span><span class="typ-pol">values</span><span class="typ-punct">.</span><span class="typ-func">find</span><span class="typ-punct">(</span>calc<span class="typ-punct">.</span>even<span class="typ-punct">)</span> <span class="typ-escape">\</span>
+<span class="typ-pol">#</span><span class="typ-pol">values</span><span class="typ-punct">.</span><span class="typ-func">filter</span><span class="typ-punct">(</span>calc<span class="typ-punct">.</span>odd<span class="typ-punct">)</span> <span class="typ-escape">\</span>
+<span class="typ-pol">#</span><span class="typ-pol">values</span><span class="typ-punct">.</span><span class="typ-func">map</span><span class="typ-punct">(</span>calc<span class="typ-punct">.</span>abs<span class="typ-punct">)</span> <span class="typ-escape">\</span>
+<span class="typ-pol">#</span><span class="typ-pol">values</span><span class="typ-punct">.</span><span class="typ-func">rev</span><span class="typ-punct">(</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
+<span class="typ-punct">#</span><span class="typ-punct">(</span><span class="typ-num">1</span><span class="typ-punct">,</span> <span class="typ-punct">(</span><span class="typ-num">2</span><span class="typ-punct">,</span> <span class="typ-num">3</span><span class="typ-punct">)</span><span class="typ-punct">)</span><span class="typ-punct">.</span><span class="typ-func">flatten</span><span class="typ-punct">(</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
+<span class="typ-punct">#</span><span class="typ-punct">(</span><span class="typ-punct">(</span><span class="typ-str">&quot;A&quot;</span><span class="typ-punct">,</span> <span class="typ-str">&quot;B&quot;</span><span class="typ-punct">,</span> <span class="typ-str">&quot;C&quot;</span><span class="typ-punct">)</span>
+    <span class="typ-punct">.</span><span class="typ-func">join</span><span class="typ-punct">(</span><span class="typ-str">&quot;, &quot;</span><span class="typ-punct">,</span> last<span class="typ-punct">:</span> <span class="typ-str">&quot; and &quot;</span><span class="typ-punct">)</span><span class="typ-punct">)</span>
+</code></pre><div class="preview"><img src="/assets/docs/QlaVjO5yegL2QseF7WLqNV.png" alt="Preview" width="480" height="190"/></div></div>
+
+<h2 id="methods"><span aria-describedby="methods-tooltip">方法</span>
+  <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+      aria-labelledby="methods-tooltip-qm-label">
+      <title id="methods-tooltip-qm-label">方法是可用于该类型的一系列函数，可以使用 "." 操作符调用它们。</title>
+      <use href="/assets/icons/12-tooltip.svg#icon"></use>
+    </svg>
+    <div role="tooltip" id="methods-tooltip" tabindex="-1">方法是可用于该类型的一系列函数，可以使用 <code>.</code> 操作符调用它们。</div>
+  </div>
+</h2>
+
+
+<h3 id="methods-len" class="method-head"><span><code>len</code> method</span></h3>
+<p>The number of values in the array.</p>
+<div class="code code-definition single-arg">value.<span
+    class="typ-func">len</span>(<div class="arguments"></div>) <!-- -->-&gt; <a href="/docs/reference/types/integer" class="pill pill-num">integer</a></div>
+
+
+<h3 id="methods-first" class="method-head"><span><code>first</code> method</span></h3>
+<p>Returns the first item in the array.
+May be used on the left-hand side of an assignment.
+Fails with an error if the array is empty.</p>
+<div class="code code-definition single-arg">value.<span
+    class="typ-func">first</span>(<div class="arguments"></div>) <!-- -->-&gt; <a href="/docs/reference/types/any" class="pill pill-obj">any</a></div>
+
+
+<h3 id="methods-last" class="method-head"><span><code>last</code> method</span></h3>
+<p>Returns the last item in the array.
+May be used on the left-hand side of an assignment.
+Fails with an error if the array is empty.</p>
+<div class="code code-definition single-arg">value.<span
+    class="typ-func">last</span>(<div class="arguments"></div>) <!-- -->-&gt; <a href="/docs/reference/types/any" class="pill pill-obj">any</a></div>
+
+
+<h3 id="methods-at" class="method-head"><span><code>at</code> method</span></h3>
+<p>Returns the item at the specified index in the array. May be used on the
+left-hand side of an assignment. Returns the default value if the index is out
+of bounds or fails with an error if no default value was specified.</p>
+<div class="code code-definition ">value.<span
+    class="typ-func">at</span>(<div class="arguments"><span
+      class="overview-param"><a href="/docs/reference/types/integer" class="pill pill-num">integer</a>, </span><span
+      class="overview-param"><a href="#parameters-default">default<!-- -->: </a><a href="/docs/reference/types/any" class="pill pill-obj">any</a>, </span></div>) <!-- -->-&gt; <a href="/docs/reference/types/any" class="pill pill-obj">any</a></div>
+
+<h4 id="methods-at-parameters-index"><code>index</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/integer" class="pill pill-num">integer</a>
+      
+    </div>
+    <small>必需参数</small><small><span
+        aria-describedby="methods-at-parameters-index-positional-tooltip">位置参数</span>
+      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+          aria-labelledby="methods-at-parameters-index-positional-tooltip-qm-label">
+          <title id="methods-at-parameters-index-positional-tooltip-qm-label">
+            位置参数按顺序传入，不带名称。</title>
+          <use href="/assets/icons/12-tooltip.svg#icon"></use>
+        </svg>
+        <div role="tooltip" id="methods-at-parameters-index-positional-tooltip"
+          tabindex="-1">位置参数按顺序传入，不带名称。</div>
+      </div>
+    </small>
+  </div>
+</h4>
+<p>The index at which to retrieve the item.</p>
+
+
+
+<h4 id="methods-at-parameters-default"><code>default</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/any" class="pill pill-obj">any</a>
+      
+    </div>
+    
+  </div>
+</h4>
+<p>A default value to return if the index is out of bounds.</p>
+
+
+
+
+<h3 id="methods-push" class="method-head"><span><code>push</code> method</span></h3>
+<p>Add a value to the end of the array.</p>
+<div class="code code-definition single-arg">value.<span
+    class="typ-func">push</span>(<div class="arguments"><span
+      class="overview-param"><a href="/docs/reference/types/any" class="pill pill-obj">any</a> </span></div>) <!-- -->-&gt; </div>
+
+<h4 id="methods-push-parameters-value"><code>value</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/any" class="pill pill-obj">any</a>
+      
+    </div>
+    <small>必需参数</small><small><span
+        aria-describedby="methods-push-parameters-value-positional-tooltip">位置参数</span>
+      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+          aria-labelledby="methods-push-parameters-value-positional-tooltip-qm-label">
+          <title id="methods-push-parameters-value-positional-tooltip-qm-label">
+            位置参数按顺序传入，不带名称。</title>
+          <use href="/assets/icons/12-tooltip.svg#icon"></use>
+        </svg>
+        <div role="tooltip" id="methods-push-parameters-value-positional-tooltip"
+          tabindex="-1">位置参数按顺序传入，不带名称。</div>
+      </div>
+    </small>
+  </div>
+</h4>
+<p>The value to insert at the end of the array.</p>
+
+
+
+
+<h3 id="methods-pop" class="method-head"><span><code>pop</code> method</span></h3>
+<p>Remove the last item from the array and return it.
+Fails with an error if the array is empty.</p>
+<div class="code code-definition single-arg">value.<span
+    class="typ-func">pop</span>(<div class="arguments"></div>) <!-- -->-&gt; <a href="/docs/reference/types/any" class="pill pill-obj">any</a></div>
+
+
+<h3 id="methods-insert" class="method-head"><span><code>insert</code> method</span></h3>
+<p>Insert a value into the array at the specified index.
+Fails with an error if the index is out of bounds.</p>
+<div class="code code-definition ">value.<span
+    class="typ-func">insert</span>(<div class="arguments"><span
+      class="overview-param"><a href="/docs/reference/types/integer" class="pill pill-num">integer</a>, </span><span
+      class="overview-param"><a href="/docs/reference/types/any" class="pill pill-obj">any</a>, </span></div>) <!-- -->-&gt; </div>
+
+<h4 id="methods-insert-parameters-index"><code>index</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/integer" class="pill pill-num">integer</a>
+      
+    </div>
+    <small>必需参数</small><small><span
+        aria-describedby="methods-insert-parameters-index-positional-tooltip">位置参数</span>
+      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+          aria-labelledby="methods-insert-parameters-index-positional-tooltip-qm-label">
+          <title id="methods-insert-parameters-index-positional-tooltip-qm-label">
+            位置参数按顺序传入，不带名称。</title>
+          <use href="/assets/icons/12-tooltip.svg#icon"></use>
+        </svg>
+        <div role="tooltip" id="methods-insert-parameters-index-positional-tooltip"
+          tabindex="-1">位置参数按顺序传入，不带名称。</div>
+      </div>
+    </small>
+  </div>
+</h4>
+<p>The index at which to insert the item.</p>
+
+
+
+<h4 id="methods-insert-parameters-value"><code>value</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/any" class="pill pill-obj">any</a>
+      
+    </div>
+    <small>必需参数</small><small><span
+        aria-describedby="methods-insert-parameters-value-positional-tooltip">位置参数</span>
+      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+          aria-labelledby="methods-insert-parameters-value-positional-tooltip-qm-label">
+          <title id="methods-insert-parameters-value-positional-tooltip-qm-label">
+            位置参数按顺序传入，不带名称。</title>
+          <use href="/assets/icons/12-tooltip.svg#icon"></use>
+        </svg>
+        <div role="tooltip" id="methods-insert-parameters-value-positional-tooltip"
+          tabindex="-1">位置参数按顺序传入，不带名称。</div>
+      </div>
+    </small>
+  </div>
+</h4>
+<p>The value to insert into the array.</p>
+
+
+
+
+<h3 id="methods-remove" class="method-head"><span><code>remove</code> method</span></h3>
+<p>Remove the value at the specified index from the array and return it.</p>
+<div class="code code-definition single-arg">value.<span
+    class="typ-func">remove</span>(<div class="arguments"><span
+      class="overview-param"><a href="/docs/reference/types/integer" class="pill pill-num">integer</a> </span></div>) <!-- -->-&gt; <a href="/docs/reference/types/any" class="pill pill-obj">any</a></div>
+
+<h4 id="methods-remove-parameters-index"><code>index</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/integer" class="pill pill-num">integer</a>
+      
+    </div>
+    <small>必需参数</small><small><span
+        aria-describedby="methods-remove-parameters-index-positional-tooltip">位置参数</span>
+      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+          aria-labelledby="methods-remove-parameters-index-positional-tooltip-qm-label">
+          <title id="methods-remove-parameters-index-positional-tooltip-qm-label">
+            位置参数按顺序传入，不带名称。</title>
+          <use href="/assets/icons/12-tooltip.svg#icon"></use>
+        </svg>
+        <div role="tooltip" id="methods-remove-parameters-index-positional-tooltip"
+          tabindex="-1">位置参数按顺序传入，不带名称。</div>
+      </div>
+    </small>
+  </div>
+</h4>
+<p>The index at which to remove the item.</p>
+
+
+
+
+<h3 id="methods-slice" class="method-head"><span><code>slice</code> method</span></h3>
+<p>Extract a subslice of the array.
+Fails with an error if the start or index is out of bounds.</p>
+<div class="code code-definition ">value.<span
+    class="typ-func">slice</span>(<div class="arguments"><span
+      class="overview-param"><a href="/docs/reference/types/integer" class="pill pill-num">integer</a>, </span><span
+      class="overview-param"><a href="/docs/reference/types/integer" class="pill pill-num">integer</a>, </span><span
+      class="overview-param"><a href="#parameters-count">count<!-- -->: </a><a href="/docs/reference/types/integer" class="pill pill-num">integer</a>, </span></div>) <!-- -->-&gt; <a href="/docs/reference/types/array" class="pill pill-obj">array</a></div>
+
+<h4 id="methods-slice-parameters-start"><code>start</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/integer" class="pill pill-num">integer</a>
+      
+    </div>
+    <small>必需参数</small><small><span
+        aria-describedby="methods-slice-parameters-start-positional-tooltip">位置参数</span>
+      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+          aria-labelledby="methods-slice-parameters-start-positional-tooltip-qm-label">
+          <title id="methods-slice-parameters-start-positional-tooltip-qm-label">
+            位置参数按顺序传入，不带名称。</title>
+          <use href="/assets/icons/12-tooltip.svg#icon"></use>
+        </svg>
+        <div role="tooltip" id="methods-slice-parameters-start-positional-tooltip"
+          tabindex="-1">位置参数按顺序传入，不带名称。</div>
+      </div>
+    </small>
+  </div>
+</h4>
+<p>The start index (inclusive).</p>
+
+
+
+<h4 id="methods-slice-parameters-end"><code>end</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/integer" class="pill pill-num">integer</a>
+      
+    </div>
+    <small><span
+        aria-describedby="methods-slice-parameters-end-positional-tooltip">位置参数</span>
+      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+          aria-labelledby="methods-slice-parameters-end-positional-tooltip-qm-label">
+          <title id="methods-slice-parameters-end-positional-tooltip-qm-label">
+            位置参数按顺序传入，不带名称。</title>
+          <use href="/assets/icons/12-tooltip.svg#icon"></use>
+        </svg>
+        <div role="tooltip" id="methods-slice-parameters-end-positional-tooltip"
+          tabindex="-1">位置参数按顺序传入，不带名称。</div>
+      </div>
+    </small>
+  </div>
+</h4>
+<p>The end index (exclusive). If omitted, the whole slice until the end of the
+array is extracted.</p>
+
+
+
+<h4 id="methods-slice-parameters-count"><code>count</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/integer" class="pill pill-num">integer</a>
+      
+    </div>
+    
+  </div>
+</h4>
+<p>The number of items to extract. This is equivalent to passing <code>start + count</code> as the <code>end</code> position. Mutually exclusive with <code>end</code>.</p>
+
+
+
+
+<h3 id="methods-contains" class="method-head"><span><code>contains</code> method</span></h3>
+<p>Whether the array contains the specified value.</p>
+<p>This method also has dedicated syntax: You can write <code><span class="typ-num">2</span> <span class="typ-key">in</span> <span class="typ-punct">(</span><span class="typ-num">1</span><span class="typ-punct">,</span> <span class="typ-num">2</span><span class="typ-punct">,</span> <span class="typ-num">3</span><span class="typ-punct">)</span></code> instead
+of <code><span class="typ-punct">(</span><span class="typ-num">1</span><span class="typ-punct">,</span> <span class="typ-num">2</span><span class="typ-punct">,</span> <span class="typ-num">3</span><span class="typ-punct">)</span><span class="typ-punct">.</span><span class="typ-func">contains</span><span class="typ-punct">(</span><span class="typ-num">2</span><span class="typ-punct">)</span></code>.</p>
+<div class="code code-definition single-arg">value.<span
+    class="typ-func">contains</span>(<div class="arguments"><span
+      class="overview-param"><a href="/docs/reference/types/any" class="pill pill-obj">any</a> </span></div>) <!-- -->-&gt; <a href="/docs/reference/types/boolean" class="pill pill-bool">boolean</a></div>
+
+<h4 id="methods-contains-parameters-value"><code>value</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/any" class="pill pill-obj">any</a>
+      
+    </div>
+    <small>必需参数</small><small><span
+        aria-describedby="methods-contains-parameters-value-positional-tooltip">位置参数</span>
+      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+          aria-labelledby="methods-contains-parameters-value-positional-tooltip-qm-label">
+          <title id="methods-contains-parameters-value-positional-tooltip-qm-label">
+            位置参数按顺序传入，不带名称。</title>
+          <use href="/assets/icons/12-tooltip.svg#icon"></use>
+        </svg>
+        <div role="tooltip" id="methods-contains-parameters-value-positional-tooltip"
+          tabindex="-1">位置参数按顺序传入，不带名称。</div>
+      </div>
+    </small>
+  </div>
+</h4>
+<p>The value to search for.</p>
+
+
+
+
+<h3 id="methods-find" class="method-head"><span><code>find</code> method</span></h3>
+<p>Searches for an item for which the given function returns <code><span class="typ-key">true</span></code> and
+returns the first match or <code><span class="typ-key">none</span></code> if there is no match.</p>
+<div class="code code-definition single-arg">value.<span
+    class="typ-func">find</span>(<div class="arguments"><span
+      class="overview-param"><a href="/docs/reference/types/function" class="pill pill-fn">function</a> </span></div>) <!-- -->-&gt; <a href="/docs/reference/types/any" class="pill pill-obj">any</a><a href="/docs/reference/types/none" class="pill pill-kw">none</a></div>
+
+<h4 id="methods-find-parameters-searcher"><code>searcher</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/function" class="pill pill-fn">function</a>
+      
+    </div>
+    <small>必需参数</small><small><span
+        aria-describedby="methods-find-parameters-searcher-positional-tooltip">位置参数</span>
+      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+          aria-labelledby="methods-find-parameters-searcher-positional-tooltip-qm-label">
+          <title id="methods-find-parameters-searcher-positional-tooltip-qm-label">
+            位置参数按顺序传入，不带名称。</title>
+          <use href="/assets/icons/12-tooltip.svg#icon"></use>
+        </svg>
+        <div role="tooltip" id="methods-find-parameters-searcher-positional-tooltip"
+          tabindex="-1">位置参数按顺序传入，不带名称。</div>
+      </div>
+    </small>
+  </div>
+</h4>
+<p>The function to apply to each item. Must return a boolean.</p>
+
+
+
+
+<h3 id="methods-position" class="method-head"><span><code>position</code> method</span></h3>
+<p>Searches for an item for which the given function returns <code><span class="typ-key">true</span></code> and
+returns the index of the first match or <code><span class="typ-key">none</span></code> if there is no match.</p>
+<div class="code code-definition single-arg">value.<span
+    class="typ-func">position</span>(<div class="arguments"><span
+      class="overview-param"><a href="/docs/reference/types/function" class="pill pill-fn">function</a> </span></div>) <!-- -->-&gt; <a href="/docs/reference/types/integer" class="pill pill-num">integer</a><a href="/docs/reference/types/none" class="pill pill-kw">none</a></div>
+
+<h4 id="methods-position-parameters-searcher"><code>searcher</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/function" class="pill pill-fn">function</a>
+      
+    </div>
+    <small>必需参数</small><small><span
+        aria-describedby="methods-position-parameters-searcher-positional-tooltip">位置参数</span>
+      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+          aria-labelledby="methods-position-parameters-searcher-positional-tooltip-qm-label">
+          <title id="methods-position-parameters-searcher-positional-tooltip-qm-label">
+            位置参数按顺序传入，不带名称。</title>
+          <use href="/assets/icons/12-tooltip.svg#icon"></use>
+        </svg>
+        <div role="tooltip" id="methods-position-parameters-searcher-positional-tooltip"
+          tabindex="-1">位置参数按顺序传入，不带名称。</div>
+      </div>
+    </small>
+  </div>
+</h4>
+<p>The function to apply to each item. Must return a boolean.</p>
+
+
+
+
+<h3 id="methods-filter" class="method-head"><span><code>filter</code> method</span></h3>
+<p>Produces a new array with only the items from the original one for which the
+given function returns true.</p>
+<div class="code code-definition single-arg">value.<span
+    class="typ-func">filter</span>(<div class="arguments"><span
+      class="overview-param"><a href="/docs/reference/types/function" class="pill pill-fn">function</a> </span></div>) <!-- -->-&gt; <a href="/docs/reference/types/array" class="pill pill-obj">array</a></div>
+
+<h4 id="methods-filter-parameters-test"><code>test</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/function" class="pill pill-fn">function</a>
+      
+    </div>
+    <small>必需参数</small><small><span
+        aria-describedby="methods-filter-parameters-test-positional-tooltip">位置参数</span>
+      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+          aria-labelledby="methods-filter-parameters-test-positional-tooltip-qm-label">
+          <title id="methods-filter-parameters-test-positional-tooltip-qm-label">
+            位置参数按顺序传入，不带名称。</title>
+          <use href="/assets/icons/12-tooltip.svg#icon"></use>
+        </svg>
+        <div role="tooltip" id="methods-filter-parameters-test-positional-tooltip"
+          tabindex="-1">位置参数按顺序传入，不带名称。</div>
+      </div>
+    </small>
+  </div>
+</h4>
+<p>The function to apply to each item. Must return a boolean.</p>
+
+
+
+
+<h3 id="methods-map" class="method-head"><span><code>map</code> method</span></h3>
+<p>Produces a new array in which all items from the original one were
+transformed with the given function.</p>
+<div class="code code-definition single-arg">value.<span
+    class="typ-func">map</span>(<div class="arguments"><span
+      class="overview-param"><a href="/docs/reference/types/function" class="pill pill-fn">function</a> </span></div>) <!-- -->-&gt; <a href="/docs/reference/types/array" class="pill pill-obj">array</a></div>
+
+<h4 id="methods-map-parameters-mapper"><code>mapper</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/function" class="pill pill-fn">function</a>
+      
+    </div>
+    <small>必需参数</small><small><span
+        aria-describedby="methods-map-parameters-mapper-positional-tooltip">位置参数</span>
+      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+          aria-labelledby="methods-map-parameters-mapper-positional-tooltip-qm-label">
+          <title id="methods-map-parameters-mapper-positional-tooltip-qm-label">
+            位置参数按顺序传入，不带名称。</title>
+          <use href="/assets/icons/12-tooltip.svg#icon"></use>
+        </svg>
+        <div role="tooltip" id="methods-map-parameters-mapper-positional-tooltip"
+          tabindex="-1">位置参数按顺序传入，不带名称。</div>
+      </div>
+    </small>
+  </div>
+</h4>
+<p>The function to apply to each item.</p>
+
+
+
+
+<h3 id="methods-enumerate" class="method-head"><span><code>enumerate</code> method</span></h3>
+<p>Returns a new array with the values alongside their indices.</p>
+<p>The returned array consists of <code>(index, value)</code> pairs in the form of length-2
+arrays. These can be <a href="/docs/reference/scripting/#bindings">destructured</a> with a let binding or
+for loop.</p>
+<div class="code code-definition single-arg">value.<span
+    class="typ-func">enumerate</span>(<div class="arguments"></div>) <!-- -->-&gt; <a href="/docs/reference/types/array" class="pill pill-obj">array</a></div>
+
+
+<h3 id="methods-zip" class="method-head"><span><code>zip</code> method</span></h3>
+<p>Zips the array with another array. If the two arrays are of unequal length, it
+will only zip up until the last element of the smaller array and the remaining
+elements will be ignored. The return value is an array where each element is yet
+another array of size 2.</p>
+<div class="code code-definition single-arg">value.<span
+    class="typ-func">zip</span>(<div class="arguments"><span
+      class="overview-param"><a href="/docs/reference/types/array" class="pill pill-obj">array</a> </span></div>) <!-- -->-&gt; <a href="/docs/reference/types/array" class="pill pill-obj">array</a></div>
+
+<h4 id="methods-zip-parameters-other"><code>other</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/array" class="pill pill-obj">array</a>
+      
+    </div>
+    <small>必需参数</small><small><span
+        aria-describedby="methods-zip-parameters-other-positional-tooltip">位置参数</span>
+      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+          aria-labelledby="methods-zip-parameters-other-positional-tooltip-qm-label">
+          <title id="methods-zip-parameters-other-positional-tooltip-qm-label">
+            位置参数按顺序传入，不带名称。</title>
+          <use href="/assets/icons/12-tooltip.svg#icon"></use>
+        </svg>
+        <div role="tooltip" id="methods-zip-parameters-other-positional-tooltip"
+          tabindex="-1">位置参数按顺序传入，不带名称。</div>
+      </div>
+    </small>
+  </div>
+</h4>
+<p>The other array which should be zipped with the current one.</p>
+
+
+
+
+<h3 id="methods-fold" class="method-head"><span><code>fold</code> method</span></h3>
+<p>Folds all items into a single value using an accumulator function.</p>
+<div class="code code-definition ">value.<span
+    class="typ-func">fold</span>(<div class="arguments"><span
+      class="overview-param"><a href="/docs/reference/types/any" class="pill pill-obj">any</a>, </span><span
+      class="overview-param"><a href="/docs/reference/types/function" class="pill pill-fn">function</a>, </span></div>) <!-- -->-&gt; <a href="/docs/reference/types/any" class="pill pill-obj">any</a></div>
+
+<h4 id="methods-fold-parameters-init"><code>init</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/any" class="pill pill-obj">any</a>
+      
+    </div>
+    <small>必需参数</small><small><span
+        aria-describedby="methods-fold-parameters-init-positional-tooltip">位置参数</span>
+      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+          aria-labelledby="methods-fold-parameters-init-positional-tooltip-qm-label">
+          <title id="methods-fold-parameters-init-positional-tooltip-qm-label">
+            位置参数按顺序传入，不带名称。</title>
+          <use href="/assets/icons/12-tooltip.svg#icon"></use>
+        </svg>
+        <div role="tooltip" id="methods-fold-parameters-init-positional-tooltip"
+          tabindex="-1">位置参数按顺序传入，不带名称。</div>
+      </div>
+    </small>
+  </div>
+</h4>
+<p>The initial value to start with.</p>
+
+
+
+<h4 id="methods-fold-parameters-folder"><code>folder</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/function" class="pill pill-fn">function</a>
+      
+    </div>
+    <small>必需参数</small><small><span
+        aria-describedby="methods-fold-parameters-folder-positional-tooltip">位置参数</span>
+      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+          aria-labelledby="methods-fold-parameters-folder-positional-tooltip-qm-label">
+          <title id="methods-fold-parameters-folder-positional-tooltip-qm-label">
+            位置参数按顺序传入，不带名称。</title>
+          <use href="/assets/icons/12-tooltip.svg#icon"></use>
+        </svg>
+        <div role="tooltip" id="methods-fold-parameters-folder-positional-tooltip"
+          tabindex="-1">位置参数按顺序传入，不带名称。</div>
+      </div>
+    </small>
+  </div>
+</h4>
+<p>The folding function. Must have two parameters: One for the accumulated value
+and one for an item.</p>
+
+
+
+
+<h3 id="methods-sum" class="method-head"><span><code>sum</code> method</span></h3>
+<p>Sums all items (works for any types that can be added).</p>
+<div class="code code-definition single-arg">value.<span
+    class="typ-func">sum</span>(<div class="arguments"><span
+      class="overview-param"><a href="#parameters-default">default<!-- -->: </a><a href="/docs/reference/types/any" class="pill pill-obj">any</a> </span></div>) <!-- -->-&gt; <a href="/docs/reference/types/any" class="pill pill-obj">any</a></div>
+
+<h4 id="methods-sum-parameters-default"><code>default</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/any" class="pill pill-obj">any</a>
+      
+    </div>
+    
+  </div>
+</h4>
+<p>What to return if the array is empty. Must be set if the array can be empty.</p>
+
+
+
+
+<h3 id="methods-product" class="method-head"><span><code>product</code> method</span></h3>
+<p>Calculates the product all items (works for any types that can be multiplied)</p>
+<div class="code code-definition single-arg">value.<span
+    class="typ-func">product</span>(<div class="arguments"><span
+      class="overview-param"><a href="#parameters-default">default<!-- -->: </a><a href="/docs/reference/types/any" class="pill pill-obj">any</a> </span></div>) <!-- -->-&gt; <a href="/docs/reference/types/any" class="pill pill-obj">any</a></div>
+
+<h4 id="methods-product-parameters-default"><code>default</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/any" class="pill pill-obj">any</a>
+      
+    </div>
+    
+  </div>
+</h4>
+<p>What to return if the array is empty. Must be set if the array can be empty.</p>
+
+
+
+
+<h3 id="methods-any" class="method-head"><span><code>any</code> method</span></h3>
+<p>Whether the given function returns <code><span class="typ-key">true</span></code> for any item in the array.</p>
+<div class="code code-definition single-arg">value.<span
+    class="typ-func">any</span>(<div class="arguments"><span
+      class="overview-param"><a href="/docs/reference/types/function" class="pill pill-fn">function</a> </span></div>) <!-- -->-&gt; <a href="/docs/reference/types/boolean" class="pill pill-bool">boolean</a></div>
+
+<h4 id="methods-any-parameters-test"><code>test</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/function" class="pill pill-fn">function</a>
+      
+    </div>
+    <small>必需参数</small><small><span
+        aria-describedby="methods-any-parameters-test-positional-tooltip">位置参数</span>
+      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+          aria-labelledby="methods-any-parameters-test-positional-tooltip-qm-label">
+          <title id="methods-any-parameters-test-positional-tooltip-qm-label">
+            位置参数按顺序传入，不带名称。</title>
+          <use href="/assets/icons/12-tooltip.svg#icon"></use>
+        </svg>
+        <div role="tooltip" id="methods-any-parameters-test-positional-tooltip"
+          tabindex="-1">位置参数按顺序传入，不带名称。</div>
+      </div>
+    </small>
+  </div>
+</h4>
+<p>The function to apply to each item. Must return a boolean.</p>
+
+
+
+
+<h3 id="methods-all" class="method-head"><span><code>all</code> method</span></h3>
+<p>Whether the given function returns <code><span class="typ-key">true</span></code> for all items in the array.</p>
+<div class="code code-definition single-arg">value.<span
+    class="typ-func">all</span>(<div class="arguments"><span
+      class="overview-param"><a href="/docs/reference/types/function" class="pill pill-fn">function</a> </span></div>) <!-- -->-&gt; <a href="/docs/reference/types/boolean" class="pill pill-bool">boolean</a></div>
+
+<h4 id="methods-all-parameters-test"><code>test</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/function" class="pill pill-fn">function</a>
+      
+    </div>
+    <small>必需参数</small><small><span
+        aria-describedby="methods-all-parameters-test-positional-tooltip">位置参数</span>
+      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+          aria-labelledby="methods-all-parameters-test-positional-tooltip-qm-label">
+          <title id="methods-all-parameters-test-positional-tooltip-qm-label">
+            位置参数按顺序传入，不带名称。</title>
+          <use href="/assets/icons/12-tooltip.svg#icon"></use>
+        </svg>
+        <div role="tooltip" id="methods-all-parameters-test-positional-tooltip"
+          tabindex="-1">位置参数按顺序传入，不带名称。</div>
+      </div>
+    </small>
+  </div>
+</h4>
+<p>The function to apply to each item. Must return a boolean.</p>
+
+
+
+
+<h3 id="methods-flatten" class="method-head"><span><code>flatten</code> method</span></h3>
+<p>Combine all nested arrays into a single flat one.</p>
+<div class="code code-definition single-arg">value.<span
+    class="typ-func">flatten</span>(<div class="arguments"></div>) <!-- -->-&gt; <a href="/docs/reference/types/array" class="pill pill-obj">array</a></div>
+
+
+<h3 id="methods-rev" class="method-head"><span><code>rev</code> method</span></h3>
+<p>Return a new array with the same items, but in reverse order.</p>
+<div class="code code-definition single-arg">value.<span
+    class="typ-func">rev</span>(<div class="arguments"></div>) <!-- -->-&gt; <a href="/docs/reference/types/array" class="pill pill-obj">array</a></div>
+
+
+<h3 id="methods-join" class="method-head"><span><code>join</code> method</span></h3>
+<p>Combine all items in the array into one.</p>
+<div class="code code-definition ">value.<span
+    class="typ-func">join</span>(<div class="arguments"><span
+      class="overview-param"><a href="/docs/reference/types/any" class="pill pill-obj">any</a>, </span><span
+      class="overview-param"><a href="#parameters-last">last<!-- -->: </a><a href="/docs/reference/types/any" class="pill pill-obj">any</a>, </span></div>) <!-- -->-&gt; <a href="/docs/reference/types/any" class="pill pill-obj">any</a></div>
+
+<h4 id="methods-join-parameters-separator"><code>separator</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/any" class="pill pill-obj">any</a>
+      
+    </div>
+    <small><span
+        aria-describedby="methods-join-parameters-separator-positional-tooltip">位置参数</span>
+      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+          aria-labelledby="methods-join-parameters-separator-positional-tooltip-qm-label">
+          <title id="methods-join-parameters-separator-positional-tooltip-qm-label">
+            位置参数按顺序传入，不带名称。</title>
+          <use href="/assets/icons/12-tooltip.svg#icon"></use>
+        </svg>
+        <div role="tooltip" id="methods-join-parameters-separator-positional-tooltip"
+          tabindex="-1">位置参数按顺序传入，不带名称。</div>
+      </div>
+    </small>
+  </div>
+</h4>
+<p>A value to insert between each item of the array.</p>
+
+
+
+<h4 id="methods-join-parameters-last"><code>last</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/any" class="pill pill-obj">any</a>
+      
+    </div>
+    
+  </div>
+</h4>
+<p>An alternative separator between the last two items</p>
+
+
+
+
+<h3 id="methods-sorted" class="method-head"><span><code>sorted</code> method</span></h3>
+<p>Return a new array with the same items, but sorted.</p>
+<div class="code code-definition single-arg">value.<span
+    class="typ-func">sorted</span>(<div class="arguments"><span
+      class="overview-param"><a href="#parameters-key">key<!-- -->: </a><a href="/docs/reference/types/function" class="pill pill-fn">function</a> </span></div>) <!-- -->-&gt; <a href="/docs/reference/types/array" class="pill pill-obj">array</a></div>
+
+<h4 id="methods-sorted-parameters-key"><code>key</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/function" class="pill pill-fn">function</a>
+      
+    </div>
+    
+  </div>
+</h4>
+<p>If given, applies this function to the elements in the array to determine the keys to sort by.</p>
+
+
+
+
+
+
+
+      
+      <div class="page-end-buttons"><a href="/docs/reference/types/content/" class="previous"><img
+            src="/assets/icons/16-arrow-right.svg" alt="←">
+          <div><span class="page-title">Content</span><span class="hint">上一页</span></div>
+        </a><a href="/docs/reference/types/dictionary/" class="next"><img src="/assets/icons/16-arrow-right.svg" alt="→">
+          <div><span class="page-title">Dictionary</span><span class="hint">下一页</span></div>
+        </a></div>
+      
+    </main>
+
+    
+    <nav id="page-overview"><strong>目录</strong>
+      <ul>
+        
+        <li data-assoc="summary"><a href="#summary">Summary</a>
+          <ul></ul>
+        </li>
+        
+        <li data-assoc="methods"><a href="#methods">Methods</a>
+          <ul></ul>
+        </li>
+        
+      </ul>
+    </nav>
+    
+  </div>
+  <footer>
+    <div>
+      <ul>
+        <li><a href="https://typst.app/">主页</a></li>
+        <li><a href="/docs/">中文文档</a></li>
+        <li><a href="https://typst.app/about/">关于我们</a></li>
+        <li><a href="https://typst.app/contact/">联系</a></li>
+        <li><a href="https://typst.app/privacy/">隐私</a></li>
+        <li><a href="https://typst.app/terms/">服务条款</a></li>
+        <li><a href="https://typst.app/legal/">法律说明</a></li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li><a href="https://typst.app/blog/">博客</a></li>
+        <li><a href="https://twitter.com/typstapp/">Twitter</a></li>
+        <li><a href="https://discord.gg/2uDybryKPe">Discord</a></li>
+        <li><a href="https://www.linkedin.com/company/typst/">LinkedIn</a></li>
+        <li><a href="https://instagram.com/typstapp/">Instagram</a></li>
+        <li><a href="https://github.com/typst-doc-cn/typst-doc-cn">GitHub</a></li>
+      </ul>
+    </div>
+    <div>
+      <p>Made in Berlin</p>
+    </div>
+  </footer>
+  <script src="/scripts/docs.js?bust=20230520"></script>
+  <script src="/scripts/analytics.js" defer=""></script>
+</body>
+
+</html>

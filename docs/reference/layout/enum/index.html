@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Numbered List – Typst 中文文档</title>
+  <meta name="description" content="Documentation for the `enum` function.">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#239dad">
+  <meta property="og:url" content="https://typst.app/docs/reference/layout/enum/">
+  <meta property="og:title" content="Numbered List – Typst 中文文档">
+  <meta property="og:site_name" content="Typst">
+  <meta property="og:description" content="Documentation for the `enum` function.">
+  <meta property="og:type">
+  <meta property="og:image" content="https://typst.app/assets/social.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:site" content="@typstapp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://typst.app/docs/reference/layout/enum/">
+  <meta name="twitter:image:alt"
+    content="The left side of a text editor with colorful cursors, as well as the text &#x27;Compose papers faster, Typst&#x27;">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.ico">
+  <!-- <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon.ico"> -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#239dad">
+  <link rel="manifest" href="/assets/site.webmanifest">
+  <link rel="stylesheet" href="/styles/default.css">
+  <link rel="stylesheet" href="/styles/docs.css">
+  <link rel="stylesheet" href="/styles/docs-cn.css">
+  <link rel="preload" href="/assets/fonts/HKGrotesk-Regular.woff2" as="font">
+  <link rel="preload" href="/assets/fonts/HKGrotesk-Bold.woff2" as="font">
+  <link rel="preload" href="/assets/fonts/HKGrotesk-SemiBold.woff2" as="font">
+  <link rel="preload" href="/assets/fonts/CascadiaMono-Regular-Sub.woff2" as="font">
+  <link rel="preload" href="/assets/images/blur.webp" as="image">
+</head>
+
+<body class="no-js docs has-outline">
+  <div class="alert">
+    <div class="alert-content">
+      <span><b>注意：</b>该中文文档为社区驱动的非官网文档，可能存在错译、漏译或过时等问题，请以官网文档 <a href="https://typst.app/docs/">Documentation</a>
+        为准，如发现错漏，也欢迎您的贡献。</span>
+      <br />
+      <span><b>Warning:</b> the Chinese document is a community-driven non-official document, there may be mistranslation, omission or outdated problems, please refer to <a href="https://typst.app/docs/">the official website documentation</a>.</span>
+    </div>
+  </div>
+  <header class="boring">
+    <div><a href="/docs" class="logo-box"><svg width="91" height="35" viewBox="0 0 91 35" role="img"
+          aria-labelledby="logo-label">
+          <title id="logo-label">Typst</title>
+          <use href="/assets/images/typst.svg#logo"></use>
+        </svg><span>中文文档</span></a><button class="hamburger"><img alt="Open navigation"
+          src="/assets/icons/16-hamburger-dark.svg" width="16" height="16"></button>
+      <nav>
+        <ul>
+          <li class="social"><a href="https://twitter.com/typstapp/"><svg width="16" height="16" role="img"
+                aria-labelledby="svg-twitter-label">
+                <title id="svg-twitter-label">Twitter</title>
+                <use href="/assets/icons/social.svg#twitter"></use>
+              </svg></a></li>
+          <li class="social"><a href="https://discord.gg/2uDybryKPe"><svg width="16" height="16" role="img"
+                aria-labelledby="svg-discord-label">
+                <title id="svg-discord-label">Discord</title>
+                <use href="/assets/icons/social.svg#discord"></use>
+              </svg></a></li>
+          <li class="social"><a href="https://github.com/typst-doc-cn/typst-doc-cn"><svg width="16" height="16" role="img"
+                aria-labelledby="svg-github-label">
+                <title id="svg-github-label">GitHub</title>
+                <use href="/assets/icons/social.svg#github"></use>
+              </svg></a></li>
+          <li class="social"><a href="https://www.linkedin.com/company/typst/"><svg width="16" height="16" role="img"
+                aria-labelledby="svg-linkedin-label">
+                <title id="svg-linkedin-label">LinkedIn</title>
+                <use href="/assets/icons/social.svg#linkedin"></use>
+              </svg></a></li>
+          <li class="secondary"><a href="https://typst.app/">主页</a></li>
+          <!-- <li class="secondary"><a href="/signin/" class="sign-in">Sign in</a></li>
+          <li><a href="/signup" id="header-btn" class="nav-btn btn">Sign up</a></li> -->
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="main-grid">
+    <nav class="folding"><a href="/docs" class="title-row"><svg width="91" height="35" viewBox="0 0 91 35" role="img"
+          aria-labelledby="logo-label-nav">
+          <title id="logo-label-nav">Typst</title>
+          <use href="/assets/images/typst.svg#logo"></use>
+        </svg><span>中文文档</span></a>
+      <!-- <button class="close"><img alt="Close" src="/assets/icons/16-close-dark.svg"
+          width="16" height="16"></button> -->
+      <div class="search"><img src="/assets/icons/16-search-gray.svg" alt="Search" width="16" height="16"><input
+          type="search" placeholder="搜索" id="docs-search"></div>
+      <ul class="search-results hidden" id="search-results"></ul>
+      <ul>
+        
+        
+        <li>
+          <a href="/docs/" >概览</a>
+          
+        </li>
+        
+        
+        <li>
+          <a href="/docs/tutorial/" >教程</a>
+          
+          <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+          <ul>
+            
+            
+            <li>
+              <a href="/docs/tutorial/writing-in-typst/" >使用 Typst 写作</a>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/tutorial/formatting/" >格式</a>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/tutorial/advanced-styling/" >高级样式</a>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/tutorial/making-a-template/" >制作模板</a>
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        
+        <li>
+          <a href="/docs/reference/" >参考</a>
+          
+          <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+          <ul>
+            
+            
+            <li class="category">Language</li>
+            
+            <li>
+              <a href="/docs/reference/syntax/" >语法</a>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/styling/" >样式</a>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/scripting/" >脚本</a>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/types/" >类型</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/types/none/" >None</a></li>
+                
+                
+                <li><a href="/docs/reference/types/auto/" >Auto</a></li>
+                
+                
+                <li><a href="/docs/reference/types/boolean/" >Boolean</a></li>
+                
+                
+                <li><a href="/docs/reference/types/integer/" >Integer</a></li>
+                
+                
+                <li><a href="/docs/reference/types/float/" >Float</a></li>
+                
+                
+                <li><a href="/docs/reference/types/length/" >Length</a></li>
+                
+                
+                <li><a href="/docs/reference/types/angle/" >Angle</a></li>
+                
+                
+                <li><a href="/docs/reference/types/ratio/" >Ratio</a></li>
+                
+                
+                <li><a href="/docs/reference/types/relative-length/" >Relative Length</a></li>
+                
+                
+                <li><a href="/docs/reference/types/fraction/" >Fraction</a></li>
+                
+                
+                <li><a href="/docs/reference/types/color/" >Color</a></li>
+                
+                
+                <li><a href="/docs/reference/types/datetime/" >Datetime</a></li>
+                
+                
+                <li><a href="/docs/reference/types/symbol/" >Symbol</a></li>
+                
+                
+                <li><a href="/docs/reference/types/string/" >String</a></li>
+                
+                
+                <li><a href="/docs/reference/types/content/" >Content</a></li>
+                
+                
+                <li><a href="/docs/reference/types/array/" >Array</a></li>
+                
+                
+                <li><a href="/docs/reference/types/dictionary/" >Dictionary</a></li>
+                
+                
+                <li><a href="/docs/reference/types/function/" >Function</a></li>
+                
+                
+                <li><a href="/docs/reference/types/arguments/" >Arguments</a></li>
+                
+                
+                <li><a href="/docs/reference/types/selector/" >Selector</a></li>
+                
+                
+                <li><a href="/docs/reference/types/module/" >Module</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li class="category">Content</li>
+            
+            <li>
+              <a href="/docs/reference/text/" >文本</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/text/lorem/" >Blind Text</a></li>
+                
+                
+                <li><a href="/docs/reference/text/emph/" >Emphasis</a></li>
+                
+                
+                <li><a href="/docs/reference/text/linebreak/" >Line Break</a></li>
+                
+                
+                <li><a href="/docs/reference/text/lower/" >Lowercase</a></li>
+                
+                
+                <li><a href="/docs/reference/text/overline/" >Overline</a></li>
+                
+                
+                <li><a href="/docs/reference/text/raw/" >Raw Text / Code</a></li>
+                
+                
+                <li><a href="/docs/reference/text/smallcaps/" >Small Capitals</a></li>
+                
+                
+                <li><a href="/docs/reference/text/smartquote/" >Smart Quote</a></li>
+                
+                
+                <li><a href="/docs/reference/text/strike/" >Strikethrough</a></li>
+                
+                
+                <li><a href="/docs/reference/text/strong/" >Strong Emphasis</a></li>
+                
+                
+                <li><a href="/docs/reference/text/sub/" >Subscript</a></li>
+                
+                
+                <li><a href="/docs/reference/text/super/" >Superscript</a></li>
+                
+                
+                <li><a href="/docs/reference/text/text/" >Text</a></li>
+                
+                
+                <li><a href="/docs/reference/text/underline/" >Underline</a></li>
+                
+                
+                <li><a href="/docs/reference/text/upper/" >Uppercase</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/math/" >数学</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/math/accent/" >Accent</a></li>
+                
+                
+                <li><a href="/docs/reference/math/attach/" >Attach</a></li>
+                
+                
+                <li><a href="/docs/reference/math/binom/" >Binomial</a></li>
+                
+                
+                <li><a href="/docs/reference/math/cancel/" >Cancel</a></li>
+                
+                
+                <li><a href="/docs/reference/math/cases/" >Cases</a></li>
+                
+                
+                <li><a href="/docs/reference/math/equation/" >Equation</a></li>
+                
+                
+                <li><a href="/docs/reference/math/frac/" >Fraction</a></li>
+                
+                
+                <li><a href="/docs/reference/math/lr/" >Left/Right</a></li>
+                
+                
+                <li><a href="/docs/reference/math/mat/" >Matrix</a></li>
+                
+                
+                <li><a href="/docs/reference/math/roots/" >Roots</a></li>
+                
+                
+                <li><a href="/docs/reference/math/sizes/" >Sizes</a></li>
+                
+                
+                <li><a href="/docs/reference/math/styles/" >Styles</a></li>
+                
+                
+                <li><a href="/docs/reference/math/op/" >Text Operator</a></li>
+                
+                
+                <li><a href="/docs/reference/math/underover/" >Under/Over</a></li>
+                
+                
+                <li><a href="/docs/reference/math/variants/" >Variants</a></li>
+                
+                
+                <li><a href="/docs/reference/math/vec/" >Vector</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/layout/" >布局</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/layout/align/" >Align</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/block/" >Block</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/box/" >Box</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/list/" >Bullet List</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/colbreak/" >Column Break</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/columns/" >Columns</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/grid/" >Grid</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/hide/" >Hide</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/measure/" >Measure</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/move/" >Move</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/enum/"  aria-current="page" >Numbered List</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/pad/" >Padding</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/page/" >Page</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/pagebreak/" >Page Break</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/par/" >Paragraph</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/parbreak/" >Paragraph Break</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/place/" >Place</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/repeat/" >Repeat</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/rotate/" >Rotate</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/scale/" >Scale</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/h/" >Spacing (H)</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/v/" >Spacing (V)</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/stack/" >Stack</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/table/" >Table</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/terms/" >Term List</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/visualize/" >可视化</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/visualize/circle/" >Circle</a></li>
+                
+                
+                <li><a href="/docs/reference/visualize/ellipse/" >Ellipse</a></li>
+                
+                
+                <li><a href="/docs/reference/visualize/image/" >Image</a></li>
+                
+                
+                <li><a href="/docs/reference/visualize/line/" >Line</a></li>
+                
+                
+                <li><a href="/docs/reference/visualize/path/" >Path</a></li>
+                
+                
+                <li><a href="/docs/reference/visualize/polygon/" >Polygon</a></li>
+                
+                
+                <li><a href="/docs/reference/visualize/rect/" >Rectangle</a></li>
+                
+                
+                <li><a href="/docs/reference/visualize/square/" >Square</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/meta/" >元信息</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/meta/bibliography/" >Bibliography</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/cite/" >Citation</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/counter/" >Counter</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/document/" >Document</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/figure/" >Figure</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/footnote/" >Footnote</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/heading/" >Heading</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/layout/" >Layout</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/link/" >Link</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/locate/" >Locate</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/numbering/" >Numbering</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/outline/" >Outline</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/query/" >Query</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/ref/" >Reference</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/selector/" >Selector</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/state/" >State</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/style/" >Style</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/symbols/" >符号</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/symbols/sym/" >General</a></li>
+                
+                
+                <li><a href="/docs/reference/symbols/emoji/" >Emoji</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li class="category">Compute</li>
+            
+            <li>
+              <a href="/docs/reference/foundations/" >基础</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/foundations/assert/" >Assert</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/eval/" >Evaluate</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/panic/" >Panic</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/repr/" >Representation</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/type/" >Type</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/calculate/" >计算</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/calculate/abs/" >Absolute</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/acos/" >Arccosine</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/asin/" >Arcsine</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/atan/" >Arctangent</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/binom/" >Binomial</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/clamp/" >Clamp</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/cos/" >Cosine</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/even/" >Even</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/exp/" >Exponential</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/fact/" >Factorial</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/atan2/" >Four-quadrant Arctangent</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/fract/" >Fractional</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/gcd/" >Greatest Common Divisor</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/cosh/" >Hyperbolic cosine</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/sinh/" >Hyperbolic sine</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/tanh/" >Hyperbolic tangent</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/lcm/" >Least Common Multiple</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/log/" >Logarithm</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/max/" >Maximum</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/min/" >Minimum</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/ln/" >Natural Logarithm</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/odd/" >Odd</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/perm/" >Permutation</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/pow/" >Power</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/quo/" >Quotient</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/rem/" >Remainder</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/round/" >Round</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/floor/" >Round down</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/ceil/" >Round up</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/sin/" >Sine</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/sqrt/" >Square Root</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/tan/" >Tangent</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/trunc/" >Truncate</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/construct/" >构造</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/construct/cmyk/" >CMYK</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/datetime/" >Datetime</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/float/" >Float</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/int/" >Integer</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/label/" >Label</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/luma/" >Luma</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/rgb/" >RGB</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/range/" >Range</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/regex/" >Regex</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/str/" >String</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/symbol/" >Symbol</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/data-loading/" >数据加载</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/data-loading/csv/" >CSV</a></li>
+                
+                
+                <li><a href="/docs/reference/data-loading/json/" >JSON</a></li>
+                
+                
+                <li><a href="/docs/reference/data-loading/read/" >Read</a></li>
+                
+                
+                <li><a href="/docs/reference/data-loading/toml/" >TOML</a></li>
+                
+                
+                <li><a href="/docs/reference/data-loading/xml/" >XML</a></li>
+                
+                
+                <li><a href="/docs/reference/data-loading/yaml/" >YAML</a></li>
+                
+              </ul>
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        
+        <li>
+          <a href="/docs/guides/" >指南</a>
+          
+          <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+          <ul>
+            
+            
+            <li>
+              <a href="/docs/guides/guide-for-latex-users/" >LaTeX 用户指南</a>
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        
+        <li>
+          <a href="/docs/changelog/" >更新日志</a>
+          
+        </li>
+        
+        
+        <li>
+          <a href="/docs/community/" >社区</a>
+          
+        </li>
+        
+      </ul>
+
+    </nav>
+    <main>
+      <ul class="breadcrumbs" aria-label="Breadcrumbs">
+        <li class="root"><a href="/docs/"><img src="/assets/icons/16-docs-dark.svg" alt="Docs" width="16"
+              height="16"></a></li>
+
+        
+        <li aria-hidden="true"><img src="/assets/icons/16-arrow-right.svg" width="16" height="16" alt=""></li>
+        <li><a href="/docs/reference/">参考</a></li>
+        
+        <li aria-hidden="true"><img src="/assets/icons/16-arrow-right.svg" width="16" height="16" alt=""></li>
+        <li><a href="/docs/reference/layout/">布局</a></li>
+        
+        <li aria-hidden="true"><img src="/assets/icons/16-arrow-right.svg" width="16" height="16" alt=""></li>
+        <li><a href="/docs/reference/layout/enum/">Numbered List</a></li>
+        
+      </ul>
+
+      
+
+<h1 level="1" id="summary"><code>enum</code><small><span aria-describedby="element-tooltip">元素</span>
+    <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+        aria-labelledby="element-tooltip-qm-label">
+        <title id="element-tooltip-qm-label">元素函数可以借助 set 和 show 规则进行自定义样式</title>
+        <use href="/assets/icons/12-tooltip.svg#icon"></use>
+      </svg>
+      <div role="tooltip" id="element-tooltip" tabindex="-1">元素函数可以借助 <code>set</code> 和<!-- --> <code>show</code>
+        规则进行自定义样式
+      </div>
+    </div>
+  </small></h1>
+
+<p>A numbered list.</p>
+<p>Displays a sequence of items vertically and numbers them consecutively.</p>
+<h2 id="example">Example</h2>
+<div class="previewed-code"><pre><code>Automatically numbered:
+<span class="typ-marker">+</span> Preparations
+<span class="typ-marker">+</span> Analysis
+<span class="typ-marker">+</span> Conclusions
+
+Manually numbered:
+<span class="typ-marker">2.</span> What is the first step?
+<span class="typ-marker">5.</span> I am confused.
+<span class="typ-marker">+</span>  Moving on <span class="typ-escape">...</span>
+
+Function call.
+<span class="typ-func">#</span><span class="typ-func">enum</span><span class="typ-punct">[</span>First<span class="typ-punct">]</span><span class="typ-punct">[</span>Second<span class="typ-punct">]</span>
+</code></pre><div class="preview"><img src="/assets/docs/GUIVLxL2OGDnRSmIBRv2l6.png" alt="Preview" width="480" height="190"/></div></div>
+<p>You can easily switch all your enumerations to a different numbering style
+with a set rule.</p>
+<div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">enum</span><span class="typ-punct">(</span>numbering<span class="typ-punct">:</span> <span class="typ-str">&quot;a)&quot;</span><span class="typ-punct">)</span>
+
+<span class="typ-marker">+</span> Starting off <span class="typ-escape">...</span>
+<span class="typ-marker">+</span> Don&#39;t forget step two
+</code></pre><div class="preview"><img src="/assets/docs/LBsep0TQQxx0lyfQPcdia4.png" alt="Preview" width="480" height="190"/></div></div>
+<p>You can also use <a href="/docs/reference/layout/enum/#enum-item"><code>enum.item</code></a> to programmatically
+customize the number of each item in the enumeration:</p>
+<div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">enum</span><span class="typ-punct">(</span>
+  enum<span class="typ-punct">.</span><span class="typ-func">item</span><span class="typ-punct">(</span><span class="typ-num">1</span><span class="typ-punct">)</span><span class="typ-punct">[</span>First step<span class="typ-punct">]</span><span class="typ-punct">,</span>
+  enum<span class="typ-punct">.</span><span class="typ-func">item</span><span class="typ-punct">(</span><span class="typ-num">5</span><span class="typ-punct">)</span><span class="typ-punct">[</span>Fifth step<span class="typ-punct">]</span><span class="typ-punct">,</span>
+  enum<span class="typ-punct">.</span><span class="typ-func">item</span><span class="typ-punct">(</span><span class="typ-num">10</span><span class="typ-punct">)</span><span class="typ-punct">[</span>Tenth step<span class="typ-punct">]</span>
+<span class="typ-punct">)</span>
+</code></pre><div class="preview"><img src="/assets/docs/4RTi01au7ns4dlQEaEvz5g.png" alt="Preview" width="480" height="190"/></div></div>
+<h2 id="syntax">Syntax</h2>
+<p>This functions also has dedicated syntax:</p>
+<ul>
+<li>Starting a line with a plus sign creates an automatically numbered
+enumeration item.</li>
+<li>Starting a line with a number followed by a dot creates an explicitly
+numbered enumeration item.</li>
+</ul>
+<p>Enumeration items can contain multiple paragraphs and other block-level
+content. All content that is indented more than an item's plus sign or dot
+becomes part of that item.</p>
+
+<h2 level="2" id="parameters"><span aria-describedby="parameters-tooltip">参数</span>
+  <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+      aria-labelledby="parameters-tooltip-qm-label">
+      <title id="parameters-tooltip-qm-label">参数是函数的输入。它们在函数名称后面的括号中传入。</title>
+      <use href="/assets/icons/12-tooltip.svg#icon"></use>
+    </svg>
+    <div role="tooltip" id="parameters-tooltip" tabindex="-1">参数是函数的输入。它们在函数名称后面的括号中传入。</div>
+  </div>
+</h2>
+
+<div class="code code-definition "><span
+    class="typ-func">enum</span>(<div class="arguments"><span class="overview-param"><a href="#parameters-tight">tight<!-- -->: </a><a href="/docs/reference/types/boolean" class="pill pill-bool">boolean</a>, </span><span class="overview-param"><a href="#parameters-numbering">numbering<!-- -->: </a><a href="/docs/reference/types/string" class="pill pill-str">string</a><a href="/docs/reference/types/function" class="pill pill-fn">function</a>, </span><span class="overview-param"><a href="#parameters-start">start<!-- -->: </a><a href="/docs/reference/types/integer" class="pill pill-num">integer</a>, </span><span class="overview-param"><a href="#parameters-full">full<!-- -->: </a><a href="/docs/reference/types/boolean" class="pill pill-bool">boolean</a>, </span><span class="overview-param"><a href="#parameters-indent">indent<!-- -->: </a><a href="/docs/reference/types/length" class="pill pill-num">length</a>, </span><span class="overview-param"><a href="#parameters-body-indent">body-indent<!-- -->: </a><a href="/docs/reference/types/length" class="pill pill-num">length</a>, </span><span class="overview-param"><a href="#parameters-spacing">spacing<!-- -->: </a><a href="/docs/reference/types/auto" class="pill pill-kw">auto</a><a href="/docs/reference/types/relative length" class="pill pill-num">relative length</a><a href="/docs/reference/types/fraction" class="pill pill-num">fraction</a>, </span><span class="overview-param"><a href="#parameters-number-align">number-align<!-- -->: </a><a href="/docs/reference/types/alignment" class="pill pill-obj">alignment</a>, </span><span class="overview-param"><a href="#parameters-children">..</a><a href="/docs/reference/types/content" class="pill pill-con">content</a><a href="/docs/reference/types/array" class="pill pill-obj">array</a>, </span></div>) <!-- -->-&gt; <a href="/docs/reference/types/content" class="pill pill-con">content</a></div>
+
+
+<h3 id="parameters-tight"><code>tight</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/boolean" class="pill pill-bool">boolean</a>
+      
+    </div>
+    <small><span
+        aria-describedby="parameters-tight-settable-tooltip">可用 Set 规则</span>
+      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+          aria-labelledby="parameters-tight-settable-tooltip-qm-label">
+          <title id="parameters-tight-settable-tooltip-qm-label">可以使用 Set 规则，为函数后续所有的使用设置默认参数。</title>
+          <use href="/assets/icons/12-tooltip.svg#icon"></use>
+        </svg>
+        <div role="tooltip" id="parameters-tight-settable-tooltip" tabindex="-1">可以使用 Set
+          规则，为函数后续所有的使用设置默认参数。</div>
+      </div>
+    </small>
+  </div>
+</h3>
+<p>If this is <code><span class="typ-key">false</span></code>, the items are spaced apart with
+<a href="/docs/reference/layout/enum/#parameters-spacing">enum spacing</a>. If it is <code><span class="typ-key">true</span></code>, they use normal
+<a href="/docs/reference/layout/par/#parameters-leading">leading</a> instead. This makes the enumeration more
+compact, which can look better if the items are short.</p>
+<p>In markup mode, the value of this parameter is determined based on
+whether items are separated with a blank line. If items directly follow
+each other, this is set to <code><span class="typ-key">true</span></code>; if items are separated by a blank
+line, this is set to <code><span class="typ-key">false</span></code>.</p>
+
+<p>默认：<code><span class="typ-key">true</span></code></p>
+
+
+<div class="folding-example"><button class="folding-example-header"><img src="/assets/icons/16-arrow-right.svg" alt=""
+      width="16" height="16">查看示例</button>
+  <div class="folding">
+    <div class="previewed-code"><pre><code><span class="typ-marker">+</span> If an enum has a lot of text, and
+  maybe other inline content, it
+  should not be tight anymore.
+
+<span class="typ-marker">+</span> To make an enum wide, simply
+  insert a blank line between the
+  items.
+</code></pre><div class="preview"><img src="/assets/docs/uWMjiRVoRK7IBpuGGrYCVZ.png" alt="Preview" width="480" height="190"/></div></div>
+  </div>
+</div>
+
+
+<h3 id="parameters-numbering"><code>numbering</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/string" class="pill pill-str">string</a>
+      
+      <a href="/docs/reference/types/function" class="pill pill-fn">function</a>
+      
+    </div>
+    <small><span
+        aria-describedby="parameters-numbering-settable-tooltip">可用 Set 规则</span>
+      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+          aria-labelledby="parameters-numbering-settable-tooltip-qm-label">
+          <title id="parameters-numbering-settable-tooltip-qm-label">可以使用 Set 规则，为函数后续所有的使用设置默认参数。</title>
+          <use href="/assets/icons/12-tooltip.svg#icon"></use>
+        </svg>
+        <div role="tooltip" id="parameters-numbering-settable-tooltip" tabindex="-1">可以使用 Set
+          规则，为函数后续所有的使用设置默认参数。</div>
+      </div>
+    </small>
+  </div>
+</h3>
+<p>How to number the enumeration. Accepts a
+<a href="/docs/reference/meta/numbering/">numbering pattern or function</a>.</p>
+<p>If the numbering pattern contains multiple counting symbols, they apply
+to nested enums. If given a function, the function receives one argument
+if <code>full</code> is <code><span class="typ-key">false</span></code> and multiple arguments if <code>full</code> is <code><span class="typ-key">true</span></code>.</p>
+
+<p>默认：<code><span class="typ-str">&quot;1.&quot;</span></code></p>
+
+
+<div class="folding-example"><button class="folding-example-header"><img src="/assets/icons/16-arrow-right.svg" alt=""
+      width="16" height="16">查看示例</button>
+  <div class="folding">
+    <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">enum</span><span class="typ-punct">(</span>numbering<span class="typ-punct">:</span> <span class="typ-str">&quot;1.a)&quot;</span><span class="typ-punct">)</span>
+<span class="typ-marker">+</span> Different
+<span class="typ-marker">+</span> Numbering
+  <span class="typ-marker">+</span> Nested
+  <span class="typ-marker">+</span> Items
+<span class="typ-marker">+</span> Style
+
+<span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">enum</span><span class="typ-punct">(</span>numbering<span class="typ-punct">:</span> n <span class="typ-op">=&gt;</span> <span class="typ-func">super</span><span class="typ-punct">[</span><span class="typ-pol">#</span><span class="typ-pol">n</span><span class="typ-punct">]</span><span class="typ-punct">)</span>
+<span class="typ-marker">+</span> Superscript
+<span class="typ-marker">+</span> Numbering!
+</code></pre><div class="preview"><img src="/assets/docs/EWpD3vSprng7cGh6Bt67g3.png" alt="Preview" width="480" height="190"/></div></div>
+  </div>
+</div>
+
+
+<h3 id="parameters-start"><code>start</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/integer" class="pill pill-num">integer</a>
+      
+    </div>
+    <small><span
+        aria-describedby="parameters-start-settable-tooltip">可用 Set 规则</span>
+      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+          aria-labelledby="parameters-start-settable-tooltip-qm-label">
+          <title id="parameters-start-settable-tooltip-qm-label">可以使用 Set 规则，为函数后续所有的使用设置默认参数。</title>
+          <use href="/assets/icons/12-tooltip.svg#icon"></use>
+        </svg>
+        <div role="tooltip" id="parameters-start-settable-tooltip" tabindex="-1">可以使用 Set
+          规则，为函数后续所有的使用设置默认参数。</div>
+      </div>
+    </small>
+  </div>
+</h3>
+<p>Which number to start the enumeration with.</p>
+
+<p>默认：<code><span class="typ-num">1</span></code></p>
+
+
+<div class="folding-example"><button class="folding-example-header"><img src="/assets/icons/16-arrow-right.svg" alt=""
+      width="16" height="16">查看示例</button>
+  <div class="folding">
+    <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">enum</span><span class="typ-punct">(</span>
+  start<span class="typ-punct">:</span> <span class="typ-num">3</span><span class="typ-punct">,</span>
+  <span class="typ-punct">[</span>Skipping<span class="typ-punct">]</span><span class="typ-punct">,</span>
+  <span class="typ-punct">[</span>Ahead<span class="typ-punct">]</span><span class="typ-punct">,</span>
+<span class="typ-punct">)</span>
+</code></pre><div class="preview"><img src="/assets/docs/eNoJTwoOX7VgOh4UGq6YxV.png" alt="Preview" width="480" height="190"/></div></div>
+  </div>
+</div>
+
+
+<h3 id="parameters-full"><code>full</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/boolean" class="pill pill-bool">boolean</a>
+      
+    </div>
+    <small><span
+        aria-describedby="parameters-full-settable-tooltip">可用 Set 规则</span>
+      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+          aria-labelledby="parameters-full-settable-tooltip-qm-label">
+          <title id="parameters-full-settable-tooltip-qm-label">可以使用 Set 规则，为函数后续所有的使用设置默认参数。</title>
+          <use href="/assets/icons/12-tooltip.svg#icon"></use>
+        </svg>
+        <div role="tooltip" id="parameters-full-settable-tooltip" tabindex="-1">可以使用 Set
+          规则，为函数后续所有的使用设置默认参数。</div>
+      </div>
+    </small>
+  </div>
+</h3>
+<p>Whether to display the full numbering, including the numbers of
+all parent enumerations.</p>
+
+<p>默认：<code><span class="typ-key">false</span></code></p>
+
+
+<div class="folding-example"><button class="folding-example-header"><img src="/assets/icons/16-arrow-right.svg" alt=""
+      width="16" height="16">查看示例</button>
+  <div class="folding">
+    <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">enum</span><span class="typ-punct">(</span>numbering<span class="typ-punct">:</span> <span class="typ-str">&quot;1.a)&quot;</span><span class="typ-punct">,</span> full<span class="typ-punct">:</span> <span class="typ-key">true</span><span class="typ-punct">)</span>
+<span class="typ-marker">+</span> Cook
+  <span class="typ-marker">+</span> Heat water
+  <span class="typ-marker">+</span> Add integredients
+<span class="typ-marker">+</span> Eat
+</code></pre><div class="preview"><img src="/assets/docs/iO9EkgKig7XBMMnIBK6IDL.png" alt="Preview" width="480" height="190"/></div></div>
+  </div>
+</div>
+
+
+<h3 id="parameters-indent"><code>indent</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/length" class="pill pill-num">length</a>
+      
+    </div>
+    <small><span
+        aria-describedby="parameters-indent-settable-tooltip">可用 Set 规则</span>
+      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+          aria-labelledby="parameters-indent-settable-tooltip-qm-label">
+          <title id="parameters-indent-settable-tooltip-qm-label">可以使用 Set 规则，为函数后续所有的使用设置默认参数。</title>
+          <use href="/assets/icons/12-tooltip.svg#icon"></use>
+        </svg>
+        <div role="tooltip" id="parameters-indent-settable-tooltip" tabindex="-1">可以使用 Set
+          规则，为函数后续所有的使用设置默认参数。</div>
+      </div>
+    </small>
+  </div>
+</h3>
+<p>The indentation of each item.</p>
+
+<p>默认：<code><span class="typ-num">0pt</span></code></p>
+
+
+
+<h3 id="parameters-body-indent"><code>body-indent</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/length" class="pill pill-num">length</a>
+      
+    </div>
+    <small><span
+        aria-describedby="parameters-body-indent-settable-tooltip">可用 Set 规则</span>
+      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+          aria-labelledby="parameters-body-indent-settable-tooltip-qm-label">
+          <title id="parameters-body-indent-settable-tooltip-qm-label">可以使用 Set 规则，为函数后续所有的使用设置默认参数。</title>
+          <use href="/assets/icons/12-tooltip.svg#icon"></use>
+        </svg>
+        <div role="tooltip" id="parameters-body-indent-settable-tooltip" tabindex="-1">可以使用 Set
+          规则，为函数后续所有的使用设置默认参数。</div>
+      </div>
+    </small>
+  </div>
+</h3>
+<p>The space between the numbering and the body of each item.</p>
+
+<p>默认：<code><span class="typ-num">0.5em</span></code></p>
+
+
+
+<h3 id="parameters-spacing"><code>spacing</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/auto" class="pill pill-kw">auto</a>
+      
+      <a href="/docs/reference/types/relative length" class="pill pill-num">relative length</a>
+      
+      <a href="/docs/reference/types/fraction" class="pill pill-num">fraction</a>
+      
+    </div>
+    <small><span
+        aria-describedby="parameters-spacing-settable-tooltip">可用 Set 规则</span>
+      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+          aria-labelledby="parameters-spacing-settable-tooltip-qm-label">
+          <title id="parameters-spacing-settable-tooltip-qm-label">可以使用 Set 规则，为函数后续所有的使用设置默认参数。</title>
+          <use href="/assets/icons/12-tooltip.svg#icon"></use>
+        </svg>
+        <div role="tooltip" id="parameters-spacing-settable-tooltip" tabindex="-1">可以使用 Set
+          规则，为函数后续所有的使用设置默认参数。</div>
+      </div>
+    </small>
+  </div>
+</h3>
+<p>The spacing between the items of a wide (non-tight) enumeration.</p>
+<p>If set to <code><span class="typ-key">auto</span></code>, uses the spacing <a href="/docs/reference/layout/block/#parameters-below">below blocks</a>.</p>
+
+<p>默认：<code><span class="typ-key">auto</span></code></p>
+
+
+
+<h3 id="parameters-number-align"><code>number-align</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/alignment" class="pill pill-obj">alignment</a>
+      
+    </div>
+    <small><span
+        aria-describedby="parameters-number-align-settable-tooltip">可用 Set 规则</span>
+      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+          aria-labelledby="parameters-number-align-settable-tooltip-qm-label">
+          <title id="parameters-number-align-settable-tooltip-qm-label">可以使用 Set 规则，为函数后续所有的使用设置默认参数。</title>
+          <use href="/assets/icons/12-tooltip.svg#icon"></use>
+        </svg>
+        <div role="tooltip" id="parameters-number-align-settable-tooltip" tabindex="-1">可以使用 Set
+          规则，为函数后续所有的使用设置默认参数。</div>
+      </div>
+    </small>
+  </div>
+</h3>
+<p>The horizontal alignment that enum numbers should have.</p>
+<p>By default, this is set to <code>end</code>, which aligns enum numbers
+towards end of the current text direction (in left-to-right script,
+for example, this is the same as <code>right</code>). The choice of <code>end</code>
+for horizontal alignment of enum numbers is usually preferred over
+<code>start</code>, as numbers then grow away from the text instead of towards
+it, avoiding certain visual issues. This option lets you override this
+behavior, however.</p>
+
+<p>默认：<code>end</code></p>
+
+
+<div class="folding-example"><button class="folding-example-header"><img src="/assets/icons/16-arrow-right.svg" alt=""
+      width="16" height="16">查看示例</button>
+  <div class="folding">
+    <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">enum</span><span class="typ-punct">(</span>number-align<span class="typ-punct">:</span> start<span class="typ-punct">)</span>
+
+Here are some powers of two:
+<span class="typ-marker">1.</span> One
+<span class="typ-marker">2.</span> Two
+<span class="typ-marker">4.</span> Four
+<span class="typ-marker">8.</span> Eight
+<span class="typ-marker">16.</span> Sixteen
+<span class="typ-marker">32.</span> Thirty two
+</code></pre><div class="preview"><img src="/assets/docs/kPUxDq2wakzY0rbR9R9au1.png" alt="Preview" width="480" height="190"/></div></div>
+  </div>
+</div>
+
+
+<h3 id="parameters-children"><code>children</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/content" class="pill pill-con">content</a>
+      
+      <a href="/docs/reference/types/array" class="pill pill-obj">array</a>
+      
+    </div>
+    <small>必需参数</small><small><span
+        aria-describedby="parameters-children-positional-tooltip">位置参数</span>
+      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+          aria-labelledby="parameters-children-positional-tooltip-qm-label">
+          <title id="parameters-children-positional-tooltip-qm-label">位置参数按顺序传入，不带名称。</title>
+          <use href="/assets/icons/12-tooltip.svg#icon"></use>
+        </svg>
+        <div role="tooltip" id="parameters-children-positional-tooltip" tabindex="-1">位置参数按顺序传入，不带名称。</div>
+      </div>
+    </small><small><span
+        aria-describedby="parameters-children-variadic-tooltip">可变参数</span>
+      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+          aria-labelledby="parameters-children-variadic-tooltip-qm-label">
+          <title id="parameters-children-variadic-tooltip-qm-label">可变参数可以多次传入。</title>
+          <use href="/assets/icons/12-tooltip.svg#icon"></use>
+        </svg>
+        <div role="tooltip" id="parameters-children-variadic-tooltip" tabindex="-1">可变参数可以多次传入。</div>
+      </div>
+    </small>
+  </div>
+</h3>
+<p>The numbered list's items.</p>
+<p>When using the enum syntax, adjacent items are automatically collected
+into enumerations, even through constructs like for loops.</p>
+
+
+<div class="folding-example"><button class="folding-example-header"><img src="/assets/icons/16-arrow-right.svg" alt=""
+      width="16" height="16">查看示例</button>
+  <div class="folding">
+    <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">for</span> phase <span class="typ-key">in</span> <span class="typ-punct">(</span>
+   <span class="typ-str">&quot;Launch&quot;</span><span class="typ-punct">,</span>
+   <span class="typ-str">&quot;Orbit&quot;</span><span class="typ-punct">,</span>
+   <span class="typ-str">&quot;Descent&quot;</span><span class="typ-punct">,</span>
+<span class="typ-punct">)</span> <span class="typ-punct">[</span><span class="typ-marker">+</span> <span class="typ-pol">#</span><span class="typ-pol">phase</span><span class="typ-punct">]</span>
+</code></pre><div class="preview"><img src="/assets/docs/tW9PbTOZKqRRG7h5lUIcUj.png" alt="Preview" width="480" height="190"/></div></div>
+  </div>
+</div>
+
+
+
+<!-- ----------------------------------------------------------------------------------- -->
+
+
+<h2 level="1" id="enum-item"><code>enum.item</code> function <small><span aria-describedby="element-tooltip">元素</span>
+    <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+        aria-labelledby="element-tooltip-qm-label">
+        <title id="element-tooltip-qm-label">元素函数可以借助 set 和 show 规则进行自定义样式</title>
+        <use href="/assets/icons/12-tooltip.svg#icon"></use>
+      </svg>
+      <div role="tooltip" id="element-tooltip" tabindex="-1">元素函数可以借助 <code>set</code> 和<!-- --> <code>show</code>
+        规则进行自定义样式
+      </div>
+    </div>
+  </small></h2>
+
+<p>An enumeration item.</p>
+
+<h3 level="2" id="parameters"><span aria-describedby="parameters-tooltip">参数</span>
+  <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+      aria-labelledby="parameters-tooltip-qm-label">
+      <title id="parameters-tooltip-qm-label">参数是函数的输入。它们在函数名称后面的括号中传入。</title>
+      <use href="/assets/icons/12-tooltip.svg#icon"></use>
+    </svg>
+    <div role="tooltip" id="parameters-tooltip" tabindex="-1">参数是函数的输入。它们在函数名称后面的括号中传入。</div>
+  </div>
+</h3>
+
+<div class="code code-definition ">enum<span class="typ-punct">.</span><span class="typ-func">item</span>(<div class="arguments"><span class="overview-param"><a href="/docs/reference/types/none" class="pill pill-kw">none</a><a href="/docs/reference/types/integer" class="pill pill-num">integer</a>, </span><span class="overview-param"><a href="/docs/reference/types/content" class="pill pill-con">content</a>, </span></div>) <!-- -->-&gt; <a href="/docs/reference/types/content" class="pill pill-con">content</a></div>
+
+
+<h4 id="parameters-number"><code>number</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/none" class="pill pill-kw">none</a>
+      
+      <a href="/docs/reference/types/integer" class="pill pill-num">integer</a>
+      
+    </div>
+    <small><span
+        aria-describedby="parameters-number-positional-tooltip">位置参数</span>
+      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+          aria-labelledby="parameters-number-positional-tooltip-qm-label">
+          <title id="parameters-number-positional-tooltip-qm-label">位置参数按顺序传入，不带名称。</title>
+          <use href="/assets/icons/12-tooltip.svg#icon"></use>
+        </svg>
+        <div role="tooltip" id="parameters-number-positional-tooltip" tabindex="-1">位置参数按顺序传入，不带名称。</div>
+      </div>
+    </small><small><span
+        aria-describedby="parameters-number-settable-tooltip">可用 Set 规则</span>
+      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+          aria-labelledby="parameters-number-settable-tooltip-qm-label">
+          <title id="parameters-number-settable-tooltip-qm-label">可以使用 Set 规则，为函数后续所有的使用设置默认参数。</title>
+          <use href="/assets/icons/12-tooltip.svg#icon"></use>
+        </svg>
+        <div role="tooltip" id="parameters-number-settable-tooltip" tabindex="-1">可以使用 Set
+          规则，为函数后续所有的使用设置默认参数。</div>
+      </div>
+    </small>
+  </div>
+</h4>
+<p>The item's number.</p>
+
+<p>默认：<code><span class="typ-key">none</span></code></p>
+
+
+
+<h4 id="parameters-body"><code>body</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/content" class="pill pill-con">content</a>
+      
+    </div>
+    <small>必需参数</small><small><span
+        aria-describedby="parameters-body-positional-tooltip">位置参数</span>
+      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+          aria-labelledby="parameters-body-positional-tooltip-qm-label">
+          <title id="parameters-body-positional-tooltip-qm-label">位置参数按顺序传入，不带名称。</title>
+          <use href="/assets/icons/12-tooltip.svg#icon"></use>
+        </svg>
+        <div role="tooltip" id="parameters-body-positional-tooltip" tabindex="-1">位置参数按顺序传入，不带名称。</div>
+      </div>
+    </small>
+  </div>
+</h4>
+<p>The item's body.</p>
+
+
+
+
+
+
+
+      
+      <div class="page-end-buttons"><a href="/docs/reference/layout/move/" class="previous"><img
+            src="/assets/icons/16-arrow-right.svg" alt="←">
+          <div><span class="page-title">Move</span><span class="hint">上一页</span></div>
+        </a><a href="/docs/reference/layout/pad/" class="next"><img src="/assets/icons/16-arrow-right.svg" alt="→">
+          <div><span class="page-title">Padding</span><span class="hint">下一页</span></div>
+        </a></div>
+      
+    </main>
+
+    
+    <nav id="page-overview"><strong>目录</strong>
+      <ul>
+        
+        <li data-assoc="summary"><a href="#summary">Summary</a>
+          <ul></ul>
+        </li>
+        
+        <li data-assoc="example"><a href="#example">Example</a>
+          <ul></ul>
+        </li>
+        
+        <li data-assoc="syntax"><a href="#syntax">Syntax</a>
+          <ul></ul>
+        </li>
+        
+        <li data-assoc="parameters"><a href="#parameters">Parameters</a>
+          <ul></ul>
+        </li>
+        
+        <li data-assoc="enum-item"><a href="#enum-item">Numbered List Item</a>
+          <ul></ul>
+        </li>
+        
+      </ul>
+    </nav>
+    
+  </div>
+  <footer>
+    <div>
+      <ul>
+        <li><a href="https://typst.app/">主页</a></li>
+        <li><a href="/docs/">中文文档</a></li>
+        <li><a href="https://typst.app/about/">关于我们</a></li>
+        <li><a href="https://typst.app/contact/">联系</a></li>
+        <li><a href="https://typst.app/privacy/">隐私</a></li>
+        <li><a href="https://typst.app/terms/">服务条款</a></li>
+        <li><a href="https://typst.app/legal/">法律说明</a></li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li><a href="https://typst.app/blog/">博客</a></li>
+        <li><a href="https://twitter.com/typstapp/">Twitter</a></li>
+        <li><a href="https://discord.gg/2uDybryKPe">Discord</a></li>
+        <li><a href="https://www.linkedin.com/company/typst/">LinkedIn</a></li>
+        <li><a href="https://instagram.com/typstapp/">Instagram</a></li>
+        <li><a href="https://github.com/typst-doc-cn/typst-doc-cn">GitHub</a></li>
+      </ul>
+    </div>
+    <div>
+      <p>Made in Berlin</p>
+    </div>
+  </footer>
+  <script src="/scripts/docs.js?bust=20230520"></script>
+  <script src="/scripts/analytics.js" defer=""></script>
+</body>
+
+</html>

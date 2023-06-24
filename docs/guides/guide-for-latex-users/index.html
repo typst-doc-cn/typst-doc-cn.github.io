@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>LaTeX 用户指南 – Typst 中文文档</title>
+  <meta name="description" content="Are you a LaTeX user? This guide explains the differences and
+similarities between Typst and LaTeX so you can get started quickly.
+">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#239dad">
+  <meta property="og:url" content="https://typst.app/docs/guides/guide-for-latex-users/">
+  <meta property="og:title" content="LaTeX 用户指南 – Typst 中文文档">
+  <meta property="og:site_name" content="Typst">
+  <meta property="og:description" content="Are you a LaTeX user? This guide explains the differences and
+similarities between Typst and LaTeX so you can get started quickly.
+">
+  <meta property="og:type">
+  <meta property="og:image" content="https://typst.app/assets/social.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:site" content="@typstapp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://typst.app/docs/guides/guide-for-latex-users/">
+  <meta name="twitter:image:alt"
+    content="The left side of a text editor with colorful cursors, as well as the text &#x27;Compose papers faster, Typst&#x27;">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.ico">
+  <!-- <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon.ico"> -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#239dad">
+  <link rel="manifest" href="/assets/site.webmanifest">
+  <link rel="stylesheet" href="/styles/default.css">
+  <link rel="stylesheet" href="/styles/docs.css">
+  <link rel="stylesheet" href="/styles/docs-cn.css">
+  <link rel="preload" href="/assets/fonts/HKGrotesk-Regular.woff2" as="font">
+  <link rel="preload" href="/assets/fonts/HKGrotesk-Bold.woff2" as="font">
+  <link rel="preload" href="/assets/fonts/HKGrotesk-SemiBold.woff2" as="font">
+  <link rel="preload" href="/assets/fonts/CascadiaMono-Regular-Sub.woff2" as="font">
+  <link rel="preload" href="/assets/images/blur.webp" as="image">
+</head>
+
+<body class="no-js docs has-outline">
+  <div class="alert">
+    <div class="alert-content">
+      <span><b>注意：</b>该中文文档为社区驱动的非官网文档，可能存在错译、漏译或过时等问题，请以官网文档 <a href="https://typst.app/docs/">Documentation</a>
+        为准，如发现错漏，也欢迎您的贡献。</span>
+      <br />
+      <span><b>Warning:</b> the Chinese document is a community-driven non-official document, there may be mistranslation, omission or outdated problems, please refer to <a href="https://typst.app/docs/">the official website documentation</a>.</span>
+    </div>
+  </div>
+  <header class="boring">
+    <div><a href="/docs" class="logo-box"><svg width="91" height="35" viewBox="0 0 91 35" role="img"
+          aria-labelledby="logo-label">
+          <title id="logo-label">Typst</title>
+          <use href="/assets/images/typst.svg#logo"></use>
+        </svg><span>中文文档</span></a><button class="hamburger"><img alt="Open navigation"
+          src="/assets/icons/16-hamburger-dark.svg" width="16" height="16"></button>
+      <nav>
+        <ul>
+          <li class="social"><a href="https://twitter.com/typstapp/"><svg width="16" height="16" role="img"
+                aria-labelledby="svg-twitter-label">
+                <title id="svg-twitter-label">Twitter</title>
+                <use href="/assets/icons/social.svg#twitter"></use>
+              </svg></a></li>
+          <li class="social"><a href="https://discord.gg/2uDybryKPe"><svg width="16" height="16" role="img"
+                aria-labelledby="svg-discord-label">
+                <title id="svg-discord-label">Discord</title>
+                <use href="/assets/icons/social.svg#discord"></use>
+              </svg></a></li>
+          <li class="social"><a href="https://github.com/typst-doc-cn/typst-doc-cn"><svg width="16" height="16" role="img"
+                aria-labelledby="svg-github-label">
+                <title id="svg-github-label">GitHub</title>
+                <use href="/assets/icons/social.svg#github"></use>
+              </svg></a></li>
+          <li class="social"><a href="https://www.linkedin.com/company/typst/"><svg width="16" height="16" role="img"
+                aria-labelledby="svg-linkedin-label">
+                <title id="svg-linkedin-label">LinkedIn</title>
+                <use href="/assets/icons/social.svg#linkedin"></use>
+              </svg></a></li>
+          <li class="secondary"><a href="https://typst.app/">主页</a></li>
+          <!-- <li class="secondary"><a href="/signin/" class="sign-in">Sign in</a></li>
+          <li><a href="/signup" id="header-btn" class="nav-btn btn">Sign up</a></li> -->
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="main-grid">
+    <nav class="folding"><a href="/docs" class="title-row"><svg width="91" height="35" viewBox="0 0 91 35" role="img"
+          aria-labelledby="logo-label-nav">
+          <title id="logo-label-nav">Typst</title>
+          <use href="/assets/images/typst.svg#logo"></use>
+        </svg><span>中文文档</span></a>
+      <!-- <button class="close"><img alt="Close" src="/assets/icons/16-close-dark.svg"
+          width="16" height="16"></button> -->
+      <div class="search"><img src="/assets/icons/16-search-gray.svg" alt="Search" width="16" height="16"><input
+          type="search" placeholder="搜索" id="docs-search"></div>
+      <ul class="search-results hidden" id="search-results"></ul>
+      <ul>
+        
+        
+        <li>
+          <a href="/docs/" >概览</a>
+          
+        </li>
+        
+        
+        <li>
+          <a href="/docs/tutorial/" >教程</a>
+          
+          <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+          <ul>
+            
+            
+            <li>
+              <a href="/docs/tutorial/writing-in-typst/" >使用 Typst 写作</a>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/tutorial/formatting/" >格式</a>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/tutorial/advanced-styling/" >高级样式</a>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/tutorial/making-a-template/" >制作模板</a>
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        
+        <li>
+          <a href="/docs/reference/" >参考</a>
+          
+          <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+          <ul>
+            
+            
+            <li class="category">Language</li>
+            
+            <li>
+              <a href="/docs/reference/syntax/" >语法</a>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/styling/" >样式</a>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/scripting/" >脚本</a>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/types/" >类型</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/types/none/" >None</a></li>
+                
+                
+                <li><a href="/docs/reference/types/auto/" >Auto</a></li>
+                
+                
+                <li><a href="/docs/reference/types/boolean/" >Boolean</a></li>
+                
+                
+                <li><a href="/docs/reference/types/integer/" >Integer</a></li>
+                
+                
+                <li><a href="/docs/reference/types/float/" >Float</a></li>
+                
+                
+                <li><a href="/docs/reference/types/length/" >Length</a></li>
+                
+                
+                <li><a href="/docs/reference/types/angle/" >Angle</a></li>
+                
+                
+                <li><a href="/docs/reference/types/ratio/" >Ratio</a></li>
+                
+                
+                <li><a href="/docs/reference/types/relative-length/" >Relative Length</a></li>
+                
+                
+                <li><a href="/docs/reference/types/fraction/" >Fraction</a></li>
+                
+                
+                <li><a href="/docs/reference/types/color/" >Color</a></li>
+                
+                
+                <li><a href="/docs/reference/types/datetime/" >Datetime</a></li>
+                
+                
+                <li><a href="/docs/reference/types/symbol/" >Symbol</a></li>
+                
+                
+                <li><a href="/docs/reference/types/string/" >String</a></li>
+                
+                
+                <li><a href="/docs/reference/types/content/" >Content</a></li>
+                
+                
+                <li><a href="/docs/reference/types/array/" >Array</a></li>
+                
+                
+                <li><a href="/docs/reference/types/dictionary/" >Dictionary</a></li>
+                
+                
+                <li><a href="/docs/reference/types/function/" >Function</a></li>
+                
+                
+                <li><a href="/docs/reference/types/arguments/" >Arguments</a></li>
+                
+                
+                <li><a href="/docs/reference/types/selector/" >Selector</a></li>
+                
+                
+                <li><a href="/docs/reference/types/module/" >Module</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li class="category">Content</li>
+            
+            <li>
+              <a href="/docs/reference/text/" >文本</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/text/lorem/" >Blind Text</a></li>
+                
+                
+                <li><a href="/docs/reference/text/emph/" >Emphasis</a></li>
+                
+                
+                <li><a href="/docs/reference/text/linebreak/" >Line Break</a></li>
+                
+                
+                <li><a href="/docs/reference/text/lower/" >Lowercase</a></li>
+                
+                
+                <li><a href="/docs/reference/text/overline/" >Overline</a></li>
+                
+                
+                <li><a href="/docs/reference/text/raw/" >Raw Text / Code</a></li>
+                
+                
+                <li><a href="/docs/reference/text/smallcaps/" >Small Capitals</a></li>
+                
+                
+                <li><a href="/docs/reference/text/smartquote/" >Smart Quote</a></li>
+                
+                
+                <li><a href="/docs/reference/text/strike/" >Strikethrough</a></li>
+                
+                
+                <li><a href="/docs/reference/text/strong/" >Strong Emphasis</a></li>
+                
+                
+                <li><a href="/docs/reference/text/sub/" >Subscript</a></li>
+                
+                
+                <li><a href="/docs/reference/text/super/" >Superscript</a></li>
+                
+                
+                <li><a href="/docs/reference/text/text/" >Text</a></li>
+                
+                
+                <li><a href="/docs/reference/text/underline/" >Underline</a></li>
+                
+                
+                <li><a href="/docs/reference/text/upper/" >Uppercase</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/math/" >数学</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/math/accent/" >Accent</a></li>
+                
+                
+                <li><a href="/docs/reference/math/attach/" >Attach</a></li>
+                
+                
+                <li><a href="/docs/reference/math/binom/" >Binomial</a></li>
+                
+                
+                <li><a href="/docs/reference/math/cancel/" >Cancel</a></li>
+                
+                
+                <li><a href="/docs/reference/math/cases/" >Cases</a></li>
+                
+                
+                <li><a href="/docs/reference/math/equation/" >Equation</a></li>
+                
+                
+                <li><a href="/docs/reference/math/frac/" >Fraction</a></li>
+                
+                
+                <li><a href="/docs/reference/math/lr/" >Left/Right</a></li>
+                
+                
+                <li><a href="/docs/reference/math/mat/" >Matrix</a></li>
+                
+                
+                <li><a href="/docs/reference/math/roots/" >Roots</a></li>
+                
+                
+                <li><a href="/docs/reference/math/sizes/" >Sizes</a></li>
+                
+                
+                <li><a href="/docs/reference/math/styles/" >Styles</a></li>
+                
+                
+                <li><a href="/docs/reference/math/op/" >Text Operator</a></li>
+                
+                
+                <li><a href="/docs/reference/math/underover/" >Under/Over</a></li>
+                
+                
+                <li><a href="/docs/reference/math/variants/" >Variants</a></li>
+                
+                
+                <li><a href="/docs/reference/math/vec/" >Vector</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/layout/" >布局</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/layout/align/" >Align</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/block/" >Block</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/box/" >Box</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/list/" >Bullet List</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/colbreak/" >Column Break</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/columns/" >Columns</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/grid/" >Grid</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/hide/" >Hide</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/measure/" >Measure</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/move/" >Move</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/enum/" >Numbered List</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/pad/" >Padding</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/page/" >Page</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/pagebreak/" >Page Break</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/par/" >Paragraph</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/parbreak/" >Paragraph Break</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/place/" >Place</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/repeat/" >Repeat</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/rotate/" >Rotate</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/scale/" >Scale</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/h/" >Spacing (H)</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/v/" >Spacing (V)</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/stack/" >Stack</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/table/" >Table</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/terms/" >Term List</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/visualize/" >可视化</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/visualize/circle/" >Circle</a></li>
+                
+                
+                <li><a href="/docs/reference/visualize/ellipse/" >Ellipse</a></li>
+                
+                
+                <li><a href="/docs/reference/visualize/image/" >Image</a></li>
+                
+                
+                <li><a href="/docs/reference/visualize/line/" >Line</a></li>
+                
+                
+                <li><a href="/docs/reference/visualize/path/" >Path</a></li>
+                
+                
+                <li><a href="/docs/reference/visualize/polygon/" >Polygon</a></li>
+                
+                
+                <li><a href="/docs/reference/visualize/rect/" >Rectangle</a></li>
+                
+                
+                <li><a href="/docs/reference/visualize/square/" >Square</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/meta/" >元信息</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/meta/bibliography/" >Bibliography</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/cite/" >Citation</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/counter/" >Counter</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/document/" >Document</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/figure/" >Figure</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/footnote/" >Footnote</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/heading/" >Heading</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/layout/" >Layout</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/link/" >Link</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/locate/" >Locate</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/numbering/" >Numbering</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/outline/" >Outline</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/query/" >Query</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/ref/" >Reference</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/selector/" >Selector</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/state/" >State</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/style/" >Style</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/symbols/" >符号</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/symbols/sym/" >General</a></li>
+                
+                
+                <li><a href="/docs/reference/symbols/emoji/" >Emoji</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li class="category">Compute</li>
+            
+            <li>
+              <a href="/docs/reference/foundations/" >基础</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/foundations/assert/" >Assert</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/eval/" >Evaluate</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/panic/" >Panic</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/repr/" >Representation</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/type/" >Type</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/calculate/" >计算</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/calculate/abs/" >Absolute</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/acos/" >Arccosine</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/asin/" >Arcsine</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/atan/" >Arctangent</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/binom/" >Binomial</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/clamp/" >Clamp</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/cos/" >Cosine</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/even/" >Even</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/exp/" >Exponential</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/fact/" >Factorial</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/atan2/" >Four-quadrant Arctangent</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/fract/" >Fractional</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/gcd/" >Greatest Common Divisor</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/cosh/" >Hyperbolic cosine</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/sinh/" >Hyperbolic sine</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/tanh/" >Hyperbolic tangent</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/lcm/" >Least Common Multiple</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/log/" >Logarithm</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/max/" >Maximum</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/min/" >Minimum</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/ln/" >Natural Logarithm</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/odd/" >Odd</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/perm/" >Permutation</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/pow/" >Power</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/quo/" >Quotient</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/rem/" >Remainder</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/round/" >Round</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/floor/" >Round down</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/ceil/" >Round up</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/sin/" >Sine</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/sqrt/" >Square Root</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/tan/" >Tangent</a></li>
+                
+                
+                <li><a href="/docs/reference/calculate/trunc/" >Truncate</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/construct/" >构造</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/construct/cmyk/" >CMYK</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/datetime/" >Datetime</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/float/" >Float</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/int/" >Integer</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/label/" >Label</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/luma/" >Luma</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/rgb/" >RGB</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/range/" >Range</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/regex/" >Regex</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/str/" >String</a></li>
+                
+                
+                <li><a href="/docs/reference/construct/symbol/" >Symbol</a></li>
+                
+              </ul>
+              
+            </li>
+            
+            
+            <li>
+              <a href="/docs/reference/data-loading/" >数据加载</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/data-loading/csv/" >CSV</a></li>
+                
+                
+                <li><a href="/docs/reference/data-loading/json/" >JSON</a></li>
+                
+                
+                <li><a href="/docs/reference/data-loading/read/" >Read</a></li>
+                
+                
+                <li><a href="/docs/reference/data-loading/toml/" >TOML</a></li>
+                
+                
+                <li><a href="/docs/reference/data-loading/xml/" >XML</a></li>
+                
+                
+                <li><a href="/docs/reference/data-loading/yaml/" >YAML</a></li>
+                
+              </ul>
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        
+        <li>
+          <a href="/docs/guides/" >指南</a>
+          
+          <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+          <ul>
+            
+            
+            <li>
+              <a href="/docs/guides/guide-for-latex-users/"  aria-current="page" >LaTeX 用户指南</a>
+              
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        
+        <li>
+          <a href="/docs/changelog/" >更新日志</a>
+          
+        </li>
+        
+        
+        <li>
+          <a href="/docs/community/" >社区</a>
+          
+        </li>
+        
+      </ul>
+
+    </nav>
+    <main>
+      <ul class="breadcrumbs" aria-label="Breadcrumbs">
+        <li class="root"><a href="/docs/"><img src="/assets/icons/16-docs-dark.svg" alt="Docs" width="16"
+              height="16"></a></li>
+
+        
+        <li aria-hidden="true"><img src="/assets/icons/16-arrow-right.svg" width="16" height="16" alt=""></li>
+        <li><a href="/docs/guides/">指南</a></li>
+        
+        <li aria-hidden="true"><img src="/assets/icons/16-arrow-right.svg" width="16" height="16" alt=""></li>
+        <li><a href="/docs/guides/guide-for-latex-users/">LaTeX 用户指南</a></li>
+        
+      </ul>
+
+      
+
+<h1>LaTeX 用户指南</h1>
+<p>This page is a good starting point if you have used LaTeX before and want to try
+out Typst. We will explore the main differences between these two systems from a
+user perspective. Although Typst is not built upon LaTeX and has a different
+syntax, you will learn how to use your LaTeX skills to get a head start.</p>
+<!-- Mention that Typst is not built upon LaTeX -->
+<p>Just like LaTeX, Typst is a markup-based typesetting system: You compose your
+document in a text file and mark it up with commands and other syntax. Then, you
+use a compiler to typeset the source file into a PDF. However, Typst also
+differs from LaTeX in several aspects: For one, Typst uses more dedicated syntax
+(like you may know from Markdown) for common tasks. Typst's commands are also
+more principled: They all work the same, so unlike in LaTeX, you just need to
+understand a few general concepts instead of learning different conventions for
+each package. Moreover Typst compiles faster than LaTeX: Compilation usually
+takes milliseconds, not seconds, so the web app and the compiler can both
+provide instant previews.</p>
+<p>In the following, we will cover some of the most common questions a user
+switching from LaTeX will have when composing a document in Typst. If you prefer
+a step-by-step introduction to Typst, check out our <a href="/docs/tutorial/">tutorial</a>.</p>
+<h2 id="getting-started">How do I create a new, empty document?</h2>
+<p>That's easy. You just create a new, empty text file (the file extension is
+<code>.typ</code>). No boilerplate is needed to get started. Simply start by writing your
+text. It will be set on an empty A4-sized page. If you are using the web app,
+click &quot;+ Empty document&quot; to create a new project with a file and enter the
+editor. <a href="/docs/reference/layout/parbreak/">Paragraph breaks</a> work just as they do in LaTeX, just
+use a blank line.</p>
+<div class="previewed-code"><pre><code>Hey there!
+
+Here are two paragraphs. The
+output is shown to the right.
+</code></pre><div class="preview"><img src="/assets/docs/mnEWOFOAWlaUAHDDTe5ifp.png" alt="Preview" width="480" height="190"/></div></div>
+<h2 id="elements">How do I create section headings, emphasis, ...?</h2>
+<p>LaTeX uses the command <code>\section</code> to create a section heading. Nested headings
+are indicated with <code>\subsection</code>, <code>\subsubsection</code>, etc. Depending on your
+document class, there is also <code>\part</code> or <code>\chapter</code>.</p>
+<p>In Typst, <a href="/docs/reference/meta/heading/">headings</a> are less verbose: You prefix the line with
+the heading on it with an equals sign and a space to get a first-order heading:
+<code><span class="typ-heading">= Introduction</span></code>. If you need a second-order heading, you use two equals
+signs: <code><span class="typ-heading">== In this paper</span></code>. You can nest headings as deeply as you'd like by
+adding more equals signs.</p>
+<p>Emphasis (usually rendered as italic text) is expressed by enclosing text in
+<code><span class="typ-emph">_underscores_</span></code> and strong emphasis (usually rendered in boldface) by using
+<code><span class="typ-strong">*stars*</span></code> instead.</p>
+<p>Here is a list of common markup commands used in LaTeX and their Typst
+equivalents. You can also check out the <a href="/docs/reference/syntax/">full syntax cheat sheet</a>.</p>
+<table><thead><tr><th style="text-align: left">Element</th><th style="text-align: left">LaTeX</th><th style="text-align: left">Typst</th><th style="text-align: left">See</th></tr></thead><tbody>
+<tr><td style="text-align: left">Strong emphasis</td><td style="text-align: left"><code>\textbf{strong}</code></td><td style="text-align: left"><code><span class="typ-strong">*strong*</span></code></td><td style="text-align: left"><a href="/docs/reference/text/strong/"><code>strong</code></a></td></tr>
+<tr><td style="text-align: left">Emphasis</td><td style="text-align: left"><code>\emph{emphasis}</code></td><td style="text-align: left"><code><span class="typ-emph">_emphasis_</span></code></td><td style="text-align: left"><a href="/docs/reference/text/emph/"><code>emph</code></a></td></tr>
+<tr><td style="text-align: left">Monospace / code</td><td style="text-align: left"><code>\texttt{print(1)}</code></td><td style="text-align: left"><code><span class="typ-raw">`print(1)`</span></code></td><td style="text-align: left"><a href="/docs/reference/text/raw/"><code>raw</code></a></td></tr>
+<tr><td style="text-align: left">Link</td><td style="text-align: left"><code>\url{https://typst.app}</code></td><td style="text-align: left"><code><span class="typ-link">https://typst.app/</span></code></td><td style="text-align: left"><a href="/docs/reference/meta/link/"><code>link</code></a></td></tr>
+<tr><td style="text-align: left">Label</td><td style="text-align: left"><code>\label{intro}</code></td><td style="text-align: left"><code><span class="typ-label">&lt;intro&gt;</span></code></td><td style="text-align: left"><a href="/docs/reference/construct/label/"><code>label</code></a></td></tr>
+<tr><td style="text-align: left">Reference</td><td style="text-align: left"><code>\ref{intro}</code></td><td style="text-align: left"><code><span class="typ-ref">@intro</span></code></td><td style="text-align: left"><a href="/docs/reference/meta/ref/"><code>ref</code></a></td></tr>
+<tr><td style="text-align: left">Citation</td><td style="text-align: left"><code>\cite{humphrey97}</code></td><td style="text-align: left"><code><span class="typ-ref">@humphrey97</span></code></td><td style="text-align: left"><a href="/docs/reference/meta/cite/"><code>cite</code></a></td></tr>
+<tr><td style="text-align: left">Bullet list</td><td style="text-align: left"><code>itemize</code> environment</td><td style="text-align: left"><code><span class="typ-marker">-</span> List</code></td><td style="text-align: left"><a href="/docs/reference/layout/list/"><code>list</code></a></td></tr>
+<tr><td style="text-align: left">Numbered list</td><td style="text-align: left"><code>enumerate</code> environment</td><td style="text-align: left"><code><span class="typ-marker">+</span> List</code></td><td style="text-align: left"><a href="/docs/reference/layout/enum/"><code>enum</code></a></td></tr>
+<tr><td style="text-align: left">Term list</td><td style="text-align: left"><code>description</code> environment</td><td style="text-align: left"><code><span class="typ-marker">/</span> <span class="typ-term">Term</span><span class="typ-punct">:</span> List</code></td><td style="text-align: left"><a href="/docs/reference/layout/terms/"><code>terms</code></a></td></tr>
+<tr><td style="text-align: left">Figure</td><td style="text-align: left"><code>figure</code> environment</td><td style="text-align: left"><code>figure</code> function</td><td style="text-align: left"><a href="/docs/reference/meta/figure/"><code>figure</code></a></td></tr>
+<tr><td style="text-align: left">Table</td><td style="text-align: left"><code>table</code> environment</td><td style="text-align: left"><code>table</code> function</td><td style="text-align: left"><a href="/docs/reference/layout/table/"><code>table</code></a></td></tr>
+<tr><td style="text-align: left">Equation</td><td style="text-align: left"><code>$x$</code>, <code>align</code> / <code>equation</code> environments</td><td style="text-align: left"><code><span class="typ-math-delim">$</span>x<span class="typ-math-delim">$</span></code>, <code><span class="typ-math-delim">$</span> x = y <span class="typ-math-delim">$</span></code></td><td style="text-align: left"><a href="/docs/reference/math/equation/"><code>equation</code></a></td></tr>
+</tbody></table>
+<p><a href="/docs/reference/layout/list/">Lists</a> do not rely on environments in Typst. Instead, they have
+lightweight syntax like headings. To create an unordered list (<code>itemize</code>),
+prefix each line of an item with a hyphen:</p>
+<div class="previewed-code"><pre><code>To write this list in Typst<span class="typ-escape">...</span>
+
+<span class="typ-raw">```latex
+\begin{itemize}
+  \item Fast
+  \item Flexible
+  \item Intuitive
+\end{itemize}
+```</span>
+
+<span class="typ-escape">...</span>just type this:
+
+<span class="typ-marker">-</span> Fast
+<span class="typ-marker">-</span> Flexible
+<span class="typ-marker">-</span> Intuitive
+
+</code></pre><div class="preview"><img src="/assets/docs/GQFBhlB6bKYqdYN6YQt187.png" alt="Preview" width="480" height="190"/></div></div>
+<p>Nesting lists works just by using proper indentation. Adding a blank line in
+between items results in a more <a href="/docs/reference/layout/list/#parameters-tight">widely</a> spaced list.</p>
+<p>To get a <a href="/docs/reference/layout/enum/">numbered list</a> (<code>enumerate</code>) instead, use a <code>+</code> instead of
+the hyphen. For a <a href="/docs/reference/layout/terms/">term list</a> (<code>description</code>), write
+<code><span class="typ-marker">/</span> <span class="typ-term">Term</span><span class="typ-punct">:</span> Description</code> instead.</p>
+<h2 id="commands">How do I use a command?</h2>
+<p>LaTeX heavily relies on commands (prefixed by backslashes). It uses these
+<em>macros</em> to affect the typesetting process and to insert and manipulate content.
+Some commands accept arguments, which are most frequently enclosed in curly
+braces: <code>\cite{rasmus}</code>.</p>
+<p>Typst differentiates between <a href="/docs/reference/scripting/#blocks">markup mode and code mode</a>.
+The default is markup mode, where you compose text and apply syntactic
+constructs such as <code><span class="typ-strong">*stars for bold text*</span></code>. Code mode, on the other hand,
+parallels programming languages like Python, providing the option to input
+and execute segments of code.</p>
+<p>Within Typst's markup, you can switch to code mode for a single command (or
+rather, <em>expression</em>) using a hashtag (<code>#</code>). This is how you call functions to,
+for example, split your project into different <a href="/docs/reference/scripting/#modules">files</a>
+or render text based on some <a href="/docs/reference/scripting/#conditionals">condition</a>.
+Within code mode, it is possible to include normal markup
+<a href="/docs/reference/types/content/"><em>content</em></a> by using square brackets. Within code mode, this
+content is treated just as any other normal value for a variable.</p>
+<div class="previewed-code"><pre><code>First, a rectangle:
+<span class="typ-func">#</span><span class="typ-func">rect</span><span class="typ-punct">(</span><span class="typ-punct">)</span>
+
+Let me show how to do
+<span class="typ-func">#</span><span class="typ-func">underline</span><span class="typ-punct">(</span><span class="typ-punct">[</span><span class="typ-emph">_underlined_</span> text<span class="typ-punct">]</span><span class="typ-punct">)</span>
+
+We can also do some maths:
+<span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">max</span><span class="typ-punct">(</span><span class="typ-num">3</span><span class="typ-punct">,</span> <span class="typ-num">2</span> <span class="typ-op">*</span> <span class="typ-num">4</span><span class="typ-punct">)</span>
+
+And finally a little loop:
+<span class="typ-key">#</span><span class="typ-key">for</span> x <span class="typ-key">in</span> <span class="typ-func">range</span><span class="typ-punct">(</span><span class="typ-num">3</span><span class="typ-punct">)</span> <span class="typ-punct">[</span>
+  Hi <span class="typ-pol">#</span><span class="typ-pol">x</span>.
+<span class="typ-punct">]</span>
+</code></pre><div class="preview"><img src="/assets/docs/VTN7ZtvFkhSh5QloJLKwKW.png" alt="Preview" width="480" height="190"/></div></div>
+<p>A function call always involves the name of the function (<a href="/docs/reference/visualize/rect/"><code>rect</code></a>,
+<a href="/docs/reference/text/underline/"><code>underline</code></a>, <a href="/docs/reference/calculate/max/"><code>calc.max</code></a>,
+<a href="/docs/reference/construct/range/"><code>range</code></a>) followed by parentheses (as opposed to LaTeX where the
+square brackets and curly braces are optional if the macro requires no
+arguments). The expected list of arguments passed within those parentheses
+depends on the concrete function and is specified in the
+<a href="/docs/reference/">reference</a>.</p>
+<h3 id="arguments">Arguments</h3>
+<p>A function can have multiple arguments. Some arguments are positional, i.e., you
+just provide the value: The function <code><span class="typ-func">#</span><span class="typ-func">lower</span><span class="typ-punct">(</span><span class="typ-str">&quot;SCREAM&quot;</span><span class="typ-punct">)</span></code> returns its argument
+in all-lowercase. Many functions use named arguments instead of positional
+arguments to increase legibility. For example, the dimensions and stroke of a
+rectangle are defined with named arguments:</p>
+<div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">rect</span><span class="typ-punct">(</span>
+  width<span class="typ-punct">:</span> <span class="typ-num">2cm</span><span class="typ-punct">,</span>
+  height<span class="typ-punct">:</span> <span class="typ-num">1cm</span><span class="typ-punct">,</span>
+  stroke<span class="typ-punct">:</span> red<span class="typ-punct">,</span>
+<span class="typ-punct">)</span>
+</code></pre><div class="preview"><img src="/assets/docs/vRyYzQg2oa2XBbz83fdWZb.png" alt="Preview" width="480" height="190"/></div></div>
+<p>You specify a named argument by first entering its name (above, it's <code>width</code>,
+<code>height</code>, and <code>stroke</code>), then a colon, followed by the value (<code>2cm</code>, <code>1cm</code>,
+<code>red</code>). You can find the available named arguments in the <a href="/docs/reference/">reference
+page</a> for each function or in the autocomplete panel when typing.
+Named arguments are similar to how some LaTeX environments are configured, for
+example, you would type <code>\begin{enumerate}[label={\alph*)}]</code> to start a list
+with the labels <code>a)</code>, <code>b)</code>, and so on.</p>
+<p>Often, you want to provide some <a href="/docs/reference/types/content/">content</a> to a function. For
+example, the LaTeX command <code>\underline{Alternative A}</code> would translate to
+<code><span class="typ-func">#</span><span class="typ-func">underline</span><span class="typ-punct">(</span><span class="typ-punct">[</span>Alternative A<span class="typ-punct">]</span><span class="typ-punct">)</span></code> in Typst. The square brackets indicate that a
+value is <a href="/docs/reference/types/content/">content</a>. Within these brackets, you can use normal
+markup. However, that's a lot of parentheses for a pretty simple construct.
+This is why you can also move trailing content arguments after the parentheses
+(and omit the parentheses if they would end up empty).</p>
+<div class="previewed-code"><pre><code>Typst is an <span class="typ-func">#</span><span class="typ-func">underline</span><span class="typ-punct">[</span>alternative<span class="typ-punct">]</span>
+to LaTeX.
+
+<span class="typ-func">#</span><span class="typ-func">rect</span><span class="typ-punct">(</span>fill<span class="typ-punct">:</span> aqua<span class="typ-punct">)</span><span class="typ-punct">[</span>Get started here!<span class="typ-punct">]</span>
+</code></pre><div class="preview"><img src="/assets/docs/jkx7hxfXufFwbfyKVYUW9o.png" alt="Preview" width="480" height="190"/></div></div>
+<h3 id="data-types">Data types</h3>
+<p>You likely already noticed that the arguments have distinctive data types. Typst
+supports <a href="/docs/reference/types/">many data types</a>. Below, there is a table with some of the most
+important ones and how to write them. In order to specify values of any of these
+types, you have to be in code mode!</p>
+<table><thead><tr><th style="text-align: left">Data type</th><th style="text-align: left">Example</th></tr></thead><tbody>
+<tr><td style="text-align: left"><a href="/docs/reference/types/content/">Content</a></td><td style="text-align: left"><code><span class="typ-punct">[</span><span class="typ-strong">*fast*</span> typesetting<span class="typ-punct">]</span></code></td></tr>
+<tr><td style="text-align: left"><a href="/docs/reference/types/string/">String</a></td><td style="text-align: left"><code><span class="typ-str">&quot;Pietro S. Author&quot;</span></code></td></tr>
+<tr><td style="text-align: left"><a href="/docs/reference/types/integer/">Integer</a></td><td style="text-align: left"><code><span class="typ-num">23</span></code></td></tr>
+<tr><td style="text-align: left"><a href="/docs/reference/types/float/">Floating point number</a></td><td style="text-align: left"><code><span class="typ-num">1.459</span></code></td></tr>
+<tr><td style="text-align: left"><a href="/docs/reference/types/length/">Absolute length</a></td><td style="text-align: left"><code><span class="typ-num">12pt</span></code>, <code><span class="typ-num">5in</span></code>, <code><span class="typ-num">0.3cm</span></code>, ...</td></tr>
+<tr><td style="text-align: left"><a href="/docs/reference/types/ratio/">Relative length</a></td><td style="text-align: left"><code><span class="typ-num">65%</span></code></td></tr>
+</tbody></table>
+<p>The difference between content and string is that content can contain markup,
+including function calls, while a string really is just a plain sequence of
+characters.</p>
+<p>Typst provides <a href="/docs/reference/scripting/#conditionals">control flow constructs</a> and
+<a href="/docs/reference/scripting/#operators">operators</a> such as <code>+</code> for adding things or <code>==</code> for
+checking equality between two variables. You can also define your own
+<a href="/docs/reference/scripting/#bindings">variables</a> and perform computations on them.</p>
+<h3 id="rules">Commands to affect the remaining document</h3>
+<p>In LaTeX, some commands like <code>\textbf{bold text}</code> receive an argument in curly
+braces and only affect that argument. Other commands such as
+<code>\bfseries bold text</code> act as switches, altering the appearance of all subsequent
+content within the document or current scope.</p>
+<p>In Typst, the same function can be used both to affect the appearance for the
+remainder of the document, a block (or scope), or just its arguments. For example,
+<code><span class="typ-func">#</span><span class="typ-func">text</span><span class="typ-punct">(</span>weight<span class="typ-punct">:</span> <span class="typ-str">&quot;bold&quot;</span><span class="typ-punct">)</span><span class="typ-punct">[</span>bold text<span class="typ-punct">]</span></code> will only embolden its argument, while
+<code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>weight<span class="typ-punct">:</span> <span class="typ-str">&quot;bold&quot;</span><span class="typ-punct">)</span></code> will embolden any text until the end of the
+current block, or, if there is none, document. The effects of a function are
+immediately obvious based on whether it is used in a call or a
+<a href="/docs/reference/styling/#set-rules">set rule.</a></p>
+<div class="previewed-code"><pre><code>I am starting out with small text.
+
+<span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span><span class="typ-num">14pt</span><span class="typ-punct">)</span>
+
+This is a bit <span class="typ-func">#</span><span class="typ-func">text</span><span class="typ-punct">(</span><span class="typ-num">18pt</span><span class="typ-punct">)</span><span class="typ-punct">[</span>larger,<span class="typ-punct">]</span>
+don&#39;t you think?
+</code></pre><div class="preview"><img src="/assets/docs/zbLFOhKiv3xsJufvHrs8y7.png" alt="Preview" width="480" height="190"/></div></div>
+<p>Set rules may appear anywhere in the document. They can be thought of as
+default argument values of their respective function:</p>
+<div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">enum</span><span class="typ-punct">(</span>numbering<span class="typ-punct">:</span> <span class="typ-str">&quot;I.&quot;</span><span class="typ-punct">)</span>
+
+Good results can only be obtained by
+<span class="typ-marker">+</span> following best practices
+<span class="typ-marker">+</span> being aware of current results
+  of other researchers
+<span class="typ-marker">+</span> checking the data for biases
+</code></pre><div class="preview"><img src="/assets/docs/c2YLgm3tjGMkBrqeh0g8Jl.png" alt="Preview" width="480" height="190"/></div></div>
+<p>The <code>+</code> is syntactic sugar (think of it as an abbreviation) for a call to the
+<a href="/docs/reference/layout/enum/"><code>enum</code></a> function, to which we apply a set rule above. <a href="/docs/reference/syntax/">Most
+syntax is linked to a function in this way.</a> If you need to style an
+element beyond what its arguments enable, you can completely redefine its
+appearance with a <a href="/docs/reference/styling/#show-rules">show rule</a> (somewhat comparable to
+<code>\renewcommand</code>).</p>
+<h2 id="templates">How do I load a document class?</h2>
+<p>In LaTeX, you start your main <code>.tex</code> file with the <code>\documentclass{article}</code>
+command to define how your document is supposed to look. In that command, you
+may have replaced <code>article</code> with another value such as <code>report</code> and <code>amsart</code> to
+select a different look.</p>
+<p>When using Typst, you style your documents with <a href="/docs/reference/types/function/">functions</a>.
+Typically, you use a template that provides a function that styles your whole
+document. First, you import the function from a template file. Then, you apply
+it to your whole document. This is accomplished with a
+<a href="/docs/reference/styling/#show-rules">show rule</a> that wraps the following document in a given
+function. The following example illustrates how it works:</p>
+<div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">import</span> <span class="typ-str">&quot;conf.typ&quot;</span><span class="typ-punct">:</span> conf
+<span class="typ-key">#</span><span class="typ-key">show</span><span class="typ-punct">:</span> conf<span class="typ-punct">.</span><span class="typ-func">with</span><span class="typ-punct">(</span>
+  title<span class="typ-punct">:</span> <span class="typ-punct">[</span>
+    Towards Improved Modelling
+  <span class="typ-punct">]</span><span class="typ-punct">,</span>
+  authors<span class="typ-punct">:</span> <span class="typ-punct">(</span>
+    <span class="typ-punct">(</span>
+      name<span class="typ-punct">:</span> <span class="typ-str">&quot;Theresa Tungsten&quot;</span><span class="typ-punct">,</span>
+      affiliation<span class="typ-punct">:</span> <span class="typ-str">&quot;Artos Institute&quot;</span><span class="typ-punct">,</span>
+      email<span class="typ-punct">:</span> <span class="typ-str">&quot;tung@artos.edu&quot;</span><span class="typ-punct">,</span>
+    <span class="typ-punct">)</span><span class="typ-punct">,</span>
+    <span class="typ-punct">(</span>
+      name<span class="typ-punct">:</span> <span class="typ-str">&quot;Eugene Deklan&quot;</span><span class="typ-punct">,</span>
+      affiliation<span class="typ-punct">:</span> <span class="typ-str">&quot;Honduras State&quot;</span><span class="typ-punct">,</span>
+      email<span class="typ-punct">:</span> <span class="typ-str">&quot;e.deklan@hstate.hn&quot;</span><span class="typ-punct">,</span>
+    <span class="typ-punct">)</span><span class="typ-punct">,</span>
+  <span class="typ-punct">)</span><span class="typ-punct">,</span>
+  abstract<span class="typ-punct">:</span> <span class="typ-func">lorem</span><span class="typ-punct">(</span><span class="typ-num">80</span><span class="typ-punct">)</span><span class="typ-punct">,</span>
+<span class="typ-punct">)</span>
+
+Let&#39;s get started writing this
+article by putting insightful
+paragraphs right here!
+</code></pre><div class="preview"><img src="/assets/docs/nxklRGv9KNJ8BRrapN21Z5.png" alt="Preview" width="480" height="190"/></div></div>
+<p>The <a href="/docs/reference/scripting/#modules"><code><span class="typ-key">import</span></code></a> statement makes
+<a href="/docs/reference/types/function/">functions</a> (and other definitions) from another file available.
+In this example, it imports the <code>conf</code> function from the <code>conf.typ</code> file. This
+function formats a document as a conference article. We use a show rule to apply
+it to the document and also configure some metadata of the article. After
+applying the show rule, we can start writing our article right away!</p>
+<div class="info-box">
+<p>Functions are Typst's &quot;commands&quot; and can transform their arguments to an output
+value, including document <em>content.</em> Functions are &quot;pure&quot;, which means that they
+cannot have any effects beyond creating an output value / output content. This
+is in stark contrast to LaTeX macros that can have arbitrary effects on your
+document.</p>
+<p>To let a function style your whole document, the show rule processes everything
+that comes after it and calls the function specified after the colon with the
+result as an argument. The <code>.with</code> part is a <em>method</em> that takes the <code>conf</code>
+function and pre-configures some if its arguments before passing it on to the
+show rule.</p>
+</div>
+<p>In the web app, you can choose from predefined templates or even
+create your own using the template wizard. You can also check out the
+<a href="https://github.com/qjcg/awesome-typst"><code>awesome-typst</code> repository</a> to find
+templates made by the community. We plan to build a package manager to make
+templates even easier to share in the future!</p>
+<p>You can also <a href="/docs/tutorial/making-a-template/">create your own, custom templates.</a>
+They are shorter and more readable than the corresponding LaTeX <code>.sty</code> files by
+orders of magnitude, so give it a try!</p>
+<h2 id="packages">How do I load packages?</h2>
+<p>Typst is &quot;batteries included,&quot; so the equivalent of many popular LaTeX packages
+is built right-in. Below, we compiled a table with frequently loaded packages
+and their corresponding Typst functions.</p>
+<table><thead><tr><th style="text-align: left">LaTeX Package</th><th style="text-align: left">Typst Alternative</th></tr></thead><tbody>
+<tr><td style="text-align: left">graphicx, svg</td><td style="text-align: left"><a href="/docs/reference/visualize/image/"><code>image</code></a> function</td></tr>
+<tr><td style="text-align: left">tabularx</td><td style="text-align: left"><a href="/docs/reference/layout/table/"><code>table</code></a>, <a href="/docs/reference/layout/grid/"><code>grid</code></a> functions</td></tr>
+<tr><td style="text-align: left">fontenc, inputenc, unicode-math</td><td style="text-align: left">Just start writing!</td></tr>
+<tr><td style="text-align: left">babel, polyglossia</td><td style="text-align: left"><a href="/docs/reference/text/text/#parameters-lang"><code>text</code></a> function: <code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>lang<span class="typ-punct">:</span> <span class="typ-str">&quot;zh&quot;</span><span class="typ-punct">)</span></code></td></tr>
+<tr><td style="text-align: left">amsmath</td><td style="text-align: left"><a href="/docs/reference/math/">Math mode</a></td></tr>
+<tr><td style="text-align: left">amsfonts, amssymb</td><td style="text-align: left"><a href="/docs/reference/symbols/"><code>sym</code></a> module and <a href="/docs/reference/syntax/#math">syntax</a></td></tr>
+<tr><td style="text-align: left">geometry, fancyhdr</td><td style="text-align: left"><a href="/docs/reference/layout/page/"><code>page</code></a> function</td></tr>
+<tr><td style="text-align: left">xcolor</td><td style="text-align: left"><a href="/docs/reference/text/text/#parameters-fill"><code>text</code></a> function: <code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>fill<span class="typ-punct">:</span> <span class="typ-func">rgb</span><span class="typ-punct">(</span><span class="typ-str">&quot;#0178A4&quot;</span><span class="typ-punct">)</span><span class="typ-punct">)</span></code></td></tr>
+<tr><td style="text-align: left">hyperref</td><td style="text-align: left"><a href="/docs/reference/meta/link/"><code>link</code></a> function</td></tr>
+<tr><td style="text-align: left">bibtex, biblatex, natbib</td><td style="text-align: left"><a href="/docs/reference/meta/cite/"><code>cite</code></a>, <a href="/docs/reference/meta/bibliography/"><code>bibliography</code></a> functions</td></tr>
+<tr><td style="text-align: left">lstlisting, minted</td><td style="text-align: left"><a href="/docs/reference/text/raw/"><code>raw</code></a> function and syntax</td></tr>
+<tr><td style="text-align: left">parskip</td><td style="text-align: left"><a href="/docs/reference/layout/block/#parameters-spacing"><code>block</code></a> and <a href="/docs/reference/layout/par/#parameters-first-line-indent"><code>par</code></a> functions</td></tr>
+<tr><td style="text-align: left">csquotes</td><td style="text-align: left">Set the <a href="/docs/reference/text/text/#parameters-lang"><code>text</code></a> language and type <code>&quot;</code> or <code>&#39;</code></td></tr>
+<tr><td style="text-align: left">caption</td><td style="text-align: left"><a href="/docs/reference/meta/figure/"><code>figure</code></a> function</td></tr>
+<tr><td style="text-align: left">enumitem</td><td style="text-align: left"><a href="/docs/reference/layout/list/"><code>list</code></a>, <a href="/docs/reference/layout/enum/"><code>enum</code></a>, <a href="/docs/reference/layout/terms/"><code>terms</code></a> functions</td></tr>
+</tbody></table>
+<p>If you need to load functions and variables from another file, for example, to
+use a template, you can use an <a href="/docs/reference/scripting/#modules"><code>import</code></a> statement. If you
+want to include the textual content of another file instead, you can use an
+<a href="/docs/reference/scripting/#modules"><code><span class="typ-key">include</span></code></a> statement. It will retrieve the content of
+the specified file and put it in your document.</p>
+<p>Currently, there is no package manager for Typst, but we plan to build one so
+that you can easily use packages with tools and templates from the community and
+publish your own. Until then, you might want to check out the
+<a href="https://github.com/qjcg/awesome-typst">awesome-typst repository</a>, which
+compiles a curated list of libraries created for Typst.</p>
+<h2 id="maths">How do I input maths?</h2>
+<p>To enter math mode in Typst, just enclose your equation in dollar signs. You can
+enter display mode by adding spaces or newlines between the equation's contents
+and its enclosing dollar signs.</p>
+<div class="previewed-code"><pre><code>The sum of the numbers from
+<span class="typ-math-delim">$</span>1<span class="typ-math-delim">$</span> to <span class="typ-math-delim">$</span>n<span class="typ-math-delim">$</span> is:
+
+<span class="typ-math-delim">$</span> <span class="typ-pol">sum</span><span class="typ-math-op">_</span><span class="typ-punct">(</span>k=1<span class="typ-punct">)</span><span class="typ-math-op">^</span>n k = <span class="typ-punct">(</span>n(n+1)<span class="typ-punct">)</span><span class="typ-math-op">/</span>2 <span class="typ-math-delim">$</span>
+</code></pre><div class="preview"><img src="/assets/docs/lZIAF5aEOb2JNanLJu9lUZ.png" alt="Preview" width="480" height="190"/></div></div>
+<p><a href="/docs/reference/math/">Math mode</a> works differently than regular markup or code mode.
+Numbers and single characters are displayed verbatim, while multiple consecutive
+(non-number) characters will be interpreted as Typst variables.</p>
+<p>Typst pre-defines a lot of useful variables in math mode. All Greek (<code>alpha</code>,
+<code>beta</code>, ...) and some Hebrew letters (<code>alef</code>, <code>bet</code>, ...) are available through
+their name. Some symbols are additionally available through shorthands, such as
+<code>&lt;=</code>, <code>&gt;=</code>, and <code>-&gt;</code>.</p>
+<p>Refer to the <a href="/docs/reference/construct/symbol/">symbol page</a> for a full list of the symbols.
+If a symbol is missing, you can also access it through a
+<a href="/docs/reference/syntax/#escapes">Unicode escape sequence</a>.</p>
+<p>Alternate and related forms of symbols can often be selected by
+<a href="/docs/reference/types/symbol/">appending a modifier</a> after a period. For example,
+<code>arrow.l.squiggly</code> inserts a squiggly left-pointing arrow. If you want to insert
+multiletter text in your expression instead, enclose it in double quotes:</p>
+<div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-pol">delta</span> <span class="typ-str">&quot;if&quot;</span> x <span class="typ-escape">&lt;=</span> 5 <span class="typ-math-delim">$</span>
+</code></pre><div class="preview"><img src="/assets/docs/5iwOJhpVFH6oh4tdkVltxr.png" alt="Preview" width="480" height="190"/></div></div>
+<p>In Typst, delimiters will scale automatically for their expressions, just as if
+<code>\left</code> and <code>\right</code> commands were implicitly inserted in LaTeX. You can
+customize delimiter behavior using the <a href="/docs/reference/math/lr/#lr"><code>lr</code> function</a>. To
+prevent a pair of delimiters from scaling, you can escape them with backslashes.</p>
+<p>Typst will automatically set terms around a slash <code>/</code> as a fraction while
+honoring operator precedence. All round parentheses not made redundant by the
+fraction will appear in the output.</p>
+<div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> f(x) = <span class="typ-punct">(</span>x + 1<span class="typ-punct">)</span> <span class="typ-math-op">/</span> x <span class="typ-math-delim">$</span>
+</code></pre><div class="preview"><img src="/assets/docs/TzdcFjpIHg07PMctKTlaAK.png" alt="Preview" width="480" height="190"/></div></div>
+<p><a href="/docs/reference/math/attach/#attach">Sub- and superscripts</a> work similarly in Typst and LaTeX.
+<code><span class="typ-math-delim">$</span>x<span class="typ-math-op">^</span>2<span class="typ-math-delim">$</span></code> will produce a superscript, <code><span class="typ-math-delim">$</span>x<span class="typ-math-op">_</span>2<span class="typ-math-delim">$</span></code> yields a subscript. If you want
+to include more than one value in a sub- or superscript, enclose their contents
+in parentheses: <code><span class="typ-math-delim">$</span>x<span class="typ-math-op">_</span><span class="typ-punct">(</span>a <span class="typ-escape">-&gt;</span> <span class="typ-pol">epsilon</span><span class="typ-punct">)</span><span class="typ-math-delim">$</span></code>.</p>
+<p>Since variables in math mode do not need to be preprended with a <code>#</code> or a <code>/</code>,
+you can also call functions without these special characters:</p>
+<div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> f(x, y) <span class="typ-escape">:=</span> <span class="typ-func">cases</span><span class="typ-punct">(</span>
+  1 <span class="typ-str">&quot;if&quot;</span> <span class="typ-punct">(</span>x <span class="typ-pol">dot</span> y<span class="typ-punct">)</span><span class="typ-math-op">/</span>2 <span class="typ-escape">&lt;=</span> 0<span class="typ-punct">,</span>
+  2 <span class="typ-str">&quot;if&quot;</span> x <span class="typ-str">&quot;is even&quot;</span><span class="typ-punct">,</span>
+  3 <span class="typ-str">&quot;if&quot;</span> x <span class="typ-pol">in</span> <span class="typ-pol">NN</span><span class="typ-punct">,</span>
+  4 <span class="typ-str">&quot;else&quot;</span><span class="typ-punct">,</span>
+<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
+</code></pre><div class="preview"><img src="/assets/docs/ZaFhZjAEoLgrKjw0MoGzu2.png" alt="Preview" width="480" height="190"/></div></div>
+<p>The above example uses the <a href="/docs/reference/math/cases/"><code>cases</code> function</a> to describe f. Within
+the cases function, arguments are delimited using commas and the arguments are
+also interpreted as math. If you need to interpret arguments as Typst
+values instead, prefix them with a <code>#</code>:</p>
+<div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> (a + b)<span class="typ-math-op">^</span>2
+  = a<span class="typ-math-op">^</span>2
+  + <span class="typ-func">text</span><span class="typ-punct">(</span>fill<span class="typ-punct">:</span> <span class="typ-pol">#</span><span class="typ-pol">maroon</span><span class="typ-punct">,</span> 2 a b<span class="typ-punct">)</span>
+  + b<span class="typ-math-op">^</span>2 <span class="typ-math-delim">$</span>
+</code></pre><div class="preview"><img src="/assets/docs/36xuYXXPZfzOlARvj5T0in.png" alt="Preview" width="480" height="190"/></div></div>
+<p>You can use all Typst functions within math mode and insert any content. If you
+want them to work normally, with code mode in the argument list, you can prefix
+their call with a <code>#</code>. Nobody can stop you from using rectangles or emoji as
+your variables anymore:</p>
+<div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-pol">sum</span><span class="typ-math-op">^</span>10<span class="typ-math-op">_</span><span class="typ-punct">(</span>🥸=1<span class="typ-punct">)</span>
+  <span class="typ-func">#</span><span class="typ-func">rect</span><span class="typ-punct">(</span>width<span class="typ-punct">:</span> <span class="typ-num">4mm</span><span class="typ-punct">,</span> height<span class="typ-punct">:</span> <span class="typ-num">2mm</span><span class="typ-punct">)</span><span class="typ-math-op">/</span>🥸
+  = 🧠 <span class="typ-pol">maltese</span> <span class="typ-math-delim">$</span>
+</code></pre><div class="preview"><img src="/assets/docs/Nquo8dqtpNJhdunatnrUqW.png" alt="Preview" width="480" height="190"/></div></div>
+<p>If you'd like to enter your mathematical symbols directly as Unicode, that is
+possible, too!</p>
+<p>Math calls can have two-dimensional argument lists using <code>;</code> as a delimiter. The
+most common use for this is the <a href="/docs/reference/math/mat/"><code>mat</code> function</a> that creates
+matrices:</p>
+<div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">mat</span><span class="typ-punct">(</span>
+  1<span class="typ-punct">,</span> 2<span class="typ-punct">,</span> <span class="typ-escape">...</span><span class="typ-punct">,</span> 10<span class="typ-punct">;</span>
+  2<span class="typ-punct">,</span> 2<span class="typ-punct">,</span> <span class="typ-escape">...</span><span class="typ-punct">,</span> 10<span class="typ-punct">;</span>
+  <span class="typ-pol">dots</span><span class="typ-punct">.</span><span class="typ-pol">v</span><span class="typ-punct">,</span> <span class="typ-pol">dots</span><span class="typ-punct">.</span><span class="typ-pol">v</span><span class="typ-punct">,</span> <span class="typ-pol">dots</span><span class="typ-punct">.</span><span class="typ-pol">down</span><span class="typ-punct">,</span> <span class="typ-pol">dots</span><span class="typ-punct">.</span><span class="typ-pol">v</span><span class="typ-punct">;</span>
+  10<span class="typ-punct">,</span> 10<span class="typ-punct">,</span> <span class="typ-escape">...</span><span class="typ-punct">,</span> 10<span class="typ-punct">;</span>
+<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
+</code></pre><div class="preview"><img src="/assets/docs/IZF6IamUdAXY5v7jPCmNMH.png" alt="Preview" width="480" height="190"/></div></div>
+<h2 id="latex-look">How do I get the &quot;LaTeX look?&quot;</h2>
+<p>Papers set in LaTeX have an unmistakeable look. This is mostly due to their
+font, Computer Modern, justification, narrow line spacing, and wide margins.</p>
+<p>The example below</p>
+<ul>
+<li>sets wide <a href="/docs/reference/layout/page/#parameters-margin">margins</a></li>
+<li>enables <a href="/docs/reference/layout/par/#parameters-justify">justification</a>, <a href="/docs/reference/layout/par/#parameters-leading">tighter lines</a>
+and <a href="/docs/reference/layout/par/#parameters-first-line-indent">first-line-indent</a></li>
+<li><a href="/docs/reference/text/text/#parameters-font">sets the font</a> to &quot;New Computer Modern&quot;, an OpenType
+derivate of Computer Modern for both text and <a href="/docs/reference/text/raw/">code blocks</a></li>
+<li>disables paragraph <a href="/docs/reference/layout/block/#parameters-spacing">spacing</a></li>
+<li>increases <a href="/docs/reference/layout/block/#parameters-spacing">spacing</a> around <a href="/docs/reference/meta/heading/">headings</a></li>
+</ul>
+<pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">page</span><span class="typ-punct">(</span>margin<span class="typ-punct">:</span> <span class="typ-num">1.75in</span><span class="typ-punct">)</span>
+<span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">par</span><span class="typ-punct">(</span>leading<span class="typ-punct">:</span> <span class="typ-num">0.55em</span><span class="typ-punct">,</span> first-line-indent<span class="typ-punct">:</span> <span class="typ-num">1.8em</span><span class="typ-punct">,</span> justify<span class="typ-punct">:</span> <span class="typ-key">true</span><span class="typ-punct">)</span>
+<span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>font<span class="typ-punct">:</span> <span class="typ-str">&quot;New Computer Modern&quot;</span><span class="typ-punct">)</span>
+<span class="typ-key">#</span><span class="typ-key">show</span> <span class="typ-func">raw</span><span class="typ-punct">:</span> <span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>font<span class="typ-punct">:</span> <span class="typ-str">&quot;New Computer Modern Mono&quot;</span><span class="typ-punct">)</span>
+<span class="typ-key">#</span><span class="typ-key">show</span> <span class="typ-func">par</span><span class="typ-punct">:</span> <span class="typ-key">set</span> <span class="typ-func">block</span><span class="typ-punct">(</span>spacing<span class="typ-punct">:</span> <span class="typ-num">0.55em</span><span class="typ-punct">)</span>
+<span class="typ-key">#</span><span class="typ-key">show</span> <span class="typ-func">heading</span><span class="typ-punct">:</span> <span class="typ-key">set</span> <span class="typ-func">block</span><span class="typ-punct">(</span>above<span class="typ-punct">:</span> <span class="typ-num">1.4em</span><span class="typ-punct">,</span> below<span class="typ-punct">:</span> <span class="typ-num">1em</span><span class="typ-punct">)</span>
+</code></pre>
+<p>This should be a good starting point! If you want to go further, why not create
+a reusable template?</p>
+<h2 id="limitations">What limitations does Typst currently have compared to LaTeX?</h2>
+<p>Although Typst can be a LaTeX replacement for many today, there are still
+features that Typst does not (yet) support. Here is a list of them which, where
+applicable, contains possible workarounds.</p>
+<ul>
+<li>
+<p><strong>Native charts and plots.</strong> LaTeX users often create charts along with their
+documents in PGF/TikZ. Typst does not yet include tools to draw diagrams, but
+the community is stepping up with solutions such as
+<a href="https://github.com/johannes-wolf/typst-canvas"><code>typst-canvas</code></a>,
+<a href="https://github.com/johannes-wolf/typst-plot"><code>typst-plot</code></a>, and
+<a href="https://github.com/fenjalien/circuitypst"><code>circuitypst</code></a>. You can add those
+to your document to get started with drawing diagrams.</p>
+</li>
+<li>
+<p><strong>Change page margins without a pagebreak.</strong> In LaTeX, margins can always be
+adjusted, even without a pagebreak. To change margins in Typst, you use the
+<a href="/docs/reference/layout/page/"><code>page</code> function</a> which will force a page break. If you just want
+a few paragraphs to stretch into the margins, then reverting to the old
+margins, you can use the <a href="/docs/reference/layout/pad/"><code>pad</code> function</a> with negative padding.</p>
+</li>
+<li>
+<p><strong>Floating figures.</strong> The figure command of LaTeX will smartly choose where to
+place a figure, be it on the top or bottom of the page, or a dedicated figure
+page. Typst's figure will always appear at the spot where they have been
+inserted in the markup. While this behavior can save some headache, it is
+often cumbersome to manually place figures. We will be adding this feature
+soon!</p>
+</li>
+<li>
+<p><strong>Include PDFs as images.</strong> In LaTeX, it has become customary to insert vector
+graphics as PDF or EPS files. Typst supports neither format as an image
+format, but you can easily convert both into SVG files with <a href="https://cloudconvert.com/pdf-to-svg">online
+tools</a> or
+<a href="https://inkscape.org/">Inkscape</a>. We plan to add automatic conversion for
+these file formats to the Typst web app, too!</p>
+</li>
+<li>
+<p><strong>Page break optimization.</strong> LaTeX runs some smart algorithms to not only
+optimize line but also page breaks. While Typst tries to avoid widows and
+orphans, it uses less sophisticated algorithms to determine page breaks. You
+can insert custom page breaks in Typst using <code><span class="typ-func">#</span><span class="typ-func">pagebreak</span><span class="typ-punct">(</span>weak<span class="typ-punct">:</span> <span class="typ-key">true</span><span class="typ-punct">)</span></code> before
+submitting your document. The argument <code>weak</code> ensures that no double page
+break will be created if this spot would be a natural page break
+anyways. You can also use <code><span class="typ-func">#</span><span class="typ-func">v</span><span class="typ-punct">(</span><span class="typ-num">1fr</span><span class="typ-punct">)</span></code> to distribute space on your page. It
+works quite similar to LaTeX's <code>\vfill</code>.</p>
+</li>
+<li>
+<p><strong>Bibliographies are not customizable.</strong> In LaTeX, the packages <code>bibtex</code>,
+<code>biblatex</code>, and <code>natbib</code> provide a wide range of reference and bibliography
+formats. You can also use custom <code>.bbx</code> files to define your own styles there.
+Typst only supports a small set of citation styles at the moment, but we want
+to build upon this by supporting <a href="https://citationstyles.org">Citation Style Language
+(CSL)</a>, an XML-based format backed by Zotero that
+allows you to describe your own bibliography styles.</p>
+</li>
+</ul>
+
+
+
+      
+      <div class="page-end-buttons"><a href="/docs/guides/" class="previous"><img
+            src="/assets/icons/16-arrow-right.svg" alt="←">
+          <div><span class="page-title">指南</span><span class="hint">上一页</span></div>
+        </a><a href="/docs/changelog/" class="next"><img src="/assets/icons/16-arrow-right.svg" alt="→">
+          <div><span class="page-title">更新日志</span><span class="hint">下一页</span></div>
+        </a></div>
+      
+    </main>
+
+    
+    <nav id="page-overview"><strong>目录</strong>
+      <ul>
+        
+        <li data-assoc="getting-started"><a href="#getting-started">Getting Started</a>
+          <ul></ul>
+        </li>
+        
+        <li data-assoc="elements"><a href="#elements">Elements</a>
+          <ul></ul>
+        </li>
+        
+        <li data-assoc="commands"><a href="#commands">Commands</a>
+          <ul></ul>
+        </li>
+        
+        <li data-assoc="templates"><a href="#templates">Templates</a>
+          <ul></ul>
+        </li>
+        
+        <li data-assoc="packages"><a href="#packages">Packages</a>
+          <ul></ul>
+        </li>
+        
+        <li data-assoc="maths"><a href="#maths">Maths</a>
+          <ul></ul>
+        </li>
+        
+        <li data-assoc="latex-look"><a href="#latex-look">Latex Look</a>
+          <ul></ul>
+        </li>
+        
+        <li data-assoc="limitations"><a href="#limitations">Limitations</a>
+          <ul></ul>
+        </li>
+        
+      </ul>
+    </nav>
+    
+  </div>
+  <footer>
+    <div>
+      <ul>
+        <li><a href="https://typst.app/">主页</a></li>
+        <li><a href="/docs/">中文文档</a></li>
+        <li><a href="https://typst.app/about/">关于我们</a></li>
+        <li><a href="https://typst.app/contact/">联系</a></li>
+        <li><a href="https://typst.app/privacy/">隐私</a></li>
+        <li><a href="https://typst.app/terms/">服务条款</a></li>
+        <li><a href="https://typst.app/legal/">法律说明</a></li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li><a href="https://typst.app/blog/">博客</a></li>
+        <li><a href="https://twitter.com/typstapp/">Twitter</a></li>
+        <li><a href="https://discord.gg/2uDybryKPe">Discord</a></li>
+        <li><a href="https://www.linkedin.com/company/typst/">LinkedIn</a></li>
+        <li><a href="https://instagram.com/typstapp/">Instagram</a></li>
+        <li><a href="https://github.com/typst-doc-cn/typst-doc-cn">GitHub</a></li>
+      </ul>
+    </div>
+    <div>
+      <p>Made in Berlin</p>
+    </div>
+  </footer>
+  <script src="/scripts/docs.js?bust=20230520"></script>
+  <script src="/scripts/analytics.js" defer=""></script>
+</body>
+
+</html>
