@@ -1,20 +1,18 @@
 ---
-description: Typst's tutorial.
+description: Typst 的教程。
 ---
 
 # 教程
-Welcome to Typst's tutorial! In this tutorial, you will learn how to write and
-format documents in Typst. We will start with everyday tasks and gradually
-introduce more advanced features. This tutorial does not assume prior knowledge
-of Typst, other Markup languages, or programming. We do assume that you know how
-to edit a text file.
+欢迎来到 Typst 的教程！在本教程中，您将学习如何在 Typst 中编写和格式化文档。
+我们将从一些日常的任务开始，逐步引入更高级的功能。
+本教程并不事先假定您了解 Typst、其他标记语言或相关的编程技术。
+我们只会假定您知道如何编辑一个文本文件。
 
-The best way to start is to sign up to the Typst app for free and follow along
-with the steps below. The app gives you instant preview, syntax highlighting and
-helpful autocompletions. Alternatively, you can follow along in your local text
-editor with the [open-source CLI](https://github.com/typst/typst).
+开始的最佳方法是去免费注册一个 Typst App 账户，并按照以下步骤操作。
+该 App 将为您提供即时预览，语法高亮和强大的自动补全。
+亦或者您可以使用 [开源 CLI](https://github.com/typst/typst) 在本地文本编辑器中进行编辑和编译。
 
-## When to use Typst { #when-typst }
+## 何时使用 Typst { #when-typst }
 Before we get started, let's check what Typst is and when to use it. Typst is a
 markup language for typesetting documents. It is designed to be easy to learn,
 fast, and versatile. Typst takes text files with markup in them and outputs
