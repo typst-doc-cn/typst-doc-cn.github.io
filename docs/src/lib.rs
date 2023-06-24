@@ -316,7 +316,20 @@ fn category_page(resolver: &dyn Resolver, category: &str) -> PageModel {
         }
     }
 
-    let name = category.to_title_case();
+    let title_name = category.to_title_case();
+    let name = match category {
+        "text" => "文本",
+        "math" => "数学",
+        "layout" => "布局",
+        "visualize" => "可视化",
+        "meta" => "元信息",
+        "symbols" => "符号",
+        "foundations" => "基础",
+        "calculate" => "计算",
+        "construct" => "构造",
+        "data-loading" => "数据加载",
+        _ => &title_name,
+    };
     let kind = match category {
         "symbols" => "Modules",
         _ => "Functions",
@@ -324,12 +337,12 @@ fn category_page(resolver: &dyn Resolver, category: &str) -> PageModel {
 
     PageModel {
         route,
-        title: name.clone(),
+        title: name.into(),
         description: format!("Documentation for functions related to {name} in Typst."),
         part: None,
         outline: category_outline(kind),
         body: BodyModel::Category(CategoryModel {
-            name,
+            name: name.into(),
             details: Html::markdown(resolver, details(category)),
             kind,
             items,
@@ -611,7 +624,7 @@ fn types_page(resolver: &dyn Resolver, parent: &str) -> PageModel {
         children.push(PageModel {
             route,
             title: model.name.to_title_case(),
-            description: format!("Documentation for the `{}` type.", model.name),
+            description: format!("`{}` 类型文档。", model.name),
             part: None,
             outline: type_outline(&model),
             body: BodyModel::Type(model),
@@ -621,12 +634,12 @@ fn types_page(resolver: &dyn Resolver, parent: &str) -> PageModel {
 
     PageModel {
         route,
-        title: "Types".into(),
-        description: "Documentation for Typst's built-in types.".into(),
+        title: "类型".into(),
+        description: "Typst 的内建类型文档".into(),
         part: None,
-        outline: category_outline("Types"),
+        outline: category_outline("类型"),
         body: BodyModel::Category(CategoryModel {
-            name: "Types".into(),
+            name: "类型".into(),
             details: Html::markdown(resolver, details("types")),
             kind: "Types",
             items,
