@@ -831,7 +831,7 @@ variables, you can use the
     { x <span class="typ-pol">in</span> <span class="typ-pol">RR</span> | x <span class="typ-str">&quot;is natural&quot;</span> } <span class="typ-math-delim">$</span>
 <span class="typ-key">#</span><span class="typ-key">let</span> x <span class="typ-op">=</span> <span class="typ-num">5</span>
 <span class="typ-math-delim">$</span> <span class="typ-pol">#</span><span class="typ-pol">x</span> &lt; 17 <span class="typ-math-delim">$</span>
-</code></pre><div class="preview"><img src="/assets/docs/GnwHYrHlAChGixEhaW7APm.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/zUQkLhmrLZhQeTpAALniek.png" alt="Preview" width="480" height="190"/></div></div>
 <p>Math mode makes a wide selection of <a href="/docs/reference/symbols/sym/">symbols</a> like
 <code>pi</code>, <code>dot</code>, or <code>RR</code> available. Many mathematical symbols are available in
 different variants. You can select between different variants by applying
@@ -839,13 +839,13 @@ different variants. You can select between different variants by applying
 shorthand sequences like <code>=&gt;</code> that approximate a symbol. When such a shorthand
 exists, the symbol's documentation lists it.</p>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> x &lt; y <span class="typ-escape">=&gt;</span> x <span class="typ-pol">gt</span><span class="typ-punct">.</span><span class="typ-pol">eq</span><span class="typ-punct">.</span><span class="typ-pol">not</span> y <span class="typ-math-delim">$</span>
-</code></pre><div class="preview"><img src="/assets/docs/Bwndu0y548LzIqq3br19vH.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/cJDNspBW47bCLMqQJL91Ag.png" alt="Preview" width="480" height="190"/></div></div>
 <p>Formulas can also contain line breaks. Each line can contain one or multiple
 <em>alignment points</em> (<code>&amp;</code>) which are then aligned.</p>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-pol">sum</span><span class="typ-math-op">_</span><span class="typ-punct">(</span>k=0<span class="typ-punct">)</span><span class="typ-math-op">^</span>n k
     <span class="typ-math-op">&amp;</span>= 1 + <span class="typ-escape">...</span> + n <span class="typ-escape">\</span>
     <span class="typ-math-op">&amp;</span>= <span class="typ-punct">(</span>n(n+1)<span class="typ-punct">)</span> <span class="typ-math-op">/</span> 2 <span class="typ-math-delim">$</span>
-</code></pre><div class="preview"><img src="/assets/docs/fQep5UbTNvagjDF4MhN7FE.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/iuxqfnTpu5C6Vf1EnAGvkh.png" alt="Preview" width="480" height="190"/></div></div>
 <p>Math mode supports special function calls without the hashtag prefix. In these
 &quot;math calls&quot;, the argument list works a little differently than in code:</p>
 <ul>
@@ -863,7 +863,7 @@ argument.</li>
 <span class="typ-math-delim">$</span> <span class="typ-func">mat</span><span class="typ-punct">(</span>1<span class="typ-punct">,</span> 2<span class="typ-punct">;</span> 3<span class="typ-punct">,</span> 4<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
 <span class="typ-math-delim">$</span> <span class="typ-pol">lim</span><span class="typ-math-op">_</span>x =
     <span class="typ-func">op</span><span class="typ-punct">(</span><span class="typ-str">&quot;lim&quot;</span><span class="typ-punct">,</span> limits<span class="typ-punct">:</span> <span class="typ-key">#</span><span class="typ-key">true</span><span class="typ-punct">)</span><span class="typ-math-op">_</span>x <span class="typ-math-delim">$</span>
-</code></pre><div class="preview"><img src="/assets/docs/9VmdkQqZbezFs3LZs6QMtS.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/kNUSmQEH6mOwGJXXCCsbwz.png" alt="Preview" width="480" height="190"/></div></div>
 <p>To write a verbatim comma or semicolon in a math call, escape it with a
 backslash. The colon on the other hand is only recognized in a special way if
 directly preceded by an identifier, so to display it verbatim in those cases,
@@ -876,7 +876,7 @@ accessed with the <code>math.</code> prefix. For example, to set the font used f
 equations, write:</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">show</span> math<span class="typ-punct">.</span><span class="typ-func">equation</span><span class="typ-punct">:</span> <span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>font<span class="typ-punct">:</span> <span class="typ-str">&quot;Fira Math&quot;</span><span class="typ-punct">)</span>
 <span class="typ-math-delim">$</span> <span class="typ-pol">sum</span><span class="typ-math-op">_</span><span class="typ-punct">(</span>i <span class="typ-pol">in</span> <span class="typ-pol">NN</span><span class="typ-punct">)</span> 1 + i <span class="typ-math-delim">$</span>
-</code></pre><div class="preview"><img src="/assets/docs/FbfUUlAkPlaIc3MTBMIKe9.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/YMDFqCaJpmIL2A9ORvkg1F.png" alt="Preview" width="480" height="190"/></div></div>
 <h2 id="functions">Functions</h2>
 <ul class="subgridded">
   
