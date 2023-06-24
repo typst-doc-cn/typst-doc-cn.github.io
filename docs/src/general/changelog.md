@@ -4,7 +4,7 @@ description: |
   forward.
 ---
 
-# Changelog
+# 更新日志
 ## Version 0.5.0 (June 9, 2023) { #v0.5.0 }
 - Text and Layout
   - Added [`raw`]($func/raw) syntax highlighting for many more languages

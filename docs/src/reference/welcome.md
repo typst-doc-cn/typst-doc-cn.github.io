@@ -4,7 +4,7 @@ description: |
   typesetting language.
 ---
 
-# Reference
+# 参考
 This reference documentation is a comprehensive guide to all of Typst's
 syntax, concepts, types, and functions. If you are completely new to Typst, we
 recommend starting with the [tutorial]($tutorial) and then coming back to

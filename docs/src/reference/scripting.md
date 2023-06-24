@@ -2,7 +2,7 @@
 description: Automate your document with Typst's scripting capabilities.
 ---
 
-# Scripting
+# 脚本
 Typst embeds a powerful scripting language. You can automate your documents and
 create more sophisticated styles with code. Below is an overview over the
 scripting concepts.

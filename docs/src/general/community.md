@@ -4,7 +4,7 @@ description: |
   future of Typst.
 ---
 
-# Community
+# 社区
 Hey and welcome to the Community page! We're so glad you're here. Typst is
 developed by an early-stage startup and is still in its infancy, but it
 would be pointless without people like you who are interested in it.

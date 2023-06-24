@@ -2,7 +2,7 @@
 description: Typst's tutorial.
 ---
 
-# Making a Template
+# 制作模板
 In the previous three chapters of this tutorial, you have learned how to write a
 document in Typst, apply basic styles, and customize its appearance in-depth to
 comply with a publisher's style guide. Because the paper you wrote in the

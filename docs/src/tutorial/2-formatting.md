@@ -2,7 +2,7 @@
 description: Typst's tutorial.
 ---
 
-# Formatting
+# 格式
 So far, you have written a report with some text, a few equations and images.
 However, it still looks very plain. Your teaching assistant does not yet know
 that you are using a new typesetting system, and you want your report to fit in

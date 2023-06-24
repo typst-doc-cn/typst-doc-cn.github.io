@@ -2,7 +2,7 @@
 description: Typst's tutorial.
 ---
 
-# Advanced Styling
+# 高级样式
 In the previous two chapters of this tutorial, you have learned how to write a
 document in Typst and how to change its formatting. The report you wrote
 throughout the last two chapters got a straight A and your supervisor wants to

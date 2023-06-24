@@ -2,7 +2,7 @@
 description: All concepts needed to style your document with Typst.
 ---
 
-# Styling
+# 样式
 Typst includes a flexible styling system that automatically applies styling of
 your choice to your document. With _set rules,_ you can configure basic
 properties of elements. This way, you create most common styles. However, there

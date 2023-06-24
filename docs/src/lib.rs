@@ -908,11 +908,16 @@ fn details(key: &str) -> &str {
 pub fn urlify(title: &str) -> String {
     match title {
         "教程" => "tutorial".to_owned(),
+        "使用 Typst 写作" => "writing-in-typst".to_owned(),
+        "格式" => "formatting".to_owned(),
+        "高级样式" => "advanced-styling".to_owned(),
+        "制作模板" => "making-a-template".to_owned(),
         "参考" => "reference".to_owned(),
         "语法" => "syntax".to_owned(),
         "样式" => "styling".to_owned(),
         "脚本" => "scripting".to_owned(),
         "指南" => "guides".to_owned(),
+        "LaTeX 用户指南" => "guide-for-latex-users".to_owned(),
         "更新日志" => "changelog".to_owned(),
         "社区" => "community".to_owned(),
         _ => title

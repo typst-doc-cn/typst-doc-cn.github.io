@@ -2,7 +2,7 @@
 description: Typst's tutorial.
 ---
 
-# Tutorial
+# 教程
 Welcome to Typst's tutorial! In this tutorial, you will learn how to write and
 format documents in Typst. We will start with everyday tasks and gradually
 introduce more advanced features. This tutorial does not assume prior knowledge

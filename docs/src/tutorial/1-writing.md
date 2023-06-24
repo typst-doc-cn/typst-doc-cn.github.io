@@ -2,7 +2,7 @@
 description: Typst's tutorial.
 ---
 
-# Writing in Typst
+# 使用 Typst 写作
 Let's get started! Suppose you got assigned to write a technical report for
 university. It will contain prose, maths, headings, and figures. To get started,
 you create a new project on the Typst app. You'll be taken to the editor where

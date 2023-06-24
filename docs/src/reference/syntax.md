@@ -4,7 +4,7 @@ description: |
    markup, math, and code mode.
 ---
 
-# Syntax
+# 语法
 Typst is a markup language. This means that you can use simple syntax to
 accomplish common layout tasks. The lightweight markup syntax is complemented by
 set and show rules, which let you style your document easily and automatically.
