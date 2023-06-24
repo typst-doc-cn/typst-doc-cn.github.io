@@ -906,14 +906,24 @@ fn details(key: &str) -> &str {
 
 /// Turn a title into an URL fragment.
 pub fn urlify(title: &str) -> String {
-    title
-        .chars()
-        .map(|c| c.to_ascii_lowercase())
-        .map(|c| match c {
-            'a'..='z' | '0'..='9' => c,
-            _ => '-',
-        })
-        .collect()
+    match title {
+        "教程" => "tutorial".to_owned(),
+        "参考" => "reference".to_owned(),
+        "语法" => "syntax".to_owned(),
+        "样式" => "styling".to_owned(),
+        "脚本" => "scripting".to_owned(),
+        "指南" => "guides".to_owned(),
+        "更新日志" => "changelog".to_owned(),
+        "社区" => "community".to_owned(),
+        _ => title
+            .chars()
+            .map(|c| c.to_ascii_lowercase())
+            .map(|c| match c {
+                'a'..='z' | '0'..='9' => c,
+                _ => '-',
+            })
+            .collect(),
+    }
 }
 
 /// Extract the first line of documentation.
@@ -958,11 +968,30 @@ const TYPE_ORDER: &[&str] = &[
 
 #[cfg(test)]
 mod tests {
+    use std::io::Write;
+    use rand::Rng;
+    use typst::geom::Color;
+
     use super::*;
 
     #[test]
     fn test_docs() {
-        provide(&TestResolver);
+        // remove all files in ../assets/docs
+        let _ = std::fs::remove_dir_all("../assets/docs");
+        // copy all files from ../assets/files to ../assets/docs
+        std::fs::create_dir("../assets/docs").unwrap();
+        for entry in std::fs::read_dir("../assets/files").unwrap() {
+            let entry = entry.unwrap();
+            let path = entry.path();
+            let name = String::from(path.file_name().unwrap().to_str().unwrap());
+            std::fs::copy(path, format!("../assets/docs/{}", name)).unwrap();
+        }
+        // convert all pages to html and generate example images to ../assets/docs
+        let pages = provide(&TestResolver);
+        // convert pages to JSON and save to ../assets/docs.json
+        let json = serde_json::to_string_pretty(&pages).unwrap();
+        let mut file = std::fs::File::create("../assets/docs.json").unwrap();
+        file.write_all(json.as_bytes()).unwrap();
     }
 
     struct TestResolver;
@@ -972,12 +1001,28 @@ mod tests {
             None
         }
 
-        fn example(&self, _: Html, _: &[Frame]) -> Html {
-            Html::new(String::new())
+        fn example(&self, source: Html, frames: &[Frame]) -> Html {
+            // convert frames to a png
+            let ppi = 2.0;
+            // the first frame is the main frame
+            let pixmap = typst::export::render(frames.first().unwrap(), ppi, Color::WHITE);
+            // Get a random filename with length 22
+            let filename = format!("{}.png", rand::thread_rng()
+                .sample_iter(&rand::distributions::Alphanumeric)
+                .take(22)
+                .map(char::from)
+                .collect::<String>());
+            let path = Path::new("../assets/docs").join(filename.clone());
+            let _ = pixmap.save_png(path).map_err(|_| "failed to write PNG file");
+            Html::new(format!(
+                r#"<div class="previewed-code"><pre>{}</pre><div class="preview"><img src="/assets/docs/{}" alt="Preview" width="480" height="190"/></div></div>"#,
+                source.as_str(), filename
+            ))
         }
 
-        fn image(&self, _: &str, _: &[u8]) -> String {
-            String::new()
+        fn image(&self, filename: &str, _: &[u8]) -> String {
+            // return /assets/docs/<filename>
+            format!("/assets/docs/{}", filename)
         }
 
         fn commits(&self, _: &str, _: &str) -> Vec<Commit> {

@@ -23,3 +23,8 @@ package-lock.json
 # Nix
 /result
 .direnv/
+
+# Documentation
+/assets/docs
+/assets/docs.json
+/dist
