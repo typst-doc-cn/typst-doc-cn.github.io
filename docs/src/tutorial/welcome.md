@@ -24,9 +24,9 @@ Typst 是撰写长篇文本（如论文、文章、书籍、报告和作业）�
 ## 你将学到什么 { #learnings }
 本教程共分四章，每一章都建立在上一章的基础上，以下是您将在每个章节中学到的内容：
 
-1. [使用 Typst 写作：]($tutorial/writing-in-typst)了解如何编写文本和插入图像、数学公式和其他元素。
-2. [格式：]($tutorial/formatting)了解如何调整文稿的格式，包括字体大小、标题样式等。
-3. [高级样式：]($tutorial/advanced-styling)为有排版要求（如作者列表和短标题）的科学论文创建复杂的页面布局。
-4. [制作模板：]($tutorial/making-a-template) 使用您在上一章中编写的论文来构建可复用的模板。
+1. [使用 Typst 写作]($tutorial/writing-in-typst)：了解如何编写文本和插入图像、数学公式和其他元素。
+2. [格式]($tutorial/formatting)：了解如何调整文稿的格式，包括字体大小、标题样式等。
+3. [高级样式]($tutorial/advanced-styling)：为有排版要求（如作者列表和短标题）的科学论文创建复杂的页面布局。
+4. [制作模板]($tutorial/making-a-template)： 使用您在上一章中编写的论文来构建可复用的模板。
 
 我们希望您会喜欢 Typst！
