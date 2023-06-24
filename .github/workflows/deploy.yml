@@ -1,0 +1,30 @@
+# Based on ripgrep's release action:
+# https://github.com/BurntSushi/ripgrep/blob/master/.github/workflows/release.yml
+
+name: Deploy Documentation
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    name: build-and-deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      # python3 and package jinja2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - run: python3 -m pip install jinja2
+      - run: cargo test --package typst-docs --lib -- tests::test_docs --exact --nocapture
+      - run: python3 ./gen.py
+      # deploy ./dist to https://github.com/typst-doc-cn/typst-doc-cn.github.io
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist # The folder the action should deploy.
+          
