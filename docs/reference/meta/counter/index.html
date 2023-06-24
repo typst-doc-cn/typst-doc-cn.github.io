@@ -843,7 +843,7 @@ The current value is:
 
 Or in roman numerals:
 <span class="typ-func">#</span><span class="typ-func">counter</span><span class="typ-punct">(</span>heading<span class="typ-punct">)</span><span class="typ-punct">.</span><span class="typ-func">display</span><span class="typ-punct">(</span><span class="typ-str">&quot;I&quot;</span><span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/Q9KzbYSa7axHxYhU8MJqqp.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/X6h8LHLg0XKvOPTpXEErKY.png" alt="Preview" width="480" height="190"/></div></div>
 <h2 id="modifying">Modifying a counter</h2>
 <p>To modify a counter, you can use the <code>step</code> and <code>update</code> methods:</p>
 <ul>
@@ -878,7 +878,7 @@ Let&#39;s skip 7.1.
 
 <span class="typ-heading">== Analysis</span>
 Still at <span class="typ-func">#</span><span class="typ-func">counter</span><span class="typ-punct">(</span>heading<span class="typ-punct">)</span><span class="typ-punct">.</span><span class="typ-func">display</span><span class="typ-punct">(</span><span class="typ-punct">)</span>.
-</code></pre><div class="preview"><img src="/assets/docs/p9oVJ5t6FogKztklRhMRrV.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/FRk6eMkhOvljgWkOBqDSrL.png" alt="Preview" width="480" height="190"/></div></div>
 <h2 id="custom-counters">Custom counters</h2>
 <p>To define your own counter, call the <code>counter</code> function with a string as a
 key. This key identifies the counter globally.</p>
@@ -888,7 +888,7 @@ key. This key identifies the counter globally.</p>
 <span class="typ-pol">#</span><span class="typ-pol">mine</span><span class="typ-punct">.</span><span class="typ-func">display</span><span class="typ-punct">(</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
 <span class="typ-pol">#</span><span class="typ-pol">mine</span><span class="typ-punct">.</span><span class="typ-func">update</span><span class="typ-punct">(</span>c <span class="typ-op">=&gt;</span> c <span class="typ-op">*</span> <span class="typ-num">3</span><span class="typ-punct">)</span>
 <span class="typ-pol">#</span><span class="typ-pol">mine</span><span class="typ-punct">.</span><span class="typ-func">display</span><span class="typ-punct">(</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
-</code></pre><div class="preview"><img src="/assets/docs/XlAmDLrigfLoSybIcj4eBT.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/RHF48Hr4D97d98L786JDbF.png" alt="Preview" width="480" height="190"/></div></div>
 <h2 id="how-to-step">How to step</h2>
 <p>When you define and use a custom counter, in general, you should first step
 the counter and then display it. This way, the stepping behaviour of a
@@ -904,7 +904,7 @@ contents.</p>
 
 <span class="typ-func">#</span><span class="typ-func">theorem</span><span class="typ-punct">[</span><span class="typ-math-delim">$</span>1 = 1<span class="typ-math-delim">$</span><span class="typ-punct">]</span>
 <span class="typ-func">#</span><span class="typ-func">theorem</span><span class="typ-punct">[</span><span class="typ-math-delim">$</span>2 &lt; 3<span class="typ-math-delim">$</span><span class="typ-punct">]</span>
-</code></pre><div class="preview"><img src="/assets/docs/Ysqw8KY3lgCsgCEgTACbsy.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/npgDDg0C11gyWRy5VQQB2C.png" alt="Preview" width="480" height="190"/></div></div>
 <p>The rationale behind this is best explained on the example of the heading
 counter: An update to the heading counter depends on the heading's level.
 By stepping directly before the heading, we can correctly step from <code>1</code> to
@@ -932,7 +932,7 @@ Here, the counter is reset to one.
 We also display both the current
 page and total number of pages in
 Arabic numbers.
-</code></pre><div class="preview"><img src="/assets/docs/REuV7Prp9W293rHnr3QucB.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/m7RcLeOfNSXEkGFrhd4PVZ.png" alt="Preview" width="480" height="190"/></div></div>
 <h2 id="time-travel">Time travel</h2>
 <p>Counters can travel through time! You can find out the final value of the
 counter before it is reached and even determine what the value was at any
@@ -959,7 +959,7 @@ particular location in the document.</p>
 
 <span class="typ-pol">#</span><span class="typ-pol">mine</span><span class="typ-punct">.</span><span class="typ-func">step</span><span class="typ-punct">(</span><span class="typ-punct">)</span>
 <span class="typ-pol">#</span><span class="typ-pol">mine</span><span class="typ-punct">.</span><span class="typ-func">step</span><span class="typ-punct">(</span><span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/S7LTD77d6gyi4UwHv5PD1t.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/67bTYlaHavZ3yRax0ufDkd.png" alt="Preview" width="480" height="190"/></div></div>
 <p>Let's dissect what happens in the example above:</p>
 <ul>
 <li>
