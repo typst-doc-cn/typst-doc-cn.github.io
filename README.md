@@ -16,3 +16,11 @@ PS: Reference 中的 *CONTENT* 和 *COMPUTE* 部分需要深入到 `./library/sr
 ## 技术细节
 
 Typst 的文档生成方式比较复杂, 其与 Typst 的代码文件紧密耦合, 例如示例部分的图片都是编译时生成的, 如果不清楚其中的细节, 请谨慎修改.
+
+
+## 本地生成
+
+```sh
+cargo test --package typst-docs --lib -- tests::test_docs --exact --nocapture
+python ./gen.py
+```
