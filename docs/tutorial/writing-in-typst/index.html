@@ -4,13 +4,13 @@
 <head>
   <meta charset="utf-8">
   <title>使用 Typst 写作 – Typst 中文文档</title>
-  <meta name="description" content="Typst's tutorial.">
+  <meta name="description" content="Typst 的教程。">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#239dad">
   <meta property="og:url" content="https://typst.app/docs/tutorial/writing-in-typst/">
   <meta property="og:title" content="使用 Typst 写作 – Typst 中文文档">
   <meta property="og:site_name" content="Typst">
-  <meta property="og:description" content="Typst's tutorial.">
+  <meta property="og:description" content="Typst 的教程。">
   <meta property="og:type">
   <meta property="og:image" content="https://typst.app/assets/social.png">
   <meta property="og:image:width" content="1200">
@@ -816,15 +816,9 @@
       
 
 <h1>使用 Typst 写作</h1>
-<p>让我们开始吧！假设你被任命取为一所大学写一份技术报告，它将包含文字、数学公式、标题和图表。
-一开始，请在 Typst App 上创建一个新项目。You'll be taken to the editor where
-you see two panels: A source panel where you compose your document and a
-preview panel where you see the rendered document.</p>
-<p>Let's get started! Suppose you got assigned to write a technical report for
-university. It will contain prose, maths, headings, and figures. To get started,
-you create a new project on the Typst app. You'll be taken to the editor where
-you see two panels: A source panel where you compose your document and a
-preview panel where you see the rendered document.</p>
+<p>让我们开始吧！假设你被任命去为一所大学写一份技术报告，报告将包含文字、数学公式、标题和图表。
+为了开始，请在 Typst App 上创建一个新项目。你将会看见一个分为两个面板的编辑器：
+用于撰写文档的代码面板和查看渲染文档的预览面板。</p>
 <p><img src="/assets/docs/1-writing-app.png" alt="Typst app screenshot" /></p>
 <p>You already have a good angle for your report in mind. So let's start by writing
 the introduction. Enter some text in the editor panel. You'll notice that the
@@ -834,7 +828,7 @@ various factors that influence fluid
 dynamics in glaciers and how they
 contribute to the formation and
 behavior of these natural structures.
-</code></pre><div class="preview"><img src="/assets/docs/ENoaJwukHILVC54jPUXVmQ.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/fm7ozU4bl84CCdqd4l6Px5.png" alt="Preview" width="480" height="190"/></div></div>
 <p><em>Throughout this tutorial, we'll show code examples like this one. Just like in the app, the first panel contains markup and the second panel shows a preview. We shrunk the page to fit the examples so you can see what's going on.</em></p>
 <p>The next step is to add a heading and emphasize some text. Typst uses simple
 markup for the most common formatting tasks. To add a heading, enter the <code>=</code>
@@ -846,7 +840,7 @@ various factors that influence <span class="typ-emph">_fluid
 dynamics_</span> in glaciers and how they
 contribute to the formation and
 behavior of these natural structures.
-</code></pre><div class="preview"><img src="/assets/docs/0oluSJwNNyjErgE8QFtpj8.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/KaZ1EhTkaPHFhqssIYI6q0.png" alt="Preview" width="480" height="190"/></div></div>
 <p>That was easy! To add a new paragraph, just add a blank line in between two
 lines of text. If that paragraph needs a subheading, produce it by typing <code>==</code>
 instead of <code>=</code>. The number of <code>=</code> characters determines the nesting level of the
@@ -858,7 +852,7 @@ items.</p>
 <div class="previewed-code"><pre><code><span class="typ-marker">+</span> The climate
 <span class="typ-marker">+</span> The topography
 <span class="typ-marker">+</span> The geology
-</code></pre><div class="preview"><img src="/assets/docs/1Jh3cXhfujq4FaGUJTme1a.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/0qwK0bnRGffBPlO9dO6Jgc.png" alt="Preview" width="480" height="190"/></div></div>
 <p>If we wanted to add a bulleted list, we would use the <code>-</code> character instead of
 the <code>+</code> character. We can also nest lists: For example, we can add a sub-list to
 the first item of the list above by indenting it.</p>
@@ -867,7 +861,7 @@ the first item of the list above by indenting it.</p>
   <span class="typ-marker">-</span> Precipitation
 <span class="typ-marker">+</span> The topography
 <span class="typ-marker">+</span> The geology
-</code></pre><div class="preview"><img src="/assets/docs/YUUoW2hgHkoaovDdFXcrGZ.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/gKmdxfbFNY45Ct2h6sfZ6l.png" alt="Preview" width="480" height="190"/></div></div>
 <h2 id="figure">Adding a figure</h2>
 <p>You think that your report would benefit from a figure. Let's add one. Typst
 supports images in the formats PNG, JPEG, GIF, and SVG. To add an image file to
@@ -886,7 +880,7 @@ unwieldy. For this reason, Typst reserves markup symbols only for the most
 common things. Everything else is inserted with <em>functions.</em> For our image to
 show up on the page, we use Typst's <a href="/docs/reference/visualize/image/"><code>image</code></a> function.</p>
 <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">image</span><span class="typ-punct">(</span><span class="typ-str">&quot;glacier.jpg&quot;</span><span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/VKZGSUgyR4kE7IGFCE5C0X.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/cyRqNJcDtxKwcK25rzm9iu.png" alt="Preview" width="480" height="190"/></div></div>
 <p>In general, a function produces some output for a set of <em>arguments</em>. When you
 <em>call</em> a function within markup, you provide the arguments and Typst inserts the
 result (the function's <em>return value</em>) into the document. In our case, the
@@ -901,7 +895,7 @@ it in double quotes.</p>
 therefore specified as a <code>name: value</code> pair. If there are multiple arguments,
 they are separated by commas, so we first need to put a comma behind the path.</p>
 <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">image</span><span class="typ-punct">(</span><span class="typ-str">&quot;glacier.jpg&quot;</span><span class="typ-punct">,</span> width<span class="typ-punct">:</span> <span class="typ-num">70%</span><span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/Gdee4bvvzhDb31Z6SROgE9.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/mnRiqwiE7H5Y4AmrVTGujG.png" alt="Preview" width="480" height="190"/></div></div>
 <p>The <code>width</code> argument is a <a href="/docs/reference/types/relative-length/">relative length</a>. In our case,
 we specified a percentage, determining that the image shall take up <code><span class="typ-num">70%</span></code> of
 the page's width. We also could have specified an absolute value like <code><span class="typ-num">1cm</span></code> or
@@ -921,7 +915,7 @@ enclose it in square brackets. This construct is called a <em>content block.</em
     of the earth&#39;s climate system.
   <span class="typ-punct">]</span><span class="typ-punct">,</span>
 <span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/eknKnH2Cr3vSvOtwLrJO81.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/Mue2qteJMpczVc8gjHeW2T.png" alt="Preview" width="480" height="190"/></div></div>
 <p>You continue to write your report and now want to reference the figure. To do
 that, first attach a label to figure. A label uniquely identifies an element in
 your document. Add one after the figure by enclosing some name in angle
@@ -939,7 +933,7 @@ we don&#39;t take action soon!
     of the earth&#39;s climate system.
   <span class="typ-punct">]</span><span class="typ-punct">,</span>
 <span class="typ-punct">)</span> <span class="typ-label">&lt;glaciers&gt;</span>
-</code></pre><div class="preview"><img src="/assets/docs/GLjM0Cl58N8In1sTvvPlaW.png" alt="Preview" width="480" height="190"/></div></div><div class="info-box">
+</code></pre><div class="preview"><img src="/assets/docs/rn1s8D8w09AjtWJluslk4T.png" alt="Preview" width="480" height="190"/></div></div><div class="info-box">
 <p>So far, we've passed content blocks (markup in square brackets) and strings
 (text in double quotes) to our functions. Both seem to contain text. What's the
 difference?</p>
@@ -972,7 +966,7 @@ We follow the glacier melting models
 established in <span class="typ-ref">@glacier-melt</span>.
 
 <span class="typ-func">#</span><span class="typ-func">bibliography</span><span class="typ-punct">(</span><span class="typ-str">&quot;works.bib&quot;</span><span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/it7PEquo6JKQrPvI7Ygvvd.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/zpFNxv9I90cem5IloADMWT.png" alt="Preview" width="480" height="190"/></div></div>
 <h2 id="maths">Maths</h2>
 <p>After fleshing out the methods section, you move on to the meat of the document:
 Your equations. Typst has built-in mathematical typesetting and uses its own
@@ -980,7 +974,7 @@ math notation. Let's start with a simple equation. We wrap it in <code>$</code> 
 to let Typst know it should expect a mathematical expression:</p>
 <div class="previewed-code"><pre><code>The equation <span class="typ-math-delim">$</span>Q = <span class="typ-pol">rho</span> A v + C<span class="typ-math-delim">$</span>
 defines the glacial flow rate.
-</code></pre><div class="preview"><img src="/assets/docs/rxMUPXqF2EC20rGd59hsus.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/i1MNa2limMyDvIBpy2wahi.png" alt="Preview" width="480" height="190"/></div></div>
 <p>The equation is typeset inline, on the same line as the surrounding text. If you
 want to have it on its own line instead, you should insert a single space at its
 start and end:</p>
@@ -988,7 +982,7 @@ start and end:</p>
 defined by the following equation:
 
 <span class="typ-math-delim">$</span> Q = <span class="typ-pol">rho</span> A v + C <span class="typ-math-delim">$</span>
-</code></pre><div class="preview"><img src="/assets/docs/pGcv3BEC45XJR15hyoDyFI.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/j0FwKagP6KUInscdfI10IJ.png" alt="Preview" width="480" height="190"/></div></div>
 <p>We can see that Typst displayed the single letters <code>Q</code>, <code>A</code>, <code>v</code>, and <code>C</code> as-is,
 while it translated <code>rho</code> into a Greek letter. Math mode will always show single
 letters verbatim. Multiple letters, however, are interpreted as symbols,
@@ -1000,14 +994,14 @@ enclose it in quotes:</p>
 by the following equation:
 
 <span class="typ-math-delim">$</span> Q = <span class="typ-pol">rho</span> A v + <span class="typ-str">&quot;time offset&quot;</span> <span class="typ-math-delim">$</span>
-</code></pre><div class="preview"><img src="/assets/docs/rjjNzqXQ68ONBXm9rx5BNa.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/2U2iYkBkfFZFwxSGQ3oNgK.png" alt="Preview" width="480" height="190"/></div></div>
 <p>You'll also need a sum formula in your paper. We can use the <code>sum</code> symbol and
 then specify the range of the summation in sub- and superscripts:</p>
 <div class="previewed-code"><pre><code>Total displaced soil by glacial flow:
 
 <span class="typ-math-delim">$</span> 7.32 <span class="typ-pol">beta</span> +
   <span class="typ-pol">sum</span><span class="typ-math-op">_</span><span class="typ-punct">(</span>i=0<span class="typ-punct">)</span><span class="typ-math-op">^</span><span class="typ-pol">nabla</span> Q<span class="typ-math-op">_</span>i <span class="typ-math-op">/</span> 2 <span class="typ-math-delim">$</span>
-</code></pre><div class="preview"><img src="/assets/docs/IVcB71FlW45O5UwDQy1ehq.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/JAuUntJtXRFeWCbWEvSQUO.png" alt="Preview" width="480" height="190"/></div></div>
 <p>To add a subscript to a symbol or variable, type a <code>_</code> character and then the
 subscript. Similarly, use the <code>^</code> character for a superscript. If your
 sub- or superscript consists of multiple things, you must enclose them
@@ -1022,13 +1016,13 @@ sub-expressions with the appropriate notation.</p>
 <span class="typ-math-delim">$</span> 7.32 <span class="typ-pol">beta</span> +
   <span class="typ-pol">sum</span><span class="typ-math-op">_</span><span class="typ-punct">(</span>i=0<span class="typ-punct">)</span><span class="typ-math-op">^</span><span class="typ-pol">nabla</span>
     <span class="typ-punct">(</span>Q<span class="typ-math-op">_</span>i (a<span class="typ-math-op">_</span>i <span class="typ-escape">-</span> <span class="typ-pol">epsilon</span>)<span class="typ-punct">)</span> <span class="typ-math-op">/</span> 2 <span class="typ-math-delim">$</span>
-</code></pre><div class="preview"><img src="/assets/docs/H0ymd3Ogwi6UXNmpKXPoYm.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/86PnMOtwiN4sPHoKp25zD1.png" alt="Preview" width="480" height="190"/></div></div>
 <p>Not all math constructs have special syntax. Instead, we use functions, just
 like the <code>image</code> function we have seen before. For example, to insert a column
 vector, we can use the <a href="/docs/reference/math/vec/"><code>vec</code></a> function. Within math mode,
 function calls don't need to start with the <code>#</code> character.</p>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> v <span class="typ-escape">:=</span> <span class="typ-func">vec</span><span class="typ-punct">(</span>x<span class="typ-math-op">_</span>1<span class="typ-punct">,</span> x<span class="typ-math-op">_</span>2<span class="typ-punct">,</span> x<span class="typ-math-op">_</span>3<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
-</code></pre><div class="preview"><img src="/assets/docs/fLnxsaOqlujnD3lGUie3sr.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/pY3RVIm10yjMWfUK2nPCxx.png" alt="Preview" width="480" height="190"/></div></div>
 <p>Some functions are only available within math mode. For example, the
 <a href="/docs/reference/math/variants/#cal"><code>cal</code></a> function is used to typeset calligraphic letters
 commonly used for sets. The <a href="/docs/reference/math/">math section of the reference</a>
@@ -1037,7 +1031,7 @@ provides a complete list of all functions that math mode makes available.</p>
 select among these variants by appending a dot and a modifier name to a symbol's
 name:</p>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> a <span class="typ-pol">arrow</span><span class="typ-punct">.</span><span class="typ-pol">squiggly</span> b <span class="typ-math-delim">$</span>
-</code></pre><div class="preview"><img src="/assets/docs/nCa5JJ6lc85nEAJRF8FtVH.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/sQDwobPlnhrt2TlEZFXRJe.png" alt="Preview" width="480" height="190"/></div></div>
 <p>This notation is also available in markup mode, but the symbol name must be
 preceded with <code>#sym.</code> there. See the <a href="/docs/reference/symbols/sym/">symbols section</a>
 for a list of all available symbols.</p>
