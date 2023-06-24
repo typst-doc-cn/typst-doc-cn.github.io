@@ -39,7 +39,7 @@
   <div class="alert">
     <div class="alert-content">
       <span><b>注意：</b>该中文文档为社区驱动的非官网文档，可能存在错译、漏译或过时等问题，请以官网文档 <a href="https://typst.app/docs/">Documentation</a>
-        为准，如发现错漏，也欢迎您的贡献。</span>
+        为准，如发现错漏，也欢迎 <a href="https://github.com/typst-doc-cn/typst-doc-cn.github.io">您的贡献。</a></span>
       <br />
       <span><b>Warning:</b> the Chinese document is a community-driven non-official document, there may be mistranslation, omission or outdated problems, please refer to <a href="https://typst.app/docs/">the official website documentation</a>.</span>
     </div>
@@ -63,7 +63,7 @@
                 <title id="svg-discord-label">Discord</title>
                 <use href="/assets/icons/social.svg#discord"></use>
               </svg></a></li>
-          <li class="social"><a href="https://github.com/typst-doc-cn/typst-doc-cn"><svg width="16" height="16" role="img"
+          <li class="social"><a href="https://github.com/typst-doc-cn/typst-doc-cn.github.io"><svg width="16" height="16" role="img"
                 aria-labelledby="svg-github-label">
                 <title id="svg-github-label">GitHub</title>
                 <use href="/assets/icons/social.svg#github"></use>
@@ -831,7 +831,7 @@ They can do anything you want them to, so why not go a bit crazy?</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> <span class="typ-func">amazed</span><span class="typ-punct">(</span>term<span class="typ-punct">)</span> <span class="typ-op">=</span> <span class="typ-func">box</span><span class="typ-punct">[</span>✨ <span class="typ-pol">#</span><span class="typ-pol">term</span> ✨<span class="typ-punct">]</span>
 
 You are <span class="typ-func">#</span><span class="typ-func">amazed</span><span class="typ-punct">[</span>beautiful<span class="typ-punct">]</span>!
-</code></pre><div class="preview"><img src="/assets/docs/lPbU6YqOafmU4LjtdC1P73.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/sGWFjnrsXl3YqQGcFXxNip.png" alt="Preview" width="480" height="190"/></div></div>
 <p>This function takes a single argument, <code>term</code>, and returns a content block with
 the <code>term</code> surrounded by sparkles. We also put the whole thing in a box so that
 the term we are amazed by cannot be separated from its sparkles by a line break.</p>
@@ -845,7 +845,7 @@ parameter isn't given.</p>
 
 You are <span class="typ-func">#</span><span class="typ-func">amazed</span><span class="typ-punct">[</span>beautiful<span class="typ-punct">]</span>!
 I am <span class="typ-func">#</span><span class="typ-func">amazed</span><span class="typ-punct">(</span>color<span class="typ-punct">:</span> purple<span class="typ-punct">)</span><span class="typ-punct">[</span>amazed<span class="typ-punct">]</span>!
-</code></pre><div class="preview"><img src="/assets/docs/17aQnpeSPNw1joo3byQnFm.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/ESgL72xmLvKZyWLzxnHSiJ.png" alt="Preview" width="480" height="190"/></div></div>
 <p>Templates now work by using an &quot;everything&quot; show rule that applies the custom
 function to our whole document. Let's do that with our <code>amazed</code> function.</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">show</span><span class="typ-punct">:</span> <span class="typ-func">amazed</span>
@@ -853,7 +853,7 @@ I choose to focus on the good
 in my life and let go of any
 negative thoughts or beliefs.
 In fact, I am amazing!
-</code></pre><div class="preview"><img src="/assets/docs/HWR6BZu4dA5BXbOQqdAdW9.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/rqKX2vgj2b20S7clIcUfb7.png" alt="Preview" width="480" height="190"/></div></div>
 <p>Our whole document will now be passed to the <code>amazed</code> function, as if we
 wrapped it around it. This is not especially useful with this particular
 function, but when combined with set rules and named arguments, it can be very
@@ -871,7 +871,7 @@ that content block.</p>
 <span class="typ-key">#</span><span class="typ-key">show</span><span class="typ-punct">:</span> <span class="typ-func">template</span>
 I am learning something cool today.
 It&#39;s going great so far!
-</code></pre><div class="preview"><img src="/assets/docs/lBhZPtclwzuM6VCwwWj1Xc.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/li6lRMqYM9Q19GIQQSMyMs.png" alt="Preview" width="480" height="190"/></div></div>
 <p>Just like we already discovered in the previous chapter, set rules will apply to
 everything within their content block. Since the everything show rule passes our
 whole document to the <code>template</code> function, the text set rule and string show
@@ -908,7 +908,7 @@ previous chapter.</p>
 <span class="typ-func">#</span><span class="typ-func">lorem</span><span class="typ-punct">(</span><span class="typ-num">90</span><span class="typ-punct">)</span>
 
 <span class="typ-escape">...</span>
-</code></pre><div class="preview"><img src="/assets/docs/uqMxihtfyMxJFiFDEtlesY.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/GZWOQqfijPMX82xybOer1o.png" alt="Preview" width="480" height="190"/></div></div>
 <p>We copy-pasted most of that code from the previous chapter. The only two
 differences are that we wrapped everything in the function <code>conf</code> and are
 calling the columns function directly on the <code>doc</code> argument as it already
@@ -1045,7 +1045,7 @@ want to import.</p>
 
 <span class="typ-heading">= Related Work</span>
 <span class="typ-func">#</span><span class="typ-func">lorem</span><span class="typ-punct">(</span><span class="typ-num">200</span><span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/xVFXCGzkVZJiuK2oN6ou4k.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/HGt7ZAEiKibXyIO5azM2CT.png" alt="Preview" width="480" height="190"/></div></div>
 <p>We have now converted the conference paper into a reusable template for that
 conference! Why not share it on
 <a href="https://discord.gg/2uDybryKPe">Typst's Discord server</a> so that others can use
@@ -1121,7 +1121,7 @@ questions, suggestions or you found a bug, please let us know on
         <li><a href="https://discord.gg/2uDybryKPe">Discord</a></li>
         <li><a href="https://www.linkedin.com/company/typst/">LinkedIn</a></li>
         <li><a href="https://instagram.com/typstapp/">Instagram</a></li>
-        <li><a href="https://github.com/typst-doc-cn/typst-doc-cn">GitHub</a></li>
+        <li><a href="https://github.com/typst-doc-cn/typst-doc-cn.github.io">GitHub</a></li>
       </ul>
     </div>
     <div>
