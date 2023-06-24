@@ -4,6 +4,7 @@
 
 https://typst-doc-cn.github.io/docs/
 
+
 ## 贡献
 
 1. Fork 这个 Repo
@@ -20,7 +21,13 @@ Typst 的文档生成方式比较复杂, 其与 Typst 的代码文件紧密耦�
 
 ## 本地生成
 
+本地生成是非必须的, 但是它很适合你在本地查看生成的网页是否正确.
+
+首先你需要 clone 本仓库, 并安装 `cargo` 工具链, 以及 Python 和 Python 包 `jinja2`.
+
 ```sh
 cargo test --package typst-docs --lib -- tests::test_docs --exact --nocapture
 python ./gen.py
 ```
+
+最后编译得到的文件位于 `./dist`.
