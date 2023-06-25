@@ -10,7 +10,7 @@ description: Typst 的教程。
 
 ## Set 规则 { #set-rules }
 正如我们在上一章中看到的，Typst 具有 _插入_ 内容块的函数（例如 [`image`]($func/image) 函数），
-以及其他将内容块作为参数接收的 _操作_ 函数（例如 ['align']($func/align) 函数）。
+以及其他将内容块作为参数接收的 _操作_ 函数（例如 [`align`]($func/align) 函数）。
 您可能第一个想法是，例如，为了报告的文本左右对齐（justify），您可能会寻找一个执行此操作的函数并将整个文稿包装在其中。
 
 ```example
@@ -151,7 +151,7 @@ Typst App 带有许多字体，您可以在您的文档自主尝试。
 
 ## 更复杂一点 { #sophistication }
 为了更清楚地组织我们的文档，我们现在要对标题进行编号。
-我们可以通过设置 ['heading']($func/heading) 函数的 `numbering` 参数来做到这一点。
+我们可以通过设置 [`heading`]($func/heading) 函数的 `numbering` 参数来做到这一点。
 
 ```example
 >>> #set text(font: "New Computer Modern")
@@ -185,7 +185,7 @@ Typst App 带有许多字体，您可以在您的文档自主尝试。
 #lorem(15)
 ```
 
-此示例还使用 ['lorem']($func/lorem) 函数生成一些占位文本。
+此示例还使用 [`lorem`]($func/lorem) 函数生成一些占位文本。
 此函数将一个数字作为参数，并生成许多 _Lorem Ipsum_ 文本单词。
 
 <div class="info-box">
