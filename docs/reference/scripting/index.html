@@ -830,7 +830,7 @@ be interpreted as text, the expression can forcibly be ended with a semicolon
 <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">emph</span><span class="typ-punct">[</span>Hello<span class="typ-punct">]</span> <span class="typ-escape">\</span>
 <span class="typ-pol">#</span><span class="typ-pol">emoji</span><span class="typ-punct">.</span><span class="typ-pol">face</span> <span class="typ-escape">\</span>
 <span class="typ-str">#</span><span class="typ-str">&quot;hello&quot;</span><span class="typ-punct">.</span><span class="typ-func">len</span><span class="typ-punct">(</span><span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/06Tgr24VDdthgZeH8kdjif.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/4oQCfpz7hX4IeNKgyye6rP.png" alt="Preview" width="480" height="190"/></div></div>
 <p>The example above shows a few of the available expressions, including
 <a href="/docs/reference/types/function/">function calls</a>,
 <a href="/docs/reference/scripting/#fields">field accesses</a>, and
@@ -871,7 +871,7 @@ functions. That is, <code><span class="typ-func">list</span><span class="typ-pun
   <span class="typ-punct">[</span>hello <span class="typ-punct">]</span>
   a <span class="typ-op">+</span> <span class="typ-punct">[</span> the <span class="typ-punct">]</span> <span class="typ-op">+</span> b
 <span class="typ-punct">}</span>
-</code></pre><div class="preview"><img src="/assets/docs/RZ4lhkCzq9INY8wnNv2p58.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/HyOQRLTc6Y1IiEGKiMyBDI.png" alt="Preview" width="480" height="190"/></div></div>
 <h2 id="bindings">Bindings and Destructuring</h2>
 <p>As already demonstrated above, variables can be defined with <code><span class="typ-key">let</span></code> bindings.
 The variable is assigned the value of the expression that follows the <code>=</code> sign.
@@ -885,7 +885,7 @@ It explains <span class="typ-pol">#</span><span class="typ-pol">name</span>.
 
 <span class="typ-key">#</span><span class="typ-key">let</span> <span class="typ-func">add</span><span class="typ-punct">(</span>x<span class="typ-punct">,</span> y<span class="typ-punct">)</span> <span class="typ-op">=</span> x <span class="typ-op">+</span> y
 Sum is <span class="typ-func">#</span><span class="typ-func">add</span><span class="typ-punct">(</span><span class="typ-num">2</span><span class="typ-punct">,</span> <span class="typ-num">3</span><span class="typ-punct">)</span>.
-</code></pre><div class="preview"><img src="/assets/docs/wvhYpWPweDNKt8riQPjGhE.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/mCMXucsX8HPNCsLtdCNUyU.png" alt="Preview" width="480" height="190"/></div></div>
 <p>Let bindings can also be used to destructure <a href="/docs/reference/types/array/">arrays</a> and
 <a href="/docs/reference/types/dictionary/">dictionaries</a>. In this case, the left-hand side of the
 assignment should mirror an array or dictionary. The <code>..</code> operator can be used
@@ -914,18 +914,18 @@ Homer wrote <span class="typ-pol">#</span><span class="typ-pol">h</span>.
 <span class="typ-key">#</span><span class="typ-key">for</span> <span class="typ-punct">(</span>author<span class="typ-punct">,</span> title<span class="typ-punct">)</span> <span class="typ-key">in</span> other <span class="typ-punct">[</span>
   <span class="typ-pol">#</span><span class="typ-pol">author</span> wrote <span class="typ-pol">#</span><span class="typ-pol">title</span>.
 <span class="typ-punct">]</span>
-</code></pre><div class="preview"><img src="/assets/docs/w1JAT0bPRxu95AmfIA1K7e.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/Xq1r3ZSt8nAfgm6XfQ1Dcp.png" alt="Preview" width="480" height="190"/></div></div>
 <p>You can use the underscore to discard elements in a destructuring pattern:</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> <span class="typ-punct">(</span>_<span class="typ-punct">,</span> y<span class="typ-punct">,</span> _<span class="typ-punct">)</span> <span class="typ-op">=</span> <span class="typ-punct">(</span><span class="typ-num">1</span><span class="typ-punct">,</span> <span class="typ-num">2</span><span class="typ-punct">,</span> <span class="typ-num">3</span><span class="typ-punct">)</span>
 The y coordinate is <span class="typ-pol">#</span><span class="typ-pol">y</span>.
-</code></pre><div class="preview"><img src="/assets/docs/PpkAOQPm1UAylLor3G6Zfi.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/NNUoRXQs9oK6stu8bPmh8Z.png" alt="Preview" width="480" height="190"/></div></div>
 <p>Destructuring also work in argument lists of functions ...</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> left <span class="typ-op">=</span> <span class="typ-punct">(</span><span class="typ-num">2</span><span class="typ-punct">,</span> <span class="typ-num">4</span><span class="typ-punct">,</span> <span class="typ-num">5</span><span class="typ-punct">)</span>
 <span class="typ-key">#</span><span class="typ-key">let</span> right <span class="typ-op">=</span> <span class="typ-punct">(</span><span class="typ-num">3</span><span class="typ-punct">,</span> <span class="typ-num">2</span><span class="typ-punct">,</span> <span class="typ-num">6</span><span class="typ-punct">)</span>
 <span class="typ-pol">#</span><span class="typ-pol">left</span><span class="typ-punct">.</span><span class="typ-func">zip</span><span class="typ-punct">(</span>right<span class="typ-punct">)</span><span class="typ-punct">.</span><span class="typ-func">map</span><span class="typ-punct">(</span>
   <span class="typ-punct">(</span><span class="typ-punct">(</span>a<span class="typ-punct">,</span>b<span class="typ-punct">)</span><span class="typ-punct">)</span> <span class="typ-op">=&gt;</span> a <span class="typ-op">+</span> b
 <span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/R1CHz3xofAv2HVPUVXV29k.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/nWdGkQG3Tnrdn7FRNYWr36.png" alt="Preview" width="480" height="190"/></div></div>
 <p>... and on the left-hand side of normal assignments. This can be useful to
 swap variables among other things.</p>
 <div class="previewed-code"><pre><code><span class="typ-punct">#</span><span class="typ-punct">{</span>
@@ -934,7 +934,7 @@ swap variables among other things.</p>
   <span class="typ-punct">(</span>a<span class="typ-punct">,</span> b<span class="typ-punct">)</span> <span class="typ-op">=</span> <span class="typ-punct">(</span>b<span class="typ-punct">,</span> a<span class="typ-punct">)</span>
   <span class="typ-punct">[</span>a = <span class="typ-pol">#</span><span class="typ-pol">a</span>, b = <span class="typ-pol">#</span><span class="typ-pol">b</span><span class="typ-punct">]</span>
 <span class="typ-punct">}</span>
-</code></pre><div class="preview"><img src="/assets/docs/T6pzzrC7G4IIdVdnBFXfhe.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/8NuGhObihjlivoU3RoRP7L.png" alt="Preview" width="480" height="190"/></div></div>
 <h2 id="conditionals">Conditionals</h2>
 <p>With a conditional, you can display or compute different things depending on
 whether some condition is fulfilled. Typst supports <code><span class="typ-key">if</span></code>, <code>else <span class="typ-key">if</span></code> and
@@ -946,7 +946,7 @@ resulting from the else's body.</p>
 <span class="typ-punct">]</span> <span class="typ-key">else</span> <span class="typ-punct">[</span>
   This is not.
 <span class="typ-punct">]</span>
-</code></pre><div class="preview"><img src="/assets/docs/hMKeh6odLr6V5BgYTXVwAd.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/GCzK7zorO8elWV3ZKrigor.png" alt="Preview" width="480" height="190"/></div></div>
 <p>Each branch can have a code or content block as its body.</p>
 <ul>
 <li><code><span class="typ-key">if</span> condition <span class="typ-punct">{</span>..<span class="typ-punct">}</span></code></li>
@@ -972,7 +972,7 @@ together into one larger array.</p>
   n <span class="typ-op">=</span> <span class="typ-punct">(</span>n <span class="typ-op">*</span> <span class="typ-num">2</span><span class="typ-punct">)</span> <span class="typ-op">-</span> <span class="typ-num">1</span>
   <span class="typ-punct">(</span>n<span class="typ-punct">,</span><span class="typ-punct">)</span>
 <span class="typ-punct">}</span>
-</code></pre><div class="preview"><img src="/assets/docs/tTLqtYVXuK2INZIljZMnLu.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/14luhR435wpQyFCfEGYcG7.png" alt="Preview" width="480" height="190"/></div></div>
 <p>For loops can iterate over a variety of collections:</p>
 <ul>
 <li>
@@ -1004,7 +1004,7 @@ the latter skips ahead to the next iteration of the loop.</p>
 
   letter
 <span class="typ-punct">}</span>
-</code></pre><div class="preview"><img src="/assets/docs/gxxYtCtvOo3FFxYXZujrwr.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/HaFMO7pJ2crSkEfGgAwb5v.png" alt="Preview" width="480" height="190"/></div></div>
 <p>The body of a loop can be a code or content block:</p>
 <ul>
 <li><code><span class="typ-key">for</span> .. <span class="typ-key">in</span> collection <span class="typ-punct">{</span>..<span class="typ-punct">}</span></code></li>
@@ -1031,7 +1031,7 @@ the element was constructed.</li>
 <span class="typ-key">#</span><span class="typ-key">let</span> it <span class="typ-op">=</span> <span class="typ-punct">[</span><span class="typ-heading">= Heading</span><span class="typ-punct">]</span>
 <span class="typ-pol">#</span><span class="typ-pol">it</span><span class="typ-punct">.</span><span class="typ-pol">body</span> <span class="typ-escape">\</span>
 <span class="typ-pol">#</span><span class="typ-pol">it</span><span class="typ-punct">.</span><span class="typ-pol">level</span>
-</code></pre><div class="preview"><img src="/assets/docs/vA7XT9kl9CgnGu1YHHxiP2.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/lR4ZSOykVeDWnq5zz2DjOI.png" alt="Preview" width="480" height="190"/></div></div>
 <h2 id="methods">Methods</h2>
 <p>A method is a kind of a <a href="/docs/reference/types/function/">function</a> that is tightly coupled with
 a specific type. It is called on a value of its type using the same dot notation
@@ -1045,7 +1045,7 @@ types. You cannot define your own methods.</p>
 <span class="typ-punct">#</span><span class="typ-punct">(</span><span class="typ-str">&quot;a, b, c&quot;</span>
     <span class="typ-punct">.</span><span class="typ-func">split</span><span class="typ-punct">(</span><span class="typ-str">&quot;, &quot;</span><span class="typ-punct">)</span>
     <span class="typ-punct">.</span><span class="typ-func">join</span><span class="typ-punct">[</span> <span class="typ-escape">---</span> <span class="typ-punct">]</span><span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/BKe1I0FV1Ou0N9ADe1ytgf.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/lxstz8jyzCQwgKVGr2njuY.png" alt="Preview" width="480" height="190"/></div></div>
 <p>Methods are the only functions in Typst that can modify the value they are
 called on.</p>
 <h2 id="modules">Modules</h2>
@@ -1076,7 +1076,7 @@ all variables defined in a module.</p>
 the following example:</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">import</span> emoji<span class="typ-punct">:</span> face
 <span class="typ-pol">#</span><span class="typ-pol">face</span><span class="typ-punct">.</span><span class="typ-pol">grin</span>
-</code></pre><div class="preview"><img src="/assets/docs/NcArmmCFgnlJraVFNIha9Y.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/KqUDK5QzlVXH75GQk2SgLk.png" alt="Preview" width="480" height="190"/></div></div>
 <h2 id="operators">Operators</h2>
 <p>The following table lists all available unary and binary operators with effect,
 arity (unary, binary) and precedence level (higher binds stronger).</p>
