@@ -116,7 +116,7 @@ description: Typst 的教程。
 
 两个作者块彼此相邻，我们使用 [`grid`]($func/grid) 函数来创建这种布局。
 使用 `grid`，我们可以准确控制每列的大小以及哪些内容放到哪个单元格。
-`columns` 参数接受 [relative lengths]($type/relative-length) 或 [fractions][fractions]($type/fraction) 的数组。
+`columns` 参数接受 [relative lengths]($type/relative-length) 或 [fractions]($type/fraction) 的数组。
 在本例中，我们向它传递了两个相等的 `fractions`，告诉它将可用空间分成两个相等大小的列。
 然后，我们将两个内容块参数传递给 `grid` 函数。
 第一个是我们自己的信息，第二个是我们的导师的信息。
@@ -231,7 +231,7 @@ description: Typst 的教程。
 ## 添加列和标题 { #columns-and-headings }
 不幸的是，上面的论文看起来像一堵铅墙。
 为了解决这个问题，让我们添加一些标题，并将我们的论文切换到双列布局。
-['columns']($func/columns) 函数接受一个整数参数和一个内容参数，并将内容布局到指定数量的列中。
+[`columns`]($func/columns) 函数接受一个整数参数和一个内容参数，并将内容布局到指定数量的列中。
 由于我们希望摘要之后的所有内容都在两列中，因此我们需要将 `columns` 函数应用于整个文档。
 
 并不需要将整个文档包装在一个巨大的函数调用里，我们可以使用 “所有内容” Show 规则。
