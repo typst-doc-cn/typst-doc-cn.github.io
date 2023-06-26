@@ -477,5 +477,5 @@ $ mat(
 
 - **书目是不可定制的。** 在LaTeX中，包`bibtex`、`biblatex`和`natbib`提供了广泛的参考和书目格式。
   你也可以使用自定义的`.bbx`文件来定义你自己的样式。
-  Typst目前只支持一小部分引文风格，但我们希望在此基础上支持[引文风格语言（CSL）](https://citationstyles.org)，
-  这是一种由Zotero支持的基于XML的格式，允许你描述自己的书目风格。
+  Typst 目前只支持一小部分引文风格，但我们希望在此基础上支持[引文风格语言（CSL）](https://citationstyles.org)，
+  这是一种由 Zotero 支持的基于 XML 的格式，允许你描述自己的书目风格。
