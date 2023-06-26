@@ -861,7 +861,7 @@ following example:</p>
 
 <span class="typ-heading">= Introduction</span>
 <span class="typ-escape">...</span>
-</code></pre><div class="preview"><img src="/assets/docs/QDxwQb8TVQygNgQRgHAo3I.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/qtQKNFkgBnnOubhuTSpHMO.png" alt="Preview" width="480" height="190"/></div></div>
 <p>Here, Typst first processes the body of the document after the show rule,
 sees the <code>Introduction</code> heading, then passes the resulting content to the
 <code>template</code> function and only then sees the <code>Outline</code>. Just counting up would
@@ -897,7 +897,7 @@ new state.</p>
 <span class="typ-func">#</span><span class="typ-func">compute</span><span class="typ-punct">(</span><span class="typ-str">&quot;x + 3&quot;</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
 <span class="typ-func">#</span><span class="typ-func">compute</span><span class="typ-punct">(</span><span class="typ-str">&quot;x * 2&quot;</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
 <span class="typ-func">#</span><span class="typ-func">compute</span><span class="typ-punct">(</span><span class="typ-str">&quot;x - 5&quot;</span><span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/ihFtT4Vcivw28GQJJFoGMI.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/TWnATHW2KWHmvorJUYgyj6.png" alt="Preview" width="480" height="190"/></div></div>
 <p>State managed by Typst is always updated in layout order, not in evaluation
 order. The <code>update</code> method returns content and its effect occurs at the
 position where the returned content is inserted into the document.</p>
@@ -913,7 +913,7 @@ variables, but they still show the correct results:</p>
 <span class="typ-func">#</span><span class="typ-func">compute</span><span class="typ-punct">(</span><span class="typ-str">&quot;10&quot;</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
 <span class="typ-func">#</span><span class="typ-func">compute</span><span class="typ-punct">(</span><span class="typ-str">&quot;x + 3&quot;</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
 <span class="typ-pol">#</span><span class="typ-pol">more</span>
-</code></pre><div class="preview"><img src="/assets/docs/1faHyTtT9GXMxwEHBfXfXQ.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/d6xxO7bGLRtkEcVZS1o2U7.png" alt="Preview" width="480" height="190"/></div></div>
 <p>This example is of course a bit silly, but in practice this is often exactly
 what you want! A good example are heading counters, which is why Typst's
 <a href="/docs/reference/meta/counter/">counting system</a> is very similar to its state system.</p>
@@ -938,7 +938,7 @@ Value at <span class="typ-raw">`&lt;here&gt;`</span> is
 <span class="typ-strong">*Here.*</span> <span class="typ-label">&lt;here&gt;</span> <span class="typ-escape">\</span>
 <span class="typ-func">#</span><span class="typ-func">compute</span><span class="typ-punct">(</span><span class="typ-str">&quot;x * 2&quot;</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
 <span class="typ-func">#</span><span class="typ-func">compute</span><span class="typ-punct">(</span><span class="typ-str">&quot;x - 5&quot;</span><span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/5hwlSHVAO9eAhGdglG1J98.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/HEgTulCmQSYTnPpFULtG9q.png" alt="Preview" width="480" height="190"/></div></div>
 <h2 id="caution">A word of caution</h2>
 <p>To resolve the values of all states, Typst evaluates parts of your code
 multiple times. However, there is no guarantee that your state manipulation
@@ -954,7 +954,7 @@ gives up after a few attempts.</p>
   s<span class="typ-punct">.</span><span class="typ-func">update</span><span class="typ-punct">(</span>s<span class="typ-punct">.</span><span class="typ-func">final</span><span class="typ-punct">(</span>loc<span class="typ-punct">)</span> <span class="typ-op">+</span> <span class="typ-num">1</span><span class="typ-punct">)</span>
 <span class="typ-punct">}</span><span class="typ-punct">)</span>
 <span class="typ-pol">#</span><span class="typ-pol">s</span><span class="typ-punct">.</span><span class="typ-func">display</span><span class="typ-punct">(</span><span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/HBkshXPGkLQavCYo5XnotJ.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/BBRUc8UoMWN7uvQgdjLdlH.png" alt="Preview" width="480" height="190"/></div></div>
 <p>In general, you should <em>typically</em> not generate state updates from within
 <code>locate</code> calls or <code>display</code> calls of state or counters. Instead pass a
 function to <code>update</code> that determines the value of the state based on its
