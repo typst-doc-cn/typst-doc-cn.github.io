@@ -1,39 +1,30 @@
 ---
 description: |
-  Are you a LaTeX user? This guide explains the differences and
-  similarities between Typst and LaTeX so you can get started quickly.
+  您是 LaTeX 用户吗？本指南解释了 Typst 和 LaTeX 之间的差异和相似之处，以便您可以快速入门。
 ---
 
 # LaTeX 用户指南
-This page is a good starting point if you have used LaTeX before and want to try
-out Typst. We will explore the main differences between these two systems from a
-user perspective. Although Typst is not built upon LaTeX and has a different
-syntax, you will learn how to use your LaTeX skills to get a head start.
+如果你以前使用过 LaTeX 并想尝试 Typst，那么此页面是一个很好的开始。
+我们将从用户的角度探讨这两个排版系统的主要区别。
+尽管 Typst 不是基于 LaTeX 构建的，并且具有不同的语法，但是你可以利用你的 LaTeX 技能来快速入门。
 
 <!-- Mention that Typst is not built upon LaTeX -->
 
-Just like LaTeX, Typst is a markup-based typesetting system: You compose your
-document in a text file and mark it up with commands and other syntax. Then, you
-use a compiler to typeset the source file into a PDF. However, Typst also
-differs from LaTeX in several aspects: For one, Typst uses more dedicated syntax
-(like you may know from Markdown) for common tasks. Typst's commands are also
-more principled: They all work the same, so unlike in LaTeX, you just need to
-understand a few general concepts instead of learning different conventions for
-each package. Moreover Typst compiles faster than LaTeX: Compilation usually
-takes milliseconds, not seconds, so the web app and the compiler can both
-provide instant previews.
+就像 LaTeX 一样，Typst 是一个基于标记的排版系统：你在一个文本文件中编写文档，并用命令和其他语法对其进行标记。
+然后，使用编译器将源文件排版为PDF。
+然而，Typst 在几个方面不同于 LaTeX:
+首先，Typst 对常见任务使用更专用的语法（就像你可能从 Markdown 中知道的那样）。
+Typst 的命令也更有原则:它们都是一样的，所以不像在LaTeX中，你只需要理解一些通用的概念，而不是学习每个包的不同约定。
+此外，Typst 的编译速度比 LaTeX 更快：编译通常需要几毫秒，而不是几秒钟，因此[Web应用程序](https://typst.app/)和编译器都可以提供实时预览。
 
-In the following, we will cover some of the most common questions a user
-switching from LaTeX will have when composing a document in Typst. If you prefer
-a step-by-step introduction to Typst, check out our [tutorial]($tutorial).
+下面，我们将介绍一些从 LaTeX 转换到 Typst 的用户在编写文档时会遇到的最常见的问题。
+如果你更喜欢一步一步地介绍 Typst，请查看我们的[教程]($tutorial)。
 
-## How do I create a new, empty document? { #getting-started }
-That's easy. You just create a new, empty text file (the file extension is
-`.typ`). No boilerplate is needed to get started. Simply start by writing your
-text. It will be set on an empty A4-sized page. If you are using the web app,
-click "+ Empty document" to create a new project with a file and enter the
-editor. [Paragraph breaks]($func/parbreak) work just as they do in LaTeX, just
-use a blank line.
+## 如何创建一个新的空文档？{ #getting-started }
+这很简单。您只需创建一个新的空文本文件（文件扩展名为.typ）。
+开始时不需要任何模板。只需直接开始编写你的文字。文字将被渲染在一个空白的A4大小的页面上。
+如果您使用的是Web应用程序，请单击“+ Empty document”以创建一个带有文件的新项目，然后进入编辑器。
+[段落分隔符]($func/parbreak)的工作方式和 LaTeX 中的一样，只是使用一个空行。
 
 ```example
 Hey there!
@@ -42,43 +33,36 @@ Here are two paragraphs. The
 output is shown to the right.
 ```
 
-## How do I create section headings, emphasis, ...? { #elements }
-LaTeX uses the command `\section` to create a section heading. Nested headings
-are indicated with `\subsection`, `\subsubsection`, etc. Depending on your
-document class, there is also `\part` or `\chapter`.
+## 我如何创建章节标题，强调，...？{ #elements }
+LaTeX 使用`\section`命令创建章节标题。嵌套标题用`\subsection`、`\subsection`等表示。根据文档类型，还有`\part`或`\chapter`。
 
-In Typst, [headings]($func/heading) are less verbose: You prefix the line with
-the heading on it with an equals sign and a space to get a first-order heading:
-`[= Introduction]`. If you need a second-order heading, you use two equals
-signs: `[== In this paper]`. You can nest headings as deeply as you'd like by
-adding more equals signs.
+在 Typst 中，标题设置更简洁：在标题所在的行前面加上一个等号和一个空格，得到一级标题：`[= Introduction]`。
+如果你需要一个二级标题，你可以使用两个等号：`[== In this paper]`。
+你可以通过添加更多的等号，将标题嵌套到你想要的深度。
 
-Emphasis (usually rendered as italic text) is expressed by enclosing text in
-`[_underscores_]` and strong emphasis (usually rendered in boldface) by using
-`[*stars*]` instead.
+强调（通常以斜体字呈现）是通过用`[_underscores_]`来表达，
+而着重的强调（通常以黑体字呈现）是通过使用`[*Star*]`来代替。
 
-Here is a list of common markup commands used in LaTeX and their Typst
-equivalents. You can also check out the [full syntax cheat sheet]($syntax).
+下面是 LaTeX 中使用的常见标记命令及其 Typst 对应的表示方式。你也可以查看[完整的语法备忘单]($syntax)。
 
-| Element          | LaTeX                     | Typst                  | See                      |
+| 元素              | LaTeX                     | Typst                  | See                      |
 |:-----------------|:--------------------------|:-----------------------|:-------------------------|
-| Strong emphasis  | `\textbf{strong}`         | `[*strong*]`           | [`strong`]($func/strong) |
-| Emphasis         | `\emph{emphasis}`         | `[_emphasis_]`         | [`emph`]($func/emph)     |
-| Monospace / code | `\texttt{print(1)}`       | ``[`print(1)`]``       | [`raw`]($func/raw)       |
-| Link             | `\url{https://typst.app}` | `[https://typst.app/]` | [`link`]($func/link)     |
-| Label            | `\label{intro}`           | `[<intro>]`            | [`label`]($func/label)   |
-| Reference        | `\ref{intro}`             | `[@intro]`             | [`ref`]($func/ref)       |
-| Citation         | `\cite{humphrey97}`       | `[@humphrey97]`        | [`cite`]($func/cite)     |
-| Bullet list      | `itemize` environment     | `[- List]`             | [`list`]($func/list)     |
-| Numbered list    | `enumerate` environment   | `[+ List]`             | [`enum`]($func/enum)     |
-| Term list        | `description` environment | `[/ Term: List]`       | [`terms`]($func/terms)   |
-| Figure           | `figure` environment      | `figure` function      | [`figure`]($func/figure) |
-| Table            | `table` environment       | `table` function       | [`table`]($func/table)   |
-| Equation         | `$x$`, `align` / `equation` environments | `[$x$]`, `[$ x = y $]` | [`equation`]($func/math.equation) |
+| 着重强调          | `\textbf{strong}`         | `[*strong*]`           | [`strong`]($func/strong) |
+| 强调             | `\emph{emphasis}`         | `[_emphasis_]`         | [`emph`]($func/emph)     |
+| 等宽文字 / 代码    | `\texttt{print(1)}`       | ``[`print(1)`]``       | [`raw`]($func/raw)       |
+| 链接             | `\url{https://typst.app}` | `[https://typst.app/]` | [`link`]($func/link)     |
+| 标签             | `\label{intro}`           | `[<intro>]`            | [`label`]($func/label)   |
+| 交叉引用          | `\ref{intro}`             | `[@intro]`             | [`ref`]($func/ref)       |
+| 文献引用          | `\cite{humphrey97}`       | `[@humphrey97]`        | [`cite`]($func/cite)     |
+| 无序列表          | `itemize` 环境            | `[- List]`             | [`list`]($func/list)     |
+| 有序列表          | `enumerate` 环境          | `[+ List]`             | [`enum`]($func/enum)     |
+| 描述列表          | `description` 环境        | `[/ Term: List]`       | [`terms`]($func/terms)   |
+| 图片             | `figure` 环境             | `figure` 函数           | [`figure`]($func/figure) |
+| 表格             | `table` 环境              | `table` 函数            | [`table`]($func/table)   |
+| 公式             | `$x$`, `align` / `equation` 环境 | `[$x$]`, `[$ x = y $]` | [`equation`]($func/math.equation) |
 
-[Lists]($func/list) do not rely on environments in Typst. Instead, they have
-lightweight syntax like headings. To create an unordered list (`itemize`),
-prefix each line of an item with a hyphen:
+[列表]($func/list)不依赖于 Typst 中的环境。相反，它们有像标题一样的轻量级语法。
+要创建一个无序列表（`itemize`），只需要在每一行的项目前加一个`-`字符：
 
 ````example
 To write this list in Typst...
@@ -99,32 +83,21 @@ To write this list in Typst...
 
 ````
 
-Nesting lists works just by using proper indentation. Adding a blank line in
-between items results in a more [widely]($func/list.tight) spaced list.
+嵌套列表通过使用适当的缩进来实现。在项目之间添加一个空行会使列表的间距更大。
 
-To get a [numbered list]($func/enum) (`enumerate`) instead, use a `+` instead of
-the hyphen. For a [term list]($func/terms) (`description`), write
-`[/ Term: Description]` instead.
+要获得一个[有序列表]($func/enum)（`enumerate`），请用`+`代替连字符。
+对于一个[描述列表]($func/terms)（`description`），用`[/ Term: Description]`来代替。
 
-## How do I use a command? { #commands }
-LaTeX heavily relies on commands (prefixed by backslashes). It uses these
-_macros_ to affect the typesetting process and to insert and manipulate content.
-Some commands accept arguments, which are most frequently enclosed in curly
-braces: `\cite{rasmus}`.
+## 我如何使用一个命令？ { #commands }
+LaTeX 在很大程度上依赖于命令（以反斜线为前缀）。它使用 _宏_ 来影响排版过程，并插入和操作内容。
+有些命令接受参数，这些参数经常被放在大括号里： `\cite{rasmus}`。
 
-Typst differentiates between [markup mode and code mode]($scripting/#blocks).
-The default is markup mode, where you compose text and apply syntactic
-constructs such as `[*stars for bold text*]`. Code mode, on the other hand,
-parallels programming languages like Python, providing the option to input
-and execute segments of code.
+Typst 区分了[标记模式和代码模式]($scripting/#blocks)。默认情况下是标记模式，在这种模式下，你可以编排文本并应用语法结构，如 `[*星代表粗体文本*]`。
+另一方面，代码模式与Python等编程语言相似，提供输入和执行代码段的选项。
 
-Within Typst's markup, you can switch to code mode for a single command (or
-rather, _expression_) using a hashtag (`#`). This is how you call functions to,
-for example, split your project into different [files]($scripting/#modules)
-or render text based on some [condition]($scripting/#conditionals).
-Within code mode, it is possible to include normal markup
-[_content_]($type/content) by using square brackets. Within code mode, this
-content is treated just as any other normal value for a variable.
+在 Typst 的标记中，你可通过使用一个标签（`#`）为一个单一的命令（或者说，_表达式_）切换到代码模式。
+这是你调用函数的方式，例如，将你的项目分割成不同的[文件]($scripting/#modules)或根据某些[条件]($scripting/#conditionals)渲染文本。
+在代码模式下，可以通过使用方括号来包含正常的标记[内容]($type/content)。在代码模式下，这些内容就像变量的任何其他正常值一样被处理。
 
 ```example
 First, a rectangle:
@@ -142,20 +115,13 @@ And finally a little loop:
 ]
 ```
 
-A function call always involves the name of the function ([`rect`]($func/rect),
-[`underline`]($func/underline), [`calc.max`]($func/calc.max),
-[`range`]($func/range)) followed by parentheses (as opposed to LaTeX where the
-square brackets and curly braces are optional if the macro requires no
-arguments). The expected list of arguments passed within those parentheses
-depends on the concrete function and is specified in the
-[reference]($reference).
+一个函数调用总是涉及到函数的名称（[`rect`]($func/rect), [`underline`]($func/underline), 
+[`calc.max`]($func/calc.max), [`range`]($func/range)），后面是小括号（与 LaTeX 不同，如果宏不需要参数，方括号和大括号是可选的）。
+在这些圆括号内传递的参数的预期列表取决于具体的函数，并在[引用]($reference)中指定。
 
-### Arguments { #arguments }
-A function can have multiple arguments. Some arguments are positional, i.e., you
-just provide the value: The function `[#lower("SCREAM")]` returns its argument
-in all-lowercase. Many functions use named arguments instead of positional
-arguments to increase legibility. For example, the dimensions and stroke of a
-rectangle are defined with named arguments:
+### 参数 { #arguments }
+一个函数可以有多个参数。有些参数是条件性的，也就是说，你只需提供值： 函数`[#lower("SCREAM")]`以全小写的方式返回其参数。
+许多函数使用命名参数而不是位置参数，以增加可读性。例如，一个矩形的尺寸和笔划是用命名参数定义的：
 
 ```example
 #rect(
@@ -165,21 +131,15 @@ rectangle are defined with named arguments:
 )
 ```
 
-You specify a named argument by first entering its name (above, it's `width`,
-`height`, and `stroke`), then a colon, followed by the value (`2cm`, `1cm`,
-`red`). You can find the available named arguments in the [reference
-page]($reference) for each function or in the autocomplete panel when typing.
-Named arguments are similar to how some LaTeX environments are configured, for
-example, you would type `\begin{enumerate}[label={\alph*)}]` to start a list
-with the labels `a)`, `b)`, and so on.
+你指定一个命名参数，首先输入它的名字（上文中是它`width`、`height`和`stroke`），然后是冒号，接着是值（`2cm`、`1cm`、`red`）。
+你可以在每个函数的参考页中找到可用的命名参数，或者在输入时的自动完成面板中找到。
+命名参数类似于一些 LaTeX 环境的配置方式，例如，你可以输入`\begin{enumerate}[label={alph*)}]`来启动一个带有标签`a)`、`b)`等的列表。
 
-Often, you want to provide some [content]($type/content) to a function. For
-example, the LaTeX command `\underline{Alternative A}` would translate to
-`[#underline([Alternative A])]` in Typst. The square brackets indicate that a
-value is [content]($type/content). Within these brackets, you can use normal
-markup. However, that's a lot of parentheses for a pretty simple construct.
-This is why you can also move trailing content arguments after the parentheses
-(and omit the parentheses if they would end up empty).
+通常，你想为一个函数提供一些[内容]($type/content)。
+例如，LaTeX 的命令 `\underline{Alternative A}` 在 Typst 中会翻译成 `#underline([Alternative A])`。
+方括号表示一个值是内容。在这些方括号内，你可以使用正常的标记。
+然而，对于一个相当简单的结构来说，这是个很大的括号。
+这就是为什么你也可以把后面的内容参数移到小括号之后（如果小括号最后是空的，就省略掉）。
 
 ```example
 Typst is an #underline[alternative]
@@ -188,11 +148,9 @@ to LaTeX.
 #rect(fill: aqua)[Get started here!]
 ```
 
-### Data types { #data-types }
-You likely already noticed that the arguments have distinctive data types. Typst
-supports [many data types]($type). Below, there is a table with some of the most
-important ones and how to write them. In order to specify values of any of these
-types, you have to be in code mode!
+### 数据类型 { #data-types }
+你可能已经注意到，这些参数有独特的数据类型。Typst 支持许多[数据类型]($type)。
+下面有一个表格，列出了一些最重要的数据类型以及如何编写它们。为了指定这些类型的值，你必须在代码模式下才行!
 
 | Data type                            | Example                           |
 |:-------------------------------------|:----------------------------------|
@@ -203,28 +161,20 @@ types, you have to be in code mode!
 | [Absolute length]($type/length)      | `{12pt}`, `{5in}`, `{0.3cm}`, ... |
 | [Relative length]($type/ratio)       | `{65%}`                           |
 
-The difference between content and string is that content can contain markup,
-including function calls, while a string really is just a plain sequence of
-characters.
+内容和字符串的区别在于，内容可以包含标记，包括函数调用，而字符串实际上只是一个普通的字符序列。
 
-Typst provides [control flow constructs]($scripting/#conditionals) and
-[operators]($scripting/#operators) such as `+` for adding things or `==` for
-checking equality between two variables. You can also define your own
-[variables]($scripting/#bindings) and perform computations on them.
+Typst 提供了[控制流结构]($scripting/#conditionals)和[运算符]$(scripting#operators)，
+如用于添加东西的 `+` 或用于检查两个变量之间是否相等的 `==`。
+你也可以定义你自己的[变量]($scripting/#bindings)并对其进行计算。
 
-### Commands to affect the remaining document { #rules }
-In LaTeX, some commands like `\textbf{bold text}` receive an argument in curly
-braces and only affect that argument. Other commands such as
-`\bfseries bold text` act as switches, altering the appearance of all subsequent
-content within the document or current scope.
+### 影响整个文档的命令 { #rules }
+在 LaTeX 中，有些命令，如 `\textbf{bold text}`，在大括号中接收一个参数，只影响该参数。
+其他命令，如 `\bfseries bold text` 作为开关，改变文档或当前范围内所有后续内容的外观。
 
-In Typst, the same function can be used both to affect the appearance for the
-remainder of the document, a block (or scope), or just its arguments. For example,
-`[#text(weight: "bold")[bold text]]` will only embolden its argument, while
-`[#set text(weight: "bold")]` will embolden any text until the end of the
-current block, or, if there is none, document. The effects of a function are
-immediately obvious based on whether it is used in a call or a
-[set rule.]($styling/#set-rules)
+在 Typst 中，同一个函数既可以用来影响文档的其余部分、一个块（或范围）的外观，也可以只影响其参数。
+例如，`[#text(weight: "bold")[bold text]]` 将只对其参数加粗，
+而 `[#set text(weight: "bold")]` 将对当前块或直到文件结尾之前的所有文本加粗。
+一个函数的效果根据它在调用或[设置规则]($styling/#set-rules)中的使用而立即显现。
 
 ```example
 I am starting out with small text.
@@ -235,8 +185,7 @@ This is a bit #text(18pt)[larger,]
 don't you think?
 ```
 
-Set rules may appear anywhere in the document. They can be thought of as
-default argument values of their respective function:
+设置规则可以出现在文件的任何地方。它们可以被认为是其各自函数的默认参数值：
 
 ```example
 #set enum(numbering: "I.")
@@ -248,25 +197,19 @@ Good results can only be obtained by
 + checking the data for biases
 ```
 
-The `+` is syntactic sugar (think of it as an abbreviation) for a call to the
-[`{enum}`]($func/enum) function, to which we apply a set rule above. [Most
-syntax is linked to a function in this way.]($syntax) If you need to style an
-element beyond what its arguments enable, you can completely redefine its
-appearance with a [show rule]($styling/#show-rules) (somewhat comparable to
-`\renewcommand`).
+`+` 是调用[`{enum}`]($func/enum)函数的语法糖（可以把它看作是缩写），我们在上面应用了一个集合规则。
+[大多数语法都是以这种方式与一个函数相连的]($syntax)。
+如果你需要对一个元素进行超出其参数所能实现的样式设置，你可以用一个[显示规则]($styling/#show-rules)
+（有点类似于 `\renewcommand`）来完全重新定义其外观。
 
-## How do I load a document class? { #templates }
-In LaTeX, you start your main `.tex` file with the `\documentclass{article}`
-command to define how your document is supposed to look. In that command, you
-may have replaced `article` with another value such as `report` and `amsart` to
-select a different look.
+## 如何加载一个文档类？ { #templates }
+在 LaTeX 中，你用 `\documentclass{article}` 命令开始你的主 `.tex` 文件，以定义你的文件应该是什么样子。
+在该命令中，你可能用另一个值代替 `article` ，如 `report` 和 `amsart` 来选择不同的外观。
 
-When using Typst, you style your documents with [functions]($type/function).
-Typically, you use a template that provides a function that styles your whole
-document. First, you import the function from a template file. Then, you apply
-it to your whole document. This is accomplished with a
-[show rule]($styling/#show-rules) that wraps the following document in a given
-function. The following example illustrates how it works:
+当使用 Typst 时，你用[函数]($type/function)来为你的文档样式。
+通常情况下，你使用一个模板，它提供了一个函数来为你的整个文档样式。首先，你从模板文件中导入该函数。
+然后，你把它应用到你的整个文档中。这是用一个[显示规则]($styling/#show-rules)来完成的，该规则用一个给定的函数来包装下面的文档。
+下面的例子说明了它是如何工作的：
 
 ```example:single
 >>> #let conf(
@@ -356,44 +299,31 @@ article by putting insightful
 paragraphs right here!
 ```
 
-The [`{import}`]($scripting/#modules) statement makes
-[functions]($type/function) (and other definitions) from another file available.
-In this example, it imports the `conf` function from the `conf.typ` file. This
-function formats a document as a conference article. We use a show rule to apply
-it to the document and also configure some metadata of the article. After
-applying the show rule, we can start writing our article right away!
+[`import`]($scripting/#modules) 语句使另一个文件中的函数（和其他定义）可用。
+在这个例子中，它从 `conf.typ` 文件中导入 `conf` 函数。这个函数将一个文档格式化为一篇会议文章。
+我们使用一个显示规则将其应用到文档中，同时配置文章的一些元数据。应用显示规则后，我们就可以马上开始写文章了!
 
 <div class="info-box">
 
-Functions are Typst's "commands" and can transform their arguments to an output
-value, including document _content._ Functions are "pure", which means that they
-cannot have any effects beyond creating an output value / output content. This
-is in stark contrast to LaTeX macros that can have arbitrary effects on your
-document.
+在 Typst 中，函数被称为"命令"，它们可以将其参数转化为输出值，包括文档 _内容_。
+函数是"纯净"的，这意味着它们除了创建一个输出值/输出内容外，不能产生任何其他效果。
+这与 LaTeX 的宏形成了鲜明的对比，后者可以对你的文档产生任意的效果。
 
-To let a function style your whole document, the show rule processes everything
-that comes after it and calls the function specified after the colon with the
-result as an argument. The `.with` part is a _method_ that takes the `conf`
-function and pre-configures some if its arguments before passing it on to the
-show rule.
+要让一个函数为你的整个文档提供样式，显示规则会处理它后面的所有内容，并以结果为参数调用冒号后面指定的函数。
+`.with` 部分是一个方法，它接收 `conf` 函数，并在传递给显示规则之前预先配置它的一些参数。
 </div>
 
-In the web app, you can choose from predefined templates or even
-create your own using the template wizard. You can also check out the
-[`awesome-typst` repository](https://github.com/qjcg/awesome-typst) to find
-templates made by the community. We plan to build a package manager to make
-templates even easier to share in the future!
+在Web应用程序中，你可以从预定义的模板中选择，甚至可以使用模板向导创建自己的模板。
+你也可以查看 [`awesome-typst` 仓库](https://github.com/qjcg/awesome-typst)，找到由社区制作的模板。
+我们计划建立一个包管理器，使模板在未来更容易被分享!
 
-You can also [create your own, custom templates.]($tutorial/making-a-template)
-They are shorter and more readable than the corresponding LaTeX `.sty` files by
-orders of magnitude, so give it a try!
+你也可以[创建你自己的、自定义的模板]($tutorial/making-a-template)。它们比相应的 LaTeX 的 `.sty` 文件短得多，可读性也高得多，所以不妨一试!
 
-## How do I load packages? { #packages }
-Typst is "batteries included," so the equivalent of many popular LaTeX packages
-is built right-in. Below, we compiled a table with frequently loaded packages
-and their corresponding Typst functions.
+## 如何导入包？ { #packages }
+Typst 是"即插即用"的，所以许多流行的 LaTeX 包的对应表达是直接内置的。
+下面，我们编制了一个表格，其中包括经常使用的 LaTeX 包和它们相应的 Typst 函数。
 
-| LaTeX Package                   | Typst Alternative                                                    |
+| LaTeX 包                   | Typst 替代                                                    |
 |:--------------------------------|:---------------------------------------------------------------------|
 | graphicx, svg                   | [`image`]($func/image) function                                      |
 | tabularx                        | [`table`]($func/table), [`grid`]($func/grid) functions               |
@@ -411,22 +341,14 @@ and their corresponding Typst functions.
 | caption                         | [`figure`]($func/figure) function                                    |
 | enumitem                        | [`list`]($func/list), [`enum`]($func/enum), [`terms`]($func/terms) functions |
 
-If you need to load functions and variables from another file, for example, to
-use a template, you can use an [`import`]($scripting/#modules) statement. If you
-want to include the textual content of another file instead, you can use an
-[`{include}`]($scripting/#modules) statement. It will retrieve the content of
-the specified file and put it in your document.
+如果你需要从另一个文件中加载函数和变量，例如，为了使用一个模板，你可以使用 [`import`]($scripting/modules) 语句。
+如果你想包括另一个文件的文本内容，你可以使用 [`include`]($scripting/#modules) 语句。它将检索指定文件的内容并将其放入你的文档中。
 
-Currently, there is no package manager for Typst, but we plan to build one so
-that you can easily use packages with tools and templates from the community and
-publish your own. Until then, you might want to check out the
-[awesome-typst repository](https://github.com/qjcg/awesome-typst), which
-compiles a curated list of libraries created for Typst.
+目前，Typst 没有软件包管理器，但我们计划建立一个，这样你就可以轻松地使用社区中的工具和模板的软件包，并发布你自己的。
+在那之前，你可能想看看 [awesome-typst 仓库](https://github.com/qjcg/awesome-typst)，它包含了一个为 Typst 创建的库的精选列表。
 
-## How do I input maths? { #maths }
-To enter math mode in Typst, just enclose your equation in dollar signs. You can
-enter display mode by adding spaces or newlines between the equation's contents
-and its enclosing dollar signs.
+## 如何输入数学公式？ { #maths }
+要在 Typst 中进入数学模式，只需将方程用`$`符号括起来。你可以通过在方程内容和其周围的`$`符号之间添加空格或换行来进入显示模式。
 
 ```example
 The sum of the numbers from
@@ -435,48 +357,33 @@ $1$ to $n$ is:
 $ sum_(k=1)^n k = (n(n+1))/2 $
 ```
 
-[Math mode]($category/math) works differently than regular markup or code mode.
-Numbers and single characters are displayed verbatim, while multiple consecutive
-(non-number) characters will be interpreted as Typst variables.
+[数学模式]($category/math)的工作方式与普通标记或代码模式不同。数字和单个字符被逐字显示，而多个连续（非数字）字符将被解释为Typst变量。
 
-Typst pre-defines a lot of useful variables in math mode. All Greek (`alpha`,
-`beta`, ...) and some Hebrew letters (`alef`, `bet`, ...) are available through
-their name. Some symbols are additionally available through shorthands, such as
-`<=`, `>=`, and `->`.
+Typst在数学模式下预先定义了很多有用的变量。所有希腊字母（`alpha`, `beta`, ...）和一些希伯来字母（`alef`, `bet`, ...）都可以通过它们的名字使用。
+一些符号还可以通过速记法使用，如`<=`、`>=`和`->`。
 
-Refer to the [symbol page]($func/symbol) for a full list of the symbols.
-If a symbol is missing, you can also access it through a
-[Unicode escape sequence]($syntax/#escapes).
+符号的完整列表请参考[符号页面]($func/symbol)。如果缺少一个符号，你也可以通过[Unicode转义序列]($syntax/#escapes)访问它。
 
-Alternate and related forms of symbols can often be selected by
-[appending a modifier]($type/symbol) after a period. For example,
-`arrow.l.squiggly` inserts a squiggly left-pointing arrow. If you want to insert
-multiletter text in your expression instead, enclose it in double quotes:
+符号的替代和相关形式通常可以通过在句点后附加一个[修饰符]($type/symbol)来选择。例如，`arrow.l.squiggly`插入了一个向左倾斜的箭头。
+如果你想在你的表达式中插入多字母文本，请用双引号将其括起来：
 
 ```example
 $ delta "if" x <= 5 $
 ```
 
-In Typst, delimiters will scale automatically for their expressions, just as if
-`\left` and `\right` commands were implicitly inserted in LaTeX. You can
-customize delimiter behavior using the [`lr` function]($func/math.lr). To
-prevent a pair of delimiters from scaling, you can escape them with backslashes.
+在Typst中，定界符将为其表达式自动缩放，就像LaTeX中的 `\left` 和 `\right` 命令是隐式插入的。
+你可以使用[`lr`]($func/math.lr)函数自定义定界符的行为。为了防止一对定界符的缩放，你可以用反斜线转义。
 
-Typst will automatically set terms around a slash `/` as a fraction while
-honoring operator precedence. All round parentheses not made redundant by the
-fraction will appear in the output.
+Typst会自动将斜线 `/` 周围的术语设置为分数，同时尊重运算符的优先级。所有的圆括号都会出现在输出中，而不会因为分数而变得多余。
 
 ```example
 $ f(x) = (x + 1) / x $
 ```
 
-[Sub- and superscripts]($func/math.attach) work similarly in Typst and LaTeX.
-`{$x^2$}` will produce a superscript, `{$x_2$}` yields a subscript. If you want
-to include more than one value in a sub- or superscript, enclose their contents
-in parentheses: `{$x_(a -> epsilon)$}`.
+[下标和上标]($func/math.attach)在 Typst 和 LaTeX 中的作用是相似的。`{$x^2$}`将产生一个上标，`{$x_2$}`产生一个下标。
+如果你想在下标或上标中包含一个以上的值，请把它们的内容放在括号里：`{$x_(a -> epsilon)$}`。
 
-Since variables in math mode do not need to be preprended with a `#` or a `/`,
-you can also call functions without these special characters:
+由于数学模式下的变量不需要在前面加上 `#` 或 `/` ，所以你也可以调用没有这些特殊字符的函数：
 
 ```example
 $ f(x, y) := cases(
@@ -487,10 +394,8 @@ $ f(x, y) := cases(
 ) $
 ```
 
-The above example uses the [`cases` function]($func/math.cases) to describe f. Within
-the cases function, arguments are delimited using commas and the arguments are
-also interpreted as math. If you need to interpret arguments as Typst
-values instead, prefix them with a `#`:
+上面的例子用 [`cases`]($func/math.cases) 函数来描述 f。在 cases 函数中，参数用逗号来分隔，参数也被解释为数学。
+如果你需要将参数解释为Typst值，用`#`号作为前缀：
 
 ```example
 $ (a + b)^2
@@ -499,10 +404,9 @@ $ (a + b)^2
   + b^2 $
 ```
 
-You can use all Typst functions within math mode and insert any content. If you
-want them to work normally, with code mode in the argument list, you can prefix
-their call with a `#`. Nobody can stop you from using rectangles or emoji as
-your variables anymore:
+你可以在数学模式内使用所有Typst函数，并插入任何内容。
+如果你想让它们正常工作，在参数列表中使用代码模式，你可以在它们的调用前加上一个 `#`。
+没有人可以阻止你使用矩形或表情符号作为你的变量：
 
 ```example
 $ sum^10_(🥸=1)
@@ -510,12 +414,9 @@ $ sum^10_(🥸=1)
   = 🧠 maltese $
 ```
 
-If you'd like to enter your mathematical symbols directly as Unicode, that is
-possible, too!
+如果你希望直接以 Unicode 形式输入数学符号，也是可以的。
 
-Math calls can have two-dimensional argument lists using `;` as a delimiter. The
-most common use for this is the [`mat` function]($func/math.mat) that creates
-matrices:
+数学调用可以有二维参数列表，使用 `;` 作为分隔符。这方面最常见的用途是创建矩阵的[`mat`]($func/math.mat)函数：
 
 ```example
 $ mat(
@@ -526,18 +427,16 @@ $ mat(
 ) $
 ```
 
-## How do I get the "LaTeX look?" { #latex-look }
-Papers set in LaTeX have an unmistakeable look. This is mostly due to their
-font, Computer Modern, justification, narrow line spacing, and wide margins.
+## 如何获得 "LaTeX外观"？ { #latex-look }
+用LaTeX编写的论文有一种无可挑剔的外观。这主要是由于它们的字体、[Computer Modern](https://zh.wikipedia.org/wiki/Computer_Modern)、对齐方式、窄行距和宽边距。
 
-The example below
-- sets wide [margins]($func/page.margin)
-- enables [justification]($func/par.justify), [tighter lines]($func/par.leading)
-  and [first-line-indent]($func/par.first-line-indent)
-- [sets the font]($func/text.font) to "New Computer Modern", an OpenType
-  derivate of Computer Modern for both text and [code blocks]($func/raw)
-- disables paragraph [spacing]($func/block.spacing)
-- increases [spacing]($func/block.spacing) around [headings]($func/heading)
+下面是一个示例：
+- 设置宽[边距]($func/page.margin)
+- 启用[两端对齐]($func/par.justify), [更紧密的行间距]($func/par.leading)
+  和[首行缩进]($func/par.first-line-indent)
+- 设置[字体]($func/text.font)为 "New Computer Modern"，这是一个适用于文本和[代码块]($func/raw)的 OpenType 变体
+- 禁用段落[间距]($func/block.spacing)
+- 增加[标题]($func/heading)周围的[间距]($func/block.spacing)
 
 ```typ
 #set page(margin: 1.75in)
@@ -548,55 +447,35 @@ The example below
 #show heading: set block(above: 1.4em, below: 1em)
 ```
 
-This should be a good starting point! If you want to go further, why not create
-a reusable template?
+这应该是一个很好的起点! 如果你想更进一步，为什么不创建一个可重复使用的模板？
 
-## What limitations does Typst currently have compared to LaTeX? { #limitations }
-Although Typst can be a LaTeX replacement for many today, there are still
-features that Typst does not (yet) support. Here is a list of them which, where
-applicable, contains possible workarounds.
+## 与LaTeX相比，Typst目前有哪些不足？ { #limitations }
+尽管今天Typst可以成为许多人的LaTeX替代品，但仍有一些功能是Typst不（尚未）支持的。
+这里列出了功能，在适用的情况下，包含了可能的变通方法。
 
-- **Native charts and plots.** LaTeX users often create charts along with their
-  documents in PGF/TikZ. Typst does not yet include tools to draw diagrams, but
-  the community is stepping up with solutions such as
-  [`typst-canvas`](https://github.com/johannes-wolf/typst-canvas),
-  [`typst-plot`](https://github.com/johannes-wolf/typst-plot), and
-  [`circuitypst`](https://github.com/fenjalien/circuitypst). You can add those
-  to your document to get started with drawing diagrams.
+- **本地图表和绘图。** LaTeX用户经常在PGF/TikZ中与他们的文档一起创建图表。
+  Typst还不包括绘制图表的工具，但社区正在加紧提供解决方案，如[`typst-canvas`](https://github.com/johannes-wolf/typst-canvas)、
+  [`typst-plot`](https://github.com/johannes-wolf/typst-plot)和[`circuitypst`](https://github.com/fenjalien/circuitypst)。
+  你可以把这些工具添加到你的文档中，开始画图。
 
-- **Change page margins without a pagebreak.** In LaTeX, margins can always be
-  adjusted, even without a pagebreak. To change margins in Typst, you use the
-  [`page` function]($func/page) which will force a page break. If you just want
-  a few paragraphs to stretch into the margins, then reverting to the old
-  margins, you can use the [`pad` function]($func/pad) with negative padding.
+- **在没有分页符的情况下改变页边距。** 在LaTeX中，页边距总是可以调整的，即使没有分页符。
+  要在Typst中改变页边距，你要使用[`page`]($func/page)函数，它将强制分页。
+  如果你只想让几个段落伸进页边距，然后再恢复到旧的页边距，你可以使用带负数填充的[`pad`]($func/pad)函数。
 
-- **Floating figures.** The figure command of LaTeX will smartly choose where to
-  place a figure, be it on the top or bottom of the page, or a dedicated figure
-  page. Typst's figure will always appear at the spot where they have been
-  inserted in the markup. While this behavior can save some headache, it is
-  often cumbersome to manually place figures. We will be adding this feature
-  soon!
+- **浮动图。** LaTeX的`figure`命令会聪明地选择放置图片的位置，无论是在页面的顶部或底部，还是在专门的图片页面。
+  Typst中的图片将总是出现在它们被插入标记的位置上。虽然这种行为可以省去一些麻烦，但手动放置数字往往是很麻烦的。
+  我们将很快增加这一功能!
 
-- **Include PDFs as images.** In LaTeX, it has become customary to insert vector
-  graphics as PDF or EPS files. Typst supports neither format as an image
-  format, but you can easily convert both into SVG files with [online
-  tools](https://cloudconvert.com/pdf-to-svg) or
-  [Inkscape](https://inkscape.org/). We plan to add automatic conversion for
-  these file formats to the Typst web app, too!
+- **将PDF作为图像。** 在LaTeX中，插入PDF或EPS文件的矢量图已经成为一种习惯。
+  Typst不支持这两种格式作为图像格式，但你可以用[在线工具](https://cloudconvert.com/pdf-to-svg)
+  或[Inkscape](https://inkscape.org/)轻松地将这两种文件转换成SVG文件。我们计划在Typst的Web应用程序中也加入这些文件格式的自动转换功能。
 
-- **Page break optimization.** LaTeX runs some smart algorithms to not only
-  optimize line but also page breaks. While Typst tries to avoid widows and
-  orphans, it uses less sophisticated algorithms to determine page breaks. You
-  can insert custom page breaks in Typst using `[#pagebreak(weak: true)]` before
-  submitting your document. The argument `weak` ensures that no double page
-  break will be created if this spot would be a natural page break
-  anyways. You can also use `[#v(1fr)]` to distribute space on your page. It
-  works quite similar to LaTeX's `\vfill`.
+- **分页符优化。** LaTeX运行一些智能算法，不仅优化换行，也优化换页。虽然Typst试图避免寡头和孤儿，但它使用不太复杂的算法来确定分页符。
+  你可以在提交文档前使用`[#pagebreak(weak: true)]`在Typst中插入自定义分页。
+  参数`weak`确保不会创建双倍的分页符，如果这个地方无论如何都会是一个自然的分页符。
+  你也可以使用`[#v(1fr)]`来分配页面上的空间。它的工作原理与LaTeX的`\vfill`相当类似。
 
-- **Bibliographies are not customizable.** In LaTeX, the packages `bibtex`,
-  `biblatex`, and `natbib` provide a wide range of reference and bibliography
-  formats. You can also use custom `.bbx` files to define your own styles there.
-  Typst only supports a small set of citation styles at the moment, but we want
-  to build upon this by supporting [Citation Style Language
-  (CSL)](https://citationstyles.org), an XML-based format backed by Zotero that
-  allows you to describe your own bibliography styles.
+- **书目是不可定制的。** 在LaTeX中，包`bibtex`、`biblatex`和`natbib`提供了广泛的参考和书目格式。
+  你也可以使用自定义的`.bbx`文件来定义你自己的样式。
+  Typst目前只支持一小部分引文风格，但我们希望在此基础上支持[引文风格语言（CSL）](https://citationstyles.org)，
+  这是一种由Zotero支持的基于XML的格式，允许你描述自己的书目风格。
