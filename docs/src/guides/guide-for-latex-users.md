@@ -1,7 +1,6 @@
 ---
 description: |
-  Are you a LaTeX user? This guide explains the differences and
-  similarities between Typst and LaTeX so you can get started quickly.
+  您是 LaTeX 用户吗？本指南解释了 Typst 和 LaTeX 之间的差异和相似之处，以便您可以快速入门。
 ---
 
 # LaTeX 用户指南
@@ -21,7 +20,7 @@ Typst 的命令也更有原则:它们都是一样的，所以不像在LaTeX中�
 下面，我们将介绍一些从 LaTeX 转换到 Typst 的用户在编写文档时会遇到的最常见的问题。
 如果你更喜欢一步一步地介绍 Typst，请查看我们的[教程]($tutorial)。
 
-## 如何创建一个新的空文档？{ #开始 }
+## 如何创建一个新的空文档？{ #getting-started }
 这很简单。您只需创建一个新的空文本文件（文件扩展名为.typ）。
 开始时不需要任何模板。只需直接开始编写你的文字。文字将被渲染在一个空白的A4大小的页面上。
 如果您使用的是Web应用程序，请单击“+ Empty document”以创建一个带有文件的新项目，然后进入编辑器。
@@ -34,7 +33,7 @@ Here are two paragraphs. The
 output is shown to the right.
 ```
 
-## 我如何创建章节标题，强调，...？{ #元素 }
+## 我如何创建章节标题，强调，...？{ #elements }
 LaTeX 使用`\section`命令创建章节标题。嵌套标题用`\subsection`、`\subsection`等表示。根据文档类型，还有`\part`或`\chapter`。
 
 在 Typst 中，标题设置更简洁：在标题所在的行前面加上一个等号和一个空格，得到一级标题：`[= Introduction]`。
@@ -89,11 +88,11 @@ To write this list in Typst...
 要获得一个[有序列表]($func/enum)（`enumerate`），请用`+`代替连字符。
 对于一个[描述列表]($func/terms)（`description`），用`[/ Term: Description]`来代替。
 
-## 我如何使用一个命令？ { #命令 }
+## 我如何使用一个命令？ { #commands }
 LaTeX 在很大程度上依赖于命令（以反斜线为前缀）。它使用 _宏_ 来影响排版过程，并插入和操作内容。
 有些命令接受参数，这些参数经常被放在大括号里： `\cite{rasmus}`。
 
-Typst 区分了[标记模式和代码模式]($scipting/#blocks)。默认情况下是标记模式，在这种模式下，你可以编排文本并应用语法结构，如 `[*星代表粗体文本*]`。
+Typst 区分了[标记模式和代码模式]($scripting/#blocks)。默认情况下是标记模式，在这种模式下，你可以编排文本并应用语法结构，如 `[*星代表粗体文本*]`。
 另一方面，代码模式与Python等编程语言相似，提供输入和执行代码段的选项。
 
 在 Typst 的标记中，你可通过使用一个标签（`#`）为一个单一的命令（或者说，_表达式_）切换到代码模式。
@@ -120,7 +119,7 @@ And finally a little loop:
 [`calc.max`]($func/calc.max), [`range`]($func/range)），后面是小括号（与 LaTeX 不同，如果宏不需要参数，方括号和大括号是可选的）。
 在这些圆括号内传递的参数的预期列表取决于具体的函数，并在[引用]($reference)中指定。
 
-### 参数 { #参数 }
+### 参数 { #arguments }
 一个函数可以有多个参数。有些参数是条件性的，也就是说，你只需提供值： 函数`[#lower("SCREAM")]`以全小写的方式返回其参数。
 许多函数使用命名参数而不是位置参数，以增加可读性。例如，一个矩形的尺寸和笔划是用命名参数定义的：
 
@@ -149,7 +148,7 @@ to LaTeX.
 #rect(fill: aqua)[Get started here!]
 ```
 
-### 数据类型 { #数据类型 }
+### 数据类型 { #data-types }
 你可能已经注意到，这些参数有独特的数据类型。Typst 支持许多[数据类型]($type)。
 下面有一个表格，列出了一些最重要的数据类型以及如何编写它们。为了指定这些类型的值，你必须在代码模式下才行!
 
@@ -168,7 +167,7 @@ Typst 提供了[控制流结构]($scripting/#conditionals)和[运算符]$(script
 如用于添加东西的 `+` 或用于检查两个变量之间是否相等的 `==`。
 你也可以定义你自己的[变量]($scripting/#bindings)并对其进行计算。
 
-### 影响整个文档的命令 { #规则 }
+### 影响整个文档的命令 { #rules }
 在 LaTeX 中，有些命令，如 `\textbf{bold text}`，在大括号中接收一个参数，只影响该参数。
 其他命令，如 `\bfseries bold text` 作为开关，改变文档或当前范围内所有后续内容的外观。
 
@@ -199,15 +198,15 @@ Good results can only be obtained by
 ```
 
 `+` 是调用[`{enum}`]($func/enum)函数的语法糖（可以把它看作是缩写），我们在上面应用了一个集合规则。
-[大多数语法都是以这种方式与一个函数相连的]($syntex)。
+[大多数语法都是以这种方式与一个函数相连的]($syntax)。
 如果你需要对一个元素进行超出其参数所能实现的样式设置，你可以用一个[显示规则]($styling/#show-rules)
 （有点类似于 `\renewcommand`）来完全重新定义其外观。
 
-## 如何加载一个文档类？ { #模板 }
+## 如何加载一个文档类？ { #templates }
 在 LaTeX 中，你用 `\documentclass{article}` 命令开始你的主 `.tex` 文件，以定义你的文件应该是什么样子。
 在该命令中，你可能用另一个值代替 `article` ，如 `report` 和 `amsart` 来选择不同的外观。
 
-当使用 Typst 时，你用[函数]$($type/function)来为你的文档样式。
+当使用 Typst 时，你用[函数]($type/function)来为你的文档样式。
 通常情况下，你使用一个模板，它提供了一个函数来为你的整个文档样式。首先，你从模板文件中导入该函数。
 然后，你把它应用到你的整个文档中。这是用一个[显示规则]($styling/#show-rules)来完成的，该规则用一个给定的函数来包装下面的文档。
 下面的例子说明了它是如何工作的：
@@ -320,7 +319,7 @@ paragraphs right here!
 
 你也可以[创建你自己的、自定义的模板]($tutorial/making-a-template)。它们比相应的 LaTeX 的 `.sty` 文件短得多，可读性也高得多，所以不妨一试!
 
-## 如何导入包？ { #包 }
+## 如何导入包？ { #packages }
 Typst 是"即插即用"的，所以许多流行的 LaTeX 包的对应表达是直接内置的。
 下面，我们编制了一个表格，其中包括经常使用的 LaTeX 包和它们相应的 Typst 函数。
 
@@ -348,7 +347,7 @@ Typst 是"即插即用"的，所以许多流行的 LaTeX 包的对应表达是�
 目前，Typst 没有软件包管理器，但我们计划建立一个，这样你就可以轻松地使用社区中的工具和模板的软件包，并发布你自己的。
 在那之前，你可能想看看 [awesome-typst 仓库](https://github.com/qjcg/awesome-typst)，它包含了一个为 Typst 创建的库的精选列表。
 
-## 如何输入数学公式？ { #数学 }
+## 如何输入数学公式？ { #maths }
 要在 Typst 中进入数学模式，只需将方程用`$`符号括起来。你可以通过在方程内容和其周围的`$`符号之间添加空格或换行来进入显示模式。
 
 ```example
@@ -428,7 +427,7 @@ $ mat(
 ) $
 ```
 
-## 如何获得 "LaTeX外观"？ { #Latex外观 }
+## 如何获得 "LaTeX外观"？ { #latex-look }
 用LaTeX编写的论文有一种无可挑剔的外观。这主要是由于它们的字体、[Computer Modern](https://zh.wikipedia.org/wiki/Computer_Modern)、对齐方式、窄行距和宽边距。
 
 下面是一个示例：
@@ -450,7 +449,7 @@ $ mat(
 
 这应该是一个很好的起点! 如果你想更进一步，为什么不创建一个可重复使用的模板？
 
-## 与LaTeX相比，Typst目前有哪些不足？ { #不足 }
+## 与LaTeX相比，Typst目前有哪些不足？ { #limitations }
 尽管今天Typst可以成为许多人的LaTeX替代品，但仍有一些功能是Typst不（尚未）支持的。
 这里列出了功能，在适用的情况下，包含了可能的变通方法。
 
