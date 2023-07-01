@@ -170,7 +170,7 @@ fn guides_pages(resolver: &dyn Resolver) -> PageModel {
 fn packages_page(resolver: &dyn Resolver) -> PageModel {
     PageModel {
         route: "/docs/packages/".into(),
-        title: "Packages".into(),
+        title: "第三方包".into(),
         description: "Packages for Typst.".into(),
         part: None,
         outline: vec![],
