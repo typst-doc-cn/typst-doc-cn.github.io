@@ -786,6 +786,12 @@
         
         
         <li>
+          <a href="/docs/packages/" >第三方包</a>
+          
+        </li>
+        
+        
+        <li>
           <a href="/docs/changelog/" >更新日志</a>
           
         </li>
@@ -830,10 +836,10 @@
     </div>
   </small></h1>
 
-<p>Strike through text.</p>
+<p>Strikes through text.</p>
 <h2 id="example">Example</h2>
 <div class="previewed-code"><pre><code>This is <span class="typ-func">#</span><span class="typ-func">strike</span><span class="typ-punct">[</span>not<span class="typ-punct">]</span> relevant.
-</code></pre><div class="preview"><img src="/assets/docs/dARhBPnU4t8cinAG2XYGm0.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/MERaVFj9T8fhtGUS5rHl5R.png" alt="Preview" width="480" height="190"/></div></div>
 
 <h2 level="2" id="parameters"><span aria-describedby="parameters-tooltip">参数</span>
   <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
@@ -892,7 +898,7 @@ copy paste the text.</p>
   <div class="folding">
     <div class="previewed-code"><pre><code>This is <span class="typ-func">#</span><span class="typ-func">strike</span><span class="typ-punct">(</span>stroke<span class="typ-punct">:</span> <span class="typ-num">1.5pt</span> <span class="typ-op">+</span> red<span class="typ-punct">)</span><span class="typ-punct">[</span>very stricken through<span class="typ-punct">]</span>. <span class="typ-escape">\</span>
 This is <span class="typ-func">#</span><span class="typ-func">strike</span><span class="typ-punct">(</span>stroke<span class="typ-punct">:</span> <span class="typ-num">10pt</span><span class="typ-punct">)</span><span class="typ-punct">[</span>redacted<span class="typ-punct">]</span>.
-</code></pre><div class="preview"><img src="/assets/docs/NpaedZBvbvuz1aOTPJnL0I.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/UsZJ4CwQaXXkYgDeRGsUv4.png" alt="Preview" width="480" height="190"/></div></div>
   </div>
 </div>
 
@@ -919,8 +925,8 @@ This is <span class="typ-func">#</span><span class="typ-func">strike</span><span
     </small>
   </div>
 </h3>
-<p>Position of the line relative to the baseline, read from the font tables
-if <code><span class="typ-key">auto</span></code>.</p>
+<p>The position of the line relative to the baseline. Read from the font
+tables if <code><span class="typ-key">auto</span></code>.</p>
 <p>This is useful if you are unhappy with the offset your font provides.</p>
 
 <p>默认：<code><span class="typ-key">auto</span></code></p>
@@ -932,7 +938,7 @@ if <code><span class="typ-key">auto</span></code>.</p>
     <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>font<span class="typ-punct">:</span> <span class="typ-str">&quot;Inria Serif&quot;</span><span class="typ-punct">)</span>
 This is <span class="typ-func">#</span><span class="typ-func">strike</span><span class="typ-punct">(</span>offset<span class="typ-punct">:</span> <span class="typ-key">auto</span><span class="typ-punct">)</span><span class="typ-punct">[</span>low-ish<span class="typ-punct">]</span>. <span class="typ-escape">\</span>
 This is <span class="typ-func">#</span><span class="typ-func">strike</span><span class="typ-punct">(</span>offset<span class="typ-punct">:</span> <span class="typ-op">-</span><span class="typ-num">3.5pt</span><span class="typ-punct">)</span><span class="typ-punct">[</span>on-top<span class="typ-punct">]</span>.
-</code></pre><div class="preview"><img src="/assets/docs/sdFgER5P4gXUo1mWDUBGgV.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/OlkYJxcmrfjkgk8fBgmcBj.png" alt="Preview" width="480" height="190"/></div></div>
   </div>
 </div>
 
@@ -957,7 +963,8 @@ This is <span class="typ-func">#</span><span class="typ-func">strike</span><span
     </small>
   </div>
 </h3>
-<p>Amount that the line will be longer or shorter than its associated text.</p>
+<p>The amount by which to extend the line beyond (or within if negative)
+the content.</p>
 
 <p>默认：<code><span class="typ-num">0pt</span></code></p>
 
@@ -967,7 +974,7 @@ This is <span class="typ-func">#</span><span class="typ-func">strike</span><span
   <div class="folding">
     <div class="previewed-code"><pre><code>This <span class="typ-func">#</span><span class="typ-func">strike</span><span class="typ-punct">(</span>extent<span class="typ-punct">:</span> <span class="typ-op">-</span><span class="typ-num">2pt</span><span class="typ-punct">)</span><span class="typ-punct">[</span>skips<span class="typ-punct">]</span> parts of the word.
 This <span class="typ-func">#</span><span class="typ-func">strike</span><span class="typ-punct">(</span>extent<span class="typ-punct">:</span> <span class="typ-num">2pt</span><span class="typ-punct">)</span><span class="typ-punct">[</span>extends<span class="typ-punct">]</span> beyond the word.
-</code></pre><div class="preview"><img src="/assets/docs/BuomgacA0KOnKJJG71XCkX.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/NtFQsvMzD4XCl9Uc8JZKL9.png" alt="Preview" width="480" height="190"/></div></div>
   </div>
 </div>
 

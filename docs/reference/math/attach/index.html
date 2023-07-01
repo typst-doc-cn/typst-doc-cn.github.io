@@ -786,6 +786,12 @@
         
         
         <li>
+          <a href="/docs/packages/" >第三方包</a>
+          
+        </li>
+        
+        
+        <li>
           <a href="/docs/changelog/" >更新日志</a>
           
         </li>
@@ -851,7 +857,7 @@ the <code>scripts</code> and <code>limits</code> functions.</p>
   <span class="typ-pol">Pi</span><span class="typ-punct">,</span> t<span class="typ-punct">:</span> <span class="typ-pol">alpha</span><span class="typ-punct">,</span> b<span class="typ-punct">:</span> <span class="typ-pol">beta</span><span class="typ-punct">,</span>
   tl<span class="typ-punct">:</span> 1<span class="typ-punct">,</span> tr<span class="typ-punct">:</span> 2+3<span class="typ-punct">,</span> bl<span class="typ-punct">:</span> 4+5<span class="typ-punct">,</span> br<span class="typ-punct">:</span> 6<span class="typ-punct">,</span>
 <span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
-</code></pre><div class="preview"><img src="/assets/docs/6Ae2Yl8Hs17xi6cfCjjuvc.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/McxxLRvy9C0wOCetqHzEbi.png" alt="Preview" width="480" height="190"/></div></div>
 <h3 id="attach-syntax">Syntax</h3>
 <p>This function also has dedicated syntax for attachments after the base: Use
 the underscore (<code>_</code>) to indicate a subscript i.e. bottom attachment and the
@@ -1079,10 +1085,10 @@ smart positioning.</p>
     </div>
   </small></h2>
 
-<p>Force a base to display attachments as scripts.</p>
+<p>Forces a base to display attachments as scripts.</p>
 <h3 id="scripts-example">Example</h3>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">scripts</span><span class="typ-punct">(</span><span class="typ-pol">sum</span><span class="typ-punct">)</span><span class="typ-math-op">_</span>1<span class="typ-math-op">^</span>2 <span class="typ-escape">!=</span> <span class="typ-pol">sum</span><span class="typ-math-op">_</span>1<span class="typ-math-op">^</span>2 <span class="typ-math-delim">$</span>
-</code></pre><div class="preview"><img src="/assets/docs/Vns5lIZbZUBYRU1jcOXMJk.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/tfT992b8B2fPVelkLOFLvl.png" alt="Preview" width="480" height="190"/></div></div>
 
 <h3 level="2" id="scripts-parameters"><span aria-describedby="scripts-parameters-tooltip">参数</span>
   <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
@@ -1133,10 +1139,10 @@ smart positioning.</p>
     </div>
   </small></h2>
 
-<p>Force a base to display attachments as limits.</p>
+<p>Forces a base to display attachments as limits.</p>
 <h3 id="limits-example">Example</h3>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">limits</span><span class="typ-punct">(</span>A<span class="typ-punct">)</span><span class="typ-math-op">_</span>1<span class="typ-math-op">^</span>2 <span class="typ-escape">!=</span> A<span class="typ-math-op">_</span>1<span class="typ-math-op">^</span>2 <span class="typ-math-delim">$</span>
-</code></pre><div class="preview"><img src="/assets/docs/CO1xebB8lxxRvo5s6JfdDD.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/mMS6GottSsmP86c2dCjpih.png" alt="Preview" width="480" height="190"/></div></div>
 
 <h3 level="2" id="limits-parameters"><span aria-describedby="limits-parameters-tooltip">参数</span>
   <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
@@ -1148,7 +1154,7 @@ smart positioning.</p>
   </div>
 </h3>
 
-<div class="code code-definition single-arg"><span class="typ-func">limits</span>(<div class="arguments"><span class="overview-param"><a href="/docs/reference/types/content" class="pill pill-con">content</a> </span></div>) <!-- -->-&gt; <a href="/docs/reference/types/content" class="pill pill-con">content</a></div>
+<div class="code code-definition "><span class="typ-func">limits</span>(<div class="arguments"><span class="overview-param"><a href="/docs/reference/types/content" class="pill pill-con">content</a>, </span><span class="overview-param"><a href="#limits-parameters-inline">inline<!-- -->: </a><a href="/docs/reference/types/boolean" class="pill pill-bool">boolean</a>, </span></div>) <!-- -->-&gt; <a href="/docs/reference/types/content" class="pill pill-con">content</a></div>
 
 
 <h4 id="limits-parameters-body"><code>body</code>
@@ -1171,6 +1177,34 @@ smart positioning.</p>
   </div>
 </h4>
 <p>The base to attach the limits to.</p>
+
+
+
+<h4 id="limits-parameters-inline"><code>inline</code>
+  <div class="additional-info">
+    <div>
+      
+      <a href="/docs/reference/types/boolean" class="pill pill-bool">boolean</a>
+      
+    </div>
+    <small><span
+        aria-describedby="limits-parameters-inline-settable-tooltip">可用 Set 规则</span>
+      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
+          aria-labelledby="limits-parameters-inline-settable-tooltip-qm-label">
+          <title id="limits-parameters-inline-settable-tooltip-qm-label">可以使用 Set 规则，为函数后续所有的使用设置默认参数。</title>
+          <use href="/assets/icons/12-tooltip.svg#icon"></use>
+        </svg>
+        <div role="tooltip" id="limits-parameters-inline-settable-tooltip" tabindex="-1">可以使用 Set
+          规则，为函数后续所有的使用设置默认参数。</div>
+      </div>
+    </small>
+  </div>
+</h4>
+<p>Whether to also force limits in inline equations.</p>
+<p>When applying limits globally (e.g., through a show rule), it is
+typically a good idea to disable this.</p>
+
+<p>默认：<code><span class="typ-key">true</span></code></p>
 
 
 

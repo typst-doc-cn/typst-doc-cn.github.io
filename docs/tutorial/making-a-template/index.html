@@ -786,6 +786,12 @@
         
         
         <li>
+          <a href="/docs/packages/" >第三方包</a>
+          
+        </li>
+        
+        
+        <li>
           <a href="/docs/changelog/" >更新日志</a>
           
         </li>
@@ -829,7 +835,7 @@
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> <span class="typ-func">amazed</span><span class="typ-punct">(</span>term<span class="typ-punct">)</span> <span class="typ-op">=</span> <span class="typ-func">box</span><span class="typ-punct">[</span>✨ <span class="typ-pol">#</span><span class="typ-pol">term</span> ✨<span class="typ-punct">]</span>
 
 You are <span class="typ-func">#</span><span class="typ-func">amazed</span><span class="typ-punct">[</span>beautiful<span class="typ-punct">]</span>!
-</code></pre><div class="preview"><img src="/assets/docs/mIvwgLtdYQElcKT8e0S6ZW.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/zp9Igvm4tBINDGi3d9FU81.png" alt="Preview" width="480" height="190"/></div></div>
 <p>此函数采用单个参数 <code>term</code>，并返回一个内容块，其中 <code>term</code> 被被一朵朵小火花包围着。
 我们还把整个东西放在一个 <code>box</code> 里，这样我们的 <code>term</code> 与它的火花就不会换行符分开。</p>
 <p>Typst 附带的许多函数都有可选的命名参数，我们的函数也可以实现这一点。
@@ -841,7 +847,7 @@ You are <span class="typ-func">#</span><span class="typ-func">amazed</span><span
 
 You are <span class="typ-func">#</span><span class="typ-func">amazed</span><span class="typ-punct">[</span>beautiful<span class="typ-punct">]</span>!
 I am <span class="typ-func">#</span><span class="typ-func">amazed</span><span class="typ-punct">(</span>color<span class="typ-punct">:</span> purple<span class="typ-punct">)</span><span class="typ-punct">[</span>amazed<span class="typ-punct">]</span>!
-</code></pre><div class="preview"><img src="/assets/docs/3pwSZC0Rpvvw7EjVRwEJ0Q.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/W8ngnHROihQyQWpddWD0pH.png" alt="Preview" width="480" height="190"/></div></div>
 <p>模板现在可以通过 “所有内容” Show 规则来使用，该 Show 规则将自定义函数应用于我们的整个文档。
 让我们使用我们的 <code>amazed</code> 函数来实现它。</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">show</span><span class="typ-punct">:</span> <span class="typ-func">amazed</span>
@@ -849,7 +855,7 @@ I choose to focus on the good
 in my life and let go of any
 negative thoughts or beliefs.
 In fact, I am amazing!
-</code></pre><div class="preview"><img src="/assets/docs/aXXs86e8eY0WCvTRPYzyLu.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/jsl1mWaD32pVIHBcA7MAXP.png" alt="Preview" width="480" height="190"/></div></div>
 <p>我们的整个文档现在将被传递给 <code>amazed</code> 函数，就好像我们把它包裹在 <code>amazed</code> 函数里面一样。
 这对于这个特定函数并不是特别有用，但是当 Set 规则和命名参数结合使用时，它可以非常强大。</p>
 <h2 id="set-and-show-rules">嵌入的 Set 和 Show 规则</h2>
@@ -863,7 +869,7 @@ In fact, I am amazing!
 <span class="typ-key">#</span><span class="typ-key">show</span><span class="typ-punct">:</span> <span class="typ-func">template</span>
 I am learning something cool today.
 It&#39;s going great so far!
-</code></pre><div class="preview"><img src="/assets/docs/wXSO3eD6w37AFgYSLFaLL2.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/4tFiWZPlL3afGSZyPD4oEl.png" alt="Preview" width="480" height="190"/></div></div>
 <p>就像我们在上一章中已经发现的那样，Set 规则将应用于其内容块中的所有内容。
 由于 “所有内容” Show 规则将我们的整个文档传递给 <code>template</code> 函数，
 因此模板中的 <code>text</code> Set 规则和字符串 Show 规则将应用于整个文档。
@@ -898,7 +904,7 @@ It&#39;s going great so far!
 <span class="typ-func">#</span><span class="typ-func">lorem</span><span class="typ-punct">(</span><span class="typ-num">90</span><span class="typ-punct">)</span>
 
 <span class="typ-escape">...</span>
-</code></pre><div class="preview"><img src="/assets/docs/VUbEHo0ZWSRqx6Phkgm215.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/7ochxoOccf0IaqGgL5LpwF.png" alt="Preview" width="480" height="190"/></div></div>
 <p>我们复制粘贴了上一章中的大部分代码。
 唯一的两个区别是，我们将所有内容都包装在函数 <code>conf</code> 中，
 并直接在 <code>doc</code> 参数上调用 <code>columns</code> 函数，因为 <code>doc</code> 对应着整个文档的内容。
@@ -1021,7 +1027,7 @@ It&#39;s going great so far!
 
 <span class="typ-heading">= Related Work</span>
 <span class="typ-func">#</span><span class="typ-func">lorem</span><span class="typ-punct">(</span><span class="typ-num">200</span><span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/z7gB1BhwqbEWlevXILvijt.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/LjzvlUGB8Vaz78MbntYwz8.png" alt="Preview" width="480" height="190"/></div></div>
 <p>我们现在已经成功将会议论文转换为该会议的可重复使用模板！
 快来 <a href="https://discord.gg/2uDybryKPe">Typst 的 Discord 服务器</a> 分享它，
 以便其他人也可以使用它吧！</p>

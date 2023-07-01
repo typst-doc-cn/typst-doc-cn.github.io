@@ -790,6 +790,12 @@ forward.
         
         
         <li>
+          <a href="/docs/packages/" >第三方包</a>
+          
+        </li>
+        
+        
+        <li>
           <a href="/docs/changelog/"  aria-current="page" >更新日志</a>
           
         </li>
@@ -817,6 +823,84 @@ forward.
       
 
 <h1>更新日志</h1>
+<h2 id="v0.6.0">Version 0.6.0 (June 30, 2023)</h2>
+<ul>
+<li>
+<p>Package Management</p>
+<ul>
+<li>Typst now has built-in <a href="/docs/reference/scripting/#packages">package management</a></li>
+<li>You can import <a href="/docs/packages/">published</a> community packages or create and use
+<a href="https://github.com/typst/packages#local-packages">system-local</a> ones</li>
+<li>Published packages are also supported in the web app</li>
+</ul>
+</li>
+<li>
+<p>Math</p>
+<ul>
+<li>Added support for optical size variants of glyphs in math mode</li>
+<li>Added argument to enable <a href="/docs/reference/math/attach/#limits"><code>limits</code></a> conditionally
+depending on whether the equation is set in <a href="/docs/reference/math/sizes/#display"><code>display</code></a>
+or <a href="/docs/reference/math/sizes/#inline"><code>inline</code></a> style</li>
+<li>Added <code>gt.eq.slant</code> and <code>lt.eq.slant</code> symbols</li>
+<li>Increased precedence of factorials in math mode (<code><span class="typ-math-delim">$</span>1<span class="typ-math-op">/</span>n!<span class="typ-math-delim">$</span></code> works correctly
+now)</li>
+<li>Improved <a href="/docs/reference/math/underover/#underline">underlines</a> and
+<a href="/docs/reference/math/underover/#overline">overlines</a> in math mode</li>
+<li>Fixed usage of <a href="/docs/reference/math/attach/#limits"><code>limits</code></a> function in show rules</li>
+<li>Fixed bugs with line breaks in equations</li>
+</ul>
+</li>
+<li>
+<p>Text and Layout</p>
+<ul>
+<li>Added support for alternating page <a href="/docs/reference/layout/page/#parameters-margin">margins</a> with the
+<code>inside</code> and <code>outside</code> keys</li>
+<li>Added support for specifying the page <a href="/docs/reference/layout/page/#parameters-binding"><code>binding</code></a></li>
+<li>Added <a href="/docs/reference/layout/pagebreak/#parameters-to"><code>to</code></a> argument to pagebreak function to skip to
+the next even or odd page</li>
+<li>Added basic i18n for a few more languages (TR, SQ, TL)</li>
+<li>Fixed bug with missing table row at page break</li>
+<li>Fixed bug with <a href="/docs/reference/text/underline/">underlines</a></li>
+<li>Fixed bug superfluous table lines</li>
+<li>Fixed smart quotes after line breaks</li>
+<li>Fixed a crash related to text layout</li>
+</ul>
+</li>
+<li>
+<p>Command line interface</p>
+<ul>
+<li><strong>Breaking change:</strong> Added requirement for <code>--root</code>/<code>TYPST_ROOT</code> directory
+to contain the input file because it designates the <em>project</em> root. Existing
+setups that use <code>TYPST_ROOT</code> to emulate package management should switch to
+<a href="https://github.com/typst/packages#local-packages">local packages</a></li>
+<li><strong>Breaking change:</strong> Now denies file access outside of the project root</li>
+<li>Added support for local packages and on-demand package download</li>
+<li>Now watches all relevant files, within the root and all packages</li>
+<li>Now displays compilation time</li>
+</ul>
+</li>
+<li>
+<p>Miscellaneous Improvements</p>
+<ul>
+<li>Added <a href="/docs/reference/meta/outline/#outline-entry"><code>outline.entry</code></a> to customize outline entries
+with show rules</li>
+<li>Added some hints for error messages</li>
+<li>Added some missing syntaxes for <a href="/docs/reference/text/raw/"><code>raw</code></a> highlighting</li>
+<li>Improved rendering of rotated images in PNG export and web app</li>
+<li>Made <a href="/docs/reference/meta/footnote/">footnotes</a> reusable and referenceable</li>
+<li>Fixed bug with citations and bibliographies in <a href="/docs/reference/meta/locate/"><code>locate</code></a></li>
+<li>Fixed inconsistent tense in documentation</li>
+</ul>
+</li>
+<li>
+<p>Development</p>
+<ul>
+<li>Added <a href="https://github.com/typst/typst/blob/main/CONTRIBUTING.md">contribution guide</a></li>
+<li>Reworked <code>World</code> interface to accommodate for package management and make
+it a bit simpler to implement <em>(Breaking change for implementors)</em></li>
+</ul>
+</li>
+</ul>
 <h2 id="v0.5.0">Version 0.5.0 (June 9, 2023)</h2>
 <ul>
 <li>
@@ -1662,9 +1746,9 @@ and <code>dict<span class="typ-punct">.</span><span class="typ-func">insert</spa
 
 
       
-      <div class="page-end-buttons"><a href="/docs/guides/guide-for-latex-users/" class="previous"><img
+      <div class="page-end-buttons"><a href="/docs/packages/" class="previous"><img
             src="/assets/icons/16-arrow-right.svg" alt="←">
-          <div><span class="page-title">LaTeX 用户指南</span><span class="hint">上一页</span></div>
+          <div><span class="page-title">第三方包</span><span class="hint">上一页</span></div>
         </a><a href="/docs/community/" class="next"><img src="/assets/icons/16-arrow-right.svg" alt="→">
           <div><span class="page-title">社区</span><span class="hint">下一页</span></div>
         </a></div>
@@ -1674,6 +1758,10 @@ and <code>dict<span class="typ-punct">.</span><span class="typ-func">insert</spa
     
     <nav id="page-overview"><strong>目录</strong>
       <ul>
+        
+        <li data-assoc="v0.6.0"><a href="#v0.6.0">v0.6.0</a>
+          <ul></ul>
+        </li>
         
         <li data-assoc="v0.5.0"><a href="#v0.5.0">v0.5.0</a>
           <ul></ul>

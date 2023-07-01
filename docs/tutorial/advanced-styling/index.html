@@ -786,6 +786,12 @@
         
         
         <li>
+          <a href="/docs/packages/" >第三方包</a>
+          
+        </li>
+        
+        
+        <li>
           <a href="/docs/changelog/" >更新日志</a>
           
         </li>
@@ -861,7 +867,7 @@
 <span class="typ-punct">)</span>
 
 <span class="typ-func">#</span><span class="typ-func">lorem</span><span class="typ-punct">(</span><span class="typ-num">600</span><span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/TWHQPIbTK30iDAJ4ni4WkX.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/e57TLSQEiTYnUV7L0gqqkY.png" alt="Preview" width="480" height="190"/></div></div>
 <p>你对这里的大部分内容已经很熟悉了。
 我们将文本大小设置为 <code><span class="typ-num">11pt</span></code>，将字体设置为 Linux Libertine。
 我们还启用了段落对齐，并将页面尺寸设置为 US letter。</p>
@@ -881,7 +887,7 @@
   <span class="typ-strong">*A fluid dynamic model
   for glacier flow*</span>
 <span class="typ-punct">]</span><span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/rveRAhTIbbm3b3GyVnIVm4.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/yTySobluazu0THWbf78jfy.png" alt="Preview" width="480" height="190"/></div></div>
 <p>这看起来是正确的。
 我们使用 <code>text</code> 函数以覆盖掉之前对 <code>text</code> 应用的 Set 规则，将 <code>text</code> 函数参数中的 <code>size</code> 增加到 17pt。
 让我们同时添加作者列表：由于我们是与我们的导师一起撰写这篇论文的，我们将添加我们自己和他们的名字。</p>
@@ -898,7 +904,7 @@
     <span class="typ-func">#</span><span class="typ-func">link</span><span class="typ-punct">(</span><span class="typ-str">&quot;mailto:doe@artos.edu&quot;</span><span class="typ-punct">)</span>
   <span class="typ-punct">]</span>
 <span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/T8gaprZ5U9dsdOnTzUcrSt.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/AHuG6rTra9tEnr2Cx1iijf.png" alt="Preview" width="480" height="190"/></div></div>
 <p>两个作者块彼此相邻，我们使用 <a href="/docs/reference/layout/grid/"><code>grid</code></a> 函数来创建这种布局。
 使用 <code>grid</code>，我们可以准确控制每列的大小以及哪些内容放到哪个单元格。
 <code>columns</code> 参数接受 <a href="/docs/reference/types/relative-length/">relative lengths</a> 或 <a href="/docs/reference/types/fraction/">fractions</a> 的数组。
@@ -916,7 +922,7 @@
   <span class="typ-strong">*Abstract*</span> <span class="typ-escape">\</span>
   <span class="typ-func">#</span><span class="typ-func">lorem</span><span class="typ-punct">(</span><span class="typ-num">80</span><span class="typ-punct">)</span>
 <span class="typ-punct">]</span>
-</code></pre><div class="preview"><img src="/assets/docs/4OK3fUYrWkxp7AFUrHalwI.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/QwYORIyAbiejLT9E7tEn0D.png" alt="Preview" width="480" height="190"/></div></div>
 <p>干的漂亮！值得注意的是，我们在 <code>align</code> 的内容参数中使用了一个新的 Set 规则来禁用摘要的对齐。
 即便它是在第一个 Set 规则之后指定的，这也不会影响文档的其余部分。这是因为内容块拥有 <em>局部作用域</em> 样式。
 内容块中设置的任何规则只会影响该内容块中的内容。</p>
@@ -943,7 +949,7 @@
 
 <span class="typ-escape">...</span>
 
-</code></pre><div class="preview"><img src="/assets/docs/qzIZKpEpBA5iUchFZT1HTw.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/NwMgbqwWqEm56CKjUGQ2hm.png" alt="Preview" width="480" height="190"/></div></div>
 <p>将内容绑定到 <code>title</code> 变量后，我们可以在函数和标记模式中使用它（前缀为 <code>#</code>，就像函数一样）。
 这样，如果我们决定修改标题内容，我们可以很轻松地只在一个地方更改它，让后所有出现标题的地方都会同步更新。</p>
 <h2 id="columns-and-headings">添加列和标题</h2>
@@ -964,7 +970,7 @@
 
 <span class="typ-heading">= Related Work</span>
 <span class="typ-func">#</span><span class="typ-func">lorem</span><span class="typ-punct">(</span><span class="typ-num">200</span><span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/kaOJBGuuGQGmHCkp0M1pjy.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/5O0HtCN5EzjoNIEK6sZueB.png" alt="Preview" width="480" height="190"/></div></div>
 <p>现在只剩下一件事要做了：设置标题样式。
 我们需要使它们居中并使用小标题。
 因为 <code>heading</code> 函数没有提供任何的方法来让我们完成这个任务，
@@ -976,7 +982,7 @@
 <span class="typ-punct">]</span>
 
 <span class="typ-escape">...</span>
-</code></pre><div class="preview"><img src="/assets/docs/uDH1wax4oXwkrlgTWTeiwE.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/kf3UIdBEHNNnOipKbHq94X.png" alt="Preview" width="480" height="190"/></div></div>
 <p>这看起来很棒！我们使用了适用于所有标题的 Show 规则。
 我们给了它一个函数，该函数将标题作为参数传递。
 该参数可以用作内容块，但它也有一些字段，如 <code>title</code>、<code>numbers</code> 和 <code>level</code>，我们可以使用它们组成我们需要的自定义外观。
@@ -1003,7 +1009,7 @@
   style<span class="typ-punct">:</span> <span class="typ-str">&quot;italic&quot;</span><span class="typ-punct">,</span>
   it<span class="typ-punct">.</span>body <span class="typ-op">+</span> <span class="typ-punct">[</span>.<span class="typ-punct">]</span><span class="typ-punct">,</span>
 <span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/CBTaO1EryTyO4Fih1yvvaP.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/4a4pQQ5u6RKL2m295VB27q.png" alt="Preview" width="480" height="190"/></div></div>
 <p>这看起来很棒！我们编写了两个显示规则，每个规则都有选择地应用于一级和二级标题。
 我们使用 <code>where</code> 选择器按级别过滤标题。然后，我们将小节标题呈现为短标题。
 我们还会自动在子小节标题的末尾添加一个点号。</p>

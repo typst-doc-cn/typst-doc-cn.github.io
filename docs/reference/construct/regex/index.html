@@ -786,6 +786,12 @@
         
         
         <li>
+          <a href="/docs/packages/" >第三方包</a>
+          
+        </li>
+        
+        
+        <li>
           <a href="/docs/changelog/" >更新日志</a>
           
         </li>
@@ -820,12 +826,11 @@
 
 <h1 level="1" id="summary"><code>regex</code></h1>
 
-<p>Create a regular expression from a string.</p>
+<p>Creates a regular expression from a string.</p>
 <p>The result can be used as a
 <a href="/docs/reference/styling/#show-rules">show rule selector</a> and with
 <a href="/docs/reference/types/string/">string methods</a> like <code>find</code>, <code>split</code>, and <code>replace</code>.</p>
-<p><a href="https://docs.rs/regex/latest/regex/#syntax">See here</a> for a specification
-of the supported syntax.</p>
+<p>See <a href="https://docs.rs/regex/latest/regex/#syntax">the specification of the supported syntax</a>.</p>
 <h2 id="example">Example</h2>
 <div class="previewed-code"><pre><code><span class="typ-comment">// Works with show rules.</span>
 <span class="typ-key">#</span><span class="typ-key">show</span> <span class="typ-func">regex</span><span class="typ-punct">(</span><span class="typ-str">&quot;\d+&quot;</span><span class="typ-punct">)</span><span class="typ-punct">:</span> <span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>red<span class="typ-punct">)</span>
@@ -835,7 +840,7 @@ The numbers 1 to 10.
 <span class="typ-comment">// Works with string methods.</span>
 <span class="typ-punct">#</span><span class="typ-punct">(</span><span class="typ-str">&quot;a,b;c&quot;</span>
     <span class="typ-punct">.</span><span class="typ-func">split</span><span class="typ-punct">(</span><span class="typ-func">regex</span><span class="typ-punct">(</span><span class="typ-str">&quot;[,;]&quot;</span><span class="typ-punct">)</span><span class="typ-punct">)</span><span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/2xYcYC5VJUVY2Fq1H2i2Nm.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/RS42X7Zf0En4mdUfaxtLbQ.png" alt="Preview" width="480" height="190"/></div></div>
 
 <h2 level="2" id="parameters"><span aria-describedby="parameters-tooltip">参数</span>
   <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"

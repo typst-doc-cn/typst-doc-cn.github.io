@@ -786,6 +786,12 @@
         
         
         <li>
+          <a href="/docs/packages/" >第三方包</a>
+          
+        </li>
+        
+        
+        <li>
           <a href="/docs/changelog/" >更新日志</a>
           
         </li>
@@ -831,17 +837,17 @@
   </small></h1>
 
 <p>A reference to a label or bibliography.</p>
-<p>The reference function produces a textual reference to a label. For example,
-a reference to a heading will yield an appropriate string such as &quot;Section
-1&quot; for a reference to the first heading. The references are also links to
-the respective element. Reference syntax can also be used to
-<a href="/docs/reference/meta/cite/">cite</a> from a bibliography.</p>
+<p>Produces a textual reference to a label. For example, a reference to a
+heading will yield an appropriate string such as &quot;Section 1&quot; for a reference
+to the first heading. The references are also links to the respective
+element. Reference syntax can also be used to <a href="/docs/reference/meta/cite/">cite</a> from a
+bibliography.</p>
 <p>Referenceable elements include <a href="/docs/reference/meta/heading/">headings</a>,
-<a href="/docs/reference/meta/figure/">figures</a>, and <a href="/docs/reference/math/equation/">equations</a>. To create a
-custom referenceable element like a theorem, you can create a figure of a
-custom <a href="/docs/reference/meta/figure/#parameters-kind"><code>kind</code></a> and write a show rule for it. In the
-future, there might be a more direct way to define a custom referenceable
-element.</p>
+<a href="/docs/reference/meta/figure/">figures</a>, <a href="/docs/reference/math/equation/">equations</a>, and
+<a href="/docs/reference/meta/footnote/">footnotes</a>. To create a custom referenceable element like a
+theorem, you can create a figure of a custom <a href="/docs/reference/meta/figure/#parameters-kind"><code>kind</code></a> and
+write a show rule for it. In the future, there might be a more direct way to
+define a custom referenceable element.</p>
 <p>If you just want to link to a labelled element and not get an automatic
 textual reference, consider using the <a href="/docs/reference/meta/link/"><code>link</code></a> function instead.</p>
 <h2 id="example">Example</h2>
@@ -865,7 +871,7 @@ software looks like.
 <span class="typ-math-delim">$</span> O(n) = 2<span class="typ-math-op">^</span>n <span class="typ-math-delim">$</span> <span class="typ-label">&lt;slow&gt;</span>
 
 <span class="typ-func">#</span><span class="typ-func">bibliography</span><span class="typ-punct">(</span><span class="typ-str">&quot;works.bib&quot;</span><span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/CN5clI1xa3TrAGonMSAr4W.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/LUmg1Cyeoll1jsLpFXjxy5.png" alt="Preview" width="480" height="190"/></div></div>
 <h2 id="syntax">Syntax</h2>
 <p>This function also has dedicated syntax: A reference to a label can be
 created by typing an <code>@</code> followed by the name of the label (e.g.
@@ -898,7 +904,7 @@ always need to handle that case in your code.</p>
 <span class="typ-heading">= Beginnings</span> <span class="typ-label">&lt;beginning&gt;</span>
 In <span class="typ-ref">@beginning</span> we prove <span class="typ-ref">@pythagoras</span>.
 <span class="typ-math-delim">$</span> a<span class="typ-math-op">^</span>2 + b<span class="typ-math-op">^</span>2 = c<span class="typ-math-op">^</span>2 <span class="typ-math-delim">$</span> <span class="typ-label">&lt;pythagoras&gt;</span>
-</code></pre><div class="preview"><img src="/assets/docs/lYcA9DNKVIR6Wa94i7TfEu.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/i1wmAxtLa3m1BwoSrlknpX.png" alt="Preview" width="480" height="190"/></div></div>
 
 <h2 level="2" id="parameters"><span aria-describedby="parameters-tooltip">参数</span>
   <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
@@ -989,7 +995,7 @@ In <span class="typ-ref">@intro</span>, we see how to turn
 Sections into Chapters. And
 in <span class="typ-ref">@intro<span class="typ-punct">[</span>Part<span class="typ-punct">]</span></span>, it is done
 manually.
-</code></pre><div class="preview"><img src="/assets/docs/7tRZ89UCHVT4noP9bgEzDy.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/a1lDhJ8xhjErq9tC6ahSqx.png" alt="Preview" width="480" height="190"/></div></div>
   </div>
 </div>
 
