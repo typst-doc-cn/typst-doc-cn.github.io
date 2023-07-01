@@ -1,15 +1,15 @@
 use std::ops::Range;
 
 use comemo::Prehashed;
-use md::escape::escape_html;
 use pulldown_cmark as md;
 use typed_arena::Arena;
 use typst::diag::FileResult;
 use typst::eval::Datetime;
+use typst::file::FileId;
 use typst::font::{Font, FontBook};
 use typst::geom::{Point, Size};
-use typst::syntax::{Source, SourceId};
-use typst::util::Buffer;
+use typst::syntax::Source;
+use typst::util::Bytes;
 use typst::World;
 use yaml_front_matter::YamlFrontMatter;
 
@@ -293,6 +293,7 @@ impl<'a> Handler<'a> {
             "$type" => "/docs/reference/types/",
             "$func" => "/docs/reference/",
             "$guides" => "/docs/guides/",
+            "$packages" => "/docs/packages/",
             "$changelog" => "/docs/changelog/",
             "$community" => "/docs/community/",
             _ => panic!("unknown link root: {root}"),
@@ -401,10 +402,21 @@ fn code_block(resolver: &dyn Resolver, lang: &str, text: &str) -> Html {
         }
     }
 
-    if !matches!(lang, "example" | "typ") {
+    if lang.is_empty() {
         let mut buf = String::from("<pre>");
-        escape_html(&mut buf, &display).unwrap();
+        md::escape::escape_html(&mut buf, &display).unwrap();
         buf.push_str("</pre>");
+        return Html::new(buf);
+    } else if !matches!(lang, "example" | "typ") {
+        let set = &*typst_library::text::SYNTAXES;
+        let buf = syntect::html::highlighted_html_for_string(
+            &display,
+            set,
+            set.find_syntax_by_token(lang)
+                .unwrap_or_else(|| panic!("unsupported highlighting language: {lang}")),
+            &typst_library::text::THEME,
+        )
+        .expect("failed to highlight code");
         return Html::new(buf);
     }
 
@@ -414,7 +426,8 @@ fn code_block(resolver: &dyn Resolver, lang: &str, text: &str) -> Html {
         return Html::new(format!("<pre>{}</pre>", highlighted.as_str()));
     }
 
-    let source = Source::new(SourceId::from_u16(0), Path::new("main.typ"), compile);
+    let id = FileId::new(None, Path::new("/main.typ"));
+    let source = Source::new(id, compile);
     let world = DocWorld(source);
     let mut frames = match typst::compile(&world) {
         Ok(doc) => doc.pages,
@@ -461,7 +474,7 @@ fn nest_heading(level: &mut md::HeadingLevel) {
     };
 }
 
-/// World for example compilations.
+/// A world for example compilations.
 struct DocWorld(Source);
 
 impl World for DocWorld {
@@ -469,33 +482,29 @@ impl World for DocWorld {
         &LIBRARY
     }
 
-    fn main(&self) -> &Source {
-        &self.0
-    }
-
-    fn resolve(&self, _: &Path) -> FileResult<SourceId> {
-        unimplemented!()
-    }
-
-    fn source(&self, id: SourceId) -> &Source {
-        assert_eq!(id.as_u16(), 0, "invalid source id");
-        &self.0
-    }
-
     fn book(&self) -> &Prehashed<FontBook> {
         &FONTS.0
     }
 
-    fn font(&self, id: usize) -> Option<Font> {
-        Some(FONTS.1[id].clone())
+    fn main(&self) -> Source {
+        self.0.clone()
     }
 
-    fn file(&self, path: &Path) -> FileResult<Buffer> {
+    fn source(&self, _: FileId) -> FileResult<Source> {
+        Ok(self.0.clone())
+    }
+
+    fn file(&self, id: FileId) -> FileResult<Bytes> {
+        assert!(id.package().is_none());
         Ok(FILES
-            .get_file(path)
-            .unwrap_or_else(|| panic!("failed to load {path:?}"))
+            .get_file(id.path().strip_prefix("/").unwrap())
+            .unwrap_or_else(|| panic!("failed to load {:?}", id.path().display()))
             .contents()
             .into())
+    }
+
+    fn font(&self, index: usize) -> Option<Font> {
+        Some(FONTS.1[index].clone())
     }
 
     fn today(&self, _: Option<i64>) -> Option<Datetime> {
