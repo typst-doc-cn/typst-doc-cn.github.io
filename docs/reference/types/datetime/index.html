@@ -825,9 +825,8 @@
       
 
 <h1 id="summary"><span class="pill pill-obj">datetime</span></h1>
-<p>Represents a date, a time, or a combination of both. Can be created by either
-specifying a custom datetime using the <a href="/docs/reference/construct/datetime/"><code>datetime</code></a> function or
-getting the current date with <a href="/docs/reference/construct/datetime/#datetime-today"><code>datetime.today</code></a>.</p>
+<p>日期、时间或两者的组合的表示。可以通过使用 <a href="/docs/reference/construct/datetime/"><code>datetime</code></a> 函数来指定自定义日期时间，
+或使用 <a href="/docs/reference/construct/datetime/#datetime-today"><code>datetime.today</code></a> 获取当前日期。</p>
 <h2>Example</h2>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> date <span class="typ-op">=</span> <span class="typ-func">datetime</span><span class="typ-punct">(</span>
   year<span class="typ-punct">:</span> <span class="typ-num">2020</span><span class="typ-punct">,</span>
@@ -850,99 +849,74 @@ getting the current date with <a href="/docs/reference/construct/datetime/#datet
 <span class="typ-pol">#</span><span class="typ-pol">time</span><span class="typ-punct">.</span><span class="typ-func">display</span><span class="typ-punct">(</span>
   <span class="typ-str">&quot;h:[hour repr:12][period]&quot;</span>
 <span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/G0rQIh6hwVyInbl29B7uA7.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/e5uQ7FmURBjgpx7om7Dt2j.png" alt="Preview" width="480" height="190"/></div></div>
 <h2>Format</h2>
-<p>You can specify a customized formatting using the
-<a href="/docs/reference/types/datetime/#methods-display"><code>display</code></a> method. The format of a datetime is
-specified by providing <em>components</em> with a specified number of <em>modifiers</em>. A
-component represents a certain part of the datetime that you want to display,
-and with the help of modifiers you can define how you want to display that
-component. In order to display a component, you wrap the name of the component
-in square brackets (e.g. <code>[year]</code> will display the year). In order to add
-modifiers, you add a space after the component name followed by the name of the
-modifier, a colon and the value of the modifier (e.g. <code>[month repr:short]</code>
-will display the short representation of the month).</p>
-<p>The possible combination of components and their respective modifiers is as
-follows:</p>
+<p>你可以使用 <a href="/docs/reference/types/datetime/#methods-display"><code>display</code></a> 方法来指定自定义的日期时间格式化方式。
+日期时间的格式化由提供具有指定数量   <em>修饰符</em> 的 <em>组件</em> 来指定。
+组件代表你想要显示的日期时间的特定部分，而借助修饰符，你可以定义如何显示该组件。
+为了显示一个组件，你需要将组件名称用方括号括起来（例如，<code>[year]</code> 会显示年份）。
+要添加修饰符，需要在组件名称之后加上一个空格，然后是修饰符的名称、冒号和修饰符的值（例如，<code>[month repr:short]</code> 会显示月份的短表示）。</p>
+<p>以下是组件及其对应修饰符的可能组合方式：</p>
 <ul>
-<li><code>year</code>: Displays the year of the datetime.
+<li><code>year</code>：显示日期时间的年份。
 <ul>
-<li><code>padding</code>: Can be either <code>zero</code>, <code>space</code> or <code>none</code>. Specifies how the year
-is padded.</li>
-<li><code>repr</code> Can be either <code>full</code> in which case the full year is displayed or
-<code>last_two</code> in which case only the last two digits are displayed.</li>
-<li><code>sign</code>: Can be either <code>automatic</code> or <code>mandatory</code>. Specifies when the sign
-should be displayed.</li>
+<li><code>padding</code>：可以是 <code>zero</code>, <code>space</code> 或 <code>none</code>。指定年份的填充方式。</li>
+<li><code>repr</code>：可以是 <code>full</code>，此时显示完整年份；或者是 <code>last_two</code>，此时只显示最后两位数字。</li>
+<li><code>sign</code>：可以是 <code>automatic</code> 或 <code>mandatory</code>。指定何时显示符号。</li>
 </ul>
 </li>
-<li><code>month</code>: Displays the month of the datetime.
+<li><code>month</code>：显示日期时间的月份。
 <ul>
-<li><code>padding</code>: Can be either <code>zero</code>, <code>space</code> or <code>none</code>. Specifies how the month
-is padded.</li>
-<li><code>repr</code>: Can be either <code>numerical</code>, <code>long</code> or <code>short</code>. Specifies if the month
-should be displayed as a number or a word. Unfortunately, when choosing the
-word representation, it can currently only display the English version. In
-the future, it is planned to support localization.</li>
+<li><code>padding</code>：可以是 <code>zero</code>, <code>space</code> 或 <code>none</code>。指定月份的填充方式。</li>
+<li><code>repr</code>：可以是 <code>numerical</code>, <code>long</code> 或 <code>short</code>。指定月份是否以数字或单词形式显示。
+不幸的是，选择单词表示时，目前仅能显示英文版本。未来计划支持本地化。</li>
 </ul>
 </li>
-<li><code>day</code>: Displays the day of the datetime.
+<li><code>day</code>：显示日期时间的日期。
 <ul>
-<li><code>padding</code>: Can be either <code>zero</code>, <code>space</code> or <code>none</code>. Specifies how the day
-is padded.</li>
+<li><code>padding</code>：可以是 <code>zero</code>, <code>space</code> 或 <code>none</code>。指定日期的填充方式。</li>
 </ul>
 </li>
-<li><code>week_number</code>: Displays the week number of the datetime.
+<li><code>week_number</code>：显示日期时间的周数。
 <ul>
-<li><code>padding</code>: Can be either <code>zero</code>, <code>space</code> or <code>none</code>. Specifies how the week
-number is padded.</li>
-<li><code>repr</code>: Can be either <code>ISO</code>, <code>sunday</code> or <code>monday</code>. In the case of <code>ISO</code>,
-week numbers are between 1 and 53, while the other ones are between 0
-and 53.</li>
+<li><code>padding</code>：可以是 <code>zero</code>, <code>space</code> 或 <code>none</code>。指定周数的填充方式。</li>
+<li><code>repr</code>：可以是 <code>ISO</code>, <code>sunday</code> 或 <code>monday</code>。对于 <code>ISO</code>，周数范围为 1 至 53；
+而对于其他表示方式，周数范围为 0 至 53。</li>
 </ul>
 </li>
-<li><code>weekday</code>: Displays the weekday of the date.
+<li><code>weekday</code>：显示日期时间的星期。
 <ul>
-<li><code>repr</code> Can be either <code>long</code>, <code>short</code>, <code>sunday</code> or <code>monday</code>. In the case of
-<code>long</code> and <code>short</code>, the corresponding English name will be displayed (same
-as for the month, other languages are currently not supported). In the case
-of <code>sunday</code> and <code>monday</code>, the numerical value will be displayed (assuming
-Sunday and Monday as the first day of the week, respectively).</li>
-<li><code>one_indexed</code>: Can be either <code>true</code> or <code>false</code>. Defines whether the
-numerical representation of the week starts with 0 or 1.</li>
+<li><code>repr</code>：可以是 <code>long</code>, <code>short</code>, <code>sunday</code> 或 <code>monday</code>。
+对于 <code>long</code> 和 <code>short</code>，会显示相应的英文名称（与月份类似，目前不支持其他语言）。
+对于 <code>sunday</code> 和 <code>monday</code>，将显示数字值（分别假设星期日和星期一为一周的第一天）。</li>
+<li><code>one_indexed</code>：可以是 <code>true</code> 或 <code>false</code>。定义周的数值表示从 0 还是 1 开始。</li>
 </ul>
 </li>
-<li><code>hour</code>: Displays the hour of the date.
+<li><code>hour</code>：显示日期时间的小时。
 <ul>
-<li><code>padding</code>: Can be either <code>zero</code>, <code>space</code> or <code>none</code>. Specifies how the hour
-is padded.</li>
-<li><code>repr</code>: Can be either <code>24</code> or <code>12</code>. Changes whether the hour is displayed in
-the 24-hour or 12-hour format.</li>
+<li><code>padding</code>：可以是 <code>zero</code>, <code>space</code> 或 <code>none</code>。指定小时的填充方式。</li>
+<li><code>repr</code>：可以是 <code>24</code> 或 <code>12</code>。决定小时以 24 小时制还是 12 小时制显示。</li>
 </ul>
 </li>
-<li><code>period</code>: The AM/PM part of the hour
+<li><code>period</code>：小时的上午/下午部分
 <ul>
-<li><code>case</code>: Can be <code>lower</code> to display it in lower case and <code>upper</code> to display it
-in upper case.</li>
+<li><code>case</code>：可以是 <code>lower</code> 或 <code>upper</code>。定义时间段的大小写显示。</li>
 </ul>
 </li>
-<li><code>minute</code>: Displays the minute of the date.
+<li><code>minute</code>：显示日期时间的分钟。
 <ul>
-<li><code>padding</code>: Can be either <code>zero</code>, <code>space</code> or <code>none</code>. Specifies how the minute
-is padded.</li>
+<li><code>padding</code>：可以是 <code>zero</code>, <code>space</code> 或 <code>none</code>。指定分钟的填充方式。</li>
 </ul>
 </li>
-<li><code>second</code>: Displays the second of the date.
+<li><code>second</code>：显示日期时间的秒数。
 <ul>
-<li><code>padding</code>: Can be either <code>zero</code>, <code>space</code> or <code>none</code>. Specifies how the second
-is padded.</li>
+<li><code>padding</code>：可以是 <code>zero</code>, <code>space</code> 或 <code>none</code>。指定秒数的填充方式。</li>
 </ul>
 </li>
 </ul>
-<p>Keep in mind that not always all components can be used. For example, if
-you create a new datetime with <code><span class="typ-func">datetime</span><span class="typ-punct">(</span>year<span class="typ-punct">:</span> <span class="typ-num">2023</span><span class="typ-punct">,</span> month<span class="typ-punct">:</span> <span class="typ-num">10</span><span class="typ-punct">,</span> day<span class="typ-punct">:</span> <span class="typ-num">13</span><span class="typ-punct">)</span></code>, it
-will be stored as a plain date internally, meaning that you cannot use
-components such as <code>hour</code> or <code>minute</code>, which would only work on datetimes
-that have a specified time.</p>
+<p>请注意，并非始终可以使用所有组件。
+例如，如果你创建一个新的日期时间，如 <code><span class="typ-func">datetime</span><span class="typ-punct">(</span>year<span class="typ-punct">:</span> <span class="typ-num">2023</span><span class="typ-punct">,</span> month<span class="typ-punct">:</span> <span class="typ-num">10</span><span class="typ-punct">,</span> day<span class="typ-punct">:</span> <span class="typ-num">13</span><span class="typ-punct">)</span></code>，
+它将被内部存储为纯日期，这意味着你不能使用诸如 <code>hour</code> 或 <code>minute</code> 等仅适用于特定时间的日期时间的组件。</p>
 
 <h2 id="methods"><span aria-describedby="methods-tooltip">方法</span>
   <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
@@ -956,11 +930,11 @@ that have a specified time.</p>
 
 
 <h3 id="methods-display" class="method-head"><span><code>display</code> method</span></h3>
-<p>Displays the datetime in a certain way. Depending on whether you have defined
-just a date, a time or both, the default format will be different.
-If you specified a date, it will be <code>[year]-[month]-[day]</code>. If you specified a
-time, it will be <code>[hour]:[minute]:[second]</code>. In the case of a datetime, it
-will be <code>[year]-[month]-[day] [hour]:[minute]:[second]</code>.</p>
+<p>以特定方式显示日期时间。
+根据你是否仅定义了日期、时间或两者，日期时间的默认格式将会有所不同。
+如果你只指定了日期，格式为 <code>[year]-[month]-[day]</code>。
+如果你只指定了时间，格式为 <code>[hour]:[minute]:[second]</code>。
+如果你同时指定了日期和时间，格式为 <code>[year]-[month]-[day] [hour]:[minute]:[second]</code>。</p>
 <div class="code code-definition single-arg">value.<span
     class="typ-func">display</span>(<div class="arguments"><span
       class="overview-param"><a href="/docs/reference/types/string" class="pill pill-str">string</a> </span></div>) <!-- -->-&gt; <a href="/docs/reference/types/string" class="pill pill-str">string</a></div>
@@ -986,52 +960,49 @@ will be <code>[year]-[month]-[day] [hour]:[minute]:[second]</code>.</p>
     </small>
   </div>
 </h4>
-<p>The format used to display the datetime.</p>
+<p>用于显示日期时间的格式。</p>
 
 
 
 
 <h3 id="methods-year" class="method-head"><span><code>year</code> method</span></h3>
-<p>Returns the year of the datetime, if it exists. Otherwise, it returns <code><span class="typ-key">none</span></code>.</p>
+<p>如果日期时间中的 <code>year</code> 存在，返回它。否则，返回 <code><span class="typ-key">none</span></code>。</p>
 <div class="code code-definition single-arg">value.<span
     class="typ-func">year</span>(<div class="arguments"></div>) <!-- -->-&gt; <a href="/docs/reference/types/integer" class="pill pill-num">integer</a><a href="/docs/reference/types/none" class="pill pill-kw">none</a></div>
 
 
 <h3 id="methods-month" class="method-head"><span><code>month</code> method</span></h3>
-<p>Returns the month of the datetime, if it exists. Otherwise, it returns <code><span class="typ-key">none</span></code>.</p>
+<p>如果日期时间中的 <code>month</code> 存在，返回它。否则，返回 <code><span class="typ-key">none</span></code>。</p>
 <div class="code code-definition single-arg">value.<span
     class="typ-func">month</span>(<div class="arguments"></div>) <!-- -->-&gt; <a href="/docs/reference/types/integer" class="pill pill-num">integer</a><a href="/docs/reference/types/none" class="pill pill-kw">none</a></div>
 
 
 <h3 id="methods-weekday" class="method-head"><span><code>weekday</code> method</span></h3>
-<p>Returns the weekday of the datetime as a number starting with 1 from Monday, if
-it exists. Otherwise, it returns <code><span class="typ-key">none</span></code>.</p>
+<p>如果日期时间的 <code>weekday</code> 存在，返回它按照从星期一开始并用数字表示。否则，返回 <code><span class="typ-key">none</span></code>。</p>
 <div class="code code-definition single-arg">value.<span
     class="typ-func">weekday</span>(<div class="arguments"></div>) <!-- -->-&gt; <a href="/docs/reference/types/integer" class="pill pill-num">integer</a><a href="/docs/reference/types/none" class="pill pill-kw">none</a></div>
 
 
 <h3 id="methods-day" class="method-head"><span><code>day</code> method</span></h3>
-<p>Returns the day of the datetime, if it exists. Otherwise, it returns <code><span class="typ-key">none</span></code>.</p>
+<p>如果日期时间中的 <code>day</code> 存在，返回它。否则，返回 <code><span class="typ-key">none</span></code>。</p>
 <div class="code code-definition single-arg">value.<span
     class="typ-func">day</span>(<div class="arguments"></div>) <!-- -->-&gt; <a href="/docs/reference/types/integer" class="pill pill-num">integer</a><a href="/docs/reference/types/none" class="pill pill-kw">none</a></div>
 
 
 <h3 id="methods-hour" class="method-head"><span><code>hour</code> method</span></h3>
-<p>Returns the hour of the datetime, if it exists. Otherwise, it returns <code><span class="typ-key">none</span></code>.</p>
+<p>如果日期时间中的 <code>hour</code> 存在，返回它。否则，返回 <code><span class="typ-key">none</span></code>。</p>
 <div class="code code-definition single-arg">value.<span
     class="typ-func">hour</span>(<div class="arguments"></div>) <!-- -->-&gt; <a href="/docs/reference/types/integer" class="pill pill-num">integer</a><a href="/docs/reference/types/none" class="pill pill-kw">none</a></div>
 
 
 <h3 id="methods-minute" class="method-head"><span><code>minute</code> method</span></h3>
-<p>Returns the minute of the datetime, if it exists. Otherwise, it returns
-<code><span class="typ-key">none</span></code>.</p>
+<p>如果日期时间中的 <code>minute</code> 存在，返回它，否则，返回 <code><span class="typ-key">none</span></code>。</p>
 <div class="code code-definition single-arg">value.<span
     class="typ-func">minute</span>(<div class="arguments"></div>) <!-- -->-&gt; <a href="/docs/reference/types/integer" class="pill pill-num">integer</a><a href="/docs/reference/types/none" class="pill pill-kw">none</a></div>
 
 
 <h3 id="methods-second" class="method-head"><span><code>second</code> method</span></h3>
-<p>Returns the second of the datetime, if it exists. Otherwise, it returns
-<code><span class="typ-key">none</span></code>.</p>
+<p>如果日期时间中的 <code>second</code> 存在，返回它，否则，返回 <code><span class="typ-key">none</span></code>。</p>
 <div class="code code-definition single-arg">value.<span
     class="typ-func">second</span>(<div class="arguments"></div>) <!-- -->-&gt; <a href="/docs/reference/types/integer" class="pill pill-num">integer</a><a href="/docs/reference/types/none" class="pill pill-kw">none</a></div>
 

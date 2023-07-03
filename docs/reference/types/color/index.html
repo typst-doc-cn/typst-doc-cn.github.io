@@ -825,17 +825,15 @@
       
 
 <h1 id="summary"><span class="pill pill-col">color</span></h1>
-<p>A color in a specific color space.</p>
-<p>Typst supports:</p>
+<p>一个特定颜色空间中的颜色。</p>
+<p>Typst 支持以下颜色空间：</p>
 <ul>
-<li>sRGB through the <a href="/docs/reference/construct/rgb/"><code>rgb</code> function</a></li>
-<li>Device CMYK through <a href="/docs/reference/construct/cmyk/"><code>cmyk</code> function</a></li>
-<li>D65 Gray through the <a href="/docs/reference/construct/luma/"><code>luma</code> function</a></li>
+<li>通过 <a href="/docs/reference/construct/rgb/"><code>rgb</code></a> 函数支持 sRGB</li>
+<li>通过 <a href="/docs/reference/construct/cmyk/"><code>cmyk</code></a> 函数支持 CMYK</li>
+<li>通过 <a href="/docs/reference/construct/luma/"><code>luma</code></a> 函数支持 D65 灰度</li>
 </ul>
-<p>Furthermore, Typst provides the following built-in colors:</p>
-<p><code>black</code>, <code>gray</code>, <code>silver</code>, <code>white</code>, <code>navy</code>, <code>blue</code>, <code>aqua</code>, <code>teal</code>, <code>eastern</code>,
-<code>purple</code>, <code>fuchsia</code>, <code>maroon</code>, <code>red</code>, <code>orange</code>, <code>yellow</code>, <code>olive</code>, <code>green</code>, and
-<code>lime</code>.</p>
+<p>此外，Typst 还提供了以下内置颜色：</p>
+<p><code>black</code>（黑色）, <code>gray</code>（灰色）, <code>silver</code>（银色）, <code>white</code>（白色）, <code>navy</code>（深蓝色）, <code>blue</code>（蓝色）, <code>aqua</code>（浅绿色）, <code>teal</code>（蓝绿色）, <code>eastern</code>（靛青色）,<code>purple</code>（紫色）, <code>fuchsia</code>（洋红色）, <code>maroon</code>（栗色）, <code>red</code>（红色）, <code>orange</code>（橙色）, <code>yellow</code>（黄色）, <code>olive</code>（橄榄色）, <code>green</code>（绿色）, 和 <code>lime</code>（石灰色）.</p>
 
 <h2 id="methods"><span aria-describedby="methods-tooltip">方法</span>
   <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
@@ -849,7 +847,7 @@
 
 
 <h3 id="methods-lighten" class="method-head"><span><code>lighten</code> method</span></h3>
-<p>Lightens a color.</p>
+<p>颜色亮度。</p>
 <div class="code code-definition single-arg">value.<span
     class="typ-func">lighten</span>(<div class="arguments"><span
       class="overview-param"><a href="/docs/reference/types/ratio" class="pill pill-num">ratio</a> </span></div>) <!-- -->-&gt; <a href="/docs/reference/types/color" class="pill pill-col">color</a></div>
@@ -875,13 +873,13 @@
     </small>
   </div>
 </h4>
-<p>The factor to lighten the color by.</p>
+<p>用于调亮颜色的因子。</p>
 
 
 
 
 <h3 id="methods-darken" class="method-head"><span><code>darken</code> method</span></h3>
-<p>Darkens a color.</p>
+<p>调暗颜色。</p>
 <div class="code code-definition single-arg">value.<span
     class="typ-func">darken</span>(<div class="arguments"><span
       class="overview-param"><a href="/docs/reference/types/ratio" class="pill pill-num">ratio</a> </span></div>) <!-- -->-&gt; <a href="/docs/reference/types/color" class="pill pill-col">color</a></div>
@@ -907,13 +905,13 @@
     </small>
   </div>
 </h4>
-<p>The factor to darken the color by.</p>
+<p>用于调暗颜色的因子。</p>
 
 
 
 
 <h3 id="methods-negate" class="method-head"><span><code>negate</code> method</span></h3>
-<p>Produces the negative of the color.</p>
+<p>生成颜色的负片效果。</p>
 <div class="code code-definition single-arg">value.<span
     class="typ-func">negate</span>(<div class="arguments"></div>) <!-- -->-&gt; <a href="/docs/reference/types/color" class="pill pill-col">color</a></div>
 

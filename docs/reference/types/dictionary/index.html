@@ -825,21 +825,13 @@
       
 
 <h1 id="summary"><span class="pill pill-obj">dictionary</span></h1>
-<p>A map from string keys to values.</p>
-<p>You can construct a dictionary by enclosing comma-separated <code>key: value</code> pairs
-in parentheses. The values do not have to be of the same type. Since empty
-parentheses already yield an empty array, you have to use the special <code>(:)</code>
-syntax to create an empty dictionary.</p>
-<p>A dictionary is conceptually similar to an array, but it is indexed by strings
-instead of integers. You can access and create dictionary entries with the
-<code>.at()</code> method. If you know the key statically, you can alternatively use
-<a href="/docs/reference/scripting/#fields">field access notation</a> (<code>.key</code>) to access
-the value. Dictionaries can be added with the <code>+</code> operator and
-<a href="/docs/reference/scripting/#blocks">joined together</a>.
-To check whether a key is present in the dictionary, use the <code>in</code> keyword.</p>
-<p>You can iterate over the pairs in a dictionary using a
-<a href="/docs/reference/scripting/#loops">for loop</a>. This will iterate in the order the pairs were
-inserted / declared.</p>
+<p>这是一个从字符串键到值的映射。</p>
+<p>您可以在括号中使用逗号分隔的键值对构建字典。值的类型不必相同。
+由于空括号已经产生了一个空数组，所以您必须使用特殊的 <code>(:)</code> 语法创建一个空字典。</p>
+<p>字典在概念上类似于数组，但其索引是字符串而不是整数。
+您可以使用 <code>.at()</code> 方法访问和创建字典条目。如果你知道键，则可以使用<a href="/docs/reference/scripting/#fields">字段访问符号</a>(<code>.key</code>)访问值。
+可以使用 <code>+</code> 运算符将字典相<a href="/docs/reference/scripting/#fields">加并</a>合并在一起。要检查字典中是否存在某个键，请使用 <code>in</code> 关键字。</p>
+<p>您可以使用 <a href="/docs/reference/scripting/#loops">for 循环</a>迭代字典中的键值对。这将按照插入 / 声明的顺序进行迭代。</p>
 <h2>Example</h2>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> dict <span class="typ-op">=</span> <span class="typ-punct">(</span>
   name<span class="typ-punct">:</span> <span class="typ-str">&quot;Typst&quot;</span><span class="typ-punct">,</span>
@@ -854,7 +846,7 @@ inserted / declared.</p>
 <span class="typ-pol">#</span><span class="typ-pol">dict</span><span class="typ-punct">.</span><span class="typ-func">at</span><span class="typ-punct">(</span><span class="typ-str">&quot;born&quot;</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
 <span class="typ-pol">#</span><span class="typ-pol">dict</span><span class="typ-punct">.</span><span class="typ-func">insert</span><span class="typ-punct">(</span><span class="typ-str">&quot;city&quot;</span><span class="typ-punct">,</span> <span class="typ-str">&quot;Berlin &quot;</span><span class="typ-punct">)</span>
 <span class="typ-punct">#</span><span class="typ-punct">(</span><span class="typ-str">&quot;name&quot;</span> <span class="typ-key">in</span> dict<span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/wYMbR6BHDtKQwUWrolz89m.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/9BHzM04BAMz4tP4HQzZ2Co.png" alt="Preview" width="480" height="190"/></div></div>
 
 <h2 id="methods"><span aria-describedby="methods-tooltip">方法</span>
   <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
@@ -868,16 +860,14 @@ inserted / declared.</p>
 
 
 <h3 id="methods-len" class="method-head"><span><code>len</code> method</span></h3>
-<p>The number of pairs in the dictionary.</p>
+<p>字典中键值对的数量。</p>
 <div class="code code-definition single-arg">value.<span
     class="typ-func">len</span>(<div class="arguments"></div>) <!-- -->-&gt; <a href="/docs/reference/types/integer" class="pill pill-num">integer</a></div>
 
 
 <h3 id="methods-at" class="method-head"><span><code>at</code> method</span></h3>
-<p>Returns the value associated with the specified key in the dictionary. May be
-used on the left-hand side of an assignment if the key is already present in the
-dictionary. Returns the default value if the key is not part of the dictionary
-or fails with an error if no default value was specified.</p>
+<p>返回字典中与指定键关联的值。如果字典中已存在该键，可以在赋值语句的左侧使用它。
+如果键不是字典的一部分，则返回默认值，如果没有指定默认值，则返回错误。</p>
 <div class="code code-definition ">value.<span
     class="typ-func">at</span>(<div class="arguments"><span
       class="overview-param"><a href="/docs/reference/types/string" class="pill pill-str">string</a>, </span><span
@@ -904,7 +894,7 @@ or fails with an error if no default value was specified.</p>
     </small>
   </div>
 </h4>
-<p>The key at which to retrieve the item.</p>
+<p>要检索项目的键。</p>
 
 
 
@@ -918,14 +908,13 @@ or fails with an error if no default value was specified.</p>
     
   </div>
 </h4>
-<p>A default value to return if the key is not part of the dictionary.</p>
+<p>如果键不是字典的一部分，则返回的默认值。</p>
 
 
 
 
 <h3 id="methods-insert" class="method-head"><span><code>insert</code> method</span></h3>
-<p>Insert a new pair into the dictionary and return the value.
-If the dictionary already contains this key, the value is updated.</p>
+<p>将一个新的键值对插入字典，并返回该值。如果字典已经包含了这个键，则更新该值。</p>
 <div class="code code-definition ">value.<span
     class="typ-func">insert</span>(<div class="arguments"><span
       class="overview-param"><a href="/docs/reference/types/string" class="pill pill-str">string</a>, </span><span
@@ -952,7 +941,7 @@ If the dictionary already contains this key, the value is updated.</p>
     </small>
   </div>
 </h4>
-<p>The key of the pair that should be inserted.</p>
+<p>要插入的键值对的键。</p>
 
 
 
@@ -977,32 +966,31 @@ If the dictionary already contains this key, the value is updated.</p>
     </small>
   </div>
 </h4>
-<p>The value of the pair that should be inserted.</p>
+<p>要插入的键值对的值。</p>
 
 
 
 
 <h3 id="methods-keys" class="method-head"><span><code>keys</code> method</span></h3>
-<p>Returns the keys of the dictionary as an array in insertion order.</p>
+<p>以插入顺序将字典的键作为数组返回。</p>
 <div class="code code-definition single-arg">value.<span
     class="typ-func">keys</span>(<div class="arguments"></div>) <!-- -->-&gt; <a href="/docs/reference/types/array" class="pill pill-obj">array</a></div>
 
 
 <h3 id="methods-values" class="method-head"><span><code>values</code> method</span></h3>
-<p>Returns the values of the dictionary as an array in insertion order.</p>
+<p>以插入顺序将字典的值作为数组返回。</p>
 <div class="code code-definition single-arg">value.<span
     class="typ-func">values</span>(<div class="arguments"></div>) <!-- -->-&gt; <a href="/docs/reference/types/array" class="pill pill-obj">array</a></div>
 
 
 <h3 id="methods-pairs" class="method-head"><span><code>pairs</code> method</span></h3>
-<p>Returns the keys and values of the dictionary as an array of pairs. Each pair is
-represented as an array of length two.</p>
+<p>将字典的键和值作为键值对的数组返回。每个键值对都表示为长度为 2 的数组。</p>
 <div class="code code-definition single-arg">value.<span
     class="typ-func">pairs</span>(<div class="arguments"></div>) <!-- -->-&gt; <a href="/docs/reference/types/array" class="pill pill-obj">array</a></div>
 
 
 <h3 id="methods-remove" class="method-head"><span><code>remove</code> method</span></h3>
-<p>Remove a pair from the dictionary by key and return the value.</p>
+<p>通过键从字典中删除一个键值对，并返回该值。</p>
 <div class="code code-definition single-arg">value.<span
     class="typ-func">remove</span>(<div class="arguments"><span
       class="overview-param"><a href="/docs/reference/types/string" class="pill pill-str">string</a> </span></div>) <!-- -->-&gt; <a href="/docs/reference/types/any" class="pill pill-obj">any</a></div>
@@ -1028,7 +1016,7 @@ represented as an array of length two.</p>
     </small>
   </div>
 </h4>
-<p>The key of the pair that should be removed.</p>
+<p>要从字典中删除的键值对的键。</p>
 
 
 

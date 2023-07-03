@@ -825,14 +825,12 @@
       
 
 <h1 id="summary"><span class="pill pill-obj">arguments</span></h1>
-<p>Captured arguments to a function.</p>
-<p>Like built-in functions, custom functions can also take a variable number of
-arguments. You can specify an <em>argument sink</em> which collects all excess
-arguments as <code>..sink</code>. The resulting <code>sink</code> value is of the <code>arguments</code> type. It
-exposes methods to access the positional and named arguments and is iterable
-with a <a href="/docs/reference/scripting/#loops">for loop</a>. Inversely, you can spread
-arguments, arrays and dictionaries into a function call with the spread operator:
-<code><span class="typ-func">func</span><span class="typ-punct">(</span><span class="typ-op">..</span>args<span class="typ-punct">)</span></code>.</p>
+<p>在函数中捕获参数。</p>
+<p>与内置函数类似，自定义函数也可以接受可变数量的参数。
+您可以使用 <code>..sink</code> 指定一个参数接收器，它将收集所有多余的参数。
+<code>sink</code> 值的类型与 <code>argument</code> 相同。
+它提供了访问位置和命名参数的方法，并且可以通过 <a href="/docs/reference/scripting/#loops">for 循环</a>进行迭代。
+反过来，您可以使用扩展运算符将参数、数组和字典展开到函数调用中：<code><span class="typ-func">func</span><span class="typ-punct">(</span><span class="typ-op">..</span>args<span class="typ-punct">)</span></code>。</p>
 <h2>Example</h2>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> <span class="typ-func">format</span><span class="typ-punct">(</span>title<span class="typ-punct">,</span> <span class="typ-op">..</span>authors<span class="typ-punct">)</span> <span class="typ-op">=</span> <span class="typ-punct">[</span>
   <span class="typ-strong">*<span class="typ-pol">#</span><span class="typ-pol">title</span>*</span> <span class="typ-escape">\</span>
@@ -842,7 +840,7 @@ arguments, arrays and dictionaries into a function call with the spread operator
 <span class="typ-punct">]</span>
 
 <span class="typ-func">#</span><span class="typ-func">format</span><span class="typ-punct">(</span><span class="typ-str">&quot;ArtosFlow&quot;</span><span class="typ-punct">,</span> <span class="typ-str">&quot;Jane&quot;</span><span class="typ-punct">,</span> <span class="typ-str">&quot;Joe&quot;</span><span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/zWvkWCIRDDAzrfCJgxSfU4.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/6NsWokMhSGYzaNFEjzOLmf.png" alt="Preview" width="480" height="190"/></div></div>
 
 <h2 id="methods"><span aria-describedby="methods-tooltip">方法</span>
   <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
@@ -856,13 +854,13 @@ arguments, arrays and dictionaries into a function call with the spread operator
 
 
 <h3 id="methods-pos" class="method-head"><span><code>pos</code> method</span></h3>
-<p>Returns the captured positional arguments as an array.</p>
+<p>将捕获的位置参数作为数组返回。</p>
 <div class="code code-definition single-arg">value.<span
     class="typ-func">pos</span>(<div class="arguments"></div>) <!-- -->-&gt; <a href="/docs/reference/types/array" class="pill pill-obj">array</a></div>
 
 
 <h3 id="methods-named" class="method-head"><span><code>named</code> method</span></h3>
-<p>Returns the captured named arguments as a dictionary.</p>
+<p>将捕获的命名参数作为字典返回。</p>
 <div class="code code-definition single-arg">value.<span
     class="typ-func">named</span>(<div class="arguments"></div>) <!-- -->-&gt; <a href="/docs/reference/types/dictionary" class="pill pill-obj">dictionary</a></div>
 

@@ -825,29 +825,25 @@
       
 
 <h1 id="summary"><span class="pill pill-obj">symbol</span></h1>
-<p>A Unicode symbol.</p>
-<p>Typst defines common symbols so that they can easily be written with standard
-keyboards. The symbols are defined in modules, from which they can be accessed
-using <a href="/docs/reference/scripting/#fields">field access notation</a>:</p>
+<p>Unicode 符号。</p>
+<p>Typst 定义了常见符号，一遍能够轻松地使用标准键盘进行输入。
+这些符号被定义在不同的模块中，可以使用<a href="/docs/reference/scripting/#fields">字段访问表示法</a>来访问：</p>
 <ul>
-<li>General symbols are defined in the <a href="/docs/reference/symbols/sym/"><code>sym</code> module</a></li>
-<li>Emoji are defined in the <a href="/docs/reference/symbols/emoji/"><code>emoji</code> module</a></li>
+<li>一般符号被定义在 <a href="/docs/reference/symbols/sym/"><code>sym</code></a> 模块</li>
+<li>Emoji 符号被定义在 <a href="/docs/reference/symbols/emoji/"><code>emoji</code></a> 模块</li>
 </ul>
-<p>Moreover, you can define custom symbols with the <a href="/docs/reference/construct/symbol/">symbol</a>
-function.</p>
+<p>此外，你还可以使用 <a href="/docs/reference/construct/symbol/">symbol</a> 函数定义自定义符号。</p>
 <div class="previewed-code"><pre><code><span class="typ-pol">#</span><span class="typ-pol">sym</span><span class="typ-punct">.</span><span class="typ-pol">arrow</span><span class="typ-punct">.</span><span class="typ-pol">r</span> <span class="typ-escape">\</span>
 <span class="typ-pol">#</span><span class="typ-pol">sym</span><span class="typ-punct">.</span><span class="typ-pol">gt</span><span class="typ-punct">.</span><span class="typ-pol">eq</span><span class="typ-punct">.</span><span class="typ-pol">not</span> <span class="typ-escape">\</span>
 <span class="typ-math-delim">$</span><span class="typ-pol">gt</span><span class="typ-punct">.</span><span class="typ-pol">eq</span><span class="typ-punct">.</span><span class="typ-pol">not</span><span class="typ-math-delim">$</span> <span class="typ-escape">\</span>
 <span class="typ-pol">#</span><span class="typ-pol">emoji</span><span class="typ-punct">.</span><span class="typ-pol">face</span><span class="typ-punct">.</span><span class="typ-pol">halo</span>
-</code></pre><div class="preview"><img src="/assets/docs/6hzBVHSomGurw0PeOyfngW.png" alt="Preview" width="480" height="190"/></div></div>
-<p>Many symbols have different variants, which can be selected by appending the
-modifiers with dot notation. The order of the modifiers is not relevant. Visit
-the documentation pages of the symbol modules and click on a symbol to see its
-available variants.</p>
+</code></pre><div class="preview"><img src="/assets/docs/hjsyLericKlzGVKlY3A5Kl.png" alt="Preview" width="480" height="190"/></div></div>
+<p>许多符号有不同的变体，可以通过使用点修饰符来进行选择。修饰符的顺序无关紧要。
+访问符号模块的文档页面，并单击一个符号以查看其可用的变体。</p>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span><span class="typ-pol">arrow</span><span class="typ-punct">.</span><span class="typ-pol">l</span><span class="typ-math-delim">$</span> <span class="typ-escape">\</span>
 <span class="typ-math-delim">$</span><span class="typ-pol">arrow</span><span class="typ-punct">.</span><span class="typ-pol">r</span><span class="typ-math-delim">$</span> <span class="typ-escape">\</span>
 <span class="typ-math-delim">$</span><span class="typ-pol">arrow</span><span class="typ-punct">.</span><span class="typ-pol">t</span><span class="typ-punct">.</span><span class="typ-pol">quad</span><span class="typ-math-delim">$</span>
-</code></pre><div class="preview"><img src="/assets/docs/I2XtXO6qwxZTLmJPC2hV11.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/v5MukCEjKd1KVuzhvyiO9o.png" alt="Preview" width="480" height="190"/></div></div>
 
 
 

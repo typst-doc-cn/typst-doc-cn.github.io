@@ -822,121 +822,116 @@
       
 
 <h1 id="summary">类型</h1>
-<p>To style your document, you need to work with values of different kinds: Lengths
-specifying the size of your elements, colors for your text and shapes, and more.
-Typst categorizes these into clearly defined <em>types</em> and tells you where it
-expects which type of value.</p>
-<p>Apart from very basic types for numeric values and typical types known from
-programming languages, Typst provides a special type for <em>content.</em> A value of
-this type can hold anything that you can enter into your document: Text,
-elements like headings and shapes, and style information.</p>
-<p>In some places of Typst more specialized data types are used. Instead of listing
-all of them here, they are explained where they are relevant.</p>
+<p>为了给文档设置样式，你需要使用不同类型的值：长度用于指定元素的大小，颜色用于文本和形状等。
+Typst 将这些值划分为明确定义的类型，并告诉你在哪里期望这种类型的值。</p>
+<p>除了用于数字值的非常基本的类型和编程语言中常见的类型之外，Typst 还提供了一种特殊的类型用于 <em>内容</em> 。
+该类型的值可以包含你可以输入到文档中的任何内容：文本、标题和形状等元素以及样式信息。</p>
+<p>在 Typst 的某些地方，会使用专门的数据类型。在此仅列出部分类型，其他类型会在相关地方进行解释。</p>
 <h2 id="--">Types</h2>
 <ul class="subgridded">
   
   
-  <li><a href="/docs/reference/types/none/"><code>none</code></a><span>A value that indicates the absence of any other value.</span>
+  <li><a href="/docs/reference/types/none/"><code>none</code></a><span>一个表示没有值的空值。</span>
   </li>
   
   
   
-  <li><a href="/docs/reference/types/auto/"><code>auto</code></a><span>A value that indicates a smart default.</span>
+  <li><a href="/docs/reference/types/auto/"><code>auto</code></a><span>一个表示智能默认值的值。</span>
   </li>
   
   
   
-  <li><a href="/docs/reference/types/boolean/"><code>boolean</code></a><span>Either `{true}` or `{false}`.</span>
+  <li><a href="/docs/reference/types/boolean/"><code>boolean</code></a><span>可以是 `{true}` 或 `{false}`。</span>
   </li>
   
   
   
-  <li><a href="/docs/reference/types/integer/"><code>integer</code></a><span>A whole number.</span>
+  <li><a href="/docs/reference/types/integer/"><code>integer</code></a><span>一个整数。</span>
   </li>
   
   
   
-  <li><a href="/docs/reference/types/float/"><code>float</code></a><span>A floating-pointer number.</span>
+  <li><a href="/docs/reference/types/float/"><code>float</code></a><span>一个浮点数。</span>
   </li>
   
   
   
-  <li><a href="/docs/reference/types/length/"><code>length</code></a><span>A size or distance, possibly expressed with contextual units.</span>
+  <li><a href="/docs/reference/types/length/"><code>length</code></a><span>一个尺寸或距离，可能使用上下文单位表示。</span>
   </li>
   
   
   
-  <li><a href="/docs/reference/types/angle/"><code>angle</code></a><span>An angle describing a rotation.</span>
+  <li><a href="/docs/reference/types/angle/"><code>angle</code></a><span>描述旋转的角度。</span>
   </li>
   
   
   
-  <li><a href="/docs/reference/types/ratio/"><code>ratio</code></a><span>A ratio of a whole.</span>
+  <li><a href="/docs/reference/types/ratio/"><code>ratio</code></a><span>一个整数的比率。</span>
   </li>
   
   
   
-  <li><a href="/docs/reference/types/relative-length/"><code>relative length</code></a><span>A length in relation to some known length.</span>
+  <li><a href="/docs/reference/types/relative-length/"><code>relative length</code></a><span>一个相对于某个已知长度的长度。</span>
   </li>
   
   
   
-  <li><a href="/docs/reference/types/fraction/"><code>fraction</code></a><span>Defines how the the remaining space in a layout is distributed.</span>
+  <li><a href="/docs/reference/types/fraction/"><code>fraction</code></a><span>定义布局中剩余空间的分配方式。</span>
   </li>
   
   
   
-  <li><a href="/docs/reference/types/color/"><code>color</code></a><span>A color in a specific color space.</span>
+  <li><a href="/docs/reference/types/color/"><code>color</code></a><span>一个特定颜色空间中的颜色。</span>
   </li>
   
   
   
-  <li><a href="/docs/reference/types/datetime/"><code>datetime</code></a><span>Represents a date, a time, or a combination of both. Can be created by either</span>
+  <li><a href="/docs/reference/types/datetime/"><code>datetime</code></a><span>日期、时间或两者的组合的表示。可以通过使用 [`datetime`]($func/datetime) 函数来指定自定义日期时间，</span>
   </li>
   
   
   
-  <li><a href="/docs/reference/types/symbol/"><code>symbol</code></a><span>A Unicode symbol.</span>
+  <li><a href="/docs/reference/types/symbol/"><code>symbol</code></a><span>Unicode 符号。</span>
   </li>
   
   
   
-  <li><a href="/docs/reference/types/string/"><code>string</code></a><span>A sequence of Unicode codepoints.</span>
+  <li><a href="/docs/reference/types/string/"><code>string</code></a><span>一串 Unicode 代码点（codepoints）。</span>
   </li>
   
   
   
-  <li><a href="/docs/reference/types/content/"><code>content</code></a><span>A piece of document content.</span>
+  <li><a href="/docs/reference/types/content/"><code>content</code></a><span>一段文件内容。</span>
   </li>
   
   
   
-  <li><a href="/docs/reference/types/array/"><code>array</code></a><span>A sequence of values.</span>
+  <li><a href="/docs/reference/types/array/"><code>array</code></a><span>一个值的序列。</span>
   </li>
   
   
   
-  <li><a href="/docs/reference/types/dictionary/"><code>dictionary</code></a><span>A map from string keys to values.</span>
+  <li><a href="/docs/reference/types/dictionary/"><code>dictionary</code></a><span>这是一个从字符串键到值的映射。</span>
   </li>
   
   
   
-  <li><a href="/docs/reference/types/function/"><code>function</code></a><span>A mapping from argument values to a return value.</span>
+  <li><a href="/docs/reference/types/function/"><code>function</code></a><span>参数值到返回值的映射。</span>
   </li>
   
   
   
-  <li><a href="/docs/reference/types/arguments/"><code>arguments</code></a><span>Captured arguments to a function.</span>
+  <li><a href="/docs/reference/types/arguments/"><code>arguments</code></a><span>在函数中捕获参数。</span>
   </li>
   
   
   
-  <li><a href="/docs/reference/types/selector/"><code>selector</code></a><span>A filter for selecting elements within the document.</span>
+  <li><a href="/docs/reference/types/selector/"><code>selector</code></a><span>一个用于选择文档中元素的过滤器。</span>
   </li>
   
   
   
-  <li><a href="/docs/reference/types/module/"><code>module</code></a><span>An evaluated module, either built-in or resulting from a file.</span>
+  <li><a href="/docs/reference/types/module/"><code>module</code></a><span>一个评估模块，可以是内置模块，也可以是来自文件的结果。</span>
   </li>
   
   

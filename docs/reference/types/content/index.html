@@ -825,39 +825,27 @@
       
 
 <h1 id="summary"><span class="pill pill-con">content</span></h1>
-<p>A piece of document content.</p>
-<p>This type is at the heart of Typst. All markup you write and most
-<a href="/docs/reference/types/function/">functions</a> you call produce content values. You can create a
-content value by enclosing markup in square brackets. This is also how you pass
-content to functions.</p>
+<p>一段文件内容。</p>
+<p>这种类型是 Typst 的核心。你写的所有标记和你调用的大多数<a href="/docs/reference/types/function/">函数</a>都产生内容值。
+你可以通过在方括号中包围标记来创建一个内容值。
+这也是你向函数传递内容的方式。</p>
 <div class="previewed-code"><pre><code>Type of <span class="typ-strong">*Hello!*</span> is
 <span class="typ-func">#</span><span class="typ-func">type</span><span class="typ-punct">(</span><span class="typ-punct">[</span><span class="typ-strong">*Hello!*</span><span class="typ-punct">]</span><span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/DaexplJvQ0yggqM2naZbOt.png" alt="Preview" width="480" height="190"/></div></div>
-<p>Content can be added with the <code>+</code> operator,
-<a href="/docs/reference/scripting/#blocks">joined together</a> and multiplied with
-integers. Wherever content is expected, you can also pass a
-<a href="/docs/reference/types/string/">string</a> or <code><span class="typ-key">none</span></code>.</p>
+</code></pre><div class="preview"><img src="/assets/docs/KSYkXmJaaXTy4ug49OCDjp.png" alt="Preview" width="480" height="190"/></div></div>
+<p>内容可以用 <code>+</code> 运算符添加，<a href="/docs/reference/scripting/#blocks">连接在一起</a>，并与整数相乘。
+凡是期望有内容的地方，你也可以传递一个<a href="/docs/reference/types/string/">字符串</a>或 <code><span class="typ-key">none</span></code>。</p>
 <h2>Representation</h2>
-<p>Content consists of elements with fields. When constructing an element with
-its <em>element function,</em> you provide these fields as arguments and when you have
-a content value, you can access its fields with
-<a href="/docs/reference/scripting/#field-access">field access syntax</a>.</p>
-<p>Some fields are required: These must be provided when constructing an element
-and as a consequence, they are always available through field access on content
-of that type. Required fields are marked as such in the documentation.</p>
-<p>Most fields are optional: Like required fields, they can be passed to the
-element function to configure them for a single element. However, these can also
-be configured with <a href="/docs/reference/styling/#set-rules">set rules</a> to apply them to all
-elements within a scope. Optional fields are only available with field access
-syntax when they are were explicitly passed to the element function, not when
-they result from a set rule.</p>
-<p>Each element has a default appearance. However, you can also completely
-customize its appearance with a <a href="/docs/reference/styling/#show-rules">show rule</a>. The show rule
-is passed the element. It can access the element's field and produce arbitrary
-content from it.</p>
-<p>In the web app, you can hover over a content variable to see exactly which
-elements the content is composed of and what fields they have. Alternatively,
-you can inspect the output of the <a href="/docs/reference/foundations/repr/"><code>repr</code></a> function.</p>
+<p>内容由带有字段的元素组成。
+当用元素函数构造一个元素时，你提供这些字段作为参数，当你有一个内容值时，你可以用<a href="/docs/reference/scripting/#field-access">字段访问语法</a>访问其字段。</p>
+<p>有些字段是必须的：这些字段必须在构造元素时提供，
+因此，它们总是可以通过对该类型内容的字段访问而获得。必需的字段在文档中被标明。</p>
+<p>大多数字段是可选的：像必填字段一样，它们可以被传递给元素函数来为单个元素配置它们。
+然而，这些也可以用设定的<a href="/docs/reference/styling/#set-rules">规则</a>来配置，将它们应用于一个范围内的所有元素。
+可选字段只有在它们被明确地传递给元素函数时才能使用字段访问语法，而不是由设置规则产生。</p>
+<p>每个元素都有一个默认的外观。然而，你也可以用一个<a href="/docs/reference/styling/#show-rules">显示规则</a>来完全定制它的外观。
+显示规则被传递给元素。它可以访问元素的字段并从中产生任意的内容。</p>
+<p>在 Web 应用程序中，你可以将鼠标悬停在一个内容变量上，准确地看到内容是由哪些元素组成的，它们有哪些字段。
+或者，你可以检查 <a href="/docs/reference/foundations/repr/"><code>repr</code></a> 函数的输出。</p>
 
 <h2 id="methods"><span aria-describedby="methods-tooltip">方法</span>
   <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
@@ -871,16 +859,15 @@ you can inspect the output of the <a href="/docs/reference/foundations/repr/"><c
 
 
 <h3 id="methods-func" class="method-head"><span><code>func</code> method</span></h3>
-<p>The content's element function. This function can be used to create the element
-contained in this content. It can be used in set and show rules for the element.
-Can be compared with global functions to check whether you have a specific
-kind of element.</p>
+<p>内容的元素函数。这个函数可以用来创建这个内容中包含的元素。
+它可以用于元素的设置和显示规则。
+可以与全局函数相比较，以检查你是否有一个特定种类的元素。</p>
 <div class="code code-definition single-arg">value.<span
     class="typ-func">func</span>(<div class="arguments"></div>) <!-- -->-&gt; <a href="/docs/reference/types/function" class="pill pill-fn">function</a></div>
 
 
 <h3 id="methods-has" class="method-head"><span><code>has</code> method</span></h3>
-<p>Whether the content has the specified field.</p>
+<p>该内容是否有指定的字段。</p>
 <div class="code code-definition single-arg">value.<span
     class="typ-func">has</span>(<div class="arguments"><span
       class="overview-param"><a href="/docs/reference/types/string" class="pill pill-str">string</a> </span></div>) <!-- -->-&gt; <a href="/docs/reference/types/boolean" class="pill pill-bool">boolean</a></div>
@@ -906,14 +893,13 @@ kind of element.</p>
     </small>
   </div>
 </h4>
-<p>The field to look for.</p>
+<p>搜索的字段。</p>
 
 
 
 
 <h3 id="methods-at" class="method-head"><span><code>at</code> method</span></h3>
-<p>Access the specified field on the content. Returns the default value if the
-field does not exist or fails with an error if no default value was specified.</p>
+<p>访问内容上的指定字段。如果字段不存在，则返回默认值；如果没有指定默认值，则返回错误。</p>
 <div class="code code-definition ">value.<span
     class="typ-func">at</span>(<div class="arguments"><span
       class="overview-param"><a href="/docs/reference/types/string" class="pill pill-str">string</a>, </span><span
@@ -940,7 +926,7 @@ field does not exist or fails with an error if no default value was specified.</
     </small>
   </div>
 </h4>
-<p>The field to access.</p>
+<p>要访问的字段。</p>
 
 
 
@@ -954,27 +940,25 @@ field does not exist or fails with an error if no default value was specified.</
     
   </div>
 </h4>
-<p>A default value to return if the field does not exist.</p>
+<p>如果字段不存在，要返回的默认值。</p>
 
 
 
 
 <h3 id="methods-fields" class="method-head"><span><code>fields</code> method</span></h3>
-<p>Return the fields of this content.</p>
+<p>返回该内容的所有字段。</p>
 <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">rect</span><span class="typ-punct">(</span>
   width<span class="typ-punct">:</span> <span class="typ-num">10cm</span><span class="typ-punct">,</span>
   height<span class="typ-punct">:</span> <span class="typ-num">10cm</span><span class="typ-punct">,</span>
 <span class="typ-punct">)</span><span class="typ-punct">.</span><span class="typ-func">fields</span><span class="typ-punct">(</span><span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/q5XWOccLmQjB1pcdF6wJnk.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/Nbw0pFLUXhNvmQTZmQ5zy6.png" alt="Preview" width="480" height="190"/></div></div>
 <div class="code code-definition single-arg">value.<span
     class="typ-func">fields</span>(<div class="arguments"></div>) <!-- -->-&gt; </div>
 
 
 <h3 id="methods-location" class="method-head"><span><code>location</code> method</span></h3>
-<p>The location of the content. This is only available on content returned by
-<a href="/docs/reference/meta/query/">query</a>, for other content it will fail with an error. The
-resulting location can be used with <a href="/docs/reference/meta/counter/">counters</a>,
-<a href="/docs/reference/meta/state/">state</a> and <a href="/docs/reference/meta/query/">queries</a>.</p>
+<p>内容的位置。这只适用于通过<a href="/docs/reference/meta/query/">查询</a>返回的内容，对于其他内容，它将以错误方式失败。
+得到的位置可以用于<a href="/docs/reference/meta/counter/">计数器</a>、<a href="/docs/reference/meta/state/">状态</a>和<a href="/docs/reference/meta/query/">查询</a>。</p>
 <div class="code code-definition single-arg">value.<span
     class="typ-func">location</span>(<div class="arguments"></div>) <!-- -->-&gt; <a href="/docs/reference/types/location" class="pill pill-obj">location</a></div>
 

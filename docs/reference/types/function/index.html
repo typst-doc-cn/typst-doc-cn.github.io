@@ -825,16 +825,12 @@
       
 
 <h1 id="summary"><span class="pill pill-fn">function</span></h1>
-<p>A mapping from argument values to a return value.</p>
-<p>You can call a function by writing a comma-separated list of function
-<em>arguments</em> enclosed in parentheses directly after the function name.
-Additionally, you can pass any number of trailing content blocks arguments to a
-function <em>after</em> the normal argument list. If the normal argument list would
-become empty, it can be omitted. Typst supports positional and named arguments.
-The former are identified by position and type, while the later are written as
-<code>name: value</code>.</p>
-<p>Within math mode, function calls have special behaviour. See the
-<a href="/docs/reference/math/">math documentation</a> for more details.</p>
+<p>参数值到返回值的映射。</p>
+<p>你可以通过在函数名后直接写一个用逗号分隔的参数列表，并用括号括起来来调用函数。
+此外，你还可以在普通参数列表之后将任意数量的尾部内容块参数传递给函数。
+如果普通参数列表为空，则可以省略它。
+Typst 支持位置参数和命名参数。前者通过位置和类型进行标识，而后者则以 <code>name: value</code> 的形式书写。</p>
+<p>在数学模式下，函数调用具有特殊的行为。更多详情请参阅<a href="/docs/reference/math/">数学文档</a>。</p>
 <h3>Example</h3>
 <div class="previewed-code"><pre><code><span class="typ-comment">// Call a function.</span>
 <span class="typ-func">#</span><span class="typ-func">list</span><span class="typ-punct">(</span><span class="typ-punct">[</span>A<span class="typ-punct">]</span><span class="typ-punct">,</span> <span class="typ-punct">[</span>B<span class="typ-punct">]</span><span class="typ-punct">)</span>
@@ -845,33 +841,22 @@ The former are identified by position and type, while the later are written as
 
 <span class="typ-comment">// Version without parentheses.</span>
 <span class="typ-func">#</span><span class="typ-func">list</span><span class="typ-punct">[</span>A<span class="typ-punct">]</span><span class="typ-punct">[</span>B<span class="typ-punct">]</span>
-</code></pre><div class="preview"><img src="/assets/docs/zdBqCIp2TMtqzeceBpcmoT.png" alt="Preview" width="480" height="190"/></div></div>
-<p>Functions are a fundamental building block of Typst. Typst provides functions
-for a variety of typesetting tasks. Moreover, the markup you write is backed by
-functions and all styling happens through functions. This reference lists all
-available functions and how you can use them. Please also refer to the
-documentation about <a href="/docs/reference/styling/#set-rules">set</a> and
-<a href="/docs/reference/styling/#show-rules">show</a> rules to learn about additional ways
-you can work with functions in Typst.</p>
+</code></pre><div class="preview"><img src="/assets/docs/pzENpHbspv9dPETc7YSl9N.png" alt="Preview" width="480" height="190"/></div></div>
+<p>函数是 Typst 的基本构建块。Typst 提供了许多用于各种排版任务的函数。
+此外，你编写的标记是由函数支持的，所有样式化都通过函数完成。
+这个参考文档列出了所有可用的函数以及如何使用它们。
+请参考有关<a href="/docs/reference/styling/#set-rules">设置规则</a>和<a href="/docs/reference/styling/#show-rules">展示规则</a>的文档，了解在 Typst 中可以使用函数的其他方式。</p>
 <h3 id="element-functions">Element functions</h3>
-<p>Some functions are associated with <em>elements</em> like <a href="/docs/reference/meta/heading/">headings</a> or
-<a href="/docs/reference/layout/table/">tables</a>. When called, these create an element of their respective
-kind. In contrast to normal functions, they can further be used in
-<a href="/docs/reference/styling/#set-rules">set rules</a>, <a href="/docs/reference/styling/#show-rules">show rules</a>, and
-<a href="/docs/reference/types/selector/">selectors</a>.</p>
+<p>某些函数与元素（如<a href="/docs/reference/meta/heading/">标题</a>或<a href="/docs/reference/layout/table/">表格</a>）相关联。
+当调用这些函数时，它们会创建相应种类的元素。
+与普通函数不同，它们还可以在<a href="/docs/reference/styling/#set-rules">设置规则</a>、<a href="/docs/reference/styling/#show-rules">展示规则</a>和<a href="/docs/reference/types/selector/">选择器</a>中进一步使用。</p>
 <h3 id="function-scopes">Function scopes</h3>
-<p>Functions can hold related definitions in their own scope, similar to a
-<a href="/docs/reference/scripting/#modules">module</a>. Examples of this are
-<a href="/docs/reference/foundations/assert/#assert-eq"><code>assert.eq</code></a> or <a href="/docs/reference/layout/list/#list-item"><code>list.item</code></a>. However, this
-feature is currently only available for built-in functions.</p>
+<p>函数可以在自己的作用域中保存相关定义，类似于一个<a href="/docs/reference/scripting/#modules">模块</a>。例如，<a href="/docs/reference/foundations/assert/#assert-eq"><code>assert.eq</code></a> 或 <a href="/docs/reference/layout/list/#list-item"><code>list.item</code></a>。
+然而，目前此功能仅适用于内置函数。</p>
 <h3 id="definitions">Defining functions</h3>
-<p>You can define your own function with a
-<a href="/docs/reference/scripting/#bindings">let binding</a> that has a parameter list after
-the binding's name. The parameter list can contain positional parameters,
-named parameters with default values and
-<a href="/docs/reference/types/arguments/">argument sinks</a>.
-The right-hand side of the binding can be a block or any other expression. It
-defines the function's return value and can depend on the parameters.</p>
+<p>你可以使用 <a href="/docs/reference/scripting/#bindings">let</a> 绑定来定义自己的函数，绑定名称后面可以有一个参数列表。
+参数列表可以包含位置参数、具有默认值的命名参数和<a href="/docs/reference/types/arguments/">参数接收器</a>。
+绑定的右边可以是一个块或任何其他表达式。它定义了函数的返回值，并且可以依赖于参数。</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> <span class="typ-func">alert</span><span class="typ-punct">(</span>body<span class="typ-punct">,</span> fill<span class="typ-punct">:</span> red<span class="typ-punct">)</span> <span class="typ-op">=</span> <span class="typ-punct">{</span>
   <span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>white<span class="typ-punct">)</span>
   <span class="typ-key">set</span> <span class="typ-func">align</span><span class="typ-punct">(</span>center<span class="typ-punct">)</span>
@@ -890,24 +875,17 @@ defines the function's return value and can depend on the parameters.</p>
 <span class="typ-func">#</span><span class="typ-func">alert</span><span class="typ-punct">(</span>fill<span class="typ-punct">:</span> blue<span class="typ-punct">)</span><span class="typ-punct">[</span>
   KEEP OFF TRACKS
 <span class="typ-punct">]</span>
-</code></pre><div class="preview"><img src="/assets/docs/FgdfTGm8UaAcZHWWr8KJmH.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/qv19ZJusXR4R3zIuLx8wpd.png" alt="Preview" width="480" height="190"/></div></div>
 <h3 id="unnamed">Unnamed functions</h3>
-<p>You can also created an unnamed function without creating a binding by
-specifying a parameter list followed by <code>=&gt;</code> and the function body. If your
-function has just one parameter, the parentheses around the parameter list are
-optional. Unnamed functions are mainly useful for show rules, but also for
-settable properties that take functions like the page function's
-<a href="/docs/reference/layout/page/#parameters-footer"><code>footer</code></a> property.</p>
+<p>你还可以通过指定一个参数列表，后跟 <code>=&gt;</code> 和函数体，创建一个没有绑定的匿名函数。
+如果你的函数只有一个参数，则参数列表周围的括号是可选的。
+匿名函数主要适用于展示规则，但也适用于接受函数的可设置属性，比如页面函数的<a href="/docs/reference/layout/page/#parameters-footer">页脚</a>属性。</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">show</span> <span class="typ-str">&quot;once?&quot;</span><span class="typ-punct">:</span> it <span class="typ-op">=&gt;</span> <span class="typ-punct">[</span><span class="typ-pol">#</span><span class="typ-pol">it</span> <span class="typ-pol">#</span><span class="typ-pol">it</span><span class="typ-punct">]</span>
 once?
-</code></pre><div class="preview"><img src="/assets/docs/JKtVHIbIPeS3rQXp6UjJHK.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/7qs4kqbqkEpVE0ICD25KDz.png" alt="Preview" width="480" height="190"/></div></div>
 <h3>Notable fact</h3>
-<p>In Typst, all functions are <em>pure.</em> This means that for the same
-arguments, they always return the same result. They cannot &quot;remember&quot; things to
-produce another value when they are called a second time.</p>
-<p>The only exception are built-in methods like
-<a href="/docs/reference/types/array/#methods-push"><code>array.push(value)</code></a>. These can modify the values they are
-called on.</p>
+<p>在 Typst 中，所有函数都是纯函数。这意味着对于相同的参数，它们总是返回相同的结果。它们不能在第二次调用时“记住”某些内容以产生另一个值。</p>
+<p>唯一的例外是像 <a href="/docs/reference/types/array/#methods-push"><code>array.push(value)</code></a> 这样的内置方法。它们可以修改调用它们的值。</p>
 
 <h2 id="methods"><span aria-describedby="methods-tooltip">方法</span>
   <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
@@ -921,7 +899,7 @@ called on.</p>
 
 
 <h3 id="methods-with" class="method-head"><span><code>with</code> method</span></h3>
-<p>Returns a new function that has the given arguments pre-applied.</p>
+<p>返回一个新的函数，该函数在调用时会预先应用给定的参数。</p>
 <div class="code code-definition single-arg">value.<span
     class="typ-func">with</span>(<div class="arguments"><span
       class="overview-param"><a href="#parameters-arguments">arguments<!-- -->: </a><a href="/docs/reference/types/any" class="pill pill-obj">any</a> </span></div>) <!-- -->-&gt; <a href="/docs/reference/types/function" class="pill pill-fn">function</a></div>
@@ -947,14 +925,13 @@ called on.</p>
     </small>
   </div>
 </h4>
-<p>The named and positional arguments to apply.</p>
+<p>要应用的命名和位置参数。</p>
 
 
 
 
 <h3 id="methods-where" class="method-head"><span><code>where</code> method</span></h3>
-<p>Returns a selector that filters for elements belonging to this function
-whose fields have the values of the given arguments.</p>
+<p>返回一个选择器，该选择器用于筛选属于此函数的元素，其字段具有给定参数的值。</p>
 <div class="code code-definition single-arg">value.<span
     class="typ-func">where</span>(<div class="arguments"><span
       class="overview-param"><a href="#parameters-fields">fields<!-- -->: </a><a href="/docs/reference/types/any" class="pill pill-obj">any</a> </span></div>) <!-- -->-&gt; <a href="/docs/reference/types/selector" class="pill pill-obj">selector</a></div>
@@ -980,7 +957,7 @@ whose fields have the values of the given arguments.</p>
     </small>
   </div>
 </h4>
-<p>The field values to filter by.</p>
+<p>要按字段筛选的值。</p>
 
 
 
