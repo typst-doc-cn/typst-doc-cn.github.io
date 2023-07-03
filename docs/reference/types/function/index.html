@@ -136,6 +136,12 @@
         
         
         <li>
+          <a href="/docs/chinese/" >中文用户指南</a>
+          
+        </li>
+        
+        
+        <li>
           <a href="/docs/reference/" >参考</a>
           
           <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
@@ -802,6 +808,12 @@
           
         </li>
         
+        
+        <li>
+          <a href="/docs/glossary/" >术语表</a>
+          
+        </li>
+        
       </ul>
 
     </nav>
@@ -841,7 +853,7 @@ Typst 支持位置参数和命名参数。前者通过位置和类型进行标�
 
 <span class="typ-comment">// Version without parentheses.</span>
 <span class="typ-func">#</span><span class="typ-func">list</span><span class="typ-punct">[</span>A<span class="typ-punct">]</span><span class="typ-punct">[</span>B<span class="typ-punct">]</span>
-</code></pre><div class="preview"><img src="/assets/docs/D6w5ut6kWDUPPHUDXJYNdZ.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/5VeQo9bm4aggrFj6uedPEL.png" alt="Preview" width="480" height="190"/></div></div>
 <p>函数是 Typst 的基本构建块。Typst 提供了许多用于各种排版任务的函数。
 此外，你编写的标记是由函数支持的，所有样式化都通过函数完成。
 这个参考文档列出了所有可用的函数以及如何使用它们。
@@ -875,14 +887,14 @@ Typst 支持位置参数和命名参数。前者通过位置和类型进行标�
 <span class="typ-func">#</span><span class="typ-func">alert</span><span class="typ-punct">(</span>fill<span class="typ-punct">:</span> blue<span class="typ-punct">)</span><span class="typ-punct">[</span>
   KEEP OFF TRACKS
 <span class="typ-punct">]</span>
-</code></pre><div class="preview"><img src="/assets/docs/Vtc9rcKksTKm0HnQovlJZk.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/jdONVJswRD8WgoQ8TVMGwD.png" alt="Preview" width="480" height="190"/></div></div>
 <h3 id="unnamed">Unnamed functions</h3>
 <p>你还可以通过指定一个参数列表，后跟 <code>=&gt;</code> 和函数体，创建一个没有绑定的匿名函数。
 如果你的函数只有一个参数，则参数列表周围的括号是可选的。
 匿名函数主要适用于展示规则，但也适用于接受函数的可设置属性，比如页面函数的<a href="/docs/reference/layout/page/#parameters-footer">页脚</a>属性。</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">show</span> <span class="typ-str">&quot;once?&quot;</span><span class="typ-punct">:</span> it <span class="typ-op">=&gt;</span> <span class="typ-punct">[</span><span class="typ-pol">#</span><span class="typ-pol">it</span> <span class="typ-pol">#</span><span class="typ-pol">it</span><span class="typ-punct">]</span>
 once?
-</code></pre><div class="preview"><img src="/assets/docs/c8n7iWiUrqbQMQFmK6fnJc.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/gFQFuaVfSmlszQCPjuQfXJ.png" alt="Preview" width="480" height="190"/></div></div>
 <h3>Notable fact</h3>
 <p>在 Typst 中，所有函数都是纯函数。这意味着对于相同的参数，它们总是返回相同的结果。它们不能在第二次调用时“记住”某些内容以产生另一个值。</p>
 <p>唯一的例外是像 <a href="/docs/reference/types/array/#methods-push"><code>array.push(value)</code></a> 这样的内置方法。它们可以修改调用它们的值。</p>

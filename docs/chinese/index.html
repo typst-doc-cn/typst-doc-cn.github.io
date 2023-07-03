@@ -3,21 +3,23 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Repeat – Typst 中文文档</title>
-  <meta name="description" content="Documentation for the `repeat` function.">
+  <title>中文用户指南 – Typst 中文文档</title>
+  <meta name="description" content="中文用户指南
+">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#239dad">
-  <meta property="og:url" content="https://typst.app/docs/reference/layout/repeat/">
-  <meta property="og:title" content="Repeat – Typst 中文文档">
+  <meta property="og:url" content="https://typst.app/docs/chinese/">
+  <meta property="og:title" content="中文用户指南 – Typst 中文文档">
   <meta property="og:site_name" content="Typst">
-  <meta property="og:description" content="Documentation for the `repeat` function.">
+  <meta property="og:description" content="中文用户指南
+">
   <meta property="og:type">
   <meta property="og:image" content="https://typst.app/assets/social.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:site" content="@typstapp">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://typst.app/docs/reference/layout/repeat/">
+  <link rel="canonical" href="https://typst.app/docs/chinese/">
   <meta name="twitter:image:alt"
     content="The left side of a text editor with colorful cursors, as well as the text &#x27;Compose papers faster, Typst&#x27;">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.ico">
@@ -136,7 +138,7 @@
         
         
         <li>
-          <a href="/docs/chinese/" >中文用户指南</a>
+          <a href="/docs/chinese/"  aria-current="page" >中文用户指南</a>
           
         </li>
         
@@ -417,7 +419,7 @@
                 <li><a href="/docs/reference/layout/place/" >Place</a></li>
                 
                 
-                <li><a href="/docs/reference/layout/repeat/"  aria-current="page" >Repeat</a></li>
+                <li><a href="/docs/reference/layout/repeat/" >Repeat</a></li>
                 
                 
                 <li><a href="/docs/reference/layout/rotate/" >Rotate</a></li>
@@ -824,97 +826,62 @@
 
         
         <li aria-hidden="true"><img src="/assets/icons/16-arrow-right.svg" width="16" height="16" alt=""></li>
-        <li><a href="/docs/reference/">参考</a></li>
-        
-        <li aria-hidden="true"><img src="/assets/icons/16-arrow-right.svg" width="16" height="16" alt=""></li>
-        <li><a href="/docs/reference/layout/">布局</a></li>
-        
-        <li aria-hidden="true"><img src="/assets/icons/16-arrow-right.svg" width="16" height="16" alt=""></li>
-        <li><a href="/docs/reference/layout/repeat/">Repeat</a></li>
+        <li><a href="/docs/chinese/">中文用户指南</a></li>
         
       </ul>
 
       
 
-<h1 level="1" id="summary"><code>repeat</code><small><span aria-describedby="element-tooltip">元素</span>
-    <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
-        aria-labelledby="element-tooltip-qm-label">
-        <title id="element-tooltip-qm-label">元素函数可以借助 set 和 show 规则进行自定义样式</title>
-        <use href="/assets/icons/12-tooltip.svg#icon"></use>
-      </svg>
-      <div role="tooltip" id="element-tooltip" tabindex="-1">元素函数可以借助 <code>set</code> 和<!-- --> <code>show</code>
-        规则进行自定义样式
-      </div>
-    </div>
-  </small></h1>
+<h1>中文用户指南</h1>
+<p>本页面并不属于官方文档的内容，而是 Typst 中文社区所撰写的面向中文用户的指南。
+如果您对在 Typst 中使用中文有什么使用心得，也欢迎在参与贡献！</p>
+<h2 id="question-and-answer">常见 Q&amp;A</h2>
+<h3>如何为中英文设置不同的字体？</h3>
+<p>可以使用 text 里面的 fallback 特性。
+Typst 中的 font 参数可以接收一个数组，会根据字体里有无当前字符来依次选择字体。
+因此我们只需要传入一个英文字体后接中文字体的数组，就可以达到为中英文设置不同的字体的效果。</p>
+<div class="previewed-code"><pre><code>Hello World 你好世界
 
-<p>Repeats content to the available space.</p>
-<p>This can be useful when implementing a custom index, reference, or outline.</p>
-<p>Space may be inserted between the instances of the body parameter, so be
-sure to include negative space if you need the instances to overlap.</p>
-<p>Errors if there no bounds on the available space, as it would create
-infinite content.</p>
-<h2 id="example">Example</h2>
-<div class="previewed-code"><pre><code>Sign on the dotted line:
-<span class="typ-func">#</span><span class="typ-func">box</span><span class="typ-punct">(</span>width<span class="typ-punct">:</span> <span class="typ-num">1fr</span><span class="typ-punct">,</span> <span class="typ-func">repeat</span><span class="typ-punct">[</span>.<span class="typ-punct">]</span><span class="typ-punct">)</span>
+<span class="typ-punct">#</span><span class="typ-punct">[</span>
+  <span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>font<span class="typ-punct">:</span> <span class="typ-punct">(</span><span class="typ-str">&quot;IBM Plex Serif&quot;</span><span class="typ-punct">,</span> <span class="typ-str">&quot;Noto Sans CJK SC&quot;</span><span class="typ-punct">)</span><span class="typ-punct">)</span>
 
-<span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span><span class="typ-num">10pt</span><span class="typ-punct">)</span>
-<span class="typ-func">#</span><span class="typ-func">v</span><span class="typ-punct">(</span><span class="typ-num">8pt</span><span class="typ-punct">,</span> weak<span class="typ-punct">:</span> <span class="typ-key">true</span><span class="typ-punct">)</span>
-<span class="typ-func">#</span><span class="typ-func">align</span><span class="typ-punct">(</span>right<span class="typ-punct">)</span><span class="typ-punct">[</span>
-  Berlin, the 22nd of December, 2022
+  Hello World 你好世界
 <span class="typ-punct">]</span>
-</code></pre><div class="preview"><img src="/assets/docs/zljAjNM6Gr3P3QlZqe9BwW.png" alt="Preview" width="480" height="190"/></div></div>
-
-<h2 level="2" id="parameters"><span aria-describedby="parameters-tooltip">参数</span>
-  <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
-      aria-labelledby="parameters-tooltip-qm-label">
-      <title id="parameters-tooltip-qm-label">参数是函数的输入。它们在函数名称后面的括号中传入。</title>
-      <use href="/assets/icons/12-tooltip.svg#icon"></use>
-    </svg>
-    <div role="tooltip" id="parameters-tooltip" tabindex="-1">参数是函数的输入。它们在函数名称后面的括号中传入。</div>
-  </div>
-</h2>
-
-<div class="code code-definition single-arg"><span
-    class="typ-func">repeat</span>(<div class="arguments"><span class="overview-param"><a href="/docs/reference/types/content" class="pill pill-con">content</a> </span></div>) <!-- -->-&gt; <a href="/docs/reference/types/content" class="pill pill-con">content</a></div>
-
-
-<h3 id="parameters-body"><code>body</code>
-  <div class="additional-info">
-    <div>
-      
-      <a href="/docs/reference/types/content" class="pill pill-con">content</a>
-      
-    </div>
-    <small>必需参数</small><small><span
-        aria-describedby="parameters-body-positional-tooltip">位置参数</span>
-      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
-          aria-labelledby="parameters-body-positional-tooltip-qm-label">
-          <title id="parameters-body-positional-tooltip-qm-label">位置参数按顺序传入，不带名称。</title>
-          <use href="/assets/icons/12-tooltip.svg#icon"></use>
-        </svg>
-        <div role="tooltip" id="parameters-body-positional-tooltip" tabindex="-1">位置参数按顺序传入，不带名称。</div>
-      </div>
-    </small>
-  </div>
-</h3>
-<p>The content to repeat.</p>
-
-
-
-
-<!-- ----------------------------------------------------------------------------------- -->
-
-
+</code></pre><div class="preview"><img src="/assets/docs/mtlGxY7ukGxib1Rw5hO1A6.png" alt="Preview" width="480" height="190"/></div></div>
+<h2 id="resources">一些 Typst 中文资源列表</h2>
+<ul>
+<li>中国大学论文
+<ul>
+<li><a href="https://github.com/lucifer1004/pkuthss-typst">pkuthss-typst</a>: 北京大学学位论文模板,Typst template for dissertations in Peking University (PKU).</li>
+<li><a href="https://github.com/cherichy/BUAA-typst">BUAA-typst</a>: 北京航空航天大学学位论文模板</li>
+<li><a href="https://github.com/QQKdeGit/bupt-typst">bupt-typst</a>: 北京邮电大学本科学士学位论文模板</li>
+<li><a href="https://github.com/werifu/HUST-typst-template">HUST-typst-template</a>: 用于华科毕业设计（本科）的 typst 模板。</li>
+<li><a href="https://github.com/shuosc/SHU-Bachelor-Thesis-Typst">SHU-Bachelor-Thesis-Typst</a>: 上海大学本科毕业论文 typst 模板 (开发ing)</li>
+<li><a href="https://github.com/howardlau1999/sysu-thesis-typst">sysu-thesis-typst</a>: 中山大学学位论文 Typst 模板</li>
+<li><a href="https://github.com/jujimeizuo/ZJGSU-typst-template">ZJGSU-typst-template</a>: 浙江工商大学毕业设计（本科）的 typst 模板。</li>
+<li><a href="https://github.com/jerrita/CQUPTypst">CQUPTypst</a>: 一个 Typest 模板，但是大专 </li>
+<li><a href="https://github.com/zjutjh/zjut-report-typst">zjut-report-typst</a>: 浙江工业大学一些实验报告的 Typst 模板, Some report templates of Zhejiang University of Technology.</li>
+<li><a href="https://github.com/chosertech/HIT-Thesis-Typst">HIT-Thesis-Typst</a>: 适用于哈尔滨工业大学学位论文的 Typst 模板</li>
+</ul>
+</li>
+<li>简历
+<ul>
+<li><a href="https://github.com/gaoachao/uniquecv-typst">uniquecv-typst</a>: 一个使用Typst编写的简历模板，基于uniquecv。</li>
+<li><a href="https://github.com/ice-kylin/typst-cv-miku">typst-cv-miku</a>: 简历模板，有多种版本，包括中文 ,This is a simple, elegant, academic style CV template for typst. Support for English and Chinese (and more).</li>
+<li><a href="https://github.com/mintyfrankie/awesomeCV-Typst">awesomeCV-Typst</a> - 一份参考 <code>Awesome-CV</code> 的简历模版，支持多语言简历管理, An opinionated, relived CV template inspired by the LaTeX <code>Awesome-CV</code> project, but with multilingual support and more</li>
+<li><a href="https://github.com/OrangeX4/Chinese-Resume-in-Typst">Chinese-Resume-in-Typst</a>: 使用 Typst 编写的中文简历, 语法简洁, 样式美观, 开箱即用, 可选是否显示照片</li>
+</ul>
+</li>
+</ul>
 
 
 
       
-      <div class="page-end-buttons"><a href="/docs/reference/layout/place/" class="previous"><img
+      <div class="page-end-buttons"><a href="/docs/tutorial/making-a-template/" class="previous"><img
             src="/assets/icons/16-arrow-right.svg" alt="←">
-          <div><span class="page-title">Place</span><span class="hint">上一页</span></div>
-        </a><a href="/docs/reference/layout/rotate/" class="next"><img src="/assets/icons/16-arrow-right.svg" alt="→">
-          <div><span class="page-title">Rotate</span><span class="hint">下一页</span></div>
+          <div><span class="page-title">制作模板</span><span class="hint">上一页</span></div>
+        </a><a href="/docs/reference/" class="next"><img src="/assets/icons/16-arrow-right.svg" alt="→">
+          <div><span class="page-title">参考</span><span class="hint">下一页</span></div>
         </a></div>
       
     </main>
@@ -923,15 +890,11 @@ infinite content.</p>
     <nav id="page-overview"><strong>目录</strong>
       <ul>
         
-        <li data-assoc="summary"><a href="#summary">Summary</a>
+        <li data-assoc="question-and-answer"><a href="#question-and-answer">Question And Answer</a>
           <ul></ul>
         </li>
         
-        <li data-assoc="example"><a href="#example">Example</a>
-          <ul></ul>
-        </li>
-        
-        <li data-assoc="parameters"><a href="#parameters">Parameters</a>
+        <li data-assoc="resources"><a href="#resources">Resources</a>
           <ul></ul>
         </li>
         
