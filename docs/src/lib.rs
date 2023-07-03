@@ -55,11 +55,13 @@ pub fn provide(resolver: &dyn Resolver) -> Vec<PageModel> {
     vec![
         markdown_page(resolver, "/docs/", "general/overview.md").with_route("/docs/"),
         tutorial_pages(resolver),
+        markdown_page(resolver, "/docs/", "general/chinese.md"),
         reference_pages(resolver),
         guides_pages(resolver),
         packages_page(resolver),
         markdown_page(resolver, "/docs/", "general/changelog.md"),
         markdown_page(resolver, "/docs/", "general/community.md"),
+        markdown_page(resolver, "/docs/", "general/glossary.md"),
     ]
 }
 
@@ -940,6 +942,7 @@ pub fn urlify(title: &str) -> String {
         "格式" => "formatting".to_owned(),
         "高级样式" => "advanced-styling".to_owned(),
         "制作模板" => "making-a-template".to_owned(),
+        "中文用户指南" => "chinese".to_owned(),
         "参考" => "reference".to_owned(),
         "语法" => "syntax".to_owned(),
         "样式" => "styling".to_owned(),
@@ -948,6 +951,7 @@ pub fn urlify(title: &str) -> String {
         "LaTeX 用户指南" => "guide-for-latex-users".to_owned(),
         "更新日志" => "changelog".to_owned(),
         "社区" => "community".to_owned(),
+        "术语表" => "glossary".to_owned(),
         _ => title
             .chars()
             .map(|c| c.to_ascii_lowercase())
