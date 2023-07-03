@@ -1,16 +1,11 @@
 types: |
-  To style your document, you need to work with values of different kinds: Lengths
-  specifying the size of your elements, colors for your text and shapes, and more.
-  Typst categorizes these into clearly defined _types_ and tells you where it
-  expects which type of value.
+  为了给文档设置样式，你需要使用不同类型的值：长度用于指定元素的大小，颜色用于文本和形状等。
+  Typst 将这些值划分为明确定义的类型，并告诉你在哪里期望这种类型的值。
 
-  Apart from very basic types for numeric values and typical types known from
-  programming languages, Typst provides a special type for _content._ A value of
-  this type can hold anything that you can enter into your document: Text,
-  elements like headings and shapes, and style information.
+  除了用于数字值的非常基本的类型和编程语言中常见的类型之外，Typst 还提供了一种特殊的类型用于 _内容_ 。
+  该类型的值可以包含你可以输入到文档中的任何内容：文本、标题和形状等元素以及样式信息。
 
-  In some places of Typst more specialized data types are used. Instead of listing
-  all of them here, they are explained where they are relevant.
+  在 Typst 的某些地方，会使用专门的数据类型。在此仅列出部分类型，其他类型会在相关地方进行解释。
 
 text: |
   Text styling.
