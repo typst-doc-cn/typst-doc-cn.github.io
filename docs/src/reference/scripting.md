@@ -1,20 +1,19 @@
 ---
-description: Automate your document with Typst's scripting capabilities.
+description: Typst 脚本功能自动化文档。
 ---
 
 # 脚本
-Typst embeds a powerful scripting language. You can automate your documents and
-create more sophisticated styles with code. Below is an overview over the
-scripting concepts.
 
-## Expressions { #expressions }
-In Typst, markup and code are fused into one. All but the most common elements
-are created with _functions._ To make this as convenient as possible, Typst
-provides compact syntax to embed a code expression into markup: An expression is
-introduced with a hashtag (`#`) and normal markup parsing resumes after the
-expression is finished. If a character would continue the expression but should
-be interpreted as text, the expression can forcibly be ended with a semicolon
-(`;`).
+Typst 内置了一个强大的脚本语言。可以使用代码自动生成文档，生成丰富多彩的样式。
+下面是关于脚本语言的综述。
+
+## 表达式 { #expressions }
+
+Typse 里面，标记和代码相互交融在一起。
+除了最常用的文档元素，其他所有均是由 _函数_ 生成。
+为了尽可能的便利，Typst 设计了精巧的语法，用来将代码嵌入在标记中：用 `#`(井号) 来引入一个代码表达式，
+表达式结束后，再恢复到正常的标记语法解析。
+有些字符能够使其后字符继续解析为表达式，如果想将其解释为文本，可以用分号(`;`)来强制结束表达式解析。
 
 ```example
 #emph[Hello] \
@@ -22,38 +21,31 @@ be interpreted as text, the expression can forcibly be ended with a semicolon
 #"hello".len()
 ```
 
-The example above shows a few of the available expressions, including
-[function calls]($type/function),
-[field accesses]($scripting/#fields), and
-[method calls]($scripting/#methods). More kinds of expressions are
-discussed in the remainder of this chapter. A few kinds of expressions are not
-compatible with the hashtag syntax (e.g. binary operator expressions). To embed
-these into markup, you can use parentheses, as in `[#(1 + 2)]`.
+上面示例展示了一些用到的表达式，
+有[函数调用]($type/function)，
+[字段访问]($scripting/#fields)，
+[方法调用]($scripting/#methods)。
+本章余下部分讲解更多类型表达式。
+有几种表达式与井号语法不一致（比如二元运算表达式），
+如果需要插入标记模式中，需要使用圆括号，比如 `[#(1+2)]`。
 
-## Blocks { #blocks }
-To structure your code and embed markup into it, Typst provides two kinds of
-_blocks:_
+## 块 { #blocks }
+为了架构代码以及将标记嵌入代码中，Typst 设计了两种 _块_：
 
-- **Code block:** `{{ let x = 1; x + 2 }}` \
-  When writing code, you'll probably want to split up your computation into
-  multiple statements, create some intermediate variables and so on. Code blocks
-  let you write multiple expressions where one is expected. The individual
-  expressions in a code block should be separated by line breaks or semicolons.
-  The output values of the individual expressions in a code block are joined to
-  determine the block's value. Expressions without useful output, like `{let}`
-  bindings yield `{none}`, which can be joined with any value without effect.
+- **代码块：** `{{ let x = 1; x + 2 }}` \
+  编写代码时，一个计算过程可能需要分解为多个语句，创建多个中间变量，等等。
+  可以将多个表达式组成一个代码块，就像一个表达式一样。在代码块中，多个表达式由换行符或者分号分割。
+  其中每个表达式的输出值被合并起来，作为代码块的值。
+  有些表达式没有有用的输出，比如 `{let}` 绑定返回 `{none}`，与其他值合并，没有任何效果。
 
-- **Content block:** `{[*Hey* there!]}` \
-  With content blocks, you can handle markup/content as a programmatic value,
-  store it in variables and pass it to [functions]($type/function). Content
-  blocks are delimited by square brackets and can contain arbitrary markup. A
-  content block results in a value of type [content]($type/content). An
-  arbitrary number of content blocks can be passed as trailing arguments to
-  functions. That is, `{list([A], [B])}` is equivalent to `{list[A][B]}`.
+- **文档内容块** `{[*Hey* there!]}` \
+  使用文档内容块，可以将标记/文档内容作为可编程值，存储到变量，传送给[函数]($type/function)。
+  文档内容块由方括号包裹，可以包含任何标记。
+  一个文档内容块产生一个 [content 类型]($type/content)的值。
+  文档内容块可以后缀参数形式任意多个传递给函数，就是说，`{list[A][B]}` 等效于 `{list([A], [B])}`。
 
-Content and code blocks can be nested arbitrarily. In the example below,
-`{[hello]}` is joined with the output of  `{a + [ the ] + b}` yielding
-`{[hello from the *world*]}`.
+文档内容块和代码块可以相互内嵌，下面示例中，`{[hello]}` 与 `{a + [ the ] + b}` 合并，生成 `{[hello from the *world*]}`。
+
 
 ```example
 #{
@@ -64,13 +56,12 @@ Content and code blocks can be nested arbitrarily. In the example below,
 }
 ```
 
-## Bindings and Destructuring { #bindings }
-As already demonstrated above, variables can be defined with `{let}` bindings.
-The variable is assigned the value of the expression that follows the `=` sign.
-The assignment of a value is optional, if no value is assigned, the variable
-will be initialized as `{none}`. The `{let}` keyword can also be used to create
-a [custom named function]($type/function/#definitions). Let bindings can be
-accessed for the rest of the containing block or document.
+## 绑定和解构 { #bindings }
+
+上面已经展示，变量由 `{let}` 绑定定义。
+= 符号后表达式的值被赋值给变量，这里赋值可以被省略，如果没有赋值，变量会初始化为 `{none}`。
+`{let}` 关键词也可以用来生成一个[自定义的有名函数]($type/function/#definitions)。
+let 绑定的变量可以在接下来的块中或者文档中被访问。
 
 ```example
 #let name = "Typst"
@@ -81,11 +72,9 @@ It explains #name.
 Sum is #add(2, 3).
 ```
 
-Let bindings can also be used to destructure [arrays]($type/array) and
-[dictionaries]($type/dictionary). In this case, the left-hand side of the
-assignment should mirror an array or dictionary. The `..` operator can be used
-once in the pattern to collect the remainder of the array's or dictionary's
-items.
+let 绑定也常用来解构[数组]($type/array)和[字典]($type/dictionary)，
+解构时，等号左边的形式需要与数组或字典相似，
+`..` 模式操作符只可被使用一次，用来指代数组或字典剩余的条目。
 
 ```example
 #let (x, y) = (1, 2)
@@ -113,14 +102,14 @@ Homer wrote #h.
 ]
 ```
 
-You can use the underscore to discard elements in a destructuring pattern:
+在解构匹配模式中，可以使用 _ 下划线来丢弃一个元素。
 
 ```example
 #let (_, y, _) = (1, 2, 3)
 The y coordinate is #y.
 ```
 
-Destructuring also work in argument lists of functions ...
+解构形式也可用于函数的参数列表中...
 
 ```example
 #let left = (2, 4, 5)
@@ -130,8 +119,7 @@ Destructuring also work in argument lists of functions ...
 )
 ```
 
-... and on the left-hand side of normal assignments. This can be useful to
-swap variables among other things.
+... 和普通赋值的左半部分，这通常用于交换两个变量的值。
 
 ```example
 #{
@@ -142,12 +130,11 @@ swap variables among other things.
 }
 ```
 
-## Conditionals { #conditionals }
-With a conditional, you can display or compute different things depending on
-whether some condition is fulfilled. Typst supports `{if}`, `{else if}` and
-`{else}` expression. When the condition evaluates to `{true}`, the conditional
-yields the value resulting from the if's body, otherwise yields the value
-resulting from the else's body.
+## 条件控制 { #conditionals }
+
+使用条件控制语句，可以根据某种条件是否满足，来展示或计算不同的事情。
+Typst 设计了 `{if}`, `{else if}`, `{else}` 表达式。
+当条件值为 `{true}` 时，条件语句会返回 if 从句的值，否则返回 else 从句的值。
 
 ```example
 #if 1 < 2 [
@@ -157,23 +144,22 @@ resulting from the else's body.
 ]
 ```
 
-Each branch can have a code or content block as its body.
+每个分支从句可以写为语句块或者文档内容块。
 
 - `{if condition {..}}`
 - `{if condition [..]}`
 - `{if condition [..] else {..}}`
 - `{if condition [..] else if condition {..} else [..]}`
 
-## Loops { #loops }
-With loops, you can repeat content or compute something iteratively. Typst
-supports two types of loops: `{for}` and `{while}` loops. The former iterate
-over a specified collection whereas the latter iterate as long as a condition
-stays fulfilled. Just like blocks, loops _join_ the results from each iteration
-into one value.
+## 循环控制 { #loops }
 
-In the example below, the three sentences created by the for loop join together
-into a single content value and the length-1 arrays in the while loop join
-together into one larger array.
+使用循环控制语句，可以反复的显示文档内容或者计算。
+Typst 支持两种循环控制： `{for}` 循环和 `{while}` 循环。
+`{for}` 循环用来遍历特定集合，`{while}` 循环根据某条件是否满足来决定是否再次迭代循环。
+和块类似，循环结构 _合并_ 每一次迭代循环的结果。
+
+下面示例中，for 循环生成了三句话，然后将其合并成一个文档内容。
+while 循环生成数个长度为1的数组，然后将其合并成一个大数组。
 
 ```example
 #for c in "ABC" [
@@ -187,26 +173,21 @@ together into one larger array.
 }
 ```
 
-For loops can iterate over a variety of collections:
+for 循环可以遍历多种集合：
 
 - `{for letter in "abc" {..}}` \
-  Iterates over the characters of the [string]($type/string).
-  (Technically, iterates over the grapheme clusters of the string. Most of the
-  time, a grapheme cluster is just a single character/codepoint. However, some
-  constructs like flag emojis that consist of multiple codepoints are still only
-  one cluster.)
+  遍历[字符串]($type/string)的每个字符。
+  （专业的说，是遍历字符串的每个形位符，大多时候，一个形位符对应一个字符/码位，
+  然而，有些表情标记符号由多个码位组成，但它仍然是一个形位符）。
 
 - `{for value in array {..}}` \
-  Iterates over the items in the [array]($type/array). The destructuring syntax
-  described in [Let binding]($scripting/#bindings) can also be used here.
+  遍历[数组]($type/array)中的条目。[let 绑定]($scripting/#bindings)中的解构语法也可使用于此。
 
 - `{for pair in dict {..}}` \
-  Iterates over the key-value pairs of the [dictionary]($type/dictionary).
-  The pairs can also be destructured by using `{for (key, value) in dict {..}}`.
+  遍历[字典]($type/dictionary)的键值对。键值对也可以用 `{for (key, value) in dict {..}}` 语法解构。
 
-To control the execution of the loop, Typst provides the `{break}` and
-`{continue}` statements. The former performs an early exit from the loop while
-the latter skips ahead to the next iteration of the loop.
+Typst 用 `{break}` 和 `{continue}` 语句来控制循环的执行，
+`{break}` 用来跳出循环，`{continue}` 用来提前结束本次循环，然后执行下一次循环。
 
 ```example
 #for letter in "abc nope" {
@@ -217,24 +198,19 @@ the latter skips ahead to the next iteration of the loop.
   letter
 }
 ```
-
-The body of a loop can be a code or content block:
+循环体可以是代码块，也可以是文档内容块：
 
 - `{for .. in collection {..}}`
 - `{for .. in collection [..]}`
 - `{while condition {..}}`
 - `{while condition [..]}`
 
-## Fields { #fields }
-You can use _dot notation_ to access fields on a value. The value in question
-can be either:
-- a [dictionary]($type/dictionary) that has the specified key,
-- a [symbol]($type/symbol) that has the specified modifier,
-- a [module]($type/module) containing the specified definition,
-- [content]($type/content) consisting of an element that has the specified
-  field. The available fields match the arguments of the
-  [element function]($type/function/#element-functions) that were given when
-  the element was constructed.
+## 字段 { #fields }
+可以使用 _点号_ 来访问一个值的字段，这个值可以是：
+- 有特定键的[字典]($type/dictionary)，
+- 有变体的[符号]($type/symbol)，
+- 有定义的[模块]($type/module)，
+- 有特定字段的[文档元素]($type/content)，可访问的字段与文档元素的[构造函数]($type/function/#element-functions)参数相匹配。
 
 ```example
 #let dict = (greet: "Hello")
@@ -246,12 +222,11 @@ can be either:
 #it.level
 ```
 
-## Methods { #methods }
-A method is a kind of a [function]($type/function) that is tightly coupled with
-a specific type. It is called on a value of its type using the same dot notation
-that is also used for fields: `{value.method(..)}`. The
-[type documentation]($type) lists the available methods for each of the built-in
-types. You cannot define your own methods.
+## 方法 { #methods }
+
+方法是一个特殊[函数]($type/function)，与特定类型紧密结合使用。
+同字段访问一样，使用点号来调用某类型值的方法：`{value.method(...)}`。
+[type 文档]($type)中列出了内置类型所有可使用的方法。方法不能被自定义。
 
 ```example
 #let array = (1, 2, 3, 4)
@@ -263,41 +238,33 @@ types. You cannot define your own methods.
     .join[ --- ])
 ```
 
-Methods are the only functions in Typst that can modify the value they are
-called on.
+Typst 中，方法是唯一可改变被调用值的方式。
 
-## Modules { #modules }
-You can split up your Typst projects into multiple files called _modules._ A
-module can refer to the content and definitions of another module in multiple
-ways:
+## 模块 { #modules }
 
-- **Including:** `{include "bar.typ"}` \
-  Evaluates the file at the path `bar.typ` and returns the resulting
-  [content]($type/content).
+一个 Typst 工程项目可以拆解为多个 _模块_ 文件。
+一个模块可以使用多种方式引用其他模块的文档内容和定义。
 
-- **Import:** `{import "bar.typ"}` \
-  Evaluates the file at the path `bar.typ` and inserts the resulting
-  [module]($type/module) into the current scope as `bar` (filename without
-  extension).
+- **插入：** `{include "bar.typ"}` \
+  计算 `bar.typ` 路径文件，返回其[文档内容]($type/content)结果。
 
-- **Import items:** `{import "bar.typ": a, b}` \
-  Evaluates the file at the path `bar.typ`, extracts the values of the variables
-  `a` and `b` (that need to be defined in `bar.typ`, e.g. through `{let}`
-  bindings) and defines them in the current file.Replacing `a, b` with `*` loads
-  all variables defined in a module.
+- **导入模块：** `{import "bar.typ"}` \
+  计算 `bar.typ` 路径文件，得到[模块类型]($type/module)的值，在当前作用域下与 `bar`(文件名除去扩展名) 进行绑定。
 
-Instead of a path, you can also use a [module value]($type/module), as shown in
-the following example:
+- **导入模块条目：** `{import "bar.typ": a, b}` \
+  计算 `bar.typ` 路径文件，将此模块内的 `a` 和 `b` 变量（需要通过 `{let}` 绑定在 `bar.typ` 内定义）重新绑定到当前文件。
+  如果使用 * 替代冒号后的 a,b，就导入 bar 模块内的所有变量。
+
+除了使用路径，也可以使用[模块值]($type/module)，如下面示例：
 
 ```example
 #import emoji: face
 #face.grin
 ```
 
-## Packages { #packages }
-To reuse building blocks across projects, you can also create and import Typst
-_packages._ A package import is specified as a triple of a namespace, a name,
-and a version.
+## 包 { #packages }
+可以创建并导入 Typst _包_，在多个工程项目中进行复用。
+一个包的导入需有三部分指定：包命名空间，包名称，包版本号。
 
 ```example
 >>> #let add(x, y) = x + y
@@ -305,41 +272,37 @@ and a version.
 #add(2, 7)
 ```
 
-The `preview` namespace contains packages shared by the community. You can find
-a searchable list of available community packages in the [packages]($packages)
-section.
+`preview` 包命名空间包含了 Typst 社区分享的包。可以在 [package]($packages) 小节搜索可用的社区分享包。
 
-If you are using Typst locally, you can also create your own system-local
-packages. For more details on this, see the
-[package repository](https://github.com/typst/packages).
+在本地使用 Typst 时，可以创建本地包。更多详情参考[包仓库](https://github.com/typst/packages)。
 
-## Operators { #operators }
-The following table lists all available unary and binary operators with effect,
-arity (unary, binary) and precedence level (higher binds stronger).
+## 操作符 { #operators }
 
-| Operator   | Effect                          | Arity  | Precedence |
+下表类出了所有一元和二元操作符的作用、参数数量(一元、二元)和优先级（优先级越高，越优先执行)
+
+| 操作符   | 作用说明                           | 参数数量  | 优先级 |
 |:----------:|---------------------------------|:------:|:----------:|
-|  `{-}`     | Negation                        | Unary  |     7      |
-|  `{+}`     | No effect (exists for symmetry) | Unary  |     7      |
-|  `{*}`     | Multiplication                  | Binary |     6      |
-|  `{/}`     | Division                        | Binary |     6      |
-|  `{+}`     | Addition                        | Binary |     5      |
-|  `{-}`     | Subtraction                     | Binary |     5      |
-|  `{==}`    | Check equality                  | Binary |     4      |
-|  `{!=}`    | Check inequality                | Binary |     4      |
-|  `{<}`     | Check less-than                 | Binary |     4      |
-|  `{<=}`    | Check less-than or equal        | Binary |     4      |
-|  `{>}`     | Check greater-than              | Binary |     4      |
-|  `{>=}`    | Check greater-than or equal     | Binary |     4      |
-|  `{in}`    | Check if in collection          | Binary |     4      |
-| `{not in}` | Check if not in collection      | Binary |     4      |
-|  `{not}`   | Logical "not"                   | Unary  |     3      |
-|  `{and}`   | Short-circuiting logical "and"  | Binary |     3      |
-|  `{or}`    | Short-circuiting logical "or    | Binary |     2      |
-|  `{=}`     | Assignment                      | Binary |     1      |
-|  `{+=}`    | Add-Assignment                  | Binary |     1      |
-|  `{-=}`    | Subtraction-Assignment          | Binary |     1      |
-|  `{*=}`    | Multiplication-Assignment       | Binary |     1      |
-|  `{/=}`    | Division-Assignment             | Binary |     1      |
+|  `{-}`     | 负号                            | 一元  |     7      |
+|  `{+}`     | 正号，无作用，仅仅为了对称性      | 一元  |     7      |
+|  `{*}`     | 乘号                            | 二元 |     6      |
+|  `{/}`     | 除号                            | 二元 |     6      |
+|  `{+}`     | 加号                            | 二元 |     5      |
+|  `{-}`     | 减号                            | 二元 |     5      |
+|  `{==}`    | 等号                            | 二元 |     4      |
+|  `{!=}`    | 不等于号                        | 二元 |     4      |
+|  `{<}`     | 小于号                          | 二元 |     4      |
+|  `{<=}`    | 小于等于号                      | 二元 |     4      |
+|  `{>}`     | 大于号                         | 二元 |     4      |
+|  `{>=}`    | 大于等于号                     | 二元 |     4      |
+|  `{in}`    | 属于                          | 二元 |     4      |
+| `{not in}` | 不属于                        | 二元 |     4      |
+|  `{not}`   | 逻辑非                        | 一元  |     3      |
+|  `{and}`   | 短路式逻辑并                   | 二元 |     3      |
+|  `{or}`    | 短路式逻辑或                   | 二元 |     2      |
+|  `{=}`     | 赋值                          | 二元 |     1      |
+|  `{+=}`    | 相加赋值                      | 二元 |     1      |
+|  `{-=}`    | 相减赋值                      | 二元 |     1      |
+|  `{*=}`    | 相乘赋值                      | 二元 |     1      |
+|  `{/=}`    | 相除赋值                      | 二元 |     1      |
 
 [semver]: https://semver.org/
