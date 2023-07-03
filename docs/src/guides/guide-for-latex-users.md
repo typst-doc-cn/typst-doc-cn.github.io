@@ -11,17 +11,17 @@ description: |
 <!-- Mention that Typst is not built upon LaTeX -->
 
 就像 LaTeX 一样，Typst 是一个基于标记的排版系统：你在一个文本文件中编写文档，并用命令和其他语法对其进行标记。
-然后，使用编译器将源文件排版为PDF。
+然后，使用编译器将源文件排版为 PDF。
 然而，Typst 在几个方面不同于 LaTeX:
 首先，Typst 对常见任务使用更专用的语法（就像你可能从 Markdown 中知道的那样）。
 Typst 的命令也更有原则:它们都是一样的，所以不像在LaTeX中，你只需要理解一些通用的概念，而不是学习每个包的不同约定。
-此外，Typst 的编译速度比 LaTeX 更快：编译通常需要几毫秒，而不是几秒钟，因此[Web应用程序](https://typst.app/)和编译器都可以提供实时预览。
+此外，Typst 的编译速度比 LaTeX 更快：编译通常需要几毫秒，而不是几秒钟，因此[ Web 应用程序](https://typst.app/)和编译器都可以提供实时预览。
 
 下面，我们将介绍一些从 LaTeX 转换到 Typst 的用户在编写文档时会遇到的最常见的问题。
 如果你更喜欢一步一步地介绍 Typst，请查看我们的[教程]($tutorial)。
 
 ## 如何创建一个新的空文档？{ #getting-started }
-这很简单。您只需创建一个新的空文本文件（文件扩展名为.typ）。
+这很简单。您只需创建一个新的空文本文件（文件扩展名为 `.typ`）。
 开始时不需要任何模板。只需直接开始编写你的文字。文字将被渲染在一个空白的A4大小的页面上。
 如果您使用的是Web应用程序，请单击“+ Empty document”以创建一个带有文件的新项目，然后进入编辑器。
 [段落分隔符]($func/parbreak)的工作方式和 LaTeX 中的一样，只是使用一个空行。
@@ -62,7 +62,7 @@ LaTeX 使用`\section`命令创建章节标题。嵌套标题用`\subsection`、
 | 公式             | `$x$`, `align` / `equation` 环境 | `[$x$]`, `[$ x = y $]` | [`equation`]($func/math.equation) |
 
 [列表]($func/list)不依赖于 Typst 中的环境。相反，它们有像标题一样的轻量级语法。
-要创建一个无序列表（`itemize`），只需要在每一行的项目前加一个`-`字符：
+要创建一个无序列表（ `itemize` ），只需要在每一行的项目前加一个 `-` 字符：
 
 ````example
 To write this list in Typst...
@@ -85,8 +85,8 @@ To write this list in Typst...
 
 嵌套列表通过使用适当的缩进来实现。在项目之间添加一个空行会使列表的间距更大。
 
-要获得一个[有序列表]($func/enum)（`enumerate`），请用`+`代替连字符。
-对于一个[描述列表]($func/terms)（`description`），用`[/ Term: Description]`来代替。
+要获得一个[有序列表]($func/enum)（ `enumerate` ），请用 `+` 代替连字符。
+对于一个[描述列表]($func/terms)（ `description` ），用 `[/ Term: Description]` 来代替。
 
 ## 我如何使用一个命令？ { #commands }
 LaTeX 在很大程度上依赖于命令（以反斜线为前缀）。它使用 _宏_ 来影响排版过程，并插入和操作内容。
@@ -323,23 +323,23 @@ paragraphs right here!
 Typst 是"即插即用"的，所以许多流行的 LaTeX 包的对应表达是直接内置的。
 下面，我们编制了一个表格，其中包括经常使用的 LaTeX 包和它们相应的 Typst 函数。
 
-| LaTeX 包                   | Typst 替代                                                    |
+| LaTeX 包                        | Typst 替代                                                            |
 |:--------------------------------|:---------------------------------------------------------------------|
-| graphicx, svg                   | [`image`]($func/image) function                                      |
-| tabularx                        | [`table`]($func/table), [`grid`]($func/grid) functions               |
-| fontenc, inputenc, unicode-math | Just start writing!                                                  |
-| babel, polyglossia              | [`text`]($func/text.lang) function: `[#set text(lang: "zh")]`        |
-| amsmath                         | [Math mode]($category/math)                                          |
-| amsfonts, amssymb               | [`sym`]($category/symbols) module and [syntax]($syntax/#math)        |
-| geometry, fancyhdr              | [`page`]($func/page) function                                        |
-| xcolor                          | [`text`]($func/text.fill) function: `[#set text(fill: rgb("#0178A4"))]` |
-| hyperref                        | [`link`]($func/link) function                                        |
-| bibtex, biblatex, natbib        | [`cite`]($func/cite), [`bibliography`]($func/bibliography) functions |
-| lstlisting, minted              | [`raw`]($func/raw) function and syntax                               |
-| parskip                         | [`block`]($func/block.spacing) and [`par`]($func/par.first-line-indent) functions |
-| csquotes                        | Set the [`text`]($func/text.lang) language and type `["]` or `[']`   |
-| caption                         | [`figure`]($func/figure) function                                    |
-| enumitem                        | [`list`]($func/list), [`enum`]($func/enum), [`terms`]($func/terms) functions |
+| graphicx, svg                   | [`image`]($func/image) 函数                                           |
+| tabularx                        | [`table`]($func/table), [`grid`]($func/grid) 函数                     |
+| fontenc, inputenc, unicode-math | 直接编写!                                                              |
+| babel, polyglossia              | [`text`]($func/text.lang) 函数： `[#set text(lang: "zh")]`            |
+| amsmath                         | [数学模式]($category/math)                                            |
+| amsfonts, amssymb               | [`sym`]($category/symbols) 模块和 [syntax]($syntax/#math)             |
+| geometry, fancyhdr              | [`page`]($func/page) 函数                                            |
+| xcolor                          | [`text`]($func/text.fill) 函数： `[#set text(fill: rgb("#0178A4"))]`  |
+| hyperref                        | [`link`]($func/link) 函数                                            |
+| bibtex, biblatex, natbib        | [`cite`]($func/cite), [`bibliography`]($func/bibliography) 函数      |
+| lstlisting, minted              | [`raw`]($func/raw) 函数和语法                                         |
+| parskip                         | [`block`]($func/block.spacing) 和 [`par`]($func/par.first-line-indent) 函数 |
+| csquotes                        | 设置 [`text`]($func/text.lang) 语言，并输入 `["]` or `[']`             |
+| caption                         | [`figure`]($func/figure) 函数                                        |
+| enumitem                        | [`list`]($func/list), [`enum`]($func/enum), [`terms`]($func/terms) 函数 |
 
 如果你需要从另一个文件中加载函数和变量，例如，为了使用一个模板，你可以使用 [`import`]($scripting/modules) 语句。
 如果你想包括另一个文件的文本内容，你可以使用 [`include`]($scripting/#modules) 语句。它将检索指定文件的内容并将其放入你的文档中。
@@ -362,9 +362,9 @@ $ sum_(k=1)^n k = (n(n+1))/2 $
 Typst在数学模式下预先定义了很多有用的变量。所有希腊字母（`alpha`, `beta`, ...）和一些希伯来字母（`alef`, `bet`, ...）都可以通过它们的名字使用。
 一些符号还可以通过速记法使用，如`<=`、`>=`和`->`。
 
-符号的完整列表请参考[符号页面]($func/symbol)。如果缺少一个符号，你也可以通过[Unicode转义序列]($syntax/#escapes)访问它。
+符号的完整列表请参考[符号页面]($func/symbol)。如果缺少一个符号，你也可以通过[ Unicode 转义序列]($syntax/#escapes)访问它。
 
-符号的替代和相关形式通常可以通过在句点后附加一个[修饰符]($type/symbol)来选择。例如，`arrow.l.squiggly`插入了一个向左倾斜的箭头。
+符号的替代和相关形式通常可以通过在句点后附加一个[修饰符]($type/symbol)来选择。例如，`arrow.l.squiggly` 插入了一个向左倾斜的箭头。
 如果你想在你的表达式中插入多字母文本，请用双引号将其括起来：
 
 ```example
@@ -372,7 +372,7 @@ $ delta "if" x <= 5 $
 ```
 
 在Typst中，定界符将为其表达式自动缩放，就像LaTeX中的 `\left` 和 `\right` 命令是隐式插入的。
-你可以使用[`lr`]($func/math.lr)函数自定义定界符的行为。为了防止一对定界符的缩放，你可以用反斜线转义。
+你可以使用 [`lr`]($func/math.lr) 函数自定义定界符的行为。为了防止一对定界符的缩放，你可以用反斜线转义。
 
 Typst会自动将斜线 `/` 周围的术语设置为分数，同时尊重运算符的优先级。所有的圆括号都会出现在输出中，而不会因为分数而变得多余。
 
@@ -380,7 +380,7 @@ Typst会自动将斜线 `/` 周围的术语设置为分数，同时尊重运算�
 $ f(x) = (x + 1) / x $
 ```
 
-[下标和上标]($func/math.attach)在 Typst 和 LaTeX 中的作用是相似的。`{$x^2$}`将产生一个上标，`{$x_2$}`产生一个下标。
+[下标和上标]($func/math.attach)在 Typst 和 LaTeX 中的作用是相似的。`{$x^2$}` 将产生一个上标，`{$x_2$}` 产生一个下标。
 如果你想在下标或上标中包含一个以上的值，请把它们的内容放在括号里：`{$x_(a -> epsilon)$}`。
 
 由于数学模式下的变量不需要在前面加上 `#` 或 `/` ，所以你也可以调用没有这些特殊字符的函数：
@@ -394,8 +394,8 @@ $ f(x, y) := cases(
 ) $
 ```
 
-上面的例子用 [`cases`]($func/math.cases) 函数来描述 f。在 cases 函数中，参数用逗号来分隔，参数也被解释为数学。
-如果你需要将参数解释为Typst值，用`#`号作为前缀：
+上面的例子用 [`cases`]($func/math.cases) 函数来描述 `f`。在 `cases` 函数中，参数用逗号来分隔，参数也被解释为数学。
+如果你需要将参数解释为Typst值，用 `#` 号作为前缀：
 
 ```example
 $ (a + b)^2
@@ -404,7 +404,7 @@ $ (a + b)^2
   + b^2 $
 ```
 
-你可以在数学模式内使用所有Typst函数，并插入任何内容。
+你可以在数学模式内使用所有 Typst 函数，并插入任何内容。
 如果你想让它们正常工作，在参数列表中使用代码模式，你可以在它们的调用前加上一个 `#`。
 没有人可以阻止你使用矩形或表情符号作为你的变量：
 
@@ -416,7 +416,7 @@ $ sum^10_(🥸=1)
 
 如果你希望直接以 Unicode 形式输入数学符号，也是可以的。
 
-数学调用可以有二维参数列表，使用 `;` 作为分隔符。这方面最常见的用途是创建矩阵的[`mat`]($func/math.mat)函数：
+数学调用可以有二维参数列表，使用 `;` 作为分隔符。这方面最常见的用途是创建矩阵的 [`mat`]($func/math.mat) 函数：
 
 ```example
 $ mat(
@@ -428,7 +428,7 @@ $ mat(
 ```
 
 ## 如何获得 "LaTeX外观"？ { #latex-look }
-用LaTeX编写的论文有一种无可挑剔的外观。这主要是由于它们的字体、[Computer Modern](https://zh.wikipedia.org/wiki/Computer_Modern)、对齐方式、窄行距和宽边距。
+用 LaTeX 编写的论文有一种无可挑剔的外观。这主要是由于它们的字体、[Computer Modern](https://zh.wikipedia.org/wiki/Computer_Modern)、对齐方式、窄行距和宽边距。
 
 下面是一个示例：
 - 设置宽[边距]($func/page.margin)
@@ -449,33 +449,33 @@ $ mat(
 
 这应该是一个很好的起点! 如果你想更进一步，为什么不创建一个可重复使用的模板？
 
-## 与LaTeX相比，Typst目前有哪些不足？ { #limitations }
-尽管今天Typst可以成为许多人的LaTeX替代品，但仍有一些功能是Typst不（尚未）支持的。
+## 与 LaTeX 相比，Typst 目前有哪些不足？ { #limitations }
+尽管今天 Typst 可以成为许多人的 LaTeX 替代品，但仍有一些功能是 Typst 不（尚未）支持的。
 这里列出了功能，在适用的情况下，包含了可能的变通方法。
 
-- **本地图表和绘图。** LaTeX用户经常在PGF/TikZ中与他们的文档一起创建图表。
-  Typst还不包括绘制图表的工具，但社区正在加紧提供解决方案，如[`typst-canvas`](https://github.com/johannes-wolf/typst-canvas)、
-  [`typst-plot`](https://github.com/johannes-wolf/typst-plot)和[`circuitypst`](https://github.com/fenjalien/circuitypst)。
+- **本地图表和绘图。** LaTeX 用户经常在 PGF/TikZ 中与他们的文档一起创建图表。
+  Typst 还不包括绘制图表的工具，但社区正在加紧提供解决方案，如 [`typst-canvas`](https://github.com/johannes-wolf/typst-canvas)、
+  [`typst-plot`](https://github.com/johannes-wolf/typst-plot) 和 [`circuitypst`](https://github.com/fenjalien/circuitypst)。
   你可以把这些工具添加到你的文档中，开始画图。
 
-- **在没有分页符的情况下改变页边距。** 在LaTeX中，页边距总是可以调整的，即使没有分页符。
-  要在Typst中改变页边距，你要使用[`page`]($func/page)函数，它将强制分页。
-  如果你只想让几个段落伸进页边距，然后再恢复到旧的页边距，你可以使用带负数填充的[`pad`]($func/pad)函数。
+- **在没有分页符的情况下改变页边距。** 在 LaTeX 中，页边距总是可以调整的，即使没有分页符。
+  要在 Typst 中改变页边距，你要使用 [`page`]($func/page) 函数，它将强制分页。
+  如果你只想让几个段落伸进页边距，然后再恢复到旧的页边距，你可以使用带负数填充的 [`pad`]($func/pad) 函数。
 
-- **浮动图。** LaTeX的`figure`命令会聪明地选择放置图片的位置，无论是在页面的顶部或底部，还是在专门的图片页面。
-  Typst中的图片将总是出现在它们被插入标记的位置上。虽然这种行为可以省去一些麻烦，但手动放置数字往往是很麻烦的。
+- **浮动图。** LaTeX 的 `figure` 命令会聪明地选择放置图片的位置，无论是在页面的顶部或底部，还是在专门的图片页面。
+  Typst 中的图片将总是出现在它们被插入标记的位置上。虽然这种行为可以省去一些麻烦，但手动放置数字往往是很麻烦的。
   我们将很快增加这一功能!
 
-- **将PDF作为图像。** 在LaTeX中，插入PDF或EPS文件的矢量图已经成为一种习惯。
-  Typst不支持这两种格式作为图像格式，但你可以用[在线工具](https://cloudconvert.com/pdf-to-svg)
-  或[Inkscape](https://inkscape.org/)轻松地将这两种文件转换成SVG文件。我们计划在Typst的Web应用程序中也加入这些文件格式的自动转换功能。
+- **将 PDF 作为图像。** 在 LaTeX 中，插入 PDF 或 EPS 文件的矢量图已经成为一种习惯。
+  Typst 不支持这两种格式作为图像格式，但你可以用[在线工具](https://cloudconvert.com/pdf-to-svg)
+  或 [Inkscape](https://inkscape.org/) 轻松地将这两种文件转换成SVG文件。我们计划在 Typst 的 Web 应用程序中也加入这些文件格式的自动转换功能。
 
-- **分页符优化。** LaTeX运行一些智能算法，不仅优化换行，也优化换页。虽然Typst试图避免寡头和孤儿，但它使用不太复杂的算法来确定分页符。
-  你可以在提交文档前使用`[#pagebreak(weak: true)]`在Typst中插入自定义分页。
-  参数`weak`确保不会创建双倍的分页符，如果这个地方无论如何都会是一个自然的分页符。
-  你也可以使用`[#v(1fr)]`来分配页面上的空间。它的工作原理与LaTeX的`\vfill`相当类似。
+- **分页符优化。** LaTeX 运行一些智能算法，不仅优化换行，也优化换页。虽然 Typst 试图避免寡头和孤儿，但它使用不太复杂的算法来确定分页符。
+  你可以在提交文档前使用 `[#pagebreak(weak: true)]` 在 Typst 中插入自定义分页。
+  参数 `weak` 确保不会创建双倍的分页符，如果这个地方无论如何都会是一个自然的分页符。
+  你也可以使用 `[#v(1fr)]` 来分配页面上的空间。它的工作原理与 LaTeX 的 `\vfill` 相当类似。
 
-- **书目是不可定制的。** 在LaTeX中，包`bibtex`、`biblatex`和`natbib`提供了广泛的参考和书目格式。
-  你也可以使用自定义的`.bbx`文件来定义你自己的样式。
-  Typst目前只支持一小部分引文风格，但我们希望在此基础上支持[引文风格语言（CSL）](https://citationstyles.org)，
-  这是一种由Zotero支持的基于XML的格式，允许你描述自己的书目风格。
+- **书目是不可定制的。** 在 LaTeX 中，包 `bibtex`、`biblatex` 和 `natbib` 提供了广泛的参考和书目格式。
+  你也可以使用自定义的 `.bbx` 文件来定义你自己的样式。
+  Typst 目前只支持一小部分引文风格，但我们希望在此基础上支持[引文风格语言（CSL）](https://citationstyles.org)，
+  这是一种由 Zotero 支持的基于 XML 的格式，允许你描述自己的书目风格。
