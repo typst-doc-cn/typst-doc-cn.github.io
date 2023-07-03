@@ -833,7 +833,7 @@ various factors that influence fluid
 dynamics in glaciers and how they
 contribute to the formation and
 behavior of these natural structures.
-</code></pre><div class="preview"><img src="/assets/docs/RUOx5d8deGurNsrG5Z3O8Z.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/K06gSOCvHntj9ShxnoNcql.png" alt="Preview" width="480" height="190"/></div></div>
 <p><em>在本教程中，我们将展示与此类似的代码示例。就像在 App 中一样，第一个面板包含标记文本，第二个面板显示文稿预览。我们缩小了页面以适应示例，以便您看得更清楚。</em></p>
 <p>下一步是添加标题并对一些文本进行强调。
 Typst 对最常见的格式使用简单的标记。要添加标题，请输入 <code>=</code> 字符，要用斜体强调某些文本，请将其括在 <code><span class="typ-emph">_下划线_</span></code> 中。</p>
@@ -843,7 +843,7 @@ various factors that influence <span class="typ-emph">_fluid
 dynamics_</span> in glaciers and how they
 contribute to the formation and
 behavior of these natural structures.
-</code></pre><div class="preview"><img src="/assets/docs/4aHrATr9Os0e8BP21gA7Nn.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/MJFij0baSP2KVPasE9qQeS.png" alt="Preview" width="480" height="190"/></div></div>
 <p>这很简单！要添加新段落，只需在两行文本之间添加一个空行即可。
 如果该段落需要副标题，请输入 <code>==</code> 而非 <code>=</code> 来生成它。
 <code>=</code> 字符的数量决定了标题的嵌套级别。</p>
@@ -853,7 +853,7 @@ Typst 将自动对项目进行编号。</p>
 <div class="previewed-code"><pre><code><span class="typ-marker">+</span> The climate
 <span class="typ-marker">+</span> The topography
 <span class="typ-marker">+</span> The geology
-</code></pre><div class="preview"><img src="/assets/docs/2pc4YDJrT1TK3uCwQF7RnB.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/l5bvQhTNiA15DRWuah0zNT.png" alt="Preview" width="480" height="190"/></div></div>
 <p>如果我们想添加一个无序列表，我们使用 <code>-</code> 字符而不是 <code>+</code> 字符。
 我们还可以嵌套列表：
 例如，我们可以通过缩进将无序列表作为一个子列表，添加到上面列表的第一项中。</p>
@@ -862,7 +862,7 @@ Typst 将自动对项目进行编号。</p>
   <span class="typ-marker">-</span> Precipitation
 <span class="typ-marker">+</span> The topography
 <span class="typ-marker">+</span> The geology
-</code></pre><div class="preview"><img src="/assets/docs/vjEzqlsnQjU02GdoaWkjLQ.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/t9HxnhzWPL8CCu5RWpcBHV.png" alt="Preview" width="480" height="190"/></div></div>
 <h2 id="figure">加入图表</h2>
 <p>您认为图表对一份优秀的报告至关重要，所以让我们添加一个图表。
 Typst 支持 PNG、JPEG、GIF 和 SVG 格式的图像。
@@ -880,7 +880,7 @@ Typst 支持 PNG、JPEG、GIF 和 SVG 格式的图像。
 其他所有内容都将通过 <em>函数</em> 来插入。
 为了使图像显示在页面上，我们使用 Typst 的 <a href="/docs/reference/visualize/image/"><code>image</code></a> 函数。</p>
 <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">image</span><span class="typ-punct">(</span><span class="typ-str">&quot;glacier.jpg&quot;</span><span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/CP0ZkZv6F5DfpKBJSjzFZp.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/VZOiJReiIvdnnwLdvKSx5U.png" alt="Preview" width="480" height="190"/></div></div>
 <p>通常，函数会为一组 <em>参数</em> 生成一些输出。
 当您在标记模式中 <em>调用</em> 函数时，读取到您输入的参数后，Typst 会将结果（函数的 <em>返回值</em> ）插入到文档中。
 在我们的例子中， <code>image</code> 函数接受一个参数：图像文件的路径。
@@ -892,7 +892,7 @@ Typst 可识别参数列表中的许多不同数据类型，
 这是一个 <em>命名</em> 参数，因此被指定为 <code>name: value</code> 对。
 如果有多个参数，则逗号分隔它们，所以我们首先需要在路径参数后面加上一个逗号。</p>
 <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">image</span><span class="typ-punct">(</span><span class="typ-str">&quot;glacier.jpg&quot;</span><span class="typ-punct">,</span> width<span class="typ-punct">:</span> <span class="typ-num">70%</span><span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/VDyqLts1P6rofDZxS1DWoo.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/Cho2GqqGygtBBnkCEHE1QZ.png" alt="Preview" width="480" height="190"/></div></div>
 <p><code>width</code> 参数是一个 <a href="/docs/reference/types/relative-length/">相对长度</a>。
 在我们的例子中，我们指定了一个百分比，确定图像应占据页面宽度的 <code><span class="typ-num">70%</span></code>。
 我们也可以指定一个绝对值，如 <code><span class="typ-num">1cm</span></code> 或 <code><span class="typ-num">0.7in</span></code>。</p>
@@ -911,7 +911,7 @@ Typst 可识别参数列表中的许多不同数据类型，
     of the earth&#39;s climate system.
   <span class="typ-punct">]</span><span class="typ-punct">,</span>
 <span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/on5ZkLjp5uzOFrMzwwhdlY.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/FO2G6RN6m92Ix68BoLqPHD.png" alt="Preview" width="480" height="190"/></div></div>
 <p>您继续编写报告，现在想要引用该图表。
 为此，首先在图表上贴上标签。
 标签用于唯一标识文档中的元素，你只需要通过在尖括号中将标签名称括起来，并在图表后加入。
@@ -928,7 +928,7 @@ we don&#39;t take action soon!
     of the earth&#39;s climate system.
   <span class="typ-punct">]</span><span class="typ-punct">,</span>
 <span class="typ-punct">)</span> <span class="typ-label">&lt;glaciers&gt;</span>
-</code></pre><div class="preview"><img src="/assets/docs/ZTCG8XSsFLHRDmXczwKgi4.png" alt="Preview" width="480" height="190"/></div></div><div class="info-box">
+</code></pre><div class="preview"><img src="/assets/docs/DDd7SIVP3ZFUaW0ghXClFY.png" alt="Preview" width="480" height="190"/></div></div><div class="info-box">
 <p>到目前为止，我们已经将内容块（方括号中的标记文本）和字符串（双引号中的文本）传递给我们的函数。
 两者都似乎包含文本，它们有什么区别呢？</p>
 <p>内容块可以包含文本，也可以包含任何其他类型的标记、函数调用等，
@@ -953,21 +953,21 @@ We follow the glacier melting models
 established in <span class="typ-ref">@glacier-melt</span>.
 
 <span class="typ-func">#</span><span class="typ-func">bibliography</span><span class="typ-punct">(</span><span class="typ-str">&quot;works.bib&quot;</span><span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/4RpTpmYRmN576axY8n2z6C.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/7ULunD6QR0uKRqTnk4hl5l.png" alt="Preview" width="480" height="190"/></div></div>
 <h2 id="maths">数学</h2>
 <p>充实了方法部分后，您继续完成这篇文稿的实质部分：数学公式。
 Typst 具有内置的数学排版引擎，并使用自己的数学记号。
 让我们从一个简单的等式开始。我们使用 <code>$</code> 符号括住它，让 Typst 知道它正在处理一个数学表达式：</p>
 <div class="previewed-code"><pre><code>The equation <span class="typ-math-delim">$</span>Q = <span class="typ-pol">rho</span> A v + C<span class="typ-math-delim">$</span>
 defines the glacial flow rate.
-</code></pre><div class="preview"><img src="/assets/docs/9A0oplfrtZKUwPFaFp2qUU.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/yT78vCtTBqTzkQu3RIcepV.png" alt="Preview" width="480" height="190"/></div></div>
 <p>公式是内联排版的，与周围的文本在同一行上。
 如果你想把它放在它自己的新行上，你应该在其开头和结尾插入一个空格：</p>
 <div class="previewed-code"><pre><code>The flow rate of a glacier is
 defined by the following equation:
 
 <span class="typ-math-delim">$</span> Q = <span class="typ-pol">rho</span> A v + C <span class="typ-math-delim">$</span>
-</code></pre><div class="preview"><img src="/assets/docs/wAnbpBN74sVwzDci9Qugxr.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/iY9w4Tf31SVF22zQYQhCsu.png" alt="Preview" width="480" height="190"/></div></div>
 <p>我们可以看到，Typst 按原样显示单个字母 <code>Q</code>，<code>A</code>，<code>v</code> 和 <code>C</code>，而它将 <code>rho</code> 翻译成希腊字母。
 数学模式将始终原样地显示单个字母。然而，多个字母将被视作为符号、变量或函数名称。
 要隐式地表明这是单个字母之间的乘法，请在它们之间加入空格。</p>
@@ -976,14 +976,14 @@ defined by the following equation:
 by the following equation:
 
 <span class="typ-math-delim">$</span> Q = <span class="typ-pol">rho</span> A v + <span class="typ-str">&quot;time offset&quot;</span> <span class="typ-math-delim">$</span>
-</code></pre><div class="preview"><img src="/assets/docs/F36bDvyDC3bF8VfPW7k4kf.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/HmwbeJS2ps8MMUESrrOOlp.png" alt="Preview" width="480" height="190"/></div></div>
 <p>您还需要在论文中加入一个求和公式。
 我们可以使用 <code>sum</code> 符号，然后在下标和上标中指定求和的范围：</p>
 <div class="previewed-code"><pre><code>Total displaced soil by glacial flow:
 
 <span class="typ-math-delim">$</span> 7.32 <span class="typ-pol">beta</span> +
   <span class="typ-pol">sum</span><span class="typ-math-op">_</span><span class="typ-punct">(</span>i=0<span class="typ-punct">)</span><span class="typ-math-op">^</span><span class="typ-pol">nabla</span> Q<span class="typ-math-op">_</span>i <span class="typ-math-op">/</span> 2 <span class="typ-math-delim">$</span>
-</code></pre><div class="preview"><img src="/assets/docs/TPCmQcrPGTkZyYF3uNw4zv.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/kIFspo8kuiaKTCStIxmH1K.png" alt="Preview" width="480" height="190"/></div></div>
 <p>要向符号或变量添加下标，请输入 <code>_</code> 字符，然后输入下标。
 同样，为上标使用 <code>^</code> 字符。
 如果下标或上标由多个内容部分组成，则必须将它们括在圆括号中。</p>
@@ -996,20 +996,20 @@ Typst 将用适当的符号替换括号中的子表达式。</p>
 <span class="typ-math-delim">$</span> 7.32 <span class="typ-pol">beta</span> +
   <span class="typ-pol">sum</span><span class="typ-math-op">_</span><span class="typ-punct">(</span>i=0<span class="typ-punct">)</span><span class="typ-math-op">^</span><span class="typ-pol">nabla</span>
     <span class="typ-punct">(</span>Q<span class="typ-math-op">_</span>i (a<span class="typ-math-op">_</span>i <span class="typ-escape">-</span> <span class="typ-pol">epsilon</span>)<span class="typ-punct">)</span> <span class="typ-math-op">/</span> 2 <span class="typ-math-delim">$</span>
-</code></pre><div class="preview"><img src="/assets/docs/EKCQv0xRhNFlrrheSjqT9Y.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/1P6uZZOjmcqTQWcIthMcUu.png" alt="Preview" width="480" height="190"/></div></div>
 <p>并非所有数学结构都有特殊的语法。
 相反，我们使用函数，就像我们之前看到的 <code>image</code> 函数一样。
 例如，要插入列向量，我们可以使用 <a href="/docs/reference/math/vec/"><code>vec</code></a> 函数。
 在数学模式下，函数调用不需要以 <code>#</code> 字符开头。</p>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> v <span class="typ-escape">:=</span> <span class="typ-func">vec</span><span class="typ-punct">(</span>x<span class="typ-math-op">_</span>1<span class="typ-punct">,</span> x<span class="typ-math-op">_</span>2<span class="typ-punct">,</span> x<span class="typ-math-op">_</span>3<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
-</code></pre><div class="preview"><img src="/assets/docs/Bg8Y5rokAj3Z6xNO0S0BEZ.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/j4ujpmrj3Fx0iYzAhyxPs4.png" alt="Preview" width="480" height="190"/></div></div>
 <p>某些函数仅在数学模式下可用。
 例如，<a href="/docs/reference/math/variants/#cal"><code>cal</code></a> 函数用于排版通常用于集合论的书法字母。
 <a href="/docs/reference/math/">参考的数学部分</a> 提供了数学模式提供的所有函数的完整列表。</p>
 <p>还有一件事：许多符号，如箭头，有很多变体。
 您可以通过在符号名称后附加点和修饰符名称来选择这些变体：</p>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> a <span class="typ-pol">arrow</span><span class="typ-punct">.</span><span class="typ-pol">squiggly</span> b <span class="typ-math-delim">$</span>
-</code></pre><div class="preview"><img src="/assets/docs/54ApAzEnMtdYx3I1q7bBDG.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/6cRMoN228WUlWxQveNlm8e.png" alt="Preview" width="480" height="190"/></div></div>
 <p>这种记号在标记模式下也可以使用，但符号名称前面必须带有 <code>#sym</code>。
 有关所有可用符号的列表，请参阅 <a href="/docs/reference/symbols/sym/">符号部分</a>。</p>
 <h2 id="review">回顾</h2>

@@ -4,13 +4,13 @@
 <head>
   <meta charset="utf-8">
   <title>脚本 – Typst 中文文档</title>
-  <meta name="description" content="Automate your document with Typst's scripting capabilities.">
+  <meta name="description" content="Typst 脚本功能自动化文档。">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#239dad">
   <meta property="og:url" content="https://typst.app/docs/reference/scripting/">
   <meta property="og:title" content="脚本 – Typst 中文文档">
   <meta property="og:site_name" content="Typst">
-  <meta property="og:description" content="Automate your document with Typst's scripting capabilities.">
+  <meta property="og:description" content="Typst 脚本功能自动化文档。">
   <meta property="og:type">
   <meta property="og:image" content="https://typst.app/assets/social.png">
   <meta property="og:image:width" content="1200">
@@ -822,81 +822,66 @@
       
 
 <h1>脚本</h1>
-<p>Typst embeds a powerful scripting language. You can automate your documents and
-create more sophisticated styles with code. Below is an overview over the
-scripting concepts.</p>
-<h2 id="expressions">Expressions</h2>
-<p>In Typst, markup and code are fused into one. All but the most common elements
-are created with <em>functions.</em> To make this as convenient as possible, Typst
-provides compact syntax to embed a code expression into markup: An expression is
-introduced with a hashtag (<code>#</code>) and normal markup parsing resumes after the
-expression is finished. If a character would continue the expression but should
-be interpreted as text, the expression can forcibly be ended with a semicolon
-(<code>;</code>).</p>
+<p>Typst 内置了一个强大的脚本语言。可以使用代码自动生成文档，生成丰富多彩的样式。
+下面是关于脚本语言的综述。</p>
+<h2 id="expressions">表达式</h2>
+<p>Typse 里面，标记和代码相互交融在一起。
+除了最常用的文档元素，其他所有均是由 <em>函数</em> 生成。
+为了尽可能的便利，Typst 设计了精巧的语法，用来将代码嵌入在标记中：用 <code>#</code>(井号) 来引入一个代码表达式，
+表达式结束后，再恢复到正常的标记语法解析。
+有些字符能够使其后字符继续解析为表达式，如果想将其解释为文本，可以用分号(<code>;</code>)来强制结束表达式解析。</p>
 <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">emph</span><span class="typ-punct">[</span>Hello<span class="typ-punct">]</span> <span class="typ-escape">\</span>
 <span class="typ-pol">#</span><span class="typ-pol">emoji</span><span class="typ-punct">.</span><span class="typ-pol">face</span> <span class="typ-escape">\</span>
 <span class="typ-str">#</span><span class="typ-str">&quot;hello&quot;</span><span class="typ-punct">.</span><span class="typ-func">len</span><span class="typ-punct">(</span><span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/XVquWgN9eXL9M55thNwxt7.png" alt="Preview" width="480" height="190"/></div></div>
-<p>The example above shows a few of the available expressions, including
-<a href="/docs/reference/types/function/">function calls</a>,
-<a href="/docs/reference/scripting/#fields">field accesses</a>, and
-<a href="/docs/reference/scripting/#methods">method calls</a>. More kinds of expressions are
-discussed in the remainder of this chapter. A few kinds of expressions are not
-compatible with the hashtag syntax (e.g. binary operator expressions). To embed
-these into markup, you can use parentheses, as in <code><span class="typ-punct">#</span><span class="typ-punct">(</span><span class="typ-num">1</span> <span class="typ-op">+</span> <span class="typ-num">2</span><span class="typ-punct">)</span></code>.</p>
-<h2 id="blocks">Blocks</h2>
-<p>To structure your code and embed markup into it, Typst provides two kinds of
-<em>blocks:</em></p>
+</code></pre><div class="preview"><img src="/assets/docs/dUGGOgQwUK96X8gMAvx5MO.png" alt="Preview" width="480" height="190"/></div></div>
+<p>上面示例展示了一些用到的表达式，
+有<a href="/docs/reference/types/function/">函数调用</a>，
+<a href="/docs/reference/scripting/#fields">字段访问</a>，
+<a href="/docs/reference/scripting/#methods">方法调用</a>。
+本章余下部分讲解更多类型表达式。
+有几种表达式与井号语法不一致（比如二元运算表达式），
+如果需要插入标记模式中，需要使用圆括号，比如 <code><span class="typ-punct">#</span><span class="typ-punct">(</span><span class="typ-num">1</span><span class="typ-op">+</span><span class="typ-num">2</span><span class="typ-punct">)</span></code>。</p>
+<h2 id="blocks">块</h2>
+<p>为了架构代码以及将标记嵌入代码中，Typst 设计了两种 <em>块</em>：</p>
 <ul>
 <li>
-<p><strong>Code block:</strong> <code><span class="typ-punct">{</span> <span class="typ-key">let</span> x <span class="typ-op">=</span> <span class="typ-num">1</span><span class="typ-punct">;</span> x <span class="typ-op">+</span> <span class="typ-num">2</span> <span class="typ-punct">}</span></code> <br />
-When writing code, you'll probably want to split up your computation into
-multiple statements, create some intermediate variables and so on. Code blocks
-let you write multiple expressions where one is expected. The individual
-expressions in a code block should be separated by line breaks or semicolons.
-The output values of the individual expressions in a code block are joined to
-determine the block's value. Expressions without useful output, like <code><span class="typ-key">let</span></code>
-bindings yield <code><span class="typ-key">none</span></code>, which can be joined with any value without effect.</p>
+<p><strong>代码块：</strong> <code><span class="typ-punct">{</span> <span class="typ-key">let</span> x <span class="typ-op">=</span> <span class="typ-num">1</span><span class="typ-punct">;</span> x <span class="typ-op">+</span> <span class="typ-num">2</span> <span class="typ-punct">}</span></code> <br />
+编写代码时，一个计算过程可能需要分解为多个语句，创建多个中间变量，等等。
+可以将多个表达式组成一个代码块，就像一个表达式一样。在代码块中，多个表达式由换行符或者分号分割。
+其中每个表达式的输出值被合并起来，作为代码块的值。
+有些表达式没有有用的输出，比如 <code><span class="typ-key">let</span></code> 绑定返回 <code><span class="typ-key">none</span></code>，与其他值合并，没有任何效果。</p>
 </li>
 <li>
-<p><strong>Content block:</strong> <code><span class="typ-punct">[</span><span class="typ-strong">*Hey*</span> there!<span class="typ-punct">]</span></code> <br />
-With content blocks, you can handle markup/content as a programmatic value,
-store it in variables and pass it to <a href="/docs/reference/types/function/">functions</a>. Content
-blocks are delimited by square brackets and can contain arbitrary markup. A
-content block results in a value of type <a href="/docs/reference/types/content/">content</a>. An
-arbitrary number of content blocks can be passed as trailing arguments to
-functions. That is, <code><span class="typ-func">list</span><span class="typ-punct">(</span><span class="typ-punct">[</span>A<span class="typ-punct">]</span><span class="typ-punct">,</span> <span class="typ-punct">[</span>B<span class="typ-punct">]</span><span class="typ-punct">)</span></code> is equivalent to <code><span class="typ-func">list</span><span class="typ-punct">[</span>A<span class="typ-punct">]</span><span class="typ-punct">[</span>B<span class="typ-punct">]</span></code>.</p>
+<p><strong>文档内容块</strong> <code><span class="typ-punct">[</span><span class="typ-strong">*Hey*</span> there!<span class="typ-punct">]</span></code> <br />
+使用文档内容块，可以将标记/文档内容作为可编程值，存储到变量，传送给<a href="/docs/reference/types/function/">函数</a>。
+文档内容块由方括号包裹，可以包含任何标记。
+一个文档内容块产生一个 <a href="/docs/reference/types/content/">content 类型</a>的值。
+文档内容块可以后缀参数形式任意多个传递给函数，就是说，<code><span class="typ-func">list</span><span class="typ-punct">[</span>A<span class="typ-punct">]</span><span class="typ-punct">[</span>B<span class="typ-punct">]</span></code> 等效于 <code><span class="typ-func">list</span><span class="typ-punct">(</span><span class="typ-punct">[</span>A<span class="typ-punct">]</span><span class="typ-punct">,</span> <span class="typ-punct">[</span>B<span class="typ-punct">]</span><span class="typ-punct">)</span></code>。</p>
 </li>
 </ul>
-<p>Content and code blocks can be nested arbitrarily. In the example below,
-<code><span class="typ-punct">[</span>hello<span class="typ-punct">]</span></code> is joined with the output of  <code>a <span class="typ-op">+</span> <span class="typ-punct">[</span> the <span class="typ-punct">]</span> <span class="typ-op">+</span> b</code> yielding
-<code><span class="typ-punct">[</span>hello from the <span class="typ-strong">*world*</span><span class="typ-punct">]</span></code>.</p>
+<p>文档内容块和代码块可以相互内嵌，下面示例中，<code><span class="typ-punct">[</span>hello<span class="typ-punct">]</span></code> 与 <code>a <span class="typ-op">+</span> <span class="typ-punct">[</span> the <span class="typ-punct">]</span> <span class="typ-op">+</span> b</code> 合并，生成 <code><span class="typ-punct">[</span>hello from the <span class="typ-strong">*world*</span><span class="typ-punct">]</span></code>。</p>
 <div class="previewed-code"><pre><code><span class="typ-punct">#</span><span class="typ-punct">{</span>
   <span class="typ-key">let</span> a <span class="typ-op">=</span> <span class="typ-punct">[</span>from<span class="typ-punct">]</span>
   <span class="typ-key">let</span> b <span class="typ-op">=</span> <span class="typ-punct">[</span><span class="typ-strong">*world*</span><span class="typ-punct">]</span>
   <span class="typ-punct">[</span>hello <span class="typ-punct">]</span>
   a <span class="typ-op">+</span> <span class="typ-punct">[</span> the <span class="typ-punct">]</span> <span class="typ-op">+</span> b
 <span class="typ-punct">}</span>
-</code></pre><div class="preview"><img src="/assets/docs/NMe0C21xjcpE3frQt7AlIB.png" alt="Preview" width="480" height="190"/></div></div>
-<h2 id="bindings">Bindings and Destructuring</h2>
-<p>As already demonstrated above, variables can be defined with <code><span class="typ-key">let</span></code> bindings.
-The variable is assigned the value of the expression that follows the <code>=</code> sign.
-The assignment of a value is optional, if no value is assigned, the variable
-will be initialized as <code><span class="typ-key">none</span></code>. The <code><span class="typ-key">let</span></code> keyword can also be used to create
-a <a href="/docs/reference/types/function/#definitions">custom named function</a>. Let bindings can be
-accessed for the rest of the containing block or document.</p>
+</code></pre><div class="preview"><img src="/assets/docs/0UANhnOEq43uctFdXDA3hT.png" alt="Preview" width="480" height="190"/></div></div>
+<h2 id="bindings">绑定和解构</h2>
+<p>上面已经展示，变量由 <code><span class="typ-key">let</span></code> 绑定定义。
+= 符号后表达式的值被赋值给变量，这里赋值可以被省略，如果没有赋值，变量会初始化为 <code><span class="typ-key">none</span></code>。
+<code><span class="typ-key">let</span></code> 关键词也可以用来生成一个<a href="/docs/reference/types/function/#definitions">自定义的有名函数</a>。
+let 绑定的变量可以在接下来的块中或者文档中被访问。</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> name <span class="typ-op">=</span> <span class="typ-str">&quot;Typst&quot;</span>
 This is <span class="typ-pol">#</span><span class="typ-pol">name</span>&#39;s documentation.
 It explains <span class="typ-pol">#</span><span class="typ-pol">name</span>.
 
 <span class="typ-key">#</span><span class="typ-key">let</span> <span class="typ-func">add</span><span class="typ-punct">(</span>x<span class="typ-punct">,</span> y<span class="typ-punct">)</span> <span class="typ-op">=</span> x <span class="typ-op">+</span> y
 Sum is <span class="typ-func">#</span><span class="typ-func">add</span><span class="typ-punct">(</span><span class="typ-num">2</span><span class="typ-punct">,</span> <span class="typ-num">3</span><span class="typ-punct">)</span>.
-</code></pre><div class="preview"><img src="/assets/docs/94fw7XV5rYCffOq2WEN9g5.png" alt="Preview" width="480" height="190"/></div></div>
-<p>Let bindings can also be used to destructure <a href="/docs/reference/types/array/">arrays</a> and
-<a href="/docs/reference/types/dictionary/">dictionaries</a>. In this case, the left-hand side of the
-assignment should mirror an array or dictionary. The <code>..</code> operator can be used
-once in the pattern to collect the remainder of the array's or dictionary's
-items.</p>
+</code></pre><div class="preview"><img src="/assets/docs/3sdUYSaxMJ0YpsdjbtTbdM.png" alt="Preview" width="480" height="190"/></div></div>
+<p>let 绑定也常用来解构<a href="/docs/reference/types/array/">数组</a>和<a href="/docs/reference/types/dictionary/">字典</a>，
+解构时，等号左边的形式需要与数组或字典相似，
+<code>..</code> 模式操作符只可被使用一次，用来指代数组或字典剩余的条目。</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> <span class="typ-punct">(</span>x<span class="typ-punct">,</span> y<span class="typ-punct">)</span> <span class="typ-op">=</span> <span class="typ-punct">(</span><span class="typ-num">1</span><span class="typ-punct">,</span> <span class="typ-num">2</span><span class="typ-punct">)</span>
 The coordinates are <span class="typ-pol">#</span><span class="typ-pol">x</span>, <span class="typ-pol">#</span><span class="typ-pol">y</span>.
 
@@ -920,55 +905,50 @@ Homer wrote <span class="typ-pol">#</span><span class="typ-pol">h</span>.
 <span class="typ-key">#</span><span class="typ-key">for</span> <span class="typ-punct">(</span>author<span class="typ-punct">,</span> title<span class="typ-punct">)</span> <span class="typ-key">in</span> other <span class="typ-punct">[</span>
   <span class="typ-pol">#</span><span class="typ-pol">author</span> wrote <span class="typ-pol">#</span><span class="typ-pol">title</span>.
 <span class="typ-punct">]</span>
-</code></pre><div class="preview"><img src="/assets/docs/MKiboVAyzj2AWMRfqwjjF0.png" alt="Preview" width="480" height="190"/></div></div>
-<p>You can use the underscore to discard elements in a destructuring pattern:</p>
+</code></pre><div class="preview"><img src="/assets/docs/Vf0lpXc3QeNHfrq0UgT60G.png" alt="Preview" width="480" height="190"/></div></div>
+<p>在解构匹配模式中，可以使用 _ 下划线来丢弃一个元素。</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> <span class="typ-punct">(</span>_<span class="typ-punct">,</span> y<span class="typ-punct">,</span> _<span class="typ-punct">)</span> <span class="typ-op">=</span> <span class="typ-punct">(</span><span class="typ-num">1</span><span class="typ-punct">,</span> <span class="typ-num">2</span><span class="typ-punct">,</span> <span class="typ-num">3</span><span class="typ-punct">)</span>
 The y coordinate is <span class="typ-pol">#</span><span class="typ-pol">y</span>.
-</code></pre><div class="preview"><img src="/assets/docs/acgz6J9vo3fxCDSjTjfLby.png" alt="Preview" width="480" height="190"/></div></div>
-<p>Destructuring also work in argument lists of functions ...</p>
+</code></pre><div class="preview"><img src="/assets/docs/OtKKUxrhmpOCC6citOpc2G.png" alt="Preview" width="480" height="190"/></div></div>
+<p>解构形式也可用于函数的参数列表中...</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> left <span class="typ-op">=</span> <span class="typ-punct">(</span><span class="typ-num">2</span><span class="typ-punct">,</span> <span class="typ-num">4</span><span class="typ-punct">,</span> <span class="typ-num">5</span><span class="typ-punct">)</span>
 <span class="typ-key">#</span><span class="typ-key">let</span> right <span class="typ-op">=</span> <span class="typ-punct">(</span><span class="typ-num">3</span><span class="typ-punct">,</span> <span class="typ-num">2</span><span class="typ-punct">,</span> <span class="typ-num">6</span><span class="typ-punct">)</span>
 <span class="typ-pol">#</span><span class="typ-pol">left</span><span class="typ-punct">.</span><span class="typ-func">zip</span><span class="typ-punct">(</span>right<span class="typ-punct">)</span><span class="typ-punct">.</span><span class="typ-func">map</span><span class="typ-punct">(</span>
   <span class="typ-punct">(</span><span class="typ-punct">(</span>a<span class="typ-punct">,</span>b<span class="typ-punct">)</span><span class="typ-punct">)</span> <span class="typ-op">=&gt;</span> a <span class="typ-op">+</span> b
 <span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/WRrFxjQi10teUTT6OSJJVX.png" alt="Preview" width="480" height="190"/></div></div>
-<p>... and on the left-hand side of normal assignments. This can be useful to
-swap variables among other things.</p>
+</code></pre><div class="preview"><img src="/assets/docs/vYOUmh09TuW6ujFBzT5zUi.png" alt="Preview" width="480" height="190"/></div></div>
+<p>... 和普通赋值的左半部分，这通常用于交换两个变量的值。</p>
 <div class="previewed-code"><pre><code><span class="typ-punct">#</span><span class="typ-punct">{</span>
   <span class="typ-key">let</span> a <span class="typ-op">=</span> <span class="typ-num">1</span>
   <span class="typ-key">let</span> b <span class="typ-op">=</span> <span class="typ-num">2</span>
   <span class="typ-punct">(</span>a<span class="typ-punct">,</span> b<span class="typ-punct">)</span> <span class="typ-op">=</span> <span class="typ-punct">(</span>b<span class="typ-punct">,</span> a<span class="typ-punct">)</span>
   <span class="typ-punct">[</span>a = <span class="typ-pol">#</span><span class="typ-pol">a</span>, b = <span class="typ-pol">#</span><span class="typ-pol">b</span><span class="typ-punct">]</span>
 <span class="typ-punct">}</span>
-</code></pre><div class="preview"><img src="/assets/docs/ErCBBtlPQPRcDbFrToezSw.png" alt="Preview" width="480" height="190"/></div></div>
-<h2 id="conditionals">Conditionals</h2>
-<p>With a conditional, you can display or compute different things depending on
-whether some condition is fulfilled. Typst supports <code><span class="typ-key">if</span></code>, <code>else <span class="typ-key">if</span></code> and
-<code>else</code> expression. When the condition evaluates to <code><span class="typ-key">true</span></code>, the conditional
-yields the value resulting from the if's body, otherwise yields the value
-resulting from the else's body.</p>
+</code></pre><div class="preview"><img src="/assets/docs/rfgWC8WE1vGrfeTdKYEQm0.png" alt="Preview" width="480" height="190"/></div></div>
+<h2 id="conditionals">条件控制</h2>
+<p>使用条件控制语句，可以根据某种条件是否满足，来展示或计算不同的事情。
+Typst 设计了 <code><span class="typ-key">if</span></code>, <code>else <span class="typ-key">if</span></code>, <code>else</code> 表达式。
+当条件值为 <code><span class="typ-key">true</span></code> 时，条件语句会返回 if 从句的值，否则返回 else 从句的值。</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">if</span> <span class="typ-num">1</span> <span class="typ-op">&lt;</span> <span class="typ-num">2</span> <span class="typ-punct">[</span>
   This is shown
 <span class="typ-punct">]</span> <span class="typ-key">else</span> <span class="typ-punct">[</span>
   This is not.
 <span class="typ-punct">]</span>
-</code></pre><div class="preview"><img src="/assets/docs/VUJepxNBO5vDzp4p38EyiX.png" alt="Preview" width="480" height="190"/></div></div>
-<p>Each branch can have a code or content block as its body.</p>
+</code></pre><div class="preview"><img src="/assets/docs/zOa3FbkWfI4bRT5DxMLE3n.png" alt="Preview" width="480" height="190"/></div></div>
+<p>每个分支从句可以写为语句块或者文档内容块。</p>
 <ul>
 <li><code><span class="typ-key">if</span> condition <span class="typ-punct">{</span>..<span class="typ-punct">}</span></code></li>
 <li><code><span class="typ-key">if</span> condition <span class="typ-punct">[</span>..<span class="typ-punct">]</span></code></li>
 <li><code><span class="typ-key">if</span> condition <span class="typ-punct">[</span>..<span class="typ-punct">]</span> <span class="typ-key">else</span> <span class="typ-punct">{</span>..<span class="typ-punct">}</span></code></li>
 <li><code><span class="typ-key">if</span> condition <span class="typ-punct">[</span>..<span class="typ-punct">]</span> <span class="typ-key">else</span> <span class="typ-key">if</span> condition <span class="typ-punct">{</span>..<span class="typ-punct">}</span> <span class="typ-key">else</span> <span class="typ-punct">[</span>..<span class="typ-punct">]</span></code></li>
 </ul>
-<h2 id="loops">Loops</h2>
-<p>With loops, you can repeat content or compute something iteratively. Typst
-supports two types of loops: <code><span class="typ-key">for</span></code> and <code><span class="typ-key">while</span></code> loops. The former iterate
-over a specified collection whereas the latter iterate as long as a condition
-stays fulfilled. Just like blocks, loops <em>join</em> the results from each iteration
-into one value.</p>
-<p>In the example below, the three sentences created by the for loop join together
-into a single content value and the length-1 arrays in the while loop join
-together into one larger array.</p>
+<h2 id="loops">循环控制</h2>
+<p>使用循环控制语句，可以反复的显示文档内容或者计算。
+Typst 支持两种循环控制： <code><span class="typ-key">for</span></code> 循环和 <code><span class="typ-key">while</span></code> 循环。
+<code><span class="typ-key">for</span></code> 循环用来遍历特定集合，<code><span class="typ-key">while</span></code> 循环根据某条件是否满足来决定是否再次迭代循环。
+和块类似，循环结构 <em>合并</em> 每一次迭代循环的结果。</p>
+<p>下面示例中，for 循环生成了三句话，然后将其合并成一个文档内容。
+while 循环生成数个长度为1的数组，然后将其合并成一个大数组。</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">for</span> c <span class="typ-key">in</span> <span class="typ-str">&quot;ABC&quot;</span> <span class="typ-punct">[</span>
   <span class="typ-pol">#</span><span class="typ-pol">c</span> is a letter.
 <span class="typ-punct">]</span>
@@ -978,31 +958,26 @@ together into one larger array.</p>
   n <span class="typ-op">=</span> <span class="typ-punct">(</span>n <span class="typ-op">*</span> <span class="typ-num">2</span><span class="typ-punct">)</span> <span class="typ-op">-</span> <span class="typ-num">1</span>
   <span class="typ-punct">(</span>n<span class="typ-punct">,</span><span class="typ-punct">)</span>
 <span class="typ-punct">}</span>
-</code></pre><div class="preview"><img src="/assets/docs/RD7dN7sxdI7YulFEHPdQZf.png" alt="Preview" width="480" height="190"/></div></div>
-<p>For loops can iterate over a variety of collections:</p>
+</code></pre><div class="preview"><img src="/assets/docs/YVuEHPKsZcY3k0Igs9Gomf.png" alt="Preview" width="480" height="190"/></div></div>
+<p>for 循环可以遍历多种集合：</p>
 <ul>
 <li>
 <p><code><span class="typ-key">for</span> letter <span class="typ-key">in</span> <span class="typ-str">&quot;abc&quot;</span> <span class="typ-punct">{</span>..<span class="typ-punct">}</span></code> <br />
-Iterates over the characters of the <a href="/docs/reference/types/string/">string</a>.
-(Technically, iterates over the grapheme clusters of the string. Most of the
-time, a grapheme cluster is just a single character/codepoint. However, some
-constructs like flag emojis that consist of multiple codepoints are still only
-one cluster.)</p>
+遍历<a href="/docs/reference/types/string/">字符串</a>的每个字符。
+（专业的说，是遍历字符串的每个形位符，大多时候，一个形位符对应一个字符/码位，
+然而，有些表情标记符号由多个码位组成，但它仍然是一个形位符）。</p>
 </li>
 <li>
 <p><code><span class="typ-key">for</span> value <span class="typ-key">in</span> array <span class="typ-punct">{</span>..<span class="typ-punct">}</span></code> <br />
-Iterates over the items in the <a href="/docs/reference/types/array/">array</a>. The destructuring syntax
-described in <a href="/docs/reference/scripting/#bindings">Let binding</a> can also be used here.</p>
+遍历<a href="/docs/reference/types/array/">数组</a>中的条目。<a href="/docs/reference/scripting/#bindings">let 绑定</a>中的解构语法也可使用于此。</p>
 </li>
 <li>
 <p><code><span class="typ-key">for</span> pair <span class="typ-key">in</span> dict <span class="typ-punct">{</span>..<span class="typ-punct">}</span></code> <br />
-Iterates over the key-value pairs of the <a href="/docs/reference/types/dictionary/">dictionary</a>.
-The pairs can also be destructured by using <code><span class="typ-key">for</span> <span class="typ-punct">(</span>key<span class="typ-punct">,</span> value<span class="typ-punct">)</span> <span class="typ-key">in</span> dict <span class="typ-punct">{</span>..<span class="typ-punct">}</span></code>.</p>
+遍历<a href="/docs/reference/types/dictionary/">字典</a>的键值对。键值对也可以用 <code><span class="typ-key">for</span> <span class="typ-punct">(</span>key<span class="typ-punct">,</span> value<span class="typ-punct">)</span> <span class="typ-key">in</span> dict <span class="typ-punct">{</span>..<span class="typ-punct">}</span></code> 语法解构。</p>
 </li>
 </ul>
-<p>To control the execution of the loop, Typst provides the <code><span class="typ-key">break</span></code> and
-<code><span class="typ-key">continue</span></code> statements. The former performs an early exit from the loop while
-the latter skips ahead to the next iteration of the loop.</p>
+<p>Typst 用 <code><span class="typ-key">break</span></code> 和 <code><span class="typ-key">continue</span></code> 语句来控制循环的执行，
+<code><span class="typ-key">break</span></code> 用来跳出循环，<code><span class="typ-key">continue</span></code> 用来提前结束本次循环，然后执行下一次循环。</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">for</span> letter <span class="typ-key">in</span> <span class="typ-str">&quot;abc nope&quot;</span> <span class="typ-punct">{</span>
   <span class="typ-key">if</span> letter <span class="typ-op">==</span> <span class="typ-str">&quot; &quot;</span> <span class="typ-punct">{</span>
     <span class="typ-key">break</span>
@@ -1010,25 +985,21 @@ the latter skips ahead to the next iteration of the loop.</p>
 
   letter
 <span class="typ-punct">}</span>
-</code></pre><div class="preview"><img src="/assets/docs/OqYSL2Uu7yaBn0CclGmCWq.png" alt="Preview" width="480" height="190"/></div></div>
-<p>The body of a loop can be a code or content block:</p>
+</code></pre><div class="preview"><img src="/assets/docs/I9jKAINASlceGsz8nmL9Y4.png" alt="Preview" width="480" height="190"/></div></div>
+<p>循环体可以是代码块，也可以是文档内容块：</p>
 <ul>
 <li><code><span class="typ-key">for</span> .. <span class="typ-key">in</span> collection <span class="typ-punct">{</span>..<span class="typ-punct">}</span></code></li>
 <li><code><span class="typ-key">for</span> .. <span class="typ-key">in</span> collection <span class="typ-punct">[</span>..<span class="typ-punct">]</span></code></li>
 <li><code><span class="typ-key">while</span> condition <span class="typ-punct">{</span>..<span class="typ-punct">}</span></code></li>
 <li><code><span class="typ-key">while</span> condition <span class="typ-punct">[</span>..<span class="typ-punct">]</span></code></li>
 </ul>
-<h2 id="fields">Fields</h2>
-<p>You can use <em>dot notation</em> to access fields on a value. The value in question
-can be either:</p>
+<h2 id="fields">字段</h2>
+<p>可以使用 <em>点号</em> 来访问一个值的字段，这个值可以是：</p>
 <ul>
-<li>a <a href="/docs/reference/types/dictionary/">dictionary</a> that has the specified key,</li>
-<li>a <a href="/docs/reference/types/symbol/">symbol</a> that has the specified modifier,</li>
-<li>a <a href="/docs/reference/types/module/">module</a> containing the specified definition,</li>
-<li><a href="/docs/reference/types/content/">content</a> consisting of an element that has the specified
-field. The available fields match the arguments of the
-<a href="/docs/reference/types/function/#element-functions">element function</a> that were given when
-the element was constructed.</li>
+<li>有特定键的<a href="/docs/reference/types/dictionary/">字典</a>，</li>
+<li>有变体的<a href="/docs/reference/types/symbol/">符号</a>，</li>
+<li>有定义的<a href="/docs/reference/types/module/">模块</a>，</li>
+<li>有特定字段的<a href="/docs/reference/types/content/">文档元素</a>，可访问的字段与文档元素的<a href="/docs/reference/types/function/#element-functions">构造函数</a>参数相匹配。</li>
 </ul>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> dict <span class="typ-op">=</span> <span class="typ-punct">(</span>greet<span class="typ-punct">:</span> <span class="typ-str">&quot;Hello&quot;</span><span class="typ-punct">)</span>
 <span class="typ-pol">#</span><span class="typ-pol">dict</span><span class="typ-punct">.</span><span class="typ-pol">greet</span> <span class="typ-escape">\</span>
@@ -1037,13 +1008,11 @@ the element was constructed.</li>
 <span class="typ-key">#</span><span class="typ-key">let</span> it <span class="typ-op">=</span> <span class="typ-punct">[</span><span class="typ-heading">= Heading</span><span class="typ-punct">]</span>
 <span class="typ-pol">#</span><span class="typ-pol">it</span><span class="typ-punct">.</span><span class="typ-pol">body</span> <span class="typ-escape">\</span>
 <span class="typ-pol">#</span><span class="typ-pol">it</span><span class="typ-punct">.</span><span class="typ-pol">level</span>
-</code></pre><div class="preview"><img src="/assets/docs/yhVmOfJLsxZftOgsNhY9sF.png" alt="Preview" width="480" height="190"/></div></div>
-<h2 id="methods">Methods</h2>
-<p>A method is a kind of a <a href="/docs/reference/types/function/">function</a> that is tightly coupled with
-a specific type. It is called on a value of its type using the same dot notation
-that is also used for fields: <code>value<span class="typ-punct">.</span><span class="typ-func">method</span><span class="typ-punct">(</span><span class="typ-op">..</span><span class="typ-punct">)</span></code>. The
-<a href="/docs/reference/types/">type documentation</a> lists the available methods for each of the built-in
-types. You cannot define your own methods.</p>
+</code></pre><div class="preview"><img src="/assets/docs/DwguHsATsPwI2b5lqNUMWv.png" alt="Preview" width="480" height="190"/></div></div>
+<h2 id="methods">方法</h2>
+<p>方法是一个特殊<a href="/docs/reference/types/function/">函数</a>，与特定类型紧密结合使用。
+同字段访问一样，使用点号来调用某类型值的方法：<code>value<span class="typ-punct">.</span><span class="typ-func">method</span><span class="typ-punct">(</span><span class="typ-op">..</span><span class="typ-punct">.</span><span class="typ-punct">)</span></code>。
+<a href="/docs/reference/types/">type 文档</a>中列出了内置类型所有可使用的方法。方法不能被自定义。</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> array <span class="typ-op">=</span> <span class="typ-punct">(</span><span class="typ-num">1</span><span class="typ-punct">,</span> <span class="typ-num">2</span><span class="typ-punct">,</span> <span class="typ-num">3</span><span class="typ-punct">,</span> <span class="typ-num">4</span><span class="typ-punct">)</span>
 <span class="typ-pol">#</span><span class="typ-pol">array</span><span class="typ-punct">.</span><span class="typ-func">pop</span><span class="typ-punct">(</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
 <span class="typ-pol">#</span><span class="typ-pol">array</span><span class="typ-punct">.</span><span class="typ-func">len</span><span class="typ-punct">(</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
@@ -1051,77 +1020,63 @@ types. You cannot define your own methods.</p>
 <span class="typ-punct">#</span><span class="typ-punct">(</span><span class="typ-str">&quot;a, b, c&quot;</span>
     <span class="typ-punct">.</span><span class="typ-func">split</span><span class="typ-punct">(</span><span class="typ-str">&quot;, &quot;</span><span class="typ-punct">)</span>
     <span class="typ-punct">.</span><span class="typ-func">join</span><span class="typ-punct">[</span> <span class="typ-escape">---</span> <span class="typ-punct">]</span><span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/Xk9xMMQlmlTVguSNJhgFNA.png" alt="Preview" width="480" height="190"/></div></div>
-<p>Methods are the only functions in Typst that can modify the value they are
-called on.</p>
-<h2 id="modules">Modules</h2>
-<p>You can split up your Typst projects into multiple files called <em>modules.</em> A
-module can refer to the content and definitions of another module in multiple
-ways:</p>
+</code></pre><div class="preview"><img src="/assets/docs/9dnWD2FW4etxQm27l33UX8.png" alt="Preview" width="480" height="190"/></div></div>
+<p>Typst 中，方法是唯一可改变被调用值的方式。</p>
+<h2 id="modules">模块</h2>
+<p>一个 Typst 工程项目可以拆解为多个 <em>模块</em> 文件。
+一个模块可以使用多种方式引用其他模块的文档内容和定义。</p>
 <ul>
 <li>
-<p><strong>Including:</strong> <code><span class="typ-key">include</span> <span class="typ-str">&quot;bar.typ&quot;</span></code> <br />
-Evaluates the file at the path <code>bar.typ</code> and returns the resulting
-<a href="/docs/reference/types/content/">content</a>.</p>
+<p><strong>插入：</strong> <code><span class="typ-key">include</span> <span class="typ-str">&quot;bar.typ&quot;</span></code> <br />
+计算 <code>bar.typ</code> 路径文件，返回其<a href="/docs/reference/types/content/">文档内容</a>结果。</p>
 </li>
 <li>
-<p><strong>Import:</strong> <code><span class="typ-key">import</span> <span class="typ-str">&quot;bar.typ&quot;</span></code> <br />
-Evaluates the file at the path <code>bar.typ</code> and inserts the resulting
-<a href="/docs/reference/types/module/">module</a> into the current scope as <code>bar</code> (filename without
-extension).</p>
+<p><strong>导入模块：</strong> <code><span class="typ-key">import</span> <span class="typ-str">&quot;bar.typ&quot;</span></code> <br />
+计算 <code>bar.typ</code> 路径文件，得到<a href="/docs/reference/types/module/">模块类型</a>的值，在当前作用域下与 <code>bar</code>(文件名除去扩展名) 进行绑定。</p>
 </li>
 <li>
-<p><strong>Import items:</strong> <code><span class="typ-key">import</span> <span class="typ-str">&quot;bar.typ&quot;</span><span class="typ-punct">:</span> a<span class="typ-punct">,</span> b</code> <br />
-Evaluates the file at the path <code>bar.typ</code>, extracts the values of the variables
-<code>a</code> and <code>b</code> (that need to be defined in <code>bar.typ</code>, e.g. through <code><span class="typ-key">let</span></code>
-bindings) and defines them in the current file.Replacing <code>a, b</code> with <code>*</code> loads
-all variables defined in a module.</p>
+<p><strong>导入模块条目：</strong> <code><span class="typ-key">import</span> <span class="typ-str">&quot;bar.typ&quot;</span><span class="typ-punct">:</span> a<span class="typ-punct">,</span> b</code> <br />
+计算 <code>bar.typ</code> 路径文件，将此模块内的 <code>a</code> 和 <code>b</code> 变量（需要通过 <code><span class="typ-key">let</span></code> 绑定在 <code>bar.typ</code> 内定义）重新绑定到当前文件。
+如果使用 * 替代冒号后的 a,b，就导入 bar 模块内的所有变量。</p>
 </li>
 </ul>
-<p>Instead of a path, you can also use a <a href="/docs/reference/types/module/">module value</a>, as shown in
-the following example:</p>
+<p>除了使用路径，也可以使用<a href="/docs/reference/types/module/">模块值</a>，如下面示例：</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">import</span> emoji<span class="typ-punct">:</span> face
 <span class="typ-pol">#</span><span class="typ-pol">face</span><span class="typ-punct">.</span><span class="typ-pol">grin</span>
-</code></pre><div class="preview"><img src="/assets/docs/34VPM2oIqn6UElHLxtg914.png" alt="Preview" width="480" height="190"/></div></div>
-<h2 id="packages">Packages</h2>
-<p>To reuse building blocks across projects, you can also create and import Typst
-<em>packages.</em> A package import is specified as a triple of a namespace, a name,
-and a version.</p>
+</code></pre><div class="preview"><img src="/assets/docs/vG3H10Twp2PlJTyCKdj3x8.png" alt="Preview" width="480" height="190"/></div></div>
+<h2 id="packages">包</h2>
+<p>可以创建并导入 Typst <em>包</em>，在多个工程项目中进行复用。
+一个包的导入需有三部分指定：包命名空间，包名称，包版本号。</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">import</span> <span class="typ-str">&quot;@preview/example:0.1.0&quot;</span><span class="typ-punct">:</span> add
 <span class="typ-func">#</span><span class="typ-func">add</span><span class="typ-punct">(</span><span class="typ-num">2</span><span class="typ-punct">,</span> <span class="typ-num">7</span><span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/K05c9P8DhgX27ypjqkaxTA.png" alt="Preview" width="480" height="190"/></div></div>
-<p>The <code>preview</code> namespace contains packages shared by the community. You can find
-a searchable list of available community packages in the <a href="/docs/packages/">packages</a>
-section.</p>
-<p>If you are using Typst locally, you can also create your own system-local
-packages. For more details on this, see the
-<a href="https://github.com/typst/packages">package repository</a>.</p>
-<h2 id="operators">Operators</h2>
-<p>The following table lists all available unary and binary operators with effect,
-arity (unary, binary) and precedence level (higher binds stronger).</p>
-<table><thead><tr><th style="text-align: center">Operator</th><th>Effect</th><th style="text-align: center">Arity</th><th style="text-align: center">Precedence</th></tr></thead><tbody>
-<tr><td style="text-align: center"><code><span class="typ-op">-</span></code></td><td>Negation</td><td style="text-align: center">Unary</td><td style="text-align: center">7</td></tr>
-<tr><td style="text-align: center"><code><span class="typ-op">+</span></code></td><td>No effect (exists for symmetry)</td><td style="text-align: center">Unary</td><td style="text-align: center">7</td></tr>
-<tr><td style="text-align: center"><code><span class="typ-op">*</span></code></td><td>Multiplication</td><td style="text-align: center">Binary</td><td style="text-align: center">6</td></tr>
-<tr><td style="text-align: center"><code><span class="typ-op">/</span></code></td><td>Division</td><td style="text-align: center">Binary</td><td style="text-align: center">6</td></tr>
-<tr><td style="text-align: center"><code><span class="typ-op">+</span></code></td><td>Addition</td><td style="text-align: center">Binary</td><td style="text-align: center">5</td></tr>
-<tr><td style="text-align: center"><code><span class="typ-op">-</span></code></td><td>Subtraction</td><td style="text-align: center">Binary</td><td style="text-align: center">5</td></tr>
-<tr><td style="text-align: center"><code><span class="typ-op">==</span></code></td><td>Check equality</td><td style="text-align: center">Binary</td><td style="text-align: center">4</td></tr>
-<tr><td style="text-align: center"><code><span class="typ-op">!=</span></code></td><td>Check inequality</td><td style="text-align: center">Binary</td><td style="text-align: center">4</td></tr>
-<tr><td style="text-align: center"><code><span class="typ-op">&lt;</span></code></td><td>Check less-than</td><td style="text-align: center">Binary</td><td style="text-align: center">4</td></tr>
-<tr><td style="text-align: center"><code><span class="typ-op">&lt;=</span></code></td><td>Check less-than or equal</td><td style="text-align: center">Binary</td><td style="text-align: center">4</td></tr>
-<tr><td style="text-align: center"><code><span class="typ-op">&gt;</span></code></td><td>Check greater-than</td><td style="text-align: center">Binary</td><td style="text-align: center">4</td></tr>
-<tr><td style="text-align: center"><code><span class="typ-op">&gt;=</span></code></td><td>Check greater-than or equal</td><td style="text-align: center">Binary</td><td style="text-align: center">4</td></tr>
-<tr><td style="text-align: center"><code><span class="typ-key">in</span></code></td><td>Check if in collection</td><td style="text-align: center">Binary</td><td style="text-align: center">4</td></tr>
-<tr><td style="text-align: center"><code><span class="typ-key">not</span> <span class="typ-key">in</span></code></td><td>Check if not in collection</td><td style="text-align: center">Binary</td><td style="text-align: center">4</td></tr>
-<tr><td style="text-align: center"><code><span class="typ-key">not</span></code></td><td>Logical &quot;not&quot;</td><td style="text-align: center">Unary</td><td style="text-align: center">3</td></tr>
-<tr><td style="text-align: center"><code><span class="typ-key">and</span></code></td><td>Short-circuiting logical &quot;and&quot;</td><td style="text-align: center">Binary</td><td style="text-align: center">3</td></tr>
-<tr><td style="text-align: center"><code><span class="typ-key">or</span></code></td><td>Short-circuiting logical &quot;or</td><td style="text-align: center">Binary</td><td style="text-align: center">2</td></tr>
-<tr><td style="text-align: center"><code><span class="typ-op">=</span></code></td><td>Assignment</td><td style="text-align: center">Binary</td><td style="text-align: center">1</td></tr>
-<tr><td style="text-align: center"><code><span class="typ-op">+=</span></code></td><td>Add-Assignment</td><td style="text-align: center">Binary</td><td style="text-align: center">1</td></tr>
-<tr><td style="text-align: center"><code><span class="typ-op">-=</span></code></td><td>Subtraction-Assignment</td><td style="text-align: center">Binary</td><td style="text-align: center">1</td></tr>
-<tr><td style="text-align: center"><code><span class="typ-op">*=</span></code></td><td>Multiplication-Assignment</td><td style="text-align: center">Binary</td><td style="text-align: center">1</td></tr>
-<tr><td style="text-align: center"><code><span class="typ-op">/=</span></code></td><td>Division-Assignment</td><td style="text-align: center">Binary</td><td style="text-align: center">1</td></tr>
+</code></pre><div class="preview"><img src="/assets/docs/918TlcmVD9cYYwhjb3593i.png" alt="Preview" width="480" height="190"/></div></div>
+<p><code>preview</code> 包命名空间包含了 Typst 社区分享的包。可以在 <a href="/docs/packages/">package</a> 小节搜索可用的社区分享包。</p>
+<p>在本地使用 Typst 时，可以创建本地包。更多详情参考<a href="https://github.com/typst/packages">包仓库</a>。</p>
+<h2 id="operators">操作符</h2>
+<p>下表类出了所有一元和二元操作符的作用、参数数量(一元、二元)和优先级（优先级越高，越优先执行)</p>
+<table><thead><tr><th style="text-align: center">操作符</th><th>作用说明</th><th style="text-align: center">参数数量</th><th style="text-align: center">优先级</th></tr></thead><tbody>
+<tr><td style="text-align: center"><code><span class="typ-op">-</span></code></td><td>负号</td><td style="text-align: center">一元</td><td style="text-align: center">7</td></tr>
+<tr><td style="text-align: center"><code><span class="typ-op">+</span></code></td><td>正号，无作用，仅仅为了对称性</td><td style="text-align: center">一元</td><td style="text-align: center">7</td></tr>
+<tr><td style="text-align: center"><code><span class="typ-op">*</span></code></td><td>乘号</td><td style="text-align: center">二元</td><td style="text-align: center">6</td></tr>
+<tr><td style="text-align: center"><code><span class="typ-op">/</span></code></td><td>除号</td><td style="text-align: center">二元</td><td style="text-align: center">6</td></tr>
+<tr><td style="text-align: center"><code><span class="typ-op">+</span></code></td><td>加号</td><td style="text-align: center">二元</td><td style="text-align: center">5</td></tr>
+<tr><td style="text-align: center"><code><span class="typ-op">-</span></code></td><td>减号</td><td style="text-align: center">二元</td><td style="text-align: center">5</td></tr>
+<tr><td style="text-align: center"><code><span class="typ-op">==</span></code></td><td>等号</td><td style="text-align: center">二元</td><td style="text-align: center">4</td></tr>
+<tr><td style="text-align: center"><code><span class="typ-op">!=</span></code></td><td>不等于号</td><td style="text-align: center">二元</td><td style="text-align: center">4</td></tr>
+<tr><td style="text-align: center"><code><span class="typ-op">&lt;</span></code></td><td>小于号</td><td style="text-align: center">二元</td><td style="text-align: center">4</td></tr>
+<tr><td style="text-align: center"><code><span class="typ-op">&lt;=</span></code></td><td>小于等于号</td><td style="text-align: center">二元</td><td style="text-align: center">4</td></tr>
+<tr><td style="text-align: center"><code><span class="typ-op">&gt;</span></code></td><td>大于号</td><td style="text-align: center">二元</td><td style="text-align: center">4</td></tr>
+<tr><td style="text-align: center"><code><span class="typ-op">&gt;=</span></code></td><td>大于等于号</td><td style="text-align: center">二元</td><td style="text-align: center">4</td></tr>
+<tr><td style="text-align: center"><code><span class="typ-key">in</span></code></td><td>属于</td><td style="text-align: center">二元</td><td style="text-align: center">4</td></tr>
+<tr><td style="text-align: center"><code><span class="typ-key">not</span> <span class="typ-key">in</span></code></td><td>不属于</td><td style="text-align: center">二元</td><td style="text-align: center">4</td></tr>
+<tr><td style="text-align: center"><code><span class="typ-key">not</span></code></td><td>逻辑非</td><td style="text-align: center">一元</td><td style="text-align: center">3</td></tr>
+<tr><td style="text-align: center"><code><span class="typ-key">and</span></code></td><td>短路式逻辑并</td><td style="text-align: center">二元</td><td style="text-align: center">3</td></tr>
+<tr><td style="text-align: center"><code><span class="typ-key">or</span></code></td><td>短路式逻辑或</td><td style="text-align: center">二元</td><td style="text-align: center">2</td></tr>
+<tr><td style="text-align: center"><code><span class="typ-op">=</span></code></td><td>赋值</td><td style="text-align: center">二元</td><td style="text-align: center">1</td></tr>
+<tr><td style="text-align: center"><code><span class="typ-op">+=</span></code></td><td>相加赋值</td><td style="text-align: center">二元</td><td style="text-align: center">1</td></tr>
+<tr><td style="text-align: center"><code><span class="typ-op">-=</span></code></td><td>相减赋值</td><td style="text-align: center">二元</td><td style="text-align: center">1</td></tr>
+<tr><td style="text-align: center"><code><span class="typ-op">*=</span></code></td><td>相乘赋值</td><td style="text-align: center">二元</td><td style="text-align: center">1</td></tr>
+<tr><td style="text-align: center"><code><span class="typ-op">/=</span></code></td><td>相除赋值</td><td style="text-align: center">二元</td><td style="text-align: center">1</td></tr>
 </tbody></table>
 
 
