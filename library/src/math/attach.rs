@@ -84,7 +84,7 @@ impl LayoutMath for AttachElem {
     }
 }
 
-/// Force a base to display attachments as scripts.
+/// Forces a base to display attachments as scripts.
 ///
 /// ## Example { #example }
 /// ```example
@@ -110,7 +110,7 @@ impl LayoutMath for ScriptsElem {
     }
 }
 
-/// Force a base to display attachments as limits.
+/// Forces a base to display attachments as limits.
 ///
 /// ## Example { #example }
 /// ```example
@@ -124,13 +124,24 @@ pub struct LimitsElem {
     /// The base to attach the limits to.
     #[required]
     pub body: Content,
+
+    /// Whether to also force limits in inline equations.
+    ///
+    /// When applying limits globally (e.g., through a show rule), it is
+    /// typically a good idea to disable this.
+    #[default(true)]
+    pub inline: bool,
 }
 
 impl LayoutMath for LimitsElem {
     #[tracing::instrument(skip(ctx))]
     fn layout_math(&self, ctx: &mut MathContext) -> SourceResult<()> {
         let mut fragment = ctx.layout_fragment(&self.body())?;
-        fragment.set_limits(Limits::Always);
+        fragment.set_limits(if self.inline(ctx.styles()) {
+            Limits::Always
+        } else {
+            Limits::Display
+        });
         ctx.push(fragment);
         Ok(())
     }

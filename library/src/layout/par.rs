@@ -18,7 +18,7 @@ use crate::text::{
     SpaceElem, TextElem,
 };
 
-/// Arrange text, spacing and inline-level elements into a paragraph.
+/// Arranges text, spacing and inline-level elements into a paragraph.
 ///
 /// Although this function is primarily used in set rules to affect paragraph
 /// properties, it can also be used to explicitly render its argument onto a
@@ -609,7 +609,10 @@ fn collect<'a>(
                         elem.text().chars().next()
                     } else if child.is::<SmartQuoteElem>() {
                         Some('"')
-                    } else if child.is::<SpaceElem>() || child.is::<HElem>() {
+                    } else if child.is::<SpaceElem>()
+                        || child.is::<HElem>()
+                        || child.is::<LinebreakElem>()
+                    {
                         Some(SPACING_REPLACE)
                     } else {
                         Some(OBJ_REPLACE)
