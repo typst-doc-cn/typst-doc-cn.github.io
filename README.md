@@ -4,19 +4,22 @@
 
 https://typst-doc-cn.github.io/docs/
 
+GitHub Repo：https://github.com/typst-doc-cn/typst-doc-cn.github.io
+
+Gitee 镜像：https://gitee.com/orangex4/typst-doc-cn.github.io
 
 ## 贡献
 
 1. Fork 仓库
 2. 更改 `./docs/src` 目录下的 Markdown 文件 (不用修改文件名和主标题)
-3. 如果在 `./docs/src` 目录下不存在对应的 Markdown 文件，则用全局搜索的方式搜索对应的内容（一般是一个注释），然后进行编辑
+3. 更改 `./docs/i18n` 目录下的 Yaml 文件
 4. 示例 (example) 里的英文不需要翻译成中文
 5. 发起一个 Pull Request
 6. 如果需要的话，也可以在文档的末尾处留下翻译者的名字
 
 PS: Reference 中的 *CONTENT* 和 *COMPUTE* 部分需要深入到 `./library/src/text/misc.rs` 这类代码文件中的注释中修改.
 
-如果想要贡献的话, 可以先使用微信号 orangex4 联系我, 我们会使用微信群和石墨文档进行协作.
+如果想要贡献的话, 可以加入 QQ 群 793548390 联系 OrangeX4, 我们会使用石墨文档进行协作.
 
 当然也可以直接尝试翻译和发起 Pull Request.
 
@@ -41,7 +44,8 @@ Typst 的文档生成是与 Typst 源码紧耦合的, 具体体现在:
     4. 其他还有三种类型 `category`, `funcs`, `symbol`;
 3. 我依照官网的 HTML 和 CSS 文件, 使用 `jinja2` 的语法写了几个 HTML 模板, 放在 `templates` 路径下;
 4. 然后我写了 `gen.py`, 用于将 `docs.json` 使用模板转换为最终的 Web 网站, 放在 `dist` 路径下;
-5. 写了一个 GitHub Action 用于将生成 `dist` 部署到 GitHub Pages 上.
+5. 根据 `docs.json` 里的内容, 生成了 `i18n` 目录便于翻译;
+6. 写了一个 GitHub Action 用于将生成 `dist` 部署到 GitHub Pages 上.
 
 ![](https://picgo-1258602555.cos.ap-nanjing.myqcloud.com/20230625213846.png)
 
