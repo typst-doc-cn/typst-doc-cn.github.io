@@ -20,7 +20,7 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: 3.x
-      - run: python3 -m pip install jinja2
+      - run: python3 -m pip install jinja2 PyYAML
       - run: cargo test --package typst-docs --lib -- tests::test_docs --exact --nocapture
       - run: python3 ./gen.py
       # deploy ./dist to https://github.com/typst-doc-cn/typst-doc-cn.github.io
