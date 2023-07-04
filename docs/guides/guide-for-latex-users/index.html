@@ -253,7 +253,7 @@
               <ul>
                 
                 
-                <li><a href="/docs/reference/text/lorem/" >Blind Text</a></li>
+                <li><a href="/docs/reference/text/lorem/" >假文</a></li>
                 
                 
                 <li><a href="/docs/reference/text/emph/" >Emphasis</a></li>
@@ -857,7 +857,7 @@ Typst 的命令也更有原则:它们都是一样的，所以不像在LaTeX中�
 
 Here are two paragraphs. The
 output is shown to the right.
-</code></pre><div class="preview"><img src="/assets/docs/0JFhI2qTRkkcmxEuiUj2dG.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/dd83e6f268413942eb473326152ad337.png" alt="Preview" width="480" height="190"/></div></div>
 <h2 id="elements">我如何创建章节标题，强调，...？</h2>
 <p>LaTeX 使用<code>\section</code>命令创建章节标题。嵌套标题用<code>\subsection</code>、<code>\subsection</code>等表示。根据文档类型，还有<code>\part</code>或<code>\chapter</code>。</p>
 <p>在 Typst 中，标题设置更简洁：在标题所在的行前面加上一个等号和一个空格，得到一级标题：<code><span class="typ-heading">= Introduction</span></code>。
@@ -899,7 +899,7 @@ output is shown to the right.
 <span class="typ-marker">-</span> Flexible
 <span class="typ-marker">-</span> Intuitive
 
-</code></pre><div class="preview"><img src="/assets/docs/pecN2zDPyvbpnBlCTNKWiU.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/e521c3fb8b98310c7e367ef594c49f9b.png" alt="Preview" width="480" height="190"/></div></div>
 <p>嵌套列表通过使用适当的缩进来实现。在项目之间添加一个空行会使列表的间距更大。</p>
 <p>要获得一个<a href="/docs/reference/layout/enum/">有序列表</a>（ <code>enumerate</code> ），请用 <code>+</code> 代替连字符。
 对于一个<a href="/docs/reference/layout/terms/">描述列表</a>（ <code>description</code> ），用 <code><span class="typ-marker">/</span> <span class="typ-term">Term</span><span class="typ-punct">:</span> Description</code> 来代替。</p>
@@ -924,7 +924,7 @@ And finally a little loop:
 <span class="typ-key">#</span><span class="typ-key">for</span> x <span class="typ-key">in</span> <span class="typ-func">range</span><span class="typ-punct">(</span><span class="typ-num">3</span><span class="typ-punct">)</span> <span class="typ-punct">[</span>
   Hi <span class="typ-pol">#</span><span class="typ-pol">x</span>.
 <span class="typ-punct">]</span>
-</code></pre><div class="preview"><img src="/assets/docs/BwwsBtbiPsXXNcbr79wxJH.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/d62dca8171ceaf3463d4a73e9bc49670.png" alt="Preview" width="480" height="190"/></div></div>
 <p>一个函数调用总是涉及到函数的名称（<a href="/docs/reference/visualize/rect/"><code>rect</code></a>, <a href="/docs/reference/text/underline/"><code>underline</code></a>, 
 <a href="/docs/reference/calculate/max/"><code>calc.max</code></a>, <a href="/docs/reference/construct/range/"><code>range</code></a>），后面是小括号（与 LaTeX 不同，如果宏不需要参数，方括号和大括号是可选的）。
 在这些圆括号内传递的参数的预期列表取决于具体的函数，并在<a href="/docs/reference/">引用</a>中指定。</p>
@@ -936,7 +936,7 @@ And finally a little loop:
   height<span class="typ-punct">:</span> <span class="typ-num">1cm</span><span class="typ-punct">,</span>
   stroke<span class="typ-punct">:</span> red<span class="typ-punct">,</span>
 <span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/l5dlpDCeDfasFF3kZXmNor.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/5fd10fdfdf67e4b38c8bb9ec0d3fbb1b.png" alt="Preview" width="480" height="190"/></div></div>
 <p>你指定一个命名参数，首先输入它的名字（上文中是它<code>width</code>、<code>height</code>和<code>stroke</code>），然后是冒号，接着是值（<code>2cm</code>、<code>1cm</code>、<code>red</code>）。
 你可以在每个函数的参考页中找到可用的命名参数，或者在输入时的自动完成面板中找到。
 命名参数类似于一些 LaTeX 环境的配置方式，例如，你可以输入<code>\begin{enumerate}[label={alph*)}]</code>来启动一个带有标签<code>a)</code>、<code>b)</code>等的列表。</p>
@@ -949,7 +949,7 @@ And finally a little loop:
 to LaTeX.
 
 <span class="typ-func">#</span><span class="typ-func">rect</span><span class="typ-punct">(</span>fill<span class="typ-punct">:</span> aqua<span class="typ-punct">)</span><span class="typ-punct">[</span>Get started here!<span class="typ-punct">]</span>
-</code></pre><div class="preview"><img src="/assets/docs/Vh0qRJw6QN3PSYzNmaIWmI.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/99e1fbd1303c3644ab3520ee4f63fbb6.png" alt="Preview" width="480" height="190"/></div></div>
 <h3 id="data-types">数据类型</h3>
 <p>你可能已经注意到，这些参数有独特的数据类型。Typst 支持许多<a href="/docs/reference/types/">数据类型</a>。
 下面有一个表格，列出了一些最重要的数据类型以及如何编写它们。为了指定这些类型的值，你必须在代码模式下才行!</p>
@@ -978,7 +978,7 @@ to LaTeX.
 
 This is a bit <span class="typ-func">#</span><span class="typ-func">text</span><span class="typ-punct">(</span><span class="typ-num">18pt</span><span class="typ-punct">)</span><span class="typ-punct">[</span>larger,<span class="typ-punct">]</span>
 don&#39;t you think?
-</code></pre><div class="preview"><img src="/assets/docs/c4ztwgOMV4uNaBhp3m0zQz.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/1074e7958e12bc0e62474c670b9f042e.png" alt="Preview" width="480" height="190"/></div></div>
 <p>设置规则可以出现在文件的任何地方。它们可以被认为是其各自函数的默认参数值：</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">enum</span><span class="typ-punct">(</span>numbering<span class="typ-punct">:</span> <span class="typ-str">&quot;I.&quot;</span><span class="typ-punct">)</span>
 
@@ -987,7 +987,7 @@ Good results can only be obtained by
 <span class="typ-marker">+</span> being aware of current results
   of other researchers
 <span class="typ-marker">+</span> checking the data for biases
-</code></pre><div class="preview"><img src="/assets/docs/j8CbPVETweTyQ3PZyzUPjx.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/f49f50d8e79ec36783b8b9fd5542a3b3.png" alt="Preview" width="480" height="190"/></div></div>
 <p><code>+</code> 是调用<a href="/docs/reference/layout/enum/"><code>enum</code></a>函数的语法糖（可以把它看作是缩写），我们在上面应用了一个集合规则。
 <a href="/docs/reference/syntax/">大多数语法都是以这种方式与一个函数相连的</a>。
 如果你需要对一个元素进行超出其参数所能实现的样式设置，你可以用一个<a href="/docs/reference/styling/#show-rules">显示规则</a>
@@ -1022,7 +1022,7 @@ Good results can only be obtained by
 Let&#39;s get started writing this
 article by putting insightful
 paragraphs right here!
-</code></pre><div class="preview"><img src="/assets/docs/5RPh2K7ra4NyQD07TP4j70.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/116a1747ae485222f717434a51b2769e.png" alt="Preview" width="480" height="190"/></div></div>
 <p><a href="/docs/reference/scripting/#modules"><code>import</code></a> 语句使另一个文件中的函数（和其他定义）可用。
 在这个例子中，它从 <code>conf.typ</code> 文件中导入 <code>conf</code> 函数。这个函数将一个文档格式化为一篇会议文章。
 我们使用一个显示规则将其应用到文档中，同时配置文章的一些元数据。应用显示规则后，我们就可以马上开始写文章了!</p>
@@ -1067,7 +1067,7 @@ paragraphs right here!
 <span class="typ-math-delim">$</span>1<span class="typ-math-delim">$</span> to <span class="typ-math-delim">$</span>n<span class="typ-math-delim">$</span> is:
 
 <span class="typ-math-delim">$</span> <span class="typ-pol">sum</span><span class="typ-math-op">_</span><span class="typ-punct">(</span>k=1<span class="typ-punct">)</span><span class="typ-math-op">^</span>n k = <span class="typ-punct">(</span>n(n+1)<span class="typ-punct">)</span><span class="typ-math-op">/</span>2 <span class="typ-math-delim">$</span>
-</code></pre><div class="preview"><img src="/assets/docs/MF078h36k73EYousDWExui.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/c147c02e1ef1d4f070e43636d217c4c7.png" alt="Preview" width="480" height="190"/></div></div>
 <p><a href="/docs/reference/math/">数学模式</a>的工作方式与普通标记或代码模式不同。数字和单个字符被逐字显示，而多个连续（非数字）字符将被解释为Typst变量。</p>
 <p>Typst在数学模式下预先定义了很多有用的变量。所有希腊字母（<code>alpha</code>, <code>beta</code>, ...）和一些希伯来字母（<code>alef</code>, <code>bet</code>, ...）都可以通过它们的名字使用。
 一些符号还可以通过速记法使用，如<code>&lt;=</code>、<code>&gt;=</code>和<code>-&gt;</code>。</p>
@@ -1075,12 +1075,12 @@ paragraphs right here!
 <p>符号的替代和相关形式通常可以通过在句点后附加一个<a href="/docs/reference/types/symbol/">修饰符</a>来选择。例如，<code>arrow.l.squiggly</code> 插入了一个向左倾斜的箭头。
 如果你想在你的表达式中插入多字母文本，请用双引号将其括起来：</p>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-pol">delta</span> <span class="typ-str">&quot;if&quot;</span> x <span class="typ-escape">&lt;=</span> 5 <span class="typ-math-delim">$</span>
-</code></pre><div class="preview"><img src="/assets/docs/8hY9iA2aN604FbTrle2hnO.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/9494271610882d2fd2384f79dfde7719.png" alt="Preview" width="480" height="190"/></div></div>
 <p>在Typst中，定界符将为其表达式自动缩放，就像LaTeX中的 <code>\left</code> 和 <code>\right</code> 命令是隐式插入的。
 你可以使用 <a href="/docs/reference/math/lr/#lr"><code>lr</code></a> 函数自定义定界符的行为。为了防止一对定界符的缩放，你可以用反斜线转义。</p>
 <p>Typst会自动将斜线 <code>/</code> 周围的术语设置为分数，同时尊重运算符的优先级。所有的圆括号都会出现在输出中，而不会因为分数而变得多余。</p>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> f(x) = <span class="typ-punct">(</span>x + 1<span class="typ-punct">)</span> <span class="typ-math-op">/</span> x <span class="typ-math-delim">$</span>
-</code></pre><div class="preview"><img src="/assets/docs/CnLEpvDR9vEE1CIvVFJWAR.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/7f8d2870077d468e6bf6fc0eceba935d.png" alt="Preview" width="480" height="190"/></div></div>
 <p><a href="/docs/reference/math/attach/#attach">下标和上标</a>在 Typst 和 LaTeX 中的作用是相似的。<code><span class="typ-math-delim">$</span>x<span class="typ-math-op">^</span>2<span class="typ-math-delim">$</span></code> 将产生一个上标，<code><span class="typ-math-delim">$</span>x<span class="typ-math-op">_</span>2<span class="typ-math-delim">$</span></code> 产生一个下标。
 如果你想在下标或上标中包含一个以上的值，请把它们的内容放在括号里：<code><span class="typ-math-delim">$</span>x<span class="typ-math-op">_</span><span class="typ-punct">(</span>a <span class="typ-escape">-&gt;</span> <span class="typ-pol">epsilon</span><span class="typ-punct">)</span><span class="typ-math-delim">$</span></code>。</p>
 <p>由于数学模式下的变量不需要在前面加上 <code>#</code> 或 <code>/</code> ，所以你也可以调用没有这些特殊字符的函数：</p>
@@ -1090,21 +1090,21 @@ paragraphs right here!
   3 <span class="typ-str">&quot;if&quot;</span> x <span class="typ-pol">in</span> <span class="typ-pol">NN</span><span class="typ-punct">,</span>
   4 <span class="typ-str">&quot;else&quot;</span><span class="typ-punct">,</span>
 <span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
-</code></pre><div class="preview"><img src="/assets/docs/9ug6ZUrJzv6CG9LlC6yrxz.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/44f8d5158fe3376b109dc8d8e95e2d9e.png" alt="Preview" width="480" height="190"/></div></div>
 <p>上面的例子用 <a href="/docs/reference/math/cases/"><code>cases</code></a> 函数来描述 <code>f</code>。在 <code>cases</code> 函数中，参数用逗号来分隔，参数也被解释为数学。
 如果你需要将参数解释为Typst值，用 <code>#</code> 号作为前缀：</p>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> (a + b)<span class="typ-math-op">^</span>2
   = a<span class="typ-math-op">^</span>2
   + <span class="typ-func">text</span><span class="typ-punct">(</span>fill<span class="typ-punct">:</span> <span class="typ-pol">#</span><span class="typ-pol">maroon</span><span class="typ-punct">,</span> 2 a b<span class="typ-punct">)</span>
   + b<span class="typ-math-op">^</span>2 <span class="typ-math-delim">$</span>
-</code></pre><div class="preview"><img src="/assets/docs/CGV3JS1lGHoGP0QYhwZqqY.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/56e9bf58bbe7403def1b60daf16a1832.png" alt="Preview" width="480" height="190"/></div></div>
 <p>你可以在数学模式内使用所有 Typst 函数，并插入任何内容。
 如果你想让它们正常工作，在参数列表中使用代码模式，你可以在它们的调用前加上一个 <code>#</code>。
 没有人可以阻止你使用矩形或表情符号作为你的变量：</p>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-pol">sum</span><span class="typ-math-op">^</span>10<span class="typ-math-op">_</span><span class="typ-punct">(</span>🥸=1<span class="typ-punct">)</span>
   <span class="typ-func">#</span><span class="typ-func">rect</span><span class="typ-punct">(</span>width<span class="typ-punct">:</span> <span class="typ-num">4mm</span><span class="typ-punct">,</span> height<span class="typ-punct">:</span> <span class="typ-num">2mm</span><span class="typ-punct">)</span><span class="typ-math-op">/</span>🥸
   = 🧠 <span class="typ-pol">maltese</span> <span class="typ-math-delim">$</span>
-</code></pre><div class="preview"><img src="/assets/docs/lNVFM7KcSX5EOUfi59W3eZ.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/3f7ca261a71de7ac53687d62a28da5dc.png" alt="Preview" width="480" height="190"/></div></div>
 <p>如果你希望直接以 Unicode 形式输入数学符号，也是可以的。</p>
 <p>数学调用可以有二维参数列表，使用 <code>;</code> 作为分隔符。这方面最常见的用途是创建矩阵的 <a href="/docs/reference/math/mat/"><code>mat</code></a> 函数：</p>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">mat</span><span class="typ-punct">(</span>
@@ -1113,7 +1113,7 @@ paragraphs right here!
   <span class="typ-pol">dots</span><span class="typ-punct">.</span><span class="typ-pol">v</span><span class="typ-punct">,</span> <span class="typ-pol">dots</span><span class="typ-punct">.</span><span class="typ-pol">v</span><span class="typ-punct">,</span> <span class="typ-pol">dots</span><span class="typ-punct">.</span><span class="typ-pol">down</span><span class="typ-punct">,</span> <span class="typ-pol">dots</span><span class="typ-punct">.</span><span class="typ-pol">v</span><span class="typ-punct">;</span>
   10<span class="typ-punct">,</span> 10<span class="typ-punct">,</span> <span class="typ-escape">...</span><span class="typ-punct">,</span> 10<span class="typ-punct">;</span>
 <span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
-</code></pre><div class="preview"><img src="/assets/docs/oSKSyWSSkPD3KO4a0XJwRe.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/92c9b3b027c9bc5f7095d691e1690745.png" alt="Preview" width="480" height="190"/></div></div>
 <h2 id="latex-look">如何获得 &quot;LaTeX外观&quot;？</h2>
 <p>用 LaTeX 编写的论文有一种无可挑剔的外观。这主要是由于它们的字体、<a href="https://zh.wikipedia.org/wiki/Computer_Modern">Computer Modern</a>、对齐方式、窄行距和宽边距。</p>
 <p>下面是一个示例：</p>

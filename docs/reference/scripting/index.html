@@ -251,7 +251,7 @@
               <ul>
                 
                 
-                <li><a href="/docs/reference/text/lorem/" >Blind Text</a></li>
+                <li><a href="/docs/reference/text/lorem/" >假文</a></li>
                 
                 
                 <li><a href="/docs/reference/text/emph/" >Emphasis</a></li>
@@ -845,7 +845,7 @@
 <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">emph</span><span class="typ-punct">[</span>Hello<span class="typ-punct">]</span> <span class="typ-escape">\</span>
 <span class="typ-pol">#</span><span class="typ-pol">emoji</span><span class="typ-punct">.</span><span class="typ-pol">face</span> <span class="typ-escape">\</span>
 <span class="typ-str">#</span><span class="typ-str">&quot;hello&quot;</span><span class="typ-punct">.</span><span class="typ-func">len</span><span class="typ-punct">(</span><span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/JM9YYr6D7GKgO5E5PYTXPm.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/f225eedcb810ced31df3dfe3b3e7dda6.png" alt="Preview" width="480" height="190"/></div></div>
 <p>上面示例展示了一些用到的表达式，
 有<a href="/docs/reference/types/function/">函数调用</a>，
 <a href="/docs/reference/scripting/#fields">字段访问</a>，
@@ -878,7 +878,7 @@
   <span class="typ-punct">[</span>hello <span class="typ-punct">]</span>
   a <span class="typ-op">+</span> <span class="typ-punct">[</span> the <span class="typ-punct">]</span> <span class="typ-op">+</span> b
 <span class="typ-punct">}</span>
-</code></pre><div class="preview"><img src="/assets/docs/W5JoLK0lg6QAHFvXpHuhrI.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/7fb6c8bb26570187a3d8f3a560c32d60.png" alt="Preview" width="480" height="190"/></div></div>
 <h2 id="bindings">绑定和解构</h2>
 <p>上面已经展示，变量由 <code><span class="typ-key">let</span></code> 绑定定义。
 = 符号后表达式的值被赋值给变量，这里赋值可以被省略，如果没有赋值，变量会初始化为 <code><span class="typ-key">none</span></code>。
@@ -890,7 +890,7 @@ It explains <span class="typ-pol">#</span><span class="typ-pol">name</span>.
 
 <span class="typ-key">#</span><span class="typ-key">let</span> <span class="typ-func">add</span><span class="typ-punct">(</span>x<span class="typ-punct">,</span> y<span class="typ-punct">)</span> <span class="typ-op">=</span> x <span class="typ-op">+</span> y
 Sum is <span class="typ-func">#</span><span class="typ-func">add</span><span class="typ-punct">(</span><span class="typ-num">2</span><span class="typ-punct">,</span> <span class="typ-num">3</span><span class="typ-punct">)</span>.
-</code></pre><div class="preview"><img src="/assets/docs/lYn0o37COWIDd7owuCPE1U.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/06bda5b4dc5513a30aebfe2c273ada2a.png" alt="Preview" width="480" height="190"/></div></div>
 <p>let 绑定也常用来解构<a href="/docs/reference/types/array/">数组</a>和<a href="/docs/reference/types/dictionary/">字典</a>，
 解构时，等号左边的形式需要与数组或字典相似，
 <code>..</code> 模式操作符只可被使用一次，用来指代数组或字典剩余的条目。</p>
@@ -917,18 +917,18 @@ Homer wrote <span class="typ-pol">#</span><span class="typ-pol">h</span>.
 <span class="typ-key">#</span><span class="typ-key">for</span> <span class="typ-punct">(</span>author<span class="typ-punct">,</span> title<span class="typ-punct">)</span> <span class="typ-key">in</span> other <span class="typ-punct">[</span>
   <span class="typ-pol">#</span><span class="typ-pol">author</span> wrote <span class="typ-pol">#</span><span class="typ-pol">title</span>.
 <span class="typ-punct">]</span>
-</code></pre><div class="preview"><img src="/assets/docs/ug4UagWqM3zR9TlQchvfqj.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/e8d5f46bdffe454e3c436c807600b1cd.png" alt="Preview" width="480" height="190"/></div></div>
 <p>在解构匹配模式中，可以使用 _ 下划线来丢弃一个元素。</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> <span class="typ-punct">(</span>_<span class="typ-punct">,</span> y<span class="typ-punct">,</span> _<span class="typ-punct">)</span> <span class="typ-op">=</span> <span class="typ-punct">(</span><span class="typ-num">1</span><span class="typ-punct">,</span> <span class="typ-num">2</span><span class="typ-punct">,</span> <span class="typ-num">3</span><span class="typ-punct">)</span>
 The y coordinate is <span class="typ-pol">#</span><span class="typ-pol">y</span>.
-</code></pre><div class="preview"><img src="/assets/docs/Q55YblvgXVnJVaNH9v8x3y.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/2e4ee4d0fbe81f88bae2db44bb024d07.png" alt="Preview" width="480" height="190"/></div></div>
 <p>解构形式也可用于函数的参数列表中...</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> left <span class="typ-op">=</span> <span class="typ-punct">(</span><span class="typ-num">2</span><span class="typ-punct">,</span> <span class="typ-num">4</span><span class="typ-punct">,</span> <span class="typ-num">5</span><span class="typ-punct">)</span>
 <span class="typ-key">#</span><span class="typ-key">let</span> right <span class="typ-op">=</span> <span class="typ-punct">(</span><span class="typ-num">3</span><span class="typ-punct">,</span> <span class="typ-num">2</span><span class="typ-punct">,</span> <span class="typ-num">6</span><span class="typ-punct">)</span>
 <span class="typ-pol">#</span><span class="typ-pol">left</span><span class="typ-punct">.</span><span class="typ-func">zip</span><span class="typ-punct">(</span>right<span class="typ-punct">)</span><span class="typ-punct">.</span><span class="typ-func">map</span><span class="typ-punct">(</span>
   <span class="typ-punct">(</span><span class="typ-punct">(</span>a<span class="typ-punct">,</span>b<span class="typ-punct">)</span><span class="typ-punct">)</span> <span class="typ-op">=&gt;</span> a <span class="typ-op">+</span> b
 <span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/QuOCPZpE1ocUap0TzngUgL.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/6e18caba37cf9be991248e7d3aab314d.png" alt="Preview" width="480" height="190"/></div></div>
 <p>... 和普通赋值的左半部分，这通常用于交换两个变量的值。</p>
 <div class="previewed-code"><pre><code><span class="typ-punct">#</span><span class="typ-punct">{</span>
   <span class="typ-key">let</span> a <span class="typ-op">=</span> <span class="typ-num">1</span>
@@ -936,7 +936,7 @@ The y coordinate is <span class="typ-pol">#</span><span class="typ-pol">y</span>
   <span class="typ-punct">(</span>a<span class="typ-punct">,</span> b<span class="typ-punct">)</span> <span class="typ-op">=</span> <span class="typ-punct">(</span>b<span class="typ-punct">,</span> a<span class="typ-punct">)</span>
   <span class="typ-punct">[</span>a = <span class="typ-pol">#</span><span class="typ-pol">a</span>, b = <span class="typ-pol">#</span><span class="typ-pol">b</span><span class="typ-punct">]</span>
 <span class="typ-punct">}</span>
-</code></pre><div class="preview"><img src="/assets/docs/vedjGwGjO7kvUlXDsWR2iW.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/4aa3ec10ee748ed1116c7eae1e4df9e2.png" alt="Preview" width="480" height="190"/></div></div>
 <h2 id="conditionals">条件控制</h2>
 <p>使用条件控制语句，可以根据某种条件是否满足，来展示或计算不同的事情。
 Typst 设计了 <code><span class="typ-key">if</span></code>, <code>else <span class="typ-key">if</span></code>, <code>else</code> 表达式。
@@ -946,7 +946,7 @@ Typst 设计了 <code><span class="typ-key">if</span></code>, <code>else <span c
 <span class="typ-punct">]</span> <span class="typ-key">else</span> <span class="typ-punct">[</span>
   This is not.
 <span class="typ-punct">]</span>
-</code></pre><div class="preview"><img src="/assets/docs/gJz5ImsYntw2fZwqMA523l.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/e76379a33a676c5b7d921a6e96a07127.png" alt="Preview" width="480" height="190"/></div></div>
 <p>每个分支从句可以写为语句块或者文档内容块。</p>
 <ul>
 <li><code><span class="typ-key">if</span> condition <span class="typ-punct">{</span>..<span class="typ-punct">}</span></code></li>
@@ -970,7 +970,7 @@ while 循环生成数个长度为1的数组，然后将其合并成一个大数�
   n <span class="typ-op">=</span> <span class="typ-punct">(</span>n <span class="typ-op">*</span> <span class="typ-num">2</span><span class="typ-punct">)</span> <span class="typ-op">-</span> <span class="typ-num">1</span>
   <span class="typ-punct">(</span>n<span class="typ-punct">,</span><span class="typ-punct">)</span>
 <span class="typ-punct">}</span>
-</code></pre><div class="preview"><img src="/assets/docs/Ciio13Ox70QchUJMz37xY3.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/339e68e646d2611ea2860b332106e017.png" alt="Preview" width="480" height="190"/></div></div>
 <p>for 循环可以遍历多种集合：</p>
 <ul>
 <li>
@@ -997,7 +997,7 @@ while 循环生成数个长度为1的数组，然后将其合并成一个大数�
 
   letter
 <span class="typ-punct">}</span>
-</code></pre><div class="preview"><img src="/assets/docs/UTA44GuMc7bFbySILs7Zr3.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/842d9007ec92471251bbf3dbd7553f36.png" alt="Preview" width="480" height="190"/></div></div>
 <p>循环体可以是代码块，也可以是文档内容块：</p>
 <ul>
 <li><code><span class="typ-key">for</span> .. <span class="typ-key">in</span> collection <span class="typ-punct">{</span>..<span class="typ-punct">}</span></code></li>
@@ -1020,7 +1020,7 @@ while 循环生成数个长度为1的数组，然后将其合并成一个大数�
 <span class="typ-key">#</span><span class="typ-key">let</span> it <span class="typ-op">=</span> <span class="typ-punct">[</span><span class="typ-heading">= Heading</span><span class="typ-punct">]</span>
 <span class="typ-pol">#</span><span class="typ-pol">it</span><span class="typ-punct">.</span><span class="typ-pol">body</span> <span class="typ-escape">\</span>
 <span class="typ-pol">#</span><span class="typ-pol">it</span><span class="typ-punct">.</span><span class="typ-pol">level</span>
-</code></pre><div class="preview"><img src="/assets/docs/T0uZvWf4XdZLWDagarnoET.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/87635702d6b82c1ab68e582567398392.png" alt="Preview" width="480" height="190"/></div></div>
 <h2 id="methods">方法</h2>
 <p>方法是一个特殊<a href="/docs/reference/types/function/">函数</a>，与特定类型紧密结合使用。
 同字段访问一样，使用点号来调用某类型值的方法：<code>value<span class="typ-punct">.</span><span class="typ-func">method</span><span class="typ-punct">(</span><span class="typ-op">..</span><span class="typ-punct">.</span><span class="typ-punct">)</span></code>。
@@ -1032,7 +1032,7 @@ while 循环生成数个长度为1的数组，然后将其合并成一个大数�
 <span class="typ-punct">#</span><span class="typ-punct">(</span><span class="typ-str">&quot;a, b, c&quot;</span>
     <span class="typ-punct">.</span><span class="typ-func">split</span><span class="typ-punct">(</span><span class="typ-str">&quot;, &quot;</span><span class="typ-punct">)</span>
     <span class="typ-punct">.</span><span class="typ-func">join</span><span class="typ-punct">[</span> <span class="typ-escape">---</span> <span class="typ-punct">]</span><span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/MjyNcsKzXqh7enR5OoSNJl.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/471902e03fcd9845fc6039b2a6a8411a.png" alt="Preview" width="480" height="190"/></div></div>
 <p>Typst 中，方法是唯一可改变被调用值的方式。</p>
 <h2 id="modules">模块</h2>
 <p>一个 Typst 工程项目可以拆解为多个 <em>模块</em> 文件。
@@ -1055,13 +1055,13 @@ while 循环生成数个长度为1的数组，然后将其合并成一个大数�
 <p>除了使用路径，也可以使用<a href="/docs/reference/types/module/">模块值</a>，如下面示例：</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">import</span> emoji<span class="typ-punct">:</span> face
 <span class="typ-pol">#</span><span class="typ-pol">face</span><span class="typ-punct">.</span><span class="typ-pol">grin</span>
-</code></pre><div class="preview"><img src="/assets/docs/5OMB0GcLJg0ou7Qo4isJgI.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/43014000497d459ced7b19ec99fd35ae.png" alt="Preview" width="480" height="190"/></div></div>
 <h2 id="packages">包</h2>
 <p>可以创建并导入 Typst <em>包</em>，在多个工程项目中进行复用。
 一个包的导入需有三部分指定：包命名空间，包名称，包版本号。</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">import</span> <span class="typ-str">&quot;@preview/example:0.1.0&quot;</span><span class="typ-punct">:</span> add
 <span class="typ-func">#</span><span class="typ-func">add</span><span class="typ-punct">(</span><span class="typ-num">2</span><span class="typ-punct">,</span> <span class="typ-num">7</span><span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/darUPzOySGuyD5umBDIawE.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/5611b1fc00245c60ed0fd4942d77dcf9.png" alt="Preview" width="480" height="190"/></div></div>
 <p><code>preview</code> 包命名空间包含了 Typst 社区分享的包。可以在 <a href="/docs/packages/">package</a> 小节搜索可用的社区分享包。</p>
 <p>在本地使用 Typst 时，可以创建本地包。更多详情参考<a href="https://github.com/typst/packages">包仓库</a>。</p>
 <h2 id="operators">操作符</h2>

@@ -251,7 +251,7 @@
               <ul>
                 
                 
-                <li><a href="/docs/reference/text/lorem/" >Blind Text</a></li>
+                <li><a href="/docs/reference/text/lorem/" >假文</a></li>
                 
                 
                 <li><a href="/docs/reference/text/emph/" >Emphasis</a></li>
@@ -851,7 +851,7 @@ set 函数调用时，仅有特定参数可被允许使用，可以参考该函�
 <span class="typ-heading">= Introduction</span>
 With set rules, you can style
 your document.
-</code></pre><div class="preview"><img src="/assets/docs/NMLDOeNfy33eSY3caQm0cO.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/d36488b1f565fe84c9a233c7c678b1f8.png" alt="Preview" width="480" height="190"/></div></div>
 <p>顶层 set 规则一直作用到文件结束，当在块内使用时，只作用到块结束。
 这样使用块，可以限制 set 规则只总用于文档的特定片段。
 下面示例使用了文档内容块来限制列表样式设置只作用于特定列表。</p>
@@ -862,7 +862,7 @@ your document.
 
 This one is not:
 <span class="typ-marker">-</span> Bullet
-</code></pre><div class="preview"><img src="/assets/docs/s7Cb8IBy6BLECydLqsUwlx.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/f129abb09047d8c5069d0c5142a5eed7.png" alt="Preview" width="480" height="190"/></div></div>
 <p>有时，想要实现特定条件下 set 规则才有效，可以使用 <em>set-if</em> 规则。</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> <span class="typ-func">task</span><span class="typ-punct">(</span>body<span class="typ-punct">,</span> critical<span class="typ-punct">:</span> <span class="typ-key">false</span><span class="typ-punct">)</span> <span class="typ-op">=</span> <span class="typ-punct">{</span>
   <span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>red<span class="typ-punct">)</span> <span class="typ-key">if</span> critical
@@ -871,7 +871,7 @@ This one is not:
 
 <span class="typ-func">#</span><span class="typ-func">task</span><span class="typ-punct">(</span>critical<span class="typ-punct">:</span> <span class="typ-key">true</span><span class="typ-punct">)</span><span class="typ-punct">[</span>Food today?<span class="typ-punct">]</span>
 <span class="typ-func">#</span><span class="typ-func">task</span><span class="typ-punct">(</span>critical<span class="typ-punct">:</span> <span class="typ-key">false</span><span class="typ-punct">)</span><span class="typ-punct">[</span>Work deadline<span class="typ-punct">]</span>
-</code></pre><div class="preview"><img src="/assets/docs/wg2COebztNdDcffvN07Ltj.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/1c565fdf1da4e5a5e6ccd83bf394867d.png" alt="Preview" width="480" height="190"/></div></div>
 <h2 id="show-rules">show 规则</h2>
 <p>使用 show 规则可以深度定制特定类型文档元素的外观，最常用的基本形式是 <em>show-set 规则</em>，
 以 <code><span class="typ-key">show</span></code> 关键字作为开始标记，紧随一个<a href="/docs/reference/types/selector/">选择器</a>，一个冒号，最后是一个 set 规则。
@@ -882,7 +882,7 @@ This one is not:
 
 <span class="typ-heading">= This is navy-blue</span>
 But this stays black.
-</code></pre><div class="preview"><img src="/assets/docs/ApdvkoVBTrOjRnJYmUW5HH.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/256417ece420a98a96c8e3cf65bbecbd.png" alt="Preview" width="480" height="190"/></div></div>
 <p>使用 show-set 规则，可以混搭各种函数属性，来实现各种不同的效果，但这也仍然局限于 Typst 预定义的功能。
 为了最大限度的灵活设置，可以使用函数式 show 规则，用来定义如何从 0 开始格式化文档元素。
 使用一个<a href="/docs/reference/types/functio/">函数</a>来替换 show-set 规则中的 set 规则，
@@ -905,7 +905,7 @@ creature.
 While less powerful than the
 dragon, the manticore gets
 extra style points.
-</code></pre><div class="preview"><img src="/assets/docs/oQLak5weTOGrhFNaRYk2U4.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/7dc48cb8fcb56073bfafe1eb7b19cde3.png" alt="Preview" width="480" height="190"/></div></div>
 <p>与 set 规则类似， show 规则也一直作用到文档或者当前块的结束。</p>
 <p>show 规则的右边部分不仅可以是一个函数，也可以是一个字符串常量或者文档内容块，用来直接替换文档元素。
 show 规则的左边部分也可以是 <em>下面类型的选择器</em>，用来定义哪些文档元素会被转换：</p>
@@ -937,7 +937,7 @@ show 规则的左边部分也可以是 <em>下面类型的选择器</em>，用�
 We started Project in 2019
 and are still working on it.
 Project is progressing badly.
-</code></pre><div class="preview"><img src="/assets/docs/zjnrJ9Boi7zkdGivh8yiJO.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/fdbf54e4d775b4b9b90bce2575b51bd7.png" alt="Preview" width="480" height="190"/></div></div>
 
 
 
