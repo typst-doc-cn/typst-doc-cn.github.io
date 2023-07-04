@@ -1,0 +1,68 @@
+route: /docs/reference/construct/symbol/
+title: Symbol
+description: Documentation for the `symbol` function.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: example
+  name: Example
+  children: []
+- id: parameters
+  name: Parameters
+  children:
+  - id: parameters-variants
+    name: variants
+    children: []
+body:
+  kind: func
+  content:
+    path:
+    - symbol
+    display: Symbol
+    keywords: null
+    oneliner: Creates a custom symbol with modifiers.
+    element: false
+    details: |-
+      <p>Creates a custom symbol with modifiers.</p>
+      <h2 id="example">Example</h2>
+      <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> envelope <span class="typ-op">=</span> <span class="typ-func">symbol</span><span class="typ-punct">(</span>
+        <span class="typ-str">&quot;🖂&quot;</span><span class="typ-punct">,</span>
+        <span class="typ-punct">(</span><span class="typ-str">&quot;stamped&quot;</span><span class="typ-punct">,</span> <span class="typ-str">&quot;🖃&quot;</span><span class="typ-punct">)</span><span class="typ-punct">,</span>
+        <span class="typ-punct">(</span><span class="typ-str">&quot;stamped.pen&quot;</span><span class="typ-punct">,</span> <span class="typ-str">&quot;🖆&quot;</span><span class="typ-punct">)</span><span class="typ-punct">,</span>
+        <span class="typ-punct">(</span><span class="typ-str">&quot;lightning&quot;</span><span class="typ-punct">,</span> <span class="typ-str">&quot;🖄&quot;</span><span class="typ-punct">)</span><span class="typ-punct">,</span>
+        <span class="typ-punct">(</span><span class="typ-str">&quot;fly&quot;</span><span class="typ-punct">,</span> <span class="typ-str">&quot;🖅&quot;</span><span class="typ-punct">)</span><span class="typ-punct">,</span>
+      <span class="typ-punct">)</span>
+
+      <span class="typ-pol">#</span><span class="typ-pol">envelope</span>
+      <span class="typ-pol">#</span><span class="typ-pol">envelope</span><span class="typ-punct">.</span><span class="typ-pol">stamped</span>
+      <span class="typ-pol">#</span><span class="typ-pol">envelope</span><span class="typ-punct">.</span><span class="typ-pol">stamped</span><span class="typ-punct">.</span><span class="typ-pol">pen</span>
+      <span class="typ-pol">#</span><span class="typ-pol">envelope</span><span class="typ-punct">.</span><span class="typ-pol">lightning</span>
+      <span class="typ-pol">#</span><span class="typ-pol">envelope</span><span class="typ-punct">.</span><span class="typ-pol">fly</span>
+      </code></pre><div class="preview"><img src="/assets/docs/ab5c4a1b2fedea0f8e7ef305b0f686ad.png" alt="Preview" width="480" height="190"/></div></div>
+    params:
+    - name: variants
+      details: |-
+        <p>The variants of the symbol.</p>
+        <p>Can be a just a string consisting of a single character for the
+        modifierless variant or an array with two strings specifying the modifiers
+        and the symbol. Individual modifiers should be separated by dots. When
+        displaying a symbol, Typst selects the first from the variants that have
+        all attached modifiers and the minimum number of other modifiers.</p>
+      example: null
+      types:
+      - string
+      - array
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: true
+      settable: false
+    returns:
+    - symbol
+    methods: []
+    scope: []
+children: []

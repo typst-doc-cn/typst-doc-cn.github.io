@@ -1,0 +1,65 @@
+route: /docs/reference/calculate/perm/
+title: Permutation
+description: Documentation for the `perm` function.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: example
+  name: Example
+  children: []
+- id: parameters
+  name: Parameters
+  children:
+  - id: parameters-base
+    name: base
+    children: []
+  - id: parameters-numbers
+    name: numbers
+    children: []
+body:
+  kind: func
+  content:
+    path:
+    - calc
+    - perm
+    display: Permutation
+    keywords: null
+    oneliner: Calculates a permutation.
+    element: false
+    details: |-
+      <p>Calculates a permutation.</p>
+      <h2 id="example">Example</h2>
+      <div class="previewed-code"><pre><code><span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">perm</span><span class="typ-punct">(</span><span class="typ-num">10</span><span class="typ-punct">,</span> <span class="typ-num">5</span><span class="typ-punct">)</span>
+      </code></pre><div class="preview"><img src="/assets/docs/e08ebad1921241f737425d3cb296f886.png" alt="Preview" width="480" height="190"/></div></div>
+    params:
+    - name: base
+      details: <p>The base number. Must be non-negative.</p>
+      example: null
+      types:
+      - integer
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: false
+      settable: false
+    - name: numbers
+      details: <p>The number of permutations. Must be non-negative.</p>
+      example: null
+      types:
+      - integer
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: false
+      settable: false
+    returns:
+    - integer
+    methods: []
+    scope: []
+children: []

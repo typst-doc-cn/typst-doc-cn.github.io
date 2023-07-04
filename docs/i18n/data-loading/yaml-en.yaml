@@ -1,0 +1,75 @@
+route: /docs/reference/data-loading/yaml/
+title: YAML
+description: Documentation for the `yaml` function.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: example
+  name: Example
+  children: []
+- id: parameters
+  name: Parameters
+  children:
+  - id: parameters-path
+    name: path
+    children: []
+body:
+  kind: func
+  content:
+    path:
+    - yaml
+    display: YAML
+    keywords: null
+    oneliner: Reads structured data from a YAML file.
+    element: false
+    details: |-
+      <p>Reads structured data from a YAML file.</p>
+      <p>The file must contain a valid YAML object or array. YAML mappings will be
+      converted into Typst dictionaries, and YAML sequences will be converted into
+      Typst arrays. Strings and booleans will be converted into the Typst
+      equivalents, null-values (<code>null</code>, <code>~</code> or empty ``) will be converted into
+      <code><span class="typ-key">none</span></code>, and numbers will be converted to floats or integers depending on
+      whether they are whole numbers.</p>
+      <p>Note that mapping keys that are not a string cause the entry to be
+      discarded.</p>
+      <p>Custom YAML tags are ignored, though the loaded value will still be
+      present.</p>
+      <p>The function returns a dictionary or value or an array, depending on
+      the YAML file.</p>
+      <p>The YAML files in the example contain objects with authors as keys,
+      each with a sequence of their own submapping with the keys
+      &quot;title&quot; and &quot;published&quot;</p>
+      <h2 id="example">Example</h2>
+      <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> <span class="typ-func">bookshelf</span><span class="typ-punct">(</span>contents<span class="typ-punct">)</span> <span class="typ-op">=</span> <span class="typ-punct">{</span>
+        <span class="typ-key">for</span> <span class="typ-punct">(</span>author<span class="typ-punct">,</span> works<span class="typ-punct">)</span> <span class="typ-key">in</span> contents <span class="typ-punct">{</span>
+          author
+          <span class="typ-key">for</span> work <span class="typ-key">in</span> works <span class="typ-punct">[</span>
+            <span class="typ-marker">-</span> <span class="typ-pol">#</span><span class="typ-pol">work</span><span class="typ-punct">.</span><span class="typ-pol">title</span> (<span class="typ-pol">#</span><span class="typ-pol">work</span><span class="typ-punct">.</span><span class="typ-pol">published</span>)
+          <span class="typ-punct">]</span>
+        <span class="typ-punct">}</span>
+      <span class="typ-punct">}</span>
+
+      <span class="typ-func">#</span><span class="typ-func">bookshelf</span><span class="typ-punct">(</span>
+        <span class="typ-func">yaml</span><span class="typ-punct">(</span><span class="typ-str">&quot;scifi-authors.yaml&quot;</span><span class="typ-punct">)</span>
+      <span class="typ-punct">)</span>
+      </code></pre><div class="preview"><img src="/assets/docs/58f52380c98c1a4c54779d0799f7ed03.png" alt="Preview" width="480" height="190"/></div></div>
+    params:
+    - name: path
+      details: <p>Path to a YAML file.</p>
+      example: null
+      types:
+      - string
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: false
+      settable: false
+    returns:
+    - any
+    methods: []
+    scope: []
+children: []

@@ -1,0 +1,56 @@
+route: /docs/reference/calculate/sin/
+title: Sine
+description: Documentation for the `sin` function.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: example
+  name: Example
+  children: []
+- id: parameters
+  name: Parameters
+  children:
+  - id: parameters-angle
+    name: angle
+    children: []
+body:
+  kind: func
+  content:
+    path:
+    - calc
+    - sin
+    display: Sine
+    keywords: null
+    oneliner: Calculates the sine of an angle.
+    element: false
+    details: |-
+      <p>Calculates the sine of an angle.</p>
+      <p>When called with an integer or a float, they will be interpreted as
+      radians.</p>
+      <h2 id="example">Example</h2>
+      <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">assert</span><span class="typ-punct">(</span>calc<span class="typ-punct">.</span><span class="typ-func">sin</span><span class="typ-punct">(</span><span class="typ-num">90deg</span><span class="typ-punct">)</span> <span class="typ-op">==</span> calc<span class="typ-punct">.</span><span class="typ-func">sin</span><span class="typ-punct">(</span><span class="typ-op">-</span><span class="typ-num">270deg</span><span class="typ-punct">)</span><span class="typ-punct">)</span>
+      <span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">sin</span><span class="typ-punct">(</span><span class="typ-num">1.5</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
+      <span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">sin</span><span class="typ-punct">(</span><span class="typ-num">90deg</span><span class="typ-punct">)</span>
+      </code></pre><div class="preview"><img src="/assets/docs/9a343f290b69c6546ce3068c8c32d9ea.png" alt="Preview" width="480" height="190"/></div></div>
+    params:
+    - name: angle
+      details: <p>The angle whose sine to calculate.</p>
+      example: null
+      types:
+      - integer
+      - float
+      - angle
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: false
+      settable: false
+    returns:
+    - float
+    methods: []
+    scope: []
+children: []

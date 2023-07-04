@@ -1006,8 +1006,8 @@ const TYPE_ORDER: &[&str] = &[
 #[cfg(test)]
 mod tests {
     use std::io::Write;
-    use rand::Rng;
     use typst::geom::Color;
+    use md5;
 
     use super::*;
 
@@ -1043,12 +1043,8 @@ mod tests {
             let ppi = 2.0;
             // the first frame is the main frame
             let pixmap = typst::export::render(frames.first().unwrap(), ppi, Color::WHITE);
-            // Get a random filename with length 22
-            let filename = format!("{}.png", rand::thread_rng()
-                .sample_iter(&rand::distributions::Alphanumeric)
-                .take(22)
-                .map(char::from)
-                .collect::<String>());
+            // Get a random filename by md5
+            let filename = format!("{:x}.png", md5::compute(source.as_str()));
             let path = Path::new("../assets/docs").join(filename.clone());
             let _ = pixmap.save_png(path).map_err(|_| "failed to write PNG file");
             Html::new(format!(

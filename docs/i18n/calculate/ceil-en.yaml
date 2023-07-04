@@ -1,0 +1,54 @@
+route: /docs/reference/calculate/ceil/
+title: Round up
+description: Documentation for the `ceil` function.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: example
+  name: Example
+  children: []
+- id: parameters
+  name: Parameters
+  children:
+  - id: parameters-value
+    name: value
+    children: []
+body:
+  kind: func
+  content:
+    path:
+    - calc
+    - ceil
+    display: Round up
+    keywords: null
+    oneliner: Rounds a number up to the nearest integer.
+    element: false
+    details: |-
+      <p>Rounds a number up to the nearest integer.</p>
+      <p>If the number is already an integer, it is returned unchanged.</p>
+      <h2 id="example">Example</h2>
+      <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">assert</span><span class="typ-punct">(</span>calc<span class="typ-punct">.</span><span class="typ-func">ceil</span><span class="typ-punct">(</span><span class="typ-num">3.14</span><span class="typ-punct">)</span> <span class="typ-op">==</span> <span class="typ-num">4</span><span class="typ-punct">)</span>
+      <span class="typ-func">#</span><span class="typ-func">assert</span><span class="typ-punct">(</span>calc<span class="typ-punct">.</span><span class="typ-func">ceil</span><span class="typ-punct">(</span><span class="typ-num">3</span><span class="typ-punct">)</span> <span class="typ-op">==</span> <span class="typ-num">3</span><span class="typ-punct">)</span>
+      <span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">ceil</span><span class="typ-punct">(</span><span class="typ-num">500.1</span><span class="typ-punct">)</span>
+      </code></pre><div class="preview"><img src="/assets/docs/69b2ab694eb4909e595d80cf4942bd27.png" alt="Preview" width="480" height="190"/></div></div>
+    params:
+    - name: value
+      details: <p>The number to round up.</p>
+      example: null
+      types:
+      - integer
+      - float
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: false
+      settable: false
+    returns:
+    - integer
+    methods: []
+    scope: []
+children: []

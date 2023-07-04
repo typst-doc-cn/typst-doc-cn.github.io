@@ -1,0 +1,53 @@
+route: /docs/reference/data-loading/read/
+title: Read
+description: Documentation for the `read` function.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: example
+  name: Example
+  children: []
+- id: parameters
+  name: Parameters
+  children:
+  - id: parameters-path
+    name: path
+    children: []
+body:
+  kind: func
+  content:
+    path:
+    - read
+    display: Read
+    keywords: null
+    oneliner: Reads plain text from a file.
+    element: false
+    details: |-
+      <p>Reads plain text from a file.</p>
+      <p>The file will be read and returned as a string.</p>
+      <h2 id="example">Example</h2>
+      <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> text <span class="typ-op">=</span> <span class="typ-func">read</span><span class="typ-punct">(</span><span class="typ-str">&quot;data.html&quot;</span><span class="typ-punct">)</span>
+
+      An example for a HTML file:<span class="typ-escape">\</span>
+      <span class="typ-func">#</span><span class="typ-func">raw</span><span class="typ-punct">(</span>text<span class="typ-punct">,</span> lang<span class="typ-punct">:</span> <span class="typ-str">&quot;html&quot;</span><span class="typ-punct">)</span>
+      </code></pre><div class="preview"><img src="/assets/docs/68ffb1fb420c69dec8b2d299ed40cadc.png" alt="Preview" width="480" height="190"/></div></div>
+    params:
+    - name: path
+      details: <p>Path to a file.</p>
+      example: null
+      types:
+      - string
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: false
+      settable: false
+    returns:
+    - string
+    methods: []
+    scope: []
+children: []

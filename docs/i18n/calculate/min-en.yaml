@@ -1,0 +1,53 @@
+route: /docs/reference/calculate/min/
+title: Minimum
+description: Documentation for the `min` function.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: example
+  name: Example
+  children: []
+- id: parameters
+  name: Parameters
+  children:
+  - id: parameters-values
+    name: values
+    children: []
+body:
+  kind: func
+  content:
+    path:
+    - calc
+    - min
+    display: Minimum
+    keywords: null
+    oneliner: Determines the minimum of a sequence of values.
+    element: false
+    details: |-
+      <p>Determines the minimum of a sequence of values.</p>
+      <h2 id="example">Example</h2>
+      <div class="previewed-code"><pre><code><span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">min</span><span class="typ-punct">(</span><span class="typ-num">1</span><span class="typ-punct">,</span> <span class="typ-op">-</span><span class="typ-num">3</span><span class="typ-punct">,</span> <span class="typ-op">-</span><span class="typ-num">5</span><span class="typ-punct">,</span> <span class="typ-num">20</span><span class="typ-punct">,</span> <span class="typ-num">3</span><span class="typ-punct">,</span> <span class="typ-num">6</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
+      <span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">min</span><span class="typ-punct">(</span><span class="typ-str">&quot;typst&quot;</span><span class="typ-punct">,</span> <span class="typ-str">&quot;in&quot;</span><span class="typ-punct">,</span> <span class="typ-str">&quot;beta&quot;</span><span class="typ-punct">)</span>
+      </code></pre><div class="preview"><img src="/assets/docs/fb22eeb2bde8fae1b41f607e630f4657.png" alt="Preview" width="480" height="190"/></div></div>
+    params:
+    - name: values
+      details: |-
+        <p>The sequence of values from which to extract the minimum.
+        Must not be empty.</p>
+      example: null
+      types:
+      - any
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: true
+      settable: false
+    returns:
+    - any
+    methods: []
+    scope: []
+children: []

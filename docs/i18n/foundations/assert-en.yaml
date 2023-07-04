@@ -1,0 +1,218 @@
+route: /docs/reference/foundations/assert/
+title: Assert
+description: Documentation for the `assert` function.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: example
+  name: Example
+  children: []
+- id: parameters
+  name: Parameters
+  children:
+  - id: parameters-condition
+    name: condition
+    children: []
+  - id: parameters-message
+    name: message
+    children: []
+- id: assert-eq
+  name: Assert Equals
+  children:
+  - id: example
+    name: Example
+    children: []
+  - id: assert-eq-parameters
+    name: Parameters
+    children:
+    - id: assert-eq-parameters-left
+      name: left
+      children: []
+    - id: assert-eq-parameters-right
+      name: right
+      children: []
+    - id: assert-eq-parameters-message
+      name: message
+      children: []
+- id: assert-ne
+  name: Assert Not Equals
+  children:
+  - id: example
+    name: Example
+    children: []
+  - id: assert-ne-parameters
+    name: Parameters
+    children:
+    - id: assert-ne-parameters-left
+      name: left
+      children: []
+    - id: assert-ne-parameters-right
+      name: right
+      children: []
+    - id: assert-ne-parameters-message
+      name: message
+      children: []
+body:
+  kind: func
+  content:
+    path:
+    - assert
+    display: Assert
+    keywords: null
+    oneliner: Ensures that a condition is fulfilled.
+    element: false
+    details: |-
+      <p>Ensures that a condition is fulfilled.</p>
+      <p>Fails with an error if the condition is not fulfilled. Does not
+      produce any output in the document.</p>
+      <p>If you wish to test equality between two values, see
+      <a href="/docs/reference/foundations/assert/#assert-eq"><code>assert.eq</code></a> and <a href="/docs/reference/foundations/assert/#assert-ne"><code>assert.ne</code></a>.</p>
+      <h2 id="example">Example</h2>
+      <pre><code><span class="typ-func">#</span><span class="typ-func">assert</span><span class="typ-punct">(</span><span class="typ-num">1</span> <span class="typ-op">&lt;</span> <span class="typ-num">2</span><span class="typ-punct">,</span> message<span class="typ-punct">:</span> <span class="typ-str">&quot;math broke&quot;</span><span class="typ-punct">)</span>
+      </code></pre>
+    params:
+    - name: condition
+      details: <p>The condition that must be true for the assertion to pass.</p>
+      example: null
+      types:
+      - boolean
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: false
+      settable: false
+    - name: message
+      details: <p>The error message when the assertion fails.</p>
+      example: null
+      types:
+      - none
+      - string
+      strings: []
+      default: null
+      positional: false
+      named: true
+      required: true
+      variadic: false
+      settable: false
+    returns: []
+    methods: []
+    scope:
+    - path:
+      - assert
+      - eq
+      display: Assert Equals
+      keywords: null
+      oneliner: Ensures that two values are equal.
+      element: false
+      details: |-
+        <p>Ensures that two values are equal.</p>
+        <p>Fails with an error if the first value is not equal to the second. Does not
+        produce any output in the document.</p>
+        <h2 id="example">Example</h2>
+        <pre><code><span class="typ-pol">#</span><span class="typ-pol">assert</span><span class="typ-punct">.</span><span class="typ-func">eq</span><span class="typ-punct">(</span><span class="typ-num">10</span><span class="typ-punct">,</span> <span class="typ-num">10</span><span class="typ-punct">)</span>
+        </code></pre>
+      params:
+      - name: left
+        details: <p>The first value to compare.</p>
+        example: null
+        types:
+        - any
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      - name: right
+        details: <p>The second value to compare.</p>
+        example: null
+        types:
+        - any
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      - name: message
+        details: |-
+          <p>An optional message to display on error instead of the representations
+          of the compared values.</p>
+        example: null
+        types:
+        - none
+        - string
+        strings: []
+        default: null
+        positional: false
+        named: true
+        required: true
+        variadic: false
+        settable: false
+      returns: []
+      methods: []
+      scope: []
+    - path:
+      - assert
+      - ne
+      display: Assert Not Equals
+      keywords: null
+      oneliner: Ensures that two values are not equal.
+      element: false
+      details: |-
+        <p>Ensures that two values are not equal.</p>
+        <p>Fails with an error if the first value is equal to the second. Does not
+        produce any output in the document.</p>
+        <h2 id="example">Example</h2>
+        <pre><code><span class="typ-pol">#</span><span class="typ-pol">assert</span><span class="typ-punct">.</span><span class="typ-func">ne</span><span class="typ-punct">(</span><span class="typ-num">3</span><span class="typ-punct">,</span> <span class="typ-num">4</span><span class="typ-punct">)</span>
+        </code></pre>
+      params:
+      - name: left
+        details: <p>The first value to compare.</p>
+        example: null
+        types:
+        - any
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      - name: right
+        details: <p>The second value to compare.</p>
+        example: null
+        types:
+        - any
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      - name: message
+        details: |-
+          <p>An optional message to display on error instead of the representations
+          of the compared values.</p>
+        example: null
+        types:
+        - none
+        - string
+        strings: []
+        default: null
+        positional: false
+        named: true
+        required: true
+        variadic: false
+        settable: false
+      returns: []
+      methods: []
+      scope: []
+children: []

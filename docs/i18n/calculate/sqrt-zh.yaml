@@ -1,0 +1,52 @@
+route: /docs/reference/calculate/sqrt/
+title: Square Root
+description: Documentation for the `sqrt` function.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: example
+  name: Example
+  children: []
+- id: parameters
+  name: Parameters
+  children:
+  - id: parameters-value
+    name: value
+    children: []
+body:
+  kind: func
+  content:
+    path:
+    - calc
+    - sqrt
+    display: Square Root
+    keywords: null
+    oneliner: Extracts the square root of a number.
+    element: false
+    details: |-
+      <p>Extracts the square root of a number.</p>
+      <h2 id="example">Example</h2>
+      <div class="previewed-code"><pre><code><span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">sqrt</span><span class="typ-punct">(</span><span class="typ-num">16</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
+      <span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">sqrt</span><span class="typ-punct">(</span><span class="typ-num">2.5</span><span class="typ-punct">)</span>
+      </code></pre><div class="preview"><img src="/assets/docs/5b931ca2767047a142be8cc72f87d802.png" alt="Preview" width="480" height="190"/></div></div>
+    params:
+    - name: value
+      details: <p>The number whose square root to calculate. Must be non-negative.</p>
+      example: null
+      types:
+      - integer
+      - float
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: false
+      settable: false
+    returns:
+    - float
+    methods: []
+    scope: []
+children: []

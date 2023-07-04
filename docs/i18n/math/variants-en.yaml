@@ -1,0 +1,258 @@
+route: /docs/reference/math/variants/
+title: Variants
+description: Documentation for variants group of functions.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: serif
+  name: Serif
+  children:
+  - id: serif-parameters
+    name: Parameters
+    children:
+    - id: serif-parameters-body
+      name: body
+      children: []
+- id: sans
+  name: Sans-serif
+  children:
+  - id: sans-example
+    name: Example
+    children: []
+  - id: sans-parameters
+    name: Parameters
+    children:
+    - id: sans-parameters-body
+      name: body
+      children: []
+- id: frak
+  name: Fraktur
+  children:
+  - id: frak-example
+    name: Example
+    children: []
+  - id: frak-parameters
+    name: Parameters
+    children:
+    - id: frak-parameters-body
+      name: body
+      children: []
+- id: mono
+  name: Monospace
+  children:
+  - id: mono-example
+    name: Example
+    children: []
+  - id: mono-parameters
+    name: Parameters
+    children:
+    - id: mono-parameters-body
+      name: body
+      children: []
+- id: bb
+  name: Blackboard Bold
+  children:
+  - id: bb-example
+    name: Example
+    children: []
+  - id: bb-parameters
+    name: Parameters
+    children:
+    - id: bb-parameters-body
+      name: body
+      children: []
+- id: cal
+  name: Calligraphic
+  children:
+  - id: cal-example
+    name: Example
+    children: []
+  - id: cal-parameters
+    name: Parameters
+    children:
+    - id: cal-parameters-body
+      name: body
+      children: []
+body:
+  kind: funcs
+  content:
+    name: variants
+    display: Variants
+    details: |-
+      <p>Alternate typefaces within formulas.</p>
+      <p>These functions are distinct from the <a href="/docs/reference/text/text/"><code>text</code></a> function because
+      math fonts contain multiple variants of each letter.</p>
+    functions:
+    - path:
+      - serif
+      display: Serif
+      keywords: null
+      oneliner: Serif (roman) font style in math.
+      element: false
+      details: |-
+        <p>Serif (roman) font style in math.</p>
+        <p>This is already the default.</p>
+      params:
+      - name: body
+        details: <p>The content to style.</p>
+        example: null
+        types:
+        - content
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      returns:
+      - content
+      methods: []
+      scope: []
+    - path:
+      - sans
+      display: Sans-serif
+      keywords: null
+      oneliner: Sans-serif font style in math.
+      element: false
+      details: |-
+        <p>Sans-serif font style in math.</p>
+        <h3 id="sans-example">Example</h3>
+        <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">sans</span><span class="typ-punct">(</span>A B C<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
+        </code></pre><div class="preview"><img src="/assets/docs/a3e118d9df47ac4a4950d912ca8980ca.png" alt="Preview" width="480" height="190"/></div></div>
+      params:
+      - name: body
+        details: <p>The content to style.</p>
+        example: null
+        types:
+        - content
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      returns:
+      - content
+      methods: []
+      scope: []
+    - path:
+      - frak
+      display: Fraktur
+      keywords: null
+      oneliner: Fraktur font style in math.
+      element: false
+      details: |-
+        <p>Fraktur font style in math.</p>
+        <h3 id="frak-example">Example</h3>
+        <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">frak</span><span class="typ-punct">(</span>P<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
+        </code></pre><div class="preview"><img src="/assets/docs/1b1d41aefeb886afda3e40c16eb413c4.png" alt="Preview" width="480" height="190"/></div></div>
+      params:
+      - name: body
+        details: <p>The content to style.</p>
+        example: null
+        types:
+        - content
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      returns:
+      - content
+      methods: []
+      scope: []
+    - path:
+      - mono
+      display: Monospace
+      keywords: null
+      oneliner: Monospace font style in math.
+      element: false
+      details: |-
+        <p>Monospace font style in math.</p>
+        <h3 id="mono-example">Example</h3>
+        <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">mono</span><span class="typ-punct">(</span>x + y = z<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
+        </code></pre><div class="preview"><img src="/assets/docs/22a327f021c4135a3c29e51704891040.png" alt="Preview" width="480" height="190"/></div></div>
+      params:
+      - name: body
+        details: <p>The content to style.</p>
+        example: null
+        types:
+        - content
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      returns:
+      - content
+      methods: []
+      scope: []
+    - path:
+      - bb
+      display: Blackboard Bold
+      keywords: null
+      oneliner: Blackboard bold (double-struck) font style in math.
+      element: false
+      details: |-
+        <p>Blackboard bold (double-struck) font style in math.</p>
+        <p>For uppercase latin letters, blackboard bold is additionally available
+        through <a href="/docs/reference/symbols/sym/">symbols</a> of the form <code>NN</code> and <code>RR</code>.</p>
+        <h3 id="bb-example">Example</h3>
+        <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">bb</span><span class="typ-punct">(</span>b<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
+        <span class="typ-math-delim">$</span> <span class="typ-func">bb</span><span class="typ-punct">(</span>N<span class="typ-punct">)</span> = <span class="typ-pol">NN</span> <span class="typ-math-delim">$</span>
+        <span class="typ-math-delim">$</span> f: <span class="typ-pol">NN</span> <span class="typ-escape">-&gt;</span> <span class="typ-pol">RR</span> <span class="typ-math-delim">$</span>
+        </code></pre><div class="preview"><img src="/assets/docs/fbfd132e6d631cb8d11f762f30182469.png" alt="Preview" width="480" height="190"/></div></div>
+      params:
+      - name: body
+        details: <p>The content to style.</p>
+        example: null
+        types:
+        - content
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      returns:
+      - content
+      methods: []
+      scope: []
+    - path:
+      - cal
+      display: Calligraphic
+      keywords: null
+      oneliner: Calligraphic font style in math.
+      element: false
+      details: |-
+        <p>Calligraphic font style in math.</p>
+        <h3 id="cal-example">Example</h3>
+        <div class="previewed-code"><pre><code>Let <span class="typ-math-delim">$</span><span class="typ-func">cal</span><span class="typ-punct">(</span>P<span class="typ-punct">)</span><span class="typ-math-delim">$</span> be the set of <span class="typ-escape">...</span>
+        </code></pre><div class="preview"><img src="/assets/docs/4076bf054496eaa35f7325c6d304bf36.png" alt="Preview" width="480" height="190"/></div></div>
+      params:
+      - name: body
+        details: <p>The content to style.</p>
+        example: null
+        types:
+        - content
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      returns:
+      - content
+      methods: []
+      scope: []
+children: []

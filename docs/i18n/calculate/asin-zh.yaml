@@ -1,0 +1,52 @@
+route: /docs/reference/calculate/asin/
+title: Arcsine
+description: Documentation for the `asin` function.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: example
+  name: Example
+  children: []
+- id: parameters
+  name: Parameters
+  children:
+  - id: parameters-value
+    name: value
+    children: []
+body:
+  kind: func
+  content:
+    path:
+    - calc
+    - asin
+    display: Arcsine
+    keywords: null
+    oneliner: Calculates the arcsine of a number.
+    element: false
+    details: |-
+      <p>Calculates the arcsine of a number.</p>
+      <h2 id="example">Example</h2>
+      <div class="previewed-code"><pre><code><span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">asin</span><span class="typ-punct">(</span><span class="typ-num">0</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
+      <span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">asin</span><span class="typ-punct">(</span><span class="typ-num">1</span><span class="typ-punct">)</span>
+      </code></pre><div class="preview"><img src="/assets/docs/4e3534f3677072cae71d2151b1ea3cca.png" alt="Preview" width="480" height="190"/></div></div>
+    params:
+    - name: value
+      details: <p>The number whose arcsine to calculate. Must be between -1 and 1.</p>
+      example: null
+      types:
+      - integer
+      - float
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: false
+      settable: false
+    returns:
+    - angle
+    methods: []
+    scope: []
+children: []

@@ -1,0 +1,54 @@
+route: /docs/reference/calculate/tanh/
+title: Hyperbolic tangent
+description: Documentation for the `tanh` function.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: example
+  name: Example
+  children: []
+- id: parameters
+  name: Parameters
+  children:
+  - id: parameters-angle
+    name: angle
+    children: []
+body:
+  kind: func
+  content:
+    path:
+    - calc
+    - tanh
+    display: Hyperbolic tangent
+    keywords: null
+    oneliner: Calculates the hyperbolic tangent of an angle.
+    element: false
+    details: |-
+      <p>Calculates the hyperbolic tangent of an angle.</p>
+      <p>When called with an integer or a float, they will be interpreted as radians.</p>
+      <h2 id="example">Example</h2>
+      <div class="previewed-code"><pre><code><span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">tanh</span><span class="typ-punct">(</span><span class="typ-num">0</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
+      <span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">tanh</span><span class="typ-punct">(</span><span class="typ-num">45deg</span><span class="typ-punct">)</span>
+      </code></pre><div class="preview"><img src="/assets/docs/2019097194e2b6d5c9c31ebb8ca6143d.png" alt="Preview" width="480" height="190"/></div></div>
+    params:
+    - name: angle
+      details: <p>The angle whose hyperbolic tangent to calculate.</p>
+      example: null
+      types:
+      - integer
+      - float
+      - angle
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: false
+      settable: false
+    returns:
+    - float
+    methods: []
+    scope: []
+children: []

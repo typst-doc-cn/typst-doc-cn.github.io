@@ -1,0 +1,69 @@
+route: /docs/reference/calculate/atan2/
+title: Four-quadrant Arctangent
+description: Documentation for the `atan2` function.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: example
+  name: Example
+  children: []
+- id: parameters
+  name: Parameters
+  children:
+  - id: parameters-x
+    name: x
+    children: []
+  - id: parameters-y
+    name: y
+    children: []
+body:
+  kind: func
+  content:
+    path:
+    - calc
+    - atan2
+    display: Four-quadrant Arctangent
+    keywords: null
+    oneliner: Calculates the four-quadrant arctangent of a coordinate.
+    element: false
+    details: |-
+      <p>Calculates the four-quadrant arctangent of a coordinate.</p>
+      <p>The arguments are <code>(x, y)</code>, not <code>(y, x)</code>.</p>
+      <h2 id="example">Example</h2>
+      <div class="previewed-code"><pre><code><span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">atan2</span><span class="typ-punct">(</span><span class="typ-num">1</span><span class="typ-punct">,</span> <span class="typ-num">1</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
+      <span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">atan2</span><span class="typ-punct">(</span><span class="typ-op">-</span><span class="typ-num">2</span><span class="typ-punct">,</span> <span class="typ-op">-</span><span class="typ-num">3</span><span class="typ-punct">)</span>
+      </code></pre><div class="preview"><img src="/assets/docs/d804133f4d02ee61b3a7f5a4ad5f0a4c.png" alt="Preview" width="480" height="190"/></div></div>
+    params:
+    - name: x
+      details: <p>The X coordinate.</p>
+      example: null
+      types:
+      - integer
+      - float
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: false
+      settable: false
+    - name: y
+      details: <p>The Y coordinate.</p>
+      example: null
+      types:
+      - integer
+      - float
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: false
+      settable: false
+    returns:
+    - angle
+    methods: []
+    scope: []
+children: []

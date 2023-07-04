@@ -1,0 +1,55 @@
+route: /docs/reference/foundations/type/
+title: Type
+description: Documentation for the `type` function.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: example
+  name: Example
+  children: []
+- id: parameters
+  name: Parameters
+  children:
+  - id: parameters-value
+    name: value
+    children: []
+body:
+  kind: func
+  content:
+    path:
+    - type
+    display: Type
+    keywords: null
+    oneliner: Determines the type of a value.
+    element: false
+    details: |-
+      <p>Determines the type of a value.</p>
+      <p>Returns the name of the value's type.</p>
+      <h2 id="example">Example</h2>
+      <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">type</span><span class="typ-punct">(</span><span class="typ-num">12</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
+      <span class="typ-func">#</span><span class="typ-func">type</span><span class="typ-punct">(</span><span class="typ-num">14.7</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
+      <span class="typ-func">#</span><span class="typ-func">type</span><span class="typ-punct">(</span><span class="typ-str">&quot;hello&quot;</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
+      <span class="typ-func">#</span><span class="typ-func">type</span><span class="typ-punct">(</span><span class="typ-key">none</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
+      <span class="typ-func">#</span><span class="typ-func">type</span><span class="typ-punct">(</span><span class="typ-punct">[</span>Hi<span class="typ-punct">]</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
+      <span class="typ-func">#</span><span class="typ-func">type</span><span class="typ-punct">(</span>x <span class="typ-op">=&gt;</span> x <span class="typ-op">+</span> <span class="typ-num">1</span><span class="typ-punct">)</span>
+      </code></pre><div class="preview"><img src="/assets/docs/d99d936140d932a70e684651d59f35b3.png" alt="Preview" width="480" height="190"/></div></div>
+    params:
+    - name: value
+      details: <p>The value whose type's to determine.</p>
+      example: null
+      types:
+      - any
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: false
+      settable: false
+    returns:
+    - string
+    methods: []
+    scope: []
+children: []

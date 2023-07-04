@@ -1,0 +1,85 @@
+route: /docs/reference/text/smartquote/
+title: Smart Quote
+description: Documentation for the `smartquote` function.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: example
+  name: Example
+  children: []
+- id: syntax
+  name: Syntax
+  children: []
+- id: parameters
+  name: Parameters
+  children:
+  - id: parameters-double
+    name: double
+    children: []
+  - id: parameters-enabled
+    name: enabled
+    children: []
+body:
+  kind: func
+  content:
+    path:
+    - smartquote
+    display: Smart Quote
+    keywords: null
+    oneliner: A language-aware quote that reacts to its context.
+    element: true
+    details: |-
+      <p>A language-aware quote that reacts to its context.</p>
+      <p>Automatically turns into an appropriate opening or closing quote based on
+      the active <a href="/docs/reference/text/text/#parameters-lang">text language</a>.</p>
+      <h2 id="example">Example</h2>
+      <div class="previewed-code"><pre><code>&quot;This is in quotes.&quot;
+
+      <span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>lang<span class="typ-punct">:</span> <span class="typ-str">&quot;de&quot;</span><span class="typ-punct">)</span>
+      &quot;Das ist in Anführungszeichen.&quot;
+
+      <span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>lang<span class="typ-punct">:</span> <span class="typ-str">&quot;fr&quot;</span><span class="typ-punct">)</span>
+      &quot;C&#39;est entre guillemets.&quot;
+      </code></pre><div class="preview"><img src="/assets/docs/d8ae0e27ceabe7db27a5d570785d0e09.png" alt="Preview" width="480" height="190"/></div></div>
+      <h2 id="syntax">Syntax</h2>
+      <p>This function also has dedicated syntax: The normal quote characters
+      (<code>'</code> and <code>&quot;</code>). Typst automatically makes your quotes smart.</p>
+    params:
+    - name: double
+      details: <p>Whether this should be a double quote.</p>
+      example: null
+      types:
+      - boolean
+      strings: []
+      default: <code><span class="typ-key">true</span></code>
+      positional: false
+      named: true
+      required: false
+      variadic: false
+      settable: true
+    - name: enabled
+      details: |-
+        <p>Whether smart quotes are enabled.</p>
+        <p>To disable smartness for a single quote, you can also escape it with a
+        backslash.</p>
+      example: |-
+        <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">smartquote</span><span class="typ-punct">(</span>enabled<span class="typ-punct">:</span> <span class="typ-key">false</span><span class="typ-punct">)</span>
+
+        These are &quot;dumb&quot; quotes.
+        </code></pre><div class="preview"><img src="/assets/docs/97534d7145e2ba0bc7efaabe227e3da0.png" alt="Preview" width="480" height="190"/></div></div>
+      types:
+      - boolean
+      strings: []
+      default: <code><span class="typ-key">true</span></code>
+      positional: false
+      named: true
+      required: false
+      variadic: false
+      settable: true
+    returns:
+    - content
+    methods: []
+    scope: []
+children: []

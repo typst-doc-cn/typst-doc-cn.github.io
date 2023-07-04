@@ -1,0 +1,53 @@
+route: /docs/reference/text/lower/
+title: Lowercase
+description: Documentation for the `lower` function.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: example
+  name: Example
+  children: []
+- id: parameters
+  name: Parameters
+  children:
+  - id: parameters-text
+    name: text
+    children: []
+body:
+  kind: func
+  content:
+    path:
+    - lower
+    display: Lowercase
+    keywords: null
+    oneliner: Converts text or content to lowercase.
+    element: false
+    details: |-
+      <p>Converts text or content to lowercase.</p>
+      <h2 id="example">Example</h2>
+      <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">lower</span><span class="typ-punct">(</span><span class="typ-str">&quot;ABC&quot;</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
+      <span class="typ-func">#</span><span class="typ-func">lower</span><span class="typ-punct">[</span><span class="typ-strong">*My Text*</span><span class="typ-punct">]</span> <span class="typ-escape">\</span>
+      <span class="typ-func">#</span><span class="typ-func">lower</span><span class="typ-punct">[</span>already low<span class="typ-punct">]</span>
+      </code></pre><div class="preview"><img src="/assets/docs/50c436cfa73661f9da838fdf204eabab.png" alt="Preview" width="480" height="190"/></div></div>
+    params:
+    - name: text
+      details: <p>The text to convert to lowercase.</p>
+      example: null
+      types:
+      - string
+      - content
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: false
+      settable: false
+    returns:
+    - string
+    - content
+    methods: []
+    scope: []
+children: []

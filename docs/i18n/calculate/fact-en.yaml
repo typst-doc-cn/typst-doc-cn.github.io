@@ -1,0 +1,50 @@
+route: /docs/reference/calculate/fact/
+title: Factorial
+description: Documentation for the `fact` function.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: example
+  name: Example
+  children: []
+- id: parameters
+  name: Parameters
+  children:
+  - id: parameters-number
+    name: number
+    children: []
+body:
+  kind: func
+  content:
+    path:
+    - calc
+    - fact
+    display: Factorial
+    keywords: null
+    oneliner: Calculates the factorial of a number.
+    element: false
+    details: |-
+      <p>Calculates the factorial of a number.</p>
+      <h2 id="example">Example</h2>
+      <div class="previewed-code"><pre><code><span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">fact</span><span class="typ-punct">(</span><span class="typ-num">5</span><span class="typ-punct">)</span>
+      </code></pre><div class="preview"><img src="/assets/docs/10eb9ad85b719fb4313dbb869b5f20ad.png" alt="Preview" width="480" height="190"/></div></div>
+    params:
+    - name: number
+      details: <p>The number whose factorial to calculate. Must be non-negative.</p>
+      example: null
+      types:
+      - integer
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: false
+      settable: false
+    returns:
+    - integer
+    methods: []
+    scope: []
+children: []

@@ -1,0 +1,240 @@
+route: /docs/reference/meta/figure/
+title: Figure
+description: Documentation for the `figure` function.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: examples
+  name: Examples
+  children: []
+- id: modifying-appearance
+  name: Modifying Appearance
+  children: []
+- id: parameters
+  name: Parameters
+  children:
+  - id: parameters-body
+    name: body
+    children: []
+  - id: parameters-caption
+    name: caption
+    children: []
+  - id: parameters-kind
+    name: kind
+    children: []
+  - id: parameters-supplement
+    name: supplement
+    children: []
+  - id: parameters-numbering
+    name: numbering
+    children: []
+  - id: parameters-gap
+    name: gap
+    children: []
+  - id: parameters-outlined
+    name: outlined
+    children: []
+body:
+  kind: func
+  content:
+    path:
+    - figure
+    display: Figure
+    keywords: null
+    oneliner: A figure with an optional caption.
+    element: true
+    details: |-
+      <p>A figure with an optional caption.</p>
+      <p>Automatically detects its contents to select the correct counting track.
+      For example, figures containing images will be numbered separately from
+      figures containing tables.</p>
+      <h2 id="examples">Examples</h2>
+      <p>The example below shows a basic figure with an image:</p>
+      <div class="previewed-code"><pre><code><span class="typ-ref">@glacier</span> shows a glacier. Glaciers
+      are complex systems.
+
+      <span class="typ-func">#</span><span class="typ-func">figure</span><span class="typ-punct">(</span>
+        <span class="typ-func">image</span><span class="typ-punct">(</span><span class="typ-str">&quot;glacier.jpg&quot;</span><span class="typ-punct">,</span> width<span class="typ-punct">:</span> <span class="typ-num">80%</span><span class="typ-punct">)</span><span class="typ-punct">,</span>
+        caption<span class="typ-punct">:</span> <span class="typ-punct">[</span>A curious figure.<span class="typ-punct">]</span><span class="typ-punct">,</span>
+      <span class="typ-punct">)</span> <span class="typ-label">&lt;glacier&gt;</span>
+      </code></pre><div class="preview"><img src="/assets/docs/b09671cdf78ea3377e94f6b859169380.png" alt="Preview" width="480" height="190"/></div></div>
+      <p>You can also insert <a href="/docs/reference/layout/table/">tables</a> into figures to give them a
+      caption. The figure will detect this and automatically use a separate
+      counter.</p>
+      <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">figure</span><span class="typ-punct">(</span>
+        <span class="typ-func">table</span><span class="typ-punct">(</span>
+          columns<span class="typ-punct">:</span> <span class="typ-num">4</span><span class="typ-punct">,</span>
+          <span class="typ-punct">[</span>t<span class="typ-punct">]</span><span class="typ-punct">,</span> <span class="typ-punct">[</span>1<span class="typ-punct">]</span><span class="typ-punct">,</span> <span class="typ-punct">[</span>2<span class="typ-punct">]</span><span class="typ-punct">,</span> <span class="typ-punct">[</span>3<span class="typ-punct">]</span><span class="typ-punct">,</span>
+          <span class="typ-punct">[</span>y<span class="typ-punct">]</span><span class="typ-punct">,</span> <span class="typ-punct">[</span>0.3s<span class="typ-punct">]</span><span class="typ-punct">,</span> <span class="typ-punct">[</span>0.4s<span class="typ-punct">]</span><span class="typ-punct">,</span> <span class="typ-punct">[</span>0.8s<span class="typ-punct">]</span><span class="typ-punct">,</span>
+        <span class="typ-punct">)</span><span class="typ-punct">,</span>
+        caption<span class="typ-punct">:</span> <span class="typ-punct">[</span>Timing results<span class="typ-punct">]</span><span class="typ-punct">,</span>
+      <span class="typ-punct">)</span>
+      </code></pre><div class="preview"><img src="/assets/docs/a387ba00bc1048db021396309eaa9db6.png" alt="Preview" width="480" height="190"/></div></div>
+      <p>This behaviour can be overridden by explicitly specifying the figure's
+      <code>kind</code>. All figures of the same kind share a common counter.</p>
+      <h2 id="modifying-appearance">Modifying the appearance</h2>
+      <p>You can completely customize the look of your figures with a <a href="/docs/reference/styling/#show-rules">show
+      rule</a>. In the example below, we show the figure's
+      caption above its body and display its supplement and counter after the
+      caption.</p>
+      <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">show</span> <span class="typ-func">figure</span><span class="typ-punct">:</span> it <span class="typ-op">=&gt;</span> <span class="typ-func">align</span><span class="typ-punct">(</span>center<span class="typ-punct">)</span><span class="typ-punct">[</span>
+        <span class="typ-pol">#</span><span class="typ-pol">it</span><span class="typ-punct">.</span><span class="typ-pol">caption</span> |
+        <span class="typ-func">#</span><span class="typ-func">emph</span><span class="typ-punct">[</span>
+          <span class="typ-pol">#</span><span class="typ-pol">it</span><span class="typ-punct">.</span><span class="typ-pol">supplement</span>
+          <span class="typ-pol">#</span><span class="typ-pol">it</span><span class="typ-punct">.</span><span class="typ-pol">counter</span><span class="typ-punct">.</span><span class="typ-func">display</span><span class="typ-punct">(</span>it<span class="typ-punct">.</span>numbering<span class="typ-punct">)</span>
+        <span class="typ-punct">]</span>
+        <span class="typ-func">#</span><span class="typ-func">v</span><span class="typ-punct">(</span><span class="typ-num">10pt</span><span class="typ-punct">,</span> weak<span class="typ-punct">:</span> <span class="typ-key">true</span><span class="typ-punct">)</span>
+        <span class="typ-pol">#</span><span class="typ-pol">it</span><span class="typ-punct">.</span><span class="typ-pol">body</span>
+      <span class="typ-punct">]</span>
+
+      <span class="typ-func">#</span><span class="typ-func">figure</span><span class="typ-punct">(</span>
+        <span class="typ-func">image</span><span class="typ-punct">(</span><span class="typ-str">&quot;molecular.jpg&quot;</span><span class="typ-punct">,</span> width<span class="typ-punct">:</span> <span class="typ-num">80%</span><span class="typ-punct">)</span><span class="typ-punct">,</span>
+        caption<span class="typ-punct">:</span> <span class="typ-punct">[</span>
+          The molecular testing pipeline.
+        <span class="typ-punct">]</span><span class="typ-punct">,</span>
+      <span class="typ-punct">)</span>
+      </code></pre><div class="preview"><img src="/assets/docs/ad612a3464361b0f88354af6c0cf1a5f.png" alt="Preview" width="480" height="190"/></div></div>
+      <p>If your figure is too large and its contents are breakable across pages
+      (e.g. if it contains a large table), then you can make the figure breakable
+      across pages as well by using <code>#show figure: set block(breakable: true)</code>
+      (see the <a href="/docs/reference/layout/block/">block</a> documentation for more information).</p>
+    params:
+    - name: body
+      details: <p>The content of the figure. Often, an <a href="/docs/reference/visualize/image/">image</a>.</p>
+      example: null
+      types:
+      - content
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: false
+      settable: false
+    - name: caption
+      details: <p>The figure's caption.</p>
+      example: null
+      types:
+      - none
+      - content
+      strings: []
+      default: <code><span class="typ-key">none</span></code>
+      positional: false
+      named: true
+      required: false
+      variadic: false
+      settable: true
+    - name: kind
+      details: |-
+        <p>The kind of the figure this is.</p>
+        <p>If set to <code><span class="typ-key">auto</span></code>, the figure will try to automatically determine its
+        kind. All figures of the same kind share a common counter.</p>
+        <p>Setting this to something other than <code><span class="typ-key">auto</span></code> will override the
+        automatic detection. This can be useful if</p>
+        <ul>
+        <li>you wish to create a custom figure type that is not an
+        <a href="/docs/reference/visualize/image/">image</a>, a <a href="/docs/reference/layout/table/">table</a> or <a href="/docs/reference/text/raw/">code</a>,</li>
+        <li>you want to force the figure to use a specific counter regardless of
+        its content.</li>
+        </ul>
+        <p>You can set the kind to be an element function or a string. If you set
+        it to an element function that is not supported by the figure, you will
+        need to manually specify the figure's supplement.</p>
+      example: |-
+        <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">figure</span><span class="typ-punct">(</span>
+          <span class="typ-func">circle</span><span class="typ-punct">(</span>radius<span class="typ-punct">:</span> <span class="typ-num">10pt</span><span class="typ-punct">)</span><span class="typ-punct">,</span>
+          caption<span class="typ-punct">:</span> <span class="typ-punct">[</span>A curious atom.<span class="typ-punct">]</span><span class="typ-punct">,</span>
+          kind<span class="typ-punct">:</span> <span class="typ-str">&quot;atom&quot;</span><span class="typ-punct">,</span>
+          supplement<span class="typ-punct">:</span> <span class="typ-punct">[</span>Atom<span class="typ-punct">]</span><span class="typ-punct">,</span>
+        <span class="typ-punct">)</span>
+        </code></pre><div class="preview"><img src="/assets/docs/e5e5c8c9b4f2694a221ed02efeef52d4.png" alt="Preview" width="480" height="190"/></div></div>
+      types:
+      - auto
+      - string
+      - function
+      strings: []
+      default: <code><span class="typ-key">auto</span></code>
+      positional: false
+      named: true
+      required: false
+      variadic: false
+      settable: true
+    - name: supplement
+      details: |-
+        <p>The figure's supplement.</p>
+        <p>If set to <code><span class="typ-key">auto</span></code>, the figure will try to automatically determine the
+        correct supplement based on the <code>kind</code> and the active <a href="/docs/reference/text/text/#parameters-lang">text
+        language</a>. If you are using a custom figure type, you
+        will need to manually specify the supplement.</p>
+        <p>If a function is specified, it is passed the first descendant of the
+        specified <code>kind</code> (typically, the figure's body) and should return
+        content.</p>
+      example: |-
+        <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">figure</span><span class="typ-punct">(</span>
+          <span class="typ-punct">[</span>The contents of my figure!<span class="typ-punct">]</span><span class="typ-punct">,</span>
+          caption<span class="typ-punct">:</span> <span class="typ-punct">[</span>My custom figure<span class="typ-punct">]</span><span class="typ-punct">,</span>
+          supplement<span class="typ-punct">:</span> <span class="typ-punct">[</span>Bar<span class="typ-punct">]</span><span class="typ-punct">,</span>
+          kind<span class="typ-punct">:</span> <span class="typ-str">&quot;foo&quot;</span><span class="typ-punct">,</span>
+        <span class="typ-punct">)</span>
+        </code></pre><div class="preview"><img src="/assets/docs/353d5294387754232973549e77bc2f46.png" alt="Preview" width="480" height="190"/></div></div>
+      types:
+      - none
+      - auto
+      - content
+      - function
+      strings: []
+      default: <code><span class="typ-key">auto</span></code>
+      positional: false
+      named: true
+      required: false
+      variadic: false
+      settable: true
+    - name: numbering
+      details: |-
+        <p>How to number the figure. Accepts a
+        <a href="/docs/reference/meta/numbering/">numbering pattern or function</a>.</p>
+      example: null
+      types:
+      - none
+      - string
+      - function
+      strings: []
+      default: <code><span class="typ-str">&quot;1&quot;</span></code>
+      positional: false
+      named: true
+      required: false
+      variadic: false
+      settable: true
+    - name: gap
+      details: <p>The vertical gap between the body and caption.</p>
+      example: null
+      types:
+      - length
+      strings: []
+      default: <code><span class="typ-num">0.65em</span></code>
+      positional: false
+      named: true
+      required: false
+      variadic: false
+      settable: true
+    - name: outlined
+      details: |-
+        <p>Whether the figure should appear in an <a href="/docs/reference/meta/outline/"><code>outline</code></a>
+        of figures.</p>
+      example: null
+      types:
+      - boolean
+      strings: []
+      default: <code><span class="typ-key">true</span></code>
+      positional: false
+      named: true
+      required: false
+      variadic: false
+      settable: true
+    returns:
+    - content
+    methods: []
+    scope: []
+children: []

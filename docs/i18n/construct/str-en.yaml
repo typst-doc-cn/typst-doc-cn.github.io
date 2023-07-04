@@ -1,0 +1,156 @@
+route: /docs/reference/construct/str/
+title: String
+description: Documentation for the `str` function.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: example
+  name: Example
+  children: []
+- id: parameters
+  name: Parameters
+  children:
+  - id: parameters-value
+    name: value
+    children: []
+  - id: parameters-base
+    name: base
+    children: []
+- id: str-from-unicode
+  name: String From Unicode
+  children:
+  - id: str-from-unicode-parameters
+    name: Parameters
+    children:
+    - id: str-from-unicode-parameters-value
+      name: value
+      children: []
+- id: str-to-unicode
+  name: String To Unicode
+  children:
+  - id: str-to-unicode-parameters
+    name: Parameters
+    children:
+    - id: str-to-unicode-parameters-value
+      name: value
+      children: []
+body:
+  kind: func
+  content:
+    path:
+    - str
+    display: String
+    keywords: null
+    oneliner: Converts a value to a string.
+    element: false
+    details: |-
+      <p>Converts a value to a string.</p>
+      <ul>
+      <li>Integers are formatted in base 10. This can be overridden with the
+      optional <code>base</code> parameter.</li>
+      <li>Floats are formatted in base 10 and never in exponential notation.</li>
+      <li>From labels the name is extracted.</li>
+      </ul>
+      <p>If you wish to convert from and to Unicode code points, see
+      <a href="/docs/reference/construct/str/#str-to-unicode"><code>str.to-unicode</code></a> and
+      <a href="/docs/reference/construct/str/#str-from-unicode"><code>str.from-unicode</code></a>.</p>
+      <h2 id="example">Example</h2>
+      <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">str</span><span class="typ-punct">(</span><span class="typ-num">10</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
+      <span class="typ-func">#</span><span class="typ-func">str</span><span class="typ-punct">(</span><span class="typ-num">4000</span><span class="typ-punct">,</span> base<span class="typ-punct">:</span> <span class="typ-num">16</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
+      <span class="typ-func">#</span><span class="typ-func">str</span><span class="typ-punct">(</span><span class="typ-num">2.7</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
+      <span class="typ-func">#</span><span class="typ-func">str</span><span class="typ-punct">(</span><span class="typ-num">1e8</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
+      <span class="typ-func">#</span><span class="typ-func">str</span><span class="typ-punct">(</span><span class="typ-label">&lt;intro&gt;</span><span class="typ-punct">)</span>
+      </code></pre><div class="preview"><img src="/assets/docs/71784fd087e991ed4bd08ca4161a444a.png" alt="Preview" width="480" height="190"/></div></div>
+    params:
+    - name: value
+      details: <p>The value that should be converted to a string.</p>
+      example: null
+      types:
+      - integer
+      - float
+      - string
+      - label
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: false
+      settable: false
+    - name: base
+      details: <p>The base (radix) to display integers in, between 2 and 36.</p>
+      example: null
+      types:
+      - integer
+      strings: []
+      default: <code><span class="typ-num">10</span></code>
+      positional: false
+      named: true
+      required: false
+      variadic: false
+      settable: false
+    returns:
+    - string
+    methods: []
+    scope:
+    - path:
+      - str
+      - from-unicode
+      display: String From Unicode
+      keywords: null
+      oneliner: Converts a Unicode code point into its corresponding string.
+      element: false
+      details: |-
+        <p>Converts a Unicode code point into its corresponding string.</p>
+        <div class="previewed-code"><pre><code><span class="typ-pol">#</span><span class="typ-pol">str</span><span class="typ-punct">.</span><span class="typ-func">from-unicode</span><span class="typ-punct">(</span><span class="typ-num">97</span><span class="typ-punct">)</span>
+        </code></pre><div class="preview"><img src="/assets/docs/e6b3b512395c30de853382f7a0c680ad.png" alt="Preview" width="480" height="190"/></div></div>
+      params:
+      - name: value
+        details: <p>The code point that should be converted.</p>
+        example: null
+        types:
+        - integer
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      returns:
+      - string
+      methods: []
+      scope: []
+    - path:
+      - str
+      - to-unicode
+      display: String To Unicode
+      keywords: null
+      oneliner: Converts a character into its corresponding code point.
+      element: false
+      details: |-
+        <p>Converts a character into its corresponding code point.</p>
+        <h2>Example</h2>
+        <div class="previewed-code"><pre><code><span class="typ-pol">#</span><span class="typ-pol">str</span><span class="typ-punct">.</span><span class="typ-func">to-unicode</span><span class="typ-punct">(</span><span class="typ-str">&quot;a&quot;</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
+        <span class="typ-str">#</span><span class="typ-str">&quot;a\u{0300}&quot;</span><span class="typ-punct">.</span><span class="typ-func">codepoints</span><span class="typ-punct">(</span><span class="typ-punct">)</span><span class="typ-punct">.</span><span class="typ-func">map</span><span class="typ-punct">(</span>str<span class="typ-punct">.</span>to-unicode<span class="typ-punct">)</span>
+        </code></pre><div class="preview"><img src="/assets/docs/ec6ba12fa1c1a9ae361151b975e183d7.png" alt="Preview" width="480" height="190"/></div></div>
+      params:
+      - name: value
+        details: <p>The character that should be converted.</p>
+        example: null
+        types:
+        - string
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      returns:
+      - integer
+      methods: []
+      scope: []
+children: []

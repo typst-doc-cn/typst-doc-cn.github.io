@@ -1,0 +1,62 @@
+route: /docs/reference/construct/label/
+title: Label
+description: Documentation for the `label` function.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: example
+  name: Example
+  children: []
+- id: syntax
+  name: Syntax
+  children: []
+- id: parameters
+  name: Parameters
+  children:
+  - id: parameters-name
+    name: name
+    children: []
+body:
+  kind: func
+  content:
+    path:
+    - label
+    display: Label
+    keywords: null
+    oneliner: Creates a label from a string.
+    element: false
+    details: |-
+      <p>Creates a label from a string.</p>
+      <p>Inserting a label into content attaches it to the closest previous element
+      that is not a space. Then, the element can be <a href="/docs/reference/meta/ref/">referenced</a> and
+      styled through the label.</p>
+      <h2 id="example">Example</h2>
+      <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">show</span> <span class="typ-label">&lt;a&gt;</span><span class="typ-punct">:</span> <span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>blue<span class="typ-punct">)</span>
+      <span class="typ-key">#</span><span class="typ-key">show</span> <span class="typ-func">label</span><span class="typ-punct">(</span><span class="typ-str">&quot;b&quot;</span><span class="typ-punct">)</span><span class="typ-punct">:</span> <span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>red<span class="typ-punct">)</span>
+
+      <span class="typ-heading">= Heading</span> <span class="typ-label">&lt;a&gt;</span>
+      <span class="typ-strong">*Strong*</span> <span class="typ-func">#</span><span class="typ-func">label</span><span class="typ-punct">(</span><span class="typ-str">&quot;b&quot;</span><span class="typ-punct">)</span>
+      </code></pre><div class="preview"><img src="/assets/docs/5374c9bdc996683035e91d4a06db15af.png" alt="Preview" width="480" height="190"/></div></div>
+      <h2 id="syntax">Syntax</h2>
+      <p>This function also has dedicated syntax: You can create a label by enclosing
+      its name in angle brackets. This works both in markup and code.</p>
+    params:
+    - name: name
+      details: <p>The name of the label.</p>
+      example: null
+      types:
+      - string
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: false
+      settable: false
+    returns:
+    - label
+    methods: []
+    scope: []
+children: []

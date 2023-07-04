@@ -1,0 +1,112 @@
+route: /docs/reference/math/roots/
+title: Roots
+description: Documentation for roots group of functions.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: root
+  name: Root
+  children:
+  - id: root-example
+    name: Example
+    children: []
+  - id: root-parameters
+    name: Parameters
+    children:
+    - id: root-parameters-index
+      name: index
+      children: []
+    - id: root-parameters-radicand
+      name: radicand
+      children: []
+- id: sqrt
+  name: Square Root
+  children:
+  - id: sqrt-example
+    name: Example
+    children: []
+  - id: sqrt-parameters
+    name: Parameters
+    children:
+    - id: sqrt-parameters-radicand
+      name: radicand
+      children: []
+body:
+  kind: funcs
+  content:
+    name: roots
+    display: Roots
+    details: <p>Square and non-square roots.</p>
+    functions:
+    - path:
+      - root
+      display: Root
+      keywords: null
+      oneliner: A general root.
+      element: true
+      details: |-
+        <p>A general root.</p>
+        <h3 id="root-example">Example</h3>
+        <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">root</span><span class="typ-punct">(</span>3<span class="typ-punct">,</span> x<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
+        </code></pre><div class="preview"><img src="/assets/docs/7aa00673dcb0afc96f8085fbc5ed7841.png" alt="Preview" width="480" height="190"/></div></div>
+      params:
+      - name: index
+        details: <p>Which root of the radicand to take.</p>
+        example: null
+        types:
+        - none
+        - content
+        strings: []
+        default: <code><span class="typ-key">none</span></code>
+        positional: true
+        named: false
+        required: false
+        variadic: false
+        settable: true
+      - name: radicand
+        details: <p>The expression to take the root of.</p>
+        example: null
+        types:
+        - content
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      returns:
+      - content
+      methods: []
+      scope: []
+    - path:
+      - sqrt
+      display: Square Root
+      keywords: null
+      oneliner: A square root.
+      element: false
+      details: |-
+        <p>A square root.</p>
+        <h3 id="sqrt-example">Example</h3>
+        <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">sqrt</span><span class="typ-punct">(</span>x<span class="typ-math-op">^</span>2<span class="typ-punct">)</span> = x = <span class="typ-func">sqrt</span><span class="typ-punct">(</span>x<span class="typ-punct">)</span><span class="typ-math-op">^</span>2 <span class="typ-math-delim">$</span>
+        </code></pre><div class="preview"><img src="/assets/docs/4e6fb7b2591b48f8869f04c06a5a795a.png" alt="Preview" width="480" height="190"/></div></div>
+      params:
+      - name: radicand
+        details: <p>The expression to take the square root of.</p>
+        example: null
+        types:
+        - content
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      returns:
+      - content
+      methods: []
+      scope: []
+children: []

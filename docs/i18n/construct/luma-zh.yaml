@@ -1,0 +1,52 @@
+route: /docs/reference/construct/luma/
+title: Luma
+description: Documentation for the `luma` function.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: example
+  name: Example
+  children: []
+- id: parameters
+  name: Parameters
+  children:
+  - id: parameters-gray
+    name: gray
+    children: []
+body:
+  kind: func
+  content:
+    path:
+    - luma
+    display: Luma
+    keywords: null
+    oneliner: Creates a grayscale color.
+    element: false
+    details: |-
+      <p>Creates a grayscale color.</p>
+      <h2 id="example">Example</h2>
+      <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">for</span> x <span class="typ-key">in</span> <span class="typ-func">range</span><span class="typ-punct">(</span><span class="typ-num">250</span><span class="typ-punct">,</span> step<span class="typ-punct">:</span> <span class="typ-num">50</span><span class="typ-punct">)</span> <span class="typ-punct">{</span>
+        <span class="typ-func">box</span><span class="typ-punct">(</span><span class="typ-func">square</span><span class="typ-punct">(</span>fill<span class="typ-punct">:</span> <span class="typ-func">luma</span><span class="typ-punct">(</span>x<span class="typ-punct">)</span><span class="typ-punct">)</span><span class="typ-punct">)</span>
+      <span class="typ-punct">}</span>
+      </code></pre><div class="preview"><img src="/assets/docs/1aa2cf2b25d34b2e2fea8240fab55935.png" alt="Preview" width="480" height="190"/></div></div>
+    params:
+    - name: gray
+      details: <p>The gray component.</p>
+      example: null
+      types:
+      - integer
+      - ratio
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: false
+      settable: false
+    returns:
+    - color
+    methods: []
+    scope: []
+children: []

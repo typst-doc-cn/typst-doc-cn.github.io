@@ -1,0 +1,194 @@
+route: /docs/reference/construct/datetime/
+title: Datetime
+description: Documentation for the `datetime` function.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: parameters
+  name: Parameters
+  children:
+  - id: parameters-year
+    name: year
+    children: []
+  - id: parameters-month
+    name: month
+    children: []
+  - id: parameters-day
+    name: day
+    children: []
+  - id: parameters-hour
+    name: hour
+    children: []
+  - id: parameters-minute
+    name: minute
+    children: []
+  - id: parameters-second
+    name: second
+    children: []
+- id: datetime-today
+  name: Today
+  children:
+  - id: datetime-today-parameters
+    name: Parameters
+    children:
+    - id: datetime-today-parameters-offset
+      name: offset
+      children: []
+body:
+  kind: func
+  content:
+    path:
+    - datetime
+    display: Datetime
+    keywords: null
+    oneliner: Creates a new datetime.
+    element: false
+    details: |-
+      <p>Creates a new datetime.</p>
+      <p>You can specify the <a href="/docs/reference/types/datetime/">datetime</a> using a year, month, day,
+      hour, minute, and second. You can also get the current date with
+      <a href="/docs/reference/construct/datetime/#datetime-today"><code>datetime.today</code></a>.</p>
+      <h2>Example</h2>
+      <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> date <span class="typ-op">=</span> <span class="typ-func">datetime</span><span class="typ-punct">(</span>
+        year<span class="typ-punct">:</span> <span class="typ-num">2012</span><span class="typ-punct">,</span>
+        month<span class="typ-punct">:</span> <span class="typ-num">8</span><span class="typ-punct">,</span>
+        day<span class="typ-punct">:</span> <span class="typ-num">3</span><span class="typ-punct">,</span>
+      <span class="typ-punct">)</span>
+
+      <span class="typ-pol">#</span><span class="typ-pol">date</span><span class="typ-punct">.</span><span class="typ-func">display</span><span class="typ-punct">(</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
+      <span class="typ-pol">#</span><span class="typ-pol">date</span><span class="typ-punct">.</span><span class="typ-func">display</span><span class="typ-punct">(</span>
+        <span class="typ-str">&quot;[day].[month].[year]&quot;</span>
+      <span class="typ-punct">)</span>
+      </code></pre><div class="preview"><img src="/assets/docs/d84bf5e1d986990ccde70122a11380d8.png" alt="Preview" width="480" height="190"/></div></div>
+      <h2>Format</h2>
+      <p><em>Note</em>: Depending on which components of the datetime you specify, Typst
+      will store it in one of the following three ways:</p>
+      <ul>
+      <li>If you specify year, month and day, Typst will store just a date.</li>
+      <li>If you specify hour, minute and second, Typst will store just a time.</li>
+      <li>If you specify all of year, month, day, hour, minute and second, Typst
+      will store a full datetime.</li>
+      </ul>
+      <p>Depending on how it is stored, the <a href="/docs/reference/types/datetime/#methods-display"><code>display</code></a>
+      method will choose a different formatting by default.</p>
+    params:
+    - name: year
+      details: <p>The year of the datetime.</p>
+      example: null
+      types:
+      - none
+      - integer
+      strings: []
+      default: null
+      positional: false
+      named: true
+      required: true
+      variadic: false
+      settable: false
+    - name: month
+      details: <p>The month of the datetime.</p>
+      example: null
+      types:
+      - none
+      - integer
+      strings: []
+      default: null
+      positional: false
+      named: true
+      required: true
+      variadic: false
+      settable: false
+    - name: day
+      details: <p>The day of the datetime.</p>
+      example: null
+      types:
+      - none
+      - integer
+      strings: []
+      default: null
+      positional: false
+      named: true
+      required: true
+      variadic: false
+      settable: false
+    - name: hour
+      details: <p>The hour of the datetime.</p>
+      example: null
+      types:
+      - none
+      - integer
+      strings: []
+      default: null
+      positional: false
+      named: true
+      required: true
+      variadic: false
+      settable: false
+    - name: minute
+      details: <p>The minute of the datetime.</p>
+      example: null
+      types:
+      - none
+      - integer
+      strings: []
+      default: null
+      positional: false
+      named: true
+      required: true
+      variadic: false
+      settable: false
+    - name: second
+      details: <p>The second of the datetime.</p>
+      example: null
+      types:
+      - none
+      - integer
+      strings: []
+      default: null
+      positional: false
+      named: true
+      required: true
+      variadic: false
+      settable: false
+    returns:
+    - datetime
+    methods: []
+    scope:
+    - path:
+      - datetime
+      - today
+      display: Today
+      keywords: null
+      oneliner: Returns the current date.
+      element: false
+      details: |-
+        <p>Returns the current date.</p>
+        <p>Refer to the documentation of the <a href="/docs/reference/types/datetime/#methods-display"><code>display</code></a> method
+        for details on how to affect the formatting of the date.</p>
+        <h2>Example</h2>
+        <div class="previewed-code"><pre><code>Today&#39;s date is
+        <span class="typ-pol">#</span><span class="typ-pol">datetime</span><span class="typ-punct">.</span><span class="typ-func">today</span><span class="typ-punct">(</span><span class="typ-punct">)</span><span class="typ-punct">.</span><span class="typ-func">display</span><span class="typ-punct">(</span><span class="typ-punct">)</span>.
+        </code></pre><div class="preview"><img src="/assets/docs/95f0144bb8cf39eaba7851ecc71b3db9.png" alt="Preview" width="480" height="190"/></div></div>
+      params:
+      - name: offset
+        details: |-
+          <p>An offset to apply to the current UTC date. If set to <code><span class="typ-key">auto</span></code>, the
+          offset will be the local offset.</p>
+        example: null
+        types:
+        - auto
+        - integer
+        strings: []
+        default: <code><span class="typ-key">auto</span></code>
+        positional: false
+        named: true
+        required: false
+        variadic: false
+        settable: false
+      returns:
+      - datetime
+      methods: []
+      scope: []
+children: []

@@ -1,0 +1,283 @@
+route: /docs/reference/math/lr/
+title: Left/Right
+description: Documentation for lr group of functions.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: lr
+  name: Left/Right
+  children:
+  - id: lr-example
+    name: Example
+    children: []
+  - id: lr-parameters
+    name: Parameters
+    children:
+    - id: lr-parameters-size
+      name: size
+      children: []
+    - id: lr-parameters-body
+      name: body
+      children: []
+- id: abs
+  name: Abs
+  children:
+  - id: abs-example
+    name: Example
+    children: []
+  - id: abs-parameters
+    name: Parameters
+    children:
+    - id: abs-parameters-body
+      name: body
+      children: []
+- id: norm
+  name: Norm
+  children:
+  - id: norm-example
+    name: Example
+    children: []
+  - id: norm-parameters
+    name: Parameters
+    children:
+    - id: norm-parameters-body
+      name: body
+      children: []
+- id: floor
+  name: Floor
+  children:
+  - id: floor-example
+    name: Example
+    children: []
+  - id: floor-parameters
+    name: Parameters
+    children:
+    - id: floor-parameters-body
+      name: body
+      children: []
+- id: ceil
+  name: Ceil
+  children:
+  - id: ceil-example
+    name: Example
+    children: []
+  - id: ceil-parameters
+    name: Parameters
+    children:
+    - id: ceil-parameters-body
+      name: body
+      children: []
+- id: round
+  name: Round
+  children:
+  - id: round-example
+    name: Example
+    children: []
+  - id: round-parameters
+    name: Parameters
+    children:
+    - id: round-parameters-body
+      name: body
+      children: []
+body:
+  kind: funcs
+  content:
+    name: lr
+    display: Left/Right
+    details: |-
+      <p>Delimiter matching.</p>
+      <p>The <code>lr</code> function allows you to match two delimiters and scale them with the
+      content they contain. While this also happens automatically for delimiters
+      that match syntactically, <code>lr</code> allows you to match two arbitrary delimiters
+      and control their size exactly. Apart from the <code>lr</code> function, Typst provides
+      a few more functions that create delimiter pairings for absolute, ceiled,
+      and floored values as well as norms.</p>
+    functions:
+    - path:
+      - lr
+      display: Left/Right
+      keywords: null
+      oneliner: Scales delimiters.
+      element: true
+      details: |-
+        <p>Scales delimiters.</p>
+        <p>While matched delimiters scale by default, this can be used to scale
+        unmatched delimiters and to control the delimiter scaling more precisely.</p>
+        <h3 id="lr-example">Example</h3>
+        <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">lr</span><span class="typ-punct">(</span>]a<span class="typ-punct">,</span> b<span class="typ-math-op">/</span>2]<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
+        <span class="typ-math-delim">$</span> <span class="typ-func">lr</span><span class="typ-punct">(</span>]<span class="typ-pol">sum</span><span class="typ-math-op">_</span><span class="typ-punct">(</span>x=1<span class="typ-punct">)</span><span class="typ-math-op">^</span>n] x<span class="typ-punct">,</span> size<span class="typ-punct">:</span> <span class="typ-num">#</span><span class="typ-num">50%</span><span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
+        </code></pre><div class="preview"><img src="/assets/docs/a7e37959272607bdbf533899251955aa.png" alt="Preview" width="480" height="190"/></div></div>
+      params:
+      - name: size
+        details: <p>The size of the brackets, relative to the height of the wrapped
+          content.</p>
+        example: null
+        types:
+        - auto
+        - relative length
+        strings: []
+        default: <code><span class="typ-key">auto</span></code>
+        positional: false
+        named: true
+        required: false
+        variadic: false
+        settable: true
+      - name: body
+        details: <p>The delimited content, including the delimiters.</p>
+        example: null
+        types:
+        - content
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      returns:
+      - content
+      methods: []
+      scope: []
+    - path:
+      - abs
+      display: Abs
+      keywords: null
+      oneliner: Takes the absolute value of an expression.
+      element: false
+      details: |-
+        <p>Takes the absolute value of an expression.</p>
+        <h3 id="abs-example">Example</h3>
+        <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">abs</span><span class="typ-punct">(</span>x<span class="typ-math-op">/</span>2<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
+        </code></pre><div class="preview"><img src="/assets/docs/28e475440e93179a23e1e05535ef8b05.png" alt="Preview" width="480" height="190"/></div></div>
+      params:
+      - name: body
+        details: <p>The expression to take the absolute value of.</p>
+        example: null
+        types:
+        - content
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      returns:
+      - content
+      methods: []
+      scope: []
+    - path:
+      - norm
+      display: Norm
+      keywords: null
+      oneliner: Takes the norm of an expression.
+      element: false
+      details: |-
+        <p>Takes the norm of an expression.</p>
+        <h3 id="norm-example">Example</h3>
+        <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">norm</span><span class="typ-punct">(</span>x<span class="typ-math-op">/</span>2<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
+        </code></pre><div class="preview"><img src="/assets/docs/b1c37b013016675629fbfab0497e5ce5.png" alt="Preview" width="480" height="190"/></div></div>
+      params:
+      - name: body
+        details: <p>The expression to take the norm of.</p>
+        example: null
+        types:
+        - content
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      returns:
+      - content
+      methods: []
+      scope: []
+    - path:
+      - floor
+      display: Floor
+      keywords: null
+      oneliner: Floors an expression.
+      element: false
+      details: |-
+        <p>Floors an expression.</p>
+        <h3 id="floor-example">Example</h3>
+        <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">floor</span><span class="typ-punct">(</span>x<span class="typ-math-op">/</span>2<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
+        </code></pre><div class="preview"><img src="/assets/docs/025f577b807e2e19e782e7ff2f73543a.png" alt="Preview" width="480" height="190"/></div></div>
+      params:
+      - name: body
+        details: <p>The expression to floor.</p>
+        example: null
+        types:
+        - content
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      returns:
+      - content
+      methods: []
+      scope: []
+    - path:
+      - ceil
+      display: Ceil
+      keywords: null
+      oneliner: Ceils an expression.
+      element: false
+      details: |-
+        <p>Ceils an expression.</p>
+        <h3 id="ceil-example">Example</h3>
+        <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">ceil</span><span class="typ-punct">(</span>x<span class="typ-math-op">/</span>2<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
+        </code></pre><div class="preview"><img src="/assets/docs/5e51dbb63fcb62826c19d8bc8405ec5b.png" alt="Preview" width="480" height="190"/></div></div>
+      params:
+      - name: body
+        details: <p>The expression to ceil.</p>
+        example: null
+        types:
+        - content
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      returns:
+      - content
+      methods: []
+      scope: []
+    - path:
+      - round
+      display: Round
+      keywords: null
+      oneliner: Rounds an expression.
+      element: false
+      details: |-
+        <p>Rounds an expression.</p>
+        <h3 id="round-example">Example</h3>
+        <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">round</span><span class="typ-punct">(</span>x<span class="typ-math-op">/</span>2<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
+        </code></pre><div class="preview"><img src="/assets/docs/b568beef30e9fb70d08ed84d7d609861.png" alt="Preview" width="480" height="190"/></div></div>
+      params:
+      - name: body
+        details: <p>The expression to round.</p>
+        example: null
+        types:
+        - content
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      returns:
+      - content
+      methods: []
+      scope: []
+children: []

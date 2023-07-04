@@ -1,0 +1,68 @@
+route: /docs/reference/calculate/quo/
+title: Quotient
+description: Documentation for the `quo` function.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: example
+  name: Example
+  children: []
+- id: parameters
+  name: Parameters
+  children:
+  - id: parameters-dividend
+    name: dividend
+    children: []
+  - id: parameters-divisor
+    name: divisor
+    children: []
+body:
+  kind: func
+  content:
+    path:
+    - calc
+    - quo
+    display: Quotient
+    keywords: null
+    oneliner: Calculates the quotient of two numbers.
+    element: false
+    details: |-
+      <p>Calculates the quotient of two numbers.</p>
+      <h2 id="example">Example</h2>
+      <div class="previewed-code"><pre><code><span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">quo</span><span class="typ-punct">(</span><span class="typ-num">14</span><span class="typ-punct">,</span> <span class="typ-num">5</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
+      <span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">quo</span><span class="typ-punct">(</span><span class="typ-num">3.46</span><span class="typ-punct">,</span> <span class="typ-num">0.5</span><span class="typ-punct">)</span>
+      </code></pre><div class="preview"><img src="/assets/docs/22306391641628d7e01f533e94ce7fda.png" alt="Preview" width="480" height="190"/></div></div>
+    params:
+    - name: dividend
+      details: <p>The dividend of the quotient.</p>
+      example: null
+      types:
+      - integer
+      - float
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: false
+      settable: false
+    - name: divisor
+      details: <p>The divisor of the quotient.</p>
+      example: null
+      types:
+      - integer
+      - float
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: false
+      settable: false
+    returns:
+    - integer
+    methods: []
+    scope: []
+children: []

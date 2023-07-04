@@ -1,0 +1,323 @@
+route: /docs/reference/math/underover/
+title: Under/Over
+description: Documentation for underover group of functions.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: underline
+  name: Underline
+  children:
+  - id: underline-example
+    name: Example
+    children: []
+  - id: underline-parameters
+    name: Parameters
+    children:
+    - id: underline-parameters-body
+      name: body
+      children: []
+- id: overline
+  name: Overline
+  children:
+  - id: overline-example
+    name: Example
+    children: []
+  - id: overline-parameters
+    name: Parameters
+    children:
+    - id: overline-parameters-body
+      name: body
+      children: []
+- id: underbrace
+  name: Underbrace
+  children:
+  - id: underbrace-example
+    name: Example
+    children: []
+  - id: underbrace-parameters
+    name: Parameters
+    children:
+    - id: underbrace-parameters-body
+      name: body
+      children: []
+    - id: underbrace-parameters-annotation
+      name: annotation
+      children: []
+- id: overbrace
+  name: Overbrace
+  children:
+  - id: overbrace-example
+    name: Example
+    children: []
+  - id: overbrace-parameters
+    name: Parameters
+    children:
+    - id: overbrace-parameters-body
+      name: body
+      children: []
+    - id: overbrace-parameters-annotation
+      name: annotation
+      children: []
+- id: underbracket
+  name: Underbracket
+  children:
+  - id: underbracket-example
+    name: Example
+    children: []
+  - id: underbracket-parameters
+    name: Parameters
+    children:
+    - id: underbracket-parameters-body
+      name: body
+      children: []
+    - id: underbracket-parameters-annotation
+      name: annotation
+      children: []
+- id: overbracket
+  name: Overbracket
+  children:
+  - id: overbracket-example
+    name: Example
+    children: []
+  - id: overbracket-parameters
+    name: Parameters
+    children:
+    - id: overbracket-parameters-body
+      name: body
+      children: []
+    - id: overbracket-parameters-annotation
+      name: annotation
+      children: []
+body:
+  kind: funcs
+  content:
+    name: underover
+    display: Under/Over
+    details: |-
+      <p>Delimiters above or below parts of an equation.</p>
+      <p>The braces and brackets further allow you to add an optional annotation
+      below or above themselves.</p>
+    functions:
+    - path:
+      - underline
+      display: Underline
+      keywords: null
+      oneliner: A horizontal line under content.
+      element: true
+      details: |-
+        <p>A horizontal line under content.</p>
+        <h3 id="underline-example">Example</h3>
+        <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">underline</span><span class="typ-punct">(</span>1 + 2 + <span class="typ-escape">...</span> + 5<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
+        </code></pre><div class="preview"><img src="/assets/docs/a964debc0427ab602297c7dc72630745.png" alt="Preview" width="480" height="190"/></div></div>
+      params:
+      - name: body
+        details: <p>The content above the line.</p>
+        example: null
+        types:
+        - content
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      returns:
+      - content
+      methods: []
+      scope: []
+    - path:
+      - overline
+      display: Overline
+      keywords: null
+      oneliner: A horizontal line over content.
+      element: true
+      details: |-
+        <p>A horizontal line over content.</p>
+        <h3 id="overline-example">Example</h3>
+        <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">overline</span><span class="typ-punct">(</span>1 + 2 + <span class="typ-escape">...</span> + 5<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
+        </code></pre><div class="preview"><img src="/assets/docs/cdd4cb2e681e2fced8b4b9f63cf90e81.png" alt="Preview" width="480" height="190"/></div></div>
+      params:
+      - name: body
+        details: <p>The content below the line.</p>
+        example: null
+        types:
+        - content
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      returns:
+      - content
+      methods: []
+      scope: []
+    - path:
+      - underbrace
+      display: Underbrace
+      keywords: null
+      oneliner: A horizontal brace under content, with an optional annotation below.
+      element: true
+      details: |-
+        <p>A horizontal brace under content, with an optional annotation below.</p>
+        <h3 id="underbrace-example">Example</h3>
+        <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">underbrace</span><span class="typ-punct">(</span>1 + 2 + <span class="typ-escape">...</span> + 5<span class="typ-punct">,</span> <span class="typ-str">&quot;numbers&quot;</span><span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
+        </code></pre><div class="preview"><img src="/assets/docs/88b30429e73e3bbc3d0e0ee29c7d06b6.png" alt="Preview" width="480" height="190"/></div></div>
+      params:
+      - name: body
+        details: <p>The content above the brace.</p>
+        example: null
+        types:
+        - content
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      - name: annotation
+        details: <p>The optional content below the brace.</p>
+        example: null
+        types:
+        - none
+        - content
+        strings: []
+        default: <code><span class="typ-key">none</span></code>
+        positional: true
+        named: false
+        required: false
+        variadic: false
+        settable: true
+      returns:
+      - content
+      methods: []
+      scope: []
+    - path:
+      - overbrace
+      display: Overbrace
+      keywords: null
+      oneliner: A horizontal brace over content, with an optional annotation above.
+      element: true
+      details: |-
+        <p>A horizontal brace over content, with an optional annotation above.</p>
+        <h3 id="overbrace-example">Example</h3>
+        <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">overbrace</span><span class="typ-punct">(</span>1 + 2 + <span class="typ-escape">...</span> + 5<span class="typ-punct">,</span> <span class="typ-str">&quot;numbers&quot;</span><span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
+        </code></pre><div class="preview"><img src="/assets/docs/9f2eca7814aaf0c6542bb369712f4513.png" alt="Preview" width="480" height="190"/></div></div>
+      params:
+      - name: body
+        details: <p>The content below the brace.</p>
+        example: null
+        types:
+        - content
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      - name: annotation
+        details: <p>The optional content above the brace.</p>
+        example: null
+        types:
+        - none
+        - content
+        strings: []
+        default: <code><span class="typ-key">none</span></code>
+        positional: true
+        named: false
+        required: false
+        variadic: false
+        settable: true
+      returns:
+      - content
+      methods: []
+      scope: []
+    - path:
+      - underbracket
+      display: Underbracket
+      keywords: null
+      oneliner: A horizontal bracket under content, with an optional annotation below.
+      element: true
+      details: |-
+        <p>A horizontal bracket under content, with an optional annotation below.</p>
+        <h3 id="underbracket-example">Example</h3>
+        <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">underbracket</span><span class="typ-punct">(</span>1 + 2 + <span class="typ-escape">...</span> + 5<span class="typ-punct">,</span> <span class="typ-str">&quot;numbers&quot;</span><span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
+        </code></pre><div class="preview"><img src="/assets/docs/7a63fcfa0c9ae2df891097e9bba06ab6.png" alt="Preview" width="480" height="190"/></div></div>
+      params:
+      - name: body
+        details: <p>The content above the bracket.</p>
+        example: null
+        types:
+        - content
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      - name: annotation
+        details: <p>The optional content below the bracket.</p>
+        example: null
+        types:
+        - none
+        - content
+        strings: []
+        default: <code><span class="typ-key">none</span></code>
+        positional: true
+        named: false
+        required: false
+        variadic: false
+        settable: true
+      returns:
+      - content
+      methods: []
+      scope: []
+    - path:
+      - overbracket
+      display: Overbracket
+      keywords: null
+      oneliner: A horizontal bracket over content, with an optional annotation above.
+      element: true
+      details: |-
+        <p>A horizontal bracket over content, with an optional annotation above.</p>
+        <h3 id="overbracket-example">Example</h3>
+        <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">overbracket</span><span class="typ-punct">(</span>1 + 2 + <span class="typ-escape">...</span> + 5<span class="typ-punct">,</span> <span class="typ-str">&quot;numbers&quot;</span><span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
+        </code></pre><div class="preview"><img src="/assets/docs/b50782925e551ea653c324786dcbc21b.png" alt="Preview" width="480" height="190"/></div></div>
+      params:
+      - name: body
+        details: <p>The content below the bracket.</p>
+        example: null
+        types:
+        - content
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      - name: annotation
+        details: <p>The optional content above the bracket.</p>
+        example: null
+        types:
+        - none
+        - content
+        strings: []
+        default: <code><span class="typ-key">none</span></code>
+        positional: true
+        named: false
+        required: false
+        variadic: false
+        settable: true
+      returns:
+      - content
+      methods: []
+      scope: []
+children: []

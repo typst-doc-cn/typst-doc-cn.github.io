@@ -1,0 +1,134 @@
+route: /docs/reference/math/styles/
+title: Styles
+description: Documentation for styles group of functions.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: upright
+  name: Upright
+  children:
+  - id: upright-example
+    name: Example
+    children: []
+  - id: upright-parameters
+    name: Parameters
+    children:
+    - id: upright-parameters-body
+      name: body
+      children: []
+- id: italic
+  name: Italic
+  children:
+  - id: italic-parameters
+    name: Parameters
+    children:
+    - id: italic-parameters-body
+      name: body
+      children: []
+- id: bold
+  name: Bold
+  children:
+  - id: bold-example
+    name: Example
+    children: []
+  - id: bold-parameters
+    name: Parameters
+    children:
+    - id: bold-parameters-body
+      name: body
+      children: []
+body:
+  kind: funcs
+  content:
+    name: styles
+    display: Styles
+    details: |-
+      <p>Alternate letterforms within formulas.</p>
+      <p>These functions are distinct from the <a href="/docs/reference/text/text/"><code>text</code></a> function because
+      math fonts contain multiple variants of each letter.</p>
+    functions:
+    - path:
+      - upright
+      display: Upright
+      keywords: null
+      oneliner: Upright (non-italic) font style in math.
+      element: false
+      details: |-
+        <p>Upright (non-italic) font style in math.</p>
+        <h3 id="upright-example">Example</h3>
+        <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">upright</span><span class="typ-punct">(</span>A<span class="typ-punct">)</span> <span class="typ-escape">!=</span> A <span class="typ-math-delim">$</span>
+        </code></pre><div class="preview"><img src="/assets/docs/d0ac32f208aa20b1c8b1ea88304aa607.png" alt="Preview" width="480" height="190"/></div></div>
+      params:
+      - name: body
+        details: <p>The content to style.</p>
+        example: null
+        types:
+        - content
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      returns:
+      - content
+      methods: []
+      scope: []
+    - path:
+      - italic
+      display: Italic
+      keywords: null
+      oneliner: Italic font style in math.
+      element: false
+      details: |-
+        <p>Italic font style in math.</p>
+        <p>For roman letters and greek lowercase letters, this is already the default.</p>
+      params:
+      - name: body
+        details: <p>The content to style.</p>
+        example: null
+        types:
+        - content
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      returns:
+      - content
+      methods: []
+      scope: []
+    - path:
+      - bold
+      display: Bold
+      keywords: null
+      oneliner: Bold font style in math.
+      element: false
+      details: |-
+        <p>Bold font style in math.</p>
+        <h3 id="bold-example">Example</h3>
+        <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">bold</span><span class="typ-punct">(</span>A<span class="typ-punct">)</span> <span class="typ-escape">:=</span> B<span class="typ-math-op">^</span>+ <span class="typ-math-delim">$</span>
+        </code></pre><div class="preview"><img src="/assets/docs/79814838a321e86e80ee113a14074b8f.png" alt="Preview" width="480" height="190"/></div></div>
+      params:
+      - name: body
+        details: <p>The content to style.</p>
+        example: null
+        types:
+        - content
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      returns:
+      - content
+      methods: []
+      scope: []
+children: []

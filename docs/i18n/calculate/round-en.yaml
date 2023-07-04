@@ -1,0 +1,70 @@
+route: /docs/reference/calculate/round/
+title: Round
+description: Documentation for the `round` function.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: example
+  name: Example
+  children: []
+- id: parameters
+  name: Parameters
+  children:
+  - id: parameters-value
+    name: value
+    children: []
+  - id: parameters-digits
+    name: digits
+    children: []
+body:
+  kind: func
+  content:
+    path:
+    - calc
+    - round
+    display: Round
+    keywords: null
+    oneliner: Rounds a number to the nearest integer.
+    element: false
+    details: |-
+      <p>Rounds a number to the nearest integer.</p>
+      <p>Optionally, a number of decimal places can be specified.</p>
+      <h2 id="example">Example</h2>
+      <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">assert</span><span class="typ-punct">(</span>calc<span class="typ-punct">.</span><span class="typ-func">round</span><span class="typ-punct">(</span><span class="typ-num">3.14</span><span class="typ-punct">)</span> <span class="typ-op">==</span> <span class="typ-num">3</span><span class="typ-punct">)</span>
+      <span class="typ-func">#</span><span class="typ-func">assert</span><span class="typ-punct">(</span>calc<span class="typ-punct">.</span><span class="typ-func">round</span><span class="typ-punct">(</span><span class="typ-num">3.5</span><span class="typ-punct">)</span> <span class="typ-op">==</span> <span class="typ-num">4</span><span class="typ-punct">)</span>
+      <span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">round</span><span class="typ-punct">(</span><span class="typ-num">3.1415</span><span class="typ-punct">,</span> digits<span class="typ-punct">:</span> <span class="typ-num">2</span><span class="typ-punct">)</span>
+      </code></pre><div class="preview"><img src="/assets/docs/909cf2add30990bd12abe88252ffd37d.png" alt="Preview" width="480" height="190"/></div></div>
+    params:
+    - name: value
+      details: <p>The number to round.</p>
+      example: null
+      types:
+      - integer
+      - float
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: false
+      settable: false
+    - name: digits
+      details: <p>The number of decimal places.</p>
+      example: null
+      types:
+      - integer
+      strings: []
+      default: <code><span class="typ-num">0</span></code>
+      positional: false
+      named: true
+      required: false
+      variadic: false
+      settable: false
+    returns:
+    - integer
+    - float
+    methods: []
+    scope: []
+children: []

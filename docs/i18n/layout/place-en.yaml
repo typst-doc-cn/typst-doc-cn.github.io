@@ -1,0 +1,117 @@
+route: /docs/reference/layout/place/
+title: Place
+description: Documentation for the `place` function.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: example
+  name: Example
+  children: []
+- id: parameters
+  name: Parameters
+  children:
+  - id: parameters-alignment
+    name: alignment
+    children: []
+  - id: parameters-dx
+    name: dx
+    children: []
+  - id: parameters-dy
+    name: dy
+    children: []
+  - id: parameters-body
+    name: body
+    children: []
+body:
+  kind: func
+  content:
+    path:
+    - place
+    display: Place
+    keywords: null
+    oneliner: Places content at an absolute position.
+    element: true
+    details: |-
+      <p>Places content at an absolute position.</p>
+      <p>Placed content will not affect the position of other content. Place is
+      always relative to its parent container and will be in the foreground of all
+      other content in the container. Page margins will be respected.</p>
+      <h2 id="example">Example</h2>
+      <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">page</span><span class="typ-punct">(</span>height<span class="typ-punct">:</span> <span class="typ-num">60pt</span><span class="typ-punct">)</span>
+      Hello, world!
+
+      <span class="typ-func">#</span><span class="typ-func">place</span><span class="typ-punct">(</span>
+        top <span class="typ-op">+</span> right<span class="typ-punct">,</span>
+        <span class="typ-func">square</span><span class="typ-punct">(</span>
+          width<span class="typ-punct">:</span> <span class="typ-num">20pt</span><span class="typ-punct">,</span>
+          stroke<span class="typ-punct">:</span> <span class="typ-num">2pt</span> <span class="typ-op">+</span> blue
+        <span class="typ-punct">)</span><span class="typ-punct">,</span>
+      <span class="typ-punct">)</span>
+      </code></pre><div class="preview"><img src="/assets/docs/2f21fdc6427bee49b180be0a51e8155d.png" alt="Preview" width="480" height="190"/></div></div>
+    params:
+    - name: alignment
+      details: |-
+        <p>Relative to which position in the parent container to place the content.</p>
+        <p>When an axis of the page is <code><span class="typ-key">auto</span></code> sized, all alignments relative to that
+        axis will be ignored, instead, the item will be placed in the origin of the
+        axis.</p>
+      example: null
+      types:
+      - alignment
+      - 2d alignment
+      strings: []
+      default: <code>start</code>
+      positional: true
+      named: false
+      required: false
+      variadic: false
+      settable: true
+    - name: dx
+      details: <p>The horizontal displacement of the placed content.</p>
+      example: |-
+        <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">page</span><span class="typ-punct">(</span>height<span class="typ-punct">:</span> <span class="typ-num">100pt</span><span class="typ-punct">)</span>
+        <span class="typ-key">#</span><span class="typ-key">for</span> i <span class="typ-key">in</span> <span class="typ-func">range</span><span class="typ-punct">(</span><span class="typ-num">16</span><span class="typ-punct">)</span> <span class="typ-punct">{</span>
+          <span class="typ-key">let</span> amount <span class="typ-op">=</span> i <span class="typ-op">*</span> <span class="typ-num">4pt</span>
+          <span class="typ-func">place</span><span class="typ-punct">(</span>center<span class="typ-punct">,</span> dx<span class="typ-punct">:</span> amount <span class="typ-op">-</span> <span class="typ-num">32pt</span><span class="typ-punct">,</span> dy<span class="typ-punct">:</span> amount<span class="typ-punct">)</span><span class="typ-punct">[</span>A<span class="typ-punct">]</span>
+        <span class="typ-punct">}</span>
+        </code></pre><div class="preview"><img src="/assets/docs/2894bae3ce0defe070261a5d5f61fe40.png" alt="Preview" width="480" height="190"/></div></div>
+      types:
+      - relative length
+      strings: []
+      default: <code><span class="typ-num">0pt</span></code>
+      positional: false
+      named: true
+      required: false
+      variadic: false
+      settable: true
+    - name: dy
+      details: <p>The vertical displacement of the placed content.</p>
+      example: null
+      types:
+      - relative length
+      strings: []
+      default: <code><span class="typ-num">0pt</span></code>
+      positional: false
+      named: true
+      required: false
+      variadic: false
+      settable: true
+    - name: body
+      details: <p>The content to place.</p>
+      example: null
+      types:
+      - content
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: false
+      settable: false
+    returns:
+    - content
+    methods: []
+    scope: []
+children: []

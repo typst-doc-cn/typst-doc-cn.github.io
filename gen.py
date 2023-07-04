@@ -2,12 +2,42 @@ import jinja2
 import json
 import os
 import shutil
+import yaml
 
 
-def render_jinja_html(template_loc, file_name, **context):
-    return jinja2.Environment(
-        loader=jinja2.FileSystemLoader(template_loc + '/')
-    ).get_template(file_name).render(context)
+def str_presenter(dumper, data):
+    if len(data.splitlines()) > 1:  # check for multiline string
+        return dumper.represent_scalar('tag:yaml.org,2002:str', data, style='|')
+    return dumper.represent_scalar('tag:yaml.org,2002:str', data)
+
+
+yaml.add_representer(str, str_presenter)
+
+
+def translate_with_yaml(page):
+    if page['body']['kind'] in ['func', 'funcs']:
+        assert page['route'].startswith('/docs/reference/')
+        path = page['route'][len('/docs/reference/'):].split('/')[:-1]
+        assert len(path) == 2
+        # if docs/i18n/{path[0]} not exists, create it
+        if not os.path.exists('docs/i18n/' + path[0]):
+            os.mkdir('docs/i18n/' + path[0])
+        # without quotes and with indent
+        en_path = 'docs/i18n/' + path[0] + '/' + path[1] + '-en.yaml'
+        zh_path = 'docs/i18n/' + path[0] + '/' + path[1] + '-zh.yaml'
+        with open(en_path, 'w', encoding='utf-8') as f:
+            yaml.dump(page, f, allow_unicode=True, default_flow_style=False,
+                      indent=2, sort_keys=False, encoding='utf-8')
+        if not os.path.exists(zh_path):
+            with open(zh_path, 'w', encoding='utf-8') as f:
+                yaml.dump(page, f, allow_unicode=True, default_flow_style=False,
+                          indent=2, sort_keys=False, encoding='utf-8')
+        if os.path.exists(zh_path):
+            with open(zh_path, 'r', encoding='utf-8') as f:
+                page = yaml.load(f, Loader=yaml.FullLoader)
+    for i in range(len(page['children'])):
+        page['children'][i] = translate_with_yaml(page['children'][i])
+    return page
 
 
 type2class_map = {
@@ -30,6 +60,12 @@ type2class_map = {
 
 def type2class(type):
     return type2class_map.get(type, 'pill-obj')
+
+
+def render_jinja_html(template_loc, file_name, **context):
+    return jinja2.Environment(
+        loader=jinja2.FileSystemLoader(template_loc + '/')
+    ).get_template(file_name).render(context)
 
 
 if __name__ == '__main__':
@@ -75,6 +111,11 @@ if __name__ == '__main__':
     # load docs.json and render to files
     with open('./assets/docs.json', 'r', encoding='utf-8') as f:
         docs = json.load(f)
+        # if docs/i18n not exists, create it
+        if not os.path.exists('docs/i18n'):
+            os.mkdir('docs/i18n')
+        for i in range(len(docs)):
+            docs[i] = translate_with_yaml(docs[i])
         for page in docs:
             dfs(page, docs)
         for page in docs:

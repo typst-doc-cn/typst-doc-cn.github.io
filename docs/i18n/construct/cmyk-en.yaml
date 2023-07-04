@@ -1,0 +1,99 @@
+route: /docs/reference/construct/cmyk/
+title: CMYK
+description: Documentation for the `cmyk` function.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: example
+  name: Example
+  children: []
+- id: parameters
+  name: Parameters
+  children:
+  - id: parameters-cyan
+    name: cyan
+    children: []
+  - id: parameters-magenta
+    name: magenta
+    children: []
+  - id: parameters-yellow
+    name: yellow
+    children: []
+  - id: parameters-key
+    name: key
+    children: []
+body:
+  kind: func
+  content:
+    path:
+    - cmyk
+    display: CMYK
+    keywords: null
+    oneliner: Creates a CMYK color.
+    element: false
+    details: |-
+      <p>Creates a CMYK color.</p>
+      <p>This is useful if you want to target a specific printer. The conversion
+      to RGB for display preview might differ from how your printer reproduces
+      the color.</p>
+      <h2 id="example">Example</h2>
+      <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">square</span><span class="typ-punct">(</span>
+        fill<span class="typ-punct">:</span> <span class="typ-func">cmyk</span><span class="typ-punct">(</span><span class="typ-num">27%</span><span class="typ-punct">,</span> <span class="typ-num">0%</span><span class="typ-punct">,</span> <span class="typ-num">3%</span><span class="typ-punct">,</span> <span class="typ-num">5%</span><span class="typ-punct">)</span>
+      <span class="typ-punct">)</span>
+      </code></pre><div class="preview"><img src="/assets/docs/ba913143dfc94a799bdaec785400b707.png" alt="Preview" width="480" height="190"/></div></div>
+    params:
+    - name: cyan
+      details: <p>The cyan component.</p>
+      example: null
+      types:
+      - ratio
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: false
+      settable: false
+    - name: magenta
+      details: <p>The magenta component.</p>
+      example: null
+      types:
+      - ratio
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: false
+      settable: false
+    - name: yellow
+      details: <p>The yellow component.</p>
+      example: null
+      types:
+      - ratio
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: false
+      settable: false
+    - name: key
+      details: <p>The key component.</p>
+      example: null
+      types:
+      - ratio
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: false
+      settable: false
+    returns:
+    - color
+    methods: []
+    scope: []
+children: []

@@ -1,0 +1,73 @@
+route: /docs/reference/meta/document/
+title: Document
+description: Documentation for the `document` function.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: parameters
+  name: Parameters
+  children:
+  - id: parameters-title
+    name: title
+    children: []
+  - id: parameters-author
+    name: author
+    children: []
+body:
+  kind: func
+  content:
+    path:
+    - document
+    display: Document
+    keywords: null
+    oneliner: The root element of a document and its metadata.
+    element: true
+    details: |-
+      <p>The root element of a document and its metadata.</p>
+      <p>All documents are automatically wrapped in a <code>document</code> element. You cannot
+      create a document element yourself. This function is only used with
+      <a href="/docs/reference/styling/#set-rules">set rules</a> to specify document metadata. Such a set
+      rule must appear before any of the document's contents.</p>
+      <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">document</span><span class="typ-punct">(</span>title<span class="typ-punct">:</span> <span class="typ-str">&quot;Hello&quot;</span><span class="typ-punct">)</span>
+
+      This has no visible output, but
+      embeds metadata into the PDF!
+      </code></pre><div class="preview"><img src="/assets/docs/b84099feaf5699bf3825d9f852c0adc6.png" alt="Preview" width="480" height="190"/></div></div>
+      <p>Note that metadata set with this function is not rendered within the
+      document. Instead, it is embedded in the compiled PDF file.</p>
+    params:
+    - name: title
+      details: |-
+        <p>The document's title. This is often rendered as the title of the
+        PDF viewer window.</p>
+      example: null
+      types:
+      - none
+      - string
+      strings: []
+      default: <code><span class="typ-key">none</span></code>
+      positional: false
+      named: true
+      required: false
+      variadic: false
+      settable: true
+    - name: author
+      details: <p>The document's authors.</p>
+      example: null
+      types:
+      - string
+      - array
+      strings: []
+      default: <code><span class="typ-punct">(</span><span class="typ-punct">)</span></code>
+      positional: false
+      named: true
+      required: false
+      variadic: false
+      settable: true
+    returns:
+    - content
+    methods: []
+    scope: []
+children: []

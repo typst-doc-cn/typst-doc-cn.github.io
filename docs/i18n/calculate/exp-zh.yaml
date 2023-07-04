@@ -1,0 +1,51 @@
+route: /docs/reference/calculate/exp/
+title: Exponential
+description: Documentation for the `exp` function.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: example
+  name: Example
+  children: []
+- id: parameters
+  name: Parameters
+  children:
+  - id: parameters-exponent
+    name: exponent
+    children: []
+body:
+  kind: func
+  content:
+    path:
+    - calc
+    - exp
+    display: Exponential
+    keywords: null
+    oneliner: Raises a value to some exponent of e.
+    element: false
+    details: |-
+      <p>Raises a value to some exponent of e.</p>
+      <h2 id="example">Example</h2>
+      <div class="previewed-code"><pre><code><span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">exp</span><span class="typ-punct">(</span><span class="typ-num">1</span><span class="typ-punct">)</span>
+      </code></pre><div class="preview"><img src="/assets/docs/49f9c1f68f122165e1705342c87d7985.png" alt="Preview" width="480" height="190"/></div></div>
+    params:
+    - name: exponent
+      details: <p>The exponent of the power.</p>
+      example: null
+      types:
+      - integer
+      - float
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: false
+      settable: false
+    returns:
+    - float
+    methods: []
+    scope: []
+children: []

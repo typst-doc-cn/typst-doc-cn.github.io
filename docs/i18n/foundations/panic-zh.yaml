@@ -1,0 +1,49 @@
+route: /docs/reference/foundations/panic/
+title: Panic
+description: Documentation for the `panic` function.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: example
+  name: Example
+  children: []
+- id: parameters
+  name: Parameters
+  children:
+  - id: parameters-values
+    name: values
+    children: []
+body:
+  kind: func
+  content:
+    path:
+    - panic
+    display: Panic
+    keywords: null
+    oneliner: Fails with an error.
+    element: false
+    details: |-
+      <p>Fails with an error.</p>
+      <h2 id="example">Example</h2>
+      <p>The code below produces the error <code>panicked with: &quot;this is wrong&quot;</code>.</p>
+      <pre><code><span class="typ-func">#</span><span class="typ-func">panic</span><span class="typ-punct">(</span><span class="typ-str">&quot;this is wrong&quot;</span><span class="typ-punct">)</span>
+      </code></pre>
+    params:
+    - name: values
+      details: <p>The values to panic with.</p>
+      example: null
+      types:
+      - any
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: true
+      settable: false
+    returns: []
+    methods: []
+    scope: []
+children: []

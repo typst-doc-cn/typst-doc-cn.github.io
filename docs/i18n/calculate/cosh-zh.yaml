@@ -1,0 +1,54 @@
+route: /docs/reference/calculate/cosh/
+title: Hyperbolic cosine
+description: Documentation for the `cosh` function.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: example
+  name: Example
+  children: []
+- id: parameters
+  name: Parameters
+  children:
+  - id: parameters-angle
+    name: angle
+    children: []
+body:
+  kind: func
+  content:
+    path:
+    - calc
+    - cosh
+    display: Hyperbolic cosine
+    keywords: null
+    oneliner: Calculates the hyperbolic cosine of an angle.
+    element: false
+    details: |-
+      <p>Calculates the hyperbolic cosine of an angle.</p>
+      <p>When called with an integer or a float, they will be interpreted as radians.</p>
+      <h2 id="example">Example</h2>
+      <div class="previewed-code"><pre><code><span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">cosh</span><span class="typ-punct">(</span><span class="typ-num">0</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
+      <span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">cosh</span><span class="typ-punct">(</span><span class="typ-num">45deg</span><span class="typ-punct">)</span>
+      </code></pre><div class="preview"><img src="/assets/docs/ba8ccd534a5ad4f24b7e52c5a5d6b828.png" alt="Preview" width="480" height="190"/></div></div>
+    params:
+    - name: angle
+      details: <p>The angle whose hyperbolic cosine to calculate.</p>
+      example: null
+      types:
+      - integer
+      - float
+      - angle
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: false
+      settable: false
+    returns:
+    - float
+    methods: []
+    scope: []
+children: []

@@ -1,0 +1,57 @@
+route: /docs/reference/calculate/abs/
+title: Absolute
+description: Documentation for the `abs` function.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: example
+  name: Example
+  children: []
+- id: parameters
+  name: Parameters
+  children:
+  - id: parameters-value
+    name: value
+    children: []
+body:
+  kind: func
+  content:
+    path:
+    - calc
+    - abs
+    display: Absolute
+    keywords: null
+    oneliner: Calculates the absolute value of a numeric value.
+    element: false
+    details: |-
+      <p>Calculates the absolute value of a numeric value.</p>
+      <h2 id="example">Example</h2>
+      <div class="previewed-code"><pre><code><span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">abs</span><span class="typ-punct">(</span><span class="typ-op">-</span><span class="typ-num">5</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
+      <span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">abs</span><span class="typ-punct">(</span><span class="typ-num">5pt</span> <span class="typ-op">-</span> <span class="typ-num">2cm</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
+      <span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">abs</span><span class="typ-punct">(</span><span class="typ-num">2fr</span><span class="typ-punct">)</span>
+      </code></pre><div class="preview"><img src="/assets/docs/e510ee8d00f4e2c888a53ba546c26c14.png" alt="Preview" width="480" height="190"/></div></div>
+    params:
+    - name: value
+      details: <p>The value whose absolute value to calculate.</p>
+      example: null
+      types:
+      - integer
+      - float
+      - length
+      - angle
+      - ratio
+      - fraction
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: false
+      settable: false
+    returns:
+    - any
+    methods: []
+    scope: []
+children: []
