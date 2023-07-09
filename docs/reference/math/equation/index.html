@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Equation – Typst 中文文档</title>
+  <title>数学表达式 – Typst 中文文档</title>
   <meta name="description" content="Documentation for the `equation` function.">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#239dad">
   <meta property="og:url" content="https://typst.app/docs/reference/math/equation/">
-  <meta property="og:title" content="Equation – Typst 中文文档">
+  <meta property="og:title" content="数学表达式 – Typst 中文文档">
   <meta property="og:site_name" content="Typst">
   <meta property="og:description" content="Documentation for the `equation` function.">
   <meta property="og:type">
@@ -307,52 +307,52 @@
               <ul>
                 
                 
-                <li><a href="/docs/reference/math/accent/" >Accent</a></li>
+                <li><a href="/docs/reference/math/accent/" >重音符号</a></li>
                 
                 
-                <li><a href="/docs/reference/math/attach/" >Attach</a></li>
+                <li><a href="/docs/reference/math/attach/" >附缀</a></li>
                 
                 
-                <li><a href="/docs/reference/math/binom/" >Binomial</a></li>
+                <li><a href="/docs/reference/math/binom/" >二项式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/cancel/" >Cancel</a></li>
+                <li><a href="/docs/reference/math/cancel/" >删除线</a></li>
                 
                 
-                <li><a href="/docs/reference/math/cases/" >Cases</a></li>
+                <li><a href="/docs/reference/math/cases/" >大括号</a></li>
                 
                 
-                <li><a href="/docs/reference/math/equation/"  aria-current="page" >Equation</a></li>
+                <li><a href="/docs/reference/math/equation/"  aria-current="page" >数学表达式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/frac/" >Fraction</a></li>
+                <li><a href="/docs/reference/math/frac/" >分数</a></li>
                 
                 
                 <li><a href="/docs/reference/math/lr/" >Left/Right</a></li>
                 
                 
-                <li><a href="/docs/reference/math/mat/" >Matrix</a></li>
+                <li><a href="/docs/reference/math/mat/" >矩阵</a></li>
                 
                 
-                <li><a href="/docs/reference/math/roots/" >Roots</a></li>
+                <li><a href="/docs/reference/math/roots/" >根式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/sizes/" >Sizes</a></li>
+                <li><a href="/docs/reference/math/sizes/" >显示尺寸</a></li>
                 
                 
-                <li><a href="/docs/reference/math/styles/" >Styles</a></li>
+                <li><a href="/docs/reference/math/styles/" >显示样式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/op/" >Text Operator</a></li>
+                <li><a href="/docs/reference/math/op/" >文本运算符</a></li>
                 
                 
-                <li><a href="/docs/reference/math/underover/" >Under/Over</a></li>
+                <li><a href="/docs/reference/math/underover/" >上/下 方内容</a></li>
                 
                 
-                <li><a href="/docs/reference/math/variants/" >Variants</a></li>
+                <li><a href="/docs/reference/math/variants/" >字体变体</a></li>
                 
                 
-                <li><a href="/docs/reference/math/vec/" >Vector</a></li>
+                <li><a href="/docs/reference/math/vec/" >向量</a></li>
                 
               </ul>
               
@@ -830,7 +830,7 @@
         <li><a href="/docs/reference/math/">数学</a></li>
         
         <li aria-hidden="true"><img src="/assets/icons/16-arrow-right.svg" width="16" height="16" alt=""></li>
-        <li><a href="/docs/reference/math/equation/">Equation</a></li>
+        <li><a href="/docs/reference/math/equation/">数学表达式</a></li>
         
       </ul>
 
@@ -848,8 +848,8 @@
     </div>
   </small></h1>
 
-<p>A mathematical equation.</p>
-<p>Can be displayed inline with text or as a separate block.</p>
+<p>数学表达式。</p>
+<p>可以为内联显示或作为单独的文本块显示。</p>
 <h2 id="example">Example</h2>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>font<span class="typ-punct">:</span> <span class="typ-str">&quot;New Computer Modern&quot;</span><span class="typ-punct">)</span>
 
@@ -861,12 +861,10 @@ Then, we know that:
 Prove by induction:
 <span class="typ-math-delim">$</span> <span class="typ-pol">sum</span><span class="typ-math-op">_</span><span class="typ-punct">(</span>k=1<span class="typ-punct">)</span><span class="typ-math-op">^</span>n k = <span class="typ-punct">(</span>n(n+1)<span class="typ-punct">)</span> <span class="typ-math-op">/</span> 2 <span class="typ-math-delim">$</span>
 </code></pre><div class="preview"><img src="/assets/docs/2d58c5d646f64f45aaf3c354af40ed6d.png" alt="Preview" width="480" height="190"/></div></div>
-<h2 id="syntax">Syntax</h2>
-<p>This function also has dedicated syntax: Write mathematical markup within
-dollar signs to create an equation. Starting and ending the equation with at
-least one space lifts it into a separate block that is centered
-horizontally. For more details about math syntax, see the
-<a href="/docs/reference/math/">main math page</a>.</p>
+<h2 id="syntax">语法</h2>
+<p>该函数也有一个专用语法： 在美元符号内编写数学标记以创建表达式。
+在表达式开头和结尾添加至少一个空格，可以将其提升至水平居中的单独的文本块中显示中。详情请参考：
+<a href="/docs/reference/math/">math 页面</a>.</p>
 
 <h2 level="2" id="parameters"><span aria-describedby="parameters-tooltip">参数</span>
   <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
@@ -902,7 +900,7 @@ horizontally. For more details about math syntax, see the
     </small>
   </div>
 </h3>
-<p>Whether the equation is displayed as a separate block.</p>
+<p>是否显示为单独的文本块。</p>
 
 <p>默认：<code><span class="typ-key">false</span></code></p>
 
@@ -932,7 +930,7 @@ horizontally. For more details about math syntax, see the
     </small>
   </div>
 </h3>
-<p>How to <a href="/docs/reference/meta/numbering/">number</a> block-level equations.</p>
+<p> 如何对表达式进行 <a href="/docs/reference/meta/numbering/">编号</a> </p>
 
 <p>默认：<code><span class="typ-key">none</span></code></p>
 
@@ -978,10 +976,9 @@ With <span class="typ-ref">@ratio</span>, we get:
     </small>
   </div>
 </h3>
-<p>A supplement for the equation.</p>
-<p>For references to equations, this is added before the referenced number.</p>
-<p>If a function is specified, it is passed the referenced equation and
-should return content.</p>
+<p>数学表达式的补充内容。</p>
+<p>添加在被引用的公式编号的前面。</p>
+<p>如果指定了一个函数，将会传入引用的表达式，并返回其内容。</p>
 
 <p>默认：<code><span class="typ-key">auto</span></code></p>
 
@@ -1020,7 +1017,7 @@ With <span class="typ-ref">@ratio</span>, we get:
     </small>
   </div>
 </h3>
-<p>The contents of the equation.</p>
+<p>表达式的主体内容。</p>
 
 
 
@@ -1034,9 +1031,9 @@ With <span class="typ-ref">@ratio</span>, we get:
       
       <div class="page-end-buttons"><a href="/docs/reference/math/cases/" class="previous"><img
             src="/assets/icons/16-arrow-right.svg" alt="←">
-          <div><span class="page-title">Cases</span><span class="hint">上一页</span></div>
+          <div><span class="page-title">大括号</span><span class="hint">上一页</span></div>
         </a><a href="/docs/reference/math/frac/" class="next"><img src="/assets/icons/16-arrow-right.svg" alt="→">
-          <div><span class="page-title">Fraction</span><span class="hint">下一页</span></div>
+          <div><span class="page-title">分数</span><span class="hint">下一页</span></div>
         </a></div>
       
     </main>

@@ -307,52 +307,52 @@
               <ul>
                 
                 
-                <li><a href="/docs/reference/math/accent/" >Accent</a></li>
+                <li><a href="/docs/reference/math/accent/" >重音符号</a></li>
                 
                 
-                <li><a href="/docs/reference/math/attach/" >Attach</a></li>
+                <li><a href="/docs/reference/math/attach/" >附缀</a></li>
                 
                 
-                <li><a href="/docs/reference/math/binom/" >Binomial</a></li>
+                <li><a href="/docs/reference/math/binom/" >二项式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/cancel/" >Cancel</a></li>
+                <li><a href="/docs/reference/math/cancel/" >删除线</a></li>
                 
                 
-                <li><a href="/docs/reference/math/cases/" >Cases</a></li>
+                <li><a href="/docs/reference/math/cases/" >大括号</a></li>
                 
                 
-                <li><a href="/docs/reference/math/equation/" >Equation</a></li>
+                <li><a href="/docs/reference/math/equation/" >数学表达式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/frac/" >Fraction</a></li>
+                <li><a href="/docs/reference/math/frac/" >分数</a></li>
                 
                 
                 <li><a href="/docs/reference/math/lr/" >Left/Right</a></li>
                 
                 
-                <li><a href="/docs/reference/math/mat/" >Matrix</a></li>
+                <li><a href="/docs/reference/math/mat/" >矩阵</a></li>
                 
                 
-                <li><a href="/docs/reference/math/roots/" >Roots</a></li>
+                <li><a href="/docs/reference/math/roots/" >根式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/sizes/" >Sizes</a></li>
+                <li><a href="/docs/reference/math/sizes/" >显示尺寸</a></li>
                 
                 
-                <li><a href="/docs/reference/math/styles/" >Styles</a></li>
+                <li><a href="/docs/reference/math/styles/" >显示样式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/op/" >Text Operator</a></li>
+                <li><a href="/docs/reference/math/op/" >文本运算符</a></li>
                 
                 
-                <li><a href="/docs/reference/math/underover/" >Under/Over</a></li>
+                <li><a href="/docs/reference/math/underover/" >上/下 方内容</a></li>
                 
                 
-                <li><a href="/docs/reference/math/variants/" >Variants</a></li>
+                <li><a href="/docs/reference/math/variants/" >字体变体</a></li>
                 
                 
-                <li><a href="/docs/reference/math/vec/" >Vector</a></li>
+                <li><a href="/docs/reference/math/vec/" >向量</a></li>
                 
               </ul>
               
@@ -875,7 +875,7 @@ Typst 将自动对项目进行编号。</p>
 <span class="typ-marker">+</span> The topography
 <span class="typ-marker">+</span> The geology
 </code></pre><div class="preview"><img src="/assets/docs/be810070e25ba33ef40f9f0347e7f933.png" alt="Preview" width="480" height="190"/></div></div>
-<h2 id="figure">加入图表</h2>
+<h2>加入图表</h2>
 <p>您认为图表对一份优秀的报告至关重要，所以让我们添加一个图表。
 Typst 支持 PNG、JPEG、GIF 和 SVG 格式的图像。
 要将图像文件添加到项目中，请先通过单击左侧边栏中的箱子图标打开 <em>文件面板</em> 。
@@ -928,7 +928,7 @@ Typst 可识别参数列表中的许多不同数据类型，
 为此，首先在图表上贴上标签。
 标签用于唯一标识文档中的元素，你只需要通过在尖括号中将标签名称括起来，并在图表后加入。
 然后，您可以通过在文本中键入 <code><span class="typ-ref">@</span></code> 符号，后面跟标签名称来引用该图表。
-标题和方程式也可以加入标签，以使其可引用。</p>
+标题和表达式也可以加入标签，以使其可引用。</p>
 <div class="previewed-code"><pre><code>Glaciers as the one shown in
 <span class="typ-ref">@glaciers</span> will cease to exist if
 we don&#39;t take action soon!
@@ -949,7 +949,7 @@ we don&#39;t take action soon!
 这就是为什么这里只允许输入字符串作为参数。
 相反，字符串适用于任何需要内容块的地方，因为文本是一种有效的内容块。</p>
 </div>
-<h2 id="bibliography">添加参考文献</h2>
+<h2>添加参考文献</h2>
 <p>在撰写报告时，您需要引用资料来支持您的一些论证。
 您可以使用 <a href="/docs/reference/meta/bibliography/"><code>bibliography</code></a> 函数向文档添加参考文献。
 此函数需要参考文献文件的路径。</p>
@@ -966,7 +966,7 @@ established in <span class="typ-ref">@glacier-melt</span>.
 
 <span class="typ-func">#</span><span class="typ-func">bibliography</span><span class="typ-punct">(</span><span class="typ-str">&quot;works.bib&quot;</span><span class="typ-punct">)</span>
 </code></pre><div class="preview"><img src="/assets/docs/e5ad36bc112c0053eb5e3b06e9a84e8b.png" alt="Preview" width="480" height="190"/></div></div>
-<h2 id="maths">数学</h2>
+<h2>数学</h2>
 <p>充实了方法部分后，您继续完成这篇文稿的实质部分：数学公式。
 Typst 具有内置的数学排版引擎，并使用自己的数学记号。
 让我们从一个简单的等式开始。我们使用 <code>$</code> 符号括住它，让 Typst 知道它正在处理一个数学表达式：</p>
@@ -1024,7 +1024,7 @@ Typst 将用适当的符号替换括号中的子表达式。</p>
 </code></pre><div class="preview"><img src="/assets/docs/b4cc131d22826c75b24f0c145830ad06.png" alt="Preview" width="480" height="190"/></div></div>
 <p>这种记号在标记模式下也可以使用，但符号名称前面必须带有 <code>#sym</code>。
 有关所有可用符号的列表，请参阅 <a href="/docs/reference/symbols/sym/">符号部分</a>。</p>
-<h2 id="review">回顾</h2>
+<h2>回顾</h2>
 <p>您现在已经了解了如何在 Typst 中编写基本的文档。
 您学习了如何强调文本、编写列表、插入图像、对齐内容和排版数学表达式。
 您还了解了 Typst 的函数。
@@ -1047,28 +1047,6 @@ Typst 允许您将更多种类的内容插入到文档中，例如 <a href="/doc
       
     </main>
 
-    
-    <nav id="page-overview"><strong>目录</strong>
-      <ul>
-        
-        <li data-assoc="figure"><a href="#figure">Figure</a>
-          <ul></ul>
-        </li>
-        
-        <li data-assoc="bibliography"><a href="#bibliography">Bibliography</a>
-          <ul></ul>
-        </li>
-        
-        <li data-assoc="maths"><a href="#maths">Maths</a>
-          <ul></ul>
-        </li>
-        
-        <li data-assoc="review"><a href="#review">Review</a>
-          <ul></ul>
-        </li>
-        
-      </ul>
-    </nav>
     
   </div>
   <footer>

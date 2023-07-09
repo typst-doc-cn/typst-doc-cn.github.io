@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Accent – Typst 中文文档</title>
+  <title>重音符号 – Typst 中文文档</title>
   <meta name="description" content="Documentation for the `accent` function.">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#239dad">
   <meta property="og:url" content="https://typst.app/docs/reference/math/accent/">
-  <meta property="og:title" content="Accent – Typst 中文文档">
+  <meta property="og:title" content="重音符号 – Typst 中文文档">
   <meta property="og:site_name" content="Typst">
   <meta property="og:description" content="Documentation for the `accent` function.">
   <meta property="og:type">
@@ -307,52 +307,52 @@
               <ul>
                 
                 
-                <li><a href="/docs/reference/math/accent/"  aria-current="page" >Accent</a></li>
+                <li><a href="/docs/reference/math/accent/"  aria-current="page" >重音符号</a></li>
                 
                 
-                <li><a href="/docs/reference/math/attach/" >Attach</a></li>
+                <li><a href="/docs/reference/math/attach/" >附缀</a></li>
                 
                 
-                <li><a href="/docs/reference/math/binom/" >Binomial</a></li>
+                <li><a href="/docs/reference/math/binom/" >二项式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/cancel/" >Cancel</a></li>
+                <li><a href="/docs/reference/math/cancel/" >删除线</a></li>
                 
                 
-                <li><a href="/docs/reference/math/cases/" >Cases</a></li>
+                <li><a href="/docs/reference/math/cases/" >大括号</a></li>
                 
                 
-                <li><a href="/docs/reference/math/equation/" >Equation</a></li>
+                <li><a href="/docs/reference/math/equation/" >数学表达式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/frac/" >Fraction</a></li>
+                <li><a href="/docs/reference/math/frac/" >分数</a></li>
                 
                 
                 <li><a href="/docs/reference/math/lr/" >Left/Right</a></li>
                 
                 
-                <li><a href="/docs/reference/math/mat/" >Matrix</a></li>
+                <li><a href="/docs/reference/math/mat/" >矩阵</a></li>
                 
                 
-                <li><a href="/docs/reference/math/roots/" >Roots</a></li>
+                <li><a href="/docs/reference/math/roots/" >根式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/sizes/" >Sizes</a></li>
+                <li><a href="/docs/reference/math/sizes/" >显示尺寸</a></li>
                 
                 
-                <li><a href="/docs/reference/math/styles/" >Styles</a></li>
+                <li><a href="/docs/reference/math/styles/" >显示样式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/op/" >Text Operator</a></li>
+                <li><a href="/docs/reference/math/op/" >文本运算符</a></li>
                 
                 
-                <li><a href="/docs/reference/math/underover/" >Under/Over</a></li>
+                <li><a href="/docs/reference/math/underover/" >上/下 方内容</a></li>
                 
                 
-                <li><a href="/docs/reference/math/variants/" >Variants</a></li>
+                <li><a href="/docs/reference/math/variants/" >字体变体</a></li>
                 
                 
-                <li><a href="/docs/reference/math/vec/" >Vector</a></li>
+                <li><a href="/docs/reference/math/vec/" >向量</a></li>
                 
               </ul>
               
@@ -830,7 +830,7 @@
         <li><a href="/docs/reference/math/">数学</a></li>
         
         <li aria-hidden="true"><img src="/assets/icons/16-arrow-right.svg" width="16" height="16" alt=""></li>
-        <li><a href="/docs/reference/math/accent/">Accent</a></li>
+        <li><a href="/docs/reference/math/accent/">重音符号</a></li>
         
       </ul>
 
@@ -848,7 +848,8 @@
     </div>
   </small></h1>
 
-<p>Attaches an accent to a base.</p>
+<p>在附基上添加重音符号。</p>
+<p><i>译者注：</i>形如 a² 这样的形式，我们将 a 称作“附基”（base），将 ² 称作“附缀”（attachment） </p>
 <h2 id="example">Example</h2>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span><span class="typ-func">grave</span><span class="typ-punct">(</span>a<span class="typ-punct">)</span> = <span class="typ-func">accent</span><span class="typ-punct">(</span>a<span class="typ-punct">,</span> `<span class="typ-punct">)</span><span class="typ-math-delim">$</span> <span class="typ-escape">\</span>
 <span class="typ-math-delim">$</span><span class="typ-func">arrow</span><span class="typ-punct">(</span>a<span class="typ-punct">)</span> = <span class="typ-func">accent</span><span class="typ-punct">(</span>a<span class="typ-punct">,</span> <span class="typ-pol">arrow</span><span class="typ-punct">)</span><span class="typ-math-delim">$</span> <span class="typ-escape">\</span>
@@ -888,8 +889,7 @@
     </small>
   </div>
 </h3>
-<p>The base to which the accent is applied.
-May consist of multiple letters.</p>
+<p>添加重音符号的基数，可以由多个字母组成。</p>
 
 
 <div class="folding-example"><button class="folding-example-header"><img src="/assets/icons/16-arrow-right.svg" alt=""
@@ -922,8 +922,8 @@ May consist of multiple letters.</p>
     </small>
   </div>
 </h3>
-<p>The accent to apply to the base.</p>
-<p>Supported accents include:</p>
+<p>可添加于附基的重音符号。</p>
+<p>支持的重音符号如下：</p>
 <table><thead><tr><th>Accent</th><th>Name</th><th>Codepoint</th></tr></thead><tbody>
 <tr><td>Grave</td><td><code>grave</code></td><td><code>`</code></td></tr>
 <tr><td>Acute</td><td><code>acute</code></td><td><code>´</code></td></tr>
@@ -957,7 +957,7 @@ May consist of multiple letters.</p>
             src="/assets/icons/16-arrow-right.svg" alt="←">
           <div><span class="page-title">数学</span><span class="hint">上一页</span></div>
         </a><a href="/docs/reference/math/attach/" class="next"><img src="/assets/icons/16-arrow-right.svg" alt="→">
-          <div><span class="page-title">Attach</span><span class="hint">下一页</span></div>
+          <div><span class="page-title">附缀</span><span class="hint">下一页</span></div>
         </a></div>
       
     </main>

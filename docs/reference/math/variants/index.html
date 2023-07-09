@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Variants – Typst 中文文档</title>
+  <title>字体变体 – Typst 中文文档</title>
   <meta name="description" content="Documentation for variants group of functions.">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#239dad">
   <meta property="og:url" content="https://typst.app/docs/reference/math/variants/">
-  <meta property="og:title" content="Variants – Typst 中文文档">
+  <meta property="og:title" content="字体变体 – Typst 中文文档">
   <meta property="og:site_name" content="Typst">
   <meta property="og:description" content="Documentation for variants group of functions.">
   <meta property="og:type">
@@ -307,52 +307,52 @@
               <ul>
                 
                 
-                <li><a href="/docs/reference/math/accent/" >Accent</a></li>
+                <li><a href="/docs/reference/math/accent/" >重音符号</a></li>
                 
                 
-                <li><a href="/docs/reference/math/attach/" >Attach</a></li>
+                <li><a href="/docs/reference/math/attach/" >附缀</a></li>
                 
                 
-                <li><a href="/docs/reference/math/binom/" >Binomial</a></li>
+                <li><a href="/docs/reference/math/binom/" >二项式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/cancel/" >Cancel</a></li>
+                <li><a href="/docs/reference/math/cancel/" >删除线</a></li>
                 
                 
-                <li><a href="/docs/reference/math/cases/" >Cases</a></li>
+                <li><a href="/docs/reference/math/cases/" >大括号</a></li>
                 
                 
-                <li><a href="/docs/reference/math/equation/" >Equation</a></li>
+                <li><a href="/docs/reference/math/equation/" >数学表达式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/frac/" >Fraction</a></li>
+                <li><a href="/docs/reference/math/frac/" >分数</a></li>
                 
                 
                 <li><a href="/docs/reference/math/lr/" >Left/Right</a></li>
                 
                 
-                <li><a href="/docs/reference/math/mat/" >Matrix</a></li>
+                <li><a href="/docs/reference/math/mat/" >矩阵</a></li>
                 
                 
-                <li><a href="/docs/reference/math/roots/" >Roots</a></li>
+                <li><a href="/docs/reference/math/roots/" >根式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/sizes/" >Sizes</a></li>
+                <li><a href="/docs/reference/math/sizes/" >显示尺寸</a></li>
                 
                 
-                <li><a href="/docs/reference/math/styles/" >Styles</a></li>
+                <li><a href="/docs/reference/math/styles/" >显示样式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/op/" >Text Operator</a></li>
+                <li><a href="/docs/reference/math/op/" >文本运算符</a></li>
                 
                 
-                <li><a href="/docs/reference/math/underover/" >Under/Over</a></li>
+                <li><a href="/docs/reference/math/underover/" >上/下 方内容</a></li>
                 
                 
-                <li><a href="/docs/reference/math/variants/"  aria-current="page" >Variants</a></li>
+                <li><a href="/docs/reference/math/variants/"  aria-current="page" >字体变体</a></li>
                 
                 
-                <li><a href="/docs/reference/math/vec/" >Vector</a></li>
+                <li><a href="/docs/reference/math/vec/" >向量</a></li>
                 
               </ul>
               
@@ -830,24 +830,29 @@
         <li><a href="/docs/reference/math/">数学</a></li>
         
         <li aria-hidden="true"><img src="/assets/icons/16-arrow-right.svg" width="16" height="16" alt=""></li>
-        <li><a href="/docs/reference/math/variants/">Variants</a></li>
+        <li><a href="/docs/reference/math/variants/">字体变体</a></li>
         
       </ul>
 
       
 
 <h1 id="summary">Variants<!-- --> 函数类</h1>
-<p>Alternate typefaces within formulas.</p>
-<p>These functions are distinct from the <a href="/docs/reference/text/text/"><code>text</code></a> function because
-math fonts contain multiple variants of each letter.</p>
+<p>
+数学公式中的替代字体。
+</p>
+<p>
+这些函数和 <a href="/docs/reference/text/text/"><code>text</code></a> 函数不同，因为数学字体包含每个字母的多个变体。
+</p>
 
 <!-- ----------------------------------------------------------------------------------- -->
 
 
 <h2 level="1" id="serif"><code>serif</code> function </h2>
 
-<p>Serif (roman) font style in math.</p>
-<p>This is already the default.</p>
+<p>
+数学中的衬线（罗马）字体样式。
+</p>
+<p>这也是默认样式。</p>
 
 <h3 level="2" id="serif-parameters"><span aria-describedby="serif-parameters-tooltip">参数</span>
   <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
@@ -881,14 +886,16 @@ math fonts contain multiple variants of each letter.</p>
     </small>
   </div>
 </h4>
-<p>The content to style.</p>
+<p>要设定样式的内容。</p>
 
 
 
 
 <h2 level="1" id="sans"><code>sans</code> function </h2>
 
-<p>Sans-serif font style in math.</p>
+<p>
+数学中的无衬线字体样式。
+</p>
 <h3 id="sans-example">Example</h3>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">sans</span><span class="typ-punct">(</span>A B C<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
 </code></pre><div class="preview"><img src="/assets/docs/a3e118d9df47ac4a4950d912ca8980ca.png" alt="Preview" width="480" height="190"/></div></div>
@@ -925,14 +932,16 @@ math fonts contain multiple variants of each letter.</p>
     </small>
   </div>
 </h4>
-<p>The content to style.</p>
+<p>要设定样式的内容。</p>
 
 
 
 
 <h2 level="1" id="frak"><code>frak</code> function </h2>
 
-<p>Fraktur font style in math.</p>
+<p>
+数学中的德文尖角体样式。
+</p>
 <h3 id="frak-example">Example</h3>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">frak</span><span class="typ-punct">(</span>P<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
 </code></pre><div class="preview"><img src="/assets/docs/1b1d41aefeb886afda3e40c16eb413c4.png" alt="Preview" width="480" height="190"/></div></div>
@@ -969,14 +978,16 @@ math fonts contain multiple variants of each letter.</p>
     </small>
   </div>
 </h4>
-<p>The content to style.</p>
+<p>要设定样式的内容。</p>
 
 
 
 
 <h2 level="1" id="mono"><code>mono</code> function </h2>
 
-<p>Monospace font style in math.</p>
+<p>
+数学中的等宽字体样式。
+</p>
 <h3 id="mono-example">Example</h3>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">mono</span><span class="typ-punct">(</span>x + y = z<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
 </code></pre><div class="preview"><img src="/assets/docs/22a327f021c4135a3c29e51704891040.png" alt="Preview" width="480" height="190"/></div></div>
@@ -1013,16 +1024,19 @@ math fonts contain multiple variants of each letter.</p>
     </small>
   </div>
 </h4>
-<p>The content to style.</p>
+<p>要设定样式的内容。</p>
 
 
 
 
 <h2 level="1" id="bb"><code>bb</code> function </h2>
 
-<p>Blackboard bold (double-struck) font style in math.</p>
-<p>For uppercase latin letters, blackboard bold is additionally available
-through <a href="/docs/reference/symbols/sym/">symbols</a> of the form <code>NN</code> and <code>RR</code>.</p>
+<p>
+数学中的黑板粗体（双线）字体样式。
+</p>
+<p>
+对于大写拉丁字母，黑板粗体还可以通过形式为 <code>NN</code> 和 <code>RR</code> 的 <a href="/docs/reference/symbols/sym/">symbols</a> 得到。
+</p>
 <h3 id="bb-example">Example</h3>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">bb</span><span class="typ-punct">(</span>b<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
 <span class="typ-math-delim">$</span> <span class="typ-func">bb</span><span class="typ-punct">(</span>N<span class="typ-punct">)</span> = <span class="typ-pol">NN</span> <span class="typ-math-delim">$</span>
@@ -1061,14 +1075,16 @@ through <a href="/docs/reference/symbols/sym/">symbols</a> of the form <code>NN<
     </small>
   </div>
 </h4>
-<p>The content to style.</p>
+<p>要设定样式的内容。</p>
 
 
 
 
 <h2 level="1" id="cal"><code>cal</code> function </h2>
 
-<p>Calligraphic font style in math.</p>
+<p>
+数学中的书法字体样式。
+</p>
 <h3 id="cal-example">Example</h3>
 <div class="previewed-code"><pre><code>Let <span class="typ-math-delim">$</span><span class="typ-func">cal</span><span class="typ-punct">(</span>P<span class="typ-punct">)</span><span class="typ-math-delim">$</span> be the set of <span class="typ-escape">...</span>
 </code></pre><div class="preview"><img src="/assets/docs/4076bf054496eaa35f7325c6d304bf36.png" alt="Preview" width="480" height="190"/></div></div>
@@ -1105,7 +1121,7 @@ through <a href="/docs/reference/symbols/sym/">symbols</a> of the form <code>NN<
     </small>
   </div>
 </h4>
-<p>The content to style.</p>
+<p>要设定样式的内容。</p>
 
 
 
@@ -1116,9 +1132,9 @@ through <a href="/docs/reference/symbols/sym/">symbols</a> of the form <code>NN<
       
       <div class="page-end-buttons"><a href="/docs/reference/math/underover/" class="previous"><img
             src="/assets/icons/16-arrow-right.svg" alt="←">
-          <div><span class="page-title">Under/Over</span><span class="hint">上一页</span></div>
+          <div><span class="page-title">上/下 方内容</span><span class="hint">上一页</span></div>
         </a><a href="/docs/reference/math/vec/" class="next"><img src="/assets/icons/16-arrow-right.svg" alt="→">
-          <div><span class="page-title">Vector</span><span class="hint">下一页</span></div>
+          <div><span class="page-title">向量</span><span class="hint">下一页</span></div>
         </a></div>
       
     </main>

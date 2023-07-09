@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Attach – Typst 中文文档</title>
+  <title>附缀 – Typst 中文文档</title>
   <meta name="description" content="Documentation for attach group of functions.">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#239dad">
   <meta property="og:url" content="https://typst.app/docs/reference/math/attach/">
-  <meta property="og:title" content="Attach – Typst 中文文档">
+  <meta property="og:title" content="附缀 – Typst 中文文档">
   <meta property="og:site_name" content="Typst">
   <meta property="og:description" content="Documentation for attach group of functions.">
   <meta property="og:type">
@@ -307,52 +307,52 @@
               <ul>
                 
                 
-                <li><a href="/docs/reference/math/accent/" >Accent</a></li>
+                <li><a href="/docs/reference/math/accent/" >重音符号</a></li>
                 
                 
-                <li><a href="/docs/reference/math/attach/"  aria-current="page" >Attach</a></li>
+                <li><a href="/docs/reference/math/attach/"  aria-current="page" >附缀</a></li>
                 
                 
-                <li><a href="/docs/reference/math/binom/" >Binomial</a></li>
+                <li><a href="/docs/reference/math/binom/" >二项式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/cancel/" >Cancel</a></li>
+                <li><a href="/docs/reference/math/cancel/" >删除线</a></li>
                 
                 
-                <li><a href="/docs/reference/math/cases/" >Cases</a></li>
+                <li><a href="/docs/reference/math/cases/" >大括号</a></li>
                 
                 
-                <li><a href="/docs/reference/math/equation/" >Equation</a></li>
+                <li><a href="/docs/reference/math/equation/" >数学表达式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/frac/" >Fraction</a></li>
+                <li><a href="/docs/reference/math/frac/" >分数</a></li>
                 
                 
                 <li><a href="/docs/reference/math/lr/" >Left/Right</a></li>
                 
                 
-                <li><a href="/docs/reference/math/mat/" >Matrix</a></li>
+                <li><a href="/docs/reference/math/mat/" >矩阵</a></li>
                 
                 
-                <li><a href="/docs/reference/math/roots/" >Roots</a></li>
+                <li><a href="/docs/reference/math/roots/" >根式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/sizes/" >Sizes</a></li>
+                <li><a href="/docs/reference/math/sizes/" >显示尺寸</a></li>
                 
                 
-                <li><a href="/docs/reference/math/styles/" >Styles</a></li>
+                <li><a href="/docs/reference/math/styles/" >显示样式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/op/" >Text Operator</a></li>
+                <li><a href="/docs/reference/math/op/" >文本运算符</a></li>
                 
                 
-                <li><a href="/docs/reference/math/underover/" >Under/Over</a></li>
+                <li><a href="/docs/reference/math/underover/" >上/下 方内容</a></li>
                 
                 
-                <li><a href="/docs/reference/math/variants/" >Variants</a></li>
+                <li><a href="/docs/reference/math/variants/" >字体变体</a></li>
                 
                 
-                <li><a href="/docs/reference/math/vec/" >Vector</a></li>
+                <li><a href="/docs/reference/math/vec/" >向量</a></li>
                 
               </ul>
               
@@ -830,19 +830,22 @@
         <li><a href="/docs/reference/math/">数学</a></li>
         
         <li aria-hidden="true"><img src="/assets/icons/16-arrow-right.svg" width="16" height="16" alt=""></li>
-        <li><a href="/docs/reference/math/attach/">Attach</a></li>
+        <li><a href="/docs/reference/math/attach/">附缀</a></li>
         
       </ul>
 
       
 
 <h1 id="summary">Attach<!-- --> 函数类</h1>
-<p>Subscript, superscripts, and limits.</p>
-<p>The <code>attach</code> function backs the <code><span class="typ-math-delim">$</span>a<span class="typ-math-op">_</span>b<span class="typ-math-op">^</span>c<span class="typ-math-delim">$</span></code> syntax that adds top and bottom
-attachments to a part of an equation. Attachments can be displayed either as
-sub/superscripts, or limits. Typst automatically decides which is more
-suitable depending on the base, but you can also control this manually with
-the <code>scripts</code> and <code>limits</code> functions.</p>
+<p>上下标, 和上下限。</p>
+<p><code>attach</code> 函数支持形如
+<code><span class="typ-math-delim">$</span>a<span class="typ-math-op">_</span>b<span class="typ-math-op">^</span>c<span class="typ-math-delim">$</span></code> 
+的语法，可以为方程的某个方位添加附缀。
+附缀可以显示为上下标和上下限的形式。
+Typst会自动调整为合适的显示方式，但是您也可以使用
+<code>scripts</code> 函数和 <code>limits</code> 函数
+手动调整。
+</p>
 
 <!-- ----------------------------------------------------------------------------------- -->
 
@@ -859,21 +862,21 @@ the <code>scripts</code> and <code>limits</code> functions.</p>
     </div>
   </small></h2>
 
-<p>A base with optional attachments.</p>
+<p>带有可选附缀的附基。</p>
 <h3 id="attach-example">Example</h3>
 <div class="previewed-code"><pre><code><span class="typ-comment">// With syntax.</span>
 <span class="typ-math-delim">$</span> <span class="typ-pol">sum</span><span class="typ-math-op">_</span><span class="typ-punct">(</span>i=0<span class="typ-punct">)</span><span class="typ-math-op">^</span>n a<span class="typ-math-op">_</span>i = 2<span class="typ-math-op">^</span><span class="typ-punct">(</span>1+i<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
 
-<span class="typ-comment">// With function call.</span>
+<span class="typ-comment">// / With function call.</span>
 <span class="typ-math-delim">$</span> <span class="typ-func">attach</span><span class="typ-punct">(</span>
   <span class="typ-pol">Pi</span><span class="typ-punct">,</span> t<span class="typ-punct">:</span> <span class="typ-pol">alpha</span><span class="typ-punct">,</span> b<span class="typ-punct">:</span> <span class="typ-pol">beta</span><span class="typ-punct">,</span>
   tl<span class="typ-punct">:</span> 1<span class="typ-punct">,</span> tr<span class="typ-punct">:</span> 2+3<span class="typ-punct">,</span> bl<span class="typ-punct">:</span> 4+5<span class="typ-punct">,</span> br<span class="typ-punct">:</span> 6<span class="typ-punct">,</span>
 <span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
 </code></pre><div class="preview"><img src="/assets/docs/c5ec897569c2232d0f7d6902f6452215.png" alt="Preview" width="480" height="190"/></div></div>
-<h3 id="attach-syntax">Syntax</h3>
-<p>This function also has dedicated syntax for attachments after the base: Use
-the underscore (<code>_</code>) to indicate a subscript i.e. bottom attachment and the
-hat (<code>^</code>) to indicate a superscript i.e. top attachment.</p>
+<h3 id="attach-syntax">语法</h3>
+<p>对于附基之后的附缀，该函数提供了专用语法： 
+使用下划线 (<code>_</code>) 表示下标（底部附缀）；使用插入符号 (<code>^</code>) 来表示上标（顶部附缀）。
+</p>
 
 <h3 level="2" id="attach-parameters"><span aria-describedby="attach-parameters-tooltip">参数</span>
   <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
@@ -907,7 +910,7 @@ hat (<code>^</code>) to indicate a superscript i.e. top attachment.</p>
     </small>
   </div>
 </h4>
-<p>The base to which things are attached.</p>
+<p>供附缀附着的部分。</p>
 
 
 
@@ -933,9 +936,11 @@ hat (<code>^</code>) to indicate a superscript i.e. top attachment.</p>
     </small>
   </div>
 </h4>
-<p>The top attachment, smartly positioned at top-right or above the base.</p>
-<p>You can wrap the base in <code><span class="typ-func">limits</span><span class="typ-punct">(</span><span class="typ-punct">)</span></code> or <code><span class="typ-func">scripts</span><span class="typ-punct">(</span><span class="typ-punct">)</span></code> to override the
-smart positioning.</p>
+<p>顶部附缀，智能定位于附基的上方或右上方。</p>
+<p>你也可以将附基包裹在<code><span class="typ-func">limits</span><span class="typ-punct">(</span><span class="typ-punct">)</span></code> 
+或
+<code><span class="typ-func">scripts</span><span class="typ-punct">(</span><span class="typ-punct">)</span></code> 
+来覆盖掉智能定位。</p>
 
 <p>默认：<code><span class="typ-key">none</span></code></p>
 
@@ -963,10 +968,11 @@ smart positioning.</p>
     </small>
   </div>
 </h4>
-<p>The bottom attachment, smartly positioned at the bottom-right or below
-the base.</p>
-<p>You can wrap the base in <code><span class="typ-func">limits</span><span class="typ-punct">(</span><span class="typ-punct">)</span></code> or <code><span class="typ-func">scripts</span><span class="typ-punct">(</span><span class="typ-punct">)</span></code> to override the
-smart positioning.</p>
+<p>顶部附缀，智能定位于附基的上方或右上方。</p>
+<p>你也可以将附基包裹在<code><span class="typ-func">limits</span><span class="typ-punct">(</span><span class="typ-punct">)</span></code> 
+或 
+<code><span class="typ-func">scripts</span><span class="typ-punct">(</span><span class="typ-punct">)</span></code> 
+来覆盖掉智能定位。</p>
 
 <p>默认：<code><span class="typ-key">none</span></code></p>
 
@@ -994,7 +1000,7 @@ smart positioning.</p>
     </small>
   </div>
 </h4>
-<p>The top-left attachment (before the base).</p>
+<p>左上角附缀。</p>
 
 <p>默认：<code><span class="typ-key">none</span></code></p>
 
@@ -1022,7 +1028,7 @@ smart positioning.</p>
     </small>
   </div>
 </h4>
-<p>The bottom-left attachment (before base).</p>
+<p>左下角附缀。</p>
 
 <p>默认：<code><span class="typ-key">none</span></code></p>
 
@@ -1050,7 +1056,7 @@ smart positioning.</p>
     </small>
   </div>
 </h4>
-<p>The top-right attachment (after the base).</p>
+<p>右上角附缀。</p>
 
 <p>默认：<code><span class="typ-key">none</span></code></p>
 
@@ -1078,7 +1084,7 @@ smart positioning.</p>
     </small>
   </div>
 </h4>
-<p>The bottom-right attachment (after the base).</p>
+<p>右下角附缀。</p>
 
 <p>默认：<code><span class="typ-key">none</span></code></p>
 
@@ -1097,7 +1103,7 @@ smart positioning.</p>
     </div>
   </small></h2>
 
-<p>Forces a base to display attachments as scripts.</p>
+<p>强制将附缀显示为脚本形式（即角标形式）。</p>
 <h3 id="scripts-example">Example</h3>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">scripts</span><span class="typ-punct">(</span><span class="typ-pol">sum</span><span class="typ-punct">)</span><span class="typ-math-op">_</span>1<span class="typ-math-op">^</span>2 <span class="typ-escape">!=</span> <span class="typ-pol">sum</span><span class="typ-math-op">_</span>1<span class="typ-math-op">^</span>2 <span class="typ-math-delim">$</span>
 </code></pre><div class="preview"><img src="/assets/docs/fd2fa3481f1f6d8947d1a6310cd5e827.png" alt="Preview" width="480" height="190"/></div></div>
@@ -1134,7 +1140,7 @@ smart positioning.</p>
     </small>
   </div>
 </h4>
-<p>The base to attach the scripts to.</p>
+<p>供脚本附缀附着的部分。</p>
 
 
 
@@ -1151,7 +1157,7 @@ smart positioning.</p>
     </div>
   </small></h2>
 
-<p>Forces a base to display attachments as limits.</p>
+<p>强制将附缀显示为上下限形式（即显示在正上方和正下方）。</p>
 <h3 id="limits-example">Example</h3>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">limits</span><span class="typ-punct">(</span>A<span class="typ-punct">)</span><span class="typ-math-op">_</span>1<span class="typ-math-op">^</span>2 <span class="typ-escape">!=</span> A<span class="typ-math-op">_</span>1<span class="typ-math-op">^</span>2 <span class="typ-math-delim">$</span>
 </code></pre><div class="preview"><img src="/assets/docs/a60dcf87b7850ffbb2f702c04761242c.png" alt="Preview" width="480" height="190"/></div></div>
@@ -1188,7 +1194,7 @@ smart positioning.</p>
     </small>
   </div>
 </h4>
-<p>The base to attach the limits to.</p>
+<p>供上下限附缀附着的部分。</p>
 
 
 
@@ -1212,9 +1218,8 @@ smart positioning.</p>
     </small>
   </div>
 </h4>
-<p>Whether to also force limits in inline equations.</p>
-<p>When applying limits globally (e.g., through a show rule), it is
-typically a good idea to disable this.</p>
+<p>是否强制显示为内联公式。</p>
+<p>全局应用limits时（如使用 set 规则）最好禁用此功能。</p>
 
 <p>默认：<code><span class="typ-key">true</span></code></p>
 
@@ -1227,9 +1232,9 @@ typically a good idea to disable this.</p>
       
       <div class="page-end-buttons"><a href="/docs/reference/math/accent/" class="previous"><img
             src="/assets/icons/16-arrow-right.svg" alt="←">
-          <div><span class="page-title">Accent</span><span class="hint">上一页</span></div>
+          <div><span class="page-title">重音符号</span><span class="hint">上一页</span></div>
         </a><a href="/docs/reference/math/binom/" class="next"><img src="/assets/icons/16-arrow-right.svg" alt="→">
-          <div><span class="page-title">Binomial</span><span class="hint">下一页</span></div>
+          <div><span class="page-title">二项式</span><span class="hint">下一页</span></div>
         </a></div>
       
     </main>

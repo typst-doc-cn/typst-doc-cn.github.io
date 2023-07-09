@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Under/Over – Typst 中文文档</title>
+  <title>上/下 方内容 – Typst 中文文档</title>
   <meta name="description" content="Documentation for underover group of functions.">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#239dad">
   <meta property="og:url" content="https://typst.app/docs/reference/math/underover/">
-  <meta property="og:title" content="Under/Over – Typst 中文文档">
+  <meta property="og:title" content="上/下 方内容 – Typst 中文文档">
   <meta property="og:site_name" content="Typst">
   <meta property="og:description" content="Documentation for underover group of functions.">
   <meta property="og:type">
@@ -307,52 +307,52 @@
               <ul>
                 
                 
-                <li><a href="/docs/reference/math/accent/" >Accent</a></li>
+                <li><a href="/docs/reference/math/accent/" >重音符号</a></li>
                 
                 
-                <li><a href="/docs/reference/math/attach/" >Attach</a></li>
+                <li><a href="/docs/reference/math/attach/" >附缀</a></li>
                 
                 
-                <li><a href="/docs/reference/math/binom/" >Binomial</a></li>
+                <li><a href="/docs/reference/math/binom/" >二项式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/cancel/" >Cancel</a></li>
+                <li><a href="/docs/reference/math/cancel/" >删除线</a></li>
                 
                 
-                <li><a href="/docs/reference/math/cases/" >Cases</a></li>
+                <li><a href="/docs/reference/math/cases/" >大括号</a></li>
                 
                 
-                <li><a href="/docs/reference/math/equation/" >Equation</a></li>
+                <li><a href="/docs/reference/math/equation/" >数学表达式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/frac/" >Fraction</a></li>
+                <li><a href="/docs/reference/math/frac/" >分数</a></li>
                 
                 
                 <li><a href="/docs/reference/math/lr/" >Left/Right</a></li>
                 
                 
-                <li><a href="/docs/reference/math/mat/" >Matrix</a></li>
+                <li><a href="/docs/reference/math/mat/" >矩阵</a></li>
                 
                 
-                <li><a href="/docs/reference/math/roots/" >Roots</a></li>
+                <li><a href="/docs/reference/math/roots/" >根式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/sizes/" >Sizes</a></li>
+                <li><a href="/docs/reference/math/sizes/" >显示尺寸</a></li>
                 
                 
-                <li><a href="/docs/reference/math/styles/" >Styles</a></li>
+                <li><a href="/docs/reference/math/styles/" >显示样式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/op/" >Text Operator</a></li>
+                <li><a href="/docs/reference/math/op/" >文本运算符</a></li>
                 
                 
-                <li><a href="/docs/reference/math/underover/"  aria-current="page" >Under/Over</a></li>
+                <li><a href="/docs/reference/math/underover/"  aria-current="page" >上/下 方内容</a></li>
                 
                 
-                <li><a href="/docs/reference/math/variants/" >Variants</a></li>
+                <li><a href="/docs/reference/math/variants/" >字体变体</a></li>
                 
                 
-                <li><a href="/docs/reference/math/vec/" >Vector</a></li>
+                <li><a href="/docs/reference/math/vec/" >向量</a></li>
                 
               </ul>
               
@@ -830,16 +830,19 @@
         <li><a href="/docs/reference/math/">数学</a></li>
         
         <li aria-hidden="true"><img src="/assets/icons/16-arrow-right.svg" width="16" height="16" alt=""></li>
-        <li><a href="/docs/reference/math/underover/">Under/Over</a></li>
+        <li><a href="/docs/reference/math/underover/">上/下 方内容</a></li>
         
       </ul>
 
       
 
 <h1 id="summary">Under/Over<!-- --> 函数类</h1>
-<p>Delimiters above or below parts of an equation.</p>
-<p>The braces and brackets further allow you to add an optional annotation
-below or above themselves.</p>
+<p>
+表达式上下方的分隔符。
+</p>
+<p>
+还可以在大括号和括号上方添加可选注释。
+</p>
 
 <!-- ----------------------------------------------------------------------------------- -->
 
@@ -856,7 +859,9 @@ below or above themselves.</p>
     </div>
   </small></h2>
 
-<p>A horizontal line under content.</p>
+<p>
+在内容下方添加水平线。
+</p>
 <h3 id="underline-example">Example</h3>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">underline</span><span class="typ-punct">(</span>1 + 2 + <span class="typ-escape">...</span> + 5<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
 </code></pre><div class="preview"><img src="/assets/docs/a964debc0427ab602297c7dc72630745.png" alt="Preview" width="480" height="190"/></div></div>
@@ -893,7 +898,7 @@ below or above themselves.</p>
     </small>
   </div>
 </h4>
-<p>The content above the line.</p>
+<p>水平线上方的内容。</p>
 
 
 
@@ -910,7 +915,7 @@ below or above themselves.</p>
     </div>
   </small></h2>
 
-<p>A horizontal line over content.</p>
+<p>在内容上方添加水平线。</p>
 <h3 id="overline-example">Example</h3>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">overline</span><span class="typ-punct">(</span>1 + 2 + <span class="typ-escape">...</span> + 5<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
 </code></pre><div class="preview"><img src="/assets/docs/cdd4cb2e681e2fced8b4b9f63cf90e81.png" alt="Preview" width="480" height="190"/></div></div>
@@ -947,7 +952,7 @@ below or above themselves.</p>
     </small>
   </div>
 </h4>
-<p>The content below the line.</p>
+<p>水平线下方的内容。</p>
 
 
 
@@ -964,7 +969,9 @@ below or above themselves.</p>
     </div>
   </small></h2>
 
-<p>A horizontal brace under content, with an optional annotation below.</p>
+<p>
+在内容下方添加水平大括号，括号下方可以添加可选注释。
+</p>
 <h3 id="underbrace-example">Example</h3>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">underbrace</span><span class="typ-punct">(</span>1 + 2 + <span class="typ-escape">...</span> + 5<span class="typ-punct">,</span> <span class="typ-str">&quot;numbers&quot;</span><span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
 </code></pre><div class="preview"><img src="/assets/docs/88b30429e73e3bbc3d0e0ee29c7d06b6.png" alt="Preview" width="480" height="190"/></div></div>
@@ -1001,7 +1008,7 @@ below or above themselves.</p>
     </small>
   </div>
 </h4>
-<p>The content above the brace.</p>
+<p> 大括号上方的内容。 </p>
 
 
 
@@ -1036,7 +1043,7 @@ below or above themselves.</p>
     </small>
   </div>
 </h4>
-<p>The optional content below the brace.</p>
+<p>大括号下方的可选注释。</p>
 
 <p>默认：<code><span class="typ-key">none</span></code></p>
 
@@ -1055,7 +1062,8 @@ below or above themselves.</p>
     </div>
   </small></h2>
 
-<p>A horizontal brace over content, with an optional annotation above.</p>
+<p>
+在内容上方添加水平大括号，括号上方可以添加可选注释。</p>
 <h3 id="overbrace-example">Example</h3>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">overbrace</span><span class="typ-punct">(</span>1 + 2 + <span class="typ-escape">...</span> + 5<span class="typ-punct">,</span> <span class="typ-str">&quot;numbers&quot;</span><span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
 </code></pre><div class="preview"><img src="/assets/docs/9f2eca7814aaf0c6542bb369712f4513.png" alt="Preview" width="480" height="190"/></div></div>
@@ -1092,7 +1100,7 @@ below or above themselves.</p>
     </small>
   </div>
 </h4>
-<p>The content below the brace.</p>
+<p>大括号下方的内容。</p>
 
 
 
@@ -1127,7 +1135,7 @@ below or above themselves.</p>
     </small>
   </div>
 </h4>
-<p>The optional content above the brace.</p>
+<p>大括号上方的可选注释。</p>
 
 <p>默认：<code><span class="typ-key">none</span></code></p>
 
@@ -1146,7 +1154,8 @@ below or above themselves.</p>
     </div>
   </small></h2>
 
-<p>A horizontal bracket under content, with an optional annotation below.</p>
+<p>
+在内容下方添加水平方括号，括号下方可以添加可选注释。</p>
 <h3 id="underbracket-example">Example</h3>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">underbracket</span><span class="typ-punct">(</span>1 + 2 + <span class="typ-escape">...</span> + 5<span class="typ-punct">,</span> <span class="typ-str">&quot;numbers&quot;</span><span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
 </code></pre><div class="preview"><img src="/assets/docs/7a63fcfa0c9ae2df891097e9bba06ab6.png" alt="Preview" width="480" height="190"/></div></div>
@@ -1183,7 +1192,7 @@ below or above themselves.</p>
     </small>
   </div>
 </h4>
-<p>The content above the bracket.</p>
+<p>方括号上方的内容。</p>
 
 
 
@@ -1218,7 +1227,7 @@ below or above themselves.</p>
     </small>
   </div>
 </h4>
-<p>The optional content below the bracket.</p>
+<p>方括号下方的可选注释。</p>
 
 <p>默认：<code><span class="typ-key">none</span></code></p>
 
@@ -1237,7 +1246,8 @@ below or above themselves.</p>
     </div>
   </small></h2>
 
-<p>A horizontal bracket over content, with an optional annotation above.</p>
+<p>
+在内容上方添加水平方括号，括号上方可以添加可选注释。</p>
 <h3 id="overbracket-example">Example</h3>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">overbracket</span><span class="typ-punct">(</span>1 + 2 + <span class="typ-escape">...</span> + 5<span class="typ-punct">,</span> <span class="typ-str">&quot;numbers&quot;</span><span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
 </code></pre><div class="preview"><img src="/assets/docs/b50782925e551ea653c324786dcbc21b.png" alt="Preview" width="480" height="190"/></div></div>
@@ -1274,7 +1284,7 @@ below or above themselves.</p>
     </small>
   </div>
 </h4>
-<p>The content below the bracket.</p>
+<p>方括号下方的内容。</p>
 
 
 
@@ -1309,7 +1319,7 @@ below or above themselves.</p>
     </small>
   </div>
 </h4>
-<p>The optional content above the bracket.</p>
+<p>方括号上方的可选注释。</p>
 
 <p>默认：<code><span class="typ-key">none</span></code></p>
 
@@ -1322,9 +1332,9 @@ below or above themselves.</p>
       
       <div class="page-end-buttons"><a href="/docs/reference/math/op/" class="previous"><img
             src="/assets/icons/16-arrow-right.svg" alt="←">
-          <div><span class="page-title">Text Operator</span><span class="hint">上一页</span></div>
+          <div><span class="page-title">文本运算符</span><span class="hint">上一页</span></div>
         </a><a href="/docs/reference/math/variants/" class="next"><img src="/assets/icons/16-arrow-right.svg" alt="→">
-          <div><span class="page-title">Variants</span><span class="hint">下一页</span></div>
+          <div><span class="page-title">字体变体</span><span class="hint">下一页</span></div>
         </a></div>
       
     </main>

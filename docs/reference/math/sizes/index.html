@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Sizes – Typst 中文文档</title>
+  <title>显示尺寸 – Typst 中文文档</title>
   <meta name="description" content="Documentation for sizes group of functions.">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#239dad">
   <meta property="og:url" content="https://typst.app/docs/reference/math/sizes/">
-  <meta property="og:title" content="Sizes – Typst 中文文档">
+  <meta property="og:title" content="显示尺寸 – Typst 中文文档">
   <meta property="og:site_name" content="Typst">
   <meta property="og:description" content="Documentation for sizes group of functions.">
   <meta property="og:type">
@@ -307,52 +307,52 @@
               <ul>
                 
                 
-                <li><a href="/docs/reference/math/accent/" >Accent</a></li>
+                <li><a href="/docs/reference/math/accent/" >重音符号</a></li>
                 
                 
-                <li><a href="/docs/reference/math/attach/" >Attach</a></li>
+                <li><a href="/docs/reference/math/attach/" >附缀</a></li>
                 
                 
-                <li><a href="/docs/reference/math/binom/" >Binomial</a></li>
+                <li><a href="/docs/reference/math/binom/" >二项式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/cancel/" >Cancel</a></li>
+                <li><a href="/docs/reference/math/cancel/" >删除线</a></li>
                 
                 
-                <li><a href="/docs/reference/math/cases/" >Cases</a></li>
+                <li><a href="/docs/reference/math/cases/" >大括号</a></li>
                 
                 
-                <li><a href="/docs/reference/math/equation/" >Equation</a></li>
+                <li><a href="/docs/reference/math/equation/" >数学表达式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/frac/" >Fraction</a></li>
+                <li><a href="/docs/reference/math/frac/" >分数</a></li>
                 
                 
                 <li><a href="/docs/reference/math/lr/" >Left/Right</a></li>
                 
                 
-                <li><a href="/docs/reference/math/mat/" >Matrix</a></li>
+                <li><a href="/docs/reference/math/mat/" >矩阵</a></li>
                 
                 
-                <li><a href="/docs/reference/math/roots/" >Roots</a></li>
+                <li><a href="/docs/reference/math/roots/" >根式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/sizes/"  aria-current="page" >Sizes</a></li>
+                <li><a href="/docs/reference/math/sizes/"  aria-current="page" >显示尺寸</a></li>
                 
                 
-                <li><a href="/docs/reference/math/styles/" >Styles</a></li>
+                <li><a href="/docs/reference/math/styles/" >显示样式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/op/" >Text Operator</a></li>
+                <li><a href="/docs/reference/math/op/" >文本运算符</a></li>
                 
                 
-                <li><a href="/docs/reference/math/underover/" >Under/Over</a></li>
+                <li><a href="/docs/reference/math/underover/" >上/下 方内容</a></li>
                 
                 
-                <li><a href="/docs/reference/math/variants/" >Variants</a></li>
+                <li><a href="/docs/reference/math/variants/" >字体变体</a></li>
                 
                 
-                <li><a href="/docs/reference/math/vec/" >Vector</a></li>
+                <li><a href="/docs/reference/math/vec/" >向量</a></li>
                 
               </ul>
               
@@ -830,25 +830,31 @@
         <li><a href="/docs/reference/math/">数学</a></li>
         
         <li aria-hidden="true"><img src="/assets/icons/16-arrow-right.svg" width="16" height="16" alt=""></li>
-        <li><a href="/docs/reference/math/sizes/">Sizes</a></li>
+        <li><a href="/docs/reference/math/sizes/">显示尺寸</a></li>
         
       </ul>
 
       
 
 <h1 id="summary">Sizes<!-- --> 函数类</h1>
-<p>Forced size styles for expressions within formulas.</p>
-<p>These functions allow manual configuration of the size of equation elements
-to make them look as in a display/inline equation or as if used in a root or
-sub/superscripts.</p>
+<p>
+数学公式中表达式的强制大小样式。
+</p>
+<p>
+这些函数允许手动配置表达式元素的尺寸，使它们看起来像处于内联/显示模式，或者在根式、上下标中使用的那样。
+</p>
 
 <!-- ----------------------------------------------------------------------------------- -->
 
 
 <h2 level="1" id="display"><code>display</code> function </h2>
 
-<p>Forced display style in math.</p>
-<p>This is the normal size for block equations.</p>
+<p>
+在数学模式中强制为“显示样式”。
+</p>
+<p>
+这是公式块的常规大小。
+</p>
 <h3 id="display-example">Example</h3>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span><span class="typ-pol">sum</span><span class="typ-math-op">_</span>i x<span class="typ-math-op">_</span>i<span class="typ-math-op">/</span>2 = <span class="typ-func">display</span><span class="typ-punct">(</span><span class="typ-pol">sum</span><span class="typ-math-op">_</span>i x<span class="typ-math-op">_</span>i<span class="typ-math-op">/</span>2<span class="typ-punct">)</span><span class="typ-math-delim">$</span>
 </code></pre><div class="preview"><img src="/assets/docs/8631c65c70bfbf88891feec80e5e4bba.png" alt="Preview" width="480" height="190"/></div></div>
@@ -885,7 +891,7 @@ sub/superscripts.</p>
     </small>
   </div>
 </h4>
-<p>The content to size.</p>
+<p>要设定大小的内容。</p>
 
 
 
@@ -899,8 +905,9 @@ sub/superscripts.</p>
     
   </div>
 </h4>
-<p>Whether to impose a height restriction for exponents, like regular sub-
-and superscripts do.</p>
+<p>
+是否像常规上下标那样，为指数限制高度。
+</p>
 
 <p>默认：<code><span class="typ-key">false</span></code></p>
 
@@ -909,8 +916,12 @@ and superscripts do.</p>
 
 <h2 level="1" id="inline"><code>inline</code> function </h2>
 
-<p>Forced inline (text) style in math.</p>
-<p>This is the normal size for inline equations.</p>
+<p>
+强制显示为“内联（文本）样式”。
+</p>
+<p>
+这是内联公式的正常大小。
+</p>
 <h3 id="inline-example">Example</h3>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-pol">sum</span><span class="typ-math-op">_</span>i x<span class="typ-math-op">_</span>i<span class="typ-math-op">/</span>2
     = <span class="typ-func">inline</span><span class="typ-punct">(</span><span class="typ-pol">sum</span><span class="typ-math-op">_</span>i x<span class="typ-math-op">_</span>i<span class="typ-math-op">/</span>2<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
@@ -948,7 +959,7 @@ and superscripts do.</p>
     </small>
   </div>
 </h4>
-<p>The content to size.</p>
+<p>要设定大小的内容。</p>
 
 
 
@@ -962,8 +973,9 @@ and superscripts do.</p>
     
   </div>
 </h4>
-<p>Whether to impose a height restriction for exponents, like regular sub-
-and superscripts do.</p>
+<p>
+是否像常规上下标那样，为指数限制高度。
+</p>
 
 <p>默认：<code><span class="typ-key">false</span></code></p>
 
@@ -972,8 +984,12 @@ and superscripts do.</p>
 
 <h2 level="1" id="script"><code>script</code> function </h2>
 
-<p>Forced script style in math.</p>
-<p>This is the smaller size used in powers or sub- or superscripts.</p>
+<p>
+强制显示为脚本大小。
+</p>
+<p>
+这是用于上下标的较小尺寸。
+</p>
 <h3 id="script-example">Example</h3>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span><span class="typ-pol">sum</span><span class="typ-math-op">_</span>i x<span class="typ-math-op">_</span>i<span class="typ-math-op">/</span>2 = <span class="typ-func">script</span><span class="typ-punct">(</span><span class="typ-pol">sum</span><span class="typ-math-op">_</span>i x<span class="typ-math-op">_</span>i<span class="typ-math-op">/</span>2<span class="typ-punct">)</span><span class="typ-math-delim">$</span>
 </code></pre><div class="preview"><img src="/assets/docs/29af5c7bf57f3160bd334d93b988775a.png" alt="Preview" width="480" height="190"/></div></div>
@@ -1010,7 +1026,7 @@ and superscripts do.</p>
     </small>
   </div>
 </h4>
-<p>The content to size.</p>
+<p>要设定大小的内容。</p>
 
 
 
@@ -1024,8 +1040,7 @@ and superscripts do.</p>
     
   </div>
 </h4>
-<p>Whether to impose a height restriction for exponents, like regular sub-
-and superscripts do.</p>
+<p>是否像常规上下标那样，为指数限制高度。</p>
 
 <p>默认：<code><span class="typ-key">true</span></code></p>
 
@@ -1034,9 +1049,12 @@ and superscripts do.</p>
 
 <h2 level="1" id="sscript"><code>sscript</code> function </h2>
 
-<p>Forced second script style in math.</p>
-<p>This is the smallest size, used in second-level sub- and superscripts
-(script of the script).</p>
+<p>
+在数学中强制显示为次脚本大小。
+</p>
+<p>
+这是用于二级上下标的最小尺寸。
+</p>
 <h3 id="sscript-example">Example</h3>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span><span class="typ-pol">sum</span><span class="typ-math-op">_</span>i x<span class="typ-math-op">_</span>i<span class="typ-math-op">/</span>2 = <span class="typ-func">sscript</span><span class="typ-punct">(</span><span class="typ-pol">sum</span><span class="typ-math-op">_</span>i x<span class="typ-math-op">_</span>i<span class="typ-math-op">/</span>2<span class="typ-punct">)</span><span class="typ-math-delim">$</span>
 </code></pre><div class="preview"><img src="/assets/docs/bd925f3212ba0c8c54ffec73165ac1a3.png" alt="Preview" width="480" height="190"/></div></div>
@@ -1073,7 +1091,7 @@ and superscripts do.</p>
     </small>
   </div>
 </h4>
-<p>The content to size.</p>
+<p>要设定大小的内容。</p>
 
 
 
@@ -1087,8 +1105,7 @@ and superscripts do.</p>
     
   </div>
 </h4>
-<p>Whether to impose a height restriction for exponents, like regular sub-
-and superscripts do.</p>
+<p>是否像常规上下标那样，为指数限制高度。</p>
 
 <p>默认：<code><span class="typ-key">true</span></code></p>
 
@@ -1101,9 +1118,9 @@ and superscripts do.</p>
       
       <div class="page-end-buttons"><a href="/docs/reference/math/roots/" class="previous"><img
             src="/assets/icons/16-arrow-right.svg" alt="←">
-          <div><span class="page-title">Roots</span><span class="hint">上一页</span></div>
+          <div><span class="page-title">根式</span><span class="hint">上一页</span></div>
         </a><a href="/docs/reference/math/styles/" class="next"><img src="/assets/icons/16-arrow-right.svg" alt="→">
-          <div><span class="page-title">Styles</span><span class="hint">下一页</span></div>
+          <div><span class="page-title">显示样式</span><span class="hint">下一页</span></div>
         </a></div>
       
     </main>

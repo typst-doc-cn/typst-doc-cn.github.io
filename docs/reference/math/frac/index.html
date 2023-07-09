@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Fraction – Typst 中文文档</title>
+  <title>分数 – Typst 中文文档</title>
   <meta name="description" content="Documentation for the `frac` function.">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#239dad">
   <meta property="og:url" content="https://typst.app/docs/reference/math/frac/">
-  <meta property="og:title" content="Fraction – Typst 中文文档">
+  <meta property="og:title" content="分数 – Typst 中文文档">
   <meta property="og:site_name" content="Typst">
   <meta property="og:description" content="Documentation for the `frac` function.">
   <meta property="og:type">
@@ -307,52 +307,52 @@
               <ul>
                 
                 
-                <li><a href="/docs/reference/math/accent/" >Accent</a></li>
+                <li><a href="/docs/reference/math/accent/" >重音符号</a></li>
                 
                 
-                <li><a href="/docs/reference/math/attach/" >Attach</a></li>
+                <li><a href="/docs/reference/math/attach/" >附缀</a></li>
                 
                 
-                <li><a href="/docs/reference/math/binom/" >Binomial</a></li>
+                <li><a href="/docs/reference/math/binom/" >二项式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/cancel/" >Cancel</a></li>
+                <li><a href="/docs/reference/math/cancel/" >删除线</a></li>
                 
                 
-                <li><a href="/docs/reference/math/cases/" >Cases</a></li>
+                <li><a href="/docs/reference/math/cases/" >大括号</a></li>
                 
                 
-                <li><a href="/docs/reference/math/equation/" >Equation</a></li>
+                <li><a href="/docs/reference/math/equation/" >数学表达式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/frac/"  aria-current="page" >Fraction</a></li>
+                <li><a href="/docs/reference/math/frac/"  aria-current="page" >分数</a></li>
                 
                 
                 <li><a href="/docs/reference/math/lr/" >Left/Right</a></li>
                 
                 
-                <li><a href="/docs/reference/math/mat/" >Matrix</a></li>
+                <li><a href="/docs/reference/math/mat/" >矩阵</a></li>
                 
                 
-                <li><a href="/docs/reference/math/roots/" >Roots</a></li>
+                <li><a href="/docs/reference/math/roots/" >根式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/sizes/" >Sizes</a></li>
+                <li><a href="/docs/reference/math/sizes/" >显示尺寸</a></li>
                 
                 
-                <li><a href="/docs/reference/math/styles/" >Styles</a></li>
+                <li><a href="/docs/reference/math/styles/" >显示样式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/op/" >Text Operator</a></li>
+                <li><a href="/docs/reference/math/op/" >文本运算符</a></li>
                 
                 
-                <li><a href="/docs/reference/math/underover/" >Under/Over</a></li>
+                <li><a href="/docs/reference/math/underover/" >上/下 方内容</a></li>
                 
                 
-                <li><a href="/docs/reference/math/variants/" >Variants</a></li>
+                <li><a href="/docs/reference/math/variants/" >字体变体</a></li>
                 
                 
-                <li><a href="/docs/reference/math/vec/" >Vector</a></li>
+                <li><a href="/docs/reference/math/vec/" >向量</a></li>
                 
               </ul>
               
@@ -830,7 +830,7 @@
         <li><a href="/docs/reference/math/">数学</a></li>
         
         <li aria-hidden="true"><img src="/assets/icons/16-arrow-right.svg" width="16" height="16" alt=""></li>
-        <li><a href="/docs/reference/math/frac/">Fraction</a></li>
+        <li><a href="/docs/reference/math/frac/">分数</a></li>
         
       </ul>
 
@@ -848,16 +848,16 @@
     </div>
   </small></h1>
 
-<p>A mathematical fraction.</p>
+<p>显示为分数形式。</p>
 <h2 id="example">Example</h2>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> 1<span class="typ-math-op">/</span>2 &lt; <span class="typ-punct">(</span>x+1<span class="typ-punct">)</span><span class="typ-math-op">/</span>2 <span class="typ-math-delim">$</span>
 <span class="typ-math-delim">$</span> <span class="typ-punct">(</span>(x+1)<span class="typ-punct">)</span> <span class="typ-math-op">/</span> 2 = <span class="typ-func">frac</span><span class="typ-punct">(</span>a<span class="typ-punct">,</span> b<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
 </code></pre><div class="preview"><img src="/assets/docs/36a9d954136db2a90a824daa56f9e19c.png" alt="Preview" width="480" height="190"/></div></div>
-<h2 id="syntax">Syntax</h2>
-<p>This function also has dedicated syntax: Use a slash to turn neighbouring
-expressions into a fraction. Multiple atoms can be grouped into a single
-expression using round grouping parenthesis. Such parentheses are removed
-from the output, but you can nest multiple to force them.</p>
+<h2 id="syntax">语法</h2>
+<p>
+此函数也有一个专用语法：使用斜杠（/）将相邻的表达式转换为分数形式。
+多个元素可以使用圆括号组合为单个表达式，最终输出会移除这些括号，但您可以嵌套括号来强制保留。
+</p>
 
 <h2 level="2" id="parameters"><span aria-describedby="parameters-tooltip">参数</span>
   <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
@@ -892,7 +892,7 @@ from the output, but you can nest multiple to force them.</p>
     </small>
   </div>
 </h3>
-<p>The fraction's numerator.</p>
+<p>分数的分子。</p>
 
 
 
@@ -915,7 +915,7 @@ from the output, but you can nest multiple to force them.</p>
     </small>
   </div>
 </h3>
-<p>The fraction's denominator.</p>
+<p>分数的分母。</p>
 
 
 
@@ -929,7 +929,7 @@ from the output, but you can nest multiple to force them.</p>
       
       <div class="page-end-buttons"><a href="/docs/reference/math/equation/" class="previous"><img
             src="/assets/icons/16-arrow-right.svg" alt="←">
-          <div><span class="page-title">Equation</span><span class="hint">上一页</span></div>
+          <div><span class="page-title">数学表达式</span><span class="hint">上一页</span></div>
         </a><a href="/docs/reference/math/lr/" class="next"><img src="/assets/icons/16-arrow-right.svg" alt="→">
           <div><span class="page-title">Left/Right</span><span class="hint">下一页</span></div>
         </a></div>

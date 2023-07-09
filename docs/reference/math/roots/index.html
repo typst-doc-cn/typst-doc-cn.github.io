@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Roots – Typst 中文文档</title>
+  <title>根式 – Typst 中文文档</title>
   <meta name="description" content="Documentation for roots group of functions.">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#239dad">
   <meta property="og:url" content="https://typst.app/docs/reference/math/roots/">
-  <meta property="og:title" content="Roots – Typst 中文文档">
+  <meta property="og:title" content="根式 – Typst 中文文档">
   <meta property="og:site_name" content="Typst">
   <meta property="og:description" content="Documentation for roots group of functions.">
   <meta property="og:type">
@@ -307,52 +307,52 @@
               <ul>
                 
                 
-                <li><a href="/docs/reference/math/accent/" >Accent</a></li>
+                <li><a href="/docs/reference/math/accent/" >重音符号</a></li>
                 
                 
-                <li><a href="/docs/reference/math/attach/" >Attach</a></li>
+                <li><a href="/docs/reference/math/attach/" >附缀</a></li>
                 
                 
-                <li><a href="/docs/reference/math/binom/" >Binomial</a></li>
+                <li><a href="/docs/reference/math/binom/" >二项式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/cancel/" >Cancel</a></li>
+                <li><a href="/docs/reference/math/cancel/" >删除线</a></li>
                 
                 
-                <li><a href="/docs/reference/math/cases/" >Cases</a></li>
+                <li><a href="/docs/reference/math/cases/" >大括号</a></li>
                 
                 
-                <li><a href="/docs/reference/math/equation/" >Equation</a></li>
+                <li><a href="/docs/reference/math/equation/" >数学表达式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/frac/" >Fraction</a></li>
+                <li><a href="/docs/reference/math/frac/" >分数</a></li>
                 
                 
                 <li><a href="/docs/reference/math/lr/" >Left/Right</a></li>
                 
                 
-                <li><a href="/docs/reference/math/mat/" >Matrix</a></li>
+                <li><a href="/docs/reference/math/mat/" >矩阵</a></li>
                 
                 
-                <li><a href="/docs/reference/math/roots/"  aria-current="page" >Roots</a></li>
+                <li><a href="/docs/reference/math/roots/"  aria-current="page" >根式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/sizes/" >Sizes</a></li>
+                <li><a href="/docs/reference/math/sizes/" >显示尺寸</a></li>
                 
                 
-                <li><a href="/docs/reference/math/styles/" >Styles</a></li>
+                <li><a href="/docs/reference/math/styles/" >显示样式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/op/" >Text Operator</a></li>
+                <li><a href="/docs/reference/math/op/" >文本运算符</a></li>
                 
                 
-                <li><a href="/docs/reference/math/underover/" >Under/Over</a></li>
+                <li><a href="/docs/reference/math/underover/" >上/下 方内容</a></li>
                 
                 
-                <li><a href="/docs/reference/math/variants/" >Variants</a></li>
+                <li><a href="/docs/reference/math/variants/" >字体变体</a></li>
                 
                 
-                <li><a href="/docs/reference/math/vec/" >Vector</a></li>
+                <li><a href="/docs/reference/math/vec/" >向量</a></li>
                 
               </ul>
               
@@ -830,14 +830,14 @@
         <li><a href="/docs/reference/math/">数学</a></li>
         
         <li aria-hidden="true"><img src="/assets/icons/16-arrow-right.svg" width="16" height="16" alt=""></li>
-        <li><a href="/docs/reference/math/roots/">Roots</a></li>
+        <li><a href="/docs/reference/math/roots/">根式</a></li>
         
       </ul>
 
       
 
 <h1 id="summary">Roots<!-- --> 函数类</h1>
-<p>Square and non-square roots.</p>
+<p>平方根或其他次方根。</p>
 
 <!-- ----------------------------------------------------------------------------------- -->
 
@@ -854,7 +854,7 @@
     </div>
   </small></h2>
 
-<p>A general root.</p>
+<p>方根函数。</p>
 <h3 id="root-example">Example</h3>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">root</span><span class="typ-punct">(</span>3<span class="typ-punct">,</span> x<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
 </code></pre><div class="preview"><img src="/assets/docs/7aa00673dcb0afc96f8085fbc5ed7841.png" alt="Preview" width="480" height="190"/></div></div>
@@ -903,7 +903,7 @@
     </small>
   </div>
 </h4>
-<p>Which root of the radicand to take.</p>
+<p>要开几次方，即根式的指数。</p>
 
 <p>默认：<code><span class="typ-key">none</span></code></p>
 
@@ -928,14 +928,14 @@
     </small>
   </div>
 </h4>
-<p>The expression to take the root of.</p>
+<p>进行方根运算的表达式，即根式的底数。</p>
 
 
 
 
 <h2 level="1" id="sqrt"><code>sqrt</code> function </h2>
 
-<p>A square root.</p>
+<p>平方根。</p>
 <h3 id="sqrt-example">Example</h3>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">sqrt</span><span class="typ-punct">(</span>x<span class="typ-math-op">^</span>2<span class="typ-punct">)</span> = x = <span class="typ-func">sqrt</span><span class="typ-punct">(</span>x<span class="typ-punct">)</span><span class="typ-math-op">^</span>2 <span class="typ-math-delim">$</span>
 </code></pre><div class="preview"><img src="/assets/docs/4e6fb7b2591b48f8869f04c06a5a795a.png" alt="Preview" width="480" height="190"/></div></div>
@@ -972,7 +972,7 @@
     </small>
   </div>
 </h4>
-<p>The expression to take the square root of.</p>
+<p>要开平方根的表达式。</p>
 
 
 
@@ -983,9 +983,9 @@
       
       <div class="page-end-buttons"><a href="/docs/reference/math/mat/" class="previous"><img
             src="/assets/icons/16-arrow-right.svg" alt="←">
-          <div><span class="page-title">Matrix</span><span class="hint">上一页</span></div>
+          <div><span class="page-title">矩阵</span><span class="hint">上一页</span></div>
         </a><a href="/docs/reference/math/sizes/" class="next"><img src="/assets/icons/16-arrow-right.svg" alt="→">
-          <div><span class="page-title">Sizes</span><span class="hint">下一页</span></div>
+          <div><span class="page-title">显示尺寸</span><span class="hint">下一页</span></div>
         </a></div>
       
     </main>

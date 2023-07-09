@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Matrix – Typst 中文文档</title>
+  <title>矩阵 – Typst 中文文档</title>
   <meta name="description" content="Documentation for the `mat` function.">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#239dad">
   <meta property="og:url" content="https://typst.app/docs/reference/math/mat/">
-  <meta property="og:title" content="Matrix – Typst 中文文档">
+  <meta property="og:title" content="矩阵 – Typst 中文文档">
   <meta property="og:site_name" content="Typst">
   <meta property="og:description" content="Documentation for the `mat` function.">
   <meta property="og:type">
@@ -307,52 +307,52 @@
               <ul>
                 
                 
-                <li><a href="/docs/reference/math/accent/" >Accent</a></li>
+                <li><a href="/docs/reference/math/accent/" >重音符号</a></li>
                 
                 
-                <li><a href="/docs/reference/math/attach/" >Attach</a></li>
+                <li><a href="/docs/reference/math/attach/" >附缀</a></li>
                 
                 
-                <li><a href="/docs/reference/math/binom/" >Binomial</a></li>
+                <li><a href="/docs/reference/math/binom/" >二项式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/cancel/" >Cancel</a></li>
+                <li><a href="/docs/reference/math/cancel/" >删除线</a></li>
                 
                 
-                <li><a href="/docs/reference/math/cases/" >Cases</a></li>
+                <li><a href="/docs/reference/math/cases/" >大括号</a></li>
                 
                 
-                <li><a href="/docs/reference/math/equation/" >Equation</a></li>
+                <li><a href="/docs/reference/math/equation/" >数学表达式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/frac/" >Fraction</a></li>
+                <li><a href="/docs/reference/math/frac/" >分数</a></li>
                 
                 
                 <li><a href="/docs/reference/math/lr/" >Left/Right</a></li>
                 
                 
-                <li><a href="/docs/reference/math/mat/"  aria-current="page" >Matrix</a></li>
+                <li><a href="/docs/reference/math/mat/"  aria-current="page" >矩阵</a></li>
                 
                 
-                <li><a href="/docs/reference/math/roots/" >Roots</a></li>
+                <li><a href="/docs/reference/math/roots/" >根式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/sizes/" >Sizes</a></li>
+                <li><a href="/docs/reference/math/sizes/" >显示尺寸</a></li>
                 
                 
-                <li><a href="/docs/reference/math/styles/" >Styles</a></li>
+                <li><a href="/docs/reference/math/styles/" >显示样式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/op/" >Text Operator</a></li>
+                <li><a href="/docs/reference/math/op/" >文本运算符</a></li>
                 
                 
-                <li><a href="/docs/reference/math/underover/" >Under/Over</a></li>
+                <li><a href="/docs/reference/math/underover/" >上/下 方内容</a></li>
                 
                 
-                <li><a href="/docs/reference/math/variants/" >Variants</a></li>
+                <li><a href="/docs/reference/math/variants/" >字体变体</a></li>
                 
                 
-                <li><a href="/docs/reference/math/vec/" >Vector</a></li>
+                <li><a href="/docs/reference/math/vec/" >向量</a></li>
                 
               </ul>
               
@@ -830,7 +830,7 @@
         <li><a href="/docs/reference/math/">数学</a></li>
         
         <li aria-hidden="true"><img src="/assets/icons/16-arrow-right.svg" width="16" height="16" alt=""></li>
-        <li><a href="/docs/reference/math/mat/">Matrix</a></li>
+        <li><a href="/docs/reference/math/mat/">矩阵</a></li>
         
       </ul>
 
@@ -848,13 +848,15 @@
     </div>
   </small></h1>
 
-<p>A matrix.</p>
-<p>The elements of a row should be separated by commas, while the rows
-themselves should be separated by semicolons. The semicolon syntax merges
-preceding arguments separated by commas into an array. You can also use this
-special syntax of math function calls to define custom functions that take
-2D data.</p>
-<p>Content in cells that are in the same row can be aligned with the <code>&amp;</code> symbol.</p>
+<p>矩阵。</p>
+<p>
+同一行的元素用逗号分隔，各行之间用分号分隔。
+分号语法将前面使用逗号分隔的参数合并为一个数组。
+您还可以使用“数学函数调”用的特殊语法，定义接受二维数据的自定义函数。
+</p>
+<p>
+同一行的元素可以使用对齐符 <code>&amp;</code> 进行对齐。
+</p>
 <h2 id="example">Example</h2>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">mat</span><span class="typ-punct">(</span>
   1<span class="typ-punct">,</span> 2<span class="typ-punct">,</span> <span class="typ-escape">...</span><span class="typ-punct">,</span> 10<span class="typ-punct">;</span>
@@ -900,7 +902,7 @@ special syntax of math function calls to define custom functions that take
     </small>
   </div>
 </h3>
-<p>The delimiter to use.</p>
+<p>使用的分隔符。</p>
 
 <p>默认：<code><span class="typ-str">&quot;(&quot;</span></code></p>
 
@@ -943,7 +945,7 @@ special syntax of math function calls to define custom functions that take
     </small>
   </div>
 </h3>
-<p>An array of arrays with the rows of the matrix.</p>
+<p> 包含矩阵各行的二维数组。 </p>
 
 
 <div class="folding-example"><button class="folding-example-header"><img src="/assets/icons/16-arrow-right.svg" alt=""
@@ -969,7 +971,7 @@ special syntax of math function calls to define custom functions that take
             src="/assets/icons/16-arrow-right.svg" alt="←">
           <div><span class="page-title">Left/Right</span><span class="hint">上一页</span></div>
         </a><a href="/docs/reference/math/roots/" class="next"><img src="/assets/icons/16-arrow-right.svg" alt="→">
-          <div><span class="page-title">Roots</span><span class="hint">下一页</span></div>
+          <div><span class="page-title">根式</span><span class="hint">下一页</span></div>
         </a></div>
       
     </main>

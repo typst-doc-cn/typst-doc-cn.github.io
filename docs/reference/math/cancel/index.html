@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Cancel – Typst 中文文档</title>
+  <title>删除线 – Typst 中文文档</title>
   <meta name="description" content="Documentation for the `cancel` function.">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#239dad">
   <meta property="og:url" content="https://typst.app/docs/reference/math/cancel/">
-  <meta property="og:title" content="Cancel – Typst 中文文档">
+  <meta property="og:title" content="删除线 – Typst 中文文档">
   <meta property="og:site_name" content="Typst">
   <meta property="og:description" content="Documentation for the `cancel` function.">
   <meta property="og:type">
@@ -307,52 +307,52 @@
               <ul>
                 
                 
-                <li><a href="/docs/reference/math/accent/" >Accent</a></li>
+                <li><a href="/docs/reference/math/accent/" >重音符号</a></li>
                 
                 
-                <li><a href="/docs/reference/math/attach/" >Attach</a></li>
+                <li><a href="/docs/reference/math/attach/" >附缀</a></li>
                 
                 
-                <li><a href="/docs/reference/math/binom/" >Binomial</a></li>
+                <li><a href="/docs/reference/math/binom/" >二项式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/cancel/"  aria-current="page" >Cancel</a></li>
+                <li><a href="/docs/reference/math/cancel/"  aria-current="page" >删除线</a></li>
                 
                 
-                <li><a href="/docs/reference/math/cases/" >Cases</a></li>
+                <li><a href="/docs/reference/math/cases/" >大括号</a></li>
                 
                 
-                <li><a href="/docs/reference/math/equation/" >Equation</a></li>
+                <li><a href="/docs/reference/math/equation/" >数学表达式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/frac/" >Fraction</a></li>
+                <li><a href="/docs/reference/math/frac/" >分数</a></li>
                 
                 
                 <li><a href="/docs/reference/math/lr/" >Left/Right</a></li>
                 
                 
-                <li><a href="/docs/reference/math/mat/" >Matrix</a></li>
+                <li><a href="/docs/reference/math/mat/" >矩阵</a></li>
                 
                 
-                <li><a href="/docs/reference/math/roots/" >Roots</a></li>
+                <li><a href="/docs/reference/math/roots/" >根式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/sizes/" >Sizes</a></li>
+                <li><a href="/docs/reference/math/sizes/" >显示尺寸</a></li>
                 
                 
-                <li><a href="/docs/reference/math/styles/" >Styles</a></li>
+                <li><a href="/docs/reference/math/styles/" >显示样式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/op/" >Text Operator</a></li>
+                <li><a href="/docs/reference/math/op/" >文本运算符</a></li>
                 
                 
-                <li><a href="/docs/reference/math/underover/" >Under/Over</a></li>
+                <li><a href="/docs/reference/math/underover/" >上/下 方内容</a></li>
                 
                 
-                <li><a href="/docs/reference/math/variants/" >Variants</a></li>
+                <li><a href="/docs/reference/math/variants/" >字体变体</a></li>
                 
                 
-                <li><a href="/docs/reference/math/vec/" >Vector</a></li>
+                <li><a href="/docs/reference/math/vec/" >向量</a></li>
                 
               </ul>
               
@@ -830,7 +830,7 @@
         <li><a href="/docs/reference/math/">数学</a></li>
         
         <li aria-hidden="true"><img src="/assets/icons/16-arrow-right.svg" width="16" height="16" alt=""></li>
-        <li><a href="/docs/reference/math/cancel/">Cancel</a></li>
+        <li><a href="/docs/reference/math/cancel/">删除线</a></li>
         
       </ul>
 
@@ -848,8 +848,8 @@
     </div>
   </small></h1>
 
-<p>Displays a diagonal line over a part of an equation.</p>
-<p>This is commonly used to show the elimination of a term.</p>
+<p>在公式上显示对角线。</p>
+<p>通常用于表示删除元素。</p>
 <h2 id="example">Example</h2>
 <div class="previewed-code"><pre><code>Here, we can simplify:
 <span class="typ-math-delim">$</span> <span class="typ-punct">(</span>a <span class="typ-pol">dot</span> b <span class="typ-pol">dot</span> <span class="typ-func">cancel</span><span class="typ-punct">(</span>x<span class="typ-punct">)</span><span class="typ-punct">)</span> <span class="typ-math-op">/</span>
@@ -889,7 +889,7 @@
     </small>
   </div>
 </h3>
-<p>The content over which the line should be placed.</p>
+<p>被删除线覆盖的内容。</p>
 
 
 
@@ -913,9 +913,7 @@
     </small>
   </div>
 </h3>
-<p>The length of the line, relative to the length of the diagonal spanning
-the whole element being &quot;cancelled&quot;. A value of <code><span class="typ-num">100%</span></code> would then have
-the line span precisely the element's diagonal.</p>
+<p>删除线的长度，相对于被“删除”元素的对角线长度；值为<code><span class="typ-num">100%</span></code>时，删除线将恰好穿过元素。</p>
 
 <p>默认：<code><span class="typ-num">100%</span> <span class="typ-op">+</span> <span class="typ-num">3pt</span></code></p>
 
@@ -950,8 +948,7 @@ the line span precisely the element's diagonal.</p>
     </small>
   </div>
 </h3>
-<p>If the cancel line should be inverted (pointing to the top left instead
-of top right).</p>
+<p>是否反转删除线（指向左上角而非右下角）。</p>
 
 <p>默认：<code><span class="typ-key">false</span></code></p>
 
@@ -986,8 +983,7 @@ of top right).</p>
     </small>
   </div>
 </h3>
-<p>If two opposing cancel lines should be drawn, forming a cross over the
-element. Overrides <code>inverted</code>.</p>
+<p>是否绘制两条相反的删除线交叉绘制在元素上。会覆盖掉  <code>inverted</code> 参数。</p>
 
 <p>默认：<code><span class="typ-key">false</span></code></p>
 
@@ -1021,8 +1017,9 @@ element. Overrides <code>inverted</code>.</p>
     </small>
   </div>
 </h3>
-<p>How to rotate the cancel line. See the <a href="/docs/reference/visualize/line/#parameters-angle">line's
-documentation</a> for more details.</p>
+<p>如何旋转删除线，详情请参考 <a href="/docs/reference/visualize/line/#parameters-angle">
+line 文档</a>。 
+</p>
 
 <p>默认：<code><span class="typ-num">0deg</span></code></p>
 
@@ -1062,8 +1059,8 @@ documentation</a> for more details.</p>
     </small>
   </div>
 </h3>
-<p>How to stroke the cancel line. See the
-<a href="/docs/reference/visualize/line/#parameters-stroke">line's documentation</a> for more details.</p>
+<p>如何绘制描边线，详情请参考
+<a href="/docs/reference/visualize/line/#parameters-stroke">line 文档</a> 。</p>
 
 <p>默认：<code><span class="typ-num">0.5pt</span></code></p>
 
@@ -1094,9 +1091,9 @@ documentation</a> for more details.</p>
       
       <div class="page-end-buttons"><a href="/docs/reference/math/binom/" class="previous"><img
             src="/assets/icons/16-arrow-right.svg" alt="←">
-          <div><span class="page-title">Binomial</span><span class="hint">上一页</span></div>
+          <div><span class="page-title">二项式</span><span class="hint">上一页</span></div>
         </a><a href="/docs/reference/math/cases/" class="next"><img src="/assets/icons/16-arrow-right.svg" alt="→">
-          <div><span class="page-title">Cases</span><span class="hint">下一页</span></div>
+          <div><span class="page-title">大括号</span><span class="hint">下一页</span></div>
         </a></div>
       
     </main>
