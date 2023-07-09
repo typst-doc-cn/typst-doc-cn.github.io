@@ -53,10 +53,10 @@ body:
       <h2 id="syntax">语法</h2>
       <p>该函数也有一个专用语法： 在美元符号内编写数学标记以创建表达式。
       在表达式开头和结尾添加至少一个空格，可以将其提升至水平居中的单独的文本块中显示中。详情请参考：
-      <a href="/docs/reference/math/">main math page</a>.</p>
+      <a href="/docs/reference/math/">math 页面</a>.</p>
     params:
     - name: block
-      details: <p>表达式是否显示为单独的文本块。</p>
+      details: <p>是否显示为单独的文本块。</p>
       example: null
       types:
       - boolean
@@ -96,7 +96,7 @@ body:
       details: |-
         <p>数学表达式的补充内容。</p>
         <p>添加在被引用的公式编号的前面。</p>
-        <p>如果指定了一个函数，将会传入引用的表达式，并返回内容。</p>
+        <p>如果指定了一个函数，将会传入引用的表达式，并返回其内容。</p>
       example: |-
         <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> math<span class="typ-punct">.</span><span class="typ-func">equation</span><span class="typ-punct">(</span>numbering<span class="typ-punct">:</span> <span class="typ-str">&quot;(1)&quot;</span><span class="typ-punct">,</span> supplement<span class="typ-punct">:</span> <span class="typ-punct">[</span>Eq.<span class="typ-punct">]</span><span class="typ-punct">)</span>
 
@@ -119,7 +119,7 @@ body:
       variadic: false
       settable: true
     - name: body
-      details: <p>The contents of the equation.</p>
+      details: <p>表达式的主体内容。</p>
       example: null
       types:
       - content

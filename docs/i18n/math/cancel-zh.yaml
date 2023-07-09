@@ -49,7 +49,7 @@ body:
       </code></pre><div class="preview"><img src="/assets/docs/989fec943668b36cd64056f08ffb8958.png" alt="Preview" width="480" height="190"/></div></div>
     params:
     - name: body
-      details: <p>删除线的位置。</p>
+      details: <p>被删除线覆盖的内容。</p>
       example: null
       types:
       - content
@@ -62,7 +62,7 @@ body:
       settable: false
     - name: length
       details: |-
-        <p>删除线的长度， 相对于被&quot;删除&quot元素的对角线长度；<code><span 值为class="typ-num">当值为100%</span></code>时，删除线将恰好穿过元素。</p>
+        <p>删除线的长度，相对于被“删除”元素的对角线长度；值为<code><span class="typ-num">100%</span></code>时，删除线将恰好穿过元素。</p>
       example: |-
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> a + <span class="typ-func">cancel</span><span class="typ-punct">(</span>x<span class="typ-punct">,</span> length<span class="typ-punct">:</span> <span class="typ-num">#</span><span class="typ-num">200%</span><span class="typ-punct">)</span>
             <span class="typ-escape">-</span> <span class="typ-func">cancel</span><span class="typ-punct">(</span>x<span class="typ-punct">,</span> length<span class="typ-punct">:</span> <span class="typ-num">#</span><span class="typ-num">200%</span><span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
@@ -95,7 +95,7 @@ body:
       settable: true
     - name: cross
       details: |-
-        <p>是否绘制两条相反的删除线交叉绘制在元素上。会覆盖掉  <code>inverted</code> 参数</p>
+        <p>是否绘制两条相反的删除线交叉绘制在元素上。会覆盖掉  <code>inverted</code> 参数。</p>
       example: |-
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">cancel</span><span class="typ-punct">(</span><span class="typ-pol">Pi</span><span class="typ-punct">,</span> cross<span class="typ-punct">:</span> <span class="typ-key">#</span><span class="typ-key">true</span><span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
         </code></pre><div class="preview"><img src="/assets/docs/6eb45aa7bcd0901ea11b4bb4eff08910.png" alt="Preview" width="480" height="190"/></div></div>

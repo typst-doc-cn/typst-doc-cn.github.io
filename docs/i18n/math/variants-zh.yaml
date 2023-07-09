@@ -154,7 +154,7 @@ body:
       element: false
       details: |-
         <p>
-        数学中的黑体字体样式。
+        数学中的德文尖角体样式。
         </p>
         <h3 id="frak-example">Example</h3>
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">frak</span><span class="typ-punct">(</span>P<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>

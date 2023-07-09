@@ -40,7 +40,7 @@ body:
       </code></pre><div class="preview"><img src="/assets/docs/44f8d5158fe3376b109dc8d8e95e2d9e.png" alt="Preview" width="480" height="190"/></div></div>
     params:
     - name: delim
-      details: <p>使用的定界符。</p>
+      details: <p>使用的分隔符。</p>
       example: |-
         <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> math<span class="typ-punct">.</span><span class="typ-func">cases</span><span class="typ-punct">(</span>delim<span class="typ-punct">:</span> <span class="typ-str">&quot;[&quot;</span><span class="typ-punct">)</span>
         <span class="typ-math-delim">$</span> x = <span class="typ-func">cases</span><span class="typ-punct">(</span>1<span class="typ-punct">,</span> 2<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>

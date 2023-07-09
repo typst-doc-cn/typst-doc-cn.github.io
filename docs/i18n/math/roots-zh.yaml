@@ -1,5 +1,5 @@
 route: /docs/reference/math/roots/
-title: 根号
+title: 根式
 description: Documentation for roots group of functions.
 part: null
 outline:
@@ -53,7 +53,7 @@ body:
         </code></pre><div class="preview"><img src="/assets/docs/7aa00673dcb0afc96f8085fbc5ed7841.png" alt="Preview" width="480" height="190"/></div></div>
       params:
       - name: index
-        details: <p>要开几次方。</p>
+        details: <p>要开几次方，即根式的指数。</p>
         example: null
         types:
         - none
@@ -66,7 +66,7 @@ body:
         variadic: false
         settable: true
       - name: radicand
-        details: <p>进行方根运算的表达式。</p>
+        details: <p>进行方根运算的表达式，即根式的底数。</p>
         example: null
         types:
         - content
@@ -94,7 +94,7 @@ body:
         </code></pre><div class="preview"><img src="/assets/docs/4e6fb7b2591b48f8869f04c06a5a795a.png" alt="Preview" width="480" height="190"/></div></div>
       params:
       - name: radicand
-        details: <p>要进行平方根运算的表达式。</p>
+        details: <p>要开平方根的表达式。</p>
         example: null
         types:
         - content

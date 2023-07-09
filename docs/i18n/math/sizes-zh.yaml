@@ -73,10 +73,10 @@ body:
     display: Sizes
     details: |-
       <p>
-      公式中表达式的强制大小样式。
+      数学公式中表达式的强制大小样式。
       </p>
       <p>
-      这些函数允许手动配置表达式元素的尺寸，使它们看起来像处于内联/显示模式，或者在根式、上下标这使用的那样。
+      这些函数允许手动配置表达式元素的尺寸，使它们看起来像处于内联/显示模式，或者在根式、上下标中使用的那样。
       </p>
     functions:
     - path:
@@ -87,7 +87,7 @@ body:
       element: false
       details: |-
         <p>
-        在数学模式中强制为显示样式。
+        在数学模式中强制为“显示样式”。
         </p>
         <p>
         这是公式块的常规大小。
@@ -97,7 +97,7 @@ body:
         </code></pre><div class="preview"><img src="/assets/docs/8631c65c70bfbf88891feec80e5e4bba.png" alt="Preview" width="480" height="190"/></div></div>
       params:
       - name: body
-        details: <p>要改变大小的内容。</p>
+        details: <p>要设定大小的内容。</p>
         example: null
         types:
         - content
@@ -111,7 +111,7 @@ body:
       - name: cramped
         details: |-
           <p>
-          是否像常规上下标那样强，为指数限制高度。
+          是否像常规上下标那样，为指数限制高度。
           </p>
         example: null
         types:
@@ -135,7 +135,7 @@ body:
       element: false
       details: |-
         <p>
-        强制显示为内联（文本）样式。
+        强制显示为“内联（文本）样式”。
         </p>
         <p>
         这是内联公式的正常大小。
@@ -146,7 +146,7 @@ body:
         </code></pre><div class="preview"><img src="/assets/docs/7f6fabd1a5038cb1e92db98ab2c4938b.png" alt="Preview" width="480" height="190"/></div></div>
       params:
       - name: body
-        details: <p>要改变大小的内容。</p>
+        details: <p>要设定大小的内容。</p>
         example: null
         types:
         - content
@@ -160,7 +160,7 @@ body:
       - name: cramped
         details: |-
           <p>
-          是否像常规上下标那样强，为指数限制高度。
+          是否像常规上下标那样，为指数限制高度。
           </p>
         example: null
         types:
@@ -187,14 +187,14 @@ body:
         强制显示为脚本大小。
         </p>
         <p>
-        这是是用于上下标的较小尺寸。
+        这是用于上下标的较小尺寸。
         </p>
         <h3 id="script-example">Example</h3>
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span><span class="typ-pol">sum</span><span class="typ-math-op">_</span>i x<span class="typ-math-op">_</span>i<span class="typ-math-op">/</span>2 = <span class="typ-func">script</span><span class="typ-punct">(</span><span class="typ-pol">sum</span><span class="typ-math-op">_</span>i x<span class="typ-math-op">_</span>i<span class="typ-math-op">/</span>2<span class="typ-punct">)</span><span class="typ-math-delim">$</span>
         </code></pre><div class="preview"><img src="/assets/docs/29af5c7bf57f3160bd334d93b988775a.png" alt="Preview" width="480" height="190"/></div></div>
       params:
       - name: body
-        details: <p>要改变大小的内容。</p>
+        details: <p>要设定大小的内容。</p>
         example: null
         types:
         - content
@@ -207,7 +207,7 @@ body:
         settable: false
       - name: cramped
         details: |-
-          <p>是否像常规上下标那样强，为指数限制高度。</p>
+          <p>是否像常规上下标那样，为指数限制高度。</p>
         example: null
         types:
         - boolean
@@ -240,7 +240,7 @@ body:
         </code></pre><div class="preview"><img src="/assets/docs/bd925f3212ba0c8c54ffec73165ac1a3.png" alt="Preview" width="480" height="190"/></div></div>
       params:
       - name: body
-        details: <p>要改变大小的内容。</p>
+        details: <p>要设定大小的内容。</p>
         example: null
         types:
         - content
@@ -253,7 +253,7 @@ body:
         settable: false
       - name: cramped
         details: |-
-          <p>是否像常规上下标那样强，为指数限制高度。</p>
+          <p>是否像常规上下标那样，为指数限制高度。</p>
         example: null
         types:
         - boolean

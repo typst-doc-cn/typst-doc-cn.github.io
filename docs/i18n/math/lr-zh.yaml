@@ -90,9 +90,9 @@ body:
       <p>分隔符（delimiter）匹配。</p>
       <p>
       <code>lr</code> 
-      函数 匹配两个分隔符，并根据所包含的内容自动缩放。
-      在根据语法匹配分隔符时，这种操作也会自动进行。，而<code>lr</code>函数允许您精确地控制他们的大小。     
-      除<code>lr</code> 函数以外。Typst 还提供了更多函数，用于创建绝对值、向上取整、向下取整以及范数的分隔符配对。
+      函数匹配两个分隔符，并根据所包含的内容自动缩放尺寸。
+      该种操作也会在根据语法匹配分隔符时自动进行，而 <code>lr</code> 函数允许您精确地控制他们的大小。     
+      除 <code>lr</code> 函数以外。Typst 还提供了更多函数，用于创建绝对值、向上取整、向下取整以及范数的分隔符配对。
       </p>
     functions:
     - path:
@@ -104,7 +104,7 @@ body:
       details: |-
         <p>缩放分隔符。</p>
         <p>
-        虽然默认情况下匹配的分隔符会进行缩放，但这个特性也可以用于对未匹配的分隔符进行缩放，并可以更精确地控制分隔符的缩放。
+        虽然默认情况下匹配的分隔符会自动缩放，但这个特性也可以用于对未匹配的分隔符进行缩放，并可以更精确地控制分隔符的缩放。
         </p>
         <h3 id="lr-example">Example</h3>
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">lr</span><span class="typ-punct">(</span>]a<span class="typ-punct">,</span> b<span class="typ-math-op">/</span>2]<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
@@ -113,7 +113,7 @@ body:
       params:
       - name: size
         details: <p>
-          方括号的大小，取决于包含内容的高度。
+          括号的大小，取决于包含内容的高度。
           </p>
         example: null
         types:
@@ -253,7 +253,7 @@ body:
         </code></pre><div class="preview"><img src="/assets/docs/5e51dbb63fcb62826c19d8bc8405ec5b.png" alt="Preview" width="480" height="190"/></div></div>
       params:
       - name: body
-        details: <p>向上取整的表达式。</p>
+        details: <p>进行向上取整的表达式。</p>
         example: null
         types:
         - content
@@ -283,7 +283,7 @@ body:
         </code></pre><div class="preview"><img src="/assets/docs/b568beef30e9fb70d08ed84d7d609861.png" alt="Preview" width="480" height="190"/></div></div>
       params:
       - name: body
-        details: <p>四舍五入的表达式。</p>
+        details: <p>进行四舍五入的表达式。</p>
         example: null
         types:
         - content

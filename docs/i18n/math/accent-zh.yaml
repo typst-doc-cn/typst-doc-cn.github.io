@@ -38,7 +38,7 @@ body:
     params:
     - name: base
       details: |-
-        <p>可以添加重音符号的基数，可以由多个字母组成。</p>
+        <p>添加重音符号的基数，可以由多个字母组成。</p>
       example: |-
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span><span class="typ-func">arrow</span><span class="typ-punct">(</span>A B C<span class="typ-punct">)</span><span class="typ-math-delim">$</span>
         </code></pre><div class="preview"><img src="/assets/docs/d6d6623d6462b4aa8c0201636bd694a7.png" alt="Preview" width="480" height="190"/></div></div>

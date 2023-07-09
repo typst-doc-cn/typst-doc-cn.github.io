@@ -30,13 +30,12 @@ body:
     details: |-
       <p>矩阵。</p>
       <p>
-      同一行的元素应用逗号分隔，各一行之间应用分号分隔。
+      同一行的元素用逗号分隔，各行之间用分号分隔。
       分号语法将前面使用逗号分隔的参数合并为一个数组。
-      您还可以使用数学函数调用的此特殊语法来定义接受二维数据的自定义函数。
-      您还可以使用数学函数调用的特殊语法来定义接受二维数据的自定义函数。
+      您还可以使用“数学函数调”用的特殊语法，定义接受二维数据的自定义函数。
       </p>
       <p>
-      同一行的单元格中的内容可以使用对齐符 <code>&amp;</code> 进行对齐。
+      同一行的元素可以使用对齐符 <code>&amp;</code> 进行对齐。
       </p>
       <h2 id="example">Example</h2>
       <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">mat</span><span class="typ-punct">(</span>
@@ -48,7 +47,7 @@ body:
       </code></pre><div class="preview"><img src="/assets/docs/92c9b3b027c9bc5f7095d691e1690745.png" alt="Preview" width="480" height="190"/></div></div>
     params:
     - name: delim
-      details: <p>使用的定界符</p>
+      details: <p>使用的分隔符。</p>
       example: |-
         <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> math<span class="typ-punct">.</span><span class="typ-func">mat</span><span class="typ-punct">(</span>delim<span class="typ-punct">:</span> <span class="typ-str">&quot;[&quot;</span><span class="typ-punct">)</span>
         <span class="typ-math-delim">$</span> <span class="typ-func">mat</span><span class="typ-punct">(</span>1<span class="typ-punct">,</span> 2<span class="typ-punct">;</span> 3<span class="typ-punct">,</span> 4<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
@@ -75,7 +74,7 @@ body:
       settable: true
     - name: rows
       details: <p>
-        包含矩阵行的二维数组。
+        包含矩阵各行的二维数组。
         </p>
       example: |-
         <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> data <span class="typ-op">=</span> <span class="typ-punct">(</span><span class="typ-punct">(</span><span class="typ-num">1</span><span class="typ-punct">,</span> <span class="typ-num">2</span><span class="typ-punct">,</span> <span class="typ-num">3</span><span class="typ-punct">)</span><span class="typ-punct">,</span> <span class="typ-punct">(</span><span class="typ-num">4</span><span class="typ-punct">,</span> <span class="typ-num">5</span><span class="typ-punct">,</span> <span class="typ-num">6</span><span class="typ-punct">)</span><span class="typ-punct">)</span>
