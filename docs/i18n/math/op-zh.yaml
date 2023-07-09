@@ -1,5 +1,5 @@
 route: /docs/reference/math/op/
-title: Text Operator
+title: 文本运算符
 description: Documentation for the `op` function.
 part: null
 outline:
@@ -31,21 +31,24 @@ body:
     oneliner: A text operator in an equation.
     element: true
     details: |-
-      <p>A text operator in an equation.</p>
+      <p>用于公式中的文本运算符。</p>
       <h2 id="example">Example</h2>
       <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-pol">tan</span> x = <span class="typ-punct">(</span><span class="typ-pol">sin</span> x<span class="typ-punct">)</span><span class="typ-math-op">/</span><span class="typ-punct">(</span><span class="typ-pol">cos</span> x<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
       <span class="typ-math-delim">$</span> <span class="typ-func">op</span><span class="typ-punct">(</span><span class="typ-str">&quot;custom&quot;</span><span class="typ-punct">,</span>
            limits<span class="typ-punct">:</span> <span class="typ-key">#</span><span class="typ-key">true</span><span class="typ-punct">)</span><span class="typ-math-op">_</span><span class="typ-punct">(</span>n<span class="typ-escape">-&gt;</span><span class="typ-pol">oo</span><span class="typ-punct">)</span> n <span class="typ-math-delim">$</span>
       </code></pre><div class="preview"><img src="/assets/docs/1fc6ad0d8979e73ff0b39aeba8699a1d.png" alt="Preview" width="480" height="190"/></div></div>
       <h2 id="predefined">Predefined Operators</h2>
-      <p>Typst predefines the operators <code>arccos</code>,  <code>arcsin</code>,  <code>arctan</code>,  <code>arg</code>,
+      <p>
+      Typst 预定义了一些运算符，包括
+      <code>arccos</code>,  <code>arcsin</code>,  <code>arctan</code>,  <code>arg</code>,
       <code>cos</code>,  <code>cosh</code>,  <code>cot</code>, <code>ctg</code>, <code>coth</code>,  <code>csc</code>,  <code>deg</code>,  <code>det</code>,  <code>dim</code>,
       <code>exp</code>, <code>gcd</code>,  <code>hom</code>,  <code>mod</code>,  <code>inf</code>,  <code>ker</code>,  <code>lg</code>,  <code>lim</code>,  <code>ln</code>,  <code>log</code>,
       <code>max</code>, <code>min</code>,  <code>Pr</code>,  <code>sec</code>,  <code>sin</code>,  <code>sinc</code>,  <code>sinh</code>,  <code>sup</code>,  <code>tan</code>, <code>tg</code>,
-      <code>tanh</code>, <code>liminf</code>, and <code>limsup</code>.</p>
+      <code>tanh</code>, <code>liminf</code>,  和 <code>limsup</code>.
+      </p>
     params:
     - name: text
-      details: <p>The operator's text.</p>
+      details: <p>运算符作用的文本。</p>
       example: null
       types:
       - string
@@ -57,8 +60,7 @@ body:
       variadic: false
       settable: false
     - name: limits
-      details: <p>Whether the operator should show attachments as limits in display
-        mode.</p>
+      details: <p>是否将附缀显示为上下限形式（即显示在上方或下方）。</p>
       example: null
       types:
       - boolean

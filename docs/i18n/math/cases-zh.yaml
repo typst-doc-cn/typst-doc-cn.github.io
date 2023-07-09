@@ -1,5 +1,5 @@
 route: /docs/reference/math/cases/
-title: Cases
+title: 大括号
 description: Documentation for the `cases` function.
 part: null
 outline:
@@ -28,8 +28,8 @@ body:
     oneliner: A case distinction.
     element: true
     details: |-
-      <p>A case distinction.</p>
-      <p>Content across different branches can be aligned with the <code>&amp;</code> symbol.</p>
+      <p>大括号。</p>
+      <p>不同分支的内容可以通过对齐符  <code>&amp;</code> 来对齐。</p>
       <h2 id="example">Example</h2>
       <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> f(x, y) <span class="typ-escape">:=</span> <span class="typ-func">cases</span><span class="typ-punct">(</span>
         1 <span class="typ-str">&quot;if&quot;</span> <span class="typ-punct">(</span>x <span class="typ-pol">dot</span> y<span class="typ-punct">)</span><span class="typ-math-op">/</span>2 <span class="typ-escape">&lt;=</span> 0<span class="typ-punct">,</span>
@@ -40,7 +40,7 @@ body:
       </code></pre><div class="preview"><img src="/assets/docs/44f8d5158fe3376b109dc8d8e95e2d9e.png" alt="Preview" width="480" height="190"/></div></div>
     params:
     - name: delim
-      details: <p>The delimiter to use.</p>
+      details: <p>使用的定界符。</p>
       example: |-
         <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> math<span class="typ-punct">.</span><span class="typ-func">cases</span><span class="typ-punct">(</span>delim<span class="typ-punct">:</span> <span class="typ-str">&quot;[&quot;</span><span class="typ-punct">)</span>
         <span class="typ-math-delim">$</span> x = <span class="typ-func">cases</span><span class="typ-punct">(</span>1<span class="typ-punct">,</span> 2<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
@@ -65,7 +65,7 @@ body:
       variadic: false
       settable: true
     - name: children
-      details: <p>The branches of the case distinction.</p>
+      details: <p>分支的子分支。</p>
       example: null
       types:
       - content

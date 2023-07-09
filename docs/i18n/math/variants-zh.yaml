@@ -1,5 +1,5 @@
 route: /docs/reference/math/variants/
-title: Variants
+title: 字体变体
 description: Documentation for variants group of functions.
 part: null
 outline:
@@ -81,9 +81,12 @@ body:
     name: variants
     display: Variants
     details: |-
-      <p>Alternate typefaces within formulas.</p>
-      <p>These functions are distinct from the <a href="/docs/reference/text/text/"><code>text</code></a> function because
-      math fonts contain multiple variants of each letter.</p>
+      <p>
+      数学公式中的替代字体。
+      </p>
+      <p>
+      这些函数和 <a href="/docs/reference/text/text/"><code>text</code></a> 函数不同，因为数学字体包含每个字母的多个变体。
+      </p>
     functions:
     - path:
       - serif
@@ -92,11 +95,13 @@ body:
       oneliner: Serif (roman) font style in math.
       element: false
       details: |-
-        <p>Serif (roman) font style in math.</p>
-        <p>This is already the default.</p>
+        <p>
+        数学中的衬线（罗马）字体样式。
+        </p>
+        <p>这也是默认样式。</p>
       params:
       - name: body
-        details: <p>The content to style.</p>
+        details: <p>要设定样式的内容。</p>
         example: null
         types:
         - content
@@ -118,13 +123,15 @@ body:
       oneliner: Sans-serif font style in math.
       element: false
       details: |-
-        <p>Sans-serif font style in math.</p>
+        <p>
+        数学中的无衬线字体样式。
+        </p>
         <h3 id="sans-example">Example</h3>
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">sans</span><span class="typ-punct">(</span>A B C<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
         </code></pre><div class="preview"><img src="/assets/docs/a3e118d9df47ac4a4950d912ca8980ca.png" alt="Preview" width="480" height="190"/></div></div>
       params:
       - name: body
-        details: <p>The content to style.</p>
+        details: <p>要设定样式的内容。</p>
         example: null
         types:
         - content
@@ -146,13 +153,15 @@ body:
       oneliner: Fraktur font style in math.
       element: false
       details: |-
-        <p>Fraktur font style in math.</p>
+        <p>
+        数学中的黑体字体样式。
+        </p>
         <h3 id="frak-example">Example</h3>
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">frak</span><span class="typ-punct">(</span>P<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
         </code></pre><div class="preview"><img src="/assets/docs/1b1d41aefeb886afda3e40c16eb413c4.png" alt="Preview" width="480" height="190"/></div></div>
       params:
       - name: body
-        details: <p>The content to style.</p>
+        details: <p>要设定样式的内容。</p>
         example: null
         types:
         - content
@@ -174,13 +183,15 @@ body:
       oneliner: Monospace font style in math.
       element: false
       details: |-
-        <p>Monospace font style in math.</p>
+        <p>
+        数学中的等宽字体样式。
+        </p>
         <h3 id="mono-example">Example</h3>
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">mono</span><span class="typ-punct">(</span>x + y = z<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
         </code></pre><div class="preview"><img src="/assets/docs/22a327f021c4135a3c29e51704891040.png" alt="Preview" width="480" height="190"/></div></div>
       params:
       - name: body
-        details: <p>The content to style.</p>
+        details: <p>要设定样式的内容。</p>
         example: null
         types:
         - content
@@ -202,9 +213,12 @@ body:
       oneliner: Blackboard bold (double-struck) font style in math.
       element: false
       details: |-
-        <p>Blackboard bold (double-struck) font style in math.</p>
-        <p>For uppercase latin letters, blackboard bold is additionally available
-        through <a href="/docs/reference/symbols/sym/">symbols</a> of the form <code>NN</code> and <code>RR</code>.</p>
+        <p>
+        数学中的黑板粗体（双线）字体样式。
+        </p>
+        <p>
+        对于大写拉丁字母，黑板粗体还可以通过形式为 <code>NN</code> 和 <code>RR</code> 的 <a href="/docs/reference/symbols/sym/">symbols</a> 得到。
+        </p>
         <h3 id="bb-example">Example</h3>
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">bb</span><span class="typ-punct">(</span>b<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
         <span class="typ-math-delim">$</span> <span class="typ-func">bb</span><span class="typ-punct">(</span>N<span class="typ-punct">)</span> = <span class="typ-pol">NN</span> <span class="typ-math-delim">$</span>
@@ -212,7 +226,7 @@ body:
         </code></pre><div class="preview"><img src="/assets/docs/fbfd132e6d631cb8d11f762f30182469.png" alt="Preview" width="480" height="190"/></div></div>
       params:
       - name: body
-        details: <p>The content to style.</p>
+        details: <p>要设定样式的内容。</p>
         example: null
         types:
         - content
@@ -234,13 +248,15 @@ body:
       oneliner: Calligraphic font style in math.
       element: false
       details: |-
-        <p>Calligraphic font style in math.</p>
+        <p>
+        数学中的书法字体样式。
+        </p>
         <h3 id="cal-example">Example</h3>
         <div class="previewed-code"><pre><code>Let <span class="typ-math-delim">$</span><span class="typ-func">cal</span><span class="typ-punct">(</span>P<span class="typ-punct">)</span><span class="typ-math-delim">$</span> be the set of <span class="typ-escape">...</span>
         </code></pre><div class="preview"><img src="/assets/docs/4076bf054496eaa35f7325c6d304bf36.png" alt="Preview" width="480" height="190"/></div></div>
       params:
       - name: body
-        details: <p>The content to style.</p>
+        details: <p>要设定样式的内容。</p>
         example: null
         types:
         - content

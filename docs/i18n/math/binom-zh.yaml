@@ -1,5 +1,5 @@
 route: /docs/reference/math/binom/
-title: Binomial
+title: 二项式
 description: Documentation for the `binom` function.
 part: null
 outline:
@@ -28,13 +28,13 @@ body:
     oneliner: A binomial expression.
     element: true
     details: |-
-      <p>A binomial expression.</p>
+      <p>二项式表达式</p>
       <h2 id="example">Example</h2>
       <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">binom</span><span class="typ-punct">(</span>n<span class="typ-punct">,</span> k<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
       </code></pre><div class="preview"><img src="/assets/docs/cec5841ef8b1492ac1a7ed8c300746de.png" alt="Preview" width="480" height="190"/></div></div>
     params:
     - name: upper
-      details: <p>The binomial's upper index.</p>
+      details: <p>二项式的上标。</p>
       example: null
       types:
       - content
@@ -46,7 +46,7 @@ body:
       variadic: false
       settable: false
     - name: lower
-      details: <p>The binomial's lower index.</p>
+      details: <p>二项式的下标。</p>
       example: null
       types:
       - content
