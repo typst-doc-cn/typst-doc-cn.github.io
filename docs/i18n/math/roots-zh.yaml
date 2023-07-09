@@ -1,5 +1,5 @@
 route: /docs/reference/math/roots/
-title: Roots
+title: 根式
 description: Documentation for roots group of functions.
 part: null
 outline:
@@ -38,7 +38,7 @@ body:
   content:
     name: roots
     display: Roots
-    details: <p>Square and non-square roots.</p>
+    details: <p>平方根或其他次方根。</p>
     functions:
     - path:
       - root
@@ -47,13 +47,13 @@ body:
       oneliner: A general root.
       element: true
       details: |-
-        <p>A general root.</p>
+        <p>方根函数。</p>
         <h3 id="root-example">Example</h3>
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">root</span><span class="typ-punct">(</span>3<span class="typ-punct">,</span> x<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
         </code></pre><div class="preview"><img src="/assets/docs/7aa00673dcb0afc96f8085fbc5ed7841.png" alt="Preview" width="480" height="190"/></div></div>
       params:
       - name: index
-        details: <p>Which root of the radicand to take.</p>
+        details: <p>要开几次方，即根式的指数。</p>
         example: null
         types:
         - none
@@ -66,7 +66,7 @@ body:
         variadic: false
         settable: true
       - name: radicand
-        details: <p>The expression to take the root of.</p>
+        details: <p>进行方根运算的表达式，即根式的底数。</p>
         example: null
         types:
         - content
@@ -88,13 +88,13 @@ body:
       oneliner: A square root.
       element: false
       details: |-
-        <p>A square root.</p>
+        <p>平方根。</p>
         <h3 id="sqrt-example">Example</h3>
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">sqrt</span><span class="typ-punct">(</span>x<span class="typ-math-op">^</span>2<span class="typ-punct">)</span> = x = <span class="typ-func">sqrt</span><span class="typ-punct">(</span>x<span class="typ-punct">)</span><span class="typ-math-op">^</span>2 <span class="typ-math-delim">$</span>
         </code></pre><div class="preview"><img src="/assets/docs/4e6fb7b2591b48f8869f04c06a5a795a.png" alt="Preview" width="480" height="190"/></div></div>
       params:
       - name: radicand
-        details: <p>The expression to take the square root of.</p>
+        details: <p>要开平方根的表达式。</p>
         example: null
         types:
         - content

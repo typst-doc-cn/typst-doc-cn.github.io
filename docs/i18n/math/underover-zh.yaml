@@ -1,5 +1,5 @@
 route: /docs/reference/math/underover/
-title: Under/Over
+title: 上/下 方内容
 description: Documentation for underover group of functions.
 part: null
 outline:
@@ -96,9 +96,12 @@ body:
     name: underover
     display: Under/Over
     details: |-
-      <p>Delimiters above or below parts of an equation.</p>
-      <p>The braces and brackets further allow you to add an optional annotation
-      below or above themselves.</p>
+      <p>
+      表达式上下方的分隔符。
+      </p>
+      <p>
+      还可以在大括号和括号上方添加可选注释。
+      </p>
     functions:
     - path:
       - underline
@@ -107,13 +110,15 @@ body:
       oneliner: A horizontal line under content.
       element: true
       details: |-
-        <p>A horizontal line under content.</p>
+        <p>
+        在内容下方添加水平线。
+        </p>
         <h3 id="underline-example">Example</h3>
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">underline</span><span class="typ-punct">(</span>1 + 2 + <span class="typ-escape">...</span> + 5<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
         </code></pre><div class="preview"><img src="/assets/docs/a964debc0427ab602297c7dc72630745.png" alt="Preview" width="480" height="190"/></div></div>
       params:
       - name: body
-        details: <p>The content above the line.</p>
+        details: <p>水平线上方的内容。</p>
         example: null
         types:
         - content
@@ -135,13 +140,13 @@ body:
       oneliner: A horizontal line over content.
       element: true
       details: |-
-        <p>A horizontal line over content.</p>
+        <p>在内容上方添加水平线。</p>
         <h3 id="overline-example">Example</h3>
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">overline</span><span class="typ-punct">(</span>1 + 2 + <span class="typ-escape">...</span> + 5<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
         </code></pre><div class="preview"><img src="/assets/docs/cdd4cb2e681e2fced8b4b9f63cf90e81.png" alt="Preview" width="480" height="190"/></div></div>
       params:
       - name: body
-        details: <p>The content below the line.</p>
+        details: <p>水平线下方的内容。</p>
         example: null
         types:
         - content
@@ -163,13 +168,17 @@ body:
       oneliner: A horizontal brace under content, with an optional annotation below.
       element: true
       details: |-
-        <p>A horizontal brace under content, with an optional annotation below.</p>
+        <p>
+        在内容下方添加水平大括号，括号下方可以添加可选注释。
+        </p>
         <h3 id="underbrace-example">Example</h3>
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">underbrace</span><span class="typ-punct">(</span>1 + 2 + <span class="typ-escape">...</span> + 5<span class="typ-punct">,</span> <span class="typ-str">&quot;numbers&quot;</span><span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
         </code></pre><div class="preview"><img src="/assets/docs/88b30429e73e3bbc3d0e0ee29c7d06b6.png" alt="Preview" width="480" height="190"/></div></div>
       params:
       - name: body
-        details: <p>The content above the brace.</p>
+        details: <p>
+          大括号上方的内容。
+          </p>
         example: null
         types:
         - content
@@ -181,7 +190,7 @@ body:
         variadic: false
         settable: false
       - name: annotation
-        details: <p>The optional content below the brace.</p>
+        details: <p>大括号下方的可选注释。</p>
         example: null
         types:
         - none
@@ -204,13 +213,14 @@ body:
       oneliner: A horizontal brace over content, with an optional annotation above.
       element: true
       details: |-
-        <p>A horizontal brace over content, with an optional annotation above.</p>
+        <p>
+        在内容上方添加水平大括号，括号上方可以添加可选注释。</p>
         <h3 id="overbrace-example">Example</h3>
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">overbrace</span><span class="typ-punct">(</span>1 + 2 + <span class="typ-escape">...</span> + 5<span class="typ-punct">,</span> <span class="typ-str">&quot;numbers&quot;</span><span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
         </code></pre><div class="preview"><img src="/assets/docs/9f2eca7814aaf0c6542bb369712f4513.png" alt="Preview" width="480" height="190"/></div></div>
       params:
       - name: body
-        details: <p>The content below the brace.</p>
+        details: <p>大括号下方的内容。</p>
         example: null
         types:
         - content
@@ -222,7 +232,7 @@ body:
         variadic: false
         settable: false
       - name: annotation
-        details: <p>The optional content above the brace.</p>
+        details: <p>大括号上方的可选注释。</p>
         example: null
         types:
         - none
@@ -245,13 +255,14 @@ body:
       oneliner: A horizontal bracket under content, with an optional annotation below.
       element: true
       details: |-
-        <p>A horizontal bracket under content, with an optional annotation below.</p>
+        <p>
+        在内容下方添加水平方括号，括号下方可以添加可选注释。</p>
         <h3 id="underbracket-example">Example</h3>
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">underbracket</span><span class="typ-punct">(</span>1 + 2 + <span class="typ-escape">...</span> + 5<span class="typ-punct">,</span> <span class="typ-str">&quot;numbers&quot;</span><span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
         </code></pre><div class="preview"><img src="/assets/docs/7a63fcfa0c9ae2df891097e9bba06ab6.png" alt="Preview" width="480" height="190"/></div></div>
       params:
       - name: body
-        details: <p>The content above the bracket.</p>
+        details: <p>方括号上方的内容。</p>
         example: null
         types:
         - content
@@ -263,7 +274,7 @@ body:
         variadic: false
         settable: false
       - name: annotation
-        details: <p>The optional content below the bracket.</p>
+        details: <p>方括号下方的可选注释。</p>
         example: null
         types:
         - none
@@ -286,13 +297,14 @@ body:
       oneliner: A horizontal bracket over content, with an optional annotation above.
       element: true
       details: |-
-        <p>A horizontal bracket over content, with an optional annotation above.</p>
+        <p>
+        在内容上方添加水平方括号，括号上方可以添加可选注释。</p>
         <h3 id="overbracket-example">Example</h3>
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">overbracket</span><span class="typ-punct">(</span>1 + 2 + <span class="typ-escape">...</span> + 5<span class="typ-punct">,</span> <span class="typ-str">&quot;numbers&quot;</span><span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
         </code></pre><div class="preview"><img src="/assets/docs/b50782925e551ea653c324786dcbc21b.png" alt="Preview" width="480" height="190"/></div></div>
       params:
       - name: body
-        details: <p>The content below the bracket.</p>
+        details: <p>方括号下方的内容。</p>
         example: null
         types:
         - content
@@ -304,7 +316,7 @@ body:
         variadic: false
         settable: false
       - name: annotation
-        details: <p>The optional content above the bracket.</p>
+        details: <p>方括号上方的可选注释。</p>
         example: null
         types:
         - none
