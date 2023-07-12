@@ -33,6 +33,39 @@
   <link rel="preload" href="/assets/fonts/HKGrotesk-SemiBold.woff2" as="font">
   <link rel="preload" href="/assets/fonts/CascadiaMono-Regular-Sub.woff2" as="font">
   <link rel="preload" href="/assets/images/blur.webp" as="image">
+  <script>document.documentElement.className = document.documentElement.className.replace(
+      "no-js",
+      "js",
+    )
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const INSECURE_SIGNED_IN_COOKIE = document.cookie
+        .split("; ")
+        .find((row) => row.startsWith("INSECURE_SIGNED_IN="))
+        ?.split("=")[1]
+        .toLowerCase()
+
+      if (
+        INSECURE_SIGNED_IN_COOKIE === "1" ||
+        INSECURE_SIGNED_IN_COOKIE === "true" ||
+        INSECURE_SIGNED_IN_COOKIE === "yes"
+      ) {
+        document.documentElement.classList.add("signed-in")
+        const navButton = document.querySelector("header nav a.nav-btn")
+        const signInEl = document.querySelector("header nav a.sign-in")
+
+        if (navButton) {
+          navButton.innerHTML = "Go to app"
+          navButton.setAttribute("href", "/app/")
+        }
+
+        if (signInEl) {
+          signInEl.innerHTML = "Sign out"
+          signInEl.setAttribute("href", "https://api.typst.app/v1/auth/logout")
+        }
+      }
+    })
+  </script>
 </head>
 
 <body class="no-js docs has-outline">
@@ -86,8 +119,8 @@
           <title id="logo-label-nav">Typst</title>
           <use href="/assets/images/typst.svg#logo"></use>
         </svg><span>中文文档</span></a>
-      <!-- <button class="close"><img alt="Close" src="/assets/icons/16-close-dark.svg"
-          width="16" height="16"></button> -->
+      <button class="close"><img alt="Close" src="/assets/icons/16-close-dark.svg"
+          width="16" height="16"></button>
       <div class="search"><img src="/assets/icons/16-search-gray.svg" alt="Search" width="16" height="16"><input
           type="search" placeholder="搜索" id="docs-search"></div>
       <ul class="search-results hidden" id="search-results"></ul>
@@ -848,7 +881,7 @@
     </div>
   </small></h1>
 
-<p>Aligns content horizontally and vertically.</p>
+<p>将内容水平和垂直对齐。</p>
 <h2 id="example">Example</h2>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">align</span><span class="typ-punct">(</span>center<span class="typ-punct">)</span>
 
@@ -903,8 +936,8 @@ A work of art, a visual throne
     </small>
   </div>
 </h3>
-<p>The alignment along both axes.</p>
-<p>Possible values for horizontal alignments are:</p>
+<p>在水平和垂直两个轴上进行对齐。</p>
+<p>可用的水平对齐方式包括：</p>
 <ul>
 <li><code>start</code></li>
 <li><code>end</code></li>
@@ -912,17 +945,15 @@ A work of art, a visual throne
 <li><code>center</code></li>
 <li><code>right</code></li>
 </ul>
-<p>The <code>start</code> and <code>end</code> alignments are relative to the current <a href="/docs/reference/text/text/#parameters-dir">text
-direction</a>.</p>
-<p>Possible values for vertical alignments are:</p>
+<p><code>start</code> 和 <code>end</code> 对齐方式是相对于当前 <a href="/docs/reference/text/text/#parameters-dir">text
+direction</a> 的。</p>
+<p>可用的垂直对齐方式包括：</p>
 <ul>
 <li><code>top</code></li>
 <li><code>horizon</code></li>
 <li><code>bottom</code></li>
 </ul>
-<p>To align along both axes at the same time, add the two alignments using
-the <code>+</code> operator to get a <code>2d alignment</code>. For example, <code>top + right</code>
-aligns the content to the top right corner.</p>
+<p>要同时在两个轴上对齐，可以使用 <code>+</code> 运算符将两个对齐方式相加，得到一个二维对齐方式。例如，<code>top + right</code> 将内容对齐到右上角。</p>
 
 <p>默认：<code>start <span class="typ-op">+</span> top</code></p>
 
@@ -962,7 +993,7 @@ aligns the content to the top right corner.</p>
     </small>
   </div>
 </h3>
-<p>The content to align.</p>
+<p>需要对齐的内容。</p>
 
 
 

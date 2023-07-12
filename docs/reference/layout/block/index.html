@@ -33,6 +33,39 @@
   <link rel="preload" href="/assets/fonts/HKGrotesk-SemiBold.woff2" as="font">
   <link rel="preload" href="/assets/fonts/CascadiaMono-Regular-Sub.woff2" as="font">
   <link rel="preload" href="/assets/images/blur.webp" as="image">
+  <script>document.documentElement.className = document.documentElement.className.replace(
+      "no-js",
+      "js",
+    )
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const INSECURE_SIGNED_IN_COOKIE = document.cookie
+        .split("; ")
+        .find((row) => row.startsWith("INSECURE_SIGNED_IN="))
+        ?.split("=")[1]
+        .toLowerCase()
+
+      if (
+        INSECURE_SIGNED_IN_COOKIE === "1" ||
+        INSECURE_SIGNED_IN_COOKIE === "true" ||
+        INSECURE_SIGNED_IN_COOKIE === "yes"
+      ) {
+        document.documentElement.classList.add("signed-in")
+        const navButton = document.querySelector("header nav a.nav-btn")
+        const signInEl = document.querySelector("header nav a.sign-in")
+
+        if (navButton) {
+          navButton.innerHTML = "Go to app"
+          navButton.setAttribute("href", "/app/")
+        }
+
+        if (signInEl) {
+          signInEl.innerHTML = "Sign out"
+          signInEl.setAttribute("href", "https://api.typst.app/v1/auth/logout")
+        }
+      }
+    })
+  </script>
 </head>
 
 <body class="no-js docs has-outline">
@@ -86,8 +119,8 @@
           <title id="logo-label-nav">Typst</title>
           <use href="/assets/images/typst.svg#logo"></use>
         </svg><span>中文文档</span></a>
-      <!-- <button class="close"><img alt="Close" src="/assets/icons/16-close-dark.svg"
-          width="16" height="16"></button> -->
+      <button class="close"><img alt="Close" src="/assets/icons/16-close-dark.svg"
+          width="16" height="16"></button>
       <div class="search"><img src="/assets/icons/16-search-gray.svg" alt="Search" width="16" height="16"><input
           type="search" placeholder="搜索" id="docs-search"></div>
       <ul class="search-results hidden" id="search-results"></ul>
@@ -848,12 +881,10 @@
     </div>
   </small></h1>
 
-<p>A block-level container.</p>
-<p>Such a container can be used to separate content, size it, and give it a
-background or border.</p>
+<p>一个块级容器。</p>
+<p>这样的容器可以用来分隔内容、调整大小，并为其添加背景或边框。</p>
 <h2 id="examples">Examples</h2>
-<p>With a block, you can give a background to content while still allowing it
-to break across multiple pages.</p>
+<p>通过使用块级容器，你可以为内容设置背景，并且仍然允许内容跨多个页面断开。</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">page</span><span class="typ-punct">(</span>height<span class="typ-punct">:</span> <span class="typ-num">100pt</span><span class="typ-punct">)</span>
 <span class="typ-func">#</span><span class="typ-func">block</span><span class="typ-punct">(</span>
   fill<span class="typ-punct">:</span> <span class="typ-func">luma</span><span class="typ-punct">(</span><span class="typ-num">230</span><span class="typ-punct">)</span><span class="typ-punct">,</span>
@@ -862,8 +893,7 @@ to break across multiple pages.</p>
   <span class="typ-func">lorem</span><span class="typ-punct">(</span><span class="typ-num">30</span><span class="typ-punct">)</span><span class="typ-punct">,</span>
 <span class="typ-punct">)</span>
 </code></pre><div class="preview"><img src="/assets/docs/ab89b7c75b487ae586e887637d73567f.png" alt="Preview" width="480" height="190"/></div></div>
-<p>Blocks are also useful to force elements that would otherwise be inline to
-become block-level, especially when writing show rules.</p>
+<p>块还可以用于将本应为内联的元素强制变为块级元素，特别是在编写 show 规则时非常有用。</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">show</span> <span class="typ-func">heading</span><span class="typ-punct">:</span> it <span class="typ-op">=&gt;</span> it<span class="typ-punct">.</span>body
 <span class="typ-heading">= Blockless</span>
 More text.
