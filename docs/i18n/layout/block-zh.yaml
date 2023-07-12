@@ -61,12 +61,10 @@ body:
     oneliner: A block-level container.
     element: true
     details: |-
-      <p>A block-level container.</p>
-      <p>Such a container can be used to separate content, size it, and give it a
-      background or border.</p>
+      <p>一个块级容器。</p>
+      <p>这样的容器可以用来分隔内容、调整大小，并为其添加背景或边框。</p>
       <h2 id="examples">Examples</h2>
-      <p>With a block, you can give a background to content while still allowing it
-      to break across multiple pages.</p>
+      <p>通过使用块级容器，你可以为内容设置背景，并且仍然允许内容跨多个页面断开。</p>
       <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">page</span><span class="typ-punct">(</span>height<span class="typ-punct">:</span> <span class="typ-num">100pt</span><span class="typ-punct">)</span>
       <span class="typ-func">#</span><span class="typ-func">block</span><span class="typ-punct">(</span>
         fill<span class="typ-punct">:</span> <span class="typ-func">luma</span><span class="typ-punct">(</span><span class="typ-num">230</span><span class="typ-punct">)</span><span class="typ-punct">,</span>
@@ -75,8 +73,7 @@ body:
         <span class="typ-func">lorem</span><span class="typ-punct">(</span><span class="typ-num">30</span><span class="typ-punct">)</span><span class="typ-punct">,</span>
       <span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/ab89b7c75b487ae586e887637d73567f.png" alt="Preview" width="480" height="190"/></div></div>
-      <p>Blocks are also useful to force elements that would otherwise be inline to
-      become block-level, especially when writing show rules.</p>
+      <p>块还可以用于将本应为内联的元素强制变为块级元素，特别是在编写 show 规则时非常有用。</p>
       <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">show</span> <span class="typ-func">heading</span><span class="typ-punct">:</span> it <span class="typ-op">=&gt;</span> it<span class="typ-punct">.</span>body
       <span class="typ-heading">= Blockless</span>
       More text.

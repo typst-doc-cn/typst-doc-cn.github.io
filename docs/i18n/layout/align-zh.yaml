@@ -28,7 +28,7 @@ body:
     oneliner: Aligns content horizontally and vertically.
     element: true
     details: |-
-      <p>Aligns content horizontally and vertically.</p>
+      <p>将内容水平和垂直对齐。</p>
       <h2 id="example">Example</h2>
       <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">align</span><span class="typ-punct">(</span>center<span class="typ-punct">)</span>
 
@@ -40,8 +40,8 @@ body:
     params:
     - name: alignment
       details: |-
-        <p>The alignment along both axes.</p>
-        <p>Possible values for horizontal alignments are:</p>
+        <p>在水平和垂直两个轴上进行对齐。</p>
+        <p>可用的水平对齐方式包括：</p>
         <ul>
         <li><code>start</code></li>
         <li><code>end</code></li>
@@ -49,17 +49,15 @@ body:
         <li><code>center</code></li>
         <li><code>right</code></li>
         </ul>
-        <p>The <code>start</code> and <code>end</code> alignments are relative to the current <a href="/docs/reference/text/text/#parameters-dir">text
-        direction</a>.</p>
-        <p>Possible values for vertical alignments are:</p>
+        <p><code>start</code> 和 <code>end</code> 对齐方式是相对于当前 <a href="/docs/reference/text/text/#parameters-dir">text
+        direction</a> 的。</p>
+        <p>可用的垂直对齐方式包括：</p>
         <ul>
         <li><code>top</code></li>
         <li><code>horizon</code></li>
         <li><code>bottom</code></li>
         </ul>
-        <p>To align along both axes at the same time, add the two alignments using
-        the <code>+</code> operator to get a <code>2d alignment</code>. For example, <code>top + right</code>
-        aligns the content to the top right corner.</p>
+        <p>要同时在两个轴上对齐，可以使用 <code>+</code> 运算符将两个对齐方式相加，得到一个二维对齐方式。例如，<code>top + right</code> 将内容对齐到右上角。</p>
       example: |-
         <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">page</span><span class="typ-punct">(</span>height<span class="typ-punct">:</span> <span class="typ-num">6cm</span><span class="typ-punct">)</span>
         <span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>lang<span class="typ-punct">:</span> <span class="typ-str">&quot;ar&quot;</span><span class="typ-punct">)</span>
@@ -81,7 +79,7 @@ body:
       variadic: false
       settable: true
     - name: body
-      details: <p>The content to align.</p>
+      details: <p>需要对齐的内容。</p>
       example: null
       types:
       - content
