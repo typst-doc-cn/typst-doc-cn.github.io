@@ -25,10 +25,10 @@ body:
     - linebreak
     display: Line Break
     keywords: null
-    oneliner: Inserts a line break.
+    oneliner: 插入一个换行。
     element: true
     details: |-
-      <p>Inserts a line break.</p>
+      <p>插入一个换行。</p>
       <p>Advances the paragraph to the next line. A single trailing line break at the
       end of a paragraph is ignored, but more than one creates additional empty
       lines.</p>
