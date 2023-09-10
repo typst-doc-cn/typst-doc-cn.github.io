@@ -635,92 +635,91 @@ description: |
 - Heading and list markers now parse consistently
 - Allow arbitrary math directly in content
 
-## January 30, 2023
+## 2023 年 1 月 30 日
 [Go to the announcement blog post.](https://typst.app/blog/2023/january-update)
-- New expression syntax in markup/math
-  - Blocks cannot be directly embedded in markup anymore
-  - Like other expressions, they now require a leading hashtag
-  - More expressions available with hashtag, including literals
-    (`[#"string"]`) as well as field access and method call
-    without space: `[#emoji.face]`
-- New import syntax
-  - `[#import "module.typ"]` creates binding named `module`
-  - `[#import "module.typ": a, b]` or `[#import "module.typ": *]` to import items
-  - `[#import emoji: face, turtle]` to import from already bound module
-- New symbol handling
-  - Removed symbol notation
-  - Symbols are now in modules: `{sym}`, `{emoji}`, and `{math}`
-  - Math module also reexports all of `{sym}`
-  - Modified through field access, still order-independent
-  - Unknown modifiers are not allowed anymore
-  - Support for custom symbol definitions with `symbol` function
-  - Symbols now listed in documentation
-- New `{math}` module
-  - Contains all math-related functions
-  - Variables and function calls directly in math (without hashtag) access this
-    module instead of the global scope, but can also access local variables
-  - Can be explicitly used in code, e.g. `[#set math.vec(delim: "[")]`
-- Delimiter matching in math
-   - Any opening delimiters matches any closing one
-   - When matched, they automatically scale
-   - To prevent scaling, escape them
-   - To forcibly match two delimiters, use `lr` function
-   - Line breaks may occur between matched delimiters
-   - Delimiters may also be unbalanced
-   - You can also use the `lr` function to scale the brackets
-     (or just one bracket) to a specific size manually
-- Multi-line math with alignment
-  - The `\` character inserts a line break
-  - The `&` character defines an alignment point
-  - Alignment points also work for underbraces, vectors, cases, and matrices
-  - Multiple alignment points are supported
-- More capable math function calls
-  - Function calls directly in math can now take code expressions with hashtag
-  - They can now also take named arguments
-  - Within math function calls, semicolons turn preceding arguments to arrays to
-    support matrices: `[$mat(1, 2; 3, 4)$]`
-- Arbitrary content in math
-  - Text, images, and other arbitrary content can now be embedded in math
-  - Math now also supports font fallback to support e.g. CJK and emoji
-- More math features
-  - New text operators: `op` function, `lim`, `max`, etc.
-  - New matrix function: `mat`
-  - New n-ary roots with `root` function: `[$root(3, x)$]`
-  - New under- and overbraces, -brackets, and -lines
-  - New `abs` and `norm` functions
-  - New shorthands: `[|`, `|]`, and `||`
-  - New `attach` function, overridable attachments with `script` and `limit`
-  - Manual spacing in math, with `h`, `thin`, `med`, `thick` and `quad`
-  - Symbols and other content may now be used like a function, e.g. `[$zeta(x)$]`
-  - Added Fira Math font, removed Noto Sans Math font
-  - Support for alternative math fonts through
-    `[#show math.formula: set text("Fira Math")]`
+- 标记/数学中的新表达式语法
+  - 文本块不能再直接嵌入到标记中
+  - 与其他表达式那样,现在它们需要前导井号（#）
+  - 更多表达式支持使用井号,包括字面量
+    (`[#"string"]`) 以及无需空格的字段访问和方法调用
+    ： `[#emoji.face]`
+- 新增 import 语法
+  - 使用  `[#import "module.typ"]` 创建绑定的命名 `模块`
+  - 使用  `[#import "module.typ": a, b]` 或 `[#import "module.typ": *]` 来导入项目
+  - 使用  `[#import emoji: face, turtle]` 来导入已绑定的模块
+- 新增符号处理
+  - 移除符号表示法
+  - 符号现在位于 `{sym}`, `{emoji}`,和 `{math}` 模块中
+  - 数学模块重新导出 `{sym}`的所有内容
+  - 通过字段访问进行修改,但仍是无序的 `<mark>`
+  - `<mark>`不再允许使用未知的修改器
+  - 支持使用 `symbol` 函数定义自定义符号
+  - 现在文档中会列出所有符号
+- 新的 `{math}` 模块
+  - 包含与数学相关的所有函数
+  - 数学中的变量和函数调用（无需井号）访问此模块,而不是全局作用域,但也可以访问局部变量 `<mark>`
+  - Variables and function calls directly in math (without hashtag) access this module instead of the global scope, but can also access local variables
+  - 可以在代码中显式使用, 例如  `[#set math.vec(delim: "[")]`
+- 数学模式中的分隔符匹配
+  - 任何起始分隔符能与任何结束分隔符匹配
+  - 匹配时,它们会自动进行比例缩放
+  - 如要防止缩放,可以对其进行转义
+  - 如要强制匹配两个分隔符,可以使用  `lr` 函数
+  - 匹配的分隔符之间可能存在换行
+  - 分隔符也可能不平衡
+  - 你也可以使用 `lr` 函数来手动调整括号
+      或者仅调整一个括号） 的大小
+- 带有对齐的多行数学公式
+  - 使用反斜杠 `\` 插入换行符
+  - 使用对齐符 `&` 定义对齐点
+  - 对齐点也适用于下括号、向量、大括号和矩阵
+  - 支持多个对齐点
+- 功能更强大的数学函数调用
+  - 直接使用的数学函数调用可以使用带有井号的代码表达式
+  - 也可以直接使用命名参数
+  - 在数学函数调用中,分号会将前面的参数转换为数组
+      以支持矩阵功能：`[$mat(1, 2; 3, 4)$]`
+- 数学模式中的任意内容
+  - 现在可以将文本、图像和其他任意内容嵌入数学模式中
+  - 数学现在还支持字体回退以支持 CJK 和 emoji 表情等内容
+- 更多数学特性
+  - 新增文本运算符： `op` , `lim` , `max` 等等
+  - 新增矩阵函数： `mat`
+  - 新增 `root` 函数函数: `[$root(3, x)$]`
+  - 新增上下括号、方括号和线条
+  - 新增 `abs` 和 `norm`
+  - 新增速记符： `[|`, `|]`, and `||`
+  - 新增 `attach` 函数,可被 `script` 和 `limit` 覆盖
+  - 数学模式下可使用 `h`, `thin`, `med`, `thick` and `quad` 手动调整间距
+  - 符号和其他内容现在可以像函数那样使用,例如 `[$zeta(x)$]`
+  - 新增 Fira Math 字体, 移除 Noto Sans Math 字体
+  - 支持通过
+    `[#show math.formula: set text("Fira Math")]` 自定义替代数学字体
 - More library improvements
-  - New `calc` module, `abs`, `min`, `max`, `even`, `odd` and `mod` moved there
-  - New `message` argument on `{assert}` function
-  - The `pairs` method on dictionaries now returns an array of length-2 arrays
-    instead of taking a closure
-  - The method call `{dict.at("key")}` now always fails if `"key"` doesn't exist
-    Previously, it was allowed in assignments. Alternatives are `{dict.key = x}`
-    and `{dict.insert("key", x)}`.
-- Smarter editor functionality
-  - Autocompletion for local variables
-  - Autocompletion for methods available on a value
-  - Autocompletion for symbols and modules
-  - Autocompletion for imports
-  - Hover over an identifier to see its value(s)
-- Further editor improvements
-  - New Font menu with previews
-  - Single projects may now be shared with share links
-  - New dashboard experience if projects are shared with you
-  - Keyboard Shortcuts are now listed in the menus and there are more of them
-  - New Offline indicator
-  - Tooltips for all buttons
-  - Improved account protection
-  - Moved Status indicator into the error list button
-- Further fixes
-  - Multiple bug fixes for incremental parser
-  - Fixed closure parameter capturing
-  - Fixed tons of math bugs
-  - Bugfixes for performance, file management, editing reliability
-  - Added redirection to the page originally navigated to after signin
+  - 新增 `calc` 模块, 并将 `abs`, `min`, `max`, `even`, `odd` 和 `mod` 移动过去
+  - 新增 `{assert}` 函数的 `message` 参数
+  - 字典的`pairs` 方法现在将会返回一个长度为2的二维数组，而不是关闭它
+  - 现在，如果 `"key"` 不存在，则方法调用 `{dict.at("key")}` 将会失败
+   以前, 它被允许在xx中使用. 替代方案是 `{dict.key = x}`
+    和`{dict.insert("key", x)}`.
+- 更智能的编辑器功能
+  - 支持本地变量的自动补全
+  - 支持在值上使用的方法的自动补全
+  - 支持符号和模块的自动补全
+  - 支持导入的自动补全
+  - 支持悬浮在标识符上方查看值
+- 进一步的编辑器改进
+  - 新增带有预览功能的字体菜单
+  - 现在可以通过分享链接分享单个项目
+  - 对于共享给你的项目，将有全新的界面体验
+  - 键盘快捷键现在列在菜单中，并且有更多的快捷键
+  - 新增离线指示器
+  - 为所有按钮提供工具提示
+  - 改进了账户保护功能
+  - 将状态指示器移入错误列表按钮中
+- 进一步的修复
+  - 修复增量解析器的多个错误
+  - 修复了闭包参数捕获
+  - 修复了大量的数学错误
+  - 修复了性能、文件管理、编辑可靠性方面的错误
+  - 在登录后，新增重定向到最初导航到的页面
