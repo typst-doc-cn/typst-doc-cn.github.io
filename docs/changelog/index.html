@@ -291,46 +291,46 @@ forward.
                 <li><a href="/docs/reference/text/lorem/" >假文</a></li>
                 
                 
-                <li><a href="/docs/reference/text/emph/" >Emphasis</a></li>
+                <li><a href="/docs/reference/text/emph/" >强调（斜体）</a></li>
                 
                 
-                <li><a href="/docs/reference/text/linebreak/" >Line Break</a></li>
+                <li><a href="/docs/reference/text/linebreak/" >换行</a></li>
                 
                 
-                <li><a href="/docs/reference/text/lower/" >Lowercase</a></li>
+                <li><a href="/docs/reference/text/lower/" >转小写</a></li>
                 
                 
-                <li><a href="/docs/reference/text/overline/" >Overline</a></li>
+                <li><a href="/docs/reference/text/overline/" >上划线</a></li>
                 
                 
-                <li><a href="/docs/reference/text/raw/" >Raw Text / Code</a></li>
+                <li><a href="/docs/reference/text/raw/" >原始文本/代码块</a></li>
                 
                 
-                <li><a href="/docs/reference/text/smallcaps/" >Small Capitals</a></li>
+                <li><a href="/docs/reference/text/smallcaps/" >显示为小写</a></li>
                 
                 
-                <li><a href="/docs/reference/text/smartquote/" >Smart Quote</a></li>
+                <li><a href="/docs/reference/text/smartquote/" >智能引号</a></li>
                 
                 
-                <li><a href="/docs/reference/text/strike/" >Strikethrough</a></li>
+                <li><a href="/docs/reference/text/strike/" >删除线</a></li>
                 
                 
-                <li><a href="/docs/reference/text/strong/" >Strong Emphasis</a></li>
+                <li><a href="/docs/reference/text/strong/" >着重强调（加粗）</a></li>
                 
                 
-                <li><a href="/docs/reference/text/sub/" >Subscript</a></li>
+                <li><a href="/docs/reference/text/sub/" >下标</a></li>
                 
                 
-                <li><a href="/docs/reference/text/super/" >Superscript</a></li>
+                <li><a href="/docs/reference/text/super/" >上标</a></li>
                 
                 
-                <li><a href="/docs/reference/text/text/" >Text</a></li>
+                <li><a href="/docs/reference/text/text/" >文本</a></li>
                 
                 
-                <li><a href="/docs/reference/text/underline/" >Underline</a></li>
+                <li><a href="/docs/reference/text/underline/" >下划线</a></li>
                 
                 
-                <li><a href="/docs/reference/text/upper/" >Uppercase</a></li>
+                <li><a href="/docs/reference/text/upper/" >转大写</a></li>
                 
               </ul>
               
@@ -1657,133 +1657,132 @@ outline is present</li>
 <li>Heading and list markers now parse consistently</li>
 <li>Allow arbitrary math directly in content</li>
 </ul>
-<h2>January 30, 2023</h2>
+<h2>2023 年 1 月 30 日</h2>
 <p><a href="https://typst.app/blog/2023/january-update">Go to the announcement blog post.</a></p>
 <ul>
-<li>New expression syntax in markup/math
+<li>标记/数学中的新表达式语法
 <ul>
-<li>Blocks cannot be directly embedded in markup anymore</li>
-<li>Like other expressions, they now require a leading hashtag</li>
-<li>More expressions available with hashtag, including literals
-(<code><span class="typ-str">#</span><span class="typ-str">&quot;string&quot;</span></code>) as well as field access and method call
-without space: <code><span class="typ-pol">#</span><span class="typ-pol">emoji</span><span class="typ-punct">.</span><span class="typ-pol">face</span></code></li>
+<li>文本块不能再直接嵌入到标记中</li>
+<li>与其他表达式那样,现在它们需要前导井号（#）</li>
+<li>更多表达式支持使用井号,包括字面量
+(<code><span class="typ-str">#</span><span class="typ-str">&quot;string&quot;</span></code>) 以及无需空格的字段访问和方法调用
+： <code><span class="typ-pol">#</span><span class="typ-pol">emoji</span><span class="typ-punct">.</span><span class="typ-pol">face</span></code></li>
 </ul>
 </li>
-<li>New import syntax
+<li>新增 import 语法
 <ul>
-<li><code><span class="typ-key">#</span><span class="typ-key">import</span> <span class="typ-str">&quot;module.typ&quot;</span></code> creates binding named <code>module</code></li>
-<li><code><span class="typ-key">#</span><span class="typ-key">import</span> <span class="typ-str">&quot;module.typ&quot;</span><span class="typ-punct">:</span> a<span class="typ-punct">,</span> b</code> or <code><span class="typ-key">#</span><span class="typ-key">import</span> <span class="typ-str">&quot;module.typ&quot;</span><span class="typ-punct">:</span> <span class="typ-op">*</span></code> to import items</li>
-<li><code><span class="typ-key">#</span><span class="typ-key">import</span> emoji<span class="typ-punct">:</span> face<span class="typ-punct">,</span> turtle</code> to import from already bound module</li>
+<li>使用  <code><span class="typ-key">#</span><span class="typ-key">import</span> <span class="typ-str">&quot;module.typ&quot;</span></code> 创建绑定的命名 <code>模块</code></li>
+<li>使用  <code><span class="typ-key">#</span><span class="typ-key">import</span> <span class="typ-str">&quot;module.typ&quot;</span><span class="typ-punct">:</span> a<span class="typ-punct">,</span> b</code> 或 <code><span class="typ-key">#</span><span class="typ-key">import</span> <span class="typ-str">&quot;module.typ&quot;</span><span class="typ-punct">:</span> <span class="typ-op">*</span></code> 来导入项目</li>
+<li>使用  <code><span class="typ-key">#</span><span class="typ-key">import</span> emoji<span class="typ-punct">:</span> face<span class="typ-punct">,</span> turtle</code> 来导入已绑定的模块</li>
 </ul>
 </li>
-<li>New symbol handling
+<li>新增符号处理
 <ul>
-<li>Removed symbol notation</li>
-<li>Symbols are now in modules: <code>sym</code>, <code>emoji</code>, and <code>math</code></li>
-<li>Math module also reexports all of <code>sym</code></li>
-<li>Modified through field access, still order-independent</li>
-<li>Unknown modifiers are not allowed anymore</li>
-<li>Support for custom symbol definitions with <code>symbol</code> function</li>
-<li>Symbols now listed in documentation</li>
+<li>移除符号表示法</li>
+<li>符号现在位于 <code>sym</code>, <code>emoji</code>,和 <code>math</code> 模块中</li>
+<li>数学模块重新导出 <code>sym</code>的所有内容</li>
+<li>通过字段访问进行修改,但仍是无序的 <code>&lt;mark&gt;</code></li>
+<li><code>&lt;mark&gt;</code>不再允许使用未知的修改器</li>
+<li>支持使用 <code>symbol</code> 函数定义自定义符号</li>
+<li>现在文档中会列出所有符号</li>
 </ul>
 </li>
-<li>New <code>math</code> module
+<li>新的 <code>math</code> 模块
 <ul>
-<li>Contains all math-related functions</li>
-<li>Variables and function calls directly in math (without hashtag) access this
-module instead of the global scope, but can also access local variables</li>
-<li>Can be explicitly used in code, e.g. <code><span class="typ-key">#</span><span class="typ-key">set</span> math<span class="typ-punct">.</span><span class="typ-func">vec</span><span class="typ-punct">(</span>delim<span class="typ-punct">:</span> <span class="typ-str">&quot;[&quot;</span><span class="typ-punct">)</span></code></li>
+<li>包含与数学相关的所有函数</li>
+<li>数学中的变量和函数调用（无需井号）访问此模块,而不是全局作用域,但也可以访问局部变量 <code>&lt;mark&gt;</code></li>
+<li>Variables and function calls directly in math (without hashtag) access this module instead of the global scope, but can also access local variables</li>
+<li>可以在代码中显式使用, 例如  <code><span class="typ-key">#</span><span class="typ-key">set</span> math<span class="typ-punct">.</span><span class="typ-func">vec</span><span class="typ-punct">(</span>delim<span class="typ-punct">:</span> <span class="typ-str">&quot;[&quot;</span><span class="typ-punct">)</span></code></li>
 </ul>
 </li>
-<li>Delimiter matching in math
+<li>数学模式中的分隔符匹配
 <ul>
-<li>Any opening delimiters matches any closing one</li>
-<li>When matched, they automatically scale</li>
-<li>To prevent scaling, escape them</li>
-<li>To forcibly match two delimiters, use <code>lr</code> function</li>
-<li>Line breaks may occur between matched delimiters</li>
-<li>Delimiters may also be unbalanced</li>
-<li>You can also use the <code>lr</code> function to scale the brackets
-(or just one bracket) to a specific size manually</li>
+<li>任何起始分隔符能与任何结束分隔符匹配</li>
+<li>匹配时,它们会自动进行比例缩放</li>
+<li>如要防止缩放,可以对其进行转义</li>
+<li>如要强制匹配两个分隔符,可以使用  <code>lr</code> 函数</li>
+<li>匹配的分隔符之间可能存在换行</li>
+<li>分隔符也可能不平衡</li>
+<li>你也可以使用 <code>lr</code> 函数来手动调整括号
+或者仅调整一个括号） 的大小</li>
 </ul>
 </li>
-<li>Multi-line math with alignment
+<li>带有对齐的多行数学公式
 <ul>
-<li>The <code>\</code> character inserts a line break</li>
-<li>The <code>&amp;</code> character defines an alignment point</li>
-<li>Alignment points also work for underbraces, vectors, cases, and matrices</li>
-<li>Multiple alignment points are supported</li>
+<li>使用反斜杠 <code>\</code> 插入换行符</li>
+<li>使用对齐符 <code>&amp;</code> 定义对齐点</li>
+<li>对齐点也适用于下括号、向量、大括号和矩阵</li>
+<li>支持多个对齐点</li>
 </ul>
 </li>
-<li>More capable math function calls
+<li>功能更强大的数学函数调用
 <ul>
-<li>Function calls directly in math can now take code expressions with hashtag</li>
-<li>They can now also take named arguments</li>
-<li>Within math function calls, semicolons turn preceding arguments to arrays to
-support matrices: <code><span class="typ-math-delim">$</span><span class="typ-func">mat</span><span class="typ-punct">(</span>1<span class="typ-punct">,</span> 2<span class="typ-punct">;</span> 3<span class="typ-punct">,</span> 4<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code></li>
+<li>直接使用的数学函数调用可以使用带有井号的代码表达式</li>
+<li>也可以直接使用命名参数</li>
+<li>在数学函数调用中,分号会将前面的参数转换为数组
+以支持矩阵功能：<code><span class="typ-math-delim">$</span><span class="typ-func">mat</span><span class="typ-punct">(</span>1<span class="typ-punct">,</span> 2<span class="typ-punct">;</span> 3<span class="typ-punct">,</span> 4<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code></li>
 </ul>
 </li>
-<li>Arbitrary content in math
+<li>数学模式中的任意内容
 <ul>
-<li>Text, images, and other arbitrary content can now be embedded in math</li>
-<li>Math now also supports font fallback to support e.g. CJK and emoji</li>
+<li>现在可以将文本、图像和其他任意内容嵌入数学模式中</li>
+<li>数学现在还支持字体回退以支持 CJK 和 emoji 表情等内容</li>
 </ul>
 </li>
-<li>More math features
+<li>更多数学特性
 <ul>
-<li>New text operators: <code>op</code> function, <code>lim</code>, <code>max</code>, etc.</li>
-<li>New matrix function: <code>mat</code></li>
-<li>New n-ary roots with <code>root</code> function: <code><span class="typ-math-delim">$</span><span class="typ-func">root</span><span class="typ-punct">(</span>3<span class="typ-punct">,</span> x<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code></li>
-<li>New under- and overbraces, -brackets, and -lines</li>
-<li>New <code>abs</code> and <code>norm</code> functions</li>
-<li>New shorthands: <code>[|</code>, <code>|]</code>, and <code>||</code></li>
-<li>New <code>attach</code> function, overridable attachments with <code>script</code> and <code>limit</code></li>
-<li>Manual spacing in math, with <code>h</code>, <code>thin</code>, <code>med</code>, <code>thick</code> and <code>quad</code></li>
-<li>Symbols and other content may now be used like a function, e.g. <code><span class="typ-math-delim">$</span><span class="typ-func">zeta</span><span class="typ-punct">(</span>x<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code></li>
-<li>Added Fira Math font, removed Noto Sans Math font</li>
-<li>Support for alternative math fonts through
-<code><span class="typ-key">#</span><span class="typ-key">show</span> math<span class="typ-punct">.</span><span class="typ-func">formula</span><span class="typ-punct">:</span> <span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span><span class="typ-str">&quot;Fira Math&quot;</span><span class="typ-punct">)</span></code></li>
+<li>新增文本运算符： <code>op</code> , <code>lim</code> , <code>max</code> 等等</li>
+<li>新增矩阵函数： <code>mat</code></li>
+<li>新增 <code>root</code> 函数函数: <code><span class="typ-math-delim">$</span><span class="typ-func">root</span><span class="typ-punct">(</span>3<span class="typ-punct">,</span> x<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code></li>
+<li>新增上下括号、方括号和线条</li>
+<li>新增 <code>abs</code> 和 <code>norm</code></li>
+<li>新增速记符： <code>[|</code>, <code>|]</code>, and <code>||</code></li>
+<li>新增 <code>attach</code> 函数,可被 <code>script</code> 和 <code>limit</code> 覆盖</li>
+<li>数学模式下可使用 <code>h</code>, <code>thin</code>, <code>med</code>, <code>thick</code> and <code>quad</code> 手动调整间距</li>
+<li>符号和其他内容现在可以像函数那样使用,例如 <code><span class="typ-math-delim">$</span><span class="typ-func">zeta</span><span class="typ-punct">(</span>x<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code></li>
+<li>新增 Fira Math 字体, 移除 Noto Sans Math 字体</li>
+<li>支持通过
+<code><span class="typ-key">#</span><span class="typ-key">show</span> math<span class="typ-punct">.</span><span class="typ-func">formula</span><span class="typ-punct">:</span> <span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span><span class="typ-str">&quot;Fira Math&quot;</span><span class="typ-punct">)</span></code> 自定义替代数学字体</li>
 </ul>
 </li>
 <li>More library improvements
 <ul>
-<li>New <code>calc</code> module, <code>abs</code>, <code>min</code>, <code>max</code>, <code>even</code>, <code>odd</code> and <code>mod</code> moved there</li>
-<li>New <code>message</code> argument on <code>assert</code> function</li>
-<li>The <code>pairs</code> method on dictionaries now returns an array of length-2 arrays
-instead of taking a closure</li>
-<li>The method call <code>dict<span class="typ-punct">.</span><span class="typ-func">at</span><span class="typ-punct">(</span><span class="typ-str">&quot;key&quot;</span><span class="typ-punct">)</span></code> now always fails if <code>&quot;key&quot;</code> doesn't exist
-Previously, it was allowed in assignments. Alternatives are <code>dict<span class="typ-punct">.</span>key <span class="typ-op">=</span> x</code>
-and <code>dict<span class="typ-punct">.</span><span class="typ-func">insert</span><span class="typ-punct">(</span><span class="typ-str">&quot;key&quot;</span><span class="typ-punct">,</span> x<span class="typ-punct">)</span></code>.</li>
+<li>新增 <code>calc</code> 模块, 并将 <code>abs</code>, <code>min</code>, <code>max</code>, <code>even</code>, <code>odd</code> 和 <code>mod</code> 移动过去</li>
+<li>新增 <code>assert</code> 函数的 <code>message</code> 参数</li>
+<li>字典的<code>pairs</code> 方法现在将会返回一个长度为2的二维数组，而不是关闭它</li>
+<li>现在，如果 <code>&quot;key&quot;</code> 不存在，则方法调用 <code>dict<span class="typ-punct">.</span><span class="typ-func">at</span><span class="typ-punct">(</span><span class="typ-str">&quot;key&quot;</span><span class="typ-punct">)</span></code> 将会失败
+以前, 它被允许在xx中使用. 替代方案是 <code>dict<span class="typ-punct">.</span>key <span class="typ-op">=</span> x</code>
+和<code>dict<span class="typ-punct">.</span><span class="typ-func">insert</span><span class="typ-punct">(</span><span class="typ-str">&quot;key&quot;</span><span class="typ-punct">,</span> x<span class="typ-punct">)</span></code>.</li>
 </ul>
 </li>
-<li>Smarter editor functionality
+<li>更智能的编辑器功能
 <ul>
-<li>Autocompletion for local variables</li>
-<li>Autocompletion for methods available on a value</li>
-<li>Autocompletion for symbols and modules</li>
-<li>Autocompletion for imports</li>
-<li>Hover over an identifier to see its value(s)</li>
+<li>支持本地变量的自动补全</li>
+<li>支持在值上使用的方法的自动补全</li>
+<li>支持符号和模块的自动补全</li>
+<li>支持导入的自动补全</li>
+<li>支持悬浮在标识符上方查看值</li>
 </ul>
 </li>
-<li>Further editor improvements
+<li>进一步的编辑器改进
 <ul>
-<li>New Font menu with previews</li>
-<li>Single projects may now be shared with share links</li>
-<li>New dashboard experience if projects are shared with you</li>
-<li>Keyboard Shortcuts are now listed in the menus and there are more of them</li>
-<li>New Offline indicator</li>
-<li>Tooltips for all buttons</li>
-<li>Improved account protection</li>
-<li>Moved Status indicator into the error list button</li>
+<li>新增带有预览功能的字体菜单</li>
+<li>现在可以通过分享链接分享单个项目</li>
+<li>对于共享给你的项目，将有全新的界面体验</li>
+<li>键盘快捷键现在列在菜单中，并且有更多的快捷键</li>
+<li>新增离线指示器</li>
+<li>为所有按钮提供工具提示</li>
+<li>改进了账户保护功能</li>
+<li>将状态指示器移入错误列表按钮中</li>
 </ul>
 </li>
-<li>Further fixes
+<li>进一步的修复
 <ul>
-<li>Multiple bug fixes for incremental parser</li>
-<li>Fixed closure parameter capturing</li>
-<li>Fixed tons of math bugs</li>
-<li>Bugfixes for performance, file management, editing reliability</li>
-<li>Added redirection to the page originally navigated to after signin</li>
+<li>修复增量解析器的多个错误</li>
+<li>修复了闭包参数捕获</li>
+<li>修复了大量的数学错误</li>
+<li>修复了性能、文件管理、编辑可靠性方面的错误</li>
+<li>在登录后，新增重定向到最初导航到的页面</li>
 </ul>
 </li>
 </ul>

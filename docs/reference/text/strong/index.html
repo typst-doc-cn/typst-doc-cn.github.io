@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Strong Emphasis – Typst 中文文档</title>
+  <title>着重强调（加粗） – Typst 中文文档</title>
   <meta name="description" content="Documentation for the `strong` function.">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#239dad">
   <meta property="og:url" content="https://typst.app/docs/reference/text/strong/">
-  <meta property="og:title" content="Strong Emphasis – Typst 中文文档">
+  <meta property="og:title" content="着重强调（加粗） – Typst 中文文档">
   <meta property="og:site_name" content="Typst">
   <meta property="og:description" content="Documentation for the `strong` function.">
   <meta property="og:type">
@@ -287,46 +287,46 @@
                 <li><a href="/docs/reference/text/lorem/" >假文</a></li>
                 
                 
-                <li><a href="/docs/reference/text/emph/" >Emphasis</a></li>
+                <li><a href="/docs/reference/text/emph/" >强调（斜体）</a></li>
                 
                 
-                <li><a href="/docs/reference/text/linebreak/" >Line Break</a></li>
+                <li><a href="/docs/reference/text/linebreak/" >换行</a></li>
                 
                 
-                <li><a href="/docs/reference/text/lower/" >Lowercase</a></li>
+                <li><a href="/docs/reference/text/lower/" >转小写</a></li>
                 
                 
-                <li><a href="/docs/reference/text/overline/" >Overline</a></li>
+                <li><a href="/docs/reference/text/overline/" >上划线</a></li>
                 
                 
-                <li><a href="/docs/reference/text/raw/" >Raw Text / Code</a></li>
+                <li><a href="/docs/reference/text/raw/" >原始文本/代码块</a></li>
                 
                 
-                <li><a href="/docs/reference/text/smallcaps/" >Small Capitals</a></li>
+                <li><a href="/docs/reference/text/smallcaps/" >显示为小写</a></li>
                 
                 
-                <li><a href="/docs/reference/text/smartquote/" >Smart Quote</a></li>
+                <li><a href="/docs/reference/text/smartquote/" >智能引号</a></li>
                 
                 
-                <li><a href="/docs/reference/text/strike/" >Strikethrough</a></li>
+                <li><a href="/docs/reference/text/strike/" >删除线</a></li>
                 
                 
-                <li><a href="/docs/reference/text/strong/"  aria-current="page" >Strong Emphasis</a></li>
+                <li><a href="/docs/reference/text/strong/"  aria-current="page" >着重强调（加粗）</a></li>
                 
                 
-                <li><a href="/docs/reference/text/sub/" >Subscript</a></li>
+                <li><a href="/docs/reference/text/sub/" >下标</a></li>
                 
                 
-                <li><a href="/docs/reference/text/super/" >Superscript</a></li>
+                <li><a href="/docs/reference/text/super/" >上标</a></li>
                 
                 
-                <li><a href="/docs/reference/text/text/" >Text</a></li>
+                <li><a href="/docs/reference/text/text/" >文本</a></li>
                 
                 
-                <li><a href="/docs/reference/text/underline/" >Underline</a></li>
+                <li><a href="/docs/reference/text/underline/" >下划线</a></li>
                 
                 
-                <li><a href="/docs/reference/text/upper/" >Uppercase</a></li>
+                <li><a href="/docs/reference/text/upper/" >转大写</a></li>
                 
               </ul>
               
@@ -863,7 +863,7 @@
         <li><a href="/docs/reference/text/">文本</a></li>
         
         <li aria-hidden="true"><img src="/assets/icons/16-arrow-right.svg" width="16" height="16" alt=""></li>
-        <li><a href="/docs/reference/text/strong/">Strong Emphasis</a></li>
+        <li><a href="/docs/reference/text/strong/">着重强调（加粗）</a></li>
         
       </ul>
 
@@ -881,8 +881,12 @@
     </div>
   </small></h1>
 
-<p>Strongly emphasizes content by increasing the font weight.</p>
-<p>Increases the current font weight by a given <code>delta</code>.</p>
+<p>
+用粗体来强调内容。
+</p>
+<p>
+按给定增量增加当前字体粗细。
+</p>
 <h2 id="example">Example</h2>
 <div class="previewed-code"><pre><code>This is <span class="typ-strong">*strong.*</span> <span class="typ-escape">\</span>
 This is <span class="typ-func">#</span><span class="typ-func">strong</span><span class="typ-punct">[</span>too.<span class="typ-punct">]</span> <span class="typ-escape">\</span>
@@ -891,10 +895,10 @@ This is <span class="typ-func">#</span><span class="typ-func">strong</span><span
 And this is <span class="typ-strong">*evermore.*</span>
 </code></pre><div class="preview"><img src="/assets/docs/014685f115101d62862a2bf909e6e378.png" alt="Preview" width="480" height="190"/></div></div>
 <h2 id="syntax">Syntax</h2>
-<p>This function also has dedicated syntax: To strongly emphasize content,
-simply enclose it in stars/asterisks (<code>*</code>). Note that this only works at
-word boundaries. To strongly emphasize part of a word, you have to use the
-function.</p>
+<p>
+该功能还有专用语法：要强调内容，请将其括在两个星号 (<code>*</code>) 中。请注意，这仅对单词生效，如果要强调单词的一部分，必须使用函数。例如"#strong[eng]lish"，而"*eng*lish"会报错。
+
+</p>
 
 <h2 level="2" id="parameters"><span aria-describedby="parameters-tooltip">参数</span>
   <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
@@ -930,7 +934,7 @@ function.</p>
     </small>
   </div>
 </h3>
-<p>The delta to apply on the font weight.</p>
+<p>要应用于字体粗细的增量。</p>
 
 <p>默认：<code><span class="typ-num">300</span></code></p>
 
@@ -964,7 +968,7 @@ No <span class="typ-strong">*effect!*</span>
     </small>
   </div>
 </h3>
-<p>The content to strongly emphasize.</p>
+<p>要强调的内容。</p>
 
 
 
@@ -978,9 +982,9 @@ No <span class="typ-strong">*effect!*</span>
       
       <div class="page-end-buttons"><a href="/docs/reference/text/strike/" class="previous"><img
             src="/assets/icons/16-arrow-right.svg" alt="←">
-          <div><span class="page-title">Strikethrough</span><span class="hint">上一页</span></div>
+          <div><span class="page-title">删除线</span><span class="hint">上一页</span></div>
         </a><a href="/docs/reference/text/sub/" class="next"><img src="/assets/icons/16-arrow-right.svg" alt="→">
-          <div><span class="page-title">Subscript</span><span class="hint">下一页</span></div>
+          <div><span class="page-title">下标</span><span class="hint">下一页</span></div>
         </a></div>
       
     </main>

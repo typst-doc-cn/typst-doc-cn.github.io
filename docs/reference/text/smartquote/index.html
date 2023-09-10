@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Smart Quote – Typst 中文文档</title>
+  <title>智能引号 – Typst 中文文档</title>
   <meta name="description" content="Documentation for the `smartquote` function.">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#239dad">
   <meta property="og:url" content="https://typst.app/docs/reference/text/smartquote/">
-  <meta property="og:title" content="Smart Quote – Typst 中文文档">
+  <meta property="og:title" content="智能引号 – Typst 中文文档">
   <meta property="og:site_name" content="Typst">
   <meta property="og:description" content="Documentation for the `smartquote` function.">
   <meta property="og:type">
@@ -287,46 +287,46 @@
                 <li><a href="/docs/reference/text/lorem/" >假文</a></li>
                 
                 
-                <li><a href="/docs/reference/text/emph/" >Emphasis</a></li>
+                <li><a href="/docs/reference/text/emph/" >强调（斜体）</a></li>
                 
                 
-                <li><a href="/docs/reference/text/linebreak/" >Line Break</a></li>
+                <li><a href="/docs/reference/text/linebreak/" >换行</a></li>
                 
                 
-                <li><a href="/docs/reference/text/lower/" >Lowercase</a></li>
+                <li><a href="/docs/reference/text/lower/" >转小写</a></li>
                 
                 
-                <li><a href="/docs/reference/text/overline/" >Overline</a></li>
+                <li><a href="/docs/reference/text/overline/" >上划线</a></li>
                 
                 
-                <li><a href="/docs/reference/text/raw/" >Raw Text / Code</a></li>
+                <li><a href="/docs/reference/text/raw/" >原始文本/代码块</a></li>
                 
                 
-                <li><a href="/docs/reference/text/smallcaps/" >Small Capitals</a></li>
+                <li><a href="/docs/reference/text/smallcaps/" >显示为小写</a></li>
                 
                 
-                <li><a href="/docs/reference/text/smartquote/"  aria-current="page" >Smart Quote</a></li>
+                <li><a href="/docs/reference/text/smartquote/"  aria-current="page" >智能引号</a></li>
                 
                 
-                <li><a href="/docs/reference/text/strike/" >Strikethrough</a></li>
+                <li><a href="/docs/reference/text/strike/" >删除线</a></li>
                 
                 
-                <li><a href="/docs/reference/text/strong/" >Strong Emphasis</a></li>
+                <li><a href="/docs/reference/text/strong/" >着重强调（加粗）</a></li>
                 
                 
-                <li><a href="/docs/reference/text/sub/" >Subscript</a></li>
+                <li><a href="/docs/reference/text/sub/" >下标</a></li>
                 
                 
-                <li><a href="/docs/reference/text/super/" >Superscript</a></li>
+                <li><a href="/docs/reference/text/super/" >上标</a></li>
                 
                 
-                <li><a href="/docs/reference/text/text/" >Text</a></li>
+                <li><a href="/docs/reference/text/text/" >文本</a></li>
                 
                 
-                <li><a href="/docs/reference/text/underline/" >Underline</a></li>
+                <li><a href="/docs/reference/text/underline/" >下划线</a></li>
                 
                 
-                <li><a href="/docs/reference/text/upper/" >Uppercase</a></li>
+                <li><a href="/docs/reference/text/upper/" >转大写</a></li>
                 
               </ul>
               
@@ -863,7 +863,7 @@
         <li><a href="/docs/reference/text/">文本</a></li>
         
         <li aria-hidden="true"><img src="/assets/icons/16-arrow-right.svg" width="16" height="16" alt=""></li>
-        <li><a href="/docs/reference/text/smartquote/">Smart Quote</a></li>
+        <li><a href="/docs/reference/text/smartquote/">智能引号</a></li>
         
       </ul>
 
@@ -881,9 +881,13 @@
     </div>
   </small></h1>
 
-<p>A language-aware quote that reacts to its context.</p>
-<p>Automatically turns into an appropriate opening or closing quote based on
-the active <a href="/docs/reference/text/text/#parameters-lang">text language</a>.</p>
+<p>
+感知上下文的语言感知引号。
+A language-aware quote that reacts to its context.
+</p>
+<p>
+根据<a href="/docs/reference/text/text/#parameters-lang">文本语言</a>自动转换为适当的开头或结尾引号。
+</p>
 <h2 id="example">Example</h2>
 <div class="previewed-code"><pre><code>&quot;This is in quotes.&quot;
 
@@ -894,8 +898,9 @@ the active <a href="/docs/reference/text/text/#parameters-lang">text language</a
 &quot;C&#39;est entre guillemets.&quot;
 </code></pre><div class="preview"><img src="/assets/docs/d8ae0e27ceabe7db27a5d570785d0e09.png" alt="Preview" width="480" height="190"/></div></div>
 <h2 id="syntax">Syntax</h2>
-<p>This function also has dedicated syntax: The normal quote characters
-(<code>'</code> and <code>&quot;</code>). Typst automatically makes your quotes smart.</p>
+<p>
+该函数还有专用语法：普通引号（<code>'</code>和<code>&quot;</code>）。Typst会自动转换引号形式。
+</p>
 
 <h2 level="2" id="parameters"><span aria-describedby="parameters-tooltip">参数</span>
   <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
@@ -931,7 +936,7 @@ the active <a href="/docs/reference/text/text/#parameters-lang">text language</a
     </small>
   </div>
 </h3>
-<p>Whether this should be a double quote.</p>
+<p>是否应当是双引号。</p>
 
 <p>默认：<code><span class="typ-key">true</span></code></p>
 
@@ -957,9 +962,8 @@ the active <a href="/docs/reference/text/text/#parameters-lang">text language</a
     </small>
   </div>
 </h3>
-<p>Whether smart quotes are enabled.</p>
-<p>To disable smartness for a single quote, you can also escape it with a
-backslash.</p>
+<p>是否启用智能引号。</p>
+<p>要禁用智能引号，还可以用反斜杠进行转义。</p>
 
 <p>默认：<code><span class="typ-key">true</span></code></p>
 
@@ -985,9 +989,9 @@ These are &quot;dumb&quot; quotes.
       
       <div class="page-end-buttons"><a href="/docs/reference/text/smallcaps/" class="previous"><img
             src="/assets/icons/16-arrow-right.svg" alt="←">
-          <div><span class="page-title">Small Capitals</span><span class="hint">上一页</span></div>
+          <div><span class="page-title">显示为小写</span><span class="hint">上一页</span></div>
         </a><a href="/docs/reference/text/strike/" class="next"><img src="/assets/icons/16-arrow-right.svg" alt="→">
-          <div><span class="page-title">Strikethrough</span><span class="hint">下一页</span></div>
+          <div><span class="page-title">删除线</span><span class="hint">下一页</span></div>
         </a></div>
       
     </main>

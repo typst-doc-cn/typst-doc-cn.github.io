@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Line Break – Typst 中文文档</title>
+  <title>换行 – Typst 中文文档</title>
   <meta name="description" content="Documentation for the `linebreak` function.">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#239dad">
   <meta property="og:url" content="https://typst.app/docs/reference/text/linebreak/">
-  <meta property="og:title" content="Line Break – Typst 中文文档">
+  <meta property="og:title" content="换行 – Typst 中文文档">
   <meta property="og:site_name" content="Typst">
   <meta property="og:description" content="Documentation for the `linebreak` function.">
   <meta property="og:type">
@@ -287,46 +287,46 @@
                 <li><a href="/docs/reference/text/lorem/" >假文</a></li>
                 
                 
-                <li><a href="/docs/reference/text/emph/" >Emphasis</a></li>
+                <li><a href="/docs/reference/text/emph/" >强调（斜体）</a></li>
                 
                 
-                <li><a href="/docs/reference/text/linebreak/"  aria-current="page" >Line Break</a></li>
+                <li><a href="/docs/reference/text/linebreak/"  aria-current="page" >换行</a></li>
                 
                 
-                <li><a href="/docs/reference/text/lower/" >Lowercase</a></li>
+                <li><a href="/docs/reference/text/lower/" >转小写</a></li>
                 
                 
-                <li><a href="/docs/reference/text/overline/" >Overline</a></li>
+                <li><a href="/docs/reference/text/overline/" >上划线</a></li>
                 
                 
-                <li><a href="/docs/reference/text/raw/" >Raw Text / Code</a></li>
+                <li><a href="/docs/reference/text/raw/" >原始文本/代码块</a></li>
                 
                 
-                <li><a href="/docs/reference/text/smallcaps/" >Small Capitals</a></li>
+                <li><a href="/docs/reference/text/smallcaps/" >显示为小写</a></li>
                 
                 
-                <li><a href="/docs/reference/text/smartquote/" >Smart Quote</a></li>
+                <li><a href="/docs/reference/text/smartquote/" >智能引号</a></li>
                 
                 
-                <li><a href="/docs/reference/text/strike/" >Strikethrough</a></li>
+                <li><a href="/docs/reference/text/strike/" >删除线</a></li>
                 
                 
-                <li><a href="/docs/reference/text/strong/" >Strong Emphasis</a></li>
+                <li><a href="/docs/reference/text/strong/" >着重强调（加粗）</a></li>
                 
                 
-                <li><a href="/docs/reference/text/sub/" >Subscript</a></li>
+                <li><a href="/docs/reference/text/sub/" >下标</a></li>
                 
                 
-                <li><a href="/docs/reference/text/super/" >Superscript</a></li>
+                <li><a href="/docs/reference/text/super/" >上标</a></li>
                 
                 
-                <li><a href="/docs/reference/text/text/" >Text</a></li>
+                <li><a href="/docs/reference/text/text/" >文本</a></li>
                 
                 
-                <li><a href="/docs/reference/text/underline/" >Underline</a></li>
+                <li><a href="/docs/reference/text/underline/" >下划线</a></li>
                 
                 
-                <li><a href="/docs/reference/text/upper/" >Uppercase</a></li>
+                <li><a href="/docs/reference/text/upper/" >转大写</a></li>
                 
               </ul>
               
@@ -863,7 +863,7 @@
         <li><a href="/docs/reference/text/">文本</a></li>
         
         <li aria-hidden="true"><img src="/assets/icons/16-arrow-right.svg" width="16" height="16" alt=""></li>
-        <li><a href="/docs/reference/text/linebreak/">Line Break</a></li>
+        <li><a href="/docs/reference/text/linebreak/">换行</a></li>
         
       </ul>
 
@@ -881,19 +881,15 @@
     </div>
   </small></h1>
 
-<p>插入一个换行。</p>
-<p>Advances the paragraph to the next line. A single trailing line break at the
-end of a paragraph is ignored, but more than one creates additional empty
-lines.</p>
+<p>插入换行符。</p>
+<p>将段落前进到下一行。段落末尾的单个换行符将被忽略，多次使用会创建额外的空行。</p>
 <h2 id="example">Example</h2>
 <div class="previewed-code"><pre><code><span class="typ-strong">*Date:*</span> 26.12.2022 <span class="typ-escape">\</span>
 <span class="typ-strong">*Topic:*</span> Infrastructure Test <span class="typ-escape">\</span>
 <span class="typ-strong">*Severity:*</span> High <span class="typ-escape">\</span>
 </code></pre><div class="preview"><img src="/assets/docs/2df1c0e733c1628030900158678b67c9.png" alt="Preview" width="480" height="190"/></div></div>
 <h2 id="syntax">Syntax</h2>
-<p>This function also has dedicated syntax: To insert a line break, simply write
-a backslash followed by whitespace. This always creates an unjustified
-break.</p>
+<p>此函数还具有一个专用语法：要插入换行符，只需输入一个反斜杠加空格。这总是会造成不合理的中断。</p>
 
 <h2 level="2" id="parameters"><span aria-describedby="parameters-tooltip">参数</span>
   <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
@@ -929,9 +925,8 @@ break.</p>
     </small>
   </div>
 </h3>
-<p>Whether to justify the line before the break.</p>
-<p>This is useful if you found a better line break opportunity in your
-justified text than Typst did.</p>
+<p>是否在断行前进行对齐。</p>
+<p>如果在对齐文本时发现比 Typst 做的更好的换行机会，这会很有用。</p>
 
 <p>默认：<code><span class="typ-key">false</span></code></p>
 
@@ -960,9 +955,9 @@ for an <span class="typ-emph">_interesting_</span> result. <span class="typ-pol"
       
       <div class="page-end-buttons"><a href="/docs/reference/text/emph/" class="previous"><img
             src="/assets/icons/16-arrow-right.svg" alt="←">
-          <div><span class="page-title">Emphasis</span><span class="hint">上一页</span></div>
+          <div><span class="page-title">强调（斜体）</span><span class="hint">上一页</span></div>
         </a><a href="/docs/reference/text/lower/" class="next"><img src="/assets/icons/16-arrow-right.svg" alt="→">
-          <div><span class="page-title">Lowercase</span><span class="hint">下一页</span></div>
+          <div><span class="page-title">转小写</span><span class="hint">下一页</span></div>
         </a></div>
       
     </main>
