@@ -106,6 +106,30 @@ Hello World 你好世界
 这样做的优点是可以自动首行缩进，缺点是其中的 `v(-1em)` 会造成标题和首行段落的间距出现问题。
 
 
+### 如何让行内数学公式显示为行间数学公式的大小？
+
+可以通过 `display()` 函数实现。
+
+```example
+行内数学公式（脚本模式） $integral x dif x$
+
+行内数学公式（展示模式） $display(integral x dif x)$
+```
+
+注意，由于 `display` 也是一个函数，所以在其内部的逗号 `,` 要进行转义 `\,`。
+
+每次都要手动打 `display` 感觉很麻烦，能不能默认自动加上呢？
+
+其实是有办法实现的，如下所示，借助 `label`、`box`、`show` 和块状公式，就可以实现了。
+
+```example
+#show math.equation.where(block: false): it => [#math.equation(block: true, numbering: none, it)<inline-math-equation>]
+#show <inline-math-equation>: it => box(it)
+
+行内数学公式（自动变为展示模式） $integral x dif x$
+```
+
+
 ## 一些 Typst 中文资源列表 { #resources }
 
 - 中国大学论文
