@@ -881,6 +881,73 @@ Typst 中的 font 参数可以接收一个数组，会根据字体里有无当�
   Hello World 你好世界
 <span class="typ-punct">]</span>
 </code></pre><div class="preview"><img src="/assets/docs/78db46a15e197508357130997fc6c769.png" alt="Preview" width="480" height="190"/></div></div>
+<h3>如何为设置各行段落的缩进？</h3>
+<p>使用 <code>#set par(first-line-indent: 2em)</code>：</p>
+<div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">par</span><span class="typ-punct">(</span>first-line-indent<span class="typ-punct">:</span> <span class="typ-num">2em</span><span class="typ-punct">)</span>
+
+<span class="typ-heading">= 一级标题</span>
+
+豫章故郡，洪都新府。星分翼轸，地接衡庐。襟三江而带五湖，控蛮荆而引瓯越。物华天宝，龙光射牛斗之墟；人杰地灵，徐孺下陈蕃之榻。雄州雾列，俊采星驰。
+
+台隍枕夷夏之交，宾主尽东南之美。都督阎公之雅望，棨戟遥临；宇文新州之懿范，襜帷暂驻。
+
+十旬休假，胜友如云；千里逢迎，高朋满座。腾蛟起凤，孟学士之词宗；紫电青霜，王将军之武库。家君作宰，路出名区；童子何知，躬逢胜饯。
+
+<span class="typ-heading">== 二级标题</span>
+
+时维九月，序属三秋。潦水尽而寒潭清，烟光凝而暮山紫。俨骖騑于上路，访风景于崇阿。临帝子之长洲，得天人之旧馆。
+
+层峦耸翠，上出重霄；飞阁流丹，下临无地。鹤汀凫渚，穷岛屿之萦回；桂殿兰宫，即冈峦之体势。
+</code></pre><div class="preview"><img src="/assets/docs/43536e97b45e2b945ebdfa243ec113c1.png" alt="Preview" width="480" height="190"/></div></div>
+<p>缺点是标题下的第一行没有缩进。为了解决这个问题，我们有两种办法：</p>
+<p><strong>第一种办法：手动加入缩进。</strong></p>
+<div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">par</span><span class="typ-punct">(</span>first-line-indent<span class="typ-punct">:</span> <span class="typ-num">2em</span><span class="typ-punct">)</span>
+
+<span class="typ-key">#</span><span class="typ-key">let</span> indent <span class="typ-op">=</span> <span class="typ-func">h</span><span class="typ-punct">(</span><span class="typ-num">2em</span><span class="typ-punct">)</span>
+
+<span class="typ-heading">= 一级标题</span>
+
+<span class="typ-pol">#</span><span class="typ-pol">indent</span> 豫章故郡，洪都新府。星分翼轸，地接衡庐。襟三江而带五湖，控蛮荆而引瓯越。物华天宝，龙光射牛斗之墟；人杰地灵，徐孺下陈蕃之榻。雄州雾列，俊采星驰。
+
+台隍枕夷夏之交，宾主尽东南之美。都督阎公之雅望，棨戟遥临；宇文新州之懿范，襜帷暂驻。
+
+十旬休假，胜友如云；千里逢迎，高朋满座。腾蛟起凤，孟学士之词宗；紫电青霜，王将军之武库。家君作宰，路出名区；童子何知，躬逢胜饯。
+
+<span class="typ-heading">== 二级标题</span>
+
+<span class="typ-pol">#</span><span class="typ-pol">indent</span> 时维九月，序属三秋。潦水尽而寒潭清，烟光凝而暮山紫。俨骖騑于上路，访风景于崇阿。临帝子之长洲，得天人之旧馆。
+
+层峦耸翠，上出重霄；飞阁流丹，下临无地。鹤汀凫渚，穷岛屿之萦回；桂殿兰宫，即冈峦之体势。
+</code></pre><div class="preview"><img src="/assets/docs/ccd564bc6e8d4a52e121d9881f90ce3e.png" alt="Preview" width="480" height="190"/></div></div>
+<p>这样做的优点是可以手动控制缩进，缺点是手动缩进不太方便。</p>
+<p><strong>第二种办法：使用假段落自动加入缩进。</strong></p>
+<div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">par</span><span class="typ-punct">(</span>first-line-indent<span class="typ-punct">:</span> <span class="typ-num">2em</span><span class="typ-punct">)</span>
+
+<span class="typ-key">#</span><span class="typ-key">let</span> fake_par <span class="typ-op">=</span> <span class="typ-punct">{</span>
+  <span class="typ-func">v</span><span class="typ-punct">(</span><span class="typ-op">-</span><span class="typ-num">1em</span><span class="typ-punct">)</span>
+  <span class="typ-func">box</span><span class="typ-punct">(</span><span class="typ-punct">)</span>
+<span class="typ-punct">}</span>
+
+<span class="typ-key">#</span><span class="typ-key">show</span> <span class="typ-func">heading</span><span class="typ-punct">:</span> it <span class="typ-op">=&gt;</span> <span class="typ-punct">{</span>
+  it
+  fake_par
+<span class="typ-punct">}</span>
+
+<span class="typ-heading">= 一级标题</span>
+
+豫章故郡，洪都新府。星分翼轸，地接衡庐。襟三江而带五湖，控蛮荆而引瓯越。物华天宝，龙光射牛斗之墟；人杰地灵，徐孺下陈蕃之榻。雄州雾列，俊采星驰。
+
+台隍枕夷夏之交，宾主尽东南之美。都督阎公之雅望，棨戟遥临；宇文新州之懿范，襜帷暂驻。
+
+十旬休假，胜友如云；千里逢迎，高朋满座。腾蛟起凤，孟学士之词宗；紫电青霜，王将军之武库。家君作宰，路出名区；童子何知，躬逢胜饯。
+
+<span class="typ-heading">== 二级标题</span>
+
+时维九月，序属三秋。潦水尽而寒潭清，烟光凝而暮山紫。俨骖騑于上路，访风景于崇阿。临帝子之长洲，得天人之旧馆。
+
+层峦耸翠，上出重霄；飞阁流丹，下临无地。鹤汀凫渚，穷岛屿之萦回；桂殿兰宫，即冈峦之体势。
+</code></pre><div class="preview"><img src="/assets/docs/d3684fd09d8615036da03a9506d6da7e.png" alt="Preview" width="480" height="190"/></div></div>
+<p>这样做的优点是可以自动首行缩进，缺点是其中的 <code>v(-1em)</code> 会造成标题和首行段落的间距出现问题。</p>
 <h2 id="resources">一些 Typst 中文资源列表</h2>
 <ul>
 <li>中国大学论文
