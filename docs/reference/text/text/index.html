@@ -935,6 +935,7 @@ With a set rule.
 <p>
 当处理文本时，Typst 按顺序尝试所有指定的字体系列，直到找到具有必要字形的字体为止。在下面的示例中，首选字体是 <code>Inria Serif</code>，但由于它不包含阿拉伯字形，因此阿拉伯文本使用 <code>Noto Sans Arabic</code> 替代。</p>
 
+
 <p>默认：<code><span class="typ-str">&quot;linux libertine&quot;</span></code></p>
 
 
@@ -979,6 +980,7 @@ This is Latin. <span class="typ-escape">\</span>
 <p>
 <em> 注：</em> 当禁用 fallback 并且找不到适当的字形时不会发出警告，而是以“豆腐块”形式显示文本：表示缺少适当字形的小框。将来，你将能够指示 Typst 发出警告，以便你知道出了什么问题。</p>
 
+
 <p>默认：<code><span class="typ-key">true</span></code></p>
 
 
@@ -1020,6 +1022,38 @@ This is Latin. <span class="typ-escape">\</span>
 <p>
 当需要 italic 样式但只有 oblique 样式可用时，将使用 oblique ，反之亦然。当 italic 样式和 oblique 样式都不可用时，Typst 会选择 normal 样式。由于大多数字体只有 italic 或 oblique 样式，因此很少能观察到 italic 和 oblique 样式之间的区别。
 </p>
+
+<ul class="type-args">
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->normal<!-- -->&quot;</code></div>
+      <div>
+        <p>The default, typically upright style.</p>
+      </div>
+    </div>
+  </li>
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->italic<!-- -->&quot;</code></div>
+      <div>
+        <p>A cursive style with custom letterform.</p>
+      </div>
+    </div>
+  </li>
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->oblique<!-- -->&quot;</code></div>
+      <div>
+        <p>Just a slanted version of the normal style.</p>
+      </div>
+    </div>
+  </li>
+  
+</ul>
+
 
 <p>默认：<code><span class="typ-str">&quot;normal&quot;</span></code></p>
 
@@ -1063,6 +1097,92 @@ This is Latin. <span class="typ-escape">\</span>
 如果要着重强调文本，应使用 <a href="/docs/reference/text/emph/">emph</a> 函数。这样，如果你改变了强调的方式就很容易调整样式。
 </p>
 
+<ul class="type-args">
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->thin<!-- -->&quot;</code></div>
+      <div>
+        <p>Thin weight (100).</p>
+      </div>
+    </div>
+  </li>
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->extralight<!-- -->&quot;</code></div>
+      <div>
+        <p>Extra light weight (200).</p>
+      </div>
+    </div>
+  </li>
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->light<!-- -->&quot;</code></div>
+      <div>
+        <p>Light weight (300).</p>
+      </div>
+    </div>
+  </li>
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->regular<!-- -->&quot;</code></div>
+      <div>
+        <p>Regular weight (400).</p>
+      </div>
+    </div>
+  </li>
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->medium<!-- -->&quot;</code></div>
+      <div>
+        <p>Medium weight (500).</p>
+      </div>
+    </div>
+  </li>
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->semibold<!-- -->&quot;</code></div>
+      <div>
+        <p>Semibold weight (600).</p>
+      </div>
+    </div>
+  </li>
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->bold<!-- -->&quot;</code></div>
+      <div>
+        <p>Bold weight (700).</p>
+      </div>
+    </div>
+  </li>
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->extrabold<!-- -->&quot;</code></div>
+      <div>
+        <p>Extrabold weight (800).</p>
+      </div>
+    </div>
+  </li>
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->black<!-- -->&quot;</code></div>
+      <div>
+        <p>Black weight (900).</p>
+      </div>
+    </div>
+  </li>
+  
+</ul>
+
+
 <p>默认：<code><span class="typ-str">&quot;regular&quot;</span></code></p>
 
 
@@ -1105,6 +1225,7 @@ This is Latin. <span class="typ-escape">\</span>
 所需的字体拉伸宽度。接受介于 <code><span class="typ-num">50%</span></code> 和 <code><span class="typ-num">200%</span></code> 之间的比率。当所需的字体不可用时，Typst 会从字体系列中选择最接近拉伸的字体。这只会拉伸文本，如果字体的压缩或扩展版本可用，则会选择字体系列中最接近的字体。</p>
 <p>如果要调整字符之间的间距而不是拉伸字形本身，请改用 <a href="/docs/reference/text/text/#parameters-tracking"><code>tracking</code></a> 属性。</p>
 
+
 <p>默认：<code><span class="typ-num">100%</span></code></p>
 
 
@@ -1144,6 +1265,7 @@ This is Latin. <span class="typ-escape">\</span>
 <p>
 你也可以直接给出字体大小，单位为 <code>em</code>。当然，这是相对于前面指定的字体大小。</p>
 
+
 <p>默认：<code><span class="typ-num">11pt</span></code></p>
 
 
@@ -1179,6 +1301,7 @@ very <span class="typ-func">#</span><span class="typ-func">text</span><span clas
 </h3>
 <p>字体填充颜色</p>
 
+
 <p>默认：<code><span class="typ-func">rgb</span><span class="typ-punct">(</span><span class="typ-str">&quot;#000000&quot;</span><span class="typ-punct">)</span></code></p>
 
 
@@ -1213,6 +1336,7 @@ This text is red.
   </div>
 </h3>
 <p>字符之间的间距。</p>
+
 
 <p>默认：<code><span class="typ-num">0pt</span></code></p>
 
@@ -1255,6 +1379,7 @@ Distant text.
 <p>
 如果想调整字符之间的间距而不是单词之间的间距，请改用 <a href="/docs/reference/text/text/#parameters-tracking"><code>tracking</code></a> 属性。</p>
 
+
 <p>默认：<code><span class="typ-num">100%</span></code></p>
 
 
@@ -1289,6 +1414,7 @@ Text with distant words.
   </div>
 </h3>
 <p> 文本基准线移动的距离。</p>
+
 
 <p>默认：<code><span class="typ-num">0pt</span></code></p>
 
@@ -1325,6 +1451,7 @@ word.
 </h3>
 <p>
 是否允许某些字形悬挂到边距中。这可以使对齐更加美观。</p>
+
 
 <p>默认：<code><span class="typ-key">true</span></code></p>
 
@@ -1373,6 +1500,56 @@ results in a clearer paragraph edge.
 <p>
 文本布局和定位中使用的文本周围概念框的顶端。这会影响包含文本的容器的大小。</p>
 
+<ul class="type-args">
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->ascender<!-- -->&quot;</code></div>
+      <div>
+        <p> 字体的上升部分，通常超过所有字形的高度。</p> The font's ascender, which typically exceeds the height of all glyphs.</p>
+      </div>
+    </div>
+  </li>
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->cap-height<!-- -->&quot;</code></div>
+      <div>
+        <p>The approximate height of uppercase letters.</p>
+      </div>
+    </div>
+  </li>
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->x-height<!-- -->&quot;</code></div>
+      <div>
+        <p>The approximate height of non-ascending lowercase letters.</p>
+      </div>
+    </div>
+  </li>
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->baseline<!-- -->&quot;</code></div>
+      <div>
+        <p>The baseline on which the letters rest.</p>
+      </div>
+    </div>
+  </li>
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->descender<!-- -->&quot;</code></div>
+      <div>
+        <p>The font's ascender, which typically exceeds the depth of all glyphs.</p>
+      </div>
+    </div>
+  </li>
+  
+</ul>
+
+
 <p>默认：<code><span class="typ-str">&quot;cap-height&quot;</span></code></p>
 
 
@@ -1416,6 +1593,56 @@ results in a clearer paragraph edge.
 </h3>
 <p>
 文本布局和定位中使用的文本周围概念框的底部。这会影响包含文本的容器的大小。</p>
+
+<ul class="type-args">
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->ascender<!-- -->&quot;</code></div>
+      <div>
+        <p>The font's ascender, which typically exceeds the height of all glyphs.</p>
+      </div>
+    </div>
+  </li>
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->cap-height<!-- -->&quot;</code></div>
+      <div>
+        <p>The approximate height of uppercase letters.</p>
+      </div>
+    </div>
+  </li>
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->x-height<!-- -->&quot;</code></div>
+      <div>
+        <p>The approximate height of non-ascending lowercase letters.</p>
+      </div>
+    </div>
+  </li>
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->baseline<!-- -->&quot;</code></div>
+      <div>
+        <p>The baseline on which the letters rest.</p>
+      </div>
+    </div>
+  </li>
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->descender<!-- -->&quot;</code></div>
+      <div>
+        <p>The font's ascender, which typically exceeds the depth of all glyphs.</p>
+      </div>
+    </div>
+  </li>
+  
+</ul>
+
 
 <p>默认：<code><span class="typ-str">&quot;baseline&quot;</span></code></p>
 
@@ -1476,6 +1703,7 @@ The text processing pipeline can make more informed choices.
 以及其他所有能感知语言的功能。
 </ul>
 
+
 <p>默认：<code><span class="typ-str">&quot;en&quot;</span></code></p>
 
 
@@ -1520,6 +1748,7 @@ In diesem Dokument, <span class="typ-escape">...</span>
 这使文本处理功能能够做出更明智的选择。
 </p>
 
+
 <p>默认：<code><span class="typ-key">none</span></code></p>
 
 
@@ -1561,6 +1790,7 @@ In diesem Dokument, <span class="typ-escape">...</span>
 <p>
 如果设置为 <code>rtl</code> 遇到错误或某种方式产生不佳的输出，请通过 <a href="https://typst.app/contact">contact table</a> 或我们的 <a href="/docs/community/#discord">Discord server</a> 与我们联系！</p>
 
+
 <p>默认：<code><span class="typ-key">auto</span></code></p>
 
 
@@ -1600,6 +1830,7 @@ In diesem Dokument, <span class="typ-escape">...</span>
 是否使用连字符改善断行。当设定为 <code><span class="typ-key">auto</span></code> 时，只有在启用对齐时才会连字符化文本。</p>
 <p>
 设置 <a href="/docs/reference/text/text/#parameters-lang">text language</a> 可确保使用正确的连字符化模式。</p>
+
 
 <p>默认：<code><span class="typ-key">auto</span></code></p>
 
@@ -1648,6 +1879,7 @@ improve justification.
 <p>
 启用后，特定的字母配对会相互靠近或远离，以获得更美观的结果。下面的示例演示了如何通过减小 &quot;T&quot; 和 &quot;o&quot; 之间的间距来获得更自然的外观。将其设置为 <code><span class="typ-key">false</span></code> 会通过关闭 OpenType <code>kern</code> 字体特性来禁用字距调整。</p>
 
+
 <p>默认：<code><span class="typ-key">true</span></code></p>
 
 
@@ -1688,6 +1920,7 @@ Totally
 是否应用样式替代。</p>
 <p>
 有时一些字体会包含相同代码点的替代字形。将其设置为 <code><span class="typ-key">true</span></code> 会通过启用 OpenType <code>salt</code> 字体特性来切换到这些字形。</p>
+
 
 <p>默认：<code><span class="typ-key">false</span></code></p>
 
@@ -1734,6 +1967,7 @@ Totally
 <p>
 应用哪个样式集。字体设计师可以将替代字形形式分类为样式集。由于该值高度依赖于字体，因此你需要查阅字体以了解可用的集合。当设置为介于 <code><span class="typ-num">1</span></code> 和 <code><span class="typ-num">20</span></code> 之间的整数时，会启用相应的 OpenType 字体特性 <code>ss01</code>、...、<code>ss20</code>。</p>
 
+
 <p>默认：<code><span class="typ-key">none</span></code></p>
 
 
@@ -1764,6 +1998,7 @@ Totally
 <p>
 某些字母组合（例如 &quot;fi&quot;）通常显示为单个合并字形，称为 <em>连字</em>。将其设置为 <code><span class="typ-key">false</span></code> 会通过关闭 OpenType <code>liga</code> 和 <code>clig</code> 字体特性来禁用这些连字。
 </p>
+
 
 <p>默认：<code><span class="typ-key">true</span></code></p>
 
@@ -1805,6 +2040,7 @@ A fine ligature.
 是否启用应当谨慎使用的连字。将其设置为 <code><span class="typ-key">true</span></code> 会通过启用 OpenType <code>dlig</code> 字体特性来启用这些连字。
 </p>
 
+
 <p>默认：<code><span class="typ-key">false</span></code></p>
 
 
@@ -1832,6 +2068,7 @@ A fine ligature.
 <p>
 是否启用历史连字。将其设置为 <code><span class="typ-key">true</span></code> 会通过启用 OpenType <code>hlig</code> 字体特性来启用这些连字。
 </p>
+
 
 <p>默认：<code><span class="typ-key">false</span></code></p>
 
@@ -1861,6 +2098,31 @@ A fine ligature.
 </h3>
 <p>
 选择哪种数字字体。当设置为 <code><span class="typ-key">auto</span></code> 时，使用字体的默认数字。</p>
+
+<ul class="type-args">
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->lining<!-- -->&quot;</code></div>
+      <div>
+        <p>Numbers that fit well with capital text (the OpenType <code>lnum</code>
+font feature).</p>
+      </div>
+    </div>
+  </li>
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->old-style<!-- -->&quot;</code></div>
+      <div>
+        <p>Numbers that fit well into a flow of upper- and lowercase text (the
+OpenType <code>onum</code> font feature).</p>
+      </div>
+    </div>
+  </li>
+  
+</ul>
+
 
 <p>默认：<code><span class="typ-key">auto</span></code></p>
 
@@ -1905,6 +2167,29 @@ Number 9.
 数字字符的宽度。当设置为 <code><span class="typ-key">auto</span></code> 时，使用字体的默认数字。
 </p>
 
+<ul class="type-args">
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->proportional<!-- -->&quot;</code></div>
+      <div>
+        <p>Numbers with glyph-specific widths (the OpenType <code>pnum</code> font feature).</p>
+      </div>
+    </div>
+  </li>
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->tabular<!-- -->&quot;</code></div>
+      <div>
+        <p>Numbers of equal width (the OpenType <code>tnum</code> font feature).</p>
+      </div>
+    </div>
+  </li>
+  
+</ul>
+
+
 <p>默认：<code><span class="typ-key">auto</span></code></p>
 
 
@@ -1948,6 +2233,7 @@ A 56 B 78.
 是否使用带斜线的零字形。将其设置为 <code><span class="typ-key">true</span></code> 会通过启用 OpenType <code>zero</code> 字体特性来使用这些字形。
 </p>
 
+
 <p>默认：<code><span class="typ-key">false</span></code></p>
 
 
@@ -1984,6 +2270,7 @@ A 56 B 78.
 是否将数字转换为分数。将其设置为 <code><span class="typ-key">true</span></code> 会通过启用 OpenType <code>frac</code> 字体特性来使用这些字形。</p>
 <p>
 不建议全局启用此属性，因为它会破坏斜杠后所有数字的外观（例如，在 URL 中）。相反，当你想要分数时，请在本地启用它。</p>
+
 
 <p>默认：<code><span class="typ-key">false</span></code></p>
 
@@ -2027,6 +2314,7 @@ A 56 B 78.
 <li>如果给定映射到数字的字典，则将键标识的功能设置为值。</li>
 </ul>
 
+
 <p>默认：<code><span class="typ-punct">(</span><span class="typ-punct">:</span><span class="typ-punct">)</span></code></p>
 
 
@@ -2061,6 +2349,7 @@ A 56 B 78.
   </div>
 </h3>
 <p> 要应用样式的内容，根据其他参数进行设定。</p>
+
 
 
 

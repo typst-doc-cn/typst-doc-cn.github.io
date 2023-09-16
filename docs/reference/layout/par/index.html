@@ -938,6 +938,7 @@ three integers. Then, we <span class="typ-escape">...</span>
 </h3>
 <p>行间距。</p>
 
+
 <p>默认：<code><span class="typ-num">0.65em</span></code></p>
 
 
@@ -965,6 +966,7 @@ three integers. Then, we <span class="typ-escape">...</span>
 <p>是否开启两端对齐。</p>
 <p>如果文本的<a href="/docs/reference/text/text/#parameters-hyphenate">连字属性</a>设置为<code><span class="typ-key">auto</span></code>，并且当前语言已知，则会在两端对齐的段落中启用连字功能。</p>
 <p>请注意，当前的<a href="/docs/reference/layout/align/">对齐方式</a>仍然会影响最后一行的位置，除非最后一行以<a href="/docs/reference/text/linebreak/#parameters-justify">两端对齐的换行</a>结束。</p>
+
 
 <p>默认：<code><span class="typ-key">false</span></code></p>
 
@@ -994,6 +996,30 @@ three integers. Then, we <span class="typ-escape">...</span>
 </h3>
 <p>如何确定换行位置。</p>
 <p>当这个属性被设置为<code><span class="typ-key">auto</span></code>，也就是它的默认值时，会在两端对齐的段落中使用优化过的换行位置。对于不规则对齐的段落启用优化过的换行位置也是有价值的，可以改善文本的外观。</p>
+
+<ul class="type-args">
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->simple<!-- -->&quot;</code></div>
+      <div>
+        <p>以简单的逐行适应方式确定换行位置。</p>
+      </div>
+    </div>
+  </li>
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->optimized<!-- -->&quot;</code></div>
+      <div>
+        <p>优化整段文字的换行位置。</p>
+<p>Typst 将尝试通过在计算换行位置时考虑整个段落，以生成更加均匀填充的文本行。</p>
+      </div>
+    </div>
+  </li>
+  
+</ul>
+
 
 <p>默认：<code><span class="typ-key">auto</span></code></p>
 
@@ -1058,6 +1084,7 @@ of them.
 </code>
 </p>
 
+
 <p>默认：<code><span class="typ-num">0pt</span></code></p>
 
 
@@ -1084,6 +1111,7 @@ of them.
 </h3>
 <p>悬挂缩进。段落首行不缩进，其他行缩进。</p>
 
+
 <p>默认：<code><span class="typ-num">0pt</span></code></p>
 
 
@@ -1108,6 +1136,7 @@ of them.
   </div>
 </h3>
 <p>段落内容。</p>
+
 
 
 

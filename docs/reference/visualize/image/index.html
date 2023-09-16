@@ -933,6 +933,7 @@ have an issue, also feel free to report it on <a href="https://github.com/typst/
 
 
 
+
 <h3 id="parameters-width"><code>width</code>
   <div class="additional-info">
     <div>
@@ -956,6 +957,7 @@ have an issue, also feel free to report it on <a href="https://github.com/typst/
   </div>
 </h3>
 <p>The width of the image.</p>
+
 
 <p>默认：<code><span class="typ-key">auto</span></code></p>
 
@@ -985,6 +987,7 @@ have an issue, also feel free to report it on <a href="https://github.com/typst/
 </h3>
 <p>The height of the image.</p>
 
+
 <p>默认：<code><span class="typ-key">auto</span></code></p>
 
 
@@ -1013,6 +1016,7 @@ have an issue, also feel free to report it on <a href="https://github.com/typst/
 </h3>
 <p>A text describing the image.</p>
 
+
 <p>默认：<code><span class="typ-key">none</span></code></p>
 
 
@@ -1038,6 +1042,39 @@ have an issue, also feel free to report it on <a href="https://github.com/typst/
   </div>
 </h3>
 <p>How the image should adjust itself to a given area.</p>
+
+<ul class="type-args">
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->cover<!-- -->&quot;</code></div>
+      <div>
+        <p>The image should completely cover the area. This is the default.</p>
+      </div>
+    </div>
+  </li>
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->contain<!-- -->&quot;</code></div>
+      <div>
+        <p>The image should be fully contained in the area.</p>
+      </div>
+    </div>
+  </li>
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->stretch<!-- -->&quot;</code></div>
+      <div>
+        <p>The image should be stretched so that it exactly fills the area, even if
+this means that the image will be distorted.</p>
+      </div>
+    </div>
+  </li>
+  
+</ul>
+
 
 <p>默认：<code><span class="typ-str">&quot;cover&quot;</span></code></p>
 

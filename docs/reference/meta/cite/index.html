@@ -946,6 +946,7 @@ the bibliography.</p>
 
 
 
+
 <h3 id="parameters-supplement"><code>supplement</code>
   <div class="additional-info">
     <div>
@@ -979,6 +980,7 @@ the bibliography.</p>
 </h3>
 <p>A supplement for the citation such as page or chapter number.</p>
 <p>In reference syntax, the supplement can be added in square brackets:</p>
+
 
 <p>默认：<code><span class="typ-key">none</span></code></p>
 
@@ -1016,6 +1018,7 @@ over again. <span class="typ-ref">@distress<span class="typ-punct">[</span>p.<sp
   </div>
 </h3>
 <p>Whether the citation should include brackets.</p>
+
 
 <p>默认：<code><span class="typ-key">true</span></code></p>
 
@@ -1062,6 +1065,69 @@ in their work <span class="typ-escape">...</span>
 <p>The citation style.</p>
 <p>When set to <code><span class="typ-key">auto</span></code>, automatically picks the preferred citation style
 for the bibliography's style.</p>
+
+<ul class="type-args">
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->numerical<!-- -->&quot;</code></div>
+      <div>
+        <p>IEEE-style numerical reference markers.</p>
+      </div>
+    </div>
+  </li>
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->alphanumerical<!-- -->&quot;</code></div>
+      <div>
+        <p>A simple alphanumerical style. For example, the output could be Rass97
+or MKG+21.</p>
+      </div>
+    </div>
+  </li>
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->keys<!-- -->&quot;</code></div>
+      <div>
+        <p>Citations that just consist of the entry keys.</p>
+      </div>
+    </div>
+  </li>
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->chicago-author-date<!-- -->&quot;</code></div>
+      <div>
+        <p>The Chicago Author Date style. Based on the 17th edition of the Chicago
+Manual of Style, Chapter 15.</p>
+      </div>
+    </div>
+  </li>
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->chicago-notes<!-- -->&quot;</code></div>
+      <div>
+        <p>The Chicago Notes style. Based on the 17th edition of the Chicago
+Manual of Style, Chapter 14.</p>
+      </div>
+    </div>
+  </li>
+  
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->chicago-author-title<!-- -->&quot;</code></div>
+      <div>
+        <p>A Chicago-like author-title format. Results could look like this:
+Prokopov, “It Is Fast or It Is Wrong”.</p>
+      </div>
+    </div>
+  </li>
+  
+</ul>
+
 
 <p>默认：<code><span class="typ-key">auto</span></code></p>
 
