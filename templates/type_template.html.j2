@@ -1,85 +1,27 @@
-{% extends "base_template.html" %}
+{% import 'macros.html.j2' as macros %}
+
+{% extends "base_template.html.j2" %}
 {% block content %}
 
 <h1 id="summary"><span class="pill {{ type2class(body['content']['name']) }}">{{ body['content']['name'] }}</span></h1>
 {{ body['content']['details'] | safe }}
+
+{% if body['content']['constructor'] %}
+<h2 id="constructor">
+  {{ macros.tooltip_display('构造函数', '如果类型具有构造函数，可以像函数一样调用它来创建一个该类型的值。', prefix='constructor') }}
+</h2>
+{{ macros.function_display(body['content']['constructor'], type2class, gen_path, prefix='constructor', is_example_folding=false) }}
+{% endif %}
+
+
 {% if body['content']['scope'].__len__() > 0 %}
-<h2 id="definitions"><span aria-describedby="definitions-tooltip">定义</span>
-  <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
-      aria-labelledby="definitions-tooltip-qm-label">
-      <title id="definitions-tooltip-qm-label">函数和类型可以有与其关联的定义。可以使用 "." 操作符来访问调用它们。</title>
-      <use href="/assets/icons/12-tooltip.svg#icon"></use>
-    </svg>
-    <div role="tooltip" id="definitions-tooltip" tabindex="-1">函数和类型可以有与其关联的定义。可以使用 "." 操作符来访问调用它们。</div>
-  </div>
+<h2 id="definitions">
+  {{ macros.tooltip_display('定义', '函数和类型可以有与其关联的定义 (成员或方法)。可以使用 "." 操作符来访问调用它们。', prefix='definitions') }}
 </h2>
 {% endif %}
 {% for method in body['content']['scope'] %}
-<h3 id="definitions-{{ method['name'] }}" class="method-head"><span><code>{{ method['name'] }}</code></span></h3>
-{{ method['details'] | safe }}
-<div class="code code-definition {{ 'single-arg' if method['params'].__len__() <= 1 else '' }}">value.<span
-    class="typ-func">{{ method['name'] }}</span>(<div class="arguments">{% for param in method['params'] %}<span
-      class="overview-param">{% if not param['positional'] %}<a href="#parameters-{{ param['name'] }}">{{ param['name']
-        }}<!-- -->: </a>{% endif %}{%
-      for t in param['types'] %}<a href="/docs/reference/types/{{ t }}" class="pill {{ type2class(t) }}">{{ t }}</a>{% endfor %}{{',' if
-      method['params'].__len__() > 1 else '' }} </span>{% endfor %}</div>) <!-- -->-&gt; {% for ret in method['returns']
-  %}<a href="/docs/reference/types/{{ ret }}" class="pill {{ type2class(ret) }}">{{ ret }}</a>{% endfor %}</div>
-{% for param in method['params'] %}
-<h4 id="definitions-{{ method['name'] }}-parameters-{{ param['name'] }}"><code>{{ param['name'] }}</code>
-  <div class="additional-info">
-    <div>
-      {% for t in param['types'] %}
-      <a href="/docs/reference/types/{{ t }}" class="pill {{ type2class(t) }}">{{ t }}</a>
-      {% endfor %}
-    </div>
-    {% if param['required'] %}<small>必需参数</small>{% endif %}{% if param['positional'] %}<small><span
-        aria-describedby="definitions-{{ method['name'] }}-parameters-{{ param['name'] }}-positional-tooltip">位置参数</span>
-      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
-          aria-labelledby="definitions-{{ method['name'] }}-parameters-{{ param['name'] }}-positional-tooltip-qm-label">
-          <title id="definitions-{{ method['name'] }}-parameters-{{ param['name'] }}-positional-tooltip-qm-label">
-            位置参数按顺序传入，不带名称。</title>
-          <use href="/assets/icons/12-tooltip.svg#icon"></use>
-        </svg>
-        <div role="tooltip" id="definitions-{{ method['name'] }}-parameters-{{ param['name'] }}-positional-tooltip"
-          tabindex="-1">位置参数按顺序传入，不带名称。</div>
-      </div>
-    </small>{% endif %}{% if param['variadic'] %}<small><span
-        aria-describedby="definitions-{{ method['name'] }}-parameters-{{ param['name'] }}-variadic-tooltip">可变参数</span>
-      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
-          aria-labelledby="definitions-{{ method['name'] }}-parameters-{{ param['name'] }}-variadic-tooltip-qm-label">
-          <title id="definitions-{{ method['name'] }}-parameters-{{ param['name'] }}-variadic-tooltip-qm-label">可变参数可以多次传入。
-          </title>
-          <use href="/assets/icons/12-tooltip.svg#icon"></use>
-        </svg>
-        <div role="tooltip" id="definitions-{{ method['name'] }}-parameters-{{ param['name'] }}-variadic-tooltip"
-          tabindex="-1">可变参数可以多次传入。</div>
-      </div>
-    </small>{% endif %}{% if param['settable'] %}<small><span
-        aria-describedby="definitions-{{ method['name'] }}-parameters-{{ param['name'] }}-settable-tooltip">可用 Set 规则</span>
-      <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
-          aria-labelledby="definitions-{{ method['name'] }}-parameters-{{ param['name'] }}-settable-tooltip-qm-label">
-          <title id="definitions-{{ method['name'] }}-parameters-{{ param['name'] }}-settable-tooltip-qm-label">可以使用 Set 规则，为函数后续所有的使用设置默认参数。</title>
-          <use href="/assets/icons/12-tooltip.svg#icon"></use>
-        </svg>
-        <div role="tooltip" id="definitions-{{ method['name'] }}-parameters-{{ param['name'] }}-settable-tooltip"
-          tabindex="-1">可以使用 Set 规则，为函数后续所有的使用设置默认参数。</div>
-      </div>
-    </small>{% endif %}
-  </div>
-</h4>
-{{ param['details'] }}
-{% if param['default'] %}
-<p>默认：{{ param['default'] | safe }}</p>
-{% endif %}
-{% if param['example'] %}
-<div class="folding-example"><button class="folding-example-header"><img src="/assets/icons/16-arrow-right.svg" alt=""
-      width="16" height="16">查看示例</button>
-  <div class="folding">
-    {{ param['example'] | safe }}
-  </div>
-</div>
-{% endif %}
-{% endfor %}
+  <h3 id="{{ prefix }}-{{ method['name'] }}" class="method-head"><span><code>{{ method['name'] }}</code></span></h3>
+  {{ macros.function_display(method, type2class, gen_path, prefix='definitions-' + method['name']) }}
 {% endfor %}
 
 {% endblock %}

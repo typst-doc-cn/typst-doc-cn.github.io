@@ -1,0 +1,161 @@
+route: /docs/reference/meta/cite/
+title: Cite
+description: Documentation for the `cite` function.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: example
+  name: Example
+  children: []
+- id: syntax
+  name: Syntax
+  children: []
+- id: parameters
+  name: Parameters
+  children:
+  - id: parameters-keys
+    name: keys
+    children: []
+  - id: parameters-supplement
+    name: supplement
+    children: []
+  - id: parameters-brackets
+    name: brackets
+    children: []
+  - id: parameters-style
+    name: style
+    children: []
+body:
+  kind: func
+  content:
+    path: []
+    name: cite
+    title: Cite
+    keywords: []
+    oneliner: Cite a work from the bibliography.
+    element: true
+    details: |-
+      <p>Cite a work from the bibliography.</p>
+      <p>Before you starting citing, you need to add a <a href="/docs/reference/meta/bibliography/">bibliography</a>
+      somewhere in your document.</p>
+      <h2 id="example">Example</h2>
+      <div class="previewed-code"><pre><code>This was already noted by
+      pirates long ago. <span class="typ-ref">@arrgh</span>
+
+      Multiple sources say <span class="typ-escape">...</span>
+      <span class="typ-func">#</span><span class="typ-func">cite</span><span class="typ-punct">(</span><span class="typ-str">&quot;arrgh&quot;</span><span class="typ-punct">,</span> <span class="typ-str">&quot;netwok&quot;</span><span class="typ-punct">)</span>.
+
+      <span class="typ-func">#</span><span class="typ-func">bibliography</span><span class="typ-punct">(</span><span class="typ-str">&quot;works.bib&quot;</span><span class="typ-punct">)</span>
+      </code></pre><div class="preview"><img src="/assets/docs/26bb4b139eb79cc5df7b855b46895cee.png" alt="Preview" width="480" height="190"/></div></div>
+      <h2 id="syntax">Syntax</h2>
+      <p>This function indirectly has dedicated syntax. <a href="/docs/reference/meta/ref/">References</a> can be
+      used to cite works from the bibliography. The label then corresponds to the
+      citation key.</p>
+    example: null
+    self: false
+    params:
+    - name: keys
+      details: |-
+        <p>The citation keys that identify the elements that shall be cited in
+        the bibliography.</p>
+        <p>Reference syntax supports only a single key.</p>
+      example: null
+      types:
+      - str
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: true
+      settable: false
+    - name: supplement
+      details: |-
+        <p>A supplement for the citation such as page or chapter number.</p>
+        <p>In reference syntax, the supplement can be added in square brackets:</p>
+      example: |-
+        <div class="previewed-code"><pre><code>This has been proven over and
+        over again. <span class="typ-ref">@distress<span class="typ-punct">[</span>p.<span class="typ-escape">~</span>7<span class="typ-punct">]</span></span>
+
+        <span class="typ-func">#</span><span class="typ-func">bibliography</span><span class="typ-punct">(</span><span class="typ-str">&quot;works.bib&quot;</span><span class="typ-punct">)</span>
+        </code></pre><div class="preview"><img src="/assets/docs/88f3cb0ca043f7f0414fec8cdc5af82d.png" alt="Preview" width="480" height="190"/></div></div>
+      types:
+      - none
+      - content
+      strings: []
+      default: <code><span class="typ-key">none</span></code>
+      positional: false
+      named: true
+      required: false
+      variadic: false
+      settable: true
+    - name: brackets
+      details: <p>Whether the citation should include brackets.</p>
+      example: |-
+        <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">cite</span><span class="typ-punct">(</span>brackets<span class="typ-punct">:</span> <span class="typ-key">false</span><span class="typ-punct">)</span>
+
+        <span class="typ-ref">@netwok</span> follow these methods
+        in their work <span class="typ-escape">...</span>
+
+        <span class="typ-func">#</span><span class="typ-func">bibliography</span><span class="typ-punct">(</span>
+          <span class="typ-str">&quot;works.bib&quot;</span><span class="typ-punct">,</span>
+          style<span class="typ-punct">:</span> <span class="typ-str">&quot;chicago-author-date&quot;</span><span class="typ-punct">,</span>
+        <span class="typ-punct">)</span>
+        </code></pre><div class="preview"><img src="/assets/docs/b3fddb6eb6429b197d685eafb8d4cc12.png" alt="Preview" width="480" height="190"/></div></div>
+      types:
+      - bool
+      strings: []
+      default: <code><span class="typ-key">true</span></code>
+      positional: false
+      named: true
+      required: false
+      variadic: false
+      settable: true
+    - name: style
+      details: |-
+        <p>The citation style.</p>
+        <p>When set to <code><span class="typ-key">auto</span></code>, automatically picks the preferred citation style
+        for the bibliography's style.</p>
+      example: |-
+        <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">cite</span><span class="typ-punct">(</span>style<span class="typ-punct">:</span> <span class="typ-str">&quot;alphanumerical&quot;</span><span class="typ-punct">)</span>
+        Alphanumerical references.
+        <span class="typ-ref">@netwok</span>
+
+        <span class="typ-func">#</span><span class="typ-func">bibliography</span><span class="typ-punct">(</span><span class="typ-str">&quot;works.bib&quot;</span><span class="typ-punct">)</span>
+        </code></pre><div class="preview"><img src="/assets/docs/059b15f88b6fb44af8716296abb3286d.png" alt="Preview" width="480" height="190"/></div></div>
+      types:
+      - auto
+      - string
+      strings:
+      - string: numerical
+        details: <p>IEEE-style numerical reference markers.</p>
+      - string: alphanumerical
+        details: |-
+          <p>A simple alphanumerical style. For example, the output could be Rass97
+          or MKG+21.</p>
+      - string: keys
+        details: <p>Citations that just consist of the entry keys.</p>
+      - string: chicago-author-date
+        details: |-
+          <p>The Chicago Author Date style. Based on the 17th edition of the Chicago
+          Manual of Style, Chapter 15.</p>
+      - string: chicago-notes
+        details: |-
+          <p>The Chicago Notes style. Based on the 17th edition of the Chicago
+          Manual of Style, Chapter 14.</p>
+      - string: chicago-author-title
+        details: |-
+          <p>A Chicago-like author-title format. Results could look like this:
+          Prokopov, “It Is Fast or It Is Wrong”.</p>
+      default: <code><span class="typ-key">auto</span></code>
+      positional: false
+      named: true
+      required: false
+      variadic: false
+      settable: true
+    returns:
+    - content
+    scope: []
+children: []

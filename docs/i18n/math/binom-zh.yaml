@@ -1,0 +1,66 @@
+route: /docs/reference/math/binom/
+title: Binomial
+description: Documentation for the `binom` function.
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: example
+  name: Example
+  children: []
+- id: parameters
+  name: Parameters
+  children:
+  - id: parameters-upper
+    name: upper
+    children: []
+  - id: parameters-lower
+    name: lower
+    children: []
+body:
+  kind: func
+  content:
+    path:
+    - math
+    name: binom
+    title: Binomial
+    keywords: []
+    oneliner: A binomial expression.
+    element: true
+    details: |-
+      <p>A binomial expression.</p>
+      <h2 id="example">Example</h2>
+      <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">binom</span><span class="typ-punct">(</span>n<span class="typ-punct">,</span> k<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
+      </code></pre><div class="preview"><img src="/assets/docs/cec5841ef8b1492ac1a7ed8c300746de.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
+    params:
+    - name: upper
+      details: <p>The binomial's upper index.</p>
+      example: null
+      types:
+      - content
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: false
+      settable: false
+    - name: lower
+      details: <p>The binomial's lower index.</p>
+      example: null
+      types:
+      - content
+      strings: []
+      default: null
+      positional: true
+      named: false
+      required: true
+      variadic: false
+      settable: false
+    returns:
+    - content
+    scope: []
+children: []

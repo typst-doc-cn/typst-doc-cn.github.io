@@ -1,9 +1,9 @@
-{% extends "base_template.html" %}
+{% extends "base_template.html.j2" %}
 {% block content %}
 
 <h1 id="summary">{{ body['content']['name'] }}</h1>
 {{ body['content']['details'] | safe }}
-<h2 id="{{ outline[1]['id'] }}">{{ body['content']['kind'] }}</h2>
+<h2 id="definitions">定义</h2>
 <ul class="subgridded">
   {% for item in body['content']['items'] %}
   {% if item['code'] %}
