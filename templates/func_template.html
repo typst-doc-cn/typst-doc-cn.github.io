@@ -76,6 +76,20 @@
   </div>
 </h3>
 {{ param['details'] }}
+{% if param['strings'] %}
+<ul class="type-args">
+  {% for string in param['strings'] %}
+  <li>
+    <div class="break-box">
+      <div><code class="typ-str">&quot;<!-- -->{{ string['string'] | safe }}<!-- -->&quot;</code></div>
+      <div>
+        {{ string['details'] | safe }}
+      </div>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}
 {% if param['default'] %}
 <p>默认：{{ param['default'] | safe }}</p>
 {% endif %}

@@ -62,3 +62,5 @@ python ./gen.py
 ```
 
 最后编译得到的文件位于 `./dist`.
+
+如果你有安装 nodejs, 则你可以通过 `npx serve ./dist` 快速地在本地开启一个 web 静态服务器预览结果.
