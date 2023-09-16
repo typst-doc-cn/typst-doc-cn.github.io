@@ -31,7 +31,8 @@
     body['content']['params'] %}<span class="overview-param">{% if not param['positional'] and not param['variadic']
       %}<a href="#parameters-{{ param['name'] }}">{{ param['name']
         }}<!-- -->: </a>{% elif param['variadic'] %}<a href="#parameters-{{ param['name'] }}">..</a>{% endif %}{%
-      for t in param['types'] %}<a href="/docs/reference/types/{{ t }}" class="pill {{ type2class(t) }}">{{ t }}</a>{% endfor %}{{',' if
+      for t in param['types'] %}<a href="/docs/reference/types/{{ t }}" class="pill {{ type2class(t) }}">{{ t }}</a>{%
+      endfor %}{{',' if
       body['content']['params'].__len__() > 1 else '' }} </span>{% endfor %}</div>) <!-- -->-&gt; {% for ret in
   body['content']['returns']
   %}<a href="/docs/reference/types/{{ ret }}" class="pill {{ type2class(ret) }}">{{ ret }}</a>{% endfor %}</div>
@@ -106,7 +107,8 @@
 <!-- ----------------------------------------------------------------------------------- -->
 
 {% for content in body['content']['scope'] %}
-<h2 level="1" id="{{ '-'.join(content['path']) }}"><code>{{ '.'.join(content['path']) }}</code> function {% if content['element']
+<h2 level="1" id="{{ '-'.join(content['path']) }}"><code>{{ '.'.join(content['path']) }}</code> function {% if
+  content['element']
   %}<small><span aria-describedby="element-tooltip">元素</span>
     <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
         aria-labelledby="element-tooltip-qm-label">
@@ -137,7 +139,8 @@
     content['params'] %}<span class="overview-param">{% if not param['positional'] and not param['variadic']
       %}<a href="#parameters-{{ param['name'] }}">{{ param['name']
         }}<!-- -->: </a>{% elif param['variadic'] %}<a href="#parameters-{{ param['name'] }}">..</a>{% endif %}{%
-      for t in param['types'] %}<a href="/docs/reference/types/{{ t }}" class="pill {{ type2class(t) }}">{{ t }}</a>{% endfor %}{{',' if
+      for t in param['types'] %}<a href="/docs/reference/types/{{ t }}" class="pill {{ type2class(t) }}">{{ t }}</a>{%
+      endfor %}{{',' if
       content['params'].__len__() > 1 else '' }} </span>{% endfor %}</div>) <!-- -->-&gt; {% for ret in
   content['returns']
   %}<a href="/docs/reference/types/{{ ret }}" class="pill {{ type2class(ret) }}">{{ ret }}</a>{% endfor %}</div>

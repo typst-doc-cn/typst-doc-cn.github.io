@@ -47,8 +47,10 @@ type2class_map = {
     'string': 'pill-str',
     'content': 'pill-con',
     'color': 'pill-col',
+    'bool': 'pill-bool',
     'boolean': 'pill-bool',
     'integer': 'pill-num',
+    'int': 'pill-num',
     'ratio': 'pill-num',
     'length': 'pill-num',
     'relative length': 'pill-num',
@@ -86,7 +88,7 @@ if __name__ == '__main__':
         if not os.path.exists('./dist' + page['route']):
             os.makedirs('./dist' + page['route'])
         with open('./dist' + page['route'] + 'index.html', 'w', encoding='utf-8') as f:
-            f.write(render_jinja_html('./templates/', page['body']['kind'] + '_template.html',
+            f.write(render_jinja_html('./templates/', page['body']['kind'] + '_template.html.j2',
                     docs=docs, path=path, prev=prev, next=next, type2class=type2class, **page))
         index += 1
         for child in page['children']:
