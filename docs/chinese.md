@@ -25,6 +25,15 @@ Hello World 你好世界
 ]
 ```
 
+### 为什么我设置的字体没有生效？
+
+如果中文字体不符合typst要求，那么它不会选择你声明的字体，例如字体的变体数量不够等原因。
+
+1. `typst fonts` 查看系统字体，确保字体名字没有错误。
+2. `typst fonts --font-path path/to/your-fonts` 指定字体目录。
+3. 检查中文字体是否已经完全安装。
+
+
 ### 如何为设置各行段落的缩进？
 
 使用 `#set par(first-line-indent: 2em)`：
