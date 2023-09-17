@@ -1,6 +1,6 @@
 route: /docs/reference/visualize/image/
 title: Image
-description: Documentation for the `image` function.
+description: '`image` 函数的文档'
 part: null
 outline:
 - id: summary

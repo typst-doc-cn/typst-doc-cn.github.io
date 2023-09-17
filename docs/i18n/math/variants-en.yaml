@@ -1,6 +1,6 @@
 route: /docs/reference/math/variants
 title: Variants
-description: Documentation for the variants functions.
+description: variants 函数族的文档.
 part: null
 outline:
 - id: summary

@@ -1,6 +1,6 @@
 route: /docs/reference/text/smallcaps/
 title: Small Capitals
-description: Documentation for the `smallcaps` function.
+description: '`smallcaps` 函数的文档'
 part: null
 outline:
 - id: summary

@@ -1,6 +1,6 @@
 route: /docs/reference/layout/pad/
 title: Padding
-description: Documentation for the `pad` function.
+description: '`pad` 函数的文档'
 part: null
 outline:
 - id: summary

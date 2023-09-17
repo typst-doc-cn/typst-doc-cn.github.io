@@ -1,6 +1,6 @@
 route: /docs/reference/foundations/assert/
 title: Assert
-description: Documentation for the `assert` function.
+description: '`assert` 函数的文档'
 part: null
 outline:
 - id: summary

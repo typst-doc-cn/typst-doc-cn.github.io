@@ -1,6 +1,6 @@
 route: /docs/reference/text/super/
 title: Superscript
-description: Documentation for the `super` function.
+description: '`super` 函数的文档'
 part: null
 outline:
 - id: summary

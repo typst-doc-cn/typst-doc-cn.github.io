@@ -1,6 +1,6 @@
 route: /docs/reference/text/text/
 title: Text
-description: Documentation for the `text` function.
+description: '`text` 函数的文档'
 part: null
 outline:
 - id: summary

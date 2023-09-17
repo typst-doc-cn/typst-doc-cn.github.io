@@ -1,6 +1,6 @@
 route: /docs/reference/data-loading/cbor/
 title: CBOR
-description: Documentation for the `cbor` function.
+description: '`cbor` 函数的文档'
 part: null
 outline:
 - id: summary

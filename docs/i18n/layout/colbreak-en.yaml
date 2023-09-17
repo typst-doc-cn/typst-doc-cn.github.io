@@ -1,6 +1,6 @@
 route: /docs/reference/layout/colbreak/
 title: Column Break
-description: Documentation for the `colbreak` function.
+description: '`colbreak` 函数的文档'
 part: null
 outline:
 - id: summary

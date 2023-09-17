@@ -1,6 +1,6 @@
 route: /docs/reference/data-loading/xml/
 title: XML
-description: Documentation for the `xml` function.
+description: '`xml` 函数的文档'
 part: null
 outline:
 - id: summary

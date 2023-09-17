@@ -1,6 +1,6 @@
 route: /docs/reference/layout/table/
 title: Table
-description: Documentation for the `table` function.
+description: '`table` 函数的文档'
 part: null
 outline:
 - id: summary

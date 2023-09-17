@@ -1,6 +1,6 @@
 route: /docs/reference/text/strong/
 title: Strong Emphasis
-description: Documentation for the `strong` function.
+description: '`strong` 函数的文档'
 part: null
 outline:
 - id: summary

@@ -1,6 +1,6 @@
 route: /docs/reference/meta/footnote/
 title: Footnote
-description: Documentation for the `footnote` function.
+description: '`footnote` 函数的文档'
 part: null
 outline:
 - id: summary

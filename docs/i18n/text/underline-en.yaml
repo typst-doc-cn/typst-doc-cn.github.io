@@ -1,6 +1,6 @@
 route: /docs/reference/text/underline/
 title: Underline
-description: Documentation for the `underline` function.
+description: '`underline` 函数的文档'
 part: null
 outline:
 - id: summary

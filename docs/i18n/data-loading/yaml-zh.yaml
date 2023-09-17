@@ -1,6 +1,6 @@
 route: /docs/reference/data-loading/yaml/
 title: YAML
-description: Documentation for the `yaml` function.
+description: '`yaml` 函数的文档'
 part: null
 outline:
 - id: summary

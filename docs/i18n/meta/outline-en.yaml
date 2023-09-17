@@ -1,6 +1,6 @@
 route: /docs/reference/meta/outline/
 title: Outline
-description: Documentation for the `outline` function.
+description: '`outline` 函数的文档'
 part: null
 outline:
 - id: summary

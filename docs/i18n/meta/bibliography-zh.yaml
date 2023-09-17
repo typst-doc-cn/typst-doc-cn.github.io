@@ -1,6 +1,6 @@
 route: /docs/reference/meta/bibliography/
 title: Bibliography
-description: Documentation for the `bibliography` function.
+description: '`bibliography` 函数的文档'
 part: null
 outline:
 - id: summary

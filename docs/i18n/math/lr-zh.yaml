@@ -1,6 +1,6 @@
 route: /docs/reference/math/lr
 title: Left/Right
-description: Documentation for the lr functions.
+description: lr 函数族的文档.
 part: null
 outline:
 - id: summary

@@ -1,6 +1,6 @@
 route: /docs/reference/meta/layout/
 title: Layout
-description: Documentation for the `layout` function.
+description: '`layout` 函数的文档'
 part: null
 outline:
 - id: summary

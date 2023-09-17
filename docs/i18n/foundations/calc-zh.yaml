@@ -1,6 +1,6 @@
 route: /docs/reference/foundations/calc
 title: Calculation
-description: Documentation for the calc functions.
+description: calc 函数族的文档.
 part: null
 outline:
 - id: summary

@@ -1,6 +1,6 @@
 route: /docs/reference/visualize/ellipse/
 title: Ellipse
-description: Documentation for the `ellipse` function.
+description: '`ellipse` 函数的文档'
 part: null
 outline:
 - id: summary

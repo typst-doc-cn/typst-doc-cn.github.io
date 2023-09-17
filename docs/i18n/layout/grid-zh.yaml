@@ -1,6 +1,6 @@
 route: /docs/reference/layout/grid/
 title: Grid
-description: Documentation for the `grid` function.
+description: '`grid` 函数的文档'
 part: null
 outline:
 - id: summary

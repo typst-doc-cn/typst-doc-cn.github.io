@@ -1,6 +1,6 @@
 route: /docs/reference/visualize/rect/
 title: Rectangle
-description: Documentation for the `rect` function.
+description: '`rect` 函数的文档'
 part: null
 outline:
 - id: summary

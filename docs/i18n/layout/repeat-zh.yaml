@@ -1,6 +1,6 @@
 route: /docs/reference/layout/repeat/
 title: Repeat
-description: Documentation for the `repeat` function.
+description: '`repeat` 函数的文档'
 part: null
 outline:
 - id: summary

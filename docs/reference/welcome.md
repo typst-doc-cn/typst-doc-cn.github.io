@@ -1,28 +1,26 @@
 ---
 description: |
-  The Typst reference is a systematic and comprehensive guide to the Typst
-  typesetting language.
+  Typst 参考索引文档是关于 Typst 排版语言的详细文档。
 ---
 
-# Reference
-This reference documentation is a comprehensive guide to all of Typst's
-syntax, concepts, types, and functions. If you are completely new to Typst, we
-recommend starting with the [tutorial]($tutorial) and then coming back to
-the reference to learn more about Typst's features as you need them.
+# 参考
 
-## Language
-The reference starts with a language part that gives an overview over
-[Typst's syntax]($syntax) and contains information about concepts involved in
-[styling documents,]($styling) using
-[Typst's scripting capabilities.]($scripting)
+本参考索引是一个综合指南文档，包括 Typst 的语法，概念，类型和函数。
+如果你初识 Typst，建议从 [学习指南]($tutorial) 开始，然后再按需回来学习更多的 Typst 特性。
 
-## Functions
-The second part includes chapters on all functions used to insert, style, transform,
-and layout content in Typst documents. Each function is documented with a
-description of its purpose, a list of its parameters, and examples of how to use
-it.
+## 语言 { #language }
 
-The final part of the reference explains all functions that are used within
-Typst's code mode to manipulate and transform data. Just as in the previous
-part, each function is documented with a description of its purpose, a list of
-its parameters, and examples of how to use it.
+本参考索引第一部分粗略介绍 [Typst 语法]($syntax)，
+包括 [文档样式]($styling) 概念，以及 [Typst 脚本功能]($scripting) 详细文档。
+
+
+## 函数 { #functions }
+
+第二部分引入所有能用到的函数，
+有插入文档内容的，有设置文档内容样式的，有文档内容变换的，有布局文档内容的。
+每一个函数均已同样的形式表述，
+有些是表述函数基本功能，有些列举函数参数，有些举例如何使用函数。
+
+参考索引最后一部分描述的 Typst 代码模式内的函数，用来操作及转换数据的。
+和第二部分一样，每一个函数均已同样的形式表述，
+有些是表述函数基本功能，有些列举函数参数，有些举例如何使用函数。

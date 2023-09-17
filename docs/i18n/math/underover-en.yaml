@@ -1,6 +1,6 @@
 route: /docs/reference/math/underover
 title: Under/Over
-description: Documentation for the underover functions.
+description: underover 函数族的文档.
 part: null
 outline:
 - id: summary

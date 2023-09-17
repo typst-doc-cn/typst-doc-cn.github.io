@@ -1,6 +1,6 @@
 route: /docs/reference/math/equation/
 title: Equation
-description: Documentation for the `equation` function.
+description: '`equation` 函数的文档'
 part: null
 outline:
 - id: summary

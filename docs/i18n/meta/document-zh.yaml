@@ -1,6 +1,6 @@
 route: /docs/reference/meta/document/
 title: Document
-description: Documentation for the `document` function.
+description: '`document` 函数的文档'
 part: null
 outline:
 - id: summary

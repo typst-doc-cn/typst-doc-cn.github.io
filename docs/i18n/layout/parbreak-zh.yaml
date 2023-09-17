@@ -1,6 +1,6 @@
 route: /docs/reference/layout/parbreak/
 title: Paragraph Break
-description: Documentation for the `parbreak` function.
+description: '`parbreak` 函数的文档'
 part: null
 outline:
 - id: summary

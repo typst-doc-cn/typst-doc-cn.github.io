@@ -1,6 +1,6 @@
 route: /docs/reference/data-loading/json/
 title: JSON
-description: Documentation for the `json` function.
+description: '`json` 函数的文档'
 part: null
 outline:
 - id: summary

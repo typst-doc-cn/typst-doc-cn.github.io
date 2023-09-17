@@ -1,6 +1,6 @@
 route: /docs/reference/text/sub/
 title: Subscript
-description: Documentation for the `sub` function.
+description: '`sub` 函数的文档'
 part: null
 outline:
 - id: summary

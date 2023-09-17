@@ -1,6 +1,6 @@
 route: /docs/reference/visualize/polygon/
 title: Polygon
-description: Documentation for the `polygon` function.
+description: '`polygon` 函数的文档'
 part: null
 outline:
 - id: summary

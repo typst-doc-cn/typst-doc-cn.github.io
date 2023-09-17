@@ -1,6 +1,6 @@
 route: /docs/reference/meta/cite/
 title: Cite
-description: Documentation for the `cite` function.
+description: '`cite` 函数的文档'
 part: null
 outline:
 - id: summary

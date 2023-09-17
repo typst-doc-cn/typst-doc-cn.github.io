@@ -1,6 +1,6 @@
 route: /docs/reference/text/strike/
 title: Strikethrough
-description: Documentation for the `strike` function.
+description: '`strike` 函数的文档'
 part: null
 outline:
 - id: summary

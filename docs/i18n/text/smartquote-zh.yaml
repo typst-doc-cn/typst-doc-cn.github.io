@@ -1,6 +1,6 @@
 route: /docs/reference/text/smartquote/
 title: Smartquote
-description: Documentation for the `smartquote` function.
+description: '`smartquote` 函数的文档'
 part: null
 outline:
 - id: summary

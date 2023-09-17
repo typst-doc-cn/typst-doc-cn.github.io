@@ -1,6 +1,6 @@
 route: /docs/reference/layout/terms/
 title: Term List
-description: Documentation for the `terms` function.
+description: '`terms` 函数的文档'
 part: null
 outline:
 - id: summary

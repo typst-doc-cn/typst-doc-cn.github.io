@@ -1,10 +1,10 @@
 # Descriptions of the documentation categories.
 
 foundations: |
-  Foundational types and functions.
+  基本类型和函数.
 
-  Here, you'll find documentation for basic data types like [integers]($int) and
-  [strings]($int) as well as details about core computational functions.
+  在这里，你可以找到基本数据类型的文档，如 [integers]($int) 和
+  [strings]($int)，以及关于核心计算函数的详细信息。
 
 text: |
   Text styling.
@@ -12,15 +12,13 @@ text: |
   The [text function]($text) is of particular interest.
 
 math: |
-  Typst has special [syntax]($syntax/#math) and library functions to typeset
-  mathematical formulas. Math formulas can be displayed inline with text or as
-  separate blocks. They will be typeset into their own block if they start and
-  end with at least one space (e.g. `[$ x^2 $]`).
+  Typst 拥有特殊的 [语法]($syntax/#math) 和库函数，用于排版数学公式。
+  数学公式可以内嵌于文本中显示，也可以作为单独的块显示。
+  如果数学公式以至少一个空格开始和结束（例如 `[$ x^2 $]`），它们将被排版于单独的块中。
 
-  In math, single letters are always displayed as is. Multiple letters, however,
-  are interpreted as variables and functions. To display multiple letters
-  verbatim, you can place them into quotes and to access single letter
-  variables, you can use the [hashtag syntax]($scripting/#expressions).
+  在数学模式中，单独的字母总是原样显示。但是多个字母会被视作变量和函数。
+  如果要原样显示多个字母，你可以将它们放入引号中；
+  如果要使用单字母变量，你可以使用 [hashtag 语法]($scripting/#expressions)。
 
   ```example
   $ A = pi r^2 $
@@ -31,19 +29,15 @@ math: |
   $ #x < 17 $
   ```
 
-  Math mode makes a wide selection of [symbols]($category/symbols/sym) like
-  `pi`, `dot`, or `RR` available. Many mathematical symbols are available in
-  different variants. You can select between different variants by applying
-  [modifiers]($symbol) to the symbol. Typst further recognizes a number of
-  shorthand sequences like `=>` that approximate a symbol. When such a shorthand
-  exists, the symbol's documentation lists it.
+  数学模式提供了大量 [符号]($category/symbols/sym)，例如 `pi`、`dot` 和 `RR`。许多数学符号有不同的变体。
+  可以通过对符号应用 [修饰符]($symbol) 来选择不同的变体。
+  Typst 还支持识别许多简化过的符号组合，例如 `=>`，它们用于表示一个单独的符号。
+  符号文档会列出这些简写的符号组合。
 
   ```example
   $ x < y => x gt.eq.not y $
   ```
-
-  Formulas can also contain line breaks. Each line can contain one or multiple
-  _alignment points_ (`&`) which are then aligned.
+  公式也可以进行换行。每一行可以包含一个或多个 _对齐点_ （`&`），公式会在对齐点处对齐。
 
   ```example
   $ sum_(k=0)^n k
@@ -51,17 +45,11 @@ math: |
       &= (n(n+1)) / 2 $
   ```
 
-  Math mode supports special function calls without the hashtag prefix. In these
-  "math calls", the argument list works a little differently than in code:
+  数学模式支持无前缀的特殊函数调用。在这些 “数学函数调用” 中，参数列表的工作方式与在代码中略有不同。
 
-  - Within them, Typst is still in "math mode". Thus, you can write math
-    directly into them, but need to use hashtag syntax to pass code expressions
-    (except for strings, which are available in the math syntax).
-  - They support positional and named arguments, but don't support trailing
-    content blocks and argument spreading.
-  - They provide additional syntax for 2-dimensional argument lists. The
-    semicolon (`;`) merges preceding arguments separated by commas into an array
-    argument.
+  - 在数学函数调用中，Typst 仍处于 “数学模式” 。因此，你可以直接在其中编写数学公式，但同时需要使用 hashtag 语法来传递代码表达式（字符串除外，它们可以在直接数学模式中使用）。
+  - 支持位置参数和命名参数，但不支持尾部内容块和参数展开。
+  - 对于二维参数列表，有特殊的额外语法。分号（`;`）会将分号前面用逗号分隔的参数合并为一个数组参数。
 
   ```example
   $ frac(a^2, 2) $
@@ -71,18 +59,12 @@ math: |
       op("lim", limits: #true)_x $
   ```
 
-  To write a verbatim comma or semicolon in a math call, escape it with a
-  backslash. The colon on the other hand is only recognized in a special way if
-  directly preceded by an identifier, so to display it verbatim in those cases,
-  you can just insert a space before it.
+  在数学函数调用中，如果要原样输入逗号或者分号，需要在前面加上反斜杠进行转义。如果标识符前面直接跟着冒号，冒号会被特殊处理，因此需要在冒号前面加上一个空格来原样显示它。
 
-  Functions calls preceded by a hashtag are normal code function calls and not
-  affected by these rules.
+  以 hashtag 开头的函数调用是普通的代码函数调用，不受这些规则的影响。
 
-  All math functions are part of the `math` [module]($scripting/#modules), which
-  is available by default in equations. Outside of equations, they can be
-  accessed with the `math.` prefix. For example, to set the font used for
-  equations, write:
+  所有的数学函数都是 `math` [模块]($scripting/#modules)的一部分，它们在公式中默认可用。
+  在公式之外，可以通过添加 `math.` 前缀来访问它们。例如要设置公式使用的字体，可以如下实现：
 
   ```example
   #show math.equation: set text(font: "Fira Math")
@@ -90,15 +72,14 @@ math: |
   ```
 
 layout: |
-  Arranging elements on the page in different ways.
+  以不同的方式排列页面上的元素。
 
-  By combining layout functions, you can create complex and automatic layouts.
+  通过使用组合布局函数，你可以创建复杂的自动布局。
 
 visualize: |
-  Drawing and data visualization.
+  绘图和数据可视化。
 
-  _Note:_ Functions for plotting and diagrams are not yet available. They will
-  be in the future.
+  _注：_ 绘图和图标函数尚不可用，未来将会添加该功能。
 
 meta: |
   Document structuring, introspection, and metadata configuration.

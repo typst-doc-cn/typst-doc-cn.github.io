@@ -1,6 +1,6 @@
 route: /docs/reference/math/cases/
 title: Cases
-description: Documentation for the `cases` function.
+description: '`cases` 函数的文档'
 part: null
 outline:
 - id: summary

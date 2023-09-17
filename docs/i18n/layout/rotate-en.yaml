@@ -1,6 +1,6 @@
 route: /docs/reference/layout/rotate/
 title: Rotate
-description: Documentation for the `rotate` function.
+description: '`rotate` 函数的文档'
 part: null
 outline:
 - id: summary

@@ -1,6 +1,6 @@
 route: /docs/reference/text/linebreak/
 title: Line Break
-description: Documentation for the `linebreak` function.
+description: '`linebreak` 函数的文档'
 part: null
 outline:
 - id: summary

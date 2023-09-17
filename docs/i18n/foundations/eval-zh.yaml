@@ -1,6 +1,6 @@
 route: /docs/reference/foundations/eval/
 title: Evaluate
-description: Documentation for the `eval` function.
+description: '`eval` 函数的文档'
 part: null
 outline:
 - id: summary

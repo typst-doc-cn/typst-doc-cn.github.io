@@ -1,6 +1,6 @@
 route: /docs/reference/meta/link/
 title: Link
-description: Documentation for the `link` function.
+description: '`link` 函数的文档'
 part: null
 outline:
 - id: summary

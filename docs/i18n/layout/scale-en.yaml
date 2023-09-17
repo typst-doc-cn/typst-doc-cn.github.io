@@ -1,6 +1,6 @@
 route: /docs/reference/layout/scale/
 title: Scale
-description: Documentation for the `scale` function.
+description: '`scale` 函数的文档'
 part: null
 outline:
 - id: summary

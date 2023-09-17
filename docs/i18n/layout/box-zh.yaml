@@ -1,6 +1,6 @@
 route: /docs/reference/layout/box/
 title: Box
-description: Documentation for the `box` function.
+description: '`box` 函数的文档'
 part: null
 outline:
 - id: summary

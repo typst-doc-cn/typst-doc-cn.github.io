@@ -1,6 +1,6 @@
 route: /docs/reference/text/highlight/
 title: Highlight
-description: Documentation for the `highlight` function.
+description: '`highlight` 函数的文档'
 part: null
 outline:
 - id: summary

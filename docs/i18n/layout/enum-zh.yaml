@@ -1,6 +1,6 @@
 route: /docs/reference/layout/enum/
 title: Numbered List
-description: Documentation for the `enum` function.
+description: '`enum` 函数的文档'
 part: null
 outline:
 - id: summary

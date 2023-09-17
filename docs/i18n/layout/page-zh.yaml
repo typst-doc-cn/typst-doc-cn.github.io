@@ -1,6 +1,6 @@
 route: /docs/reference/layout/page/
 title: Page
-description: Documentation for the `page` function.
+description: '`page` 函数的文档'
 part: null
 outline:
 - id: summary

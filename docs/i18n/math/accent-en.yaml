@@ -1,6 +1,6 @@
 route: /docs/reference/math/accent/
 title: Accent
-description: Documentation for the `accent` function.
+description: '`accent` 函数的文档'
 part: null
 outline:
 - id: summary

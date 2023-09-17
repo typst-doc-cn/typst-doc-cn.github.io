@@ -1,6 +1,6 @@
 route: /docs/reference/meta/locate/
 title: Locate
-description: Documentation for the `locate` function.
+description: '`locate` 函数的文档'
 part: null
 outline:
 - id: summary

@@ -1,6 +1,6 @@
 route: /docs/reference/layout/columns/
 title: Columns
-description: Documentation for the `columns` function.
+description: '`columns` 函数的文档'
 part: null
 outline:
 - id: summary

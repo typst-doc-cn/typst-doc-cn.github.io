@@ -1,6 +1,6 @@
 route: /docs/reference/visualize/square/
 title: Square
-description: Documentation for the `square` function.
+description: '`square` 函数的文档'
 part: null
 outline:
 - id: summary

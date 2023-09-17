@@ -1,6 +1,6 @@
 route: /docs/reference/visualize/path/
 title: Path
-description: Documentation for the `path` function.
+description: '`path` 函数的文档'
 part: null
 outline:
 - id: summary

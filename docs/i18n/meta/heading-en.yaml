@@ -1,6 +1,6 @@
 route: /docs/reference/meta/heading/
 title: Heading
-description: Documentation for the `heading` function.
+description: '`heading` 函数的文档'
 part: null
 outline:
 - id: summary

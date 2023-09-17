@@ -1,6 +1,6 @@
 route: /docs/reference/meta/figure/
 title: Figure
-description: Documentation for the `figure` function.
+description: '`figure` 函数的文档'
 part: null
 outline:
 - id: summary

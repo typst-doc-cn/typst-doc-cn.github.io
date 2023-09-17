@@ -1,6 +1,6 @@
 route: /docs/reference/text/lorem/
 title: Lorem
-description: Documentation for the `lorem` function.
+description: '`lorem` 函数的文档'
 part: null
 outline:
 - id: summary

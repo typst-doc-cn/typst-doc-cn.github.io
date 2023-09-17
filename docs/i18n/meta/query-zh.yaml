@@ -1,6 +1,6 @@
 route: /docs/reference/meta/query/
 title: Query
-description: Documentation for the `query` function.
+description: '`query` 函数的文档'
 part: null
 outline:
 - id: summary

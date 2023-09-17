@@ -1,6 +1,6 @@
 route: /docs/reference/layout/block/
 title: Block
-description: Documentation for the `block` function.
+description: '`block` 函数的文档'
 part: null
 outline:
 - id: summary

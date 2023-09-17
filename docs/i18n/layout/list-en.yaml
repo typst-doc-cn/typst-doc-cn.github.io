@@ -1,6 +1,6 @@
 route: /docs/reference/layout/list/
 title: Bullet List
-description: Documentation for the `list` function.
+description: '`list` 函数的文档'
 part: null
 outline:
 - id: summary

@@ -1,6 +1,6 @@
 route: /docs/reference/layout/pagebreak/
 title: Page Break
-description: Documentation for the `pagebreak` function.
+description: '`pagebreak` 函数的文档'
 part: null
 outline:
 - id: summary

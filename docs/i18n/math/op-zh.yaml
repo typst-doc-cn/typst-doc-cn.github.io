@@ -1,6 +1,6 @@
 route: /docs/reference/math/op/
 title: Text Operator
-description: Documentation for the `op` function.
+description: '`op` 函数的文档'
 part: null
 outline:
 - id: summary

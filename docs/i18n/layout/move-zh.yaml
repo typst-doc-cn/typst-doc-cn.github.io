@@ -1,6 +1,6 @@
 route: /docs/reference/layout/move/
 title: Move
-description: Documentation for the `move` function.
+description: '`move` 函数的文档'
 part: null
 outline:
 - id: summary

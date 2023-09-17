@@ -1,6 +1,6 @@
 route: /docs/reference/math/attach
 title: Attach
-description: Documentation for the attach functions.
+description: attach 函数族的文档.
 part: null
 outline:
 - id: summary

@@ -1,6 +1,6 @@
 route: /docs/reference/layout/align/
 title: Align
-description: Documentation for the `align` function.
+description: '`align` 函数的文档'
 part: null
 outline:
 - id: summary

@@ -1,6 +1,6 @@
 route: /docs/reference/meta/metadata/
 title: Metadata
-description: Documentation for the `metadata` function.
+description: '`metadata` 函数的文档'
 part: null
 outline:
 - id: summary

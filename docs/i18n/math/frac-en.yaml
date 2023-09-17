@@ -1,6 +1,6 @@
 route: /docs/reference/math/frac/
 title: Fraction
-description: Documentation for the `frac` function.
+description: '`frac` 函数的文档'
 part: null
 outline:
 - id: summary

@@ -1,6 +1,6 @@
 route: /docs/reference/layout/hide/
 title: Hide
-description: Documentation for the `hide` function.
+description: '`hide` 函数的文档'
 part: null
 outline:
 - id: summary

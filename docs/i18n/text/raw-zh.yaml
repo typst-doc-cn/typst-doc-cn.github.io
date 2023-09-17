@@ -1,6 +1,6 @@
 route: /docs/reference/text/raw/
 title: Raw Text / Code
-description: Documentation for the `raw` function.
+description: '`raw` 函数的文档'
 part: null
 outline:
 - id: summary

@@ -1,6 +1,6 @@
 route: /docs/reference/visualize/circle/
 title: Circle
-description: Documentation for the `circle` function.
+description: '`circle` 函数的文档'
 part: null
 outline:
 - id: summary

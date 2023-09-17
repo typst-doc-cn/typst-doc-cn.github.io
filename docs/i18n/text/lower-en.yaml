@@ -1,6 +1,6 @@
 route: /docs/reference/text/lower/
 title: Lowercase
-description: Documentation for the `lower` function.
+description: '`lower` 函数的文档'
 part: null
 outline:
 - id: summary

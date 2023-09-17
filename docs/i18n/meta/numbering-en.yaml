@@ -1,6 +1,6 @@
 route: /docs/reference/meta/numbering/
 title: Numbering
-description: Documentation for the `numbering` function.
+description: '`numbering` 函数的文档'
 part: null
 outline:
 - id: summary

@@ -1,6 +1,6 @@
 route: /docs/reference/layout/place/
 title: Place
-description: Documentation for the `place` function.
+description: '`place` 函数的文档'
 part: null
 outline:
 - id: summary

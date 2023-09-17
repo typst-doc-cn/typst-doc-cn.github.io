@@ -1,6 +1,6 @@
 route: /docs/reference/text/upper/
 title: Uppercase
-description: Documentation for the `upper` function.
+description: '`upper` 函数的文档'
 part: null
 outline:
 - id: summary

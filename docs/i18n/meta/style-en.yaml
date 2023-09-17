@@ -1,6 +1,6 @@
 route: /docs/reference/meta/style/
 title: Style
-description: Documentation for the `style` function.
+description: '`style` 函数的文档'
 part: null
 outline:
 - id: summary

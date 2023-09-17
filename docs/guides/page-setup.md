@@ -1,10 +1,10 @@
 ---
 description: |
-  An in-depth guide to setting page dimensions, margins, and page numbers in
-  Typst. Learn how to create appealing and clear layouts and get there quickly.
+  在 Typst 中设置页面尺寸、边距和页码的深入指南。
+  了解如何创建吸引人且清晰的布局并快速实现目标。
 ---
 
-# Page setup guide
+# 页面设置指南
 Your page setup is a big part of the first impression your document gives. Line
 lengths, margins, and columns influence
 [appearance](https://practicaltypography.com/page-margins.html) and

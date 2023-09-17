@@ -1,6 +1,6 @@
 route: /docs/reference/math/binom/
 title: Binomial
-description: Documentation for the `binom` function.
+description: '`binom` 函数的文档'
 part: null
 outline:
 - id: summary

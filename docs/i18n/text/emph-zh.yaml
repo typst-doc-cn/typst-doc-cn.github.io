@@ -1,6 +1,6 @@
 route: /docs/reference/text/emph/
 title: Emphasis
-description: Documentation for the `emph` function.
+description: '`emph` 函数的文档'
 part: null
 outline:
 - id: summary

@@ -1,6 +1,6 @@
 route: /docs/reference/text/overline/
 title: Overline
-description: Documentation for the `overline` function.
+description: '`overline` 函数的文档'
 part: null
 outline:
 - id: summary

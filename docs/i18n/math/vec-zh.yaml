@@ -1,6 +1,6 @@
 route: /docs/reference/math/vec/
 title: Vector
-description: Documentation for the `vec` function.
+description: '`vec` 函数的文档'
 part: null
 outline:
 - id: summary

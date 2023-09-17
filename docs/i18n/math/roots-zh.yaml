@@ -1,6 +1,6 @@
 route: /docs/reference/math/roots
 title: Roots
-description: Documentation for the roots functions.
+description: roots 函数族的文档.
 part: null
 outline:
 - id: summary

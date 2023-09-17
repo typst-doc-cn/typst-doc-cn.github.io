@@ -1,6 +1,6 @@
 route: /docs/reference/layout/stack/
 title: Stack
-description: Documentation for the `stack` function.
+description: '`stack` 函数的文档'
 part: null
 outline:
 - id: summary

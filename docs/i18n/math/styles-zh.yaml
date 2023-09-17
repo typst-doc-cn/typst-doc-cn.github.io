@@ -1,6 +1,6 @@
 route: /docs/reference/math/styles
 title: Styles
-description: Documentation for the styles functions.
+description: styles 函数族的文档.
 part: null
 outline:
 - id: summary

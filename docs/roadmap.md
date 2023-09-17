@@ -2,7 +2,7 @@
 description: What we have planned for Typst.
 ---
 
-# Roadmap
+# 路线图
 This page lists planned features for the Typst language, compiler, library and
 web app. Since priorities and development realities change, this roadmap is not
 set in stone. Features that are listed here will not necessarily be implemented

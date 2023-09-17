@@ -1,6 +1,6 @@
 route: /docs/reference/math/mat/
 title: Matrix
-description: Documentation for the `mat` function.
+description: '`mat` 函数的文档'
 part: null
 outline:
 - id: summary

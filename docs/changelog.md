@@ -4,7 +4,7 @@ description: |
   forward.
 ---
 
-# Changelog
+# 更新日志
 ## Version 0.8.0 (September 13, 2023) { #v0.8.0 }
 - Scripting
   - Plugins (thanks to [@astrale-sharp](https://github.com/astrale-sharp) and

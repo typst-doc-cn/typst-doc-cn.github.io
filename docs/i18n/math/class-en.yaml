@@ -1,6 +1,6 @@
 route: /docs/reference/math/class/
 title: Class
-description: Documentation for the `class` function.
+description: '`class` 函数的文档'
 part: null
 outline:
 - id: summary

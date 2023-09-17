@@ -1,6 +1,6 @@
 route: /docs/reference/layout/par/
 title: Paragraph
-description: Documentation for the `par` function.
+description: '`par` 函数的文档'
 part: null
 outline:
 - id: summary

@@ -1,6 +1,6 @@
 route: /docs/reference/foundations/repr/
 title: Representation
-description: Documentation for the `repr` function.
+description: '`repr` 函数的文档'
 part: null
 outline:
 - id: summary

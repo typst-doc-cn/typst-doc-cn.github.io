@@ -59,12 +59,14 @@ pub fn provide(resolver: &dyn Resolver) -> Vec<PageModel> {
     vec![
         markdown_page(resolver, "/docs/", "overview.md").with_route("/docs/"),
         tutorial_pages(resolver),
+        markdown_page(resolver, "/docs/", "chinese.md"),
         reference_pages(resolver),
         guide_pages(resolver),
         packages_page(resolver),
         markdown_page(resolver, "/docs/", "changelog.md"),
         markdown_page(resolver, "/docs/", "roadmap.md"),
         markdown_page(resolver, "/docs/", "community.md"),
+        markdown_page(resolver, "/docs/", "glossary.md"),
     ]
 }
 
@@ -152,8 +154,8 @@ fn guide_pages(resolver: &dyn Resolver) -> PageModel {
 fn packages_page(resolver: &dyn Resolver) -> PageModel {
     PageModel {
         route: "/docs/packages/".into(),
-        title: "Packages".into(),
-        description: "Packages for Typst.".into(),
+        title: "第三方包".into(),
+        description: "Typst 的第三方包".into(),
         part: None,
         outline: vec![],
         body: BodyModel::Packages(Html::markdown(
@@ -272,18 +274,32 @@ fn category_page(resolver: &dyn Resolver, category: &str) -> PageModel {
         shorthands = Some(ShorthandsModel { markup, math });
     }
 
-    let name: EcoString = category.to_title_case().into();
+    // let name: EcoString = category.to_title_case().into();
+    let title_name = category.to_title_case();
+    let name = match category {
+        "text" => "文本",
+        "math" => "数学",
+        "layout" => "布局",
+        "visualize" => "可视化",
+        "meta" => "元信息",
+        "symbols" => "符号",
+        "foundations" => "基础",
+        "calculate" => "计算",
+        "construct" => "构造",
+        "data-loading" => "数据加载",
+        _ => &title_name,
+    };
 
     PageModel {
         route,
-        title: name.clone(),
+        title: name.into(),
         description: eco_format!(
-            "Documentation for functions related to {name} in Typst."
+            "Typst 中与 {name} 有关联的函数族的文档"
         ),
         part: None,
         outline: category_outline(),
         body: BodyModel::Category(CategoryModel {
-            name,
+            name: name.into(),
             details: Html::markdown(resolver, category_details(category), Some(1)),
             items,
             shorthands,
@@ -309,7 +325,7 @@ fn func_page(
     PageModel {
         route: eco_format!("{parent}{}/", urlify(name)),
         title: func.title().unwrap().into(),
-        description: eco_format!("Documentation for the `{name}` function."),
+        description: eco_format!("`{name}` 函数的文档"),
         part: None,
         outline: func_outline(&model, ""),
         body: BodyModel::Func(model),
@@ -490,7 +506,7 @@ fn scope_outline(scope: &[FuncModel]) -> Option<OutlineItem> {
             .map(|func| {
                 let id = urlify(&eco_format!("definitions-{}", func.name));
                 let children = func_outline(func, &id);
-                OutlineItem { id, name: func.title.into(), children }
+                OutlineItem { id: id.into(), name: func.title.into(), children }
             })
             .collect(),
     })
@@ -518,7 +534,7 @@ fn group_page(
         let id_base = urlify(&eco_format!("functions-{}", func.name));
         let children = func_outline(&func, &id_base);
         outline_items.push(OutlineItem {
-            id: id_base,
+            id: id_base.into(),
             name: func.title.into(),
             children,
         });
@@ -534,7 +550,7 @@ fn group_page(
     let model = PageModel {
         route: eco_format!("{parent}{}", group.name),
         title: group.display.clone(),
-        description: eco_format!("Documentation for the {} functions.", group.name),
+        description: eco_format!("{} 函数族的文档.", group.name),
         part: None,
         outline,
         body: BodyModel::Group(GroupModel {
@@ -562,7 +578,7 @@ fn type_page(resolver: &dyn Resolver, parent: &str, ty: &Type) -> PageModel {
     PageModel {
         route: eco_format!("{parent}{}/", urlify(ty.short_name())),
         title: ty.title().into(),
-        description: eco_format!("Documentation for the {} type.", ty.title()),
+        description: eco_format!("{} 类型的文档", ty.title()),
         part: None,
         outline: type_outline(&model),
         body: BodyModel::Type(model),
@@ -616,7 +632,7 @@ fn symbols_page(resolver: &dyn Resolver, parent: &str, name: &str) -> PageModel 
     PageModel {
         route: eco_format!("{parent}{name}/"),
         title: title.into(),
-        description: eco_format!("Documentation for the `{name}` module."),
+        description: eco_format!("`{name}` 模块的文档"),
         part: None,
         outline: vec![],
         body: BodyModel::Symbols(model),
@@ -697,15 +713,34 @@ fn category_details(key: &str) -> &str {
 }
 
 /// Turn a title into an URL fragment.
-pub fn urlify(title: &str) -> EcoString {
-    title
-        .chars()
-        .map(|c| c.to_ascii_lowercase())
-        .map(|c| match c {
-            'a'..='z' | '0'..='9' => c,
-            _ => '-',
-        })
-        .collect()
+pub fn urlify(title: &str) -> String {
+  match title {
+      "教程" => "tutorial".to_owned(),
+      "使用 Typst 写作" => "writing-in-typst".to_owned(),
+      "格式" => "formatting".to_owned(),
+      "高级样式" => "advanced-styling".to_owned(),
+      "制作模板" => "making-a-template".to_owned(),
+      "中文用户指南" => "chinese".to_owned(),
+      "参考" => "reference".to_owned(),
+      "语法" => "syntax".to_owned(),
+      "样式" => "styling".to_owned(),
+      "脚本" => "scripting".to_owned(),
+      "指南" => "guides".to_owned(),
+      "LaTeX 用户指南" => "guide-for-latex-users".to_owned(),
+      "页面设置指南" => "page-setup".to_owned(),
+      "更新日志" => "changelog".to_owned(),
+      "路线图" => "roadmap".to_owned(),
+      "社区" => "community".to_owned(),
+      "术语表" => "glossary".to_owned(),
+      _ => title
+          .chars()
+          .map(|c| c.to_ascii_lowercase())
+          .map(|c| match c {
+              'a'..='z' | '0'..='9' => c,
+              _ => '-',
+          })
+          .collect(),
+  }
 }
 
 /// Extract the first line of documentation.

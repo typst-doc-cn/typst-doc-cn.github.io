@@ -1,6 +1,6 @@
 route: /docs/reference/visualize/line/
 title: Line
-description: Documentation for the `line` function.
+description: '`line` 函数的文档'
 part: null
 outline:
 - id: summary

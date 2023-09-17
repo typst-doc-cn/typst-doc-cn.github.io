@@ -1,6 +1,6 @@
 route: /docs/reference/layout/measure/
 title: Measure
-description: Documentation for the `measure` function.
+description: '`measure` 函数的文档'
 part: null
 outline:
 - id: summary

@@ -1,6 +1,6 @@
 route: /docs/reference/math/sizes
 title: Sizes
-description: Documentation for the sizes functions.
+description: sizes 函数族的文档.
 part: null
 outline:
 - id: summary
