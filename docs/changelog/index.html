@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,19 +11,19 @@ forward.
 ">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#239dad">
-  <meta property="og:url" content="https://typst.app/docs/changelog/">
+  <meta property="og:url" content="https://typst-doc-cn.github.io/docs/changelog/">
   <meta property="og:title" content="更新日志 – Typst 中文文档">
   <meta property="og:site_name" content="Typst">
   <meta property="og:description" content="Learn what has changed in the latest Typst releases and move your documents
 forward.
 ">
   <meta property="og:type">
-  <meta property="og:image" content="https://typst.app/assets/social.png">
+  <meta property="og:image" content="https://typst-doc-cn.github.io/assets/social.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:site" content="@typstapp">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://typst.app/docs/changelog/">
+  <link rel="canonical" href="https://typst-doc-cn.github.io/docs/changelog/">
   <meta name="twitter:image:alt"
     content="The left side of a text editor with colorful cursors, as well as the text &#x27;Compose papers faster, Typst&#x27;">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.ico">
@@ -29,47 +31,16 @@ forward.
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
   <link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#239dad">
   <link rel="manifest" href="/assets/site.webmanifest">
-  <link rel="stylesheet" href="/styles/default.css">
-  <link rel="stylesheet" href="/styles/docs.css">
+  <link rel="stylesheet" href="/styles/default.css?bust=20230913?d=2023-09-16">
+  <link rel="stylesheet" href="/styles/docs.css?bust=20230915?d=2023-09-16">
   <link rel="stylesheet" href="/styles/docs-cn.css">
   <link rel="preload" href="/assets/fonts/HKGrotesk-Regular.woff2" as="font">
   <link rel="preload" href="/assets/fonts/HKGrotesk-Bold.woff2" as="font">
   <link rel="preload" href="/assets/fonts/HKGrotesk-SemiBold.woff2" as="font">
   <link rel="preload" href="/assets/fonts/CascadiaMono-Regular-Sub.woff2" as="font">
   <link rel="preload" href="/assets/images/blur.webp" as="image">
-  <script>document.documentElement.className = document.documentElement.className.replace(
-      "no-js",
-      "js",
-    )
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const INSECURE_SIGNED_IN_COOKIE = document.cookie
-        .split("; ")
-        .find((row) => row.startsWith("INSECURE_SIGNED_IN="))
-        ?.split("=")[1]
-        .toLowerCase()
-
-      if (
-        INSECURE_SIGNED_IN_COOKIE === "1" ||
-        INSECURE_SIGNED_IN_COOKIE === "true" ||
-        INSECURE_SIGNED_IN_COOKIE === "yes"
-      ) {
-        document.documentElement.classList.add("signed-in")
-        const navButton = document.querySelector("header nav a.nav-btn")
-        const signInEl = document.querySelector("header nav a.sign-in")
-
-        if (navButton) {
-          navButton.innerHTML = "Go to app"
-          navButton.setAttribute("href", "/app/")
-        }
-
-        if (signInEl) {
-          signInEl.innerHTML = "Sign out"
-          signInEl.setAttribute("href", "https://api.typst.app/v1/auth/logout")
-        }
-      }
-    })
-  </script>
+  
+  <script>document.documentElement.className = document.documentElement.className.replace("no-js", "js"), document.addEventListener("DOMContentLoaded", (() => { const e = document.cookie.split("; ").find((e => e.startsWith("INSECURE_SIGNED_IN=")))?.split("=")[1].toLowerCase(); if ("1" === e || "true" === e || "yes" === e) { document.documentElement.classList.add("signed-in"); const e = document.querySelector("header nav a.nav-btn"), t = document.querySelector("header nav a.sign-in"); e && (e.innerHTML = "Go to app", e.setAttribute("href", "/app/")), t && (t.innerHTML = "Sign out", t.setAttribute("href", "https://api.typst.app/v1/auth/logout")) } }))</script>
 </head>
 
 <body class="no-js docs has-outline">
@@ -185,6 +156,7 @@ forward.
           <ul>
             
             
+            
             <li class="category">Language</li>
             
             <li>
@@ -205,8 +177,10 @@ forward.
             </li>
             
             
+            
+            
             <li>
-              <a href="/docs/reference/types/" >类型</a>
+              <a href="/docs/reference/types/" >类型（旧）</a>
               
               <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
               <ul>
@@ -277,9 +251,83 @@ forward.
               </ul>
               
             </li>
+
             
+            <li class="category">Library</li>
             
-            <li class="category">Content</li>
+            <li>
+              <a href="/docs/reference/foundations/" >基础</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/foundations/arguments/" >Arguments</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/array/" >Array</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/assert/" >Assert</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/bool/" >Boolean</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/bytes/" >Bytes</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/calc" >Calculation</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/content/" >Content</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/datetime/" >Datetime</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/dictionary/" >Dictionary</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/duration/" >Duration</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/eval/" >Evaluate</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/float/" >Float</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/function/" >Function</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/int/" >Integer</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/module/" >Module</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/panic/" >Panic</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/plugin/" >Plugin</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/regex/" >Regex</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/repr/" >Representation</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/str/" >String</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/type/" >Type</a></li>
+                
+              </ul>
+              
+            </li>
+            
             
             <li>
               <a href="/docs/reference/text/" >文本</a>
@@ -288,13 +336,16 @@ forward.
               <ul>
                 
                 
-                <li><a href="/docs/reference/text/lorem/" >假文</a></li>
-                
-                
                 <li><a href="/docs/reference/text/emph/" >强调（斜体）</a></li>
                 
                 
+                <li><a href="/docs/reference/text/highlight/" >文本高亮</a></li>
+                
+                
                 <li><a href="/docs/reference/text/linebreak/" >换行</a></li>
+                
+                
+                <li><a href="/docs/reference/text/lorem/" >假文</a></li>
                 
                 
                 <li><a href="/docs/reference/text/lower/" >转小写</a></li>
@@ -347,7 +398,7 @@ forward.
                 <li><a href="/docs/reference/math/accent/" >重音符号</a></li>
                 
                 
-                <li><a href="/docs/reference/math/attach/" >附缀</a></li>
+                <li><a href="/docs/reference/math/attach" >附缀</a></li>
                 
                 
                 <li><a href="/docs/reference/math/binom/" >二项式</a></li>
@@ -356,7 +407,10 @@ forward.
                 <li><a href="/docs/reference/math/cancel/" >删除线</a></li>
                 
                 
-                <li><a href="/docs/reference/math/cases/" >大括号</a></li>
+                <li><a href="/docs/reference/math/cases/" >左大括号</a></li>
+                
+                
+                <li><a href="/docs/reference/math/class/" >类</a></li>
                 
                 
                 <li><a href="/docs/reference/math/equation/" >数学表达式</a></li>
@@ -365,28 +419,28 @@ forward.
                 <li><a href="/docs/reference/math/frac/" >分数</a></li>
                 
                 
-                <li><a href="/docs/reference/math/lr/" >Left/Right</a></li>
+                <li><a href="/docs/reference/math/lr" >Left/Right</a></li>
                 
                 
                 <li><a href="/docs/reference/math/mat/" >矩阵</a></li>
                 
                 
-                <li><a href="/docs/reference/math/roots/" >根式</a></li>
+                <li><a href="/docs/reference/math/roots" >根式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/sizes/" >显示尺寸</a></li>
+                <li><a href="/docs/reference/math/sizes" >显示尺寸</a></li>
                 
                 
-                <li><a href="/docs/reference/math/styles/" >显示样式</a></li>
+                <li><a href="/docs/reference/math/styles" >显示样式</a></li>
                 
                 
                 <li><a href="/docs/reference/math/op/" >文本运算符</a></li>
                 
                 
-                <li><a href="/docs/reference/math/underover/" >上/下 方内容</a></li>
+                <li><a href="/docs/reference/math/underover" >上/下方内容</a></li>
                 
                 
-                <li><a href="/docs/reference/math/variants/" >字体变体</a></li>
+                <li><a href="/docs/reference/math/variants" >字体变体</a></li>
                 
                 
                 <li><a href="/docs/reference/math/vec/" >向量</a></li>
@@ -403,7 +457,13 @@ forward.
               <ul>
                 
                 
-                <li><a href="/docs/reference/layout/align/" >Align</a></li>
+                <li><a href="/docs/reference/layout/align/" >对齐</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/alignment/" >Alignment</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/angle/" >Angle</a></li>
                 
                 
                 <li><a href="/docs/reference/layout/block/" >Block</a></li>
@@ -421,10 +481,19 @@ forward.
                 <li><a href="/docs/reference/layout/columns/" >Columns</a></li>
                 
                 
+                <li><a href="/docs/reference/layout/direction/" >Direction</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/fraction/" >Fraction</a></li>
+                
+                
                 <li><a href="/docs/reference/layout/grid/" >Grid</a></li>
                 
                 
                 <li><a href="/docs/reference/layout/hide/" >Hide</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/length/" >Length</a></li>
                 
                 
                 <li><a href="/docs/reference/layout/measure/" >Measure</a></li>
@@ -452,6 +521,12 @@ forward.
                 
                 
                 <li><a href="/docs/reference/layout/place/" >Place</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/ratio/" >Ratio</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/relative/" >Relative Length</a></li>
                 
                 
                 <li><a href="/docs/reference/layout/repeat/" >Repeat</a></li>
@@ -492,6 +567,9 @@ forward.
                 <li><a href="/docs/reference/visualize/circle/" >Circle</a></li>
                 
                 
+                <li><a href="/docs/reference/visualize/color/" >Color</a></li>
+                
+                
                 <li><a href="/docs/reference/visualize/ellipse/" >Ellipse</a></li>
                 
                 
@@ -512,6 +590,9 @@ forward.
                 
                 <li><a href="/docs/reference/visualize/square/" >Square</a></li>
                 
+                
+                <li><a href="/docs/reference/visualize/stroke/" >Stroke</a></li>
+                
               </ul>
               
             </li>
@@ -527,7 +608,7 @@ forward.
                 <li><a href="/docs/reference/meta/bibliography/" >Bibliography</a></li>
                 
                 
-                <li><a href="/docs/reference/meta/cite/" >Citation</a></li>
+                <li><a href="/docs/reference/meta/cite/" >Cite</a></li>
                 
                 
                 <li><a href="/docs/reference/meta/counter/" >Counter</a></li>
@@ -545,6 +626,9 @@ forward.
                 <li><a href="/docs/reference/meta/heading/" >Heading</a></li>
                 
                 
+                <li><a href="/docs/reference/meta/label/" >Label</a></li>
+                
+                
                 <li><a href="/docs/reference/meta/layout/" >Layout</a></li>
                 
                 
@@ -552,6 +636,12 @@ forward.
                 
                 
                 <li><a href="/docs/reference/meta/locate/" >Locate</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/location/" >Location</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/metadata/" >Metadata</a></li>
                 
                 
                 <li><a href="/docs/reference/meta/numbering/" >Numbering</a></li>
@@ -586,192 +676,13 @@ forward.
               <ul>
                 
                 
+                <li><a href="/docs/reference/symbols/symbol/" >Symbol</a></li>
+                
+                
                 <li><a href="/docs/reference/symbols/sym/" >General</a></li>
                 
                 
                 <li><a href="/docs/reference/symbols/emoji/" >Emoji</a></li>
-                
-              </ul>
-              
-            </li>
-            
-            
-            <li class="category">Compute</li>
-            
-            <li>
-              <a href="/docs/reference/foundations/" >基础</a>
-              
-              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
-              <ul>
-                
-                
-                <li><a href="/docs/reference/foundations/assert/" >Assert</a></li>
-                
-                
-                <li><a href="/docs/reference/foundations/eval/" >Evaluate</a></li>
-                
-                
-                <li><a href="/docs/reference/foundations/panic/" >Panic</a></li>
-                
-                
-                <li><a href="/docs/reference/foundations/repr/" >Representation</a></li>
-                
-                
-                <li><a href="/docs/reference/foundations/type/" >Type</a></li>
-                
-              </ul>
-              
-            </li>
-            
-            
-            <li>
-              <a href="/docs/reference/calculate/" >计算</a>
-              
-              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
-              <ul>
-                
-                
-                <li><a href="/docs/reference/calculate/abs/" >Absolute</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/acos/" >Arccosine</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/asin/" >Arcsine</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/atan/" >Arctangent</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/binom/" >Binomial</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/clamp/" >Clamp</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/cos/" >Cosine</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/even/" >Even</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/exp/" >Exponential</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/fact/" >Factorial</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/atan2/" >Four-quadrant Arctangent</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/fract/" >Fractional</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/gcd/" >Greatest Common Divisor</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/cosh/" >Hyperbolic cosine</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/sinh/" >Hyperbolic sine</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/tanh/" >Hyperbolic tangent</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/lcm/" >Least Common Multiple</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/log/" >Logarithm</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/max/" >Maximum</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/min/" >Minimum</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/ln/" >Natural Logarithm</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/odd/" >Odd</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/perm/" >Permutation</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/pow/" >Power</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/quo/" >Quotient</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/rem/" >Remainder</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/round/" >Round</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/floor/" >Round down</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/ceil/" >Round up</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/sin/" >Sine</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/sqrt/" >Square Root</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/tan/" >Tangent</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/trunc/" >Truncate</a></li>
-                
-              </ul>
-              
-            </li>
-            
-            
-            <li>
-              <a href="/docs/reference/construct/" >构造</a>
-              
-              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
-              <ul>
-                
-                
-                <li><a href="/docs/reference/construct/cmyk/" >CMYK</a></li>
-                
-                
-                <li><a href="/docs/reference/construct/datetime/" >Datetime</a></li>
-                
-                
-                <li><a href="/docs/reference/construct/float/" >Float</a></li>
-                
-                
-                <li><a href="/docs/reference/construct/int/" >Integer</a></li>
-                
-                
-                <li><a href="/docs/reference/construct/label/" >Label</a></li>
-                
-                
-                <li><a href="/docs/reference/construct/luma/" >Luma</a></li>
-                
-                
-                <li><a href="/docs/reference/construct/rgb/" >RGB</a></li>
-                
-                
-                <li><a href="/docs/reference/construct/range/" >Range</a></li>
-                
-                
-                <li><a href="/docs/reference/construct/regex/" >Regex</a></li>
-                
-                
-                <li><a href="/docs/reference/construct/str/" >String</a></li>
-                
-                
-                <li><a href="/docs/reference/construct/symbol/" >Symbol</a></li>
                 
               </ul>
               
@@ -783,6 +694,9 @@ forward.
               
               <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
               <ul>
+                
+                
+                <li><a href="/docs/reference/data-loading/cbor/" >CBOR</a></li>
                 
                 
                 <li><a href="/docs/reference/data-loading/csv/" >CSV</a></li>
@@ -823,6 +737,12 @@ forward.
               
             </li>
             
+            
+            <li>
+              <a href="/docs/guides/page-setup/" >页面设置指南</a>
+              
+            </li>
+            
           </ul>
           
         </li>
@@ -836,6 +756,12 @@ forward.
         
         <li>
           <a href="/docs/changelog/"  aria-current="page" >更新日志</a>
+          
+        </li>
+        
+        
+        <li>
+          <a href="/docs/roadmap/" >路线图</a>
           
         </li>
         
@@ -868,6 +794,331 @@ forward.
       
 
 <h1>更新日志</h1>
+<h2 id="v0.8.0">Version 0.8.0 (September 13, 2023)</h2>
+<ul>
+<li>
+<p>Scripting</p>
+<ul>
+<li>Plugins (thanks to <a href="https://github.com/astrale-sharp">@astrale-sharp</a> and
+<a href="https://github.com/arnaudgolfouse">@arnaudgolfouse</a>)
+<ul>
+<li>Typst can now load <a href="/docs/reference/foundations/plugin/">plugins</a> that are compiled to WebAssembly</li>
+<li>Anything that can be compiled to WebAssembly can thus be loaded as a
+plugin</li>
+<li>These plugins are fully encapsulated (no access to file system or network)</li>
+<li>Plugins can be shipped as part of <a href="/docs/reference/scripting/#packages">packages</a></li>
+<li>Plugins work just the same in the web app</li>
+</ul>
+</li>
+<li>Types are now first-class values (<strong>Breaking change</strong>)
+<ul>
+<li>A <a href="/docs/reference/foundations/type/">type</a> is now itself a value</li>
+<li>Some types can be called like functions (those that have a constructor),
+e.g. <a href="/docs/reference/foundations/int/"><code>int</code></a> and <a href="/docs/reference/foundations/str/"><code>str</code></a></li>
+<li>Type checks are now of the form <code><span class="typ-func">type</span><span class="typ-punct">(</span><span class="typ-num">10</span><span class="typ-punct">)</span> <span class="typ-op">==</span> int</code> instead of the old
+<code><span class="typ-func">type</span><span class="typ-punct">(</span><span class="typ-num">10</span><span class="typ-punct">)</span> <span class="typ-op">==</span> <span class="typ-str">&quot;integer&quot;</span></code>. <a href="/docs/reference/foundations/type//#compatibility">Compatibility</a> with the
+old way will remain for a while to give package authors time to upgrade,
+but it will be removed at some point.</li>
+<li>Methods are now syntax sugar for calling a function scoped to a type,
+meaning that <code><span class="typ-str">&quot;hello&quot;</span><span class="typ-punct">.</span><span class="typ-func">len</span><span class="typ-punct">(</span><span class="typ-punct">)</span></code> is equivalent to <code>str<span class="typ-punct">.</span><span class="typ-func">len</span><span class="typ-punct">(</span><span class="typ-str">&quot;hello&quot;</span><span class="typ-punct">)</span></code></li>
+</ul>
+</li>
+<li>Added support for <a href="/docs/reference/scripting/#modules"><code>import</code></a> renaming with <code>as</code></li>
+<li>Added a <a href="/docs/reference/foundations/duration/"><code>duration</code></a> type</li>
+<li>Added support for <a href="/docs/reference/data-loading/cbor/">CBOR</a> encoding and decoding</li>
+<li>Added encoding and decoding functions from and to bytes for data formats:
+<a href="/docs/reference/data-loading/json/#definitions-decode"><code>json.decode</code></a>, <a href="/docs/reference/data-loading/json/#definitions-encode"><code>json.encode</code></a>, and similar
+functions for other formats</li>
+<li>Added <a href="/docs/reference/foundations/array/#definitions-intersperse"><code>array.intersperse</code></a> function</li>
+<li>Added <a href="/docs/reference/foundations/str/#definitions-rev"><code>str.rev</code></a> function</li>
+<li>Added <code>calc.tau</code> constant</li>
+<li>Made <a href="/docs/reference/foundations/bytes/">bytes</a> joinable and addable</li>
+<li>Made <a href="/docs/reference/foundations/array/#definitions-zip"><code>array.zip</code></a> function variadic</li>
+<li>Fixed bug with <a href="/docs/reference/foundations/eval/"><code>eval</code></a> when the <code>mode</code> was set to <code><span class="typ-str">&quot;math&quot;</span></code></li>
+<li>Fixed bug with <a href="/docs/reference/foundations/str/#definitions-ends-with"><code>ends-with</code></a> function on strings</li>
+<li>Fixed bug with destructuring in combination with break, continue, and return</li>
+<li>Fixed argument types of <a href="/docs/reference/calculate/cosh/">hyperbolic functions</a>, they don't allow
+angles anymore (<strong>Breaking change</strong>)</li>
+</ul>
+</li>
+<li>
+<p>Export</p>
+<ul>
+<li>Added SVG export
+(thanks to <a href="https://github.com/Enter-tainer">@Enter-tainer</a>)</li>
+<li>Fixed bugs with PDF font embedding</li>
+<li>Added support for page labels that reflect the
+<a href="/docs/reference/layout/page/#parameters-numbering">page numbering</a> style in the PDF</li>
+</ul>
+</li>
+<li>
+<p>Text and Layout</p>
+<ul>
+<li>Added <a href="/docs/reference/text/highlight/"><code>highlight</code></a> function for highlighting text with a
+background color</li>
+<li>Added <a href="/docs/reference/visualize/polygon/#definitions-regular"><code>polygon.regular</code></a> function for drawing a regular
+polygon</li>
+<li>Added support for tabs in <a href="/docs/reference/text/raw/"><code>raw</code></a> elements alongside
+<a href="/docs/reference/text/raw/#parameters-tab-size"><code>tab-width</code></a> parameter</li>
+<li>The layout engine now tries to prevent &quot;runts&quot; (final lines consisting of
+just a single word)</li>
+<li>Added Finnish translations</li>
+<li>Added hyphenation support for Polish</li>
+<li>Improved handling of consecutive smart quotes of different kinds</li>
+<li>Fixed vertical alignments for <a href="/docs/reference/layout/page/#parameters-number-align"><code>number-align</code></a> argument
+on page function (<strong>Breaking change</strong>)</li>
+<li>Fixed weak pagebreaks after counter updates</li>
+<li>Fixed missing text in SVG when the text font is set to &quot;New Computer Modern&quot;</li>
+<li>Fixed translations for Chinese</li>
+<li>Fixed crash for empty text in show rule</li>
+<li>Fixed leading spaces when there's a linebreak after a number and a comma</li>
+<li>Fixed placement of floating elements in columns and other containers</li>
+<li>Fixed sizing of block containing just a single box</li>
+</ul>
+</li>
+<li>
+<p>Math</p>
+<ul>
+<li>Added support for <a href="/docs/reference/math/mat/#parameters-augment">augmented matrices</a></li>
+<li>Removed support for automatic matching of fences like <code>|</code> and <code>||</code> as
+there were too many false positives. You can use functions like
+<a href="/docs/reference/math/lr/#functions-abs"><code>abs</code></a> or <a href="/docs/reference/math/lr/#functions-norm"><code>norm</code></a> or an explicit <a href="/docs/reference/math/lr/#functions-lr"><code>lr</code></a>
+call instead. (<strong>Breaking change</strong>)</li>
+<li>Fixed spacing after number with decimal point in math</li>
+<li>Fixed bug with primes in subscript</li>
+<li>Fixed weak spacing</li>
+<li>Fixed crash when text within math contains a newline</li>
+</ul>
+</li>
+<li>
+<p>Tooling and Diagnostics</p>
+<ul>
+<li>Added hints when trying to call a function stored in a dictionary without
+extra parentheses</li>
+<li>Fixed hint when referencing an equation without numbering</li>
+<li>Added more details to some diagnostics (e.g. when SVG decoding fails)</li>
+</ul>
+</li>
+<li>
+<p>Command line interface</p>
+<ul>
+<li>Added <code>typst update</code> command for self-updating the CLI
+(thanks to <a href="https://github.com/jimvdl">@jimvdl</a>)</li>
+<li>Added download progress indicator for packages and updates</li>
+<li>Added <code>--format</code> argument to explicitly specify the output format</li>
+<li>The CLI now respects proxy configuration through environment variables and
+has a new <code>--cert</code> option for setting a custom CA certificate</li>
+<li>Fixed crash when field wasn't present and <code>--one</code> is passed to <code>typst query</code></li>
+</ul>
+</li>
+<li>
+<p>Miscellaneous Improvements</p>
+<ul>
+<li>Added <a href="/docs/guides/page-setup-guide/">page setup guide</a></li>
+<li>Added <a href="/docs/reference/meta/figure/#definitions-caption"><code>figure.caption</code></a> function that can be used for
+simpler figure customization (<strong>Breaking change</strong> because <code>it.caption</code> now
+renders the full caption with supplement in figure show rules and manual
+outlines)</li>
+<li>Moved <code>caption-pos</code> argument to <code>figure.caption</code> function and renamed it to
+<code>position</code> (<strong>Breaking change</strong>)</li>
+<li>Added <a href="/docs/reference/meta/figure/#definitions-caption"><code>separator</code></a> argument to <code>figure.caption</code>
+function</li>
+<li>Added support for combination of and/or and before/after
+<a href="/docs/reference/meta/selector/">selectors</a></li>
+<li>Packages can now specify a
+<a href="https://github.com/typst/packages#package-format">minimum compiler version</a>
+they require to work</li>
+<li>Fixed parser bug where method calls could be moved onto their own line
+for <code><span class="typ-key">#</span><span class="typ-key">let</span></code> expressions in markup (continues to work in code)</li>
+<li>Fixed bugs in sentence and title case conversion for bibliographies</li>
+<li>Fixed supplements for alphanumeric and author-title bibliography styles</li>
+<li>Fixed off-by-one error in APA bibliography style</li>
+</ul>
+</li>
+<li>
+<p>Development</p>
+<ul>
+<li>Made <code>Span</code> and <code>FileId</code> more type-safe so that all error conditions must be
+handled by <code>World</code> implementors</li>
+</ul>
+</li>
+</ul>
+<h2 id="v0.7.0">Version 0.7.0 (August 7, 2023)</h2>
+<ul>
+<li>
+<p>Text and Layout</p>
+<ul>
+<li>Added support for floating figures through the
+<a href="/docs/reference/meta/figure/#parameters-placement"><code>placement</code></a> argument on the figure function</li>
+<li>Added support for arbitrary floating content through the
+<a href="/docs/reference/layout/place/#parameters-float"><code>float</code></a> argument on the place function</li>
+<li>Added support for loading <code>.sublime-syntax</code> files as highlighting
+<a href="/docs/reference/text/raw/#parameters-syntaxes">syntaxes</a> for raw blocks</li>
+<li>Added support for loading <code>.tmTheme</code> files as highlighting
+<a href="/docs/reference/text/raw/#parameters-theme">themes</a> for raw blocks</li>
+<li>Added <em>bounds</em> option to <a href="/docs/reference/text/text/#parameters-top-edge"><code>top-edge</code></a> and
+<a href="/docs/reference/text/text/#parameters-bottom-edge"><code>bottom-edge</code></a> arguments of text function for tight
+bounding boxes</li>
+<li>Removed nonsensical top- and bottom-edge options, e.g. <em>ascender</em> for the
+bottom edge (<strong>Breaking change</strong>)</li>
+<li>Added <a href="/docs/reference/text/text/#parameters-script"><code>script</code></a> argument to text function</li>
+<li>Added <a href="/docs/reference/text/smartquote/#parameters-alternative"><code>alternative</code></a> argument to smart quote
+function</li>
+<li>Added basic i18n for Japanese</li>
+<li>Added hyphenation support for <code>nb</code> and <code>nn</code> language codes in addition to
+<code>no</code></li>
+<li>Fixed positioning of <a href="/docs/reference/layout/place/">placed elements</a> in containers</li>
+<li>Fixed overflowing containers due to optimized line breaks</li>
+</ul>
+</li>
+<li>
+<p>Export</p>
+<ul>
+<li>Greatly improved export of SVG images to PDF. Many thanks to
+<a href="https://github.com/LaurenzV">@LaurenzV</a> for their work on this.</li>
+<li>Added support for the alpha channel of RGBA colors in PDF export</li>
+<li>Fixed a bug with PPI (pixels per inch) for PNG export</li>
+</ul>
+</li>
+<li>
+<p>Math</p>
+<ul>
+<li>Improved layout of primes (e.g. in <code><span class="typ-math-delim">$</span>a<span class="typ-math-op">&#39;</span><span class="typ-math-op">_</span>1<span class="typ-math-delim">$</span></code>)</li>
+<li>Improved display of multi-primes (e.g. in <code><span class="typ-math-delim">$</span>a<span class="typ-math-op">&#39;</span><span class="typ-math-op">&#39;</span><span class="typ-math-delim">$</span></code>)</li>
+<li>Improved layout of <a href="/docs/reference/math/roots/#functions-root">roots</a></li>
+<li>Changed relations to show attachments as <a href="/docs/reference/math/attach/#functions-limits">limits</a> by default
+(e.g. in <code><span class="typ-math-delim">$</span>a <span class="typ-escape">-&gt;</span><span class="typ-math-op">^</span>x b<span class="typ-math-delim">$</span></code>)</li>
+<li>Large operators and delimiters are now always vertically centered</li>
+<li><a href="/docs/reference/layout/box/">Boxes</a> in equations now sit on the baseline instead of being
+vertically centered by default. Notably, this does not affect
+<a href="/docs/reference/layout/block/">blocks</a> because they are not inline elements.</li>
+<li>Added support for <a href="/docs/reference/layout/h/#parameters-weak">weak spacing</a></li>
+<li>Added support for OpenType character variants</li>
+<li>Added support for customizing the <a href="/docs/reference/math/class/">math class</a> of content</li>
+<li>Fixed spacing around <code>.</code>, <code>\/</code>, and <code>...</code></li>
+<li>Fixed spacing between closing delimiters and large operators</li>
+<li>Fixed a bug with math font weight selection</li>
+<li>Symbols and Operators (<strong>Breaking changes</strong>)
+<ul>
+<li>Added <code>id</code>, <code>im</code>, and <code>tr</code> text <a href="/docs/reference/math/op/">operators</a></li>
+<li>Renamed <code>ident</code> to <code>equiv</code> with alias <code>eq.triple</code> and removed
+<code>ident.strict</code> in favor of <code>eq.quad</code></li>
+<li>Renamed <code>ast.sq</code> to <code>ast.square</code> and <code>integral.sq</code> to <code>integral.square</code></li>
+<li>Renamed <code>.eqq</code> modifier to <code>.equiv</code> (and <code>.neqq</code> to <code>.nequiv</code>) for
+<code>tilde</code>, <code>gt</code>, <code>lt</code>, <code>prec</code>, and <code>succ</code></li>
+<li>Added <code>emptyset</code> as alias for <code>nothing</code></li>
+<li>Added <code>lt.curly</code> and <code>gt.curly</code> as aliases for <code>prec</code> and <code>succ</code></li>
+<li>Added <code>aleph</code>, <code>beth</code>, and <code>gimmel</code> as alias for <code>alef</code>, <code>bet</code>, and
+<code>gimel</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Scripting</p>
+<ul>
+<li>Fields
+<ul>
+<li>Added <code>abs</code> and <code>em</code> field to <a href="/docs/reference/layout/length/">lengths</a></li>
+<li>Added <code>ratio</code> and <code>length</code> field to <a href="/docs/reference/layout/relative/">relative lengths</a></li>
+<li>Added <code>x</code> and <code>y</code> field to <a href="/docs/reference/layout/align/#parameters-alignment">2d alignments</a></li>
+<li>Added <code>paint</code>, <code>thickness</code>, <code>cap</code>, <code>join</code>, <code>dash</code>, and <code>miter-limit</code> field
+to <a href="/docs/reference/visualize/stroke/">strokes</a></li>
+</ul>
+</li>
+<li>Accessor and utility methods
+<ul>
+<li>Added <a href="/docs/reference/foundations/array/#definitions-dedup"><code>dedup</code></a> method to arrays</li>
+<li>Added <code>pt</code>, <code>mm</code>, <code>cm</code>, and <code>inches</code> method to <a href="/docs/reference/layout/length/">lengths</a></li>
+<li>Added <code>deg</code> and <code>rad</code> method to <a href="/docs/reference/layout/angle/">angles</a></li>
+<li>Added <code>kind</code>, <code>hex</code>, <code>rgba</code>, <code>cmyk</code>, and <code>luma</code> method to <a href="/docs/reference/visualize/color/">colors</a></li>
+<li>Added <code>axis</code>, <code>start</code>, <code>end</code>, and <code>inv</code> method to <a href="/docs/reference/layout/stack/#parameters-dir">directions</a></li>
+<li>Added <code>axis</code> and <code>inv</code> method to <a href="/docs/reference/layout/align/#parameters-alignment">alignments</a></li>
+<li>Added <code>inv</code> method to <a href="/docs/reference/layout/align/#parameters-alignment">2d alignments</a></li>
+<li>Added <code>start</code> argument to <a href="/docs/reference/foundations/array/#definitions-enumerate"><code>enumerate</code></a> method on arrays</li>
+</ul>
+</li>
+<li>Added <a href="/docs/reference/visualize/color/#definitions-mix"><code>color.mix</code></a> function</li>
+<li>Added <code>mode</code> and <code>scope</code> arguments to <a href="/docs/reference/foundations/eval/"><code>eval</code></a> function</li>
+<li>Added <a href="/docs/reference/foundations/bytes/"><code>bytes</code></a> type for holding large byte buffers
+<ul>
+<li>Added <a href="/docs/reference/data-loading/read/#parameters-encoding"><code>encoding</code></a> argument to read function to read a
+file as bytes instead of a string</li>
+<li>Added <a href="/docs/reference/visualize/image/#definitions-decode"><code>image.decode</code></a> function for decoding an image
+directly from a string or bytes</li>
+<li>Added <a href="/docs/reference/foundations/bytes/"><code>bytes</code></a> function for converting a string or an array of
+integers to bytes</li>
+<li>Added <a href="/docs/reference/foundations/array/"><code>array</code></a> function for converting bytes to an array of
+integers</li>
+<li>Added support for converting bytes to a string with the <a href="/docs/reference/foundations/str/"><code>str</code></a>
+function</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Tooling and Diagnostics</p>
+<ul>
+<li>Added support for compiler warnings</li>
+<li>Added warning when compilation does not converge within five attempts due to
+intense use of introspection features</li>
+<li>Added warnings for empty emphasis (<code>__</code> and <code>**</code>)</li>
+<li>Improved error message for invalid field assignments</li>
+<li>Improved error message after single <code>#</code></li>
+<li>Improved error message when a keyword is used where an identifier is
+expected</li>
+<li>Fixed parameter autocompletion for functions that are in modules</li>
+<li>Import autocompletion now only shows the latest package version until a
+colon is typed</li>
+<li>Fixed autocompletion for dictionary key containing a space</li>
+<li>Fixed autocompletion for for loops</li>
+</ul>
+</li>
+<li>
+<p>Command line interface</p>
+<ul>
+<li>Added <code>typst query</code> subcommand to execute a
+<a href="/docs/reference/meta/query/#command-line-queries">query</a> on the command line</li>
+<li>The <code>--root</code> and <code>--font-paths</code> arguments cannot appear in front of the
+command anymore (<strong>Breaking change</strong>)</li>
+<li>Local and cached packages are now stored in directories of the form
+<code>{namespace}/{name}/{version}</code> instead of <code>{namespace}/{name}-{version}</code>
+(<strong>Breaking change</strong>)</li>
+<li>Now prioritizes explicitly given fonts (via <code>--font-paths</code>) over system and
+embedded fonts when both exist</li>
+<li>Fixed <code>typst watch</code> not working with some text editors</li>
+<li>Fixed displayed compilation time (now includes export)</li>
+</ul>
+</li>
+<li>
+<p>Miscellaneous Improvements</p>
+<ul>
+<li>Added <a href="/docs/reference/meta/heading/#parameters-bookmarked"><code>bookmarked</code></a> argument to heading to control
+whether a heading becomes part of the PDF outline</li>
+<li>Added <a href="/docs/reference/meta/figure/#definitions-caption"><code>caption-pos</code></a> argument to control the
+position of a figure's caption</li>
+<li>Added <a href="/docs/reference/meta/metadata/"><code>metadata</code></a> function for exposing an arbitrary value to
+the introspection system</li>
+<li>Fixed that a <a href="/docs/reference/meta/state/"><code>state</code></a> was identified by the pair <code>(key, init)</code>
+instead of just its <code>key</code></li>
+<li>Improved indent logic of <a href="/docs/reference/layout/enum/">enumerations</a>. Instead of requiring at
+least as much indent as the end of the marker, they now require only one
+more space indent than the start of the marker. As a result, even long
+markers like <code>12.</code> work with just 2 spaces of indent.</li>
+<li>Fixed bug with indent logic of <a href="/docs/reference/text/raw/"><code>raw</code></a> blocks</li>
+<li>Fixed a parsing bug with dictionaries</li>
+</ul>
+</li>
+<li>
+<p>Development</p>
+<ul>
+<li>Extracted parser and syntax tree into <code>typst-syntax</code> crate</li>
+<li>The <code>World::today</code> implementation of Typst dependants may need fixing if
+they have the same <a href="https://github.com/typst/typst/issues/1842">bug</a> that
+the CLI world had</li>
+</ul>
+</li>
+</ul>
 <h2 id="v0.6.0">Version 0.6.0 (June 30, 2023)</h2>
 <ul>
 <li>
@@ -883,26 +1134,26 @@ forward.
 <p>Math</p>
 <ul>
 <li>Added support for optical size variants of glyphs in math mode</li>
-<li>Added argument to enable <a href="/docs/reference/math/attach/#limits"><code>limits</code></a> conditionally
-depending on whether the equation is set in <a href="/docs/reference/math/sizes/#display"><code>display</code></a>
-or <a href="/docs/reference/math/sizes/#inline"><code>inline</code></a> style</li>
+<li>Added argument to enable <a href="/docs/reference/math/attach/#functions-limits"><code>limits</code></a> conditionally depending on
+whether the equation is set in <a href="/docs/reference/math/sizes/#functions-display"><code>display</code></a> or
+<a href="/docs/reference/math/sizes/#functions-inline"><code>inline</code></a> style</li>
 <li>Added <code>gt.eq.slant</code> and <code>lt.eq.slant</code> symbols</li>
 <li>Increased precedence of factorials in math mode (<code><span class="typ-math-delim">$</span>1<span class="typ-math-op">/</span>n!<span class="typ-math-delim">$</span></code> works correctly
 now)</li>
-<li>Improved <a href="/docs/reference/math/underover/#underline">underlines</a> and
-<a href="/docs/reference/math/underover/#overline">overlines</a> in math mode</li>
-<li>Fixed usage of <a href="/docs/reference/math/attach/#limits"><code>limits</code></a> function in show rules</li>
+<li>Improved <a href="/docs/reference/math/underover/#functions-underline">underlines</a> and <a href="/docs/reference/math/underover/#functions-overline">overlines</a> in
+math mode</li>
+<li>Fixed usage of <a href="/docs/reference/math/attach/#functions-limits"><code>limits</code></a> function in show rules</li>
 <li>Fixed bugs with line breaks in equations</li>
 </ul>
 </li>
 <li>
 <p>Text and Layout</p>
 <ul>
-<li>Added support for alternating page <a href="/docs/reference/layout/page/#parameters-margin">margins</a> with the
-<code>inside</code> and <code>outside</code> keys</li>
+<li>Added support for alternating page <a href="/docs/reference/layout/page/#parameters-margin">margins</a> with the <code>inside</code>
+and <code>outside</code> keys</li>
 <li>Added support for specifying the page <a href="/docs/reference/layout/page/#parameters-binding"><code>binding</code></a></li>
-<li>Added <a href="/docs/reference/layout/pagebreak/#parameters-to"><code>to</code></a> argument to pagebreak function to skip to
-the next even or odd page</li>
+<li>Added <a href="/docs/reference/layout/pagebreak/#parameters-to"><code>to</code></a> argument to pagebreak function to skip to the
+next even or odd page</li>
 <li>Added basic i18n for a few more languages (TR, SQ, TL)</li>
 <li>Fixed bug with missing table row at page break</li>
 <li>Fixed bug with <a href="/docs/reference/text/underline/">underlines</a></li>
@@ -927,8 +1178,8 @@ setups that use <code>TYPST_ROOT</code> to emulate package management should swi
 <li>
 <p>Miscellaneous Improvements</p>
 <ul>
-<li>Added <a href="/docs/reference/meta/outline/#outline-entry"><code>outline.entry</code></a> to customize outline entries
-with show rules</li>
+<li>Added <a href="/docs/reference/meta/outline/#definitions-entry"><code>outline.entry</code></a> to customize outline entries with
+show rules</li>
 <li>Added some hints for error messages</li>
 <li>Added some missing syntaxes for <a href="/docs/reference/text/raw/"><code>raw</code></a> highlighting</li>
 <li>Improved rendering of rotated images in PNG export and web app</li>
@@ -954,7 +1205,7 @@ it a bit simpler to implement <em>(Breaking change for implementors)</em></li>
 <li>Added <a href="/docs/reference/text/raw/"><code>raw</code></a> syntax highlighting for many more languages</li>
 <li>Added support for Korean <a href="/docs/reference/meta/numbering/">numbering</a></li>
 <li>Added basic i18n for a few more languages (NL, SV, DA)</li>
-<li>Improved linebreaking for East Asian languages</li>
+<li>Improved line breaking for East Asian languages</li>
 <li>Expanded functionality of outline <a href="/docs/reference/meta/outline/#parameters-indent"><code>indent</code></a> property</li>
 <li>Fixed footnotes in columns</li>
 <li>Fixed page breaking bugs with <a href="/docs/reference/meta/footnote/">footnotes</a></li>
@@ -968,34 +1219,33 @@ it a bit simpler to implement <em>(Breaking change for implementors)</em></li>
 <p>Math</p>
 <ul>
 <li><strong>Breaking change:</strong> The syntax rules for mathematical
-<a href="/docs/reference/math/attach/#attach">attachments</a> were improved: <code><span class="typ-math-delim">$</span>f<span class="typ-math-op">^</span><span class="typ-func">abs</span><span class="typ-punct">(</span>3<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code> now parses as
+<a href="/docs/reference/math/attach/#functions-attach">attachments</a> were improved: <code><span class="typ-math-delim">$</span>f<span class="typ-math-op">^</span><span class="typ-func">abs</span><span class="typ-punct">(</span>3<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code> now parses as
 <code><span class="typ-math-delim">$</span>f<span class="typ-math-op">^</span><span class="typ-punct">(</span><span class="typ-func">abs</span><span class="typ-punct">(</span>3<span class="typ-punct">)</span><span class="typ-punct">)</span><span class="typ-math-delim">$</span></code> instead of <code><span class="typ-math-delim">$</span>(f<span class="typ-math-op">^</span><span class="typ-pol">abs</span>)(3)<span class="typ-math-delim">$</span></code>. To disambiguate, add a space:
 <code><span class="typ-math-delim">$</span>f<span class="typ-math-op">^</span><span class="typ-pol">zeta</span> (3)<span class="typ-math-delim">$</span></code>.</li>
-<li>Added <a href="/docs/reference/math/sizes/">forced size</a> commands for math
-(e.g., <a href="/docs/reference/math/sizes/#display"><code>display</code></a>)</li>
+<li>Added <a href="/docs/reference/math/sizes/">forced size</a> commands for math (e.g.,
+<a href="/docs/reference/math/sizes/#functions-display"><code>display</code></a>)</li>
 <li>Added <a href="/docs/reference/math/equation/#parameters-supplement"><code>supplement</code></a> parameter to
 <a href="/docs/reference/math/equation/"><code>equation</code></a>, used by <a href="/docs/reference/meta/ref/">references</a></li>
 <li>New <a href="/docs/reference/symbols/sym/">symbols</a>: <code>bullet</code>, <code>xor</code>, <code>slash.big</code>,
 <code>sigma.alt</code>, <code>tack.r.not</code>, <code>tack.r.short</code>, <code>tack.r.double.not</code></li>
 <li>Fixed a bug with symbols in matrices</li>
-<li>Fixed a crash in the <a href="/docs/reference/math/attach/#attach"><code>attach</code></a> function</li>
+<li>Fixed a crash in the <a href="/docs/reference/math/attach/#functions-attach"><code>attach</code></a> function</li>
 </ul>
 </li>
 <li>
 <p>Scripting</p>
 <ul>
-<li>Added new <a href="/docs/reference/types/datetime/"><code>datetime</code></a> type and
-<a href="/docs/reference/construct/datetime/#datetime-today"><code>datetime.today()</code></a> to retrieve the current date</li>
-<li>Added <a href="/docs/reference/construct/str/#str-from-unicode"><code>str.from-unicode</code></a> and
-<a href="/docs/reference/construct/str/#str-to-unicode"><code>str.to-unicode</code></a> functions</li>
-<li>Added <a href="/docs/reference/types/content/#methods-fields"><code>fields</code></a> method on content</li>
-<li>Added <code>base</code> parameter to <a href="/docs/reference/construct/str/"><code>str</code></a> function</li>
+<li>Added new <a href="/docs/reference/foundations/datetime/"><code>datetime</code></a> type and
+<a href="/docs/reference/foundations/datetime/#definitions-today"><code>datetime.today</code></a> to retrieve the current date</li>
+<li>Added <a href="/docs/reference/foundations/str/#definitions-from-unicode"><code>str.from-unicode</code></a> and
+<a href="/docs/reference/foundations/str/#definitions-to-unicode"><code>str.to-unicode</code></a> functions</li>
+<li>Added <a href="/docs/reference/foundations/content/#definitions-fields"><code>fields</code></a> method on content</li>
+<li>Added <code>base</code> parameter to <a href="/docs/reference/foundations/str/"><code>str</code></a> function</li>
 <li>Added <a href="/docs/reference/calculate/exp/"><code>calc.exp</code></a> and <a href="/docs/reference/calculate/ln/"><code>calc.ln</code></a></li>
-<li>Improved accuracy of <a href="/docs/reference/calculate/pow/"><code>calc.pow</code></a> and
-<a href="/docs/reference/calculate/log/"><code>calc.log</code></a> for specific bases</li>
-<li>Fixed <a href="/docs/reference/types/dictionary/#methods-remove">removal</a> order for dictionary</li>
-<li>Fixed <code>.at(default: ..)</code> for <a href="/docs/reference/types/string/#methods-at">strings</a> and
-<a href="/docs/reference/types/content/#methods-at">content</a></li>
+<li>Improved accuracy of <a href="/docs/reference/calculate/pow/"><code>calc.pow</code></a> and <a href="/docs/reference/calculate/log/"><code>calc.log</code></a> for
+specific bases</li>
+<li>Fixed <a href="/docs/reference/foundations/dictionary/#definitions-remove">removal</a> order for dictionary</li>
+<li>Fixed <code>.at(default: ..)</code> for <a href="/docs/reference/foundations/str/#definitions-at">strings</a> and <a href="/docs/reference/foundations/content/#definitions-at">content</a></li>
 <li>Fixed field access on styled elements</li>
 <li>Removed deprecated <code>calc.mod</code> function</li>
 </ul>
@@ -1031,8 +1281,8 @@ path must contain <code>{n}</code> if the document has multiple pages.</li>
 <ul>
 <li>Implemented support for footnotes</li>
 <li>The <a href="/docs/reference/meta/footnote/"><code>footnote</code></a> function inserts a footnote</li>
-<li>The <a href="/docs/reference/meta/footnote/#footnote-entry"><code>footnote.entry</code></a> function can be used to
-customize the footnote listing</li>
+<li>The <a href="/docs/reference/meta/footnote/#definitions-entry"><code>footnote.entry</code></a> function can be used to customize
+the footnote listing</li>
 <li>The <code><span class="typ-str">&quot;chicago-notes&quot;</span></code> <a href="/docs/reference/meta/cite/#parameters-style">citation style</a> is now available</li>
 </ul>
 </li>
@@ -1043,8 +1293,7 @@ customize the footnote listing</li>
 <li>Now shows default values for optional arguments</li>
 <li>Added richer outlines in &quot;On this Page&quot;</li>
 <li>Added initial support for search keywords: &quot;Table of Contents&quot; will now find
-the <a href="/docs/reference/meta/outline/">outline</a> function. Suggestions for more keywords are
-welcome!</li>
+the <a href="/docs/reference/meta/outline/">outline</a> function. Suggestions for more keywords are welcome!</li>
 <li>Fixed issue with search result ranking</li>
 <li>Fixed many more small issues</li>
 </ul>
@@ -1054,11 +1303,11 @@ welcome!</li>
 <ul>
 <li><strong>Breaking change</strong>: Alignment points (<code>&amp;</code>) in equations now alternate
 between left and right alignment</li>
-<li>Added support for writing roots with Unicode:
-For example, <code><span class="typ-math-delim">$</span><span class="typ-func">root</span><span class="typ-punct">(</span>x+y<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code> can now also be written as <code><span class="typ-math-delim">$</span><span class="typ-math-op">√</span><span class="typ-punct">(</span>x+y<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code></li>
-<li>Fixed uneven vertical <a href="/docs/reference/math/attach/#attach"><code>attachment</code></a> alignment</li>
-<li>Fixed spacing on decorated elements
-(e.g., spacing around a <a href="/docs/reference/math/cancel/">canceled</a> operator)</li>
+<li>Added support for writing roots with Unicode: For example, <code><span class="typ-math-delim">$</span><span class="typ-func">root</span><span class="typ-punct">(</span>x+y<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code>
+can now also be written as <code><span class="typ-math-delim">$</span><span class="typ-math-op">√</span><span class="typ-punct">(</span>x+y<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code></li>
+<li>Fixed uneven vertical <a href="/docs/reference/math/attach/#functions-attach"><code>attachment</code></a> alignment</li>
+<li>Fixed spacing on decorated elements (e.g., spacing around a
+<a href="/docs/reference/math/cancel/">canceled</a> operator)</li>
 <li>Fixed styling for stretchable symbols</li>
 <li>Added <code>tack.r.double</code>, <code>tack.l.double</code>, <code>dotless.i</code> and <code>dotless.j</code>
 <a href="/docs/reference/symbols/sym/">symbols</a></li>
@@ -1071,28 +1320,26 @@ previous release</li>
 <p>Scripting</p>
 <ul>
 <li>Added function scopes: A function can now hold related definitions in its
-own scope, similar to a module. The new <a href="/docs/reference/foundations/assert/#assert-eq"><code>assert.eq</code></a>
-function, for instance, is part of the <a href="/docs/reference/foundations/assert/"><code>assert</code></a> function's
-scope. Note that function scopes are currently only available for built-in
-functions.</li>
-<li>Added <a href="/docs/reference/foundations/assert/#assert-eq"><code>assert.eq</code></a> and <a href="/docs/reference/foundations/assert/#assert-ne"><code>assert.ne</code></a>
-functions for simpler equality and inequality assertions with more helpful
-error messages</li>
-<li>Exposed <a href="/docs/reference/layout/list/#list-item">list</a>, <a href="/docs/reference/layout/enum/#enum-item">enum</a>, and
-<a href="/docs/reference/layout/terms/#terms-item">term list</a> items in their respective functions' scope</li>
-<li>The <code>at</code> methods on <a href="/docs/reference/types/string/#methods-at">strings</a>, <a href="/docs/reference/types/array/#methods-at">arrays</a>,
-<a href="/docs/reference/types/dictionary/#methods-at">dictionaries</a>, and <a href="/docs/reference/types/content/#methods-at">content</a> now support
+own scope, similar to a module. The new <a href="/docs/reference/foundations/assert/#definitions-eq"><code>assert.eq</code></a> function,
+for instance, is part of the <a href="/docs/reference/foundations/assert/"><code>assert</code></a> function's scope. Note that
+function scopes are currently only available for built-in functions.</li>
+<li>Added <a href="/docs/reference/foundations/assert/#definitions-eq"><code>assert.eq</code></a> and <a href="/docs/reference/foundations/assert/#definitions-ne"><code>assert.ne</code></a> functions for
+simpler equality and inequality assertions with more helpful error messages</li>
+<li>Exposed <a href="/docs/reference/layout/list/#definitions-item">list</a>, <a href="/docs/reference/layout/enum/#definitions-item">enum</a>, and <a href="/docs/reference/layout/terms/#definitions-item">term list</a>
+items in their respective functions' scope</li>
+<li>The <code>at</code> methods on <a href="/docs/reference/foundations/str/#definitions-at">strings</a>, <a href="/docs/reference/foundations/array/#definitions-at">arrays</a>,
+<a href="/docs/reference/foundations/dictionary/#definitions-at">dictionaries</a>, and <a href="/docs/reference/foundations/content/#definitions-at">content</a> now support
 specifying a default value</li>
-<li>Added support for passing a function to <a href="/docs/reference/types/string/#methods-replace"><code>replace</code></a>
-that is called with each match.</li>
-<li>Fixed <a href="/docs/reference/types/string/#methods-replace">replacement</a> strings: They are now inserted
-completely verbatim instead of supporting the previous (unintended) magic
-dollar syntax for capture groups</li>
+<li>Added support for passing a function to <a href="/docs/reference/foundations/str/#definitions-replace"><code>replace</code></a> that is
+called with each match.</li>
+<li>Fixed <a href="/docs/reference/foundations/str/#definitions-replace">replacement</a> strings: They are now inserted completely
+verbatim instead of supporting the previous (unintended) magic dollar syntax
+for capture groups</li>
 <li>Fixed bug with trailing placeholders in destructuring patterns</li>
 <li>Fixed bug with underscore in parameter destructuring</li>
 <li>Fixed crash with nested patterns and when hovering over an invalid pattern</li>
-<li>Better error messages when casting to an <a href="/docs/reference/construct/int/">integer</a> or
-<a href="/docs/reference/construct/float/">float</a> fails</li>
+<li>Better error messages when casting to an <a href="/docs/reference/foundations/int/">integer</a> or <a href="/docs/reference/foundations/float/">float</a>
+fails</li>
 </ul>
 </li>
 <li>
@@ -1101,9 +1348,8 @@ dollar syntax for capture groups</li>
 <li>Implemented sophisticated CJK punctuation adjustment</li>
 <li>Disabled <a href="/docs/reference/text/text/#parameters-overhang">overhang</a> for CJK punctuation</li>
 <li>Added basic translations for Traditional Chinese</li>
-<li>Fixed <a href="/docs/reference/text/raw/#parameters-align">alignment</a> of text inside raw blocks (centering a
-raw block, e.g. through a figure, will now keep the text itself
-left-aligned)</li>
+<li>Fixed <a href="/docs/reference/text/raw/#parameters-align">alignment</a> of text inside raw blocks (centering a raw
+block, e.g. through a figure, will now keep the text itself left-aligned)</li>
 <li>Added support for passing a array instead of a function to configure table
 cell <a href="/docs/reference/layout/table/#parameters-align">alignment</a> and <a href="/docs/reference/layout/table/#parameters-fill">fill</a> per column</li>
 <li>Fixed automatic figure <a href="/docs/reference/meta/figure/#parameters-kind"><code>kind</code></a> detection</li>
@@ -1148,8 +1394,8 @@ more!</li>
 <li>Improved incremental parsing for more efficient recompilations</li>
 <li>Added support for <code>.yaml</code> extension in addition to <code>.yml</code> for bibliographies</li>
 <li>The CLI now emits escape codes only if the output is a TTY</li>
-<li>For users of the <code>typst</code> crate: The <code>Document</code> is now <code>Sync</code> again and
-the <code>World</code> doesn't have to be <code>'static</code> anymore</li>
+<li>For users of the <code>typst</code> crate: The <code>Document</code> is now <code>Sync</code> again and the
+<code>World</code> doesn't have to be <code>'static</code> anymore</li>
 </ul>
 </li>
 </ul>
@@ -1160,14 +1406,14 @@ the <code>World</code> doesn't have to be <code>'static</code> anymore</li>
 <ul>
 <li>Renamed a few symbols: What was previous <code>dot.op</code> is now just <code>dot</code> and the
 basic dot is <code>dot.basic</code>. The same applies to <code>ast</code> and <code>tilde</code>.</li>
-<li>Renamed <code>mod</code> to <a href="/docs/reference/calculate/rem/"><code>rem</code></a> to more accurately reflect
-the behaviour. It will remain available as <code>mod</code> until the next update as a
+<li>Renamed <code>mod</code> to <a href="/docs/reference/calculate/rem/"><code>rem</code></a> to more accurately reflect the
+behaviour. It will remain available as <code>mod</code> until the next update as a
 grace period.</li>
 <li>A lone underscore is not a valid identifier anymore, it can now only be used
 in patterns</li>
-<li>Removed <code>before</code> and <code>after</code> arguments from <a href="/docs/reference/meta/query/"><code>query</code></a>. This is
-now handled through flexible <a href="/docs/reference/types/selector/">selectors</a> combinator methods</li>
-<li>Added support for <a href="/docs/reference/math/attach/#attach">attachments</a> (sub-, superscripts) that
+<li>Removed <code>before</code> and <code>after</code> arguments from <a href="/docs/reference/meta/query/"><code>query</code></a>. This is now
+handled through flexible <a href="/docs/reference/meta/selector/">selectors</a> combinator methods</li>
+<li>Added support for <a href="/docs/reference/math/attach/#functions-attach">attachments</a> (sub-, superscripts) that
 precede the base symbol. The <code>top</code> and <code>bottom</code> arguments have been renamed
 to <code>t</code> and <code>b</code>.</li>
 </ul>
@@ -1175,15 +1421,15 @@ to <code>t</code> and <code>b</code>.</li>
 <li>
 <p>New features</p>
 <ul>
-<li>Added support for more complex <a href="/docs/reference/visualize/line/#parameters-stroke">strokes</a>
-(configurable caps, joins, and dash patterns)</li>
+<li>Added support for more complex <a href="/docs/reference/visualize/stroke/">strokes</a> (configurable caps, joins,
+and dash patterns)</li>
 <li>Added <a href="/docs/reference/math/cancel/"><code>cancel</code></a> function for equations</li>
 <li>Added support for <a href="/docs/reference/scripting/#bindings">destructuring</a> in argument lists
 and assignments</li>
 <li>Added <a href="/docs/reference/visualize/image/#parameters-alt"><code>alt</code></a> text argument to image function</li>
 <li>Added <a href="/docs/reference/data-loading/toml/"><code>toml</code></a> function for loading data from a TOML file</li>
-<li>Added <a href="/docs/reference/types/array/#methods-zip"><code>zip</code></a>, <a href="/docs/reference/types/array/#methods-sum"><code>sum</code></a>, and
-<a href="/docs/reference/types/array/#methods-product"><code>product</code></a> methods for arrays</li>
+<li>Added <a href="/docs/reference/foundations/array/#definitions-zip"><code>zip</code></a>, <a href="/docs/reference/foundations/array/#definitions-sum"><code>sum</code></a>, and
+<a href="/docs/reference/foundations/array/#definitions-product"><code>product</code></a> methods for arrays</li>
 <li>Added <code>fact</code>, <code>perm</code>, <code>binom</code>, <code>gcd</code>, <code>lcm</code>, <code>atan2</code>, <code>quo</code>, <code>trunc</code>, and
 <code>fract</code> <a href="/docs/reference/calculate/">calculation</a></li>
 </ul>
@@ -1193,14 +1439,14 @@ and assignments</li>
 <ul>
 <li>Text in SVGs now displays properly</li>
 <li>Typst now generates a PDF heading outline</li>
-<li><a href="/docs/reference/meta/ref/">References</a> now provides the referenced element as a field in
-show rules</li>
+<li><a href="/docs/reference/meta/ref/">References</a> now provides the referenced element as a field in show
+rules</li>
 <li>Refined linebreak algorithm for better Chinese justification</li>
 <li>Locations are now a valid kind of selector</li>
 <li>Added a few symbols for algebra</li>
 <li>Added Spanish smart quote support</li>
-<li>Added <a href="/docs/reference/meta/selector/"><code>selector</code></a> function to turn a selector-like value
-into a selector on which combinator methods can be called</li>
+<li>Added <a href="/docs/reference/meta/selector/"><code>selector</code></a> function to turn a selector-like value into a
+selector on which combinator methods can be called</li>
 <li>Improved some error messages</li>
 <li>The outline and bibliography headings can now be styled with show-set rules</li>
 <li>Operations on numbers now produce an error instead of overflowing</li>
@@ -1211,7 +1457,7 @@ into a selector on which combinator methods can be called</li>
 <ul>
 <li>Fixed wrong linebreak before punctuation that follows inline equations,
 citations, and other elements</li>
-<li>Fixed a bug with <a href="/docs/reference/types/arguments/">argument sinks</a></li>
+<li>Fixed a bug with <a href="/docs/reference/foundations/arguments/">argument sinks</a></li>
 <li>Fixed strokes with thickness zero</li>
 <li>Fixed hiding and show rules in math</li>
 <li>Fixed alignment in matrices</li>
@@ -1227,8 +1473,8 @@ alignment settings</li>
 <li>
 <p>Command line interface</p>
 <ul>
-<li>Font path and compilation root can now be set with the environment
-variables <code>TYPST_FONT_PATHS</code> and <code>TYPST_ROOT</code></li>
+<li>Font path and compilation root can now be set with the environment variables
+<code>TYPST_FONT_PATHS</code> and <code>TYPST_ROOT</code></li>
 <li>The output of <code>typst fonts</code> now includes the embedded fonts</li>
 </ul>
 </li>
@@ -1250,8 +1496,8 @@ reference images for tests</li>
 <ul>
 <li>Removed support for iterating over index and value in
 <a href="/docs/reference/scripting/#loops">for loops</a>. This is now handled via unpacking and
-enumerating. Same goes for the <a href="/docs/reference/types/array/#methods-map"><code>map()</code></a> method.</li>
-<li><a href="/docs/reference/types/dictionary/">Dictionaries</a> now iterate in insertion order instead of
+enumerating. Same goes for the <a href="/docs/reference/foundations/array/#definitions-map"><code>map</code></a> method.</li>
+<li><a href="/docs/reference/foundations/dictionary/">Dictionaries</a> now iterate in insertion order instead of
 alphabetical order.</li>
 </ul>
 </li>
@@ -1260,11 +1506,11 @@ alphabetical order.</li>
 <ul>
 <li>Added <a href="/docs/reference/scripting/#bindings">unpacking syntax</a> for let bindings, which
 allows things like <code><span class="typ-key">let</span> <span class="typ-punct">(</span>1<span class="typ-punct">,</span> 2<span class="typ-punct">)</span> <span class="typ-op">=</span> array</code></li>
-<li>Added <a href="/docs/reference/types/array/#methods-enumerate"><code>enumerate()</code></a> method</li>
+<li>Added <a href="/docs/reference/foundations/array/#definitions-enumerate"><code>enumerate</code></a> method</li>
 <li>Added <a href="/docs/reference/visualize/path/"><code>path</code></a> function for drawing Bézier paths</li>
-<li>Added <a href="/docs/reference/meta/layout/"><code>layout</code></a> function to access the size of the
-surrounding page or container</li>
-<li>Added <code>key</code> parameter to <a href="/docs/reference/types/array/#methods-sorted"><code>sorted()</code></a> method</li>
+<li>Added <a href="/docs/reference/meta/layout/"><code>layout</code></a> function to access the size of the surrounding
+page or container</li>
+<li>Added <code>key</code> parameter to <a href="/docs/reference/foundations/array/#definitions-sorted"><code>sorted</code></a> method</li>
 </ul>
 </li>
 <li>
@@ -1288,13 +1534,12 @@ Typst</li>
 <li>Fixed bug where math could not be hidden with <a href="/docs/reference/layout/hide/"><code>hide</code></a></li>
 <li>Fixed sizing issues with box, block, and shapes</li>
 <li>Fixed some translations</li>
-<li>Fixed inversion of &quot;R&quot; in <a href="/docs/reference/math/variants/#cal"><code>cal</code></a> and
-<a href="/docs/reference/math/variants/#frak"><code>frak</code></a> styles</li>
+<li>Fixed inversion of &quot;R&quot; in <a href="/docs/reference/math/variants/#functions-cal"><code>cal</code></a> and <a href="/docs/reference/math/variants/#functions-frak"><code>frak</code></a> styles</li>
 <li>Fixed some styling issues in math</li>
 <li>Fixed supplements of references to headings</li>
 <li>Fixed syntax highlighting of identifiers in certain scenarios</li>
-<li><a href="/docs/reference/types/ratio/">Ratios</a> can now be multiplied with more types and be converted
-to <a href="/docs/reference/types/float/">floats</a> with the <a href="/docs/reference/construct/float/"><code>float</code></a> function</li>
+<li><a href="/docs/reference/layout/ratio/">Ratios</a> can now be multiplied with more types and be converted to
+<a href="/docs/reference/foundations/float/">floats</a> with the <a href="/docs/reference/foundations/float/"><code>float</code></a> function</li>
 </ul>
 </li>
 </ul>
@@ -1312,17 +1557,17 @@ to <a href="/docs/reference/types/float/">floats</a> with the <a href="/docs/ref
 </li>
 <li>Manual counters now start at zero. Read the &quot;How to step&quot; section
 <a href="/docs/reference/meta/counter/">here</a> for more details</li>
-<li>The <a href="/docs/reference/meta/bibliography/#parameters-style">bibliography styles</a>
-<code><span class="typ-str">&quot;author-date&quot;</span></code> and <code><span class="typ-str">&quot;author-title&quot;</span></code> were renamed to
-<code><span class="typ-str">&quot;chicago-author-date&quot;</span></code> and <code><span class="typ-str">&quot;chicago-author-title&quot;</span></code></li>
+<li>The <a href="/docs/reference/meta/bibliography/#parameters-style">bibliography styles</a> <code><span class="typ-str">&quot;author-date&quot;</span></code> and
+<code><span class="typ-str">&quot;author-title&quot;</span></code> were renamed to <code><span class="typ-str">&quot;chicago-author-date&quot;</span></code> and
+<code><span class="typ-str">&quot;chicago-author-title&quot;</span></code></li>
 </ul>
 </li>
 <li>
 <p>Figure improvements</p>
 <ul>
-<li>Figures now automatically detect their content and adapt their
-behaviour. Figures containing tables, for instance, are automatically
-prefixed with &quot;Table X&quot; and have a separate counter</li>
+<li>Figures now automatically detect their content and adapt their behaviour.
+Figures containing tables, for instance, are automatically prefixed with
+&quot;Table X&quot; and have a separate counter</li>
 <li>The figure's supplement (e.g. &quot;Figure&quot; or &quot;Table&quot;) can now be customized</li>
 <li>In addition, figures can now be completely customized because the show rule
 gives access to the automatically resolved kind, supplement, and counter</li>
@@ -1331,8 +1576,8 @@ gives access to the automatically resolved kind, supplement, and counter</li>
 <li>
 <p>Bibliography improvements</p>
 <ul>
-<li>The <a href="/docs/reference/meta/bibliography/"><code>bibliography</code></a> now also accepts multiple
-bibliography paths (as an array)</li>
+<li>The <a href="/docs/reference/meta/bibliography/"><code>bibliography</code></a> now also accepts multiple bibliography
+paths (as an array)</li>
 <li>Parsing of BibLaTeX files is now more permissive (accepts non-numeric
 edition, pages, volumes, dates, and Jabref-style comments; fixed
 abbreviation parsing)</li>
@@ -1344,8 +1589,7 @@ abbreviation parsing)</li>
 <p>Drawing additions</p>
 <ul>
 <li>Added <a href="/docs/reference/visualize/polygon/"><code>polygon</code></a> function for drawing polygons</li>
-<li>Added support for clipping in <a href="/docs/reference/layout/box/#parameters-clip">boxes</a> and
-<a href="/docs/reference/layout/block/#parameters-clip">blocks</a></li>
+<li>Added support for clipping in <a href="/docs/reference/layout/box/#parameters-clip">boxes</a> and <a href="/docs/reference/layout/block/#parameters-clip">blocks</a></li>
 </ul>
 </li>
 <li>
@@ -1364,24 +1608,23 @@ abbreviation parsing)</li>
 <li>Added <a href="/docs/reference/data-loading/yaml/"><code>yaml</code></a> function to load data from YAML files</li>
 <li>Added basic i18n for a few more languages (IT, RU, ZH, FR, PT)</li>
 <li>Added numbering support for Hebrew</li>
-<li>Added support for <a href="/docs/reference/types/integer/">integers</a> with base 2, 8, and 16</li>
+<li>Added support for <a href="/docs/reference/foundations/int/">integers</a> with base 2, 8, and 16</li>
 <li>Added symbols for double bracket and laplace operator</li>
-<li>The <a href="/docs/reference/meta/link/"><code>link</code></a> function now accepts <a href="/docs/reference/construct/label/">labels</a></li>
+<li>The <a href="/docs/reference/meta/link/"><code>link</code></a> function now accepts <a href="/docs/reference/meta/label/">labels</a></li>
 <li>The link syntax now allows more characters</li>
 <li>Improved justification of Japanese and Chinese text</li>
 <li>Calculation functions behave more consistently w.r.t to non-real results</li>
 <li>Replaced deprecated angle brackets</li>
 <li>Reduced maximum function call depth from 256 to 64</li>
-<li>Fixed <a href="/docs/reference/layout/par/#parameters-first-line-indent"><code>first-line-indent</code></a> being not applied
-when a paragraph starts with styled text</li>
+<li>Fixed <a href="/docs/reference/layout/par/#parameters-first-line-indent"><code>first-line-indent</code></a> being not applied when a
+paragraph starts with styled text</li>
 <li>Fixed extraneous spacing in unary operators in equations</li>
 <li>Fixed block spacing, e.g. in <code><span class="typ-func">block</span><span class="typ-punct">(</span>above<span class="typ-punct">:</span> <span class="typ-num">1cm</span><span class="typ-punct">,</span> below<span class="typ-punct">:</span> <span class="typ-num">1cm</span><span class="typ-punct">,</span> <span class="typ-op">..</span><span class="typ-punct">)</span></code></li>
 <li>Fixed styling of text operators in math</li>
 <li>Fixed invalid parsing of language tag in raw block with a single backtick</li>
 <li>Fixed bugs with displaying counters and state</li>
 <li>Fixed crash related to page counter</li>
-<li>Fixed crash when <a href="/docs/reference/construct/symbol/"><code>symbol</code></a> function was called without
-arguments</li>
+<li>Fixed crash when <a href="/docs/reference/symbols/symbol/"><code>symbol</code></a> function was called without arguments</li>
 <li>Fixed crash in bibliography generation</li>
 <li>Fixed access to label of certain content elements</li>
 <li>Fixed line number in error message for CSV parsing</li>
@@ -1389,15 +1632,15 @@ arguments</li>
 </ul>
 </li>
 </ul>
-<h2>March 28, 2023</h2>
+<h2 id="_">March 28, 2023</h2>
 <ul>
 <li>
 <p><strong>Breaking changes:</strong></p>
 <ul>
 <li>Enumerations now require a space after their marker, that is, <code>1.ok</code> must
 now be written as <code><span class="typ-marker">1.</span> ok</code></li>
-<li>Changed default style for <a href="/docs/reference/layout/terms/">term lists</a>: Does not include a
-colon anymore and has a bit more indent</li>
+<li>Changed default style for <a href="/docs/reference/layout/terms/">term lists</a>: Does not include a colon
+anymore and has a bit more indent</li>
 </ul>
 </li>
 <li>
@@ -1411,16 +1654,15 @@ colon anymore and has a bit more indent</li>
 <li>
 <p>Miscellaneous improvements</p>
 <ul>
-<li>Added support for disabling <a href="/docs/reference/math/mat/">matrix</a> and
-<a href="/docs/reference/math/vec/">vector</a> delimiters. Generally with
-<code><span class="typ-key">#</span><span class="typ-key">set</span> math<span class="typ-punct">.</span><span class="typ-func">mat</span><span class="typ-punct">(</span>delim<span class="typ-punct">:</span> <span class="typ-key">none</span><span class="typ-punct">)</span></code> or one-off with
+<li>Added support for disabling <a href="/docs/reference/math/mat/">matrix</a> and <a href="/docs/reference/math/vec/">vector</a>
+delimiters. Generally with <code><span class="typ-key">#</span><span class="typ-key">set</span> math<span class="typ-punct">.</span><span class="typ-func">mat</span><span class="typ-punct">(</span>delim<span class="typ-punct">:</span> <span class="typ-key">none</span><span class="typ-punct">)</span></code> or one-off with
 <code><span class="typ-math-delim">$</span><span class="typ-func">mat</span><span class="typ-punct">(</span>delim<span class="typ-punct">:</span> <span class="typ-key">#</span><span class="typ-key">none</span><span class="typ-punct">,</span> 1<span class="typ-punct">,</span> 2<span class="typ-punct">;</span> 3<span class="typ-punct">,</span> 4<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code>.</li>
 <li>Added <a href="/docs/reference/layout/terms/#parameters-separator"><code>separator</code></a> argument to term lists</li>
-<li>Added <a href="/docs/reference/math/lr/#round"><code>round</code></a> function for equations</li>
+<li>Added <a href="/docs/reference/math/lr/#functions-round"><code>round</code></a> function for equations</li>
 <li>Numberings now allow zeros. To reset a counter, you can write
 <code><span class="typ-func">#</span><span class="typ-func">counter</span><span class="typ-punct">(</span><span class="typ-op">..</span><span class="typ-punct">)</span><span class="typ-punct">.</span><span class="typ-func">update</span><span class="typ-punct">(</span><span class="typ-num">0</span><span class="typ-punct">)</span></code></li>
 <li>Added documentation for <code><span class="typ-func">page</span><span class="typ-punct">(</span><span class="typ-punct">)</span></code> and <code><span class="typ-func">position</span><span class="typ-punct">(</span><span class="typ-punct">)</span></code> methods on
-<a href="/docs/reference/meta/locate/"><code>location</code></a> type</li>
+<a href="/docs/reference/meta/location/"><code>location</code></a> type</li>
 <li>Added symbols for double, triple, and quadruple dot accent</li>
 <li>Added smart quotes for Norwegian Bokmål</li>
 <li>Added Nix flake</li>
@@ -1429,8 +1671,8 @@ colon anymore and has a bit more indent</li>
 <li>Fixed parsing of unbalanced delimiters in fractions: <code><span class="typ-math-delim">$</span>1<span class="typ-math-op">/</span>(2 (x)<span class="typ-math-delim">$</span></code></li>
 <li>Fixed unexpected parsing of numbers as enumerations, e.g. in <code>1.2</code></li>
 <li>Fixed combination of page fill and header</li>
-<li>Fixed compiler crash if <a href="/docs/reference/layout/repeat/"><code>repeat</code></a> is used in page with
-automatic width</li>
+<li>Fixed compiler crash if <a href="/docs/reference/layout/repeat/"><code>repeat</code></a> is used in page with automatic
+width</li>
 <li>Fixed <a href="/docs/reference/math/mat/">matrices</a> with explicit delimiter</li>
 <li>Fixed <a href="/docs/reference/layout/terms/#parameters-indent"><code>indent</code></a> property of term lists</li>
 <li>Numerous documentation fixes</li>
@@ -1439,15 +1681,15 @@ automatic width</li>
 </ul>
 </li>
 </ul>
-<h2>March 21, 2023</h2>
+<h2 id="_">March 21, 2023</h2>
 <ul>
 <li>
 <p>Reference and bibliography management</p>
 <ul>
-<li><a href="/docs/reference/meta/bibliography/">Bibliographies</a> and <a href="/docs/reference/meta/cite/">citations</a> (currently
-supported styles are APA, Chicago Author Date, IEEE, and MLA)</li>
-<li>You can now <a href="/docs/reference/meta/ref/">reference</a> sections, figures, formulas, and works
-from the bibliography with <code><span class="typ-ref">@label</span></code></li>
+<li><a href="/docs/reference/meta/bibliography/">Bibliographies</a> and <a href="/docs/reference/meta/cite/">citations</a> (currently supported
+styles are APA, Chicago Author Date, IEEE, and MLA)</li>
+<li>You can now <a href="/docs/reference/meta/ref/">reference</a> sections, figures, formulas, and works from
+the bibliography with <code><span class="typ-ref">@label</span></code></li>
 <li>You can make an element referenceable with a label:
 <ul>
 <li><code><span class="typ-heading">= Introduction</span> <span class="typ-label">&lt;intro&gt;</span></code></li>
@@ -1479,8 +1721,8 @@ document</li>
 </li>
 <li><a href="/docs/reference/meta/query/"><code>query</code></a> function
 <ul>
-<li>Find all occurrences of an element or a label, either in the whole document
-or before/after some location</li>
+<li>Find all occurrences of an element or a label, either in the whole
+document or before/after some location</li>
 <li>Link to elements, find out their position on the pages and access their
 fields</li>
 <li>Example use cases: Custom list of figures or page header with current
@@ -1502,8 +1744,8 @@ location</li>
 <p>New <a href="/docs/reference/layout/measure/"><code>measure</code></a> function</p>
 <ul>
 <li>Measure the layouted size of elements</li>
-<li>To be used in combination with the new <a href="/docs/reference/meta/style/"><code>style</code></a> function that
-lets you generate different content based on the style context something is
+<li>To be used in combination with the new <a href="/docs/reference/meta/style/"><code>style</code></a> function that lets
+you generate different content based on the style context something is
 inserted into (because that affects the measured size of content)</li>
 </ul>
 </li>
@@ -1514,7 +1756,7 @@ inserted into (because that affects the measured size of content)</li>
 <li>Content can be compared for equality</li>
 <li>The tree of content elements can be traversed with code</li>
 <li>Can be observed in hover tooltips or with <a href="/docs/reference/foundations/repr/"><code>repr</code></a></li>
-<li>New <a href="/docs/reference/types/content/">methods</a> on content: <code>func</code>, <code>has</code>, <code>at</code>, and <code>location</code></li>
+<li>New <a href="/docs/reference/foundations/content/">methods</a> on content: <code>func</code>, <code>has</code>, <code>at</code>, and <code>location</code></li>
 <li>All optional fields on elements are now settable</li>
 <li>More uniform field names (<code>heading.title</code> becomes <code>heading.body</code>,
 <code>list.items</code> becomes <code>list.children</code>, and a few more changes)</li>
@@ -1527,11 +1769,10 @@ inserted into (because that affects the measured size of content)</li>
 <li>Added <a href="/docs/reference/math/equation/#parameters-numbering"><code>numbering</code></a> parameter on equation function</li>
 <li>Added <a href="/docs/reference/layout/page/#parameters-numbering"><code>numbering</code></a> and
 <a href="/docs/reference/layout/page/#parameters-number-align"><code>number-align</code></a> parameters on page function</li>
-<li>The page function's <a href="/docs/reference/layout/page/#parameters-header"><code>header</code></a> and
-<a href="/docs/reference/layout/page/#parameters-footer"><code>footer</code></a> parameters do not take functions anymore. If
-you want to customize them based on the page number, use the new
-<a href="/docs/reference/layout/page/#parameters-numbering"><code>numbering</code></a> parameter or <a href="/docs/reference/meta/counter/"><code>counter</code></a>
-function instead.</li>
+<li>The page function's <a href="/docs/reference/layout/page/#parameters-header"><code>header</code></a> and <a href="/docs/reference/layout/page/#parameters-footer"><code>footer</code></a>
+parameters do not take functions anymore. If you want to customize them
+based on the page number, use the new <a href="/docs/reference/layout/page/#parameters-numbering"><code>numbering</code></a>
+parameter or <a href="/docs/reference/meta/counter/"><code>counter</code></a> function instead.</li>
 <li>Added <a href="/docs/reference/layout/page/#parameters-footer-descent"><code>footer-descent</code></a> and
 <a href="/docs/reference/layout/page/#parameters-header-ascent"><code>header-ascent</code></a> parameters</li>
 <li>Better default alignment in header and footer</li>
@@ -1540,8 +1781,7 @@ function instead.</li>
 <li>Renamed <code>math.formula</code> to <a href="/docs/reference/math/equation/"><code>math.equation</code></a></li>
 <li>Font family must be a named argument now: <code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>font<span class="typ-punct">:</span> <span class="typ-str">&quot;..&quot;</span><span class="typ-punct">)</span></code></li>
 <li>Added support for <a href="/docs/reference/layout/par/#parameters-hanging-indent">hanging indent</a></li>
-<li>Renamed paragraph <code>indent</code> to
-<a href="/docs/reference/layout/par/#parameters-first-line-indent"><code>first-line-indent</code></a></li>
+<li>Renamed paragraph <code>indent</code> to <a href="/docs/reference/layout/par/#parameters-first-line-indent"><code>first-line-indent</code></a></li>
 <li>More accurate <a href="/docs/reference/calculate/log/">logarithm</a> when base is <code>2</code> or <code>10</code></li>
 <li>Improved some error messages</li>
 <li>Fixed layout of <a href="/docs/reference/layout/terms/"><code>terms</code></a> list</li>
@@ -1568,7 +1808,7 @@ works in show rules</li>
 </ul>
 </li>
 </ul>
-<h2>February 25, 2023</h2>
+<h2 id="_">February 25, 2023</h2>
 <ul>
 <li>Font changes
 <ul>
@@ -1577,49 +1817,48 @@ works in show rules</li>
 <li>New default font for math: Book weight of New Computer Modern Math</li>
 <li>Lots of new math fonts available</li>
 <li>Removed Latin Modern fonts in favor of New Computer Modern family</li>
-<li>Removed unnecessary smallcaps fonts which are already accessible through
-the corresponding main font and the <a href="/docs/reference/text/smallcaps/"><code>smallcaps</code></a> function</li>
+<li>Removed unnecessary smallcaps fonts which are already accessible through the
+corresponding main font and the <a href="/docs/reference/text/smallcaps/"><code>smallcaps</code></a> function</li>
 </ul>
 </li>
 <li>Improved default spacing for headings</li>
 <li>Added <a href="/docs/reference/foundations/panic/"><code>panic</code></a> function</li>
-<li>Added <a href="/docs/reference/types/string/#methods-clusters"><code>clusters</code></a> and
-<a href="/docs/reference/types/string/#methods-codepoints"><code>codepoints</code></a>
-methods for strings</li>
+<li>Added <a href="/docs/reference/foundations/str/#definitions-clusters"><code>clusters</code></a> and <a href="/docs/reference/foundations/str/#definitions-codepoints"><code>codepoints</code></a> methods
+for strings</li>
 <li>Support for multiple authors in <a href="/docs/reference/meta/document/#parameters-author"><code>set document</code></a></li>
 <li>Fixed crash when string is accessed at a position that is not a char boundary</li>
 <li>Fixed semicolon parsing in <code><span class="typ-pol">#</span><span class="typ-pol">var</span> ;</code></li>
 <li>Fixed incremental parsing when inserting backslash at end of <code><span class="typ-str">#</span><span class="typ-str">&quot;abc&quot;</span></code></li>
-<li>Fixed names of a few font families
-(including Noto Sans Symbols and New Computer Modern families)</li>
+<li>Fixed names of a few font families (including Noto Sans Symbols and New
+Computer Modern families)</li>
 <li>Fixed autocompletion for font families</li>
 <li>Improved incremental compilation for user-defined functions</li>
 </ul>
-<h2>February 15, 2023</h2>
+<h2 id="_">February 15, 2023</h2>
 <ul>
-<li><a href="/docs/reference/layout/box/">Box</a> and <a href="/docs/reference/layout/block/">block</a> have gained <code>fill</code>, <code>stroke</code>,
-<code>radius</code>, and <code>inset</code> properties</li>
-<li>Blocks may now be explicitly sized, fixed-height blocks can still break
-across pages</li>
+<li><a href="/docs/reference/layout/box/">Box</a> and <a href="/docs/reference/layout/block/">block</a> have gained <code>fill</code>, <code>stroke</code>, <code>radius</code>, and
+<code>inset</code> properties</li>
+<li>Blocks may now be explicitly sized, fixed-height blocks can still break across
+pages</li>
 <li>Blocks can now be configured to be <a href="/docs/reference/layout/block/#parameters-breakable"><code>breakable</code></a> or not</li>
 <li><a href="/docs/reference/layout/enum/#parameters-numbering">Numbering style</a> can now be configured for nested enums</li>
 <li><a href="/docs/reference/layout/list/#parameters-marker">Markers</a> can now be configured for nested lists</li>
-<li>The <a href="/docs/reference/foundations/eval/"><code>eval</code></a> function now expects code instead of markup and
-returns an arbitrary value. Markup can still be evaluated by surrounding the
-string with brackets.</li>
+<li>The <a href="/docs/reference/foundations/eval/"><code>eval</code></a> function now expects code instead of markup and returns an
+arbitrary value. Markup can still be evaluated by surrounding the string with
+brackets.</li>
 <li>PDFs generated by Typst now contain XMP metadata</li>
 <li>Link boxes are now disabled in PDF output</li>
 <li>Tables don't produce small empty cells before a pagebreak anymore</li>
 <li>Fixed raw block highlighting bug</li>
 </ul>
-<h2>February 12, 2023</h2>
+<h2 id="_">February 12, 2023</h2>
 <ul>
 <li>Shapes, images, and transformations (move/rotate/scale/repeat) are now
-block-level. To integrate them into a paragraph, use a <a href="/docs/reference/layout/box/"><code>box</code></a> as
-with other elements.</li>
+block-level. To integrate them into a paragraph, use a <a href="/docs/reference/layout/box/"><code>box</code></a> as with
+other elements.</li>
 <li>A colon is now required in an &quot;everything&quot; show rule: Write <code><span class="typ-key">show</span><span class="typ-punct">:</span> it <span class="typ-op">=&gt;</span> ..</code>
-instead of <code><span class="typ-key">show</span> it <span class="typ-op">=&gt;</span> ..</code>. This prevents intermediate states that ruin
-your whole document.</li>
+instead of <code><span class="typ-key">show</span> it <span class="typ-op">=&gt;</span> ..</code>. This prevents intermediate states that ruin your
+whole document.</li>
 <li>Non-math content like a shape or table in a math formula is now centered
 vertically</li>
 <li>Support for widow and orphan prevention within containers</li>
@@ -1641,10 +1880,10 @@ outline is present</li>
 <li>Added delimiter setting for <a href="/docs/reference/math/cases/"><code>cases</code></a> function</li>
 <li>Parentheses are now included when accepting a function autocompletion</li>
 </ul>
-<h2>February 2, 2023</h2>
+<h2 id="_">February 2, 2023</h2>
 <ul>
-<li>Merged text and math symbols, renamed a few symbols
-(including <code>infty</code> to <code>infinity</code> with the alias <code>oo</code>)</li>
+<li>Merged text and math symbols, renamed a few symbols (including <code>infty</code> to
+<code>infinity</code> with the alias <code>oo</code>)</li>
 <li>Fixed missing italic mappings</li>
 <li>Math italics correction is now applied properly</li>
 <li>Parentheses now scale in <code><span class="typ-math-delim">$</span><span class="typ-func">zeta</span><span class="typ-punct">(</span>x<span class="typ-math-op">/</span>2<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code></li>
@@ -1657,132 +1896,133 @@ outline is present</li>
 <li>Heading and list markers now parse consistently</li>
 <li>Allow arbitrary math directly in content</li>
 </ul>
-<h2>2023 年 1 月 30 日</h2>
+<h2 id="_">January 30, 2023</h2>
 <p><a href="https://typst.app/blog/2023/january-update">Go to the announcement blog post.</a></p>
 <ul>
-<li>标记/数学中的新表达式语法
+<li>New expression syntax in markup/math
 <ul>
-<li>文本块不能再直接嵌入到标记中</li>
-<li>与其他表达式那样,现在它们需要前导井号（#）</li>
-<li>更多表达式支持使用井号,包括字面量
-(<code><span class="typ-str">#</span><span class="typ-str">&quot;string&quot;</span></code>) 以及无需空格的字段访问和方法调用
-： <code><span class="typ-pol">#</span><span class="typ-pol">emoji</span><span class="typ-punct">.</span><span class="typ-pol">face</span></code></li>
+<li>Blocks cannot be directly embedded in markup anymore</li>
+<li>Like other expressions, they now require a leading hashtag</li>
+<li>More expressions available with hashtag, including literals (<code><span class="typ-str">#</span><span class="typ-str">&quot;string&quot;</span></code>)
+as well as field access and method call without space: <code><span class="typ-pol">#</span><span class="typ-pol">emoji</span><span class="typ-punct">.</span><span class="typ-pol">face</span></code></li>
 </ul>
 </li>
-<li>新增 import 语法
+<li>New import syntax
 <ul>
-<li>使用  <code><span class="typ-key">#</span><span class="typ-key">import</span> <span class="typ-str">&quot;module.typ&quot;</span></code> 创建绑定的命名 <code>模块</code></li>
-<li>使用  <code><span class="typ-key">#</span><span class="typ-key">import</span> <span class="typ-str">&quot;module.typ&quot;</span><span class="typ-punct">:</span> a<span class="typ-punct">,</span> b</code> 或 <code><span class="typ-key">#</span><span class="typ-key">import</span> <span class="typ-str">&quot;module.typ&quot;</span><span class="typ-punct">:</span> <span class="typ-op">*</span></code> 来导入项目</li>
-<li>使用  <code><span class="typ-key">#</span><span class="typ-key">import</span> emoji<span class="typ-punct">:</span> face<span class="typ-punct">,</span> turtle</code> 来导入已绑定的模块</li>
+<li><code><span class="typ-key">#</span><span class="typ-key">import</span> <span class="typ-str">&quot;module.typ&quot;</span></code> creates binding named <code>module</code></li>
+<li><code><span class="typ-key">#</span><span class="typ-key">import</span> <span class="typ-str">&quot;module.typ&quot;</span><span class="typ-punct">:</span> a<span class="typ-punct">,</span> b</code> or <code><span class="typ-key">#</span><span class="typ-key">import</span> <span class="typ-str">&quot;module.typ&quot;</span><span class="typ-punct">:</span> <span class="typ-op">*</span></code> to import
+items</li>
+<li><code><span class="typ-key">#</span><span class="typ-key">import</span> emoji<span class="typ-punct">:</span> face<span class="typ-punct">,</span> turtle</code> to import from already bound module</li>
 </ul>
 </li>
-<li>新增符号处理
+<li>New symbol handling
 <ul>
-<li>移除符号表示法</li>
-<li>符号现在位于 <code>sym</code>, <code>emoji</code>,和 <code>math</code> 模块中</li>
-<li>数学模块重新导出 <code>sym</code>的所有内容</li>
-<li>通过字段访问进行修改,但仍是无序的 <code>&lt;mark&gt;</code></li>
-<li><code>&lt;mark&gt;</code>不再允许使用未知的修改器</li>
-<li>支持使用 <code>symbol</code> 函数定义自定义符号</li>
-<li>现在文档中会列出所有符号</li>
+<li>Removed symbol notation</li>
+<li>Symbols are now in modules: <code>sym</code>, <code>emoji</code>, and <code>math</code></li>
+<li>Math module also reexports all of <code>sym</code></li>
+<li>Modified through field access, still order-independent</li>
+<li>Unknown modifiers are not allowed anymore</li>
+<li>Support for custom symbol definitions with <code>symbol</code> function</li>
+<li>Symbols now listed in documentation</li>
 </ul>
 </li>
-<li>新的 <code>math</code> 模块
+<li>New <code>math</code> module
 <ul>
-<li>包含与数学相关的所有函数</li>
-<li>数学中的变量和函数调用（无需井号）访问此模块,而不是全局作用域,但也可以访问局部变量 <code>&lt;mark&gt;</code></li>
-<li>Variables and function calls directly in math (without hashtag) access this module instead of the global scope, but can also access local variables</li>
-<li>可以在代码中显式使用, 例如  <code><span class="typ-key">#</span><span class="typ-key">set</span> math<span class="typ-punct">.</span><span class="typ-func">vec</span><span class="typ-punct">(</span>delim<span class="typ-punct">:</span> <span class="typ-str">&quot;[&quot;</span><span class="typ-punct">)</span></code></li>
+<li>Contains all math-related functions</li>
+<li>Variables and function calls directly in math (without hashtag) access this
+module instead of the global scope, but can also access local variables</li>
+<li>Can be explicitly used in code, e.g. <code><span class="typ-key">#</span><span class="typ-key">set</span> math<span class="typ-punct">.</span><span class="typ-func">vec</span><span class="typ-punct">(</span>delim<span class="typ-punct">:</span> <span class="typ-str">&quot;[&quot;</span><span class="typ-punct">)</span></code></li>
 </ul>
 </li>
-<li>数学模式中的分隔符匹配
+<li>Delimiter matching in math
 <ul>
-<li>任何起始分隔符能与任何结束分隔符匹配</li>
-<li>匹配时,它们会自动进行比例缩放</li>
-<li>如要防止缩放,可以对其进行转义</li>
-<li>如要强制匹配两个分隔符,可以使用  <code>lr</code> 函数</li>
-<li>匹配的分隔符之间可能存在换行</li>
-<li>分隔符也可能不平衡</li>
-<li>你也可以使用 <code>lr</code> 函数来手动调整括号
-或者仅调整一个括号） 的大小</li>
+<li>Any opening delimiters matches any closing one</li>
+<li>When matched, they automatically scale</li>
+<li>To prevent scaling, escape them</li>
+<li>To forcibly match two delimiters, use <code>lr</code> function</li>
+<li>Line breaks may occur between matched delimiters</li>
+<li>Delimiters may also be unbalanced</li>
+<li>You can also use the <code>lr</code> function to scale the brackets (or just one
+bracket) to a specific size manually</li>
 </ul>
 </li>
-<li>带有对齐的多行数学公式
+<li>Multi-line math with alignment
 <ul>
-<li>使用反斜杠 <code>\</code> 插入换行符</li>
-<li>使用对齐符 <code>&amp;</code> 定义对齐点</li>
-<li>对齐点也适用于下括号、向量、大括号和矩阵</li>
-<li>支持多个对齐点</li>
+<li>The <code>\</code> character inserts a line break</li>
+<li>The <code>&amp;</code> character defines an alignment point</li>
+<li>Alignment points also work for underbraces, vectors, cases, and matrices</li>
+<li>Multiple alignment points are supported</li>
 </ul>
 </li>
-<li>功能更强大的数学函数调用
+<li>More capable math function calls
 <ul>
-<li>直接使用的数学函数调用可以使用带有井号的代码表达式</li>
-<li>也可以直接使用命名参数</li>
-<li>在数学函数调用中,分号会将前面的参数转换为数组
-以支持矩阵功能：<code><span class="typ-math-delim">$</span><span class="typ-func">mat</span><span class="typ-punct">(</span>1<span class="typ-punct">,</span> 2<span class="typ-punct">;</span> 3<span class="typ-punct">,</span> 4<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code></li>
+<li>Function calls directly in math can now take code expressions with hashtag</li>
+<li>They can now also take named arguments</li>
+<li>Within math function calls, semicolons turn preceding arguments to arrays to
+support matrices: <code><span class="typ-math-delim">$</span><span class="typ-func">mat</span><span class="typ-punct">(</span>1<span class="typ-punct">,</span> 2<span class="typ-punct">;</span> 3<span class="typ-punct">,</span> 4<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code></li>
 </ul>
 </li>
-<li>数学模式中的任意内容
+<li>Arbitrary content in math
 <ul>
-<li>现在可以将文本、图像和其他任意内容嵌入数学模式中</li>
-<li>数学现在还支持字体回退以支持 CJK 和 emoji 表情等内容</li>
+<li>Text, images, and other arbitrary content can now be embedded in math</li>
+<li>Math now also supports font fallback to support e.g. CJK and emoji</li>
 </ul>
 </li>
-<li>更多数学特性
+<li>More math features
 <ul>
-<li>新增文本运算符： <code>op</code> , <code>lim</code> , <code>max</code> 等等</li>
-<li>新增矩阵函数： <code>mat</code></li>
-<li>新增 <code>root</code> 函数函数: <code><span class="typ-math-delim">$</span><span class="typ-func">root</span><span class="typ-punct">(</span>3<span class="typ-punct">,</span> x<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code></li>
-<li>新增上下括号、方括号和线条</li>
-<li>新增 <code>abs</code> 和 <code>norm</code></li>
-<li>新增速记符： <code>[|</code>, <code>|]</code>, and <code>||</code></li>
-<li>新增 <code>attach</code> 函数,可被 <code>script</code> 和 <code>limit</code> 覆盖</li>
-<li>数学模式下可使用 <code>h</code>, <code>thin</code>, <code>med</code>, <code>thick</code> and <code>quad</code> 手动调整间距</li>
-<li>符号和其他内容现在可以像函数那样使用,例如 <code><span class="typ-math-delim">$</span><span class="typ-func">zeta</span><span class="typ-punct">(</span>x<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code></li>
-<li>新增 Fira Math 字体, 移除 Noto Sans Math 字体</li>
-<li>支持通过
-<code><span class="typ-key">#</span><span class="typ-key">show</span> math<span class="typ-punct">.</span><span class="typ-func">formula</span><span class="typ-punct">:</span> <span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span><span class="typ-str">&quot;Fira Math&quot;</span><span class="typ-punct">)</span></code> 自定义替代数学字体</li>
+<li>New text operators: <code>op</code> function, <code>lim</code>, <code>max</code>, etc.</li>
+<li>New matrix function: <code>mat</code></li>
+<li>New n-ary roots with <code>root</code> function: <code><span class="typ-math-delim">$</span><span class="typ-func">root</span><span class="typ-punct">(</span>3<span class="typ-punct">,</span> x<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code></li>
+<li>New under- and overbraces, -brackets, and -lines</li>
+<li>New <code>abs</code> and <code>norm</code> functions</li>
+<li>New shorthands: <code>[|</code>, <code>|]</code>, and <code>||</code></li>
+<li>New <code>attach</code> function, overridable attachments with <code>script</code> and <code>limit</code></li>
+<li>Manual spacing in math, with <code>h</code>, <code>thin</code>, <code>med</code>, <code>thick</code> and <code>quad</code></li>
+<li>Symbols and other content may now be used like a function, e.g.
+<code><span class="typ-math-delim">$</span><span class="typ-func">zeta</span><span class="typ-punct">(</span>x<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code></li>
+<li>Added Fira Math font, removed Noto Sans Math font</li>
+<li>Support for alternative math fonts through <code><span class="typ-key">#</span><span class="typ-key">show</span> math<span class="typ-punct">.</span><span class="typ-func">formula</span><span class="typ-punct">:</span> <span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span><span class="typ-str">&quot;Fira Math&quot;</span><span class="typ-punct">)</span></code></li>
 </ul>
 </li>
 <li>More library improvements
 <ul>
-<li>新增 <code>calc</code> 模块, 并将 <code>abs</code>, <code>min</code>, <code>max</code>, <code>even</code>, <code>odd</code> 和 <code>mod</code> 移动过去</li>
-<li>新增 <code>assert</code> 函数的 <code>message</code> 参数</li>
-<li>字典的<code>pairs</code> 方法现在将会返回一个长度为2的二维数组，而不是关闭它</li>
-<li>现在，如果 <code>&quot;key&quot;</code> 不存在，则方法调用 <code>dict<span class="typ-punct">.</span><span class="typ-func">at</span><span class="typ-punct">(</span><span class="typ-str">&quot;key&quot;</span><span class="typ-punct">)</span></code> 将会失败
-以前, 它被允许在xx中使用. 替代方案是 <code>dict<span class="typ-punct">.</span>key <span class="typ-op">=</span> x</code>
-和<code>dict<span class="typ-punct">.</span><span class="typ-func">insert</span><span class="typ-punct">(</span><span class="typ-str">&quot;key&quot;</span><span class="typ-punct">,</span> x<span class="typ-punct">)</span></code>.</li>
+<li>New <code>calc</code> module, <code>abs</code>, <code>min</code>, <code>max</code>, <code>even</code>, <code>odd</code> and <code>mod</code> moved there</li>
+<li>New <code>message</code> argument on <code>assert</code> function</li>
+<li>The <code>pairs</code> method on dictionaries now returns an array of length-2 arrays
+instead of taking a closure</li>
+<li>The method call <code>dict<span class="typ-punct">.</span><span class="typ-func">at</span><span class="typ-punct">(</span><span class="typ-str">&quot;key&quot;</span><span class="typ-punct">)</span></code> now always fails if <code>&quot;key&quot;</code> doesn't exist
+Previously, it was allowed in assignments. Alternatives are <code>dict<span class="typ-punct">.</span>key <span class="typ-op">=</span> x</code>
+and <code>dict<span class="typ-punct">.</span><span class="typ-func">insert</span><span class="typ-punct">(</span><span class="typ-str">&quot;key&quot;</span><span class="typ-punct">,</span> x<span class="typ-punct">)</span></code>.</li>
 </ul>
 </li>
-<li>更智能的编辑器功能
+<li>Smarter editor functionality
 <ul>
-<li>支持本地变量的自动补全</li>
-<li>支持在值上使用的方法的自动补全</li>
-<li>支持符号和模块的自动补全</li>
-<li>支持导入的自动补全</li>
-<li>支持悬浮在标识符上方查看值</li>
+<li>Autocompletion for local variables</li>
+<li>Autocompletion for methods available on a value</li>
+<li>Autocompletion for symbols and modules</li>
+<li>Autocompletion for imports</li>
+<li>Hover over an identifier to see its value(s)</li>
 </ul>
 </li>
-<li>进一步的编辑器改进
+<li>Further editor improvements
 <ul>
-<li>新增带有预览功能的字体菜单</li>
-<li>现在可以通过分享链接分享单个项目</li>
-<li>对于共享给你的项目，将有全新的界面体验</li>
-<li>键盘快捷键现在列在菜单中，并且有更多的快捷键</li>
-<li>新增离线指示器</li>
-<li>为所有按钮提供工具提示</li>
-<li>改进了账户保护功能</li>
-<li>将状态指示器移入错误列表按钮中</li>
+<li>New Font menu with previews</li>
+<li>Single projects may now be shared with share links</li>
+<li>New dashboard experience if projects are shared with you</li>
+<li>Keyboard Shortcuts are now listed in the menus and there are more of them</li>
+<li>New Offline indicator</li>
+<li>Tooltips for all buttons</li>
+<li>Improved account protection</li>
+<li>Moved Status indicator into the error list button</li>
 </ul>
 </li>
-<li>进一步的修复
+<li>Further fixes
 <ul>
-<li>修复增量解析器的多个错误</li>
-<li>修复了闭包参数捕获</li>
-<li>修复了大量的数学错误</li>
-<li>修复了性能、文件管理、编辑可靠性方面的错误</li>
-<li>在登录后，新增重定向到最初导航到的页面</li>
+<li>Multiple bug fixes for incremental parser</li>
+<li>Fixed closure parameter capturing</li>
+<li>Fixed tons of math bugs</li>
+<li>Bugfixes for performance, file management, editing reliability</li>
+<li>Added redirection to the page originally navigated to after signin</li>
 </ul>
 </li>
 </ul>
@@ -1793,8 +2033,8 @@ outline is present</li>
       <div class="page-end-buttons"><a href="/docs/packages/" class="previous"><img
             src="/assets/icons/16-arrow-right.svg" alt="←">
           <div><span class="page-title">第三方包</span><span class="hint">上一页</span></div>
-        </a><a href="/docs/community/" class="next"><img src="/assets/icons/16-arrow-right.svg" alt="→">
-          <div><span class="page-title">社区</span><span class="hint">下一页</span></div>
+        </a><a href="/docs/roadmap/" class="next"><img src="/assets/icons/16-arrow-right.svg" alt="→">
+          <div><span class="page-title">路线图</span><span class="hint">下一页</span></div>
         </a></div>
       
     </main>
@@ -1802,6 +2042,14 @@ outline is present</li>
     
     <nav id="page-overview"><strong>目录</strong>
       <ul>
+        
+        <li data-assoc="v0.8.0"><a href="#v0.8.0">v0.8.0</a>
+          <ul></ul>
+        </li>
+        
+        <li data-assoc="v0.7.0"><a href="#v0.7.0">v0.7.0</a>
+          <ul></ul>
+        </li>
         
         <li data-assoc="v0.6.0"><a href="#v0.6.0">v0.6.0</a>
           <ul></ul>
@@ -1824,6 +2072,34 @@ outline is present</li>
         </li>
         
         <li data-assoc="v0.1.0"><a href="#v0.1.0">v0.1.0</a>
+          <ul></ul>
+        </li>
+        
+        <li data-assoc="_"><a href="#_"></a>
+          <ul></ul>
+        </li>
+        
+        <li data-assoc="_"><a href="#_"></a>
+          <ul></ul>
+        </li>
+        
+        <li data-assoc="_"><a href="#_"></a>
+          <ul></ul>
+        </li>
+        
+        <li data-assoc="_"><a href="#_"></a>
+          <ul></ul>
+        </li>
+        
+        <li data-assoc="_"><a href="#_"></a>
+          <ul></ul>
+        </li>
+        
+        <li data-assoc="_"><a href="#_"></a>
+          <ul></ul>
+        </li>
+        
+        <li data-assoc="_"><a href="#_"></a>
           <ul></ul>
         </li>
         
@@ -1857,8 +2133,9 @@ outline is present</li>
       <p>Made in Berlin</p>
     </div>
   </footer>
-  <script src="/scripts/docs.js?bust=20230520"></script>
-  <script src="/scripts/analytics.js" defer=""></script>
+  <script src="/scripts/fuse.basic.min.js"></script>
+  <script src="/scripts/docs.js?bust=20230913"></script>
+  <script src="/scripts/analytics.js" defer></script>
 </body>
 
 </html>

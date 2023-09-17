@@ -1,23 +1,25 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <title>脚本 – Typst 中文文档</title>
-  <meta name="description" content="Typst 脚本功能自动化文档。">
+  <meta name="description" content="使用 Typst 的脚本功能使得文档更加自动化。">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#239dad">
-  <meta property="og:url" content="https://typst.app/docs/reference/scripting/">
+  <meta property="og:url" content="https://typst-doc-cn.github.io/docs/reference/scripting/">
   <meta property="og:title" content="脚本 – Typst 中文文档">
   <meta property="og:site_name" content="Typst">
-  <meta property="og:description" content="Typst 脚本功能自动化文档。">
+  <meta property="og:description" content="使用 Typst 的脚本功能使得文档更加自动化。">
   <meta property="og:type">
-  <meta property="og:image" content="https://typst.app/assets/social.png">
+  <meta property="og:image" content="https://typst-doc-cn.github.io/assets/social.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:site" content="@typstapp">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://typst.app/docs/reference/scripting/">
+  <link rel="canonical" href="https://typst-doc-cn.github.io/docs/reference/scripting/">
   <meta name="twitter:image:alt"
     content="The left side of a text editor with colorful cursors, as well as the text &#x27;Compose papers faster, Typst&#x27;">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.ico">
@@ -25,47 +27,16 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
   <link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#239dad">
   <link rel="manifest" href="/assets/site.webmanifest">
-  <link rel="stylesheet" href="/styles/default.css">
-  <link rel="stylesheet" href="/styles/docs.css">
+  <link rel="stylesheet" href="/styles/default.css?bust=20230913?d=2023-09-16">
+  <link rel="stylesheet" href="/styles/docs.css?bust=20230915?d=2023-09-16">
   <link rel="stylesheet" href="/styles/docs-cn.css">
   <link rel="preload" href="/assets/fonts/HKGrotesk-Regular.woff2" as="font">
   <link rel="preload" href="/assets/fonts/HKGrotesk-Bold.woff2" as="font">
   <link rel="preload" href="/assets/fonts/HKGrotesk-SemiBold.woff2" as="font">
   <link rel="preload" href="/assets/fonts/CascadiaMono-Regular-Sub.woff2" as="font">
   <link rel="preload" href="/assets/images/blur.webp" as="image">
-  <script>document.documentElement.className = document.documentElement.className.replace(
-      "no-js",
-      "js",
-    )
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const INSECURE_SIGNED_IN_COOKIE = document.cookie
-        .split("; ")
-        .find((row) => row.startsWith("INSECURE_SIGNED_IN="))
-        ?.split("=")[1]
-        .toLowerCase()
-
-      if (
-        INSECURE_SIGNED_IN_COOKIE === "1" ||
-        INSECURE_SIGNED_IN_COOKIE === "true" ||
-        INSECURE_SIGNED_IN_COOKIE === "yes"
-      ) {
-        document.documentElement.classList.add("signed-in")
-        const navButton = document.querySelector("header nav a.nav-btn")
-        const signInEl = document.querySelector("header nav a.sign-in")
-
-        if (navButton) {
-          navButton.innerHTML = "Go to app"
-          navButton.setAttribute("href", "/app/")
-        }
-
-        if (signInEl) {
-          signInEl.innerHTML = "Sign out"
-          signInEl.setAttribute("href", "https://api.typst.app/v1/auth/logout")
-        }
-      }
-    })
-  </script>
+  
+  <script>document.documentElement.className = document.documentElement.className.replace("no-js", "js"), document.addEventListener("DOMContentLoaded", (() => { const e = document.cookie.split("; ").find((e => e.startsWith("INSECURE_SIGNED_IN=")))?.split("=")[1].toLowerCase(); if ("1" === e || "true" === e || "yes" === e) { document.documentElement.classList.add("signed-in"); const e = document.querySelector("header nav a.nav-btn"), t = document.querySelector("header nav a.sign-in"); e && (e.innerHTML = "Go to app", e.setAttribute("href", "/app/")), t && (t.innerHTML = "Sign out", t.setAttribute("href", "https://api.typst.app/v1/auth/logout")) } }))</script>
 </head>
 
 <body class="no-js docs has-outline">
@@ -181,6 +152,7 @@
           <ul>
             
             
+            
             <li class="category">Language</li>
             
             <li>
@@ -201,8 +173,10 @@
             </li>
             
             
+            
+            
             <li>
-              <a href="/docs/reference/types/" >类型</a>
+              <a href="/docs/reference/types/" >类型（旧）</a>
               
               <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
               <ul>
@@ -273,9 +247,83 @@
               </ul>
               
             </li>
+
             
+            <li class="category">Library</li>
             
-            <li class="category">Content</li>
+            <li>
+              <a href="/docs/reference/foundations/" >基础</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/foundations/arguments/" >Arguments</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/array/" >Array</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/assert/" >Assert</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/bool/" >Boolean</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/bytes/" >Bytes</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/calc" >Calculation</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/content/" >Content</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/datetime/" >Datetime</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/dictionary/" >Dictionary</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/duration/" >Duration</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/eval/" >Evaluate</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/float/" >Float</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/function/" >Function</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/int/" >Integer</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/module/" >Module</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/panic/" >Panic</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/plugin/" >Plugin</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/regex/" >Regex</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/repr/" >Representation</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/str/" >String</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/type/" >Type</a></li>
+                
+              </ul>
+              
+            </li>
+            
             
             <li>
               <a href="/docs/reference/text/" >文本</a>
@@ -284,13 +332,16 @@
               <ul>
                 
                 
-                <li><a href="/docs/reference/text/lorem/" >假文</a></li>
-                
-                
                 <li><a href="/docs/reference/text/emph/" >强调（斜体）</a></li>
                 
                 
+                <li><a href="/docs/reference/text/highlight/" >文本高亮</a></li>
+                
+                
                 <li><a href="/docs/reference/text/linebreak/" >换行</a></li>
+                
+                
+                <li><a href="/docs/reference/text/lorem/" >假文</a></li>
                 
                 
                 <li><a href="/docs/reference/text/lower/" >转小写</a></li>
@@ -343,7 +394,7 @@
                 <li><a href="/docs/reference/math/accent/" >重音符号</a></li>
                 
                 
-                <li><a href="/docs/reference/math/attach/" >附缀</a></li>
+                <li><a href="/docs/reference/math/attach" >附缀</a></li>
                 
                 
                 <li><a href="/docs/reference/math/binom/" >二项式</a></li>
@@ -352,7 +403,10 @@
                 <li><a href="/docs/reference/math/cancel/" >删除线</a></li>
                 
                 
-                <li><a href="/docs/reference/math/cases/" >大括号</a></li>
+                <li><a href="/docs/reference/math/cases/" >左大括号</a></li>
+                
+                
+                <li><a href="/docs/reference/math/class/" >类</a></li>
                 
                 
                 <li><a href="/docs/reference/math/equation/" >数学表达式</a></li>
@@ -361,28 +415,28 @@
                 <li><a href="/docs/reference/math/frac/" >分数</a></li>
                 
                 
-                <li><a href="/docs/reference/math/lr/" >Left/Right</a></li>
+                <li><a href="/docs/reference/math/lr" >Left/Right</a></li>
                 
                 
                 <li><a href="/docs/reference/math/mat/" >矩阵</a></li>
                 
                 
-                <li><a href="/docs/reference/math/roots/" >根式</a></li>
+                <li><a href="/docs/reference/math/roots" >根式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/sizes/" >显示尺寸</a></li>
+                <li><a href="/docs/reference/math/sizes" >显示尺寸</a></li>
                 
                 
-                <li><a href="/docs/reference/math/styles/" >显示样式</a></li>
+                <li><a href="/docs/reference/math/styles" >显示样式</a></li>
                 
                 
                 <li><a href="/docs/reference/math/op/" >文本运算符</a></li>
                 
                 
-                <li><a href="/docs/reference/math/underover/" >上/下 方内容</a></li>
+                <li><a href="/docs/reference/math/underover" >上/下方内容</a></li>
                 
                 
-                <li><a href="/docs/reference/math/variants/" >字体变体</a></li>
+                <li><a href="/docs/reference/math/variants" >字体变体</a></li>
                 
                 
                 <li><a href="/docs/reference/math/vec/" >向量</a></li>
@@ -399,7 +453,13 @@
               <ul>
                 
                 
-                <li><a href="/docs/reference/layout/align/" >Align</a></li>
+                <li><a href="/docs/reference/layout/align/" >对齐</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/alignment/" >Alignment</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/angle/" >Angle</a></li>
                 
                 
                 <li><a href="/docs/reference/layout/block/" >Block</a></li>
@@ -417,10 +477,19 @@
                 <li><a href="/docs/reference/layout/columns/" >Columns</a></li>
                 
                 
+                <li><a href="/docs/reference/layout/direction/" >Direction</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/fraction/" >Fraction</a></li>
+                
+                
                 <li><a href="/docs/reference/layout/grid/" >Grid</a></li>
                 
                 
                 <li><a href="/docs/reference/layout/hide/" >Hide</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/length/" >Length</a></li>
                 
                 
                 <li><a href="/docs/reference/layout/measure/" >Measure</a></li>
@@ -448,6 +517,12 @@
                 
                 
                 <li><a href="/docs/reference/layout/place/" >Place</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/ratio/" >Ratio</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/relative/" >Relative Length</a></li>
                 
                 
                 <li><a href="/docs/reference/layout/repeat/" >Repeat</a></li>
@@ -488,6 +563,9 @@
                 <li><a href="/docs/reference/visualize/circle/" >Circle</a></li>
                 
                 
+                <li><a href="/docs/reference/visualize/color/" >Color</a></li>
+                
+                
                 <li><a href="/docs/reference/visualize/ellipse/" >Ellipse</a></li>
                 
                 
@@ -508,6 +586,9 @@
                 
                 <li><a href="/docs/reference/visualize/square/" >Square</a></li>
                 
+                
+                <li><a href="/docs/reference/visualize/stroke/" >Stroke</a></li>
+                
               </ul>
               
             </li>
@@ -523,7 +604,7 @@
                 <li><a href="/docs/reference/meta/bibliography/" >Bibliography</a></li>
                 
                 
-                <li><a href="/docs/reference/meta/cite/" >Citation</a></li>
+                <li><a href="/docs/reference/meta/cite/" >Cite</a></li>
                 
                 
                 <li><a href="/docs/reference/meta/counter/" >Counter</a></li>
@@ -541,6 +622,9 @@
                 <li><a href="/docs/reference/meta/heading/" >Heading</a></li>
                 
                 
+                <li><a href="/docs/reference/meta/label/" >Label</a></li>
+                
+                
                 <li><a href="/docs/reference/meta/layout/" >Layout</a></li>
                 
                 
@@ -548,6 +632,12 @@
                 
                 
                 <li><a href="/docs/reference/meta/locate/" >Locate</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/location/" >Location</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/metadata/" >Metadata</a></li>
                 
                 
                 <li><a href="/docs/reference/meta/numbering/" >Numbering</a></li>
@@ -582,192 +672,13 @@
               <ul>
                 
                 
+                <li><a href="/docs/reference/symbols/symbol/" >Symbol</a></li>
+                
+                
                 <li><a href="/docs/reference/symbols/sym/" >General</a></li>
                 
                 
                 <li><a href="/docs/reference/symbols/emoji/" >Emoji</a></li>
-                
-              </ul>
-              
-            </li>
-            
-            
-            <li class="category">Compute</li>
-            
-            <li>
-              <a href="/docs/reference/foundations/" >基础</a>
-              
-              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
-              <ul>
-                
-                
-                <li><a href="/docs/reference/foundations/assert/" >Assert</a></li>
-                
-                
-                <li><a href="/docs/reference/foundations/eval/" >Evaluate</a></li>
-                
-                
-                <li><a href="/docs/reference/foundations/panic/" >Panic</a></li>
-                
-                
-                <li><a href="/docs/reference/foundations/repr/" >Representation</a></li>
-                
-                
-                <li><a href="/docs/reference/foundations/type/" >Type</a></li>
-                
-              </ul>
-              
-            </li>
-            
-            
-            <li>
-              <a href="/docs/reference/calculate/" >计算</a>
-              
-              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
-              <ul>
-                
-                
-                <li><a href="/docs/reference/calculate/abs/" >Absolute</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/acos/" >Arccosine</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/asin/" >Arcsine</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/atan/" >Arctangent</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/binom/" >Binomial</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/clamp/" >Clamp</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/cos/" >Cosine</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/even/" >Even</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/exp/" >Exponential</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/fact/" >Factorial</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/atan2/" >Four-quadrant Arctangent</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/fract/" >Fractional</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/gcd/" >Greatest Common Divisor</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/cosh/" >Hyperbolic cosine</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/sinh/" >Hyperbolic sine</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/tanh/" >Hyperbolic tangent</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/lcm/" >Least Common Multiple</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/log/" >Logarithm</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/max/" >Maximum</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/min/" >Minimum</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/ln/" >Natural Logarithm</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/odd/" >Odd</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/perm/" >Permutation</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/pow/" >Power</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/quo/" >Quotient</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/rem/" >Remainder</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/round/" >Round</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/floor/" >Round down</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/ceil/" >Round up</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/sin/" >Sine</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/sqrt/" >Square Root</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/tan/" >Tangent</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/trunc/" >Truncate</a></li>
-                
-              </ul>
-              
-            </li>
-            
-            
-            <li>
-              <a href="/docs/reference/construct/" >构造</a>
-              
-              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
-              <ul>
-                
-                
-                <li><a href="/docs/reference/construct/cmyk/" >CMYK</a></li>
-                
-                
-                <li><a href="/docs/reference/construct/datetime/" >Datetime</a></li>
-                
-                
-                <li><a href="/docs/reference/construct/float/" >Float</a></li>
-                
-                
-                <li><a href="/docs/reference/construct/int/" >Integer</a></li>
-                
-                
-                <li><a href="/docs/reference/construct/label/" >Label</a></li>
-                
-                
-                <li><a href="/docs/reference/construct/luma/" >Luma</a></li>
-                
-                
-                <li><a href="/docs/reference/construct/rgb/" >RGB</a></li>
-                
-                
-                <li><a href="/docs/reference/construct/range/" >Range</a></li>
-                
-                
-                <li><a href="/docs/reference/construct/regex/" >Regex</a></li>
-                
-                
-                <li><a href="/docs/reference/construct/str/" >String</a></li>
-                
-                
-                <li><a href="/docs/reference/construct/symbol/" >Symbol</a></li>
                 
               </ul>
               
@@ -779,6 +690,9 @@
               
               <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
               <ul>
+                
+                
+                <li><a href="/docs/reference/data-loading/cbor/" >CBOR</a></li>
                 
                 
                 <li><a href="/docs/reference/data-loading/csv/" >CSV</a></li>
@@ -819,6 +733,12 @@
               
             </li>
             
+            
+            <li>
+              <a href="/docs/guides/page-setup/" >页面设置指南</a>
+              
+            </li>
+            
           </ul>
           
         </li>
@@ -832,6 +752,12 @@
         
         <li>
           <a href="/docs/changelog/" >更新日志</a>
+          
+        </li>
+        
+        
+        <li>
+          <a href="/docs/roadmap/" >路线图</a>
           
         </li>
         
@@ -880,7 +806,7 @@
 <span class="typ-str">#</span><span class="typ-str">&quot;hello&quot;</span><span class="typ-punct">.</span><span class="typ-func">len</span><span class="typ-punct">(</span><span class="typ-punct">)</span>
 </code></pre><div class="preview"><img src="/assets/docs/f225eedcb810ced31df3dfe3b3e7dda6.png" alt="Preview" width="480" height="190"/></div></div>
 <p>上面示例展示了一些用到的表达式，
-有<a href="/docs/reference/types/function/">函数调用</a>，
+有<a href="/docs/reference/foundations/function/">函数调用</a>，
 <a href="/docs/reference/scripting/#fields">字段访问</a>，
 <a href="/docs/reference/scripting/#methods">方法调用</a>。
 本章余下部分讲解更多类型表达式。
@@ -898,9 +824,9 @@
 </li>
 <li>
 <p><strong>文档内容块</strong> <code><span class="typ-punct">[</span><span class="typ-strong">*Hey*</span> there!<span class="typ-punct">]</span></code> <br />
-使用文档内容块，可以将标记/文档内容作为可编程值，存储到变量，传送给<a href="/docs/reference/types/function/">函数</a>。
+使用文档内容块，可以将标记/文档内容作为可编程值，存储到变量，传送给<a href="/docs/reference/foundations/function/">函数</a>。
 文档内容块由方括号包裹，可以包含任何标记。
-一个文档内容块产生一个 <a href="/docs/reference/types/content/">content 类型</a>的值。
+一个文档内容块产生一个 <a href="/docs/reference/foundations/content/">content 类型</a>的值。
 文档内容块可以后缀参数形式任意多个传递给函数，就是说，<code><span class="typ-func">list</span><span class="typ-punct">[</span>A<span class="typ-punct">]</span><span class="typ-punct">[</span>B<span class="typ-punct">]</span></code> 等效于 <code><span class="typ-func">list</span><span class="typ-punct">(</span><span class="typ-punct">[</span>A<span class="typ-punct">]</span><span class="typ-punct">,</span> <span class="typ-punct">[</span>B<span class="typ-punct">]</span><span class="typ-punct">)</span></code>。</p>
 </li>
 </ul>
@@ -915,7 +841,7 @@
 <h2 id="bindings">绑定和解构</h2>
 <p>上面已经展示，变量由 <code><span class="typ-key">let</span></code> 绑定定义。
 = 符号后表达式的值被赋值给变量，这里赋值可以被省略，如果没有赋值，变量会初始化为 <code><span class="typ-key">none</span></code>。
-<code><span class="typ-key">let</span></code> 关键词也可以用来生成一个<a href="/docs/reference/types/function/#definitions">自定义的有名函数</a>。
+<code><span class="typ-key">let</span></code> 关键词也可以用来生成一个<a href="/docs/reference/foundations/function//#definitions">自定义的有名函数</a>。
 let 绑定的变量可以在接下来的块中或者文档中被访问。</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> name <span class="typ-op">=</span> <span class="typ-str">&quot;Typst&quot;</span>
 This is <span class="typ-pol">#</span><span class="typ-pol">name</span>&#39;s documentation.
@@ -924,7 +850,7 @@ It explains <span class="typ-pol">#</span><span class="typ-pol">name</span>.
 <span class="typ-key">#</span><span class="typ-key">let</span> <span class="typ-func">add</span><span class="typ-punct">(</span>x<span class="typ-punct">,</span> y<span class="typ-punct">)</span> <span class="typ-op">=</span> x <span class="typ-op">+</span> y
 Sum is <span class="typ-func">#</span><span class="typ-func">add</span><span class="typ-punct">(</span><span class="typ-num">2</span><span class="typ-punct">,</span> <span class="typ-num">3</span><span class="typ-punct">)</span>.
 </code></pre><div class="preview"><img src="/assets/docs/06bda5b4dc5513a30aebfe2c273ada2a.png" alt="Preview" width="480" height="190"/></div></div>
-<p>let 绑定也常用来解构<a href="/docs/reference/types/array/">数组</a>和<a href="/docs/reference/types/dictionary/">字典</a>，
+<p>let 绑定也常用来解构<a href="/docs/reference/foundations/array/">数组</a>和<a href="/docs/reference/foundations/dictionary/">字典</a>，
 解构时，等号左边的形式需要与数组或字典相似，
 <code>..</code> 模式操作符只可被使用一次，用来指代数组或字典剩余的条目。</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> <span class="typ-punct">(</span>x<span class="typ-punct">,</span> y<span class="typ-punct">)</span> <span class="typ-op">=</span> <span class="typ-punct">(</span><span class="typ-num">1</span><span class="typ-punct">,</span> <span class="typ-num">2</span><span class="typ-punct">)</span>
@@ -1008,17 +934,17 @@ while 循环生成数个长度为1的数组，然后将其合并成一个大数�
 <ul>
 <li>
 <p><code><span class="typ-key">for</span> letter <span class="typ-key">in</span> <span class="typ-str">&quot;abc&quot;</span> <span class="typ-punct">{</span>..<span class="typ-punct">}</span></code> <br />
-遍历<a href="/docs/reference/types/string/">字符串</a>的每个字符。
+遍历<a href="/docs/reference/foundations/str/">字符串</a>的每个字符。
 （专业的说，是遍历字符串的每个形位符，大多时候，一个形位符对应一个字符/码位，
 然而，有些表情标记符号由多个码位组成，但它仍然是一个形位符）。</p>
 </li>
 <li>
 <p><code><span class="typ-key">for</span> value <span class="typ-key">in</span> array <span class="typ-punct">{</span>..<span class="typ-punct">}</span></code> <br />
-遍历<a href="/docs/reference/types/array/">数组</a>中的条目。<a href="/docs/reference/scripting/#bindings">let 绑定</a>中的解构语法也可使用于此。</p>
+遍历<a href="/docs/reference/foundations/array/">数组</a>中的条目。<a href="/docs/reference/scripting/#bindings">let 绑定</a>中的解构语法也可使用于此。</p>
 </li>
 <li>
 <p><code><span class="typ-key">for</span> pair <span class="typ-key">in</span> dict <span class="typ-punct">{</span>..<span class="typ-punct">}</span></code> <br />
-遍历<a href="/docs/reference/types/dictionary/">字典</a>的键值对。键值对也可以用 <code><span class="typ-key">for</span> <span class="typ-punct">(</span>key<span class="typ-punct">,</span> value<span class="typ-punct">)</span> <span class="typ-key">in</span> dict <span class="typ-punct">{</span>..<span class="typ-punct">}</span></code> 语法解构。</p>
+遍历<a href="/docs/reference/foundations/dictionary/">字典</a>的键值对。键值对也可以用 <code><span class="typ-key">for</span> <span class="typ-punct">(</span>key<span class="typ-punct">,</span> value<span class="typ-punct">)</span> <span class="typ-key">in</span> dict <span class="typ-punct">{</span>..<span class="typ-punct">}</span></code> 语法解构。</p>
 </li>
 </ul>
 <p>Typst 用 <code><span class="typ-key">break</span></code> 和 <code><span class="typ-key">continue</span></code> 语句来控制循环的执行，
@@ -1041,10 +967,10 @@ while 循环生成数个长度为1的数组，然后将其合并成一个大数�
 <h2 id="fields">字段</h2>
 <p>可以使用 <em>点号</em> 来访问一个值的字段，这个值可以是：</p>
 <ul>
-<li>有特定键的<a href="/docs/reference/types/dictionary/">字典</a>，</li>
-<li>有变体的<a href="/docs/reference/types/symbol/">符号</a>，</li>
-<li>有定义的<a href="/docs/reference/types/module/">模块</a>，</li>
-<li>有特定字段的<a href="/docs/reference/types/content/">文档元素</a>，可访问的字段与文档元素的<a href="/docs/reference/types/function/#element-functions">构造函数</a>参数相匹配。</li>
+<li>有特定键的<a href="/docs/reference/foundations/dictionary/">字典</a>，</li>
+<li>有变体的<a href="/docs/reference/symbols/symbol/">符号</a>，</li>
+<li>有定义的<a href="/docs/reference/foundations/module/">模块</a>，</li>
+<li>有特定字段的<a href="/docs/reference/foundations/content/">文档元素</a>，可访问的字段与文档元素的<a href="/docs/reference/foundations/function//#element-functions">构造函数</a>参数相匹配。</li>
 </ul>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> dict <span class="typ-op">=</span> <span class="typ-punct">(</span>greet<span class="typ-punct">:</span> <span class="typ-str">&quot;Hello&quot;</span><span class="typ-punct">)</span>
 <span class="typ-pol">#</span><span class="typ-pol">dict</span><span class="typ-punct">.</span><span class="typ-pol">greet</span> <span class="typ-escape">\</span>
@@ -1054,10 +980,17 @@ while 循环生成数个长度为1的数组，然后将其合并成一个大数�
 <span class="typ-pol">#</span><span class="typ-pol">it</span><span class="typ-punct">.</span><span class="typ-pol">body</span> <span class="typ-escape">\</span>
 <span class="typ-pol">#</span><span class="typ-pol">it</span><span class="typ-punct">.</span><span class="typ-pol">level</span>
 </code></pre><div class="preview"><img src="/assets/docs/87635702d6b82c1ab68e582567398392.png" alt="Preview" width="480" height="190"/></div></div>
-<h2 id="methods">方法</h2>
-<p>方法是一个特殊<a href="/docs/reference/types/function/">函数</a>，与特定类型紧密结合使用。
-同字段访问一样，使用点号来调用某类型值的方法：<code>value<span class="typ-punct">.</span><span class="typ-func">method</span><span class="typ-punct">(</span><span class="typ-op">..</span><span class="typ-punct">.</span><span class="typ-punct">)</span></code>。
-<a href="/docs/reference/types/">type 文档</a>中列出了内置类型所有可使用的方法。方法不能被自定义。</p>
+<h2 id="methods">Methods</h2>
+<p>A <em>method call</em> is a convenient way to call a function that is scoped to a
+value's <a href="/docs/reference/foundations/type/">type</a>. For example, we can call the <a href="/docs/reference/foundations/str/#definitions-len"><code>str.len</code></a>
+function in the following two equivalent ways:</p>
+<div class="previewed-code"><pre><code><span class="typ-pol">#</span><span class="typ-pol">str</span><span class="typ-punct">.</span><span class="typ-func">len</span><span class="typ-punct">(</span><span class="typ-str">&quot;abc&quot;</span><span class="typ-punct">)</span> is the same as
+<span class="typ-str">#</span><span class="typ-str">&quot;abc&quot;</span><span class="typ-punct">.</span><span class="typ-func">len</span><span class="typ-punct">(</span><span class="typ-punct">)</span>
+</code></pre><div class="preview"><img src="/assets/docs/68a97a415ea8fd416893c9f6da91d031.png" alt="Preview" width="480" height="190"/></div></div>
+<p>The structure of a method call is <code>value<span class="typ-punct">.</span><span class="typ-func">method</span><span class="typ-punct">(</span><span class="typ-op">..</span>args<span class="typ-punct">)</span></code> and its equivalent
+full function call is <code><span class="typ-func">type</span><span class="typ-punct">(</span>value<span class="typ-punct">)</span><span class="typ-punct">.</span><span class="typ-func">method</span><span class="typ-punct">(</span>value<span class="typ-punct">,</span> <span class="typ-op">..</span>args<span class="typ-punct">)</span></code>. The documentation
+of each type lists it's scoped functions. You cannot currently define your own
+methods.</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> array <span class="typ-op">=</span> <span class="typ-punct">(</span><span class="typ-num">1</span><span class="typ-punct">,</span> <span class="typ-num">2</span><span class="typ-punct">,</span> <span class="typ-num">3</span><span class="typ-punct">,</span> <span class="typ-num">4</span><span class="typ-punct">)</span>
 <span class="typ-pol">#</span><span class="typ-pol">array</span><span class="typ-punct">.</span><span class="typ-func">pop</span><span class="typ-punct">(</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
 <span class="typ-pol">#</span><span class="typ-pol">array</span><span class="typ-punct">.</span><span class="typ-func">len</span><span class="typ-punct">(</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
@@ -1065,27 +998,47 @@ while 循环生成数个长度为1的数组，然后将其合并成一个大数�
 <span class="typ-punct">#</span><span class="typ-punct">(</span><span class="typ-str">&quot;a, b, c&quot;</span>
     <span class="typ-punct">.</span><span class="typ-func">split</span><span class="typ-punct">(</span><span class="typ-str">&quot;, &quot;</span><span class="typ-punct">)</span>
     <span class="typ-punct">.</span><span class="typ-func">join</span><span class="typ-punct">[</span> <span class="typ-escape">---</span> <span class="typ-punct">]</span><span class="typ-punct">)</span>
-</code></pre><div class="preview"><img src="/assets/docs/471902e03fcd9845fc6039b2a6a8411a.png" alt="Preview" width="480" height="190"/></div></div>
-<p>Typst 中，方法是唯一可改变被调用值的方式。</p>
+
+<span class="typ-str">#</span><span class="typ-str">&quot;abc&quot;</span><span class="typ-punct">.</span><span class="typ-func">len</span><span class="typ-punct">(</span><span class="typ-punct">)</span> is the same as
+<span class="typ-pol">#</span><span class="typ-pol">str</span><span class="typ-punct">.</span><span class="typ-func">len</span><span class="typ-punct">(</span><span class="typ-str">&quot;abc&quot;</span><span class="typ-punct">)</span>
+</code></pre><div class="preview"><img src="/assets/docs/19fb3dfca4e9a8903455b87821619bc8.png" alt="Preview" width="480" height="190"/></div></div>
+<p>There are a few special functions that modify the value they are called on (e.g.
+<a href="/docs/reference/foundations/array/#definitions-push"><code>array.push</code></a>). These functions <em>must</em> be called in method form.
+In some cases, when the method is only called for its side effect, its return
+value should be ignored (and not participate in joining). The canonical way to
+discard a value is with a let binding: <code><span class="typ-key">let</span> _ <span class="typ-op">=</span> array<span class="typ-punct">.</span><span class="typ-func">remove</span><span class="typ-punct">(</span><span class="typ-num">1</span><span class="typ-punct">)</span></code>.</p>
 <h2 id="modules">模块</h2>
 <p>一个 Typst 工程项目可以拆解为多个 <em>模块</em> 文件。
 一个模块可以使用多种方式引用其他模块的文档内容和定义。</p>
 <ul>
 <li>
 <p><strong>插入：</strong> <code><span class="typ-key">include</span> <span class="typ-str">&quot;bar.typ&quot;</span></code> <br />
-计算 <code>bar.typ</code> 路径文件，返回其<a href="/docs/reference/types/content/">文档内容</a>结果。</p>
+计算 <code>bar.typ</code> 路径文件，返回其<a href="/docs/reference/foundations/content/">文档内容</a>结果。</p>
 </li>
 <li>
-<p><strong>导入模块：</strong> <code><span class="typ-key">import</span> <span class="typ-str">&quot;bar.typ&quot;</span></code> <br />
-计算 <code>bar.typ</code> 路径文件，得到<a href="/docs/reference/types/module/">模块类型</a>的值，在当前作用域下与 <code>bar</code>(文件名除去扩展名) 进行绑定。</p>
+<p><strong>导入：</strong> <code><span class="typ-key">import</span> <span class="typ-str">&quot;bar.typ&quot;</span></code> <br />
+在路径 <code>bar.typ</code> 处加载文档并插入结果
+<a href="/docs/reference/foundations/module/">模块</a> 作为 <code>bar</code> 进入当前范围（不带后缀拓展名的文档名）。您可以使用 <code>as</code> 关键字重命名导入的模块：
+<code><span class="typ-key">import</span> <span class="typ-str">&quot;bar.typ&quot;</span> <span class="typ-key">as</span> baz</code></p>
 </li>
 <li>
-<p><strong>导入模块条目：</strong> <code><span class="typ-key">import</span> <span class="typ-str">&quot;bar.typ&quot;</span><span class="typ-punct">:</span> a<span class="typ-punct">,</span> b</code> <br />
-计算 <code>bar.typ</code> 路径文件，将此模块内的 <code>a</code> 和 <code>b</code> 变量（需要通过 <code><span class="typ-key">let</span></code> 绑定在 <code>bar.typ</code> 内定义）重新绑定到当前文件。
-如果使用 * 替代冒号后的 a,b，就导入 bar 模块内的所有变量。</p>
+<p><strong>Import items:</strong> <code><span class="typ-key">import</span> <span class="typ-str">&quot;bar.typ&quot;</span><span class="typ-punct">:</span> a<span class="typ-punct">,</span> b</code> <br />
+Evaluates the file at the path <code>bar.typ</code>, extracts the values of the variables
+<code>a</code> and <code>b</code> (that need to be defined in <code>bar.typ</code>, e.g. through <code><span class="typ-key">let</span></code>
+bindings) and defines them in the current file. Replacing <code>a, b</code> with <code>*</code>
+loads all variables defined in a module. You can use the <code>as</code> keyword to
+rename the individual items: <code><span class="typ-key">import</span> <span class="typ-str">&quot;bar.typ&quot;</span><span class="typ-punct">:</span> a <span class="typ-key">as</span> one<span class="typ-punct">,</span> b <span class="typ-key">as</span> two</code></p>
+</li>
+<li>
+<p><strong>导入项目:</strong> <code><span class="typ-key">import</span> <span class="typ-str">&quot;bar.typ&quot;</span><span class="typ-punct">:</span> a<span class="typ-punct">,</span> b</code> <br />
+加载路径为 <code>bar.typ</code> 的文档，提取变量
+<code>a</code> 和 <code>b</code> (需要在 <code>bar.typ</code> 中定义，例如通过 <code><span class="typ-key">let</span></code>
+绑定) 的值，并在当前文档中定义它们。将 <code>a, b</code> 替换为 <code>*</code>
+可以加载模块中定义的所有变量。您可以使用 <code>as</code> 关键字来
+重命名各个项目: <code><span class="typ-key">import</span> <span class="typ-str">&quot;bar.typ&quot;</span><span class="typ-punct">:</span> a <span class="typ-key">as</span> one<span class="typ-punct">,</span> b <span class="typ-key">as</span> two</code></p>
 </li>
 </ul>
-<p>除了使用路径，也可以使用<a href="/docs/reference/types/module/">模块值</a>，如下面示例：</p>
+<p>除了使用路径，也可以使用 <a href="/docs/reference/foundations/module/">模块值</a>，如下面示例：</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">import</span> emoji<span class="typ-punct">:</span> face
 <span class="typ-pol">#</span><span class="typ-pol">face</span><span class="typ-punct">.</span><span class="typ-pol">grin</span>
 </code></pre><div class="preview"><img src="/assets/docs/43014000497d459ced7b19ec99fd35ae.png" alt="Preview" width="480" height="190"/></div></div>
@@ -1095,8 +1048,8 @@ while 循环生成数个长度为1的数组，然后将其合并成一个大数�
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">import</span> <span class="typ-str">&quot;@preview/example:0.1.0&quot;</span><span class="typ-punct">:</span> add
 <span class="typ-func">#</span><span class="typ-func">add</span><span class="typ-punct">(</span><span class="typ-num">2</span><span class="typ-punct">,</span> <span class="typ-num">7</span><span class="typ-punct">)</span>
 </code></pre><div class="preview"><img src="/assets/docs/5611b1fc00245c60ed0fd4942d77dcf9.png" alt="Preview" width="480" height="190"/></div></div>
-<p><code>preview</code> 包命名空间包含了 Typst 社区分享的包。可以在 <a href="/docs/packages/">package</a> 小节搜索可用的社区分享包。</p>
-<p>在本地使用 Typst 时，可以创建本地包。更多详情参考<a href="https://github.com/typst/packages">包仓库</a>。</p>
+<p><code>preview</code> 包命名空间包含了 Typst 社区分享的包。可以在 <a href="/docs/packages/">package</a> 章节搜索可用的社区分享包。</p>
+<p>在本地使用 Typst 时，可以创建本地包。更多详情参考 <a href="https://github.com/typst/packages">包仓库</a>。</p>
 <h2 id="operators">操作符</h2>
 <p>下表类出了所有一元和二元操作符的作用、参数数量(一元、二元)和优先级（优先级越高，越优先执行)</p>
 <table><thead><tr><th style="text-align: center">操作符</th><th>作用说明</th><th style="text-align: center">参数数量</th><th style="text-align: center">优先级</th></tr></thead><tbody>
@@ -1130,8 +1083,8 @@ while 循环生成数个长度为1的数组，然后将其合并成一个大数�
       <div class="page-end-buttons"><a href="/docs/reference/styling/" class="previous"><img
             src="/assets/icons/16-arrow-right.svg" alt="←">
           <div><span class="page-title">样式</span><span class="hint">上一页</span></div>
-        </a><a href="/docs/reference/types/" class="next"><img src="/assets/icons/16-arrow-right.svg" alt="→">
-          <div><span class="page-title">类型</span><span class="hint">下一页</span></div>
+        </a><a href="/docs/reference/foundations/" class="next"><img src="/assets/icons/16-arrow-right.svg" alt="→">
+          <div><span class="page-title">基础</span><span class="hint">下一页</span></div>
         </a></div>
       
     </main>
@@ -1210,8 +1163,9 @@ while 循环生成数个长度为1的数组，然后将其合并成一个大数�
       <p>Made in Berlin</p>
     </div>
   </footer>
-  <script src="/scripts/docs.js?bust=20230520"></script>
-  <script src="/scripts/analytics.js" defer=""></script>
+  <script src="/scripts/fuse.basic.min.js"></script>
+  <script src="/scripts/docs.js?bust=20230913"></script>
+  <script src="/scripts/analytics.js" defer></script>
 </body>
 
 </html>

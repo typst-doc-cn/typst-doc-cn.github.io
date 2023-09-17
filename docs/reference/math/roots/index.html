@@ -1,23 +1,27 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <title>根式 – Typst 中文文档</title>
-  <meta name="description" content="Documentation for roots group of functions.">
+  <meta name="description" content="roots 函数族的文档.">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#239dad">
-  <meta property="og:url" content="https://typst.app/docs/reference/math/roots/">
+  <meta property="og:url" content="https://typst-doc-cn.github.io/docs/reference/math/roots">
   <meta property="og:title" content="根式 – Typst 中文文档">
   <meta property="og:site_name" content="Typst">
-  <meta property="og:description" content="Documentation for roots group of functions.">
+  <meta property="og:description" content="roots 函数族的文档.">
   <meta property="og:type">
-  <meta property="og:image" content="https://typst.app/assets/social.png">
+  <meta property="og:image" content="https://typst-doc-cn.github.io/assets/social.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:site" content="@typstapp">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://typst.app/docs/reference/math/roots/">
+  <link rel="canonical" href="https://typst-doc-cn.github.io/docs/reference/math/roots">
   <meta name="twitter:image:alt"
     content="The left side of a text editor with colorful cursors, as well as the text &#x27;Compose papers faster, Typst&#x27;">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.ico">
@@ -25,47 +29,16 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
   <link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#239dad">
   <link rel="manifest" href="/assets/site.webmanifest">
-  <link rel="stylesheet" href="/styles/default.css">
-  <link rel="stylesheet" href="/styles/docs.css">
+  <link rel="stylesheet" href="/styles/default.css?bust=20230913?d=2023-09-16">
+  <link rel="stylesheet" href="/styles/docs.css?bust=20230915?d=2023-09-16">
   <link rel="stylesheet" href="/styles/docs-cn.css">
   <link rel="preload" href="/assets/fonts/HKGrotesk-Regular.woff2" as="font">
   <link rel="preload" href="/assets/fonts/HKGrotesk-Bold.woff2" as="font">
   <link rel="preload" href="/assets/fonts/HKGrotesk-SemiBold.woff2" as="font">
   <link rel="preload" href="/assets/fonts/CascadiaMono-Regular-Sub.woff2" as="font">
   <link rel="preload" href="/assets/images/blur.webp" as="image">
-  <script>document.documentElement.className = document.documentElement.className.replace(
-      "no-js",
-      "js",
-    )
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const INSECURE_SIGNED_IN_COOKIE = document.cookie
-        .split("; ")
-        .find((row) => row.startsWith("INSECURE_SIGNED_IN="))
-        ?.split("=")[1]
-        .toLowerCase()
-
-      if (
-        INSECURE_SIGNED_IN_COOKIE === "1" ||
-        INSECURE_SIGNED_IN_COOKIE === "true" ||
-        INSECURE_SIGNED_IN_COOKIE === "yes"
-      ) {
-        document.documentElement.classList.add("signed-in")
-        const navButton = document.querySelector("header nav a.nav-btn")
-        const signInEl = document.querySelector("header nav a.sign-in")
-
-        if (navButton) {
-          navButton.innerHTML = "Go to app"
-          navButton.setAttribute("href", "/app/")
-        }
-
-        if (signInEl) {
-          signInEl.innerHTML = "Sign out"
-          signInEl.setAttribute("href", "https://api.typst.app/v1/auth/logout")
-        }
-      }
-    })
-  </script>
+  
+  <script>document.documentElement.className = document.documentElement.className.replace("no-js", "js"), document.addEventListener("DOMContentLoaded", (() => { const e = document.cookie.split("; ").find((e => e.startsWith("INSECURE_SIGNED_IN=")))?.split("=")[1].toLowerCase(); if ("1" === e || "true" === e || "yes" === e) { document.documentElement.classList.add("signed-in"); const e = document.querySelector("header nav a.nav-btn"), t = document.querySelector("header nav a.sign-in"); e && (e.innerHTML = "Go to app", e.setAttribute("href", "/app/")), t && (t.innerHTML = "Sign out", t.setAttribute("href", "https://api.typst.app/v1/auth/logout")) } }))</script>
 </head>
 
 <body class="no-js docs has-outline">
@@ -181,6 +154,7 @@
           <ul>
             
             
+            
             <li class="category">Language</li>
             
             <li>
@@ -201,8 +175,10 @@
             </li>
             
             
+            
+            
             <li>
-              <a href="/docs/reference/types/" >类型</a>
+              <a href="/docs/reference/types/" >类型（旧）</a>
               
               <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
               <ul>
@@ -273,9 +249,83 @@
               </ul>
               
             </li>
+
             
+            <li class="category">Library</li>
             
-            <li class="category">Content</li>
+            <li>
+              <a href="/docs/reference/foundations/" >基础</a>
+              
+              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
+              <ul>
+                
+                
+                <li><a href="/docs/reference/foundations/arguments/" >Arguments</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/array/" >Array</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/assert/" >Assert</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/bool/" >Boolean</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/bytes/" >Bytes</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/calc" >Calculation</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/content/" >Content</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/datetime/" >Datetime</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/dictionary/" >Dictionary</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/duration/" >Duration</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/eval/" >Evaluate</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/float/" >Float</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/function/" >Function</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/int/" >Integer</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/module/" >Module</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/panic/" >Panic</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/plugin/" >Plugin</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/regex/" >Regex</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/repr/" >Representation</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/str/" >String</a></li>
+                
+                
+                <li><a href="/docs/reference/foundations/type/" >Type</a></li>
+                
+              </ul>
+              
+            </li>
+            
             
             <li>
               <a href="/docs/reference/text/" >文本</a>
@@ -284,13 +334,16 @@
               <ul>
                 
                 
-                <li><a href="/docs/reference/text/lorem/" >假文</a></li>
-                
-                
                 <li><a href="/docs/reference/text/emph/" >强调（斜体）</a></li>
                 
                 
+                <li><a href="/docs/reference/text/highlight/" >文本高亮</a></li>
+                
+                
                 <li><a href="/docs/reference/text/linebreak/" >换行</a></li>
+                
+                
+                <li><a href="/docs/reference/text/lorem/" >假文</a></li>
                 
                 
                 <li><a href="/docs/reference/text/lower/" >转小写</a></li>
@@ -343,7 +396,7 @@
                 <li><a href="/docs/reference/math/accent/" >重音符号</a></li>
                 
                 
-                <li><a href="/docs/reference/math/attach/" >附缀</a></li>
+                <li><a href="/docs/reference/math/attach" >附缀</a></li>
                 
                 
                 <li><a href="/docs/reference/math/binom/" >二项式</a></li>
@@ -352,7 +405,10 @@
                 <li><a href="/docs/reference/math/cancel/" >删除线</a></li>
                 
                 
-                <li><a href="/docs/reference/math/cases/" >大括号</a></li>
+                <li><a href="/docs/reference/math/cases/" >左大括号</a></li>
+                
+                
+                <li><a href="/docs/reference/math/class/" >类</a></li>
                 
                 
                 <li><a href="/docs/reference/math/equation/" >数学表达式</a></li>
@@ -361,28 +417,28 @@
                 <li><a href="/docs/reference/math/frac/" >分数</a></li>
                 
                 
-                <li><a href="/docs/reference/math/lr/" >Left/Right</a></li>
+                <li><a href="/docs/reference/math/lr" >Left/Right</a></li>
                 
                 
                 <li><a href="/docs/reference/math/mat/" >矩阵</a></li>
                 
                 
-                <li><a href="/docs/reference/math/roots/"  aria-current="page" >根式</a></li>
+                <li><a href="/docs/reference/math/roots"  aria-current="page" >根式</a></li>
                 
                 
-                <li><a href="/docs/reference/math/sizes/" >显示尺寸</a></li>
+                <li><a href="/docs/reference/math/sizes" >显示尺寸</a></li>
                 
                 
-                <li><a href="/docs/reference/math/styles/" >显示样式</a></li>
+                <li><a href="/docs/reference/math/styles" >显示样式</a></li>
                 
                 
                 <li><a href="/docs/reference/math/op/" >文本运算符</a></li>
                 
                 
-                <li><a href="/docs/reference/math/underover/" >上/下 方内容</a></li>
+                <li><a href="/docs/reference/math/underover" >上/下方内容</a></li>
                 
                 
-                <li><a href="/docs/reference/math/variants/" >字体变体</a></li>
+                <li><a href="/docs/reference/math/variants" >字体变体</a></li>
                 
                 
                 <li><a href="/docs/reference/math/vec/" >向量</a></li>
@@ -399,7 +455,13 @@
               <ul>
                 
                 
-                <li><a href="/docs/reference/layout/align/" >Align</a></li>
+                <li><a href="/docs/reference/layout/align/" >对齐</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/alignment/" >Alignment</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/angle/" >Angle</a></li>
                 
                 
                 <li><a href="/docs/reference/layout/block/" >Block</a></li>
@@ -417,10 +479,19 @@
                 <li><a href="/docs/reference/layout/columns/" >Columns</a></li>
                 
                 
+                <li><a href="/docs/reference/layout/direction/" >Direction</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/fraction/" >Fraction</a></li>
+                
+                
                 <li><a href="/docs/reference/layout/grid/" >Grid</a></li>
                 
                 
                 <li><a href="/docs/reference/layout/hide/" >Hide</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/length/" >Length</a></li>
                 
                 
                 <li><a href="/docs/reference/layout/measure/" >Measure</a></li>
@@ -448,6 +519,12 @@
                 
                 
                 <li><a href="/docs/reference/layout/place/" >Place</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/ratio/" >Ratio</a></li>
+                
+                
+                <li><a href="/docs/reference/layout/relative/" >Relative Length</a></li>
                 
                 
                 <li><a href="/docs/reference/layout/repeat/" >Repeat</a></li>
@@ -488,6 +565,9 @@
                 <li><a href="/docs/reference/visualize/circle/" >Circle</a></li>
                 
                 
+                <li><a href="/docs/reference/visualize/color/" >Color</a></li>
+                
+                
                 <li><a href="/docs/reference/visualize/ellipse/" >Ellipse</a></li>
                 
                 
@@ -508,6 +588,9 @@
                 
                 <li><a href="/docs/reference/visualize/square/" >Square</a></li>
                 
+                
+                <li><a href="/docs/reference/visualize/stroke/" >Stroke</a></li>
+                
               </ul>
               
             </li>
@@ -523,7 +606,7 @@
                 <li><a href="/docs/reference/meta/bibliography/" >Bibliography</a></li>
                 
                 
-                <li><a href="/docs/reference/meta/cite/" >Citation</a></li>
+                <li><a href="/docs/reference/meta/cite/" >Cite</a></li>
                 
                 
                 <li><a href="/docs/reference/meta/counter/" >Counter</a></li>
@@ -541,6 +624,9 @@
                 <li><a href="/docs/reference/meta/heading/" >Heading</a></li>
                 
                 
+                <li><a href="/docs/reference/meta/label/" >Label</a></li>
+                
+                
                 <li><a href="/docs/reference/meta/layout/" >Layout</a></li>
                 
                 
@@ -548,6 +634,12 @@
                 
                 
                 <li><a href="/docs/reference/meta/locate/" >Locate</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/location/" >Location</a></li>
+                
+                
+                <li><a href="/docs/reference/meta/metadata/" >Metadata</a></li>
                 
                 
                 <li><a href="/docs/reference/meta/numbering/" >Numbering</a></li>
@@ -582,192 +674,13 @@
               <ul>
                 
                 
+                <li><a href="/docs/reference/symbols/symbol/" >Symbol</a></li>
+                
+                
                 <li><a href="/docs/reference/symbols/sym/" >General</a></li>
                 
                 
                 <li><a href="/docs/reference/symbols/emoji/" >Emoji</a></li>
-                
-              </ul>
-              
-            </li>
-            
-            
-            <li class="category">Compute</li>
-            
-            <li>
-              <a href="/docs/reference/foundations/" >基础</a>
-              
-              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
-              <ul>
-                
-                
-                <li><a href="/docs/reference/foundations/assert/" >Assert</a></li>
-                
-                
-                <li><a href="/docs/reference/foundations/eval/" >Evaluate</a></li>
-                
-                
-                <li><a href="/docs/reference/foundations/panic/" >Panic</a></li>
-                
-                
-                <li><a href="/docs/reference/foundations/repr/" >Representation</a></li>
-                
-                
-                <li><a href="/docs/reference/foundations/type/" >Type</a></li>
-                
-              </ul>
-              
-            </li>
-            
-            
-            <li>
-              <a href="/docs/reference/calculate/" >计算</a>
-              
-              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
-              <ul>
-                
-                
-                <li><a href="/docs/reference/calculate/abs/" >Absolute</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/acos/" >Arccosine</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/asin/" >Arcsine</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/atan/" >Arctangent</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/binom/" >Binomial</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/clamp/" >Clamp</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/cos/" >Cosine</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/even/" >Even</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/exp/" >Exponential</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/fact/" >Factorial</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/atan2/" >Four-quadrant Arctangent</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/fract/" >Fractional</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/gcd/" >Greatest Common Divisor</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/cosh/" >Hyperbolic cosine</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/sinh/" >Hyperbolic sine</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/tanh/" >Hyperbolic tangent</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/lcm/" >Least Common Multiple</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/log/" >Logarithm</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/max/" >Maximum</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/min/" >Minimum</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/ln/" >Natural Logarithm</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/odd/" >Odd</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/perm/" >Permutation</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/pow/" >Power</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/quo/" >Quotient</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/rem/" >Remainder</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/round/" >Round</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/floor/" >Round down</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/ceil/" >Round up</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/sin/" >Sine</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/sqrt/" >Square Root</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/tan/" >Tangent</a></li>
-                
-                
-                <li><a href="/docs/reference/calculate/trunc/" >Truncate</a></li>
-                
-              </ul>
-              
-            </li>
-            
-            
-            <li>
-              <a href="/docs/reference/construct/" >构造</a>
-              
-              <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
-              <ul>
-                
-                
-                <li><a href="/docs/reference/construct/cmyk/" >CMYK</a></li>
-                
-                
-                <li><a href="/docs/reference/construct/datetime/" >Datetime</a></li>
-                
-                
-                <li><a href="/docs/reference/construct/float/" >Float</a></li>
-                
-                
-                <li><a href="/docs/reference/construct/int/" >Integer</a></li>
-                
-                
-                <li><a href="/docs/reference/construct/label/" >Label</a></li>
-                
-                
-                <li><a href="/docs/reference/construct/luma/" >Luma</a></li>
-                
-                
-                <li><a href="/docs/reference/construct/rgb/" >RGB</a></li>
-                
-                
-                <li><a href="/docs/reference/construct/range/" >Range</a></li>
-                
-                
-                <li><a href="/docs/reference/construct/regex/" >Regex</a></li>
-                
-                
-                <li><a href="/docs/reference/construct/str/" >String</a></li>
-                
-                
-                <li><a href="/docs/reference/construct/symbol/" >Symbol</a></li>
                 
               </ul>
               
@@ -779,6 +692,9 @@
               
               <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
               <ul>
+                
+                
+                <li><a href="/docs/reference/data-loading/cbor/" >CBOR</a></li>
                 
                 
                 <li><a href="/docs/reference/data-loading/csv/" >CSV</a></li>
@@ -819,6 +735,12 @@
               
             </li>
             
+            
+            <li>
+              <a href="/docs/guides/page-setup/" >页面设置指南</a>
+              
+            </li>
+            
           </ul>
           
         </li>
@@ -832,6 +754,12 @@
         
         <li>
           <a href="/docs/changelog/" >更新日志</a>
+          
+        </li>
+        
+        
+        <li>
+          <a href="/docs/roadmap/" >路线图</a>
           
         </li>
         
@@ -863,49 +791,37 @@
         <li><a href="/docs/reference/math/">数学</a></li>
         
         <li aria-hidden="true"><img src="/assets/icons/16-arrow-right.svg" width="16" height="16" alt=""></li>
-        <li><a href="/docs/reference/math/roots/">根式</a></li>
+        <li><a href="/docs/reference/math/roots">根式</a></li>
         
       </ul>
 
       
 
-<h1 id="summary">Roots<!-- --> 函数类</h1>
+<h1 id="summary">Roots<!-- --> 函数族</h1>
 <p>平方根或其他次方根。</p>
+<h2 id="example">Example</h2>
+<div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">sqrt</span><span class="typ-punct">(</span>3 <span class="typ-escape">-</span> 2 <span class="typ-func">sqrt</span><span class="typ-punct">(</span>2<span class="typ-punct">)</span><span class="typ-punct">)</span> = <span class="typ-func">sqrt</span><span class="typ-punct">(</span>2<span class="typ-punct">)</span> <span class="typ-escape">-</span> 1 <span class="typ-math-delim">$</span>
+<span class="typ-math-delim">$</span> <span class="typ-func">root</span><span class="typ-punct">(</span>3<span class="typ-punct">,</span> x<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
+</code></pre><div class="preview"><img src="/assets/docs/5f6156e04c9fbbe6376dbcd9a88490f3.png" alt="Preview" width="480" height="190"/></div></div>
+<h2 id="functions">函数族</h2>
 
-<!-- ----------------------------------------------------------------------------------- -->
-
-
-<h2 level="1" id="root"><code>root</code> function <small><span aria-describedby="element-tooltip">元素</span>
-    <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
-        aria-labelledby="element-tooltip-qm-label">
-        <title id="element-tooltip-qm-label">元素函数可以借助 set 和 show 规则进行自定义样式</title>
-        <use href="/assets/icons/12-tooltip.svg#icon"></use>
-      </svg>
-      <div role="tooltip" id="element-tooltip" tabindex="-1">元素函数可以借助 <code>set</code> 和<!-- --> <code>show</code>
-        规则进行自定义样式
-      </div>
-    </div>
-  </small></h2>
-
+  <h3 id="-root" class="method-head"><span><code>root</code></span></h3>
+  
 <p>方根函数。</p>
-<h3 id="root-example">Example</h3>
-<div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">root</span><span class="typ-punct">(</span>3<span class="typ-punct">,</span> x<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
+
+<div class="code code-definition "><span
+    class="typ-func">root</span>(<div class="arguments"><span
+      class="overview-param"><a href="/docs/reference/types/none" class="pill pill-kw">none</a><a href="/docs/reference/types/content" class="pill pill-con">content</a>, </span><span
+      class="overview-param"><a href="/docs/reference/types/content" class="pill pill-con">content</a>, </span></div>) <!-- -->-&gt; <a href="/docs/reference/types/content" class="pill pill-con">content</a></div>
+
+
+
+  <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">root</span><span class="typ-punct">(</span>3<span class="typ-punct">,</span> x<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
 </code></pre><div class="preview"><img src="/assets/docs/7aa00673dcb0afc96f8085fbc5ed7841.png" alt="Preview" width="480" height="190"/></div></div>
 
-<h3 level="2" id="root-parameters"><span aria-describedby="root-parameters-tooltip">参数</span>
-  <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
-      aria-labelledby="root-parameters-tooltip-qm-label">
-      <title id="root-parameters-tooltip-qm-label">参数是函数的输入。它们在函数名称后面的括号中传入。</title>
-      <use href="/assets/icons/12-tooltip.svg#icon"></use>
-    </svg>
-    <div role="tooltip" id="root-parameters-tooltip" tabindex="-1">参数是函数的输入。它们在函数名称后面的括号中传入。</div>
-  </div>
-</h3>
-
-<div class="code code-definition "><span class="typ-func">root</span>(<div class="arguments"><span class="overview-param"><a href="/docs/reference/types/none" class="pill pill-kw">none</a><a href="/docs/reference/types/content" class="pill pill-con">content</a>, </span><span class="overview-param"><a href="/docs/reference/types/content" class="pill pill-con">content</a>, </span></div>) <!-- -->-&gt; <a href="/docs/reference/types/content" class="pill pill-con">content</a></div>
 
 
-<h4 id="root-parameters-index"><code>index</code>
+<h4 id="definitions-root-root-parameters-index"><code>index</code>
   <div class="additional-info">
     <div>
       
@@ -915,34 +831,37 @@
       
     </div>
     <small><span
-        aria-describedby="root-parameters-index-positional-tooltip">位置参数</span>
+        aria-describedby="definitions-root-root-parameters-index-positional-tooltip">位置参数</span>
       <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
-          aria-labelledby="root-parameters-index-positional-tooltip-qm-label">
-          <title id="root-parameters-index-positional-tooltip-qm-label">位置参数按顺序传入，不带名称。</title>
+          aria-labelledby="definitions-root-root-parameters-index-positional-tooltip-qm-label">
+          <title id="definitions-root-root-parameters-index-positional-tooltip-qm-label">
+            位置参数按顺序传入，不带名称。</title>
           <use href="/assets/icons/12-tooltip.svg#icon"></use>
         </svg>
-        <div role="tooltip" id="root-parameters-index-positional-tooltip" tabindex="-1">位置参数按顺序传入，不带名称。</div>
+        <div role="tooltip" id="definitions-root-root-parameters-index-positional-tooltip"
+          tabindex="-1">位置参数按顺序传入，不带名称。</div>
       </div>
     </small><small><span
-        aria-describedby="root-parameters-index-settable-tooltip">可用 Set 规则</span>
+        aria-describedby="definitions-root-root-parameters-index-settable-tooltip">可用 Set 规则</span>
       <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
-          aria-labelledby="root-parameters-index-settable-tooltip-qm-label">
-          <title id="root-parameters-index-settable-tooltip-qm-label">可以使用 Set 规则，为函数后续所有的使用设置默认参数。</title>
+          aria-labelledby="definitions-root-root-parameters-index-settable-tooltip-qm-label">
+          <title id="definitions-root-root-parameters-index-settable-tooltip-qm-label">可以使用 Set 规则，为函数后续所有的使用设置默认参数。</title>
           <use href="/assets/icons/12-tooltip.svg#icon"></use>
         </svg>
-        <div role="tooltip" id="root-parameters-index-settable-tooltip" tabindex="-1">可以使用 Set
-          规则，为函数后续所有的使用设置默认参数。</div>
+        <div role="tooltip" id="definitions-root-root-parameters-index-settable-tooltip"
+          tabindex="-1">可以使用 Set 规则，为函数后续所有的使用设置默认参数。</div>
       </div>
     </small>
   </div>
 </h4>
 <p>要开几次方，即根式的指数。</p>
 
+
 <p>默认：<code><span class="typ-key">none</span></code></p>
 
 
 
-<h4 id="root-parameters-radicand"><code>radicand</code>
+<h4 id="definitions-root-root-parameters-radicand"><code>radicand</code>
   <div class="additional-info">
     <div>
       
@@ -950,13 +869,15 @@
       
     </div>
     <small>必需参数</small><small><span
-        aria-describedby="root-parameters-radicand-positional-tooltip">位置参数</span>
+        aria-describedby="definitions-root-root-parameters-radicand-positional-tooltip">位置参数</span>
       <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
-          aria-labelledby="root-parameters-radicand-positional-tooltip-qm-label">
-          <title id="root-parameters-radicand-positional-tooltip-qm-label">位置参数按顺序传入，不带名称。</title>
+          aria-labelledby="definitions-root-root-parameters-radicand-positional-tooltip-qm-label">
+          <title id="definitions-root-root-parameters-radicand-positional-tooltip-qm-label">
+            位置参数按顺序传入，不带名称。</title>
           <use href="/assets/icons/12-tooltip.svg#icon"></use>
         </svg>
-        <div role="tooltip" id="root-parameters-radicand-positional-tooltip" tabindex="-1">位置参数按顺序传入，不带名称。</div>
+        <div role="tooltip" id="definitions-root-root-parameters-radicand-positional-tooltip"
+          tabindex="-1">位置参数按顺序传入，不带名称。</div>
       </div>
     </small>
   </div>
@@ -966,27 +887,25 @@
 
 
 
-<h2 level="1" id="sqrt"><code>sqrt</code> function </h2>
 
+
+
+  <h3 id="-sqrt" class="method-head"><span><code>sqrt</code></span></h3>
+  
 <p>平方根。</p>
-<h3 id="sqrt-example">Example</h3>
-<div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">sqrt</span><span class="typ-punct">(</span>x<span class="typ-math-op">^</span>2<span class="typ-punct">)</span> = x = <span class="typ-func">sqrt</span><span class="typ-punct">(</span>x<span class="typ-punct">)</span><span class="typ-math-op">^</span>2 <span class="typ-math-delim">$</span>
-</code></pre><div class="preview"><img src="/assets/docs/4e6fb7b2591b48f8869f04c06a5a795a.png" alt="Preview" width="480" height="190"/></div></div>
 
-<h3 level="2" id="sqrt-parameters"><span aria-describedby="sqrt-parameters-tooltip">参数</span>
-  <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
-      aria-labelledby="sqrt-parameters-tooltip-qm-label">
-      <title id="sqrt-parameters-tooltip-qm-label">参数是函数的输入。它们在函数名称后面的括号中传入。</title>
-      <use href="/assets/icons/12-tooltip.svg#icon"></use>
-    </svg>
-    <div role="tooltip" id="sqrt-parameters-tooltip" tabindex="-1">参数是函数的输入。它们在函数名称后面的括号中传入。</div>
-  </div>
-</h3>
-
-<div class="code code-definition single-arg"><span class="typ-func">sqrt</span>(<div class="arguments"><span class="overview-param"><a href="/docs/reference/types/content" class="pill pill-con">content</a> </span></div>) <!-- -->-&gt; <a href="/docs/reference/types/content" class="pill pill-con">content</a></div>
+<div class="code code-definition single-arg"><span
+    class="typ-func">sqrt</span>(<div class="arguments"><span
+      class="overview-param"><a href="/docs/reference/types/content" class="pill pill-con">content</a> </span></div>) <!-- -->-&gt; <a href="/docs/reference/types/content" class="pill pill-con">content</a></div>
 
 
-<h4 id="sqrt-parameters-radicand"><code>radicand</code>
+
+  <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">sqrt</span><span class="typ-punct">(</span>3 <span class="typ-escape">-</span> 2 <span class="typ-func">sqrt</span><span class="typ-punct">(</span>2<span class="typ-punct">)</span><span class="typ-punct">)</span> = <span class="typ-func">sqrt</span><span class="typ-punct">(</span>2<span class="typ-punct">)</span> <span class="typ-escape">-</span> 1 <span class="typ-math-delim">$</span>
+</code></pre><div class="preview"><img src="/assets/docs/e7f4a669bc34f013309287acbb8f3c05.png" alt="Preview" width="480" height="190"/></div></div>
+
+
+
+<h4 id="definitions-sqrt-sqrt-parameters-radicand"><code>radicand</code>
   <div class="additional-info">
     <div>
       
@@ -994,13 +913,15 @@
       
     </div>
     <small>必需参数</small><small><span
-        aria-describedby="sqrt-parameters-radicand-positional-tooltip">位置参数</span>
+        aria-describedby="definitions-sqrt-sqrt-parameters-radicand-positional-tooltip">位置参数</span>
       <div class="tooltip-context"><svg width="12" height="12" viewBox="0 0 12 12" tabindex="0" role="img"
-          aria-labelledby="sqrt-parameters-radicand-positional-tooltip-qm-label">
-          <title id="sqrt-parameters-radicand-positional-tooltip-qm-label">位置参数按顺序传入，不带名称。</title>
+          aria-labelledby="definitions-sqrt-sqrt-parameters-radicand-positional-tooltip-qm-label">
+          <title id="definitions-sqrt-sqrt-parameters-radicand-positional-tooltip-qm-label">
+            位置参数按顺序传入，不带名称。</title>
           <use href="/assets/icons/12-tooltip.svg#icon"></use>
         </svg>
-        <div role="tooltip" id="sqrt-parameters-radicand-positional-tooltip" tabindex="-1">位置参数按顺序传入，不带名称。</div>
+        <div role="tooltip" id="definitions-sqrt-sqrt-parameters-radicand-positional-tooltip"
+          tabindex="-1">位置参数按顺序传入，不带名称。</div>
       </div>
     </small>
   </div>
@@ -1013,11 +934,14 @@
 
 
 
+
+
+
       
       <div class="page-end-buttons"><a href="/docs/reference/math/mat/" class="previous"><img
             src="/assets/icons/16-arrow-right.svg" alt="←">
           <div><span class="page-title">矩阵</span><span class="hint">上一页</span></div>
-        </a><a href="/docs/reference/math/sizes/" class="next"><img src="/assets/icons/16-arrow-right.svg" alt="→">
+        </a><a href="/docs/reference/math/sizes" class="next"><img src="/assets/icons/16-arrow-right.svg" alt="→">
           <div><span class="page-title">显示尺寸</span><span class="hint">下一页</span></div>
         </a></div>
       
@@ -1031,11 +955,11 @@
           <ul></ul>
         </li>
         
-        <li data-assoc="root"><a href="#root">Root</a>
+        <li data-assoc="example"><a href="#example">Example</a>
           <ul></ul>
         </li>
         
-        <li data-assoc="sqrt"><a href="#sqrt">Square Root</a>
+        <li data-assoc="functions"><a href="#functions">Functions</a>
           <ul></ul>
         </li>
         
@@ -1069,8 +993,9 @@
       <p>Made in Berlin</p>
     </div>
   </footer>
-  <script src="/scripts/docs.js?bust=20230520"></script>
-  <script src="/scripts/analytics.js" defer=""></script>
+  <script src="/scripts/fuse.basic.min.js"></script>
+  <script src="/scripts/docs.js?bust=20230913"></script>
+  <script src="/scripts/analytics.js" defer></script>
 </body>
 
 </html>
