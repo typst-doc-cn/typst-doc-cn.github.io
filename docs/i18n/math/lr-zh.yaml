@@ -1,91 +1,61 @@
-route: /docs/reference/math/lr/
+route: /docs/reference/math/lr
 title: Left/Right
-description: Documentation for lr group of functions.
+description: lr 函数族的文档.
 part: null
 outline:
 - id: summary
   name: Summary
   children: []
-- id: lr
-  name: Left/Right
+- id: example
+  name: Example
+  children: []
+- id: functions
+  name: Functions
   children:
-  - id: lr-example
-    name: Example
-    children: []
-  - id: lr-parameters
-    name: Parameters
+  - id: functions-lr
+    name: Left/Right
     children:
-    - id: lr-parameters-size
+    - id: functions-lr-size
       name: size
       children: []
-    - id: lr-parameters-body
+    - id: functions-lr-body
       name: body
       children: []
-- id: abs
-  name: Abs
-  children:
-  - id: abs-example
-    name: Example
-    children: []
-  - id: abs-parameters
-    name: Parameters
+  - id: functions-abs
+    name: Abs
     children:
-    - id: abs-parameters-body
+    - id: functions-abs-body
       name: body
       children: []
-- id: norm
-  name: Norm
-  children:
-  - id: norm-example
-    name: Example
-    children: []
-  - id: norm-parameters
-    name: Parameters
+  - id: functions-norm
+    name: Norm
     children:
-    - id: norm-parameters-body
+    - id: functions-norm-body
       name: body
       children: []
-- id: floor
-  name: Floor
-  children:
-  - id: floor-example
-    name: Example
-    children: []
-  - id: floor-parameters
-    name: Parameters
+  - id: functions-floor
+    name: Floor
     children:
-    - id: floor-parameters-body
+    - id: functions-floor-body
       name: body
       children: []
-- id: ceil
-  name: Ceil
-  children:
-  - id: ceil-example
-    name: Example
-    children: []
-  - id: ceil-parameters
-    name: Parameters
+  - id: functions-ceil
+    name: Ceil
     children:
-    - id: ceil-parameters-body
+    - id: functions-ceil-body
       name: body
       children: []
-- id: round
-  name: Round
-  children:
-  - id: round-example
-    name: Example
-    children: []
-  - id: round-parameters
-    name: Parameters
+  - id: functions-round
+    name: Round
     children:
-    - id: round-parameters-body
+    - id: functions-round-body
       name: body
       children: []
 body:
-  kind: funcs
+  kind: group
   content:
     name: lr
-    display: Left/Right
+    title: Left/Right
     details: |-
       <p>分隔符（delimiter）匹配。</p>
       <p>
@@ -94,11 +64,16 @@ body:
       该种操作也会在根据语法匹配分隔符时自动进行，而 <code>lr</code> 函数允许您精确地控制他们的大小。     
       除 <code>lr</code> 函数以外。Typst 还提供了更多函数，用于创建绝对值、向上取整、向下取整以及范数的分隔符配对。
       </p>
+      <h2 id="example">Example</h2>
+      <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> [a, b<span class="typ-math-op">/</span>2] <span class="typ-math-delim">$</span>
+      <span class="typ-math-delim">$</span> <span class="typ-func">lr</span><span class="typ-punct">(</span>]<span class="typ-pol">sum</span><span class="typ-math-op">_</span><span class="typ-punct">(</span>x=1<span class="typ-punct">)</span><span class="typ-math-op">^</span>n] x<span class="typ-punct">,</span> size<span class="typ-punct">:</span> <span class="typ-num">#</span><span class="typ-num">50%</span><span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
+      <span class="typ-math-delim">$</span> <span class="typ-func">abs</span><span class="typ-punct">(</span><span class="typ-punct">(</span>x + y<span class="typ-punct">)</span> <span class="typ-math-op">/</span> 2<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
+      </code></pre><div class="preview"><img src="/assets/docs/41d20606a87dc72e3461b2b0a7ce9acf.png" alt="Preview" width="480" height="190"/></div></div>
     functions:
-    - path:
-      - lr
-      display: Left/Right
-      keywords: null
+    - path: []
+      name: lr
+      title: Left/Right
+      keywords: []
       oneliner: Scales delimiters.
       element: true
       details: |-
@@ -106,10 +81,8 @@ body:
         <p>
         虽然默认情况下匹配的分隔符会自动缩放，但这个特性也可以用于对未匹配的分隔符进行缩放，并可以更精确地控制分隔符的缩放。
         </p>
-        <h3 id="lr-example">Example</h3>
-        <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">lr</span><span class="typ-punct">(</span>]a<span class="typ-punct">,</span> b<span class="typ-math-op">/</span>2]<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
-        <span class="typ-math-delim">$</span> <span class="typ-func">lr</span><span class="typ-punct">(</span>]<span class="typ-pol">sum</span><span class="typ-math-op">_</span><span class="typ-punct">(</span>x=1<span class="typ-punct">)</span><span class="typ-math-op">^</span>n] x<span class="typ-punct">,</span> size<span class="typ-punct">:</span> <span class="typ-num">#</span><span class="typ-num">50%</span><span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
-        </code></pre><div class="preview"><img src="/assets/docs/a7e37959272607bdbf533899251955aa.png" alt="Preview" width="480" height="190"/></div></div>
+      example: null
+      self: false
       params:
       - name: size
         details: <p>
@@ -118,7 +91,7 @@ body:
         example: null
         types:
         - auto
-        - relative length
+        - relative
         strings: []
         default: <code><span class="typ-key">auto</span></code>
         positional: false
@@ -142,21 +115,21 @@ body:
         settable: false
       returns:
       - content
-      methods: []
       scope: []
-    - path:
-      - abs
-      display: Abs
-      keywords: null
+    - path: []
+      name: abs
+      title: Abs
+      keywords: []
       oneliner: Takes the absolute value of an expression.
       element: false
       details: |-
         <p>
         取表达式的绝对值。
         </p>
-        <h3 id="abs-example">Example</h3>
+      example: |-
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">abs</span><span class="typ-punct">(</span>x<span class="typ-math-op">/</span>2<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
         </code></pre><div class="preview"><img src="/assets/docs/28e475440e93179a23e1e05535ef8b05.png" alt="Preview" width="480" height="190"/></div></div>
+      self: false
       params:
       - name: body
         details: <p>
@@ -174,21 +147,21 @@ body:
         settable: false
       returns:
       - content
-      methods: []
       scope: []
-    - path:
-      - norm
-      display: Norm
-      keywords: null
+    - path: []
+      name: norm
+      title: Norm
+      keywords: []
       oneliner: Takes the norm of an expression.
       element: false
       details: |-
         <p>
         对表达式进行范数运算。
         </p>
-        <h3 id="norm-example">Example</h3>
+      example: |-
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">norm</span><span class="typ-punct">(</span>x<span class="typ-math-op">/</span>2<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
         </code></pre><div class="preview"><img src="/assets/docs/b1c37b013016675629fbfab0497e5ce5.png" alt="Preview" width="480" height="190"/></div></div>
+      self: false
       params:
       - name: body
         details: <p>
@@ -206,21 +179,21 @@ body:
         settable: false
       returns:
       - content
-      methods: []
       scope: []
-    - path:
-      - floor
-      display: Floor
-      keywords: null
+    - path: []
+      name: floor
+      title: Floor
+      keywords: []
       oneliner: Floors an expression.
       element: false
       details: |-
         <p>
         对表达式向下取整。
         </p>
-        <h3 id="floor-example">Example</h3>
+      example: |-
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">floor</span><span class="typ-punct">(</span>x<span class="typ-math-op">/</span>2<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
         </code></pre><div class="preview"><img src="/assets/docs/025f577b807e2e19e782e7ff2f73543a.png" alt="Preview" width="480" height="190"/></div></div>
+      self: false
       params:
       - name: body
         details: <p>进行向下取整的表达式</p>
@@ -236,21 +209,21 @@ body:
         settable: false
       returns:
       - content
-      methods: []
       scope: []
-    - path:
-      - ceil
-      display: Ceil
-      keywords: null
+    - path: []
+      name: ceil
+      title: Ceil
+      keywords: []
       oneliner: Ceils an expression.
       element: false
       details: |-
         <p>
         对表达式向上取整。
         </p>
-        <h3 id="ceil-example">Example</h3>
+      example: |-
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">ceil</span><span class="typ-punct">(</span>x<span class="typ-math-op">/</span>2<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
         </code></pre><div class="preview"><img src="/assets/docs/5e51dbb63fcb62826c19d8bc8405ec5b.png" alt="Preview" width="480" height="190"/></div></div>
+      self: false
       params:
       - name: body
         details: <p>进行向上取整的表达式。</p>
@@ -266,21 +239,21 @@ body:
         settable: false
       returns:
       - content
-      methods: []
       scope: []
-    - path:
-      - round
-      display: Round
-      keywords: null
+    - path: []
+      name: round
+      title: Round
+      keywords: []
       oneliner: Rounds an expression.
       element: false
       details: |-
         <p>
         对表达式进行四舍五入。
         </p>
-        <h3 id="round-example">Example</h3>
+      example: |-
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">round</span><span class="typ-punct">(</span>x<span class="typ-math-op">/</span>2<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
         </code></pre><div class="preview"><img src="/assets/docs/b568beef30e9fb70d08ed84d7d609861.png" alt="Preview" width="480" height="190"/></div></div>
+      self: false
       params:
       - name: body
         details: <p>进行四舍五入的表达式。</p>
@@ -296,6 +269,5 @@ body:
         settable: false
       returns:
       - content
-      methods: []
       scope: []
 children: []

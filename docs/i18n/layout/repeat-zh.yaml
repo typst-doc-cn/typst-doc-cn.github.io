@@ -1,6 +1,6 @@
 route: /docs/reference/layout/repeat/
 title: Repeat
-description: Documentation for the `repeat` function.
+description: '`repeat` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -18,10 +18,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - repeat
-    display: Repeat
-    keywords: null
+    path: []
+    name: repeat
+    title: Repeat
+    keywords: []
     oneliner: Repeats content to the available space.
     element: true
     details: |-
@@ -41,6 +41,8 @@ body:
         Berlin, the 22nd of December, 2022
       <span class="typ-punct">]</span>
       </code></pre><div class="preview"><img src="/assets/docs/5766ecf903828db4c808c3707135b539.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: body
       details: <p>The content to repeat.</p>
@@ -56,6 +58,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

@@ -1,6 +1,6 @@
 route: /docs/reference/math/op/
 title: 文本运算符
-description: Documentation for the `op` function.
+description: '`op` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -25,9 +25,10 @@ body:
   kind: func
   content:
     path:
-    - op
-    display: Text Operator
-    keywords: null
+    - math
+    name: op
+    title: Text Operator
+    keywords: []
     oneliner: A text operator in an equation.
     element: true
     details: |-
@@ -37,7 +38,7 @@ body:
       <span class="typ-math-delim">$</span> <span class="typ-func">op</span><span class="typ-punct">(</span><span class="typ-str">&quot;custom&quot;</span><span class="typ-punct">,</span>
            limits<span class="typ-punct">:</span> <span class="typ-key">#</span><span class="typ-key">true</span><span class="typ-punct">)</span><span class="typ-math-op">_</span><span class="typ-punct">(</span>n<span class="typ-escape">-&gt;</span><span class="typ-pol">oo</span><span class="typ-punct">)</span> n <span class="typ-math-delim">$</span>
       </code></pre><div class="preview"><img src="/assets/docs/1fc6ad0d8979e73ff0b39aeba8699a1d.png" alt="Preview" width="480" height="190"/></div></div>
-      <h2 id="predefined">Predefined Operators</h2>
+      <h2 id="predefined">预定义运算符</h2>
       <p>
       Typst 预定义了一些运算符，包括
       <code>arccos</code>，  <code>arcsin</code>，  <code>arctan</code>，  <code>arg</code>，
@@ -46,12 +47,14 @@ body:
       <code>max</code>， <code>min</code>，  <code>Pr</code>，  <code>sec</code>，  <code>sin</code>，  <code>sinc</code>，  <code>sinh</code>，  <code>sup</code>，  <code>tan</code>， <code>tg</code>，
       <code>tanh</code>， <code>liminf</code>，  和 <code>limsup</code>.
       </p>
+    example: null
+    self: false
     params:
     - name: text
-      details: <p>运算符作用于的文本。</p>
+      details: <p>运算符文本。</p>
       example: null
       types:
-      - string
+      - str
       strings: []
       default: null
       positional: true
@@ -63,7 +66,7 @@ body:
       details: <p>是否将附缀显示为上下限形式（即显示在上方或下方）。</p>
       example: null
       types:
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">false</span></code>
       positional: false
@@ -73,6 +76,5 @@ body:
       settable: true
     returns:
     - content
-    methods: []
     scope: []
 children: []

@@ -1,6 +1,6 @@
 route: /docs/reference/data-loading/read/
 title: Read
-description: Documentation for the `read` function.
+description: '`read` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -15,30 +15,38 @@ outline:
   - id: parameters-path
     name: path
     children: []
+  - id: parameters-encoding
+    name: encoding
+    children: []
 body:
   kind: func
   content:
-    path:
-    - read
-    display: Read
-    keywords: null
-    oneliner: Reads plain text from a file.
+    path: []
+    name: read
+    title: Read
+    keywords: []
+    oneliner: Reads plain text or data from a file.
     element: false
     details: |-
-      <p>Reads plain text from a file.</p>
-      <p>The file will be read and returned as a string.</p>
+      <p>Reads plain text or data from a file.</p>
+      <p>By default, the file will be read as UTF-8 and returned as a <a href="/docs/reference/foundations/str/">string</a>.</p>
+      <p>If you specify <code>encoding: <span class="typ-key">none</span></code>, this returns raw <a href="/docs/reference/foundations/bytes/">bytes</a> instead.</p>
       <h2 id="example">Example</h2>
-      <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> text <span class="typ-op">=</span> <span class="typ-func">read</span><span class="typ-punct">(</span><span class="typ-str">&quot;data.html&quot;</span><span class="typ-punct">)</span>
-
-      An example for a HTML file:<span class="typ-escape">\</span>
+      <div class="previewed-code"><pre><code>An example for a HTML file: <span class="typ-escape">\</span>
+      <span class="typ-key">#</span><span class="typ-key">let</span> text <span class="typ-op">=</span> <span class="typ-func">read</span><span class="typ-punct">(</span><span class="typ-str">&quot;data.html&quot;</span><span class="typ-punct">)</span>
       <span class="typ-func">#</span><span class="typ-func">raw</span><span class="typ-punct">(</span>text<span class="typ-punct">,</span> lang<span class="typ-punct">:</span> <span class="typ-str">&quot;html&quot;</span><span class="typ-punct">)</span>
-      </code></pre><div class="preview"><img src="/assets/docs/68ffb1fb420c69dec8b2d299ed40cadc.png" alt="Preview" width="480" height="190"/></div></div>
+
+      Raw bytes:
+      <span class="typ-func">#</span><span class="typ-func">read</span><span class="typ-punct">(</span><span class="typ-str">&quot;tiger.jpg&quot;</span><span class="typ-punct">,</span> encoding<span class="typ-punct">:</span> <span class="typ-key">none</span><span class="typ-punct">)</span>
+      </code></pre><div class="preview"><img src="/assets/docs/e3b17c20df842a68185ce8f383291c9b.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: path
       details: <p>Path to a file.</p>
       example: null
       types:
-      - string
+      - str
       strings: []
       default: null
       positional: true
@@ -46,8 +54,25 @@ body:
       required: true
       variadic: false
       settable: false
+    - name: encoding
+      details: |-
+        <p>The encoding to read the file with.</p>
+        <p>If set to <code><span class="typ-key">none</span></code>, this function returns raw bytes.</p>
+      example: null
+      types:
+      - none
+      - string
+      strings:
+      - string: utf8
+        details: <p>The Unicode UTF-8 encoding.</p>
+      default: <code><span class="typ-str">&quot;utf8&quot;</span></code>
+      positional: false
+      named: true
+      required: false
+      variadic: false
+      settable: false
     returns:
-    - string
-    methods: []
+    - str
+    - bytes
     scope: []
 children: []

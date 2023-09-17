@@ -1,6 +1,6 @@
 route: /docs/reference/visualize/circle/
 title: Circle
-description: Documentation for the `circle` function.
+description: '`circle` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -39,10 +39,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - circle
-    display: Circle
-    keywords: null
+    path: []
+    name: circle
+    title: Circle
+    keywords: []
     oneliner: A circle with optional content.
     element: true
     details: |-
@@ -58,6 +58,8 @@ body:
         sized to fit.
       <span class="typ-punct">]</span>
       </code></pre><div class="preview"><img src="/assets/docs/add2d726e805e135b41d8fcda4252a8e.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: radius
       details: |-
@@ -82,7 +84,7 @@ body:
       example: null
       types:
       - auto
-      - relative length
+      - relative
       strings: []
       default: <code><span class="typ-key">auto</span></code>
       positional: false
@@ -99,7 +101,7 @@ body:
       example: null
       types:
       - auto
-      - relative length
+      - relative
       strings: []
       default: <code><span class="typ-key">auto</span></code>
       positional: false
@@ -109,8 +111,8 @@ body:
       settable: true
     - name: fill
       details: |-
-        <p>How to fill the circle. See the
-        <a href="/docs/reference/visualize/rect/#parameters-fill">rectangle's documentation</a> for more details.</p>
+        <p>How to fill the circle. See the <a href="/docs/reference/visualize/rect/#parameters-fill">rectangle's documentation</a>
+        for more details.</p>
       example: null
       types:
       - none
@@ -124,16 +126,16 @@ body:
       settable: true
     - name: stroke
       details: |-
-        <p>How to stroke the circle. See the <a href="/docs/reference/visualize/rect/#parameters-stroke">rectangle's
-        documentation</a> for more details.</p>
+        <p>How to stroke the circle. See the
+        <a href="/docs/reference/visualize/rect/#parameters-stroke">rectangle's documentation</a> for more details.</p>
       example: null
       types:
       - none
       - auto
       - length
       - color
-      - dictionary
       - stroke
+      - dictionary
       strings: []
       default: <code><span class="typ-key">auto</span></code>
       positional: false
@@ -143,11 +145,11 @@ body:
       settable: true
     - name: inset
       details: |-
-        <p>How much to pad the circle's content. See the <a href="/docs/reference/visualize/rect/#parameters-inset">rectangle's
-        documentation</a> for more details.</p>
+        <p>How much to pad the circle's content. See the
+        <a href="/docs/reference/layout/box/#parameters-inset">box's documentation</a> for more details.</p>
       example: null
       types:
-      - relative length
+      - relative
       - dictionary
       strings: []
       default: <code><span class="typ-num">5pt</span></code>
@@ -159,10 +161,10 @@ body:
     - name: outset
       details: |-
         <p>How much to expand the circle's size without affecting the layout. See
-        the <a href="/docs/reference/visualize/rect/#parameters-outset">rectangle's documentation</a> for more details.</p>
+        the <a href="/docs/reference/layout/box/#parameters-outset">box's documentation</a> for more details.</p>
       example: null
       types:
-      - relative length
+      - relative
       - dictionary
       strings: []
       default: <code><span class="typ-num">0pt</span></code>
@@ -188,6 +190,5 @@ body:
       settable: true
     returns:
     - content
-    methods: []
     scope: []
 children: []

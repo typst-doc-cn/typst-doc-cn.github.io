@@ -11,15 +11,18 @@ Gitee 镜像：https://gitee.com/orangex4/typst-doc-cn.github.io
 ## 贡献
 
 1. Fork 仓库
-2. 更改 `./docs/src` 目录下的 Markdown 文件 (不用修改文件名和主标题)
+2. 更改 `./docs/src` 目录下的 Markdown 文件
 3. 更改 `./docs/i18n` 目录下的 Yaml 文件
-4. 示例 (example) 里的英文不需要翻译成中文
-5. 发起一个 Pull Request
-6. 如果需要的话，也可以在文档的末尾处留下翻译者的名字
+4. 如果你想为「第三方包」（packages）页面的包添加对应翻译，可以修改 `./static/assets/index2cn.json` 文件
+5. 遵守翻译规范：
+  1. 中英文之间添加一个空格
+  2. 尽量使用中文标点符号
+  3. 不确定的术语可以参考术语表或者其他页面的翻译
+  4. 示例 (example) 里的英文不需要翻译成中文
+6. 发起一个 Pull Request
+7. 如果需要的话，也可以在文档的末尾处留下翻译者的名字
 
-PS: Reference 中的 *CONTENT* 和 *COMPUTE* 部分需要深入到 `./library/src/text/misc.rs` 这类代码文件中的注释中修改.
-
-如果想要贡献的话, 可以加入 QQ 群 793548390 联系 OrangeX4, 我们会使用石墨文档进行协作.
+如果想要贡献, 并且有任何问题的话, 可以加入 QQ 群 793548390 联系 OrangeX4.
 
 当然也可以直接尝试翻译和发起 Pull Request.
 
@@ -57,7 +60,9 @@ Typst 的文档生成是与 Typst 源码紧耦合的, 具体体现在:
 首先你需要 clone 本仓库, 并安装 `cargo` 工具链, 以及 Python 和 Python 包 `jinja2`.
 
 ```sh
+# 修改了 `./docs/src` 目录则需要运行这两行命令
 cargo test --package typst-docs --lib -- tests::test_docs --exact --nocapture
+# 如果只是修改 `./docs/i18n` 目录则只需要运行这行命令
 python ./gen.py
 ```
 

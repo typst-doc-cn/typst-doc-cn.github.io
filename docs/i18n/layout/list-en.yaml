@@ -1,6 +1,6 @@
 route: /docs/reference/layout/list/
 title: Bullet List
-description: Documentation for the `list` function.
+description: '`list` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -33,22 +33,22 @@ outline:
   - id: parameters-children
     name: children
     children: []
-- id: list-item
-  name: Bullet List Item
+- id: definitions
+  name: Definitions
   children:
-  - id: list-item-parameters
-    name: Parameters
+  - id: definitions-item
+    name: Bullet List Item
     children:
-    - id: list-item-parameters-body
+    - id: definitions-item-body
       name: body
       children: []
 body:
   kind: func
   content:
-    path:
-    - list
-    display: Bullet List
-    keywords: null
+    path: []
+    name: list
+    title: Bullet List
+    keywords: []
     oneliner: A bullet list.
     element: true
     details: |-
@@ -56,34 +56,38 @@ body:
       <p>Displays a sequence of items vertically, with each item introduced by a
       marker.</p>
       <h2 id="example">Example</h2>
-      <div class="previewed-code"><pre><code><span class="typ-marker">-</span> <span class="typ-strong">*Content*</span>
-        <span class="typ-marker">-</span> Text
-        <span class="typ-marker">-</span> Math
-        <span class="typ-marker">-</span> Layout
-        <span class="typ-marker">-</span> Visualize
-        <span class="typ-marker">-</span> Meta
-        <span class="typ-marker">-</span> Symbols
+      <div class="previewed-code"><pre><code>Normal list.
+      <span class="typ-marker">-</span> Text
+      <span class="typ-marker">-</span> Math
+      <span class="typ-marker">-</span> Layout
+      <span class="typ-marker">-</span> <span class="typ-escape">...</span>
 
-      <span class="typ-marker">-</span> <span class="typ-strong">*Compute*</span>
-        <span class="typ-func">#</span><span class="typ-func">list</span><span class="typ-punct">(</span>
-          <span class="typ-punct">[</span>Foundations<span class="typ-punct">]</span><span class="typ-punct">,</span>
-          <span class="typ-punct">[</span>Calculate<span class="typ-punct">]</span><span class="typ-punct">,</span>
-          <span class="typ-punct">[</span>Construct<span class="typ-punct">]</span><span class="typ-punct">,</span>
-          <span class="typ-punct">[</span>Data Loading<span class="typ-punct">]</span><span class="typ-punct">,</span>
-        <span class="typ-punct">)</span>
-      </code></pre><div class="preview"><img src="/assets/docs/da95cdc49e96a4094a6f2e808908475e.png" alt="Preview" width="480" height="190"/></div></div>
+      Multiple lines.
+      <span class="typ-marker">-</span> This list item spans multiple
+        lines because it is indented.
+
+      Function call.
+      <span class="typ-func">#</span><span class="typ-func">list</span><span class="typ-punct">(</span>
+        <span class="typ-punct">[</span>Foundations<span class="typ-punct">]</span><span class="typ-punct">,</span>
+        <span class="typ-punct">[</span>Calculate<span class="typ-punct">]</span><span class="typ-punct">,</span>
+        <span class="typ-punct">[</span>Construct<span class="typ-punct">]</span><span class="typ-punct">,</span>
+        <span class="typ-punct">[</span>Data Loading<span class="typ-punct">]</span><span class="typ-punct">,</span>
+      <span class="typ-punct">)</span>
+      </code></pre><div class="preview"><img src="/assets/docs/44d94f354be4a94abad08aaaf05b8bf6.png" alt="Preview" width="480" height="190"/></div></div>
       <h2 id="syntax">Syntax</h2>
       <p>This functions also has dedicated syntax: Start a line with a hyphen,
       followed by a space to create a list item. A list item can contain multiple
       paragraphs and other block-level content. All content that is indented
-      more than an item's hyphen becomes part of that item.</p>
+      more than an item's marker becomes part of that item.</p>
+    example: null
+    self: false
     params:
     - name: tight
       details: |-
-        <p>If this is <code><span class="typ-key">false</span></code>, the items are spaced apart with <a href="/docs/reference/layout/list/#parameters-spacing">list
-        spacing</a>. If it is <code><span class="typ-key">true</span></code>, they use normal
-        <a href="/docs/reference/layout/par/#parameters-leading">leading</a> instead. This makes the list more compact,
-        which can look better if the items are short.</p>
+        <p>If this is <code><span class="typ-key">false</span></code>, the items are spaced apart with
+        <a href="/docs/reference/layout/list/#parameters-spacing">list spacing</a>. If it is <code><span class="typ-key">true</span></code>, they use normal
+        <a href="/docs/reference/layout/par/#parameters-leading">leading</a> instead. This makes the list more compact, which
+        can look better if the items are short.</p>
         <p>In markup mode, the value of this parameter is determined based on
         whether items are separated with a blank line. If items directly follow
         each other, this is set to <code><span class="typ-key">true</span></code>; if items are separated by a blank
@@ -97,7 +101,7 @@ body:
           a blank line between the items.
         </code></pre><div class="preview"><img src="/assets/docs/be533bb8cc4d52ede47b0d7ac5c265b6.png" alt="Preview" width="480" height="190"/></div></div>
       types:
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">true</span></code>
       positional: false
@@ -166,7 +170,7 @@ body:
       example: null
       types:
       - auto
-      - relative length
+      - relative
       - fraction
       strings: []
       default: <code><span class="typ-key">auto</span></code>
@@ -196,16 +200,17 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope:
     - path:
       - list
-      - item
-      display: Bullet List Item
-      keywords: null
+      name: item
+      title: Bullet List Item
+      keywords: []
       oneliner: A bullet list item.
       element: true
       details: <p>A bullet list item.</p>
+      example: null
+      self: false
       params:
       - name: body
         details: <p>The item's body.</p>
@@ -221,6 +226,5 @@ body:
         settable: false
       returns:
       - content
-      methods: []
       scope: []
 children: []

@@ -1,6 +1,6 @@
 route: /docs/reference/layout/block/
 title: Block
-description: Documentation for the `block` function.
+description: '`block` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -54,10 +54,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - block
-    display: Block
-    keywords: null
+    path: []
+    name: block
+    title: Block
+    keywords: []
     oneliner: A block-level container.
     element: true
     details: |-
@@ -85,6 +85,8 @@ body:
       <span class="typ-heading">= Blocky</span>
       More text.
       </code></pre><div class="preview"><img src="/assets/docs/5ef4237b9611cf2dc612f6e7d9320917.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: width
       details: <p>The block's width.</p>
@@ -99,7 +101,7 @@ body:
         </code></pre><div class="preview"><img src="/assets/docs/0c485656ae4b3bfac064035a6baf6068.png" alt="Preview" width="480" height="190"/></div></div>
       types:
       - auto
-      - relative length
+      - relative
       strings: []
       default: <code><span class="typ-key">auto</span></code>
       positional: false
@@ -123,7 +125,7 @@ body:
         </code></pre><div class="preview"><img src="/assets/docs/9216b477f8dc7b569ba3638a9e0c89db.png" alt="Preview" width="480" height="190"/></div></div>
       types:
       - auto
-      - relative length
+      - relative
       strings: []
       default: <code><span class="typ-key">auto</span></code>
       positional: false
@@ -143,7 +145,7 @@ body:
         <span class="typ-punct">)</span>
         </code></pre><div class="preview"><img src="/assets/docs/e7579ea793a5715ac5d8c07f80518a2e.png" alt="Preview" width="480" height="190"/></div></div>
       types:
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">true</span></code>
       positional: false
@@ -175,8 +177,8 @@ body:
       - none
       - length
       - color
-      - dictionary
       - stroke
+      - dictionary
       strings: []
       default: <code><span class="typ-key">none</span></code>
       positional: false
@@ -186,11 +188,11 @@ body:
       settable: true
     - name: radius
       details: |-
-        <p>How much to round the block's corners. See the <a href="/docs/reference/visualize/rect/#parameters-radius">rectangle's
-        documentation</a> for more details.</p>
+        <p>How much to round the block's corners. See the
+        <a href="/docs/reference/visualize/rect/#parameters-radius">rectangle's documentation</a> for more details.</p>
       example: null
       types:
-      - relative length
+      - relative
       - dictionary
       strings: []
       default: <code><span class="typ-num">0pt</span></code>
@@ -201,11 +203,11 @@ body:
       settable: true
     - name: inset
       details: |-
-        <p>How much to pad the block's content. See the <a href="/docs/reference/visualize/rect/#parameters-inset">rectangle's
-        documentation</a> for more details.</p>
+        <p>How much to pad the block's content. See the
+        <a href="/docs/reference/layout/box/#parameters-inset">box's documentation</a> for more details.</p>
       example: null
       types:
-      - relative length
+      - relative
       - dictionary
       strings: []
       default: <code><span class="typ-num">0pt</span></code>
@@ -217,10 +219,10 @@ body:
     - name: outset
       details: |-
         <p>How much to expand the block's size without affecting the layout. See
-        the <a href="/docs/reference/visualize/rect/#parameters-outset">rectangle's documentation</a> for more details.</p>
+        the <a href="/docs/reference/layout/box/#parameters-outset">box's documentation</a> for more details.</p>
       example: null
       types:
-      - relative length
+      - relative
       - dictionary
       strings: []
       default: <code><span class="typ-num">0pt</span></code>
@@ -242,7 +244,7 @@ body:
         A second paragraph.
         </code></pre><div class="preview"><img src="/assets/docs/5ae55f84ba22f7cdd9f70a87f89d5d6a.png" alt="Preview" width="480" height="190"/></div></div>
       types:
-      - relative length
+      - relative
       - fraction
       strings: []
       default: <code><span class="typ-num">1.2em</span></code>
@@ -258,7 +260,7 @@ body:
         the spacing around arbitrary block-level elements.</p>
       example: null
       types:
-      - relative length
+      - relative
       - fraction
       strings: []
       default: <code><span class="typ-num">1.2em</span></code>
@@ -273,7 +275,7 @@ body:
         over <code>spacing</code>.</p>
       example: null
       types:
-      - relative length
+      - relative
       - fraction
       strings: []
       default: <code><span class="typ-num">1.2em</span></code>
@@ -286,7 +288,7 @@ body:
       details: <p>Whether to clip the content inside the block.</p>
       example: null
       types:
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">false</span></code>
       positional: false
@@ -309,6 +311,5 @@ body:
       settable: true
     returns:
     - content
-    methods: []
     scope: []
 children: []

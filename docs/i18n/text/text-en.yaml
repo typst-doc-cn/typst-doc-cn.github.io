@@ -1,6 +1,6 @@
 route: /docs/reference/text/text/
 title: Text
-description: Documentation for the `text` function.
+description: '`text` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -57,6 +57,9 @@ outline:
   - id: parameters-region
     name: region
     children: []
+  - id: parameters-script
+    name: script
+    children: []
   - id: parameters-dir
     name: dir
     children: []
@@ -102,10 +105,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - text
-    display: Text
-    keywords: null
+    path: []
+    name: text
+    title: Text
+    keywords: []
     oneliner: Customizes the look and layout of text in a variety of ways.
     element: true
     details: |-
@@ -121,6 +124,8 @@ body:
         With a function call.
       <span class="typ-punct">]</span><span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/1798620674b9dbb4c11ebe7e32fe87c8.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: font
       details: |-
@@ -140,7 +145,7 @@ body:
 
         </code></pre><div class="preview"><img src="/assets/docs/d72fffa62f48b1727d56b847bf5c16f5.png" alt="Preview" width="480" height="190"/></div></div>
       types:
-      - string
+      - str
       - array
       strings: []
       default: <code><span class="typ-str">&quot;linux libertine&quot;</span></code>
@@ -167,7 +172,7 @@ body:
         هذا عربي
         </code></pre><div class="preview"><img src="/assets/docs/bf03aa462d7c10c93185026e8b709e3b.png" alt="Preview" width="480" height="190"/></div></div>
       types:
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">true</span></code>
       positional: false
@@ -185,8 +190,8 @@ body:
         available either in an italic or oblique style, the difference between
         italic and oblique style is rarely observable.</p>
         <p>If you want to emphasize your text, you should do so using the
-        <a href="/docs/reference/text/emph/">emph</a> function instead. This makes it easy to adapt the
-        style later if you change your mind about how to signify the emphasis.</p>
+        <a href="/docs/reference/text/emph/">emph</a> function instead. This makes it easy to adapt the style
+        later if you change your mind about how to signify the emphasis.</p>
       example: |-
         <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">text</span><span class="typ-punct">(</span>font<span class="typ-punct">:</span> <span class="typ-str">&quot;Linux Libertine&quot;</span><span class="typ-punct">,</span> style<span class="typ-punct">:</span> <span class="typ-str">&quot;italic&quot;</span><span class="typ-punct">)</span><span class="typ-punct">[</span>Italic<span class="typ-punct">]</span>
         <span class="typ-func">#</span><span class="typ-func">text</span><span class="typ-punct">(</span>font<span class="typ-punct">:</span> <span class="typ-str">&quot;DejaVu Sans&quot;</span><span class="typ-punct">,</span> style<span class="typ-punct">:</span> <span class="typ-str">&quot;oblique&quot;</span><span class="typ-punct">)</span><span class="typ-punct">[</span>Oblique<span class="typ-punct">]</span>
@@ -226,7 +231,7 @@ body:
         <span class="typ-func">#</span><span class="typ-func">text</span><span class="typ-punct">(</span>weight<span class="typ-punct">:</span> <span class="typ-str">&quot;bold&quot;</span><span class="typ-punct">)</span><span class="typ-punct">[</span>Bold<span class="typ-punct">]</span>
         </code></pre><div class="preview"><img src="/assets/docs/01e654fdb2266c6084f521d21e12510d.png" alt="Preview" width="480" height="190"/></div></div>
       types:
-      - integer
+      - int
       - string
       strings:
       - string: thin
@@ -256,7 +261,7 @@ body:
     - name: stretch
       details: |-
         <p>The desired width of the glyphs. Accepts a ratio between <code><span class="typ-num">50%</span></code> and
-        <code><span class="typ-num">200%</span></code>. When the desired weight is not available, Typst selects the
+        <code><span class="typ-num">200%</span></code>. When the desired width is not available, Typst selects the
         font from the family that is closest in stretch. This will only stretch
         the text if a condensed or expanded version of the font is available.</p>
         <p>If you want to adjust the amount of space between characters instead of
@@ -337,7 +342,7 @@ body:
         Text with distant words.
         </code></pre><div class="preview"><img src="/assets/docs/fab9015900832363e9c63dc2f796f090.png" alt="Preview" width="480" height="190"/></div></div>
       types:
-      - relative length
+      - relative
       strings: []
       default: <code><span class="typ-num">100%</span></code>
       positional: false
@@ -378,7 +383,7 @@ body:
         results in a clearer paragraph edge.
         </code></pre><div class="preview"><img src="/assets/docs/61e2e01db9ae6b1f1be953864768bdd0.png" alt="Preview" width="480" height="190"/></div></div>
       types:
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">true</span></code>
       positional: false
@@ -413,9 +418,8 @@ body:
         details: <p>The approximate height of non-ascending lowercase letters.</p>
       - string: baseline
         details: <p>The baseline on which the letters rest.</p>
-      - string: descender
-        details: <p>The font's ascender, which typically exceeds the depth of all
-          glyphs.</p>
+      - string: bounds
+        details: <p>The top edge of the glyph's bounding box.</p>
       default: <code><span class="typ-str">&quot;cap-height&quot;</span></code>
       positional: false
       named: true
@@ -440,18 +444,13 @@ body:
       - length
       - string
       strings:
-      - string: ascender
-        details: <p>The font's ascender, which typically exceeds the height of all
-          glyphs.</p>
-      - string: cap-height
-        details: <p>The approximate height of uppercase letters.</p>
-      - string: x-height
-        details: <p>The approximate height of non-ascending lowercase letters.</p>
       - string: baseline
         details: <p>The baseline on which the letters rest.</p>
       - string: descender
-        details: <p>The font's ascender, which typically exceeds the depth of all
+        details: <p>The font's descender, which typically exceeds the depth of all
           glyphs.</p>
+      - string: bounds
+        details: <p>The bottom edge of the glyph's bounding box.</p>
       default: <code><span class="typ-str">&quot;baseline&quot;</span></code>
       positional: false
       named: true
@@ -477,7 +476,7 @@ body:
         In diesem Dokument, <span class="typ-escape">...</span>
         </code></pre><div class="preview"><img src="/assets/docs/14fc83552e06d2c744e443ffb47d977e.png" alt="Preview" width="480" height="190"/></div></div>
       types:
-      - string
+      - str
       strings: []
       default: <code><span class="typ-str">&quot;en&quot;</span></code>
       positional: false
@@ -492,9 +491,45 @@ body:
       example: null
       types:
       - none
-      - string
+      - str
       strings: []
       default: <code><span class="typ-key">none</span></code>
+      positional: false
+      named: true
+      required: false
+      variadic: false
+      settable: true
+    - name: script
+      details: |-
+        <p>The OpenType writing script.</p>
+        <p>The combination of <code>lang</code> and <code>script</code> determine how font features,
+        such as glyph substitution, are implemented. Frequently the value is a
+        modified (all-lowercase) ISO 15924 script identifier, and the <code>math</code>
+        writing script is used for features appropriate for mathematical
+        symbols.</p>
+        <p>When set to <code><span class="typ-key">auto</span></code>, the default and recommended setting, an
+        appropriate script is chosen for each block of characters sharing a
+        common Unicode script property.</p>
+      example: |-
+        <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>
+          font<span class="typ-punct">:</span> <span class="typ-str">&quot;Linux Libertine&quot;</span><span class="typ-punct">,</span>
+          size<span class="typ-punct">:</span> <span class="typ-num">20pt</span><span class="typ-punct">,</span>
+        <span class="typ-punct">)</span>
+
+        <span class="typ-key">#</span><span class="typ-key">let</span> scedilla <span class="typ-op">=</span> <span class="typ-punct">[</span>Ş<span class="typ-punct">]</span>
+        <span class="typ-pol">#</span><span class="typ-pol">scedilla</span> <span class="typ-comment">// S with a cedilla</span>
+
+        <span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>lang<span class="typ-punct">:</span> <span class="typ-str">&quot;ro&quot;</span><span class="typ-punct">,</span> script<span class="typ-punct">:</span> <span class="typ-str">&quot;latn&quot;</span><span class="typ-punct">)</span>
+        <span class="typ-pol">#</span><span class="typ-pol">scedilla</span> <span class="typ-comment">// S with a subscript comma</span>
+
+        <span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>lang<span class="typ-punct">:</span> <span class="typ-str">&quot;ro&quot;</span><span class="typ-punct">,</span> script<span class="typ-punct">:</span> <span class="typ-str">&quot;grek&quot;</span><span class="typ-punct">)</span>
+        <span class="typ-pol">#</span><span class="typ-pol">scedilla</span> <span class="typ-comment">// S with a cedilla</span>
+        </code></pre><div class="preview"><img src="/assets/docs/c92bd58e8ea706185de662638c552133.png" alt="Preview" width="480" height="190"/></div></div>
+      types:
+      - auto
+      - str
+      strings: []
+      default: <code><span class="typ-key">auto</span></code>
       positional: false
       named: true
       required: false
@@ -509,13 +544,13 @@ body:
         <li><code>rtl</code>: Layout text from right to left.</li>
         </ul>
         <p>When writing in right-to-left scripts like Arabic or Hebrew, you should
-        set the <a href="/docs/reference/text/text/#parameters-lang">text language</a> or direction. While individual
-        runs of text are automatically layouted in the correct direction,
-        setting the dominant direction gives the bidirectional reordering
-        algorithm the necessary information to correctly place punctuation and
-        inline objects. Furthermore, setting the direction affects the alignment
-        values <code>start</code> and <code>end</code>, which are equivalent to <code>left</code> and <code>right</code> in
-        <code>ltr</code> text and the other way around in <code>rtl</code> text.</p>
+        set the <a href="/docs/reference/text/text/#parameters-lang">text language</a> or direction. While individual runs
+        of text are automatically layouted in the correct direction, setting the
+        dominant direction gives the bidirectional reordering algorithm the
+        necessary information to correctly place punctuation and inline objects.
+        Furthermore, setting the direction affects the alignment values <code>start</code>
+        and <code>end</code>, which are equivalent to <code>left</code> and <code>right</code> in <code>ltr</code> text and
+        the other way around in <code>rtl</code> text.</p>
         <p>If you set this to <code>rtl</code> and experience bugs or in some way bad looking
         output, please do get in touch with us through the
         <a href="https://typst.app/contact">contact form</a> or our
@@ -555,7 +590,7 @@ body:
         </code></pre><div class="preview"><img src="/assets/docs/c71fcc1deec3442f9ad0d6a67a2efabf.png" alt="Preview" width="480" height="190"/></div></div>
       types:
       - auto
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">auto</span></code>
       positional: false
@@ -579,7 +614,7 @@ body:
         Totally
         </code></pre><div class="preview"><img src="/assets/docs/e40b35166d53f5fd05dafb6975a57d1c.png" alt="Preview" width="480" height="190"/></div></div>
       types:
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">true</span></code>
       positional: false
@@ -605,7 +640,7 @@ body:
         0, a, g, ß
         </code></pre><div class="preview"><img src="/assets/docs/3b9e1ca6bd9f5cad8fa5e5f08c88f5c5.png" alt="Preview" width="480" height="190"/></div></div>
       types:
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">false</span></code>
       positional: false
@@ -623,7 +658,7 @@ body:
       example: null
       types:
       - none
-      - integer
+      - int
       strings: []
       default: <code><span class="typ-key">none</span></code>
       positional: false
@@ -646,7 +681,7 @@ body:
         A fine ligature.
         </code></pre><div class="preview"><img src="/assets/docs/8c48757c66229d93ae8e8d725a80d20f.png" alt="Preview" width="480" height="190"/></div></div>
       types:
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">true</span></code>
       positional: false
@@ -660,7 +695,7 @@ body:
         to <code><span class="typ-key">true</span></code> enables the OpenType <code>dlig</code> font feature.</p>
       example: null
       types:
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">false</span></code>
       positional: false
@@ -674,7 +709,7 @@ body:
         enables the OpenType <code>hlig</code> font feature.</p>
       example: null
       types:
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">false</span></code>
       positional: false
@@ -749,7 +784,7 @@ body:
         <div class="previewed-code"><pre><code>0, <span class="typ-func">#</span><span class="typ-func">text</span><span class="typ-punct">(</span>slashed-zero<span class="typ-punct">:</span> <span class="typ-key">true</span><span class="typ-punct">)</span><span class="typ-punct">[</span>0<span class="typ-punct">]</span>
         </code></pre><div class="preview"><img src="/assets/docs/5925acaf0363a29e71668bd6a0837504.png" alt="Preview" width="480" height="190"/></div></div>
       types:
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">false</span></code>
       positional: false
@@ -769,7 +804,7 @@ body:
         <span class="typ-func">#</span><span class="typ-func">text</span><span class="typ-punct">(</span>fractions<span class="typ-punct">:</span> <span class="typ-key">true</span><span class="typ-punct">)</span><span class="typ-punct">[</span>1/2<span class="typ-punct">]</span>
         </code></pre><div class="preview"><img src="/assets/docs/e7fab59cdabd0a5bb85fd95176de1438.png" alt="Preview" width="480" height="190"/></div></div>
       types:
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">false</span></code>
       positional: false
@@ -816,6 +851,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

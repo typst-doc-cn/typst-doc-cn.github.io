@@ -1,0 +1,100 @@
+route: /docs/reference/visualize/stroke/
+title: Stroke
+description: Stroke 类型的文档
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: example
+  name: Example
+  children: []
+- id: simple-strokes
+  name: Simple Strokes
+  children: []
+- id: complex-strokes
+  name: Complex Strokes
+  children: []
+- id: fields
+  name: Fields
+  children: []
+body:
+  kind: type
+  content:
+    name: stroke
+    title: Stroke
+    keywords: []
+    oneliner: Defines how to draw a line.
+    details: |-
+      <p>Defines how to draw a line.</p>
+      <p>A stroke has a <em>paint</em> (typically a solid color), a <em>thickness,</em> a line
+      <em>cap,</em> a line <em>join,</em> a <em>miter-limit,</em> and a <em>dash</em> pattern. All of these
+      values are optional and have sensible defaults.</p>
+      <h2 id="example">Example</h2>
+      <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">line</span><span class="typ-punct">(</span>length<span class="typ-punct">:</span> <span class="typ-num">100%</span><span class="typ-punct">)</span>
+      <span class="typ-func">#</span><span class="typ-func">stack</span><span class="typ-punct">(</span>
+        spacing<span class="typ-punct">:</span> <span class="typ-num">1em</span><span class="typ-punct">,</span>
+        <span class="typ-func">line</span><span class="typ-punct">(</span>stroke<span class="typ-punct">:</span> <span class="typ-num">2pt</span> <span class="typ-op">+</span> red<span class="typ-punct">)</span><span class="typ-punct">,</span>
+        <span class="typ-func">line</span><span class="typ-punct">(</span>stroke<span class="typ-punct">:</span> <span class="typ-punct">(</span>paint<span class="typ-punct">:</span> blue<span class="typ-punct">,</span> thickness<span class="typ-punct">:</span> <span class="typ-num">4pt</span><span class="typ-punct">,</span> cap<span class="typ-punct">:</span> <span class="typ-str">&quot;round&quot;</span><span class="typ-punct">)</span><span class="typ-punct">)</span><span class="typ-punct">,</span>
+        <span class="typ-func">line</span><span class="typ-punct">(</span>stroke<span class="typ-punct">:</span> <span class="typ-punct">(</span>paint<span class="typ-punct">:</span> blue<span class="typ-punct">,</span> thickness<span class="typ-punct">:</span> <span class="typ-num">1pt</span><span class="typ-punct">,</span> dash<span class="typ-punct">:</span> <span class="typ-str">&quot;dashed&quot;</span><span class="typ-punct">)</span><span class="typ-punct">)</span><span class="typ-punct">,</span>
+      <span class="typ-punct">)</span>
+      </code></pre><div class="preview"><img src="/assets/docs/aa83d16e7e9293a08ec7bbe182b608b5.png" alt="Preview" width="480" height="190"/></div></div>
+      <h2 id="simple-strokes">Simple strokes</h2>
+      <p>You can create a simple solid stroke from a color, a thickness, or a
+      combination of the two. Specifically, wherever a stroke is expected you can
+      pass any of the following values:</p>
+      <ul>
+      <li>A length specifying the stroke's thickness. The color is inherited,
+      defaulting to black.</li>
+      <li>A color to use for the stroke. The thickness is inherited, defaulting to
+      <code><span class="typ-num">1pt</span></code>.</li>
+      <li>A stroke combined from color and thickness using the <code>+</code> operator as in
+      <code><span class="typ-num">2pt</span> <span class="typ-op">+</span> red</code>.</li>
+      </ul>
+      <h2 id="complex-strokes">Complex strokes</h2>
+      <p>For full control, you can also pass a <a href="/docs/reference/foundations/dictionary/">dictionary</a> to any
+      function that expects a stroke. This dictionary has the following keys:</p>
+      <ul>
+      <li>
+      <p><code>paint</code>: The <a href="/docs/reference/visualize/color/">color</a> to use for the stroke.</p>
+      </li>
+      <li>
+      <p><code>thickness</code>: The stroke's thickness as a <a href="/docs/reference/layout/length/">length</a>.</p>
+      </li>
+      <li>
+      <p><code>cap</code>: How the line terminates. One of <code><span class="typ-str">&quot;butt&quot;</span></code>, <code><span class="typ-str">&quot;round&quot;</span></code>, or
+      <code><span class="typ-str">&quot;square&quot;</span></code>.</p>
+      </li>
+      <li>
+      <p><code>join</code>: How sharp turns of a contour are rendered. One of <code><span class="typ-str">&quot;miter&quot;</span></code>,
+      <code><span class="typ-str">&quot;round&quot;</span></code>, or <code><span class="typ-str">&quot;bevel&quot;</span></code>. Not applicable to lines but to
+      <a href="/docs/reference/visualize/polygon/">polygons</a> or <a href="/docs/reference/visualize/path/">paths</a>.</p>
+      </li>
+      <li>
+      <p><code>miter-limit</code>: Number at which protruding sharp angles are rendered with a
+      bevel instead. The higher the number, the sharper an angle can be before
+      it is bevelled. Only applicable if <code>join</code> is <code><span class="typ-str">&quot;miter&quot;</span></code>. Defaults to
+      <code><span class="typ-num">4.0</span></code>.</p>
+      </li>
+      <li>
+      <p><code>dash</code>: The dash pattern to use. Can be any of the following:</p>
+      <ul>
+      <li>One of the predefined patterns <code><span class="typ-str">&quot;solid&quot;</span></code>, <code><span class="typ-str">&quot;dotted&quot;</span></code>,
+      <code><span class="typ-str">&quot;densely-dotted&quot;</span></code>, <code><span class="typ-str">&quot;loosely-dotted&quot;</span></code>, <code><span class="typ-str">&quot;dashed&quot;</span></code>,
+      <code><span class="typ-str">&quot;densely-dashed&quot;</span></code>, <code><span class="typ-str">&quot;loosely-dashed&quot;</span></code>, <code><span class="typ-str">&quot;dash-dotted&quot;</span></code>,
+      <code><span class="typ-str">&quot;densely-dash-dotted&quot;</span></code> or <code><span class="typ-str">&quot;loosely-dash-dotted&quot;</span></code></li>
+      <li>An <a href="/docs/reference/foundations/array/">array</a> with alternating lengths for dashes and gaps. You can
+      also use the string <code><span class="typ-str">&quot;dot&quot;</span></code> for a length equal to the line thickness.</li>
+      <li>A <a href="/docs/reference/foundations/dictionary/">dictionary</a> with the keys <code>array</code> (same as the array
+      above), and <code>phase</code> (of type <a href="/docs/reference/layout/length/">length</a>), which defines where in
+      the pattern to start drawing.</li>
+      </ul>
+      </li>
+      </ul>
+      <h2 id="fields">Fields</h2>
+      <p>On a <code>stroke</code> object, you can access any of the fields mentioned in the
+      dictionary format above. For example, <code><span class="typ-punct">(</span><span class="typ-num">2pt</span> <span class="typ-op">+</span> blue<span class="typ-punct">)</span><span class="typ-punct">.</span>thickness</code> is <code><span class="typ-num">2pt</span></code>.
+      Meanwhile, <code><span class="typ-punct">(</span><span class="typ-num">2pt</span> <span class="typ-op">+</span> blue<span class="typ-punct">)</span><span class="typ-punct">.</span>cap</code> is <code><span class="typ-key">auto</span></code> because it's unspecified.</p>
+    constructor: null
+    scope: []
+children: []

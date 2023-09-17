@@ -1,6 +1,6 @@
 route: /docs/reference/text/strike/
 title: 删除线
-description: Documentation for the `strike` function.
+description: '`strike` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -27,10 +27,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - strike
-    display: Strikethrough
-    keywords: null
+    path: []
+    name: strike
+    title: Strikethrough
+    keywords: []
     oneliner: Strikes through text.
     element: true
     details: |-
@@ -38,6 +38,8 @@ body:
       <h2 id="example">Example</h2>
       <div class="previewed-code"><pre><code>This is <span class="typ-func">#</span><span class="typ-func">strike</span><span class="typ-punct">[</span>not<span class="typ-punct">]</span> relevant.
       </code></pre><div class="preview"><img src="/assets/docs/3b08403b55bd279eb85136e82aaf946b.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: stroke
       details: |-
@@ -56,8 +58,8 @@ body:
       - auto
       - length
       - color
-      - dictionary
       - stroke
+      - dictionary
       strings: []
       default: <code><span class="typ-key">auto</span></code>
       positional: false
@@ -121,6 +123,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

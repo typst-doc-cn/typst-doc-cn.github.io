@@ -1,100 +1,67 @@
-route: /docs/reference/math/underover/
-title: 上/下 方内容
-description: Documentation for underover group of functions.
+route: /docs/reference/math/underover
+title: 上/下方内容
+description: underover 函数族的文档.
 part: null
 outline:
 - id: summary
   name: Summary
   children: []
-- id: underline
-  name: Underline
+- id: functions
+  name: Functions
   children:
-  - id: underline-example
-    name: Example
-    children: []
-  - id: underline-parameters
-    name: Parameters
+  - id: functions-underline
+    name: Underline
     children:
-    - id: underline-parameters-body
+    - id: functions-underline-body
       name: body
       children: []
-- id: overline
-  name: Overline
-  children:
-  - id: overline-example
-    name: Example
-    children: []
-  - id: overline-parameters
-    name: Parameters
+  - id: functions-overline
+    name: Overline
     children:
-    - id: overline-parameters-body
+    - id: functions-overline-body
       name: body
       children: []
-- id: underbrace
-  name: Underbrace
-  children:
-  - id: underbrace-example
-    name: Example
-    children: []
-  - id: underbrace-parameters
-    name: Parameters
+  - id: functions-underbrace
+    name: Underbrace
     children:
-    - id: underbrace-parameters-body
+    - id: functions-underbrace-body
       name: body
       children: []
-    - id: underbrace-parameters-annotation
+    - id: functions-underbrace-annotation
       name: annotation
       children: []
-- id: overbrace
-  name: Overbrace
-  children:
-  - id: overbrace-example
-    name: Example
-    children: []
-  - id: overbrace-parameters
-    name: Parameters
+  - id: functions-overbrace
+    name: Overbrace
     children:
-    - id: overbrace-parameters-body
+    - id: functions-overbrace-body
       name: body
       children: []
-    - id: overbrace-parameters-annotation
+    - id: functions-overbrace-annotation
       name: annotation
       children: []
-- id: underbracket
-  name: Underbracket
-  children:
-  - id: underbracket-example
-    name: Example
-    children: []
-  - id: underbracket-parameters
-    name: Parameters
+  - id: functions-underbracket
+    name: Underbracket
     children:
-    - id: underbracket-parameters-body
+    - id: functions-underbracket-body
       name: body
       children: []
-    - id: underbracket-parameters-annotation
+    - id: functions-underbracket-annotation
       name: annotation
       children: []
-- id: overbracket
-  name: Overbracket
-  children:
-  - id: overbracket-example
-    name: Example
-    children: []
-  - id: overbracket-parameters
-    name: Parameters
+  - id: functions-overbracket
+    name: Overbracket
     children:
-    - id: overbracket-parameters-body
+    - id: functions-overbracket-body
       name: body
       children: []
-    - id: overbracket-parameters-annotation
+    - id: functions-overbracket-annotation
       name: annotation
       children: []
 body:
-  kind: funcs
+  kind: group
   content:
     name: underover
-    display: Under/Over
+    title: Under/Over
     details: |-
       <p>
       表达式上下方的分隔符。
@@ -103,19 +70,20 @@ body:
       还可以在大括号和括号上方添加可选注释。
       </p>
     functions:
-    - path:
-      - underline
-      display: Underline
-      keywords: null
+    - path: []
+      name: underline
+      title: Underline
+      keywords: []
       oneliner: A horizontal line under content.
       element: true
       details: |-
         <p>
         在内容下方添加水平线。
         </p>
-        <h3 id="underline-example">Example</h3>
+      example: |-
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">underline</span><span class="typ-punct">(</span>1 + 2 + <span class="typ-escape">...</span> + 5<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
         </code></pre><div class="preview"><img src="/assets/docs/a964debc0427ab602297c7dc72630745.png" alt="Preview" width="480" height="190"/></div></div>
+      self: false
       params:
       - name: body
         details: <p>水平线上方的内容。</p>
@@ -131,19 +99,18 @@ body:
         settable: false
       returns:
       - content
-      methods: []
       scope: []
-    - path:
-      - overline
-      display: Overline
-      keywords: null
+    - path: []
+      name: overline
+      title: Overline
+      keywords: []
       oneliner: A horizontal line over content.
       element: true
-      details: |-
-        <p>在内容上方添加水平线。</p>
-        <h3 id="overline-example">Example</h3>
+      details: <p>在内容上方添加水平线。</p>
+      example: |-
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">overline</span><span class="typ-punct">(</span>1 + 2 + <span class="typ-escape">...</span> + 5<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
         </code></pre><div class="preview"><img src="/assets/docs/cdd4cb2e681e2fced8b4b9f63cf90e81.png" alt="Preview" width="480" height="190"/></div></div>
+      self: false
       params:
       - name: body
         details: <p>水平线下方的内容。</p>
@@ -159,21 +126,21 @@ body:
         settable: false
       returns:
       - content
-      methods: []
       scope: []
-    - path:
-      - underbrace
-      display: Underbrace
-      keywords: null
+    - path: []
+      name: underbrace
+      title: Underbrace
+      keywords: []
       oneliner: A horizontal brace under content, with an optional annotation below.
       element: true
       details: |-
         <p>
         在内容下方添加水平大括号，括号下方可以添加可选注释。
         </p>
-        <h3 id="underbrace-example">Example</h3>
+      example: |-
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">underbrace</span><span class="typ-punct">(</span>1 + 2 + <span class="typ-escape">...</span> + 5<span class="typ-punct">,</span> <span class="typ-str">&quot;numbers&quot;</span><span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
         </code></pre><div class="preview"><img src="/assets/docs/88b30429e73e3bbc3d0e0ee29c7d06b6.png" alt="Preview" width="480" height="190"/></div></div>
+      self: false
       params:
       - name: body
         details: <p>
@@ -204,20 +171,20 @@ body:
         settable: true
       returns:
       - content
-      methods: []
       scope: []
-    - path:
-      - overbrace
-      display: Overbrace
-      keywords: null
+    - path: []
+      name: overbrace
+      title: Overbrace
+      keywords: []
       oneliner: A horizontal brace over content, with an optional annotation above.
       element: true
       details: |-
         <p>
         在内容上方添加水平大括号，括号上方可以添加可选注释。</p>
-        <h3 id="overbrace-example">Example</h3>
+      example: |-
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">overbrace</span><span class="typ-punct">(</span>1 + 2 + <span class="typ-escape">...</span> + 5<span class="typ-punct">,</span> <span class="typ-str">&quot;numbers&quot;</span><span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
         </code></pre><div class="preview"><img src="/assets/docs/9f2eca7814aaf0c6542bb369712f4513.png" alt="Preview" width="480" height="190"/></div></div>
+      self: false
       params:
       - name: body
         details: <p>大括号下方的内容。</p>
@@ -246,20 +213,20 @@ body:
         settable: true
       returns:
       - content
-      methods: []
       scope: []
-    - path:
-      - underbracket
-      display: Underbracket
-      keywords: null
+    - path: []
+      name: underbracket
+      title: Underbracket
+      keywords: []
       oneliner: A horizontal bracket under content, with an optional annotation below.
       element: true
       details: |-
         <p>
         在内容下方添加水平方括号，括号下方可以添加可选注释。</p>
-        <h3 id="underbracket-example">Example</h3>
+      example: |-
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">underbracket</span><span class="typ-punct">(</span>1 + 2 + <span class="typ-escape">...</span> + 5<span class="typ-punct">,</span> <span class="typ-str">&quot;numbers&quot;</span><span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
         </code></pre><div class="preview"><img src="/assets/docs/7a63fcfa0c9ae2df891097e9bba06ab6.png" alt="Preview" width="480" height="190"/></div></div>
+      self: false
       params:
       - name: body
         details: <p>方括号上方的内容。</p>
@@ -288,20 +255,20 @@ body:
         settable: true
       returns:
       - content
-      methods: []
       scope: []
-    - path:
-      - overbracket
-      display: Overbracket
-      keywords: null
+    - path: []
+      name: overbracket
+      title: Overbracket
+      keywords: []
       oneliner: A horizontal bracket over content, with an optional annotation above.
       element: true
       details: |-
         <p>
         在内容上方添加水平方括号，括号上方可以添加可选注释。</p>
-        <h3 id="overbracket-example">Example</h3>
+      example: |-
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">overbracket</span><span class="typ-punct">(</span>1 + 2 + <span class="typ-escape">...</span> + 5<span class="typ-punct">,</span> <span class="typ-str">&quot;numbers&quot;</span><span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
         </code></pre><div class="preview"><img src="/assets/docs/b50782925e551ea653c324786dcbc21b.png" alt="Preview" width="480" height="190"/></div></div>
+      self: false
       params:
       - name: body
         details: <p>方括号下方的内容。</p>
@@ -330,6 +297,5 @@ body:
         settable: true
       returns:
       - content
-      methods: []
       scope: []
 children: []

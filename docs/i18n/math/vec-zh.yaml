@@ -1,6 +1,6 @@
 route: /docs/reference/math/vec/
 title: 向量
-description: Documentation for the `vec` function.
+description: '`vec` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -22,9 +22,10 @@ body:
   kind: func
   content:
     path:
-    - vec
-    display: Vector
-    keywords: null
+    - math
+    name: vec
+    title: Vector
+    keywords: []
     oneliner: A column vector.
     element: true
     details: |-
@@ -38,6 +39,8 @@ body:
       <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">vec</span><span class="typ-punct">(</span>a<span class="typ-punct">,</span> b<span class="typ-punct">,</span> c<span class="typ-punct">)</span> <span class="typ-pol">dot</span> <span class="typ-func">vec</span><span class="typ-punct">(</span>1<span class="typ-punct">,</span> 2<span class="typ-punct">,</span> 3<span class="typ-punct">)</span>
           = a + 2b + 3c <span class="typ-math-delim">$</span>
       </code></pre><div class="preview"><img src="/assets/docs/8ce51ae84b534812283bd47c001cf7dd.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: delim
       details: <p>使用的分隔符。</p>
@@ -50,15 +53,15 @@ body:
       - string
       strings:
       - string: (
-        details: <p>Delimit with parentheses.</p>
+        details: <p>圆括号分隔。</p>
       - string: '['
-        details: <p>Delimit with brackets.</p>
+        details: <p>方括号分隔。</p>
       - string: '{'
-        details: <p>Delimit with curly braces.</p>
+        details: <p>花括号分隔。</p>
       - string: '|'
-        details: <p>Delimit with vertical bars.</p>
+        details: <p>垂直线分隔。</p>
       - string: '||'
-        details: <p>Delimit with double vertical bars.</p>
+        details: <p>双垂直线分隔。</p>
       default: <code><span class="typ-str">&quot;(&quot;</span></code>
       positional: false
       named: true
@@ -79,6 +82,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

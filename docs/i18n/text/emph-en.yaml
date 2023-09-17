@@ -1,6 +1,6 @@
 route: /docs/reference/text/emph/
 title: Emphasis
-description: Documentation for the `emph` function.
+description: '`emph` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -21,19 +21,19 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - emph
-    display: Emphasis
-    keywords: null
+    path: []
+    name: emph
+    title: Emphasis
+    keywords: []
     oneliner: Emphasizes content by setting it in italics.
     element: true
     details: |-
       <p>Emphasizes content by setting it in italics.</p>
       <ul>
-      <li>If the current <a href="/docs/reference/text/text/#parameters-style">text style</a> is <code><span class="typ-str">&quot;normal&quot;</span></code>,
-      this turns it into <code><span class="typ-str">&quot;italic&quot;</span></code>.</li>
-      <li>If it is already <code><span class="typ-str">&quot;italic&quot;</span></code> or <code><span class="typ-str">&quot;oblique&quot;</span></code>,
-      it turns it back to <code><span class="typ-str">&quot;normal&quot;</span></code>.</li>
+      <li>If the current <a href="/docs/reference/text/text/#parameters-style">text style</a> is <code><span class="typ-str">&quot;normal&quot;</span></code>, this turns it
+      into <code><span class="typ-str">&quot;italic&quot;</span></code>.</li>
+      <li>If it is already <code><span class="typ-str">&quot;italic&quot;</span></code> or <code><span class="typ-str">&quot;oblique&quot;</span></code>, it turns it back to
+      <code><span class="typ-str">&quot;normal&quot;</span></code>.</li>
       </ul>
       <h2 id="example">Example</h2>
       <div class="previewed-code"><pre><code>This is <span class="typ-emph">_emphasized._</span> <span class="typ-escape">\</span>
@@ -49,6 +49,8 @@ body:
       <p>This function also has dedicated syntax: To emphasize content, simply
       enclose it in underscores (<code>_</code>). Note that this only works at word
       boundaries. To emphasize part of a word, you have to use the function.</p>
+    example: null
+    self: false
     params:
     - name: body
       details: <p>The content to emphasize.</p>
@@ -64,6 +66,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

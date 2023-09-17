@@ -1,6 +1,6 @@
 route: /docs/reference/text/upper/
 title: Uppercase
-description: Documentation for the `upper` function.
+description: '`upper` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -18,10 +18,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - upper
-    display: Uppercase
-    keywords: null
+    path: []
+    name: upper
+    title: Uppercase
+    keywords: []
     oneliner: Converts text or content to uppercase.
     element: false
     details: |-
@@ -31,12 +31,14 @@ body:
       <span class="typ-func">#</span><span class="typ-func">upper</span><span class="typ-punct">[</span><span class="typ-strong">*my text*</span><span class="typ-punct">]</span> <span class="typ-escape">\</span>
       <span class="typ-func">#</span><span class="typ-func">upper</span><span class="typ-punct">[</span>ALREADY HIGH<span class="typ-punct">]</span>
       </code></pre><div class="preview"><img src="/assets/docs/f1897e9e3cdcc4948ff5480fc813b89b.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: text
       details: <p>The text to convert to uppercase.</p>
       example: null
       types:
-      - string
+      - str
       - content
       strings: []
       default: null
@@ -46,8 +48,7 @@ body:
       variadic: false
       settable: false
     returns:
-    - string
+    - str
     - content
-    methods: []
     scope: []
 children: []

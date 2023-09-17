@@ -1,6 +1,6 @@
 route: /docs/reference/text/super/
 title: Superscript
-description: Documentation for the `super` function.
+description: '`super` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -27,10 +27,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - super
-    display: Superscript
-    keywords: null
+    path: []
+    name: super
+    title: Superscript
+    keywords: []
     oneliner: Renders text in superscript.
     element: true
     details: |-
@@ -39,6 +39,8 @@ body:
       <h2 id="example">Example</h2>
       <div class="previewed-code"><pre><code>1<span class="typ-func">#</span><span class="typ-func">super</span><span class="typ-punct">[</span>st<span class="typ-punct">]</span> try!
       </code></pre><div class="preview"><img src="/assets/docs/fd50918366fd34c3aeaf45b2e2e38b4c.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: typographic
       details: |-
@@ -51,7 +53,7 @@ body:
         N<span class="typ-func">#</span><span class="typ-func">super</span><span class="typ-punct">(</span>typographic<span class="typ-punct">:</span> <span class="typ-key">false</span><span class="typ-punct">)</span><span class="typ-punct">[</span>1<span class="typ-punct">]</span>
         </code></pre><div class="preview"><img src="/assets/docs/1f1b30bdc6dbefed58e2d5b106289303.png" alt="Preview" width="480" height="190"/></div></div>
       types:
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">true</span></code>
       positional: false
@@ -103,6 +105,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

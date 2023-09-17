@@ -1,94 +1,74 @@
-route: /docs/reference/math/sizes/
+route: /docs/reference/math/sizes
 title: Sizes
-description: Documentation for sizes group of functions.
+description: sizes 函数族的文档.
 part: null
 outline:
 - id: summary
   name: Summary
   children: []
-- id: display
-  name: Display Size
+- id: functions
+  name: Functions
   children:
-  - id: display-example
-    name: Example
-    children: []
-  - id: display-parameters
-    name: Parameters
+  - id: functions-display
+    name: Display Size
     children:
-    - id: display-parameters-body
+    - id: functions-display-body
       name: body
       children: []
-    - id: display-parameters-cramped
+    - id: functions-display-cramped
       name: cramped
       children: []
-- id: inline
-  name: Inline Size
-  children:
-  - id: inline-example
-    name: Example
-    children: []
-  - id: inline-parameters
-    name: Parameters
+  - id: functions-inline
+    name: Inline Size
     children:
-    - id: inline-parameters-body
+    - id: functions-inline-body
       name: body
       children: []
-    - id: inline-parameters-cramped
+    - id: functions-inline-cramped
       name: cramped
       children: []
-- id: script
-  name: Script Size
-  children:
-  - id: script-example
-    name: Example
-    children: []
-  - id: script-parameters
-    name: Parameters
+  - id: functions-script
+    name: Script Size
     children:
-    - id: script-parameters-body
+    - id: functions-script-body
       name: body
       children: []
-    - id: script-parameters-cramped
+    - id: functions-script-cramped
       name: cramped
       children: []
-- id: sscript
-  name: Script-Script Size
-  children:
-  - id: sscript-example
-    name: Example
-    children: []
-  - id: sscript-parameters
-    name: Parameters
+  - id: functions-sscript
+    name: Script-Script Size
     children:
-    - id: sscript-parameters-body
+    - id: functions-sscript-body
       name: body
       children: []
-    - id: sscript-parameters-cramped
+    - id: functions-sscript-cramped
       name: cramped
       children: []
 body:
-  kind: funcs
+  kind: group
   content:
     name: sizes
-    display: Sizes
+    title: Sizes
     details: |-
       <p>Forced size styles for expressions within formulas.</p>
       <p>These functions allow manual configuration of the size of equation elements
       to make them look as in a display/inline equation or as if used in a root or
       sub/superscripts.</p>
     functions:
-    - path:
-      - display
-      display: Display Size
-      keywords: null
+    - path: []
+      name: display
+      title: Display Size
+      keywords: []
       oneliner: Forced display style in math.
       element: false
       details: |-
         <p>Forced display style in math.</p>
         <p>This is the normal size for block equations.</p>
-        <h3 id="display-example">Example</h3>
+      example: |-
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span><span class="typ-pol">sum</span><span class="typ-math-op">_</span>i x<span class="typ-math-op">_</span>i<span class="typ-math-op">/</span>2 = <span class="typ-func">display</span><span class="typ-punct">(</span><span class="typ-pol">sum</span><span class="typ-math-op">_</span>i x<span class="typ-math-op">_</span>i<span class="typ-math-op">/</span>2<span class="typ-punct">)</span><span class="typ-math-delim">$</span>
         </code></pre><div class="preview"><img src="/assets/docs/8631c65c70bfbf88891feec80e5e4bba.png" alt="Preview" width="480" height="190"/></div></div>
+      self: false
       params:
       - name: body
         details: <p>The content to size.</p>
@@ -108,7 +88,7 @@ body:
           and superscripts do.</p>
         example: null
         types:
-        - boolean
+        - bool
         strings: []
         default: <code><span class="typ-key">false</span></code>
         positional: false
@@ -118,21 +98,21 @@ body:
         settable: false
       returns:
       - content
-      methods: []
       scope: []
-    - path:
-      - inline
-      display: Inline Size
-      keywords: null
+    - path: []
+      name: inline
+      title: Inline Size
+      keywords: []
       oneliner: Forced inline (text) style in math.
       element: false
       details: |-
         <p>Forced inline (text) style in math.</p>
         <p>This is the normal size for inline equations.</p>
-        <h3 id="inline-example">Example</h3>
+      example: |-
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-pol">sum</span><span class="typ-math-op">_</span>i x<span class="typ-math-op">_</span>i<span class="typ-math-op">/</span>2
             = <span class="typ-func">inline</span><span class="typ-punct">(</span><span class="typ-pol">sum</span><span class="typ-math-op">_</span>i x<span class="typ-math-op">_</span>i<span class="typ-math-op">/</span>2<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
         </code></pre><div class="preview"><img src="/assets/docs/7f6fabd1a5038cb1e92db98ab2c4938b.png" alt="Preview" width="480" height="190"/></div></div>
+      self: false
       params:
       - name: body
         details: <p>The content to size.</p>
@@ -152,7 +132,7 @@ body:
           and superscripts do.</p>
         example: null
         types:
-        - boolean
+        - bool
         strings: []
         default: <code><span class="typ-key">false</span></code>
         positional: false
@@ -162,20 +142,20 @@ body:
         settable: false
       returns:
       - content
-      methods: []
       scope: []
-    - path:
-      - script
-      display: Script Size
-      keywords: null
+    - path: []
+      name: script
+      title: Script Size
+      keywords: []
       oneliner: Forced script style in math.
       element: false
       details: |-
         <p>Forced script style in math.</p>
         <p>This is the smaller size used in powers or sub- or superscripts.</p>
-        <h3 id="script-example">Example</h3>
+      example: |-
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span><span class="typ-pol">sum</span><span class="typ-math-op">_</span>i x<span class="typ-math-op">_</span>i<span class="typ-math-op">/</span>2 = <span class="typ-func">script</span><span class="typ-punct">(</span><span class="typ-pol">sum</span><span class="typ-math-op">_</span>i x<span class="typ-math-op">_</span>i<span class="typ-math-op">/</span>2<span class="typ-punct">)</span><span class="typ-math-delim">$</span>
         </code></pre><div class="preview"><img src="/assets/docs/29af5c7bf57f3160bd334d93b988775a.png" alt="Preview" width="480" height="190"/></div></div>
+      self: false
       params:
       - name: body
         details: <p>The content to size.</p>
@@ -195,7 +175,7 @@ body:
           and superscripts do.</p>
         example: null
         types:
-        - boolean
+        - bool
         strings: []
         default: <code><span class="typ-key">true</span></code>
         positional: false
@@ -205,21 +185,21 @@ body:
         settable: false
       returns:
       - content
-      methods: []
       scope: []
-    - path:
-      - sscript
-      display: Script-Script Size
-      keywords: null
+    - path: []
+      name: sscript
+      title: Script-Script Size
+      keywords: []
       oneliner: Forced second script style in math.
       element: false
       details: |-
         <p>Forced second script style in math.</p>
         <p>This is the smallest size, used in second-level sub- and superscripts
         (script of the script).</p>
-        <h3 id="sscript-example">Example</h3>
+      example: |-
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span><span class="typ-pol">sum</span><span class="typ-math-op">_</span>i x<span class="typ-math-op">_</span>i<span class="typ-math-op">/</span>2 = <span class="typ-func">sscript</span><span class="typ-punct">(</span><span class="typ-pol">sum</span><span class="typ-math-op">_</span>i x<span class="typ-math-op">_</span>i<span class="typ-math-op">/</span>2<span class="typ-punct">)</span><span class="typ-math-delim">$</span>
         </code></pre><div class="preview"><img src="/assets/docs/bd925f3212ba0c8c54ffec73165ac1a3.png" alt="Preview" width="480" height="190"/></div></div>
+      self: false
       params:
       - name: body
         details: <p>The content to size.</p>
@@ -239,7 +219,7 @@ body:
           and superscripts do.</p>
         example: null
         types:
-        - boolean
+        - bool
         strings: []
         default: <code><span class="typ-key">true</span></code>
         positional: false
@@ -249,6 +229,5 @@ body:
         settable: false
       returns:
       - content
-      methods: []
       scope: []
 children: []

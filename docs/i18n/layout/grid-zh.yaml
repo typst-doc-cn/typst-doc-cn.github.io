@@ -1,6 +1,6 @@
 route: /docs/reference/layout/grid/
 title: Grid
-description: Documentation for the `grid` function.
+description: '`grid` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -33,10 +33,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - grid
-    display: Grid
-    keywords: null
+    path: []
+    name: grid
+    title: Grid
+    keywords: []
     oneliner: Arranges content in a grid.
     element: true
     details: |-
@@ -95,6 +95,8 @@ body:
         <span class="typ-func">cell</span><span class="typ-punct">[</span>One more thing<span class="typ-escape">...</span><span class="typ-punct">]</span><span class="typ-punct">,</span>
       <span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/85260d51bbf3dba5b4ceeb15c922275b.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: columns
       details: |-
@@ -106,8 +108,8 @@ body:
       example: null
       types:
       - auto
-      - integer
-      - relative length
+      - int
+      - relative
       - fraction
       - array
       strings: []
@@ -125,8 +127,8 @@ body:
       example: null
       types:
       - auto
-      - integer
-      - relative length
+      - int
+      - relative
       - fraction
       - array
       strings: []
@@ -143,8 +145,8 @@ body:
       example: null
       types:
       - auto
-      - integer
-      - relative length
+      - int
+      - relative
       - fraction
       - array
       strings: []
@@ -159,8 +161,8 @@ body:
       example: null
       types:
       - auto
-      - integer
-      - relative length
+      - int
+      - relative
       - fraction
       - array
       strings: []
@@ -175,8 +177,8 @@ body:
       example: null
       types:
       - auto
-      - integer
-      - relative length
+      - int
+      - relative
       - fraction
       - array
       strings: []
@@ -202,6 +204,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

@@ -1,6 +1,6 @@
 route: /docs/reference/meta/heading/
 title: Heading
-description: Documentation for the `heading` function.
+description: '`heading` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -27,16 +27,19 @@ outline:
   - id: parameters-outlined
     name: outlined
     children: []
+  - id: parameters-bookmarked
+    name: bookmarked
+    children: []
   - id: parameters-body
     name: body
     children: []
 body:
   kind: func
   content:
-    path:
-    - heading
-    display: Heading
-    keywords: null
+    path: []
+    name: heading
+    title: Heading
+    keywords: []
     oneliner: A section heading.
     element: true
     details: |-
@@ -50,9 +53,8 @@ body:
       specify how you want your headings to be numbered with a
       <a href="/docs/reference/meta/numbering/">numbering pattern or function</a>.</p>
       <p>Independently from the numbering, Typst can also automatically generate an
-      <a href="/docs/reference/meta/outline/">outline</a> of all headings for you. To exclude one or more
-      headings from this outline, you can set the <code>outlined</code> parameter to
-      <code><span class="typ-key">false</span></code>.</p>
+      <a href="/docs/reference/meta/outline/">outline</a> of all headings for you. To exclude one or more headings
+      from this outline, you can set the <code>outlined</code> parameter to <code><span class="typ-key">false</span></code>.</p>
       <h2 id="example">Example</h2>
       <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">heading</span><span class="typ-punct">(</span>numbering<span class="typ-punct">:</span> <span class="typ-str">&quot;1.a)&quot;</span><span class="typ-punct">)</span>
 
@@ -66,12 +68,14 @@ body:
       <p>Headings have dedicated syntax: They can be created by starting a line with
       one or multiple equals signs, followed by a space. The number of equals
       signs determines the heading's logical nesting depth.</p>
+    example: null
+    self: false
     params:
     - name: level
       details: <p>The logical nesting depth of the heading, starting from one.</p>
       example: null
       types:
-      - integer
+      - int
       strings: []
       default: <code><span class="typ-num">1</span></code>
       positional: false
@@ -92,7 +96,7 @@ body:
         </code></pre><div class="preview"><img src="/assets/docs/7f4c4cd2b391215182900c50aa7cc4b7.png" alt="Preview" width="480" height="190"/></div></div>
       types:
       - none
-      - string
+      - str
       - function
       strings: []
       default: <code><span class="typ-key">none</span></code>
@@ -129,7 +133,11 @@ body:
       variadic: false
       settable: true
     - name: outlined
-      details: <p>Whether the heading should appear in the outline.</p>
+      details: |-
+        <p>Whether the heading should appear in the <a href="/docs/reference/meta/outline/">outline</a>.</p>
+        <p>Note that this property, if set to <code><span class="typ-key">true</span></code>, ensures the heading is also
+        shown as a bookmark in the exported PDF's outline (when exporting to
+        PDF). To change that behavior, use the <code>bookmarked</code> property.</p>
       example: |-
         <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">outline</span><span class="typ-punct">(</span><span class="typ-punct">)</span>
 
@@ -141,9 +149,38 @@ body:
         in the outline.
         </code></pre><div class="preview"><img src="/assets/docs/3abd9effd2a8e1883a608bf74f377611.png" alt="Preview" width="480" height="190"/></div></div>
       types:
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">true</span></code>
+      positional: false
+      named: true
+      required: false
+      variadic: false
+      settable: true
+    - name: bookmarked
+      details: |-
+        <p>Whether the heading should appear as a bookmark in the exported PDF's
+        outline. Doesn't affect other export formats, such as PNG.</p>
+        <p>The default value of <code><span class="typ-key">auto</span></code> indicates that the heading will only
+        appear in the exported PDF's outline if its <code>outlined</code> property is set
+        to <code><span class="typ-key">true</span></code>, that is, if it would also be listed in Typst's
+        <a href="/docs/reference/meta/outline/">outline</a>. Setting this property to either <code><span class="typ-key">true</span></code> (bookmark)
+        or <code><span class="typ-key">false</span></code> (don't bookmark) bypasses that behavior.</p>
+      example: |-
+        <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">heading</span><span class="typ-punct">[</span>Normal heading<span class="typ-punct">]</span>
+        This heading will be shown in
+        the PDF&#39;s bookmark outline.
+
+        <span class="typ-func">#</span><span class="typ-func">heading</span><span class="typ-punct">(</span>bookmarked<span class="typ-punct">:</span> <span class="typ-key">false</span><span class="typ-punct">)</span><span class="typ-punct">[</span>Not bookmarked<span class="typ-punct">]</span>
+        This heading won&#39;t be
+        bookmarked in the resulting
+        PDF.
+        </code></pre><div class="preview"><img src="/assets/docs/89a3cd37c6bae985e30435309b12d888.png" alt="Preview" width="480" height="190"/></div></div>
+      types:
+      - auto
+      - bool
+      strings: []
+      default: <code><span class="typ-key">auto</span></code>
       positional: false
       named: true
       required: false
@@ -163,6 +200,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

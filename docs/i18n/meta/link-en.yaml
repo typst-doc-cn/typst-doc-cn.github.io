@@ -1,6 +1,6 @@
 route: /docs/reference/meta/link/
 title: Link
-description: Documentation for the `link` function.
+description: '`link` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -24,10 +24,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - link
-    display: Link
-    keywords: null
+    path: []
+    name: link
+    title: Link
+    keywords: []
     oneliner: Links to a URL or a location in the document.
     element: true
     details: |-
@@ -47,6 +47,8 @@ body:
       <h2 id="syntax">Syntax</h2>
       <p>This function also has dedicated syntax: Text that starts with <code>http://</code> or
       <code>https://</code> is automatically turned into a link.</p>
+    example: null
+    self: false
     params:
     - name: dest
       details: |-
@@ -63,19 +65,18 @@ body:
         forms:</p>
         <ul>
         <li>
-        <p>A <a href="/docs/reference/construct/label/">label</a> attached to an element. If you also want
-        automatic text for the link based on the element, consider using
-        a <a href="/docs/reference/meta/ref/">reference</a> instead.</p>
+        <p>A <a href="/docs/reference/meta/label/">label</a> attached to an element. If you also want automatic
+        text for the link based on the element, consider using a
+        <a href="/docs/reference/meta/ref/">reference</a> instead.</p>
         </li>
         <li>
-        <p>A <a href="/docs/reference/meta/locate/">location</a> resulting from a <a href="/docs/reference/meta/locate/"><code>locate</code></a>
-        call or <a href="/docs/reference/meta/query/"><code>query</code></a>.</p>
+        <p>A <a href="/docs/reference/meta/locate/">location</a> resulting from a <a href="/docs/reference/meta/locate/"><code>locate</code></a> call or
+        <a href="/docs/reference/meta/query/"><code>query</code></a>.</p>
         </li>
         <li>
-        <p>A dictionary with a <code>page</code> key of type <a href="/docs/reference/types/integer/">integer</a> and
-        <code>x</code> and <code>y</code> coordinates of type <a href="/docs/reference/types/length/">length</a>. Pages are
-        counted from one, and the coordinates are relative to the page's top
-        left corner.</p>
+        <p>A dictionary with a <code>page</code> key of type <a href="/docs/reference/foundations/int/">integer</a> and <code>x</code> and
+        <code>y</code> coordinates of type <a href="/docs/reference/layout/length/">length</a>. Pages are counted from
+        one, and the coordinates are relative to the page's top left corner.</p>
         </li>
         </ul>
         </li>
@@ -89,10 +90,10 @@ body:
         <span class="typ-punct">]</span>
         </code></pre><div class="preview"><img src="/assets/docs/a67297a9276e3982b05fee7ab647477b.png" alt="Preview" width="480" height="190"/></div></div>
       types:
-      - string
+      - str
       - label
-      - dictionary
       - location
+      - dictionary
       strings: []
       default: null
       positional: true
@@ -117,6 +118,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

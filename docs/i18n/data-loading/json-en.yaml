@@ -1,6 +1,6 @@
 route: /docs/reference/data-loading/json/
 title: JSON
-description: Documentation for the `json` function.
+description: '`json` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -15,13 +15,31 @@ outline:
   - id: parameters-path
     name: path
     children: []
+- id: definitions
+  name: Definitions
+  children:
+  - id: definitions-decode
+    name: Decode JSON
+    children:
+    - id: definitions-decode-data
+      name: data
+      children: []
+  - id: definitions-encode
+    name: Encode JSON
+    children:
+    - id: definitions-encode-value
+      name: value
+      children: []
+    - id: definitions-encode-pretty
+      name: pretty
+      children: []
 body:
   kind: func
   content:
-    path:
-    - json
-    display: JSON
-    keywords: null
+    path: []
+    name: json
+    title: JSON
+    keywords: []
     oneliner: Reads structured data from a JSON file.
     element: false
     details: |-
@@ -57,12 +75,14 @@ body:
       <span class="typ-func">#</span><span class="typ-func">forecast</span><span class="typ-punct">(</span><span class="typ-func">json</span><span class="typ-punct">(</span><span class="typ-str">&quot;monday.json&quot;</span><span class="typ-punct">)</span><span class="typ-punct">)</span>
       <span class="typ-func">#</span><span class="typ-func">forecast</span><span class="typ-punct">(</span><span class="typ-func">json</span><span class="typ-punct">(</span><span class="typ-str">&quot;tuesday.json&quot;</span><span class="typ-punct">)</span><span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/4f910fc4831ce7d7e4b6e66d91f459aa.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: path
       details: <p>Path to a JSON file.</p>
       example: null
       types:
-      - string
+      - str
       strings: []
       default: null
       positional: true
@@ -72,6 +92,70 @@ body:
       settable: false
     returns:
     - any
-    methods: []
-    scope: []
+    scope:
+    - path:
+      - json
+      name: decode
+      title: Decode JSON
+      keywords: []
+      oneliner: Reads structured data from a JSON string/bytes.
+      element: false
+      details: <p>Reads structured data from a JSON string/bytes.</p>
+      example: null
+      self: false
+      params:
+      - name: data
+        details: <p>JSON data.</p>
+        example: null
+        types:
+        - str
+        - bytes
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      returns:
+      - any
+      scope: []
+    - path:
+      - json
+      name: encode
+      title: Encode JSON
+      keywords: []
+      oneliner: Encodes structured data into a JSON string.
+      element: false
+      details: <p>Encodes structured data into a JSON string.</p>
+      example: null
+      self: false
+      params:
+      - name: value
+        details: <p>Value to be encoded.</p>
+        example: null
+        types:
+        - any
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      - name: pretty
+        details: <p>Whether to pretty print the JSON with newlines and indentation.</p>
+        example: null
+        types:
+        - bool
+        strings: []
+        default: <code><span class="typ-key">true</span></code>
+        positional: false
+        named: true
+        required: false
+        variadic: false
+        settable: false
+      returns:
+      - str
+      scope: []
 children: []

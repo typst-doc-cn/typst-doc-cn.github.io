@@ -1,6 +1,6 @@
 route: /docs/reference/layout/align/
-title: Align
-description: Documentation for the `align` function.
+title: 对齐
+description: '`align` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -21,10 +21,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - align
-    display: Align
-    keywords: null
+    path: []
+    name: align
+    title: Align
+    keywords: []
     oneliner: Aligns content horizontally and vertically.
     element: true
     details: |-
@@ -37,27 +37,11 @@ body:
       Not left nor right, it stands alone <span class="typ-escape">\</span>
       A work of art, a visual throne
       </code></pre><div class="preview"><img src="/assets/docs/99b62ab7d2744a6c2a0f96112724a0be.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: alignment
-      details: |-
-        <p>在水平和垂直两个轴上进行对齐。</p>
-        <p>可用的水平对齐方式包括：</p>
-        <ul>
-        <li><code>start</code></li>
-        <li><code>end</code></li>
-        <li><code>left</code></li>
-        <li><code>center</code></li>
-        <li><code>right</code></li>
-        </ul>
-        <p><code>start</code> 和 <code>end</code> 对齐方式是相对于当前 <a href="/docs/reference/text/text/#parameters-dir">text
-        direction</a> 的。</p>
-        <p>可用的垂直对齐方式包括：</p>
-        <ul>
-        <li><code>top</code></li>
-        <li><code>horizon</code></li>
-        <li><code>bottom</code></li>
-        </ul>
-        <p>要同时在两个轴上对齐，可以使用 <code>+</code> 运算符将两个对齐方式相加，得到一个二维对齐方式。例如，<code>top + right</code> 将内容对齐到右上角。</p>
+      details: <p>使用 <a href="/docs/reference/layout/alignment/">对齐参数</a> 在两个轴上进行对齐。</p>
       example: |-
         <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">page</span><span class="typ-punct">(</span>height<span class="typ-punct">:</span> <span class="typ-num">6cm</span><span class="typ-punct">)</span>
         <span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>lang<span class="typ-punct">:</span> <span class="typ-str">&quot;ar&quot;</span><span class="typ-punct">)</span>
@@ -70,7 +54,6 @@ body:
         </code></pre><div class="preview"><img src="/assets/docs/af1bf010107c79121d459388249efb42.png" alt="Preview" width="480" height="190"/></div></div>
       types:
       - alignment
-      - 2d alignment
       strings: []
       default: <code>start <span class="typ-op">+</span> top</code>
       positional: true
@@ -92,6 +75,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

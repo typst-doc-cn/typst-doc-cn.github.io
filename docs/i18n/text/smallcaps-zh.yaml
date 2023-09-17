@@ -1,6 +1,6 @@
 route: /docs/reference/text/smallcaps/
 title: 显示为小写
-description: Documentation for the `smallcaps` function.
+description: '`smallcaps` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -18,10 +18,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - smallcaps
-    display: Small Capitals
-    keywords: null
+    path: []
+    name: smallcaps
+    title: Small Capitals
+    keywords: []
     oneliner: Displays text in small capitals.
     element: false
     details: |-
@@ -43,6 +43,8 @@ body:
       <span class="typ-heading">= Introduction</span>
       <span class="typ-func">#</span><span class="typ-func">lorem</span><span class="typ-punct">(</span><span class="typ-num">40</span><span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/cdf947cb116d99f7ab9b7491b11f5676.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: body
       details: <p>显示为小写形式的文本。</p>
@@ -58,6 +60,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

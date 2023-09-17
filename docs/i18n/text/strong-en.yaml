@@ -1,6 +1,6 @@
 route: /docs/reference/text/strong/
 title: Strong Emphasis
-description: Documentation for the `strong` function.
+description: '`strong` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -24,10 +24,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - strong
-    display: Strong Emphasis
-    keywords: null
+    path: []
+    name: strong
+    title: Strong Emphasis
+    keywords: []
     oneliner: Strongly emphasizes content by increasing the font weight.
     element: true
     details: |-
@@ -45,6 +45,8 @@ body:
       simply enclose it in stars/asterisks (<code>*</code>). Note that this only works at
       word boundaries. To strongly emphasize part of a word, you have to use the
       function.</p>
+    example: null
+    self: false
     params:
     - name: delta
       details: <p>The delta to apply on the font weight.</p>
@@ -53,7 +55,7 @@ body:
         No <span class="typ-strong">*effect!*</span>
         </code></pre><div class="preview"><img src="/assets/docs/6fba91c4a7a0b5fd6b037f494d06b3f9.png" alt="Preview" width="480" height="190"/></div></div>
       types:
-      - integer
+      - int
       strings: []
       default: <code><span class="typ-num">300</span></code>
       positional: false
@@ -75,6 +77,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

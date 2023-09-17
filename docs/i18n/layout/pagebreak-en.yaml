@@ -1,6 +1,6 @@
 route: /docs/reference/layout/pagebreak/
 title: Page Break
-description: Documentation for the `pagebreak` function.
+description: '`pagebreak` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -21,10 +21,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - pagebreak
-    display: Page Break
-    keywords: null
+    path: []
+    name: pagebreak
+    title: Page Break
+    keywords: []
     oneliner: A manual page break.
     element: true
     details: |-
@@ -38,6 +38,8 @@ body:
       <span class="typ-heading">== Compound Theory</span>
       In 1984, the first <span class="typ-escape">...</span>
       </code></pre><div class="preview"><img src="/assets/docs/4422a9f36b6866b2942bc7db0a4cc7c9.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: weak
       details: |-
@@ -45,7 +47,7 @@ body:
         empty.</p>
       example: null
       types:
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">false</span></code>
       positional: false
@@ -80,6 +82,5 @@ body:
       settable: true
     returns:
     - content
-    methods: []
     scope: []
 children: []

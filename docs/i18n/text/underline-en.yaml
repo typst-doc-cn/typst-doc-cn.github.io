@@ -1,6 +1,6 @@
 route: /docs/reference/text/underline/
 title: Underline
-description: Documentation for the `underline` function.
+description: '`underline` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -30,10 +30,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - underline
-    display: Underline
-    keywords: null
+    path: []
+    name: underline
+    title: Underline
+    keywords: []
     oneliner: Underlines text.
     element: true
     details: |-
@@ -41,12 +41,13 @@ body:
       <h2 id="example">Example</h2>
       <div class="previewed-code"><pre><code>This is <span class="typ-func">#</span><span class="typ-func">underline</span><span class="typ-punct">[</span>important<span class="typ-punct">]</span>.
       </code></pre><div class="preview"><img src="/assets/docs/8649800c82550f9aa58665cc9b64e2c0.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: stroke
       details: |-
-        <p>How to stroke the line.</p>
-        <p>See the <a href="/docs/reference/visualize/line/#parameters-stroke">line's documentation</a> for more details. If
-        set to <code><span class="typ-key">auto</span></code>, takes on the text's color and a thickness defined in
+        <p>How to <a href="/docs/reference/visualize/stroke/">stroke</a> the line.</p>
+        <p>If set to <code><span class="typ-key">auto</span></code>, takes on the text's color and a thickness defined in
         the current font.</p>
       example: |-
         <div class="previewed-code"><pre><code>Take <span class="typ-func">#</span><span class="typ-func">underline</span><span class="typ-punct">(</span>
@@ -59,8 +60,8 @@ body:
       - auto
       - length
       - color
-      - dictionary
       - stroke
+      - dictionary
       strings: []
       default: <code><span class="typ-key">auto</span></code>
       positional: false
@@ -114,7 +115,7 @@ body:
         This <span class="typ-func">#</span><span class="typ-func">underline</span><span class="typ-punct">(</span>evade<span class="typ-punct">:</span> <span class="typ-key">false</span><span class="typ-punct">)</span><span class="typ-punct">[</span>is less great<span class="typ-punct">]</span>.
         </code></pre><div class="preview"><img src="/assets/docs/2e23dcf289c65677d5677d884350928c.png" alt="Preview" width="480" height="190"/></div></div>
       types:
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">true</span></code>
       positional: false
@@ -136,6 +137,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

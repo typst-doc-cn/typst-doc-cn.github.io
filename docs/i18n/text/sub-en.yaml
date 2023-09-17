@@ -1,6 +1,6 @@
 route: /docs/reference/text/sub/
 title: Subscript
-description: Documentation for the `sub` function.
+description: '`sub` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -27,10 +27,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - sub
-    display: Subscript
-    keywords: null
+    path: []
+    name: sub
+    title: Subscript
+    keywords: []
     oneliner: Renders text in subscript.
     element: true
     details: |-
@@ -39,6 +39,8 @@ body:
       <h2 id="example">Example</h2>
       <div class="previewed-code"><pre><code>Revenue<span class="typ-func">#</span><span class="typ-func">sub</span><span class="typ-punct">[</span>yearly<span class="typ-punct">]</span>
       </code></pre><div class="preview"><img src="/assets/docs/d20c919c7df7c28b37464ab943a08964.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: typographic
       details: |-
@@ -51,7 +53,7 @@ body:
         N<span class="typ-func">#</span><span class="typ-func">sub</span><span class="typ-punct">(</span>typographic<span class="typ-punct">:</span> <span class="typ-key">false</span><span class="typ-punct">)</span><span class="typ-punct">[</span>1<span class="typ-punct">]</span>
         </code></pre><div class="preview"><img src="/assets/docs/8eb740d03cb4d65306b79eef81ff74e3.png" alt="Preview" width="480" height="190"/></div></div>
       types:
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">true</span></code>
       positional: false
@@ -103,6 +105,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

@@ -1,6 +1,6 @@
 route: /docs/reference/layout/parbreak/
 title: Paragraph Break
-description: Documentation for the `parbreak` function.
+description: '`parbreak` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -15,10 +15,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - parbreak
-    display: Paragraph Break
-    keywords: null
+    path: []
+    name: parbreak
+    title: Paragraph Break
+    keywords: []
     oneliner: A paragraph break.
     element: true
     details: |-
@@ -36,9 +36,10 @@ body:
       <h2 id="syntax">Syntax</h2>
       <p>Instead of calling this function, you can insert a blank line into your
       markup to create a paragraph break.</p>
+    example: null
+    self: false
     params: []
     returns:
     - content
-    methods: []
     scope: []
 children: []

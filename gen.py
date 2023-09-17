@@ -15,9 +15,12 @@ yaml.add_representer(str, str_presenter)
 
 
 def translate_with_yaml(page):
-    if page['body']['kind'] in ['func', 'funcs']:
+    if page['body']['kind'] in ['func', 'type', 'group']:
         assert page['route'].startswith('/docs/reference/')
-        path = page['route'][len('/docs/reference/'):].split('/')[:-1]
+        if page['body']['kind'] == 'group':
+            path = page['route'][len('/docs/reference/'):].split('/')
+        else:
+            path = page['route'][len('/docs/reference/'):].split('/')[:-1]
         assert len(path) == 2
         # if docs/i18n/{path[0]} not exists, create it
         if not os.path.exists('docs/i18n/' + path[0]):
@@ -45,10 +48,13 @@ type2class_map = {
     'auto': 'pill-kw',
     'function': 'pill-fn',
     'string': 'pill-str',
+    'str': 'pill-str',
     'content': 'pill-con',
     'color': 'pill-col',
+    'bool': 'pill-bool',
     'boolean': 'pill-bool',
     'integer': 'pill-num',
+    'int': 'pill-num',
     'ratio': 'pill-num',
     'length': 'pill-num',
     'relative length': 'pill-num',
@@ -60,6 +66,9 @@ type2class_map = {
 
 def type2class(type):
     return type2class_map.get(type, 'pill-obj')
+
+def gen_path(item):
+    return ''.join([s + '.' for s in item['path']])
 
 
 def render_jinja_html(template_loc, file_name, **context):
@@ -85,9 +94,9 @@ if __name__ == '__main__':
                               1] if index < len(flattern_pages) - 1 else None
         if not os.path.exists('./dist' + page['route']):
             os.makedirs('./dist' + page['route'])
-        with open('./dist' + page['route'] + 'index.html', 'w', encoding='utf-8') as f:
-            f.write(render_jinja_html('./templates/', page['body']['kind'] + '_template.html',
-                    docs=docs, path=path, prev=prev, next=next, type2class=type2class, **page))
+        with open('./dist' + page['route'] + ('/' if not page['route'].endswith('/') else '') + 'index.html', 'w', encoding='utf-8') as f:
+            f.write(render_jinja_html('./templates/', page['body']['kind'] + '_template.html.j2',
+                    docs=docs, path=path, prev=prev, next=next, type2class=type2class, gen_path=gen_path, **page))
         index += 1
         for child in page['children']:
             render_to_files(child, docs, path + [child])

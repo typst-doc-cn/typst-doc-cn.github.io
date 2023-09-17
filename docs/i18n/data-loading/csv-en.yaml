@@ -1,6 +1,6 @@
 route: /docs/reference/data-loading/csv/
 title: CSV
-description: Documentation for the `csv` function.
+description: '`csv` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -18,13 +18,25 @@ outline:
   - id: parameters-delimiter
     name: delimiter
     children: []
+- id: definitions
+  name: Definitions
+  children:
+  - id: definitions-decode
+    name: Decode CSV
+    children:
+    - id: definitions-decode-data
+      name: data
+      children: []
+    - id: definitions-decode-delimiter
+      name: delimiter
+      children: []
 body:
   kind: func
   content:
-    path:
-    - csv
-    display: CSV
-    keywords: null
+    path: []
+    name: csv
+    title: CSV
+    keywords: []
     oneliner: Reads structured data from a CSV file.
     element: false
     details: |-
@@ -42,12 +54,14 @@ body:
         <span class="typ-op">..</span>results<span class="typ-punct">.</span><span class="typ-func">flatten</span><span class="typ-punct">(</span><span class="typ-punct">)</span><span class="typ-punct">,</span>
       <span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/08241206dc3f3c0296d2db8f2ee545f4.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: path
       details: <p>Path to a CSV file.</p>
       example: null
       types:
-      - string
+      - str
       strings: []
       default: null
       positional: true
@@ -61,7 +75,7 @@ body:
         Must be a single ASCII character.</p>
       example: null
       types:
-      - string
+      - str
       strings: []
       default: <code><span class="typ-str">&quot;,&quot;</span></code>
       positional: false
@@ -71,6 +85,46 @@ body:
       settable: false
     returns:
     - array
-    methods: []
-    scope: []
+    scope:
+    - path:
+      - csv
+      name: decode
+      title: Decode CSV
+      keywords: []
+      oneliner: Reads structured data from a CSV string/bytes.
+      element: false
+      details: <p>Reads structured data from a CSV string/bytes.</p>
+      example: null
+      self: false
+      params:
+      - name: data
+        details: <p>CSV data.</p>
+        example: null
+        types:
+        - str
+        - bytes
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      - name: delimiter
+        details: |-
+          <p>The delimiter that separates columns in the CSV file.
+          Must be a single ASCII character.</p>
+        example: null
+        types:
+        - str
+        strings: []
+        default: <code><span class="typ-str">&quot;,&quot;</span></code>
+        positional: false
+        named: true
+        required: false
+        variadic: false
+        settable: false
+      returns:
+      - array
+      scope: []
 children: []

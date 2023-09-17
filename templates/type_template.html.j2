@@ -1,0 +1,27 @@
+{% import 'macros.html.j2' as macros %}
+
+{% extends "base_template.html.j2" %}
+{% block content %}
+
+<h1 id="summary"><span class="pill {{ type2class(body['content']['name']) }}">{{ body['content']['name'] }}</span></h1>
+{{ body['content']['details'] | safe }}
+
+{% if body['content']['constructor'] %}
+<h2 id="constructor">
+  {{ macros.tooltip_display('构造函数', '如果类型具有构造函数，可以像函数一样调用它来创建一个该类型的值。', prefix='constructor') }}
+</h2>
+{{ macros.function_display(body['content']['constructor'], type2class, gen_path, prefix='constructor', is_example_folding=false) }}
+{% endif %}
+
+
+{% if body['content']['scope'].__len__() > 0 %}
+<h2 id="definitions">
+  {{ macros.tooltip_display('定义', '函数和类型可以有与其关联的定义 (成员或方法)。可以使用 "." 操作符来访问调用它们。', prefix='definitions') }}
+</h2>
+{% endif %}
+{% for method in body['content']['scope'] %}
+  <h3 id="{{ prefix }}-{{ method['name'] }}" class="method-head"><span><code>{{ method['name'] }}</code></span></h3>
+  {{ macros.function_display(method, type2class, gen_path, prefix='definitions-' + method['name']) }}
+{% endfor %}
+
+{% endblock %}

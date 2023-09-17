@@ -1,6 +1,6 @@
 route: /docs/reference/math/op/
 title: Text Operator
-description: Documentation for the `op` function.
+description: '`op` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -25,9 +25,10 @@ body:
   kind: func
   content:
     path:
-    - op
-    display: Text Operator
-    keywords: null
+    - math
+    name: op
+    title: Text Operator
+    keywords: []
     oneliner: A text operator in an equation.
     element: true
     details: |-
@@ -38,17 +39,19 @@ body:
            limits<span class="typ-punct">:</span> <span class="typ-key">#</span><span class="typ-key">true</span><span class="typ-punct">)</span><span class="typ-math-op">_</span><span class="typ-punct">(</span>n<span class="typ-escape">-&gt;</span><span class="typ-pol">oo</span><span class="typ-punct">)</span> n <span class="typ-math-delim">$</span>
       </code></pre><div class="preview"><img src="/assets/docs/1fc6ad0d8979e73ff0b39aeba8699a1d.png" alt="Preview" width="480" height="190"/></div></div>
       <h2 id="predefined">Predefined Operators</h2>
-      <p>Typst predefines the operators <code>arccos</code>,  <code>arcsin</code>,  <code>arctan</code>,  <code>arg</code>,
-      <code>cos</code>,  <code>cosh</code>,  <code>cot</code>, <code>ctg</code>, <code>coth</code>,  <code>csc</code>,  <code>deg</code>,  <code>det</code>,  <code>dim</code>,
-      <code>exp</code>, <code>gcd</code>,  <code>hom</code>,  <code>mod</code>,  <code>inf</code>,  <code>ker</code>,  <code>lg</code>,  <code>lim</code>,  <code>ln</code>,  <code>log</code>,
-      <code>max</code>, <code>min</code>,  <code>Pr</code>,  <code>sec</code>,  <code>sin</code>,  <code>sinc</code>,  <code>sinh</code>,  <code>sup</code>,  <code>tan</code>, <code>tg</code>,
-      <code>tanh</code>, <code>liminf</code>, and <code>limsup</code>.</p>
+      <p>Typst predefines the operators <code>arccos</code>, <code>arcsin</code>, <code>arctan</code>, <code>arg</code>, <code>cos</code>,
+      <code>cosh</code>, <code>cot</code>, <code>coth</code>, <code>csc</code>, <code>ctg</code>, <code>deg</code>, <code>det</code>, <code>dim</code>, <code>exp</code>, <code>gcd</code>,
+      <code>hom</code>, <code>id</code>, <code>im</code>, <code>inf</code>, <code>ker</code>, <code>lg</code>, <code>lim</code>, <code>liminf</code>, <code>limsup</code>, <code>ln</code>,
+      <code>log</code>, <code>max</code>, <code>min</code>, <code>mod</code>, <code>Pr</code>, <code>sec</code>, <code>sin</code>, <code>sinc</code>, <code>sinh</code>, <code>sup</code>,
+      <code>tan</code>, <code>tanh</code>, <code>tg</code> and <code>tr</code>.</p>
+    example: null
+    self: false
     params:
     - name: text
       details: <p>The operator's text.</p>
       example: null
       types:
-      - string
+      - str
       strings: []
       default: null
       positional: true
@@ -61,7 +64,7 @@ body:
         mode.</p>
       example: null
       types:
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">false</span></code>
       positional: false
@@ -71,6 +74,5 @@ body:
       settable: true
     returns:
     - content
-    methods: []
     scope: []
 children: []

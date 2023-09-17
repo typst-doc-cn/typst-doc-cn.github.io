@@ -1,56 +1,55 @@
-route: /docs/reference/math/roots/
+route: /docs/reference/math/roots
 title: 根式
-description: Documentation for roots group of functions.
+description: roots 函数族的文档.
 part: null
 outline:
 - id: summary
   name: Summary
   children: []
-- id: root
-  name: Root
+- id: example
+  name: Example
+  children: []
+- id: functions
+  name: Functions
   children:
-  - id: root-example
-    name: Example
-    children: []
-  - id: root-parameters
-    name: Parameters
+  - id: functions-root
+    name: Root
     children:
-    - id: root-parameters-index
+    - id: functions-root-index
       name: index
       children: []
-    - id: root-parameters-radicand
+    - id: functions-root-radicand
       name: radicand
       children: []
-- id: sqrt
-  name: Square Root
-  children:
-  - id: sqrt-example
-    name: Example
-    children: []
-  - id: sqrt-parameters
-    name: Parameters
+  - id: functions-sqrt
+    name: Square Root
     children:
-    - id: sqrt-parameters-radicand
+    - id: functions-sqrt-radicand
       name: radicand
       children: []
 body:
-  kind: funcs
+  kind: group
   content:
     name: roots
-    display: Roots
-    details: <p>平方根或其他次方根。</p>
+    title: Roots
+    details: |-
+      <p>平方根或其他次方根。</p>
+      <h2 id="example">Example</h2>
+      <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">sqrt</span><span class="typ-punct">(</span>3 <span class="typ-escape">-</span> 2 <span class="typ-func">sqrt</span><span class="typ-punct">(</span>2<span class="typ-punct">)</span><span class="typ-punct">)</span> = <span class="typ-func">sqrt</span><span class="typ-punct">(</span>2<span class="typ-punct">)</span> <span class="typ-escape">-</span> 1 <span class="typ-math-delim">$</span>
+      <span class="typ-math-delim">$</span> <span class="typ-func">root</span><span class="typ-punct">(</span>3<span class="typ-punct">,</span> x<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
+      </code></pre><div class="preview"><img src="/assets/docs/5f6156e04c9fbbe6376dbcd9a88490f3.png" alt="Preview" width="480" height="190"/></div></div>
     functions:
-    - path:
-      - root
-      display: Root
-      keywords: null
+    - path: []
+      name: root
+      title: Root
+      keywords: []
       oneliner: A general root.
       element: true
-      details: |-
-        <p>方根函数。</p>
-        <h3 id="root-example">Example</h3>
+      details: <p>方根函数。</p>
+      example: |-
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">root</span><span class="typ-punct">(</span>3<span class="typ-punct">,</span> x<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
         </code></pre><div class="preview"><img src="/assets/docs/7aa00673dcb0afc96f8085fbc5ed7841.png" alt="Preview" width="480" height="190"/></div></div>
+      self: false
       params:
       - name: index
         details: <p>要开几次方，即根式的指数。</p>
@@ -79,19 +78,18 @@ body:
         settable: false
       returns:
       - content
-      methods: []
       scope: []
-    - path:
-      - sqrt
-      display: Square Root
-      keywords: null
+    - path: []
+      name: sqrt
+      title: Square Root
+      keywords: []
       oneliner: A square root.
       element: false
-      details: |-
-        <p>平方根。</p>
-        <h3 id="sqrt-example">Example</h3>
-        <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">sqrt</span><span class="typ-punct">(</span>x<span class="typ-math-op">^</span>2<span class="typ-punct">)</span> = x = <span class="typ-func">sqrt</span><span class="typ-punct">(</span>x<span class="typ-punct">)</span><span class="typ-math-op">^</span>2 <span class="typ-math-delim">$</span>
-        </code></pre><div class="preview"><img src="/assets/docs/4e6fb7b2591b48f8869f04c06a5a795a.png" alt="Preview" width="480" height="190"/></div></div>
+      details: <p>平方根。</p>
+      example: |-
+        <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">sqrt</span><span class="typ-punct">(</span>3 <span class="typ-escape">-</span> 2 <span class="typ-func">sqrt</span><span class="typ-punct">(</span>2<span class="typ-punct">)</span><span class="typ-punct">)</span> = <span class="typ-func">sqrt</span><span class="typ-punct">(</span>2<span class="typ-punct">)</span> <span class="typ-escape">-</span> 1 <span class="typ-math-delim">$</span>
+        </code></pre><div class="preview"><img src="/assets/docs/e7f4a669bc34f013309287acbb8f3c05.png" alt="Preview" width="480" height="190"/></div></div>
+      self: false
       params:
       - name: radicand
         details: <p>要开平方根的表达式。</p>
@@ -107,6 +105,5 @@ body:
         settable: false
       returns:
       - content
-      methods: []
       scope: []
 children: []

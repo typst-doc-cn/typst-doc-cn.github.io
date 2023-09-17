@@ -1,10 +1,13 @@
 route: /docs/reference/meta/bibliography/
 title: Bibliography
-description: Documentation for the `bibliography` function.
+description: '`bibliography` 函数的文档'
 part: null
 outline:
 - id: summary
   name: Summary
+  children: []
+- id: example
+  name: Example
   children: []
 - id: parameters
   name: Parameters
@@ -21,10 +24,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - bibliography
-    display: Bibliography
-    keywords: null
+    path: []
+    name: bibliography
+    title: Bibliography
+    keywords: []
     oneliner: A bibliography / reference listing.
     element: true
     details: |-
@@ -40,9 +43,9 @@ body:
       </ul>
       <p>As soon as you add a bibliography somewhere in your document, you can start
       citing things with reference syntax (<code><span class="typ-ref">@key</span></code>) or explicit calls to the
-      <a href="/docs/reference/meta/cite/">citation</a> function (<code><span class="typ-func">#</span><span class="typ-func">cite</span><span class="typ-punct">(</span><span class="typ-str">&quot;key&quot;</span><span class="typ-punct">)</span></code>). The bibliography will
-      only show entries for works that were referenced in the document.</p>
-      <h1>Example</h1>
+      <a href="/docs/reference/meta/cite/">citation</a> function (<code><span class="typ-func">#</span><span class="typ-func">cite</span><span class="typ-punct">(</span><span class="typ-str">&quot;key&quot;</span><span class="typ-punct">)</span></code>). The bibliography will only
+      show entries for works that were referenced in the document.</p>
+      <h2 id="example">Example</h2>
       <div class="previewed-code"><pre><code>This was already noted by
       pirates long ago. <span class="typ-ref">@arrgh</span>
 
@@ -51,13 +54,15 @@ body:
 
       <span class="typ-func">#</span><span class="typ-func">bibliography</span><span class="typ-punct">(</span><span class="typ-str">&quot;works.bib&quot;</span><span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/26bb4b139eb79cc5df7b855b46895cee.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: path
       details: <p>Path to a Hayagriva <code>.yml</code> or BibLaTeX <code>.bib</code>
         file.</p>
       example: null
       types:
-      - string
+      - str
       - array
       strings: []
       default: null
@@ -70,16 +75,15 @@ body:
       details: |-
         <p>The title of the bibliography.</p>
         <ul>
-        <li>When set to <code><span class="typ-key">auto</span></code>, an appropriate title for the <a href="/docs/reference/text/text/#parameters-lang">text
-        language</a> will be used. This is the default.</li>
+        <li>When set to <code><span class="typ-key">auto</span></code>, an appropriate title for the
+        <a href="/docs/reference/text/text/#parameters-lang">text language</a> will be used. This is the default.</li>
         <li>When set to <code><span class="typ-key">none</span></code>, the bibliography will not have a title.</li>
         <li>A custom title can be set by passing content.</li>
         </ul>
         <p>The bibliography's heading will not be numbered by default, but you can
         force it to be with a show-set rule:
         <code><span class="typ-key">show</span> <span class="typ-func">bibliography</span><span class="typ-punct">:</span> <span class="typ-key">set</span> <span class="typ-func">heading</span><span class="typ-punct">(</span>numbering<span class="typ-punct">:</span> <span class="typ-str">&quot;1.&quot;</span><span class="typ-punct">)</span></code></p>
-        <pre></pre>
-      example: null
+      example: <pre></pre>
       types:
       - none
       - auto
@@ -125,6 +129,5 @@ body:
       settable: true
     returns:
     - content
-    methods: []
     scope: []
 children: []

@@ -1,6 +1,6 @@
 route: /docs/reference/math/mat/
 title: Matrix
-description: Documentation for the `mat` function.
+description: '`mat` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -15,6 +15,9 @@ outline:
   - id: parameters-delim
     name: delim
     children: []
+  - id: parameters-augment
+    name: augment
+    children: []
   - id: parameters-rows
     name: rows
     children: []
@@ -22,9 +25,10 @@ body:
   kind: func
   content:
     path:
-    - mat
-    display: Matrix
-    keywords: null
+    - math
+    name: mat
+    title: Matrix
+    keywords: []
     oneliner: A matrix.
     element: true
     details: |-
@@ -43,6 +47,8 @@ body:
         10<span class="typ-punct">,</span> 10<span class="typ-punct">,</span> <span class="typ-escape">...</span><span class="typ-punct">,</span> 10<span class="typ-punct">;</span>
       <span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
       </code></pre><div class="preview"><img src="/assets/docs/92c9b3b027c9bc5f7095d691e1690745.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: delim
       details: <p>The delimiter to use.</p>
@@ -70,6 +76,47 @@ body:
       required: false
       variadic: false
       settable: true
+    - name: augment
+      details: |-
+        <p>Draws augmentation lines in a matrix.</p>
+        <ul>
+        <li><code><span class="typ-key">none</span></code>: No lines are drawn.</li>
+        <li>A single number: A vertical augmentation line is drawn
+        after the specified column number.</li>
+        <li>A dictionary: With a dictionary, multiple augmentation lines can be
+        drawn both horizontally and vertically. Additionally, the style of the
+        lines can be set. The dictionary can contain the following keys:
+        <ul>
+        <li><code>hline</code>: The offsets at which horizontal lines should be drawn.
+        For example, an offset of <code>2</code> would result in a horizontal line
+        being drawn after the second row of the matrix. Accepts either an
+        integer for a single line, or an array of integers
+        for multiple lines.</li>
+        <li><code>vline</code>: The offsets at which vertical lines should be drawn.
+        For example, an offset of <code>2</code> would result in a vertical line being
+        drawn after the second column of the matrix. Accepts either an
+        integer for a single line, or an array of integers
+        for multiple lines.</li>
+        <li><code>stroke</code>: How to <a href="/docs/reference/visualize/stroke/">stroke</a> the line. If set to <code><span class="typ-key">auto</span></code>,
+        takes on a thickness of 0.05em and square line caps.</li>
+        </ul>
+        </li>
+        </ul>
+      example: |-
+        <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">mat</span><span class="typ-punct">(</span>1<span class="typ-punct">,</span> 0<span class="typ-punct">,</span> 1<span class="typ-punct">;</span> 0<span class="typ-punct">,</span> 1<span class="typ-punct">,</span> 2<span class="typ-punct">;</span> augment<span class="typ-punct">:</span> <span class="typ-num">#</span><span class="typ-num">2</span><span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
+        </code></pre><div class="preview"><img src="/assets/docs/413d94c5a68c4a3eada4f730fe7828f2.png" alt="Preview" width="480" height="190"/></div></div><div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">mat</span><span class="typ-punct">(</span>0<span class="typ-punct">,</span> 0<span class="typ-punct">,</span> 0<span class="typ-punct">;</span> 1<span class="typ-punct">,</span> 1<span class="typ-punct">,</span> 1<span class="typ-punct">;</span> augment<span class="typ-punct">:</span> <span class="typ-punct">#</span><span class="typ-punct">(</span>hline<span class="typ-punct">:</span> <span class="typ-num">1</span><span class="typ-punct">,</span> stroke<span class="typ-punct">:</span> <span class="typ-num">2pt</span> <span class="typ-op">+</span> green<span class="typ-punct">)</span><span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
+        </code></pre><div class="preview"><img src="/assets/docs/03c849bc1ba1ed6566954d6b6ff6588b.png" alt="Preview" width="480" height="190"/></div></div>
+      types:
+      - none
+      - int
+      - dictionary
+      strings: []
+      default: <code><span class="typ-key">none</span></code>
+      positional: false
+      named: true
+      required: false
+      variadic: false
+      settable: true
     - name: rows
       details: <p>An array of arrays with the rows of the matrix.</p>
       example: |-
@@ -88,6 +135,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

@@ -1,6 +1,6 @@
 route: /docs/reference/text/lorem/
-title: Blind Text
-description: Documentation for the `lorem` function.
+title: Lorem
+description: '`lorem` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -18,10 +18,11 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - lorem
-    display: Blind Text
-    keywords: null
+    path: []
+    name: lorem
+    title: Lorem
+    keywords:
+    - Blind Text
     oneliner: Creates blind text.
     element: false
     details: |-
@@ -37,12 +38,14 @@ body:
       <span class="typ-heading">= More Blind Text</span>
       <span class="typ-func">#</span><span class="typ-func">lorem</span><span class="typ-punct">(</span><span class="typ-num">15</span><span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/cd2e88b299efda4524fc9763879d1ff1.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: words
       details: <p>The length of the blind text in words.</p>
       example: null
       types:
-      - integer
+      - int
       strings: []
       default: null
       positional: true
@@ -51,7 +54,6 @@ body:
       variadic: false
       settable: false
     returns:
-    - string
-    methods: []
+    - str
     scope: []
 children: []

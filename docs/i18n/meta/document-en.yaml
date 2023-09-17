@@ -1,6 +1,6 @@
 route: /docs/reference/meta/document/
 title: Document
-description: Documentation for the `document` function.
+description: '`document` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -18,10 +18,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - document
-    display: Document
-    keywords: null
+    path: []
+    name: document
+    title: Document
+    keywords: []
     oneliner: The root element of a document and its metadata.
     element: true
     details: |-
@@ -37,6 +37,8 @@ body:
       </code></pre><div class="preview"><img src="/assets/docs/b84099feaf5699bf3825d9f852c0adc6.png" alt="Preview" width="480" height="190"/></div></div>
       <p>Note that metadata set with this function is not rendered within the
       document. Instead, it is embedded in the compiled PDF file.</p>
+    example: null
+    self: false
     params:
     - name: title
       details: |-
@@ -45,7 +47,7 @@ body:
       example: null
       types:
       - none
-      - string
+      - str
       strings: []
       default: <code><span class="typ-key">none</span></code>
       positional: false
@@ -57,7 +59,7 @@ body:
       details: <p>The document's authors.</p>
       example: null
       types:
-      - string
+      - str
       - array
       strings: []
       default: <code><span class="typ-punct">(</span><span class="typ-punct">)</span></code>
@@ -68,6 +70,5 @@ body:
       settable: true
     returns:
     - content
-    methods: []
     scope: []
 children: []

@@ -1,6 +1,6 @@
 route: /docs/reference/foundations/panic/
 title: Panic
-description: Documentation for the `panic` function.
+description: '`panic` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -18,10 +18,11 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - panic
-    display: Panic
-    keywords: null
+    path: []
+    name: panic
+    title: Panic
+    keywords:
+    - error
     oneliner: Fails with an error.
     element: false
     details: |-
@@ -30,6 +31,8 @@ body:
       <p>The code below produces the error <code>panicked with: &quot;this is wrong&quot;</code>.</p>
       <pre><code><span class="typ-func">#</span><span class="typ-func">panic</span><span class="typ-punct">(</span><span class="typ-str">&quot;this is wrong&quot;</span><span class="typ-punct">)</span>
       </code></pre>
+    example: null
+    self: false
     params:
     - name: values
       details: <p>The values to panic with.</p>
@@ -44,6 +47,5 @@ body:
       variadic: true
       settable: false
     returns: []
-    methods: []
     scope: []
 children: []

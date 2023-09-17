@@ -1,6 +1,6 @@
 route: /docs/reference/text/linebreak/
 title: Line Break
-description: Documentation for the `linebreak` function.
+description: '`linebreak` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -21,10 +21,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - linebreak
-    display: Line Break
-    keywords: null
+    path: []
+    name: linebreak
+    title: Line Break
+    keywords: []
     oneliner: Inserts a line break.
     element: true
     details: |-
@@ -41,6 +41,8 @@ body:
       <p>This function also has dedicated syntax: To insert a line break, simply write
       a backslash followed by whitespace. This always creates an unjustified
       break.</p>
+    example: null
+    self: false
     params:
     - name: justify
       details: |-
@@ -56,7 +58,7 @@ body:
         for an <span class="typ-emph">_interesting_</span> result. <span class="typ-pol">#</span><span class="typ-pol">jb</span>
         </code></pre><div class="preview"><img src="/assets/docs/71d5dafb28147bb22ac8ddaa28f4f93a.png" alt="Preview" width="480" height="190"/></div></div>
       types:
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">false</span></code>
       positional: false
@@ -66,6 +68,5 @@ body:
       settable: true
     returns:
     - content
-    methods: []
     scope: []
 children: []

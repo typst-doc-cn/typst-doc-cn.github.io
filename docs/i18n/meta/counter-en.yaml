@@ -1,6 +1,6 @@
 route: /docs/reference/meta/counter/
 title: Counter
-description: Documentation for the `counter` function.
+description: Counter 类型的文档
 part: null
 outline:
 - id: summary
@@ -11,9 +11,6 @@ outline:
   children: []
 - id: modifying
   name: Modifying
-  children: []
-- id: custom-counters
-  name: Custom Counters
   children: []
 - id: how-to-step
   name: How To Step
@@ -27,57 +24,55 @@ outline:
 - id: other-state
   name: Other State
   children: []
-- id: parameters
-  name: Parameters
+- id: constructor
+  name: Constructor
   children:
-  - id: parameters-key
+  - id: constructor-key
     name: key
     children: []
-- id: methods
-  name: Methods
+- id: definitions
+  name: Definitions
   children:
-  - id: methods-display
-    name: display
+  - id: definitions-display
+    name: Display
     children:
-    - id: methods-display-parameters-numbering
+    - id: definitions-display-numbering
       name: numbering
       children: []
-    - id: methods-display-parameters-both
+    - id: definitions-display-both
       name: both
       children: []
-  - id: methods-step
-    name: step
+  - id: definitions-step
+    name: Step
     children:
-    - id: methods-step-parameters-level
+    - id: definitions-step-level
       name: level
       children: []
-  - id: methods-update
-    name: update
+  - id: definitions-update
+    name: Update
     children:
-    - id: methods-update-parameters-value
-      name: value
+    - id: definitions-update-update
+      name: update
       children: []
-  - id: methods-at
-    name: at
+  - id: definitions-at
+    name: At
     children:
-    - id: methods-at-parameters-location
+    - id: definitions-at-location
       name: location
       children: []
-  - id: methods-final
-    name: final
+  - id: definitions-final
+    name: Final
     children:
-    - id: methods-final-parameters-location
+    - id: definitions-final-location
       name: location
       children: []
 body:
-  kind: func
+  kind: type
   content:
-    path:
-    - counter
-    display: Counter
-    keywords: null
+    name: counter
+    title: Counter
+    keywords: []
     oneliner: Counts through pages, elements, and more.
-    element: false
     details: |-
       <p>Counts through pages, elements, and more.</p>
       <p>With the counter function, you can access and modify counters for pages,
@@ -89,8 +84,7 @@ body:
       on the counter. To see any output, you also have to enable heading
       <a href="/docs/reference/meta/heading/#parameters-numbering">numbering</a>.</p>
       <p>The <code>display</code> method optionally takes an argument telling it how to format
-      the counter. This can be a <a href="/docs/reference/meta/numbering/">numbering pattern or a
-      function</a>.</p>
+      the counter. This can be a <a href="/docs/reference/meta/numbering/">numbering pattern or a function</a>.</p>
       <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">heading</span><span class="typ-punct">(</span>numbering<span class="typ-punct">:</span> <span class="typ-str">&quot;1.&quot;</span><span class="typ-punct">)</span>
 
       <span class="typ-heading">= Introduction</span>
@@ -138,7 +132,6 @@ body:
       <span class="typ-heading">== Analysis</span>
       Still at <span class="typ-func">#</span><span class="typ-func">counter</span><span class="typ-punct">(</span>heading<span class="typ-punct">)</span><span class="typ-punct">.</span><span class="typ-func">display</span><span class="typ-punct">(</span><span class="typ-punct">)</span>.
       </code></pre><div class="preview"><img src="/assets/docs/dc3be507febcfa78e096b4d4eb924e01.png" alt="Preview" width="480" height="190"/></div></div>
-      <h2 id="custom-counters">Custom counters</h2>
       <p>To define your own counter, call the <code>counter</code> function with a string as a
       key. This key identifies the counter globally.</p>
       <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> mine <span class="typ-op">=</span> <span class="typ-func">counter</span><span class="typ-punct">(</span><span class="typ-str">&quot;mycounter&quot;</span><span class="typ-punct">)</span>
@@ -222,140 +215,60 @@ body:
       <p>Let's dissect what happens in the example above:</p>
       <ul>
       <li>
-      <p>We call <a href="/docs/reference/meta/locate/"><code>locate</code></a> to get access to the current location in
-      the document. We then pass this location to our counter's <code>at</code> method to
-      get its value at the current location. The <code>at</code> method always returns an
-      array because counters can have multiple levels. As the counter starts at
-      one, the first value is thus <code><span class="typ-punct">(</span><span class="typ-num">1</span><span class="typ-punct">,</span><span class="typ-punct">)</span></code>.</p>
+      <p>We call <a href="/docs/reference/meta/locate/"><code>locate</code></a> to get access to the current location in the
+      document. We then pass this location to our counter's <code>at</code> method to get
+      its value at the current location. The <code>at</code> method always returns an array
+      because counters can have multiple levels. As the counter starts at zero,
+      the first value is thus <code><span class="typ-punct">(</span><span class="typ-num">0</span><span class="typ-punct">,</span><span class="typ-punct">)</span></code>.</p>
       </li>
       <li>
       <p>We now <a href="/docs/reference/meta/query/"><code>query</code></a> the document for all elements with the
       <code><span class="typ-label">&lt;intro&gt;</span></code> label. The result is an array from which we extract the first
-      (and only) element's <a href="/docs/reference/types/content/#methods-location">location</a>. We then look up
-      the value of the counter at that location. The first update to the counter
-      sets it to <code><span class="typ-num">1</span> <span class="typ-op">+</span> <span class="typ-num">3</span> <span class="typ-op">=</span> <span class="typ-num">4</span></code>. At the introduction heading, the value is thus
-      <code><span class="typ-punct">(</span><span class="typ-num">4</span><span class="typ-punct">,</span><span class="typ-punct">)</span></code>.</p>
+      (and only) element's <a href="/docs/reference/foundations/content/#definitions-location">location</a>. We then look up the
+      value of the counter at that location. The first update to the counter
+      sets it to <code><span class="typ-num">0</span> <span class="typ-op">+</span> <span class="typ-num">3</span> <span class="typ-op">=</span> <span class="typ-num">3</span></code>. At the introduction heading, the value is thus
+      <code><span class="typ-punct">(</span><span class="typ-num">3</span><span class="typ-punct">,</span><span class="typ-punct">)</span></code>.</p>
       </li>
       <li>
       <p>Last but not least, we call the <code>final</code> method on the counter. It tells us
       what the counter's value will be at the end of the document. We also need
       to give it a location to prove that we are inside of a <code>locate</code> call, but
       which one doesn't matter. After the heading follow two calls to <code>step()</code>,
-      so the final value is <code><span class="typ-punct">(</span><span class="typ-num">6</span><span class="typ-punct">,</span><span class="typ-punct">)</span></code>.</p>
+      so the final value is <code><span class="typ-punct">(</span><span class="typ-num">5</span><span class="typ-punct">,</span><span class="typ-punct">)</span></code>.</p>
       </li>
       </ul>
       <h2 id="other-state">Other kinds of state</h2>
-      <p>The <code>counter</code> function is closely related to <a href="/docs/reference/meta/state/">state</a> function.
-      Read its documentation for more details on state management in Typst and
-      why it doesn't just use normal variables for counters.</p>
-    params:
-    - name: key
-      details: |-
-        <p>The key that identifies this counter.</p>
-        <ul>
-        <li>If it is a string, creates a custom counter that is only affected by
-        manual updates,</li>
-        <li>If this is a <code><span class="typ-label">&lt;label&gt;</span></code>, counts through all elements with that label,</li>
-        <li>If this is an element function or selector, counts through its elements,</li>
-        <li>If this is the <a href="/docs/reference/layout/page/"><code>page</code></a> function, counts through pages.</li>
-        </ul>
+      <p>The <code>counter</code> type is closely related to <a href="/docs/reference/meta/state/">state</a> type. Read its
+      documentation for more details on state management in Typst and why it
+      doesn't just use normal variables for counters.</p>
+    constructor:
+      path: []
+      name: counter
+      title: Construct
+      keywords: []
+      oneliner: Create a new counter identified by a key.
+      element: false
+      details: <p>Create a new counter identified by a key.</p>
       example: null
-      types:
-      - string
-      - label
-      - function
-      - selector
-      strings: []
-      default: null
-      positional: true
-      named: false
-      required: true
-      variadic: false
-      settable: false
-    returns:
-    - counter
-    methods:
-    - name: display
-      details: <p>Displays the value of the counter.</p>
+      self: false
       params:
-      - name: numbering
+      - name: key
         details: |-
-          <p>A <a href="/docs/reference/meta/numbering/">numbering pattern or a function</a>, which specifies how
-          to display the counter. If given a function, that function receives each
-          number of the counter as a separate argument. If the amount of numbers
-          varies, e.g. for the heading argument, you can use an
-          <a href="/docs/reference/types/arguments/">argument sink</a>.</p>
-          <p>If this is omitted, displays the counter with the numbering style for the
-          counted element or with the pattern <code><span class="typ-str">&quot;1.1&quot;</span></code> if no such style exists.</p>
+          <p>The key that identifies this counter.</p>
+          <ul>
+          <li>If it is a string, creates a custom counter that is only affected
+          by manual updates,</li>
+          <li>If this is a <code><span class="typ-label">&lt;label&gt;</span></code>, counts through all elements with that
+          label,</li>
+          <li>If this is an element function or selector, counts through its
+          elements,</li>
+          <li>If this is the <a href="/docs/reference/layout/page/"><code>page</code></a> function, counts through pages.</li>
+          </ul>
         example: null
         types:
-        - string
-        - function
-        strings: []
-        default: null
-        positional: true
-        named: false
-        required: false
-        variadic: false
-        settable: false
-      - name: both
-        details: |-
-          <p>If enabled, displays the current and final top-level count together. Both
-          can be styled through a single numbering pattern. This is used by the page
-          numbering property to display the current and total number of pages when a
-          pattern like <code><span class="typ-str">&quot;1 / 1&quot;</span></code> is given.</p>
-        example: null
-        types:
-        - boolean
-        strings: []
-        default: null
-        positional: false
-        named: true
-        required: false
-        variadic: false
-        settable: false
-      returns:
-      - content
-    - name: step
-      details: |-
-        <p>Increases the value of the counter by one.</p>
-        <p>The update will be in effect at the position where the returned content is
-        inserted into the document. If you don't put the output into the document,
-        nothing happens! This would be the case, for example, if you write
-        <code><span class="typ-key">let</span> _ <span class="typ-op">=</span> <span class="typ-func">counter</span><span class="typ-punct">(</span>page<span class="typ-punct">)</span><span class="typ-punct">.</span><span class="typ-func">step</span><span class="typ-punct">(</span><span class="typ-punct">)</span></code>. Counter updates are always applied in
-        layout order and in that case, Typst wouldn't know when to step the counter.</p>
-      params:
-      - name: level
-        details: <p>The depth at which to step the counter. Defaults to <code><span
-          class="typ-num">1</span></code>.</p>
-        example: null
-        types:
-        - integer
-        strings: []
-        default: null
-        positional: false
-        named: true
-        required: false
-        variadic: false
-        settable: false
-      returns:
-      - content
-    - name: update
-      details: |-
-        <p>Updates the value of the counter.</p>
-        <p>Just like with <code>step</code>, the update only occurs if you put the resulting
-        content into the document.</p>
-      params:
-      - name: value
-        details: |-
-          <p>If given an integer or array of integers, sets the counter to that value.
-          If given a function, that function receives the previous counter value
-          (with each number as a separate argument) and has to return the new
-          value (integer or array).</p>
-        example: null
-        types:
-        - integer
-        - array
+        - str
+        - label
+        - selector
         - function
         strings: []
         default: null
@@ -365,16 +278,149 @@ body:
         variadic: false
         settable: false
       returns:
+      - counter
+      scope: []
+    scope:
+    - path:
+      - counter
+      name: display
+      title: Display
+      keywords: []
+      oneliner: Displays the current value of the counter.
+      element: false
+      details: <p>Displays the current value of the counter.</p>
+      example: null
+      self: true
+      params:
+      - name: numbering
+        details: |-
+          <p>A <a href="/docs/reference/meta/numbering/">numbering pattern or a function</a>, which specifies how
+          to display the counter. If given a function, that function receives
+          each number of the counter as a separate argument. If the amount of
+          numbers varies, e.g. for the heading argument, you can use an
+          <a href="/docs/reference/foundations/arguments/">argument sink</a>.</p>
+          <p>If this is omitted, displays the counter with the numbering style
+          for the counted element or with the pattern <code><span class="typ-str">&quot;1.1&quot;</span></code> if no such
+          style exists.</p>
+        example: null
+        types:
+        - none
+        - str
+        - function
+        strings: []
+        default: <code><span class="typ-key">none</span></code>
+        positional: true
+        named: false
+        required: false
+        variadic: false
+        settable: false
+      - name: both
+        details: |-
+          <p>If enabled, displays the current and final top-level count together.
+          Both can be styled through a single numbering pattern. This is used
+          by the page numbering property to display the current and total
+          number of pages when a pattern like <code><span class="typ-str">&quot;1 / 1&quot;</span></code> is given.</p>
+        example: null
+        types:
+        - bool
+        strings: []
+        default: <code><span class="typ-key">false</span></code>
+        positional: false
+        named: true
+        required: false
+        variadic: false
+        settable: false
+      returns:
       - content
-    - name: at
+      scope: []
+    - path:
+      - counter
+      name: step
+      title: Step
+      keywords: []
+      oneliner: Increases the value of the counter by one.
+      element: false
+      details: |-
+        <p>Increases the value of the counter by one.</p>
+        <p>The update will be in effect at the position where the returned content
+        is inserted into the document. If you don't put the output into the
+        document, nothing happens! This would be the case, for example, if you
+        write <code><span class="typ-key">let</span> _ <span class="typ-op">=</span> <span class="typ-func">counter</span><span class="typ-punct">(</span>page<span class="typ-punct">)</span><span class="typ-punct">.</span><span class="typ-func">step</span><span class="typ-punct">(</span><span class="typ-punct">)</span></code>. Counter updates are always
+        applied in layout order and in that case, Typst wouldn't know when to
+        step the counter.</p>
+      example: null
+      self: true
+      params:
+      - name: level
+        details: <p>The depth at which to step the counter. Defaults to <code><span
+          class="typ-num">1</span></code>.</p>
+        example: null
+        types:
+        - int
+        strings: []
+        default: <code><span class="typ-num">1</span></code>
+        positional: false
+        named: true
+        required: false
+        variadic: false
+        settable: false
+      returns:
+      - content
+      scope: []
+    - path:
+      - counter
+      name: update
+      title: Update
+      keywords: []
+      oneliner: Updates the value of the counter.
+      element: false
+      details: |-
+        <p>Updates the value of the counter.</p>
+        <p>Just like with <code>step</code>, the update only occurs if you put the resulting
+        content into the document.</p>
+      example: null
+      self: true
+      params:
+      - name: update
+        details: |-
+          <p>If given an integer or array of integers, sets the counter to that
+          value. If given a function, that function receives the previous
+          counter value (with each number as a separate argument) and has to
+          return the new value (integer or array).</p>
+        example: null
+        types:
+        - int
+        - array
+        - function
+        - counter-update
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      returns:
+      - content
+      scope: []
+    - path:
+      - counter
+      name: at
+      title: At
+      keywords: []
+      oneliner: Gets the value of the counter at the given location. Always returns
+        an
+      element: false
       details: |-
         <p>Gets the value of the counter at the given location. Always returns an
         array of integers, even if the counter has just one number.</p>
+      example: null
+      self: true
       params:
       - name: location
         details: |-
-          <p>The location at which the counter value should be retrieved. A suitable
-          location can be retrieved from <a href="/docs/reference/meta/locate/"><code>locate</code></a> or
+          <p>The location at which the counter value should be retrieved. A
+          suitable location can be retrieved from <a href="/docs/reference/meta/locate/"><code>locate</code></a> or
           <a href="/docs/reference/meta/query/"><code>query</code></a>.</p>
         example: null
         types:
@@ -387,20 +433,32 @@ body:
         variadic: false
         settable: false
       returns:
+      - int
       - array
-    - name: final
+      scope: []
+    - path:
+      - counter
+      name: final
+      title: Final
+      keywords: []
+      oneliner: Gets the value of the counter at the end of the document. Always returns
+      element: false
       details: |-
-        <p>Gets the value of the counter at the end of the document. Always returns an
-        array of integers, even if the counter has just one number.</p>
+        <p>Gets the value of the counter at the end of the document. Always returns
+        an array of integers, even if the counter has just one number.</p>
+      example: null
+      self: true
       params:
       - name: location
         details: |-
-          <p>Can be any location. Why is it required then? Typst has to evaluate parts
-          of your code multiple times to determine all counter values. By only
-          allowing this method within <a href="/docs/reference/meta/locate/"><code>locate</code></a> calls, the amount of
-          code that can depend on the method's result is reduced. If you could call
-          <code>final</code> directly at the top level of a module, the evaluation of the whole
-          module and its exports could depend on the counter's value.</p>
+          <p>Can be an arbitrary location, as its value is irrelevant for the
+          method's return value. Why is it required then? Typst has to
+          evaluate parts of your code multiple times to determine all counter
+          values. By only allowing this method within <a href="/docs/reference/meta/locate/"><code>locate</code></a>
+          calls, the amount of code that can depend on the method's result is
+          reduced. If you could call <code>final</code> directly at the top level of a
+          module, the evaluation of the whole module and its exports could
+          depend on the counter's value.</p>
         example: null
         types:
         - location
@@ -412,6 +470,7 @@ body:
         variadic: false
         settable: false
       returns:
+      - int
       - array
-    scope: []
+      scope: []
 children: []

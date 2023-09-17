@@ -1,6 +1,6 @@
 route: /docs/reference/text/strong/
 title: 着重强调（加粗）
-description: Documentation for the `strong` function.
+description: '`strong` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -24,10 +24,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - strong
-    display: Strong Emphasis
-    keywords: null
+    path: []
+    name: strong
+    title: Strong Emphasis
+    keywords: []
     oneliner: Strongly emphasizes content by increasing the font weight.
     element: true
     details: |-
@@ -49,6 +49,8 @@ body:
       该功能还有专用语法：要强调内容，请将其括在两个星号 (<code>*</code>) 中。请注意，这仅对单词生效，如果要强调单词的一部分，必须使用函数。例如"#strong[eng]lish"，而"*eng*lish"会报错。
 
       </p>
+    example: null
+    self: false
     params:
     - name: delta
       details: <p>要应用于字体粗细的增量。</p>
@@ -57,7 +59,7 @@ body:
         No <span class="typ-strong">*effect!*</span>
         </code></pre><div class="preview"><img src="/assets/docs/6fba91c4a7a0b5fd6b037f494d06b3f9.png" alt="Preview" width="480" height="190"/></div></div>
       types:
-      - integer
+      - int
       strings: []
       default: <code><span class="typ-num">300</span></code>
       positional: false
@@ -79,6 +81,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

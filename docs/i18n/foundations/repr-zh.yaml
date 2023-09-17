@@ -1,6 +1,6 @@
 route: /docs/reference/foundations/repr/
 title: Representation
-description: Documentation for the `repr` function.
+description: '`repr` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -18,10 +18,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - repr
-    display: Representation
-    keywords: null
+    path: []
+    name: repr
+    title: Representation
+    keywords: []
     oneliner: Returns the string representation of a value.
     element: false
     details: |-
@@ -37,6 +37,8 @@ body:
       <span class="typ-punct">#</span><span class="typ-punct">(</span><span class="typ-num">1</span><span class="typ-punct">,</span> <span class="typ-num">2</span><span class="typ-punct">)</span> vs <span class="typ-func">#</span><span class="typ-func">repr</span><span class="typ-punct">(</span><span class="typ-punct">(</span><span class="typ-num">1</span><span class="typ-punct">,</span> <span class="typ-num">2</span><span class="typ-punct">)</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
       <span class="typ-punct">#</span><span class="typ-punct">[</span><span class="typ-strong">*Hi*</span><span class="typ-punct">]</span> vs <span class="typ-func">#</span><span class="typ-func">repr</span><span class="typ-punct">(</span><span class="typ-punct">[</span><span class="typ-strong">*Hi*</span><span class="typ-punct">]</span><span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/29da47b4b528e23f151bd8a099371ddc.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: value
       details: <p>The value whose string representation to produce.</p>
@@ -51,7 +53,6 @@ body:
       variadic: false
       settable: false
     returns:
-    - string
-    methods: []
+    - str
     scope: []
 children: []

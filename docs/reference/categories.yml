@@ -1,0 +1,133 @@
+# Descriptions of the documentation categories.
+
+foundations: |
+  基本类型和函数.
+
+  在这里，你可以找到基本数据类型的文档，如 [integers]($int) 和
+  [strings]($int)，以及关于核心计算函数的详细信息。
+
+text: |
+  Text styling.
+
+  The [text function]($text) is of particular interest.
+
+math: |
+  Typst 拥有特殊的 [语法]($syntax/#math) 和库函数，用于排版数学公式。
+  数学公式可以内嵌于文本中显示，也可以作为单独的块显示。
+  如果数学公式以至少一个空格开始和结束（例如 `[$ x^2 $]`），它们将被排版于单独的块中。
+
+  在数学模式中，单独的字母总是原样显示。但是多个字母会被视作变量和函数。
+  如果要原样显示多个字母，你可以将它们放入引号中；
+  如果要使用单字母变量，你可以使用 [hashtag 语法]($scripting/#expressions)。
+
+  ```example
+  $ A = pi r^2 $
+  $ "area" = pi dot "radius"^2 $
+  $ cal(A) :=
+      { x in RR | x "is natural" } $
+  #let x = 5
+  $ #x < 17 $
+  ```
+
+  数学模式提供了大量 [符号]($category/symbols/sym)，例如 `pi`、`dot` 和 `RR`。许多数学符号有不同的变体。
+  可以通过对符号应用 [修饰符]($symbol) 来选择不同的变体。
+  Typst 还支持识别许多简化过的符号组合，例如 `=>`，它们用于表示一个单独的符号。
+  符号文档会列出这些简写的符号组合。
+
+  ```example
+  $ x < y => x gt.eq.not y $
+  ```
+  公式也可以进行换行。每一行可以包含一个或多个 _对齐点_ （`&`），公式会在对齐点处对齐。
+
+  ```example
+  $ sum_(k=0)^n k
+      &= 1 + ... + n \
+      &= (n(n+1)) / 2 $
+  ```
+
+  数学模式支持无前缀的特殊函数调用。在这些 “数学函数调用” 中，参数列表的工作方式与在代码中略有不同。
+
+  - 在数学函数调用中，Typst 仍处于 “数学模式” 。因此，你可以直接在其中编写数学公式，但同时需要使用 hashtag 语法来传递代码表达式（字符串除外，它们可以在直接数学模式中使用）。
+  - 支持位置参数和命名参数，但不支持尾部内容块和参数展开。
+  - 对于二维参数列表，有特殊的额外语法。分号（`;`）会将分号前面用逗号分隔的参数合并为一个数组参数。
+
+  ```example
+  $ frac(a^2, 2) $
+  $ vec(1, 2, delim: "[") $
+  $ mat(1, 2; 3, 4) $
+  $ lim_x =
+      op("lim", limits: #true)_x $
+  ```
+
+  在数学函数调用中，如果要原样输入逗号或者分号，需要在前面加上反斜杠进行转义。如果标识符前面直接跟着冒号，冒号会被特殊处理，因此需要在冒号前面加上一个空格来原样显示它。
+
+  以 hashtag 开头的函数调用是普通的代码函数调用，不受这些规则的影响。
+
+  所有的数学函数都是 `math` [模块]($scripting/#modules)的一部分，它们在公式中默认可用。
+  在公式之外，可以通过添加 `math.` 前缀来访问它们。例如要设置公式使用的字体，可以如下实现：
+
+  ```example
+  #show math.equation: set text(font: "Fira Math")
+  $ sum_(i in NN) 1 + i $
+  ```
+
+layout: |
+  以不同的方式排列页面上的元素。
+
+  通过使用组合布局函数，你可以创建复杂的自动布局。
+
+visualize: |
+  绘图和数据可视化。
+
+  _注：_ 绘图和图标函数尚不可用，未来将会添加该功能。
+
+meta: |
+  Document structuring, introspection, and metadata configuration.
+
+  Here, you can find functions to structure your document and interact with that
+  structure. This includes section headings and figures, bibliography
+  management, cross-referencing and more.
+
+  Moreover, this category is home to Typst's introspection capabilities: With
+  the `counter` function, you can access and manipulate page, section, figure,
+  and equation counters or create custom ones. And the `query` function lets you
+  search for elements in the document to construct things like a list of
+  figures or headers which show the current chapter title.
+
+symbols: |
+  These two modules give names to symbols and emoji to make them easy to insert
+  with a normal keyboard. Alternatively, you can also always directly enter
+  Unicode symbols into your text and formulas. In addition to the symbols listed
+  below, math mode defines `dif` and `Dif`. These are not normal symbol values
+  because they also affect spacing and font style.
+
+sym: |
+  Named general symbols.
+
+  For example, `#sym.arrow` produces the → symbol. Within
+  [formulas]($category/math), these symbols can be used without the `#sym.`
+  prefix.
+
+  The `d` in an integral's `dx` can be written as `[$dif x$]`.
+  Outside math formulas, `dif` can be accessed as `math.dif`.
+
+emoji: |
+  Named emoji.
+
+  For example, `#emoji.face` produces the 😀 emoji. If you frequently use
+  certain emojis, you can also import them from the `emoji` module (`[#import
+  emoji: face]`) to use them without the `#emoji.` prefix.
+
+data-loading: |
+  Data loading from external files.
+
+  These functions help you with loading and embedding data, for example from
+  the results of an experiment.
+
+packages: |
+  Typst [packages]($scripting/#packages) encapsulate reusable building blocks
+  and make them reusable across projects. Below is a list of Typst packages
+  created by the community. Due to the early and experimental nature of Typst's
+  package management, they all live in a `preview` namespace. Click on a
+  package's name to view its documentation and use the copy button on the right
+  to get a full import statement for it.

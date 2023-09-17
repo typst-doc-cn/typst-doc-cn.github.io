@@ -1,6 +1,6 @@
 route: /docs/reference/layout/hide/
 title: Hide
-description: Documentation for the `hide` function.
+description: '`hide` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -18,10 +18,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - hide
-    display: Hide
-    keywords: null
+    path: []
+    name: hide
+    title: Hide
+    keywords: []
     oneliner: Hides content without affecting layout.
     element: true
     details: |-
@@ -34,6 +34,8 @@ body:
       <div class="previewed-code"><pre><code>Hello Jane <span class="typ-escape">\</span>
       <span class="typ-func">#</span><span class="typ-func">hide</span><span class="typ-punct">[</span>Hello<span class="typ-punct">]</span> Joe
       </code></pre><div class="preview"><img src="/assets/docs/fddae312579bead5c4582daca6de4bf2.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: body
       details: <p>The content to hide.</p>
@@ -49,6 +51,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

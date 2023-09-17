@@ -1,6 +1,6 @@
 route: /docs/reference/math/vec/
 title: Vector
-description: Documentation for the `vec` function.
+description: '`vec` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -22,9 +22,10 @@ body:
   kind: func
   content:
     path:
-    - vec
-    display: Vector
-    keywords: null
+    - math
+    name: vec
+    title: Vector
+    keywords: []
     oneliner: A column vector.
     element: true
     details: |-
@@ -34,6 +35,8 @@ body:
       <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">vec</span><span class="typ-punct">(</span>a<span class="typ-punct">,</span> b<span class="typ-punct">,</span> c<span class="typ-punct">)</span> <span class="typ-pol">dot</span> <span class="typ-func">vec</span><span class="typ-punct">(</span>1<span class="typ-punct">,</span> 2<span class="typ-punct">,</span> 3<span class="typ-punct">)</span>
           = a + 2b + 3c <span class="typ-math-delim">$</span>
       </code></pre><div class="preview"><img src="/assets/docs/8ce51ae84b534812283bd47c001cf7dd.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: delim
       details: <p>The delimiter to use.</p>
@@ -75,6 +78,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

@@ -1,6 +1,6 @@
 route: /docs/reference/layout/move/
 title: Move
-description: Documentation for the `move` function.
+description: '`move` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -24,10 +24,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - move
-    display: Move
-    keywords: null
+    path: []
+    name: move
+    title: Move
+    keywords: []
     oneliner: Moves content without affecting layout.
     element: true
     details: |-
@@ -46,12 +46,14 @@ body:
         <span class="typ-punct">)</span>
       <span class="typ-punct">)</span><span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/9a424d936cc839df540a82cfabf3ece6.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: dx
       details: <p>The horizontal displacement of the content.</p>
       example: null
       types:
-      - relative length
+      - relative
       strings: []
       default: <code><span class="typ-num">0pt</span></code>
       positional: false
@@ -63,7 +65,7 @@ body:
       details: <p>The vertical displacement of the content.</p>
       example: null
       types:
-      - relative length
+      - relative
       strings: []
       default: <code><span class="typ-num">0pt</span></code>
       positional: false
@@ -85,6 +87,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

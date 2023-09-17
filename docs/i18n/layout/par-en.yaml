@@ -1,6 +1,6 @@
 route: /docs/reference/layout/par/
 title: Paragraph
-description: Documentation for the `par` function.
+description: '`par` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -33,10 +33,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - par
-    display: Paragraph
-    keywords: null
+    path: []
+    name: par
+    title: Paragraph
+    keywords: []
     oneliner: Arranges text, spacing and inline-level elements into a paragraph.
     element: true
     details: |-
@@ -62,6 +62,8 @@ body:
       let <span class="typ-math-delim">$</span>a<span class="typ-math-delim">$</span> be the smallest of the
       three integers. Then, we <span class="typ-escape">...</span>
       </code></pre><div class="preview"><img src="/assets/docs/4ad0c7e875ca044b839c4c85e8b6cb15.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: leading
       details: <p>The spacing between lines.</p>
@@ -78,15 +80,15 @@ body:
     - name: justify
       details: |-
         <p>Whether to justify text in its line.</p>
-        <p>Hyphenation will be enabled for justified paragraphs if the <a href="/docs/reference/text/text/#parameters-hyphenate">text
-        property hyphenate</a> is set to <code><span class="typ-key">auto</span></code> and the
-        current language is known.</p>
-        <p>Note that the current <a href="/docs/reference/layout/align/">alignment</a> still has an effect on
-        the placement of the last line except if it ends with a <a href="/docs/reference/text/linebreak/#parameters-justify">justified line
-        break</a>.</p>
+        <p>Hyphenation will be enabled for justified paragraphs if the
+        <a href="/docs/reference/text/text/#parameters-hyphenate">text function's <code>hyphenate</code> property</a> is set to
+        <code><span class="typ-key">auto</span></code> and the current language is known.</p>
+        <p>Note that the current <a href="/docs/reference/layout/align/">alignment</a> still has an effect on the
+        placement of the last line except if it ends with a
+        <a href="/docs/reference/text/linebreak/#parameters-justify">justified line break</a>.</p>
       example: null
       types:
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">false</span></code>
       positional: false
@@ -102,21 +104,19 @@ body:
         breaks for ragged paragraphs may also be worthwhile to improve the
         appearance of the text.</p>
       example: |-
-        <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">page</span><span class="typ-punct">(</span>width<span class="typ-punct">:</span> <span class="typ-num">190pt</span><span class="typ-punct">)</span>
+        <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">page</span><span class="typ-punct">(</span>width<span class="typ-punct">:</span> <span class="typ-num">207pt</span><span class="typ-punct">)</span>
         <span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">par</span><span class="typ-punct">(</span>linebreaks<span class="typ-punct">:</span> <span class="typ-str">&quot;simple&quot;</span><span class="typ-punct">)</span>
-        Some texts are frustratingly
-        challenging to break in a
-        visually pleasing way. This
-        very aesthetic example is one
-        of them.
+        Some texts feature many longer
+        words. Those are often exceedingly
+        challenging to break in a visually
+        pleasing way.
 
         <span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">par</span><span class="typ-punct">(</span>linebreaks<span class="typ-punct">:</span> <span class="typ-str">&quot;optimized&quot;</span><span class="typ-punct">)</span>
-        Some texts are frustratingly
-        challenging to break in a
-        visually pleasing way. This
-        very aesthetic example is one
-        of them.
-        </code></pre><div class="preview"><img src="/assets/docs/1022708424c9567903cc88f574915527.png" alt="Preview" width="480" height="190"/></div></div>
+        Some texts feature many longer
+        words. Those are often exceedingly
+        challenging to break in a visually
+        pleasing way.
+        </code></pre><div class="preview"><img src="/assets/docs/d47258d3796ed8315cbe2ad4974e1e42.png" alt="Preview" width="480" height="190"/></div></div>
       types:
       - auto
       - string
@@ -180,6 +180,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

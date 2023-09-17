@@ -8,12 +8,12 @@ desktop.ini
 # Tests and benchmarks
 tests/png
 tests/pdf
+tests/svg
 tests/target
 tarpaulin-report.html
 
 # Rust
 /target
-bench/target
 **/*.rs.bk
 
 # Node
@@ -28,5 +28,3 @@ package-lock.json
 /assets/docs
 /assets/docs.json
 /dist
-
-*.ps1

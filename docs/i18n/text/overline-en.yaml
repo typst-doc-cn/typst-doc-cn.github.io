@@ -1,6 +1,6 @@
 route: /docs/reference/text/overline/
 title: Overline
-description: Documentation for the `overline` function.
+description: '`overline` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -30,10 +30,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - overline
-    display: Overline
-    keywords: null
+    path: []
+    name: overline
+    title: Overline
+    keywords: []
     oneliner: Adds a line over text.
     element: true
     details: |-
@@ -41,12 +41,13 @@ body:
       <h2 id="example">Example</h2>
       <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">overline</span><span class="typ-punct">[</span>A line over text.<span class="typ-punct">]</span>
       </code></pre><div class="preview"><img src="/assets/docs/c3bb5d5987203353af84bd6015985b33.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: stroke
       details: |-
-        <p>How to stroke the line.</p>
-        <p>See the <a href="/docs/reference/visualize/line/#parameters-stroke">line's documentation</a> for more details. If
-        set to <code><span class="typ-key">auto</span></code>, takes on the text's color and a thickness defined in
+        <p>How to <a href="/docs/reference/visualize/stroke/">stroke</a> the line.</p>
+        <p>If set to <code><span class="typ-key">auto</span></code>, takes on the text's color and a thickness defined in
         the current font.</p>
       example: |-
         <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>fill<span class="typ-punct">:</span> olive<span class="typ-punct">)</span>
@@ -60,8 +61,8 @@ body:
       - auto
       - length
       - color
-      - dictionary
       - stroke
+      - dictionary
       strings: []
       default: <code><span class="typ-key">auto</span></code>
       positional: false
@@ -120,7 +121,7 @@ body:
         <span class="typ-punct">)</span>
         </code></pre><div class="preview"><img src="/assets/docs/f38c2082e229847da24e2843eb5c81c6.png" alt="Preview" width="480" height="190"/></div></div>
       types:
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">true</span></code>
       positional: false
@@ -142,6 +143,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

@@ -1,6 +1,6 @@
 route: /docs/reference/data-loading/xml/
 title: XML
-description: Documentation for the `xml` function.
+description: '`xml` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -15,13 +15,22 @@ outline:
   - id: parameters-path
     name: path
     children: []
+- id: definitions
+  name: Definitions
+  children:
+  - id: definitions-decode
+    name: Decode XML
+    children:
+    - id: definitions-decode-data
+      name: data
+      children: []
 body:
   kind: func
   content:
-    path:
-    - xml
-    display: XML
-    keywords: null
+    path: []
+    name: xml
+    title: XML
+    keywords: []
     oneliner: Reads structured data from an XML file.
     element: false
     details: |-
@@ -70,12 +79,14 @@ body:
         <span class="typ-punct">}</span>
       <span class="typ-punct">}</span>
       </code></pre><div class="preview"><img src="/assets/docs/2830826f0023b6f07034653acc310e67.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: path
       details: <p>Path to an XML file.</p>
       example: null
       types:
-      - string
+      - str
       strings: []
       default: null
       positional: true
@@ -85,6 +96,32 @@ body:
       settable: false
     returns:
     - any
-    methods: []
-    scope: []
+    scope:
+    - path:
+      - xml
+      name: decode
+      title: Decode XML
+      keywords: []
+      oneliner: Reads structured data from an XML string/bytes.
+      element: false
+      details: <p>Reads structured data from an XML string/bytes.</p>
+      example: null
+      self: false
+      params:
+      - name: data
+        details: <p>XML data.</p>
+        example: null
+        types:
+        - str
+        - bytes
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      returns:
+      - any
+      scope: []
 children: []

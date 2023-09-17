@@ -1,6 +1,6 @@
 route: /docs/reference/math/mat/
 title: 矩阵
-description: Documentation for the `mat` function.
+description: '`mat` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -15,6 +15,9 @@ outline:
   - id: parameters-delim
     name: delim
     children: []
+  - id: parameters-augment
+    name: augment
+    children: []
   - id: parameters-rows
     name: rows
     children: []
@@ -22,9 +25,10 @@ body:
   kind: func
   content:
     path:
-    - mat
-    display: Matrix
-    keywords: null
+    - math
+    name: mat
+    title: Matrix
+    keywords: []
     oneliner: A matrix.
     element: true
     details: |-
@@ -45,6 +49,8 @@ body:
         10<span class="typ-punct">,</span> 10<span class="typ-punct">,</span> <span class="typ-escape">...</span><span class="typ-punct">,</span> 10<span class="typ-punct">;</span>
       <span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
       </code></pre><div class="preview"><img src="/assets/docs/92c9b3b027c9bc5f7095d691e1690745.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: delim
       details: <p>使用的分隔符。</p>
@@ -57,16 +63,46 @@ body:
       - string
       strings:
       - string: (
-        details: <p>Delimit with parentheses.</p>
+        details: <p>圆括号分隔。</p>
       - string: '['
-        details: <p>Delimit with brackets.</p>
+        details: <p>方括号分隔。</p>
       - string: '{'
-        details: <p>Delimit with curly braces.</p>
+        details: <p>花括号分隔。</p>
       - string: '|'
-        details: <p>Delimit with vertical bars.</p>
+        details: <p>垂直线分隔。</p>
       - string: '||'
-        details: <p>Delimit with double vertical bars.</p>
+        details: <p>双垂直线分隔。</p>
       default: <code><span class="typ-str">&quot;(&quot;</span></code>
+      positional: false
+      named: true
+      required: false
+      variadic: false
+      settable: true
+    - name: augment
+      details: |-
+        <p>在矩阵中绘制增强线。</p>
+        <ul>
+        <li><code><span class="typ-key">none</span></code>: 没有画线。</li>
+        <li>单个数字：在指定的列号之后绘制一条垂直增强线。</li>
+        <li>字典：使用字典，可以在水平和垂直方向上绘制多个增强线。此外，还可以设置线的样式。字典可以包含以下键:
+        <ul>
+        <li><code>hline</code>: 应绘制水平线的偏移量。例如，偏移量为 2 将导致在矩阵的第二行之后绘制一条水平线。接受单行的整数或多行的整数数组。</li>
+        <li><code>vline</code>: 应绘制垂直线的偏移量。例如，偏移量为 2 将导致在矩阵的第二列之后绘制一条垂直线。接受单行的整数或多行的整数数组。</li>
+        <li><code>stroke</code>: 如何 <a href="/docs/reference/visualize/stroke/">绘制</a> 线条。如果设置为 <code><span class="typ-key">auto</span></code>,
+        会默认使用 0.05em 厚度与方形线帽。</li>
+        </ul>
+        </li>
+        </ul>
+      example: |-
+        <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">mat</span><span class="typ-punct">(</span>1<span class="typ-punct">,</span> 0<span class="typ-punct">,</span> 1<span class="typ-punct">;</span> 0<span class="typ-punct">,</span> 1<span class="typ-punct">,</span> 2<span class="typ-punct">;</span> augment<span class="typ-punct">:</span> <span class="typ-num">#</span><span class="typ-num">2</span><span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
+        </code></pre><div class="preview"><img src="/assets/docs/413d94c5a68c4a3eada4f730fe7828f2.png" alt="Preview" width="480" height="190"/></div></div><div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">mat</span><span class="typ-punct">(</span>0<span class="typ-punct">,</span> 0<span class="typ-punct">,</span> 0<span class="typ-punct">;</span> 1<span class="typ-punct">,</span> 1<span class="typ-punct">,</span> 1<span class="typ-punct">;</span> augment<span class="typ-punct">:</span> <span class="typ-punct">#</span><span class="typ-punct">(</span>hline<span class="typ-punct">:</span> <span class="typ-num">1</span><span class="typ-punct">,</span> stroke<span class="typ-punct">:</span> <span class="typ-num">2pt</span> <span class="typ-op">+</span> green<span class="typ-punct">)</span><span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
+        </code></pre><div class="preview"><img src="/assets/docs/03c849bc1ba1ed6566954d6b6ff6588b.png" alt="Preview" width="480" height="190"/></div></div>
+      types:
+      - none
+      - int
+      - dictionary
+      strings: []
+      default: <code><span class="typ-key">none</span></code>
       positional: false
       named: true
       required: false
@@ -92,6 +128,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

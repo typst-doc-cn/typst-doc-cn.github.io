@@ -1,6 +1,6 @@
 route: /docs/reference/layout/h/
 title: Spacing (H)
-description: Documentation for the `h` function.
+description: '`h` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -24,10 +24,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - h
-    display: Spacing (H)
-    keywords: null
+    path: []
+    name: h
+    title: Spacing (H)
+    keywords: []
     oneliner: Inserts horizontal spacing into a paragraph.
     element: true
     details: |-
@@ -43,12 +43,14 @@ body:
       <h2 id="math-spacing">Mathematical Spacing</h2>
       <p>In <a href="/docs/reference/math/">mathematical formulas</a>, you can additionally use these
       constants to add spacing between elements: <code>thin</code>, <code>med</code>, <code>thick</code>, <code>quad</code>.</p>
+    example: null
+    self: false
     params:
     - name: amount
       details: <p>How much spacing to insert.</p>
       example: null
       types:
-      - relative length
+      - relative
       - fraction
       strings: []
       default: null
@@ -62,18 +64,28 @@ body:
         <p>If <code><span class="typ-key">true</span></code>, the spacing collapses at the start or end of a paragraph.
         Moreover, from multiple adjacent weak spacings all but the largest one
         collapse.</p>
+        <p>Weak spacing in markup also causes all adjacent markup spaces to be
+        removed, regardless of the amount of spacing inserted. To force a space
+        next to weak spacing, you can explicitly write <code><span class="typ-str">#</span><span class="typ-str">&quot; &quot;</span></code> (for a normal
+        space) or <code><span class="typ-escape">~</span></code> (for a non-breaking space). The latter can be useful to
+        create a construct that always attaches to the preceding word with one
+        non-breaking space, independently of wether a markup space existed in
+        front or not.</p>
       example: |-
         <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">h</span><span class="typ-punct">(</span><span class="typ-num">1cm</span><span class="typ-punct">,</span> weak<span class="typ-punct">:</span> <span class="typ-key">true</span><span class="typ-punct">)</span>
-        We identified a group of
-        <span class="typ-emph">_weak_</span> specimens that fail to
-        manifest in most cases. However,
-        when <span class="typ-func">#</span><span class="typ-func">h</span><span class="typ-punct">(</span><span class="typ-num">8pt</span><span class="typ-punct">,</span> weak<span class="typ-punct">:</span> <span class="typ-key">true</span><span class="typ-punct">)</span>
-        supported
-        <span class="typ-func">#</span><span class="typ-func">h</span><span class="typ-punct">(</span><span class="typ-num">8pt</span><span class="typ-punct">,</span> weak<span class="typ-punct">:</span> <span class="typ-key">true</span><span class="typ-punct">)</span> on both
-        sides, they do show up.
-        </code></pre><div class="preview"><img src="/assets/docs/cf8bdea3a1f4f5fbc57a914b34c9963c.png" alt="Preview" width="480" height="190"/></div></div>
+        We identified a group of <span class="typ-emph">_weak_</span>
+        specimens that fail to manifest
+        in most cases. However, when
+        <span class="typ-func">#</span><span class="typ-func">h</span><span class="typ-punct">(</span><span class="typ-num">8pt</span><span class="typ-punct">,</span> weak<span class="typ-punct">:</span> <span class="typ-key">true</span><span class="typ-punct">)</span> supported
+        <span class="typ-func">#</span><span class="typ-func">h</span><span class="typ-punct">(</span><span class="typ-num">8pt</span><span class="typ-punct">,</span> weak<span class="typ-punct">:</span> <span class="typ-key">true</span><span class="typ-punct">)</span> on both sides,
+        they do show up.
+
+        Further <span class="typ-func">#</span><span class="typ-func">h</span><span class="typ-punct">(</span><span class="typ-num">0pt</span><span class="typ-punct">,</span> weak<span class="typ-punct">:</span> <span class="typ-key">true</span><span class="typ-punct">)</span> more,
+        even the smallest of them swallow
+        adjacent markup spaces.
+        </code></pre><div class="preview"><img src="/assets/docs/5ece273f8956c8dc3d0b5e0a6d07a1cf.png" alt="Preview" width="480" height="190"/></div></div>
       types:
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">false</span></code>
       positional: false
@@ -83,6 +95,5 @@ body:
       settable: true
     returns:
     - content
-    methods: []
     scope: []
 children: []

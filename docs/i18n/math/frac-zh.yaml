@@ -1,6 +1,6 @@
 route: /docs/reference/math/frac/
 title: 分数
-description: Documentation for the `frac` function.
+description: '`frac` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -25,9 +25,10 @@ body:
   kind: func
   content:
     path:
-    - frac
-    display: Fraction
-    keywords: null
+    - math
+    name: frac
+    title: Fraction
+    keywords: []
     oneliner: A mathematical fraction.
     element: true
     details: |-
@@ -41,6 +42,8 @@ body:
       此函数也有一个专用语法：使用斜杠（/）将相邻的表达式转换为分数形式。
       多个元素可以使用圆括号组合为单个表达式，最终输出会移除这些括号，但您可以嵌套括号来强制保留。
       </p>
+    example: null
+    self: false
     params:
     - name: num
       details: <p>分数的分子。</p>
@@ -68,6 +71,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

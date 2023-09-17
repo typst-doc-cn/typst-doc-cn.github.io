@@ -1,6 +1,6 @@
 route: /docs/reference/layout/colbreak/
 title: Column Break
-description: Documentation for the `colbreak` function.
+description: '`colbreak` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -18,10 +18,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - colbreak
-    display: Column Break
-    keywords: null
+    path: []
+    name: colbreak
+    title: Column Break
+    keywords: []
     oneliner: Forces a column break.
     element: true
     details: |-
@@ -45,6 +45,8 @@ body:
       understanding of the fundamental
       laws of nature.
       </code></pre><div class="preview"><img src="/assets/docs/f12173d10bc20540810180f34274c028.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: weak
       details: |-
@@ -52,7 +54,7 @@ body:
         already empty.</p>
       example: null
       types:
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">false</span></code>
       positional: false
@@ -62,6 +64,5 @@ body:
       settable: true
     returns:
     - content
-    methods: []
     scope: []
 children: []

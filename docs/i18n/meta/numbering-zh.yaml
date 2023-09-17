@@ -1,6 +1,6 @@
 route: /docs/reference/meta/numbering/
 title: Numbering
-description: Documentation for the `numbering` function.
+description: '`numbering` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -21,10 +21,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - numbering
-    display: Numbering
-    keywords: null
+    path: []
+    name: numbering
+    title: Numbering
+    keywords: []
     oneliner: Applies a numbering to a sequence of numbers.
     element: false
     details: |-
@@ -47,6 +47,8 @@ body:
         <span class="typ-num">1</span><span class="typ-punct">,</span> <span class="typ-num">2</span><span class="typ-punct">,</span> <span class="typ-num">3</span><span class="typ-punct">,</span>
       <span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/c49443caf46299c5a909ea27c0c42f0c.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: numbering
       details: |-
@@ -70,7 +72,7 @@ body:
         defined as a pattern or function.</p>
       example: null
       types:
-      - string
+      - str
       - function
       strings: []
       default: null
@@ -86,7 +88,7 @@ body:
         given, the last counting symbol with its prefix is repeated.</p>
       example: null
       types:
-      - integer
+      - int
       strings: []
       default: null
       positional: true
@@ -96,6 +98,5 @@ body:
       settable: false
     returns:
     - any
-    methods: []
     scope: []
 children: []

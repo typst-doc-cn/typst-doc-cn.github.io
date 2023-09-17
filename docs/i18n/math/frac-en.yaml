@@ -1,6 +1,6 @@
 route: /docs/reference/math/frac/
 title: Fraction
-description: Documentation for the `frac` function.
+description: '`frac` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -25,9 +25,10 @@ body:
   kind: func
   content:
     path:
-    - frac
-    display: Fraction
-    keywords: null
+    - math
+    name: frac
+    title: Fraction
+    keywords: []
     oneliner: A mathematical fraction.
     element: true
     details: |-
@@ -41,6 +42,8 @@ body:
       expressions into a fraction. Multiple atoms can be grouped into a single
       expression using round grouping parenthesis. Such parentheses are removed
       from the output, but you can nest multiple to force them.</p>
+    example: null
+    self: false
     params:
     - name: num
       details: <p>The fraction's numerator.</p>
@@ -68,6 +71,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

@@ -1,6 +1,6 @@
 route: /docs/reference/visualize/path/
 title: Path
-description: Documentation for the `path` function.
+description: '`path` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -27,10 +27,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - path
-    display: Path
-    keywords: null
+    path: []
+    name: path
+    title: Path
+    keywords: []
     oneliner: A path through a list of points, connected by Bezier curves.
     element: true
     details: |-
@@ -45,13 +45,16 @@ body:
         <span class="typ-punct">(</span><span class="typ-punct">(</span><span class="typ-num">50%</span><span class="typ-punct">,</span> <span class="typ-num">0pt</span><span class="typ-punct">)</span><span class="typ-punct">,</span> <span class="typ-punct">(</span><span class="typ-num">40pt</span><span class="typ-punct">,</span> <span class="typ-num">0pt</span><span class="typ-punct">)</span><span class="typ-punct">)</span><span class="typ-punct">,</span>
       <span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/ace845531f9ab04f113aab62df7c388b.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: fill
       details: |-
-        <p>How to fill the path. See the
-        <a href="/docs/reference/visualize/rect/#parameters-fill">rectangle's documentation</a> for more details.</p>
-        <p>Currently all paths are filled according to the
-        <a href="https://en.wikipedia.org/wiki/Nonzero-rule">non-zero winding rule</a>.</p>
+        <p>How to fill the path.</p>
+        <p>When setting a fill, the default stroke disappears. To create a
+        rectangle with both fill and stroke, you have to configure both.</p>
+        <p>Currently all paths are filled according to the <a href="https://en.wikipedia.org/wiki/Nonzero-rule">non-zero winding
+        rule</a>.</p>
       example: null
       types:
       - none
@@ -65,18 +68,17 @@ body:
       settable: true
     - name: stroke
       details: |-
-        <p>How to stroke the path. This can be:</p>
-        <p>See the <a href="/docs/reference/visualize/line/#parameters-stroke">line's documentation</a> for more details. Can
-        be set to  <code><span class="typ-key">none</span></code> to disable the stroke or to <code><span class="typ-key">auto</span></code> for a stroke of
-        <code><span class="typ-num">1pt</span></code> black if and if only if no fill is given.</p>
+        <p>How to <a href="/docs/reference/visualize/stroke/">stroke</a> the path. This can be:</p>
+        <p>Can be set to  <code><span class="typ-key">none</span></code> to disable the stroke or to <code><span class="typ-key">auto</span></code> for a
+        stroke of <code><span class="typ-num">1pt</span></code> black if and if only if no fill is given.</p>
       example: null
       types:
       - none
       - auto
       - length
       - color
-      - dictionary
       - stroke
+      - dictionary
       strings: []
       default: <code><span class="typ-key">auto</span></code>
       positional: false
@@ -92,7 +94,7 @@ body:
         start point.</p>
       example: null
       types:
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">false</span></code>
       positional: false
@@ -115,7 +117,7 @@ body:
         the curve going out of this vertex.</li>
         <li>An array of three points, the first being the vertex and the next
         being the control points (control point for curves coming in and out,
-        respectively)</li>
+        respectively).</li>
         </ul>
       example: null
       types:
@@ -129,6 +131,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

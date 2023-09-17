@@ -1,6 +1,6 @@
 route: /docs/reference/layout/pad/
 title: Padding
-description: Documentation for the `pad` function.
+description: '`pad` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -39,10 +39,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - pad
-    display: Padding
-    keywords: null
+    path: []
+    name: pad
+    title: Padding
+    keywords: []
     oneliner: Adds spacing around content.
     element: true
     details: |-
@@ -56,12 +56,14 @@ body:
       <span class="typ-emph">_Typing speeds can be
        measured in words per minute._</span>
       </code></pre><div class="preview"><img src="/assets/docs/10b94b3d9278971f6ea2f96b900cfdbe.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: left
       details: <p>The padding at the left side.</p>
       example: null
       types:
-      - relative length
+      - relative
       strings: []
       default: <code><span class="typ-num">0pt</span></code>
       positional: false
@@ -73,7 +75,7 @@ body:
       details: <p>The padding at the top side.</p>
       example: null
       types:
-      - relative length
+      - relative
       strings: []
       default: <code><span class="typ-num">0pt</span></code>
       positional: false
@@ -85,7 +87,7 @@ body:
       details: <p>The padding at the right side.</p>
       example: null
       types:
-      - relative length
+      - relative
       strings: []
       default: <code><span class="typ-num">0pt</span></code>
       positional: false
@@ -97,7 +99,7 @@ body:
       details: <p>The padding at the bottom side.</p>
       example: null
       types:
-      - relative length
+      - relative
       strings: []
       default: <code><span class="typ-num">0pt</span></code>
       positional: false
@@ -111,7 +113,7 @@ body:
         this.</p>
       example: null
       types:
-      - relative length
+      - relative
       strings: []
       default: <code><span class="typ-num">0pt</span></code>
       positional: false
@@ -124,7 +126,7 @@ body:
         take precedence over this.</p>
       example: null
       types:
-      - relative length
+      - relative
       strings: []
       default: <code><span class="typ-num">0pt</span></code>
       positional: false
@@ -138,7 +140,7 @@ body:
         this.</p>
       example: null
       types:
-      - relative length
+      - relative
       strings: []
       default: <code><span class="typ-num">0pt</span></code>
       positional: false
@@ -160,6 +162,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

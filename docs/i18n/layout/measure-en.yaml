@@ -1,10 +1,13 @@
 route: /docs/reference/layout/measure/
 title: Measure
-description: Documentation for the `measure` function.
+description: '`measure` 函数的文档'
 part: null
 outline:
 - id: summary
   name: Summary
+  children: []
+- id: example
+  name: Example
   children: []
 - id: parameters
   name: Parameters
@@ -18,20 +21,20 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - measure
-    display: Measure
-    keywords: null
+    path: []
+    name: measure
+    title: Measure
+    keywords: []
     oneliner: Measures the layouted size of content.
     element: false
     details: |-
       <p>Measures the layouted size of content.</p>
-      <p>The <code>measure</code> function lets you determine the layouted size of content.
-      Note that an infinite space is assumed, therefore the measured height/width
-      may not necessarily match the final height/width of the measured content.
-      If you want to measure in the current layout dimensions, you can combined
-      <code>measure</code> and <a href="/docs/reference/meta/layout/"><code>layout</code></a>.</p>
-      <h1 id="example">Example</h1>
+      <p>The <code>measure</code> function lets you determine the layouted size of content. Note
+      that an infinite space is assumed, therefore the measured height/width may
+      not necessarily match the final height/width of the measured content. If you
+      want to measure in the current layout dimensions, you can combine <code>measure</code>
+      and <a href="/docs/reference/meta/layout/"><code>layout</code></a>.</p>
+      <h2 id="example">Example</h2>
       <p>The same content can have a different size depending on the styles that
       are active when it is layouted. For example, in the example below
       <code><span class="typ-pol">#</span><span class="typ-pol">content</span></code> is of course bigger when we increase the font size.</p>
@@ -41,8 +44,8 @@ body:
       <span class="typ-pol">#</span><span class="typ-pol">content</span>
       </code></pre><div class="preview"><img src="/assets/docs/49695415724cfa126178f05a5eba18a5.png" alt="Preview" width="480" height="190"/></div></div>
       <p>To do a meaningful measurement, you therefore first need to retrieve the
-      active styles with the <a href="/docs/reference/meta/style/"><code>style</code></a> function. You can then pass
-      them to the <code>measure</code> function.</p>
+      active styles with the <a href="/docs/reference/meta/style/"><code>style</code></a> function. You can then pass them to
+      the <code>measure</code> function.</p>
       <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> <span class="typ-func">thing</span><span class="typ-punct">(</span>body<span class="typ-punct">)</span> <span class="typ-op">=</span> <span class="typ-func">style</span><span class="typ-punct">(</span>styles <span class="typ-op">=&gt;</span> <span class="typ-punct">{</span>
         <span class="typ-key">let</span> size <span class="typ-op">=</span> <span class="typ-func">measure</span><span class="typ-punct">(</span>body<span class="typ-punct">,</span> styles<span class="typ-punct">)</span>
         <span class="typ-punct">[</span>Width of &quot;<span class="typ-pol">#</span><span class="typ-pol">body</span>&quot; is <span class="typ-pol">#</span><span class="typ-pol">size</span><span class="typ-punct">.</span><span class="typ-pol">width</span><span class="typ-punct">]</span>
@@ -52,7 +55,9 @@ body:
       <span class="typ-func">#</span><span class="typ-func">thing</span><span class="typ-punct">[</span>Welcome<span class="typ-punct">]</span>
       </code></pre><div class="preview"><img src="/assets/docs/83a224c4e09a77e16796d6bccb0b41fd.png" alt="Preview" width="480" height="190"/></div></div>
       <p>The measure function returns a dictionary with the entries <code>width</code> and
-      <code>height</code>, both of type <a href="/docs/reference/types/length/"><code>length</code></a>.</p>
+      <code>height</code>, both of type <a href="/docs/reference/layout/length/"><code>length</code></a>.</p>
+    example: null
+    self: false
     params:
     - name: content
       details: <p>The content whose size to measure.</p>
@@ -80,6 +85,5 @@ body:
       settable: false
     returns:
     - dictionary
-    methods: []
     scope: []
 children: []

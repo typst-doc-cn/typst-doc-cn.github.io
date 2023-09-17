@@ -1,6 +1,6 @@
 route: /docs/reference/layout/terms/
 title: Term List
-description: Documentation for the `terms` function.
+description: '`terms` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -33,25 +33,25 @@ outline:
   - id: parameters-children
     name: children
     children: []
-- id: terms-item
-  name: Term List Item
+- id: definitions
+  name: Definitions
   children:
-  - id: terms-item-parameters
-    name: Parameters
+  - id: definitions-item
+    name: Term List Item
     children:
-    - id: terms-item-parameters-term
+    - id: definitions-item-term
       name: term
       children: []
-    - id: terms-item-parameters-description
+    - id: definitions-item-description
       name: description
       children: []
 body:
   kind: func
   content:
-    path:
-    - terms
-    display: Term List
-    keywords: null
+    path: []
+    name: terms
+    title: Term List
+    keywords: []
     oneliner: A list of terms and their descriptions.
     element: true
     details: |-
@@ -67,13 +67,15 @@ body:
       <h2 id="syntax">Syntax</h2>
       <p>This function also has dedicated syntax: Starting a line with a slash,
       followed by a term, a colon and a description creates a term list item.</p>
+    example: null
+    self: false
     params:
     - name: tight
       details: |-
-        <p>If this is <code><span class="typ-key">false</span></code>, the items are spaced apart with <a href="/docs/reference/layout/terms/#parameters-spacing">term list
-        spacing</a>. If it is <code><span class="typ-key">true</span></code>, they use normal
-        <a href="/docs/reference/layout/par/#parameters-leading">leading</a> instead. This makes the term list more
-        compact, which can look better if the items are short.</p>
+        <p>If this is <code><span class="typ-key">false</span></code>, the items are spaced apart with
+        <a href="/docs/reference/layout/terms/#parameters-spacing">term list spacing</a>. If it is <code><span class="typ-key">true</span></code>, they use normal
+        <a href="/docs/reference/layout/par/#parameters-leading">leading</a> instead. This makes the term list more compact,
+        which can look better if the items are short.</p>
         <p>In markup mode, the value of this parameter is determined based on
         whether items are separated with a blank line. If items directly follow
         each other, this is set to <code><span class="typ-key">true</span></code>; if items are separated by a blank
@@ -89,7 +91,7 @@ body:
           items.
         </code></pre><div class="preview"><img src="/assets/docs/f8ffd77b749c4ef711f291f4aebd266f.png" alt="Preview" width="480" height="190"/></div></div>
       types:
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">true</span></code>
       positional: false
@@ -157,7 +159,7 @@ body:
       example: null
       types:
       - auto
-      - relative length
+      - relative
       - fraction
       strings: []
       default: <code><span class="typ-key">auto</span></code>
@@ -190,16 +192,17 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope:
     - path:
       - terms
-      - item
-      display: Term List Item
-      keywords: null
+      name: item
+      title: Term List Item
+      keywords: []
       oneliner: A term list item.
       element: true
       details: <p>A term list item.</p>
+      example: null
+      self: false
       params:
       - name: term
         details: <p>The term described by the list item.</p>
@@ -227,6 +230,5 @@ body:
         settable: false
       returns:
       - content
-      methods: []
       scope: []
 children: []

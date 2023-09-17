@@ -1,6 +1,6 @@
 route: /docs/reference/layout/par/
 title: Paragraph
-description: Documentation for the `par` function.
+description: '`par` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -33,15 +33,17 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - par
-    display: Paragraph
-    keywords: null
-    oneliner: 将文本、间距和内联级元素排列成段落。
+    path: []
+    name: par
+    title: Paragraph
+    keywords: []
+    oneliner: Arranges text, spacing and inline-level elements into a paragraph.
     element: true
     details: |-
-      <p>将文本、间距和内联级元素排列成段落。</p>
-      <p>虽然这个函数主要用于设置规则以影响段落属性，但也可以用于将其参数显式地呈现在自己的段落中。</p>
+      <p>Arranges text, spacing and inline-level elements into a paragraph.</p>
+      <p>Although this function is primarily used in set rules to affect paragraph
+      properties, it can also be used to explicitly render its argument onto a
+      paragraph of its own.</p>
       <h2 id="example">Example</h2>
       <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">show</span> <span class="typ-func">par</span><span class="typ-punct">:</span> <span class="typ-key">set</span> <span class="typ-func">block</span><span class="typ-punct">(</span>spacing<span class="typ-punct">:</span> <span class="typ-num">0.65em</span><span class="typ-punct">)</span>
       <span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">par</span><span class="typ-punct">(</span>
@@ -60,9 +62,11 @@ body:
       let <span class="typ-math-delim">$</span>a<span class="typ-math-delim">$</span> be the smallest of the
       three integers. Then, we <span class="typ-escape">...</span>
       </code></pre><div class="preview"><img src="/assets/docs/4ad0c7e875ca044b839c4c85e8b6cb15.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: leading
-      details: <p>行间距。</p>
+      details: <p>The spacing between lines.</p>
       example: null
       types:
       - length
@@ -75,12 +79,16 @@ body:
       settable: true
     - name: justify
       details: |-
-        <p>是否开启两端对齐。</p>
-        <p>如果文本的<a href="/docs/reference/text/text/#parameters-hyphenate">连字属性</a>设置为<code><span class="typ-key">auto</span></code>，并且当前语言已知，则会在两端对齐的段落中启用连字功能。</p>
-        <p>请注意，当前的<a href="/docs/reference/layout/align/">对齐方式</a>仍然会影响最后一行的位置，除非最后一行以<a href="/docs/reference/text/linebreak/#parameters-justify">两端对齐的换行</a>结束。</p>
+        <p>Whether to justify text in its line.</p>
+        <p>Hyphenation will be enabled for justified paragraphs if the
+        <a href="/docs/reference/text/text/#parameters-hyphenate">text function's <code>hyphenate</code> property</a> is set to
+        <code><span class="typ-key">auto</span></code> and the current language is known.</p>
+        <p>Note that the current <a href="/docs/reference/layout/align/">alignment</a> still has an effect on the
+        placement of the last line except if it ends with a
+        <a href="/docs/reference/text/linebreak/#parameters-justify">justified line break</a>.</p>
       example: null
       types:
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">false</span></code>
       positional: false
@@ -90,34 +98,36 @@ body:
       settable: true
     - name: linebreaks
       details: |-
-        <p>如何确定换行位置。</p>
-        <p>当这个属性被设置为<code><span class="typ-key">auto</span></code>，也就是它的默认值时，会在两端对齐的段落中使用优化过的换行位置。对于不规则对齐的段落启用优化过的换行位置也是有价值的，可以改善文本的外观。</p>
+        <p>How to determine line breaks.</p>
+        <p>When this property is set to <code><span class="typ-key">auto</span></code>, its default value, optimized line
+        breaks will be used for justified paragraphs. Enabling optimized line
+        breaks for ragged paragraphs may also be worthwhile to improve the
+        appearance of the text.</p>
       example: |-
-        <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">page</span><span class="typ-punct">(</span>width<span class="typ-punct">:</span> <span class="typ-num">190pt</span><span class="typ-punct">)</span>
+        <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">page</span><span class="typ-punct">(</span>width<span class="typ-punct">:</span> <span class="typ-num">207pt</span><span class="typ-punct">)</span>
         <span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">par</span><span class="typ-punct">(</span>linebreaks<span class="typ-punct">:</span> <span class="typ-str">&quot;simple&quot;</span><span class="typ-punct">)</span>
-        Some texts are frustratingly
-        challenging to break in a
-        visually pleasing way. This
-        very aesthetic example is one
-        of them.
+        Some texts feature many longer
+        words. Those are often exceedingly
+        challenging to break in a visually
+        pleasing way.
 
         <span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">par</span><span class="typ-punct">(</span>linebreaks<span class="typ-punct">:</span> <span class="typ-str">&quot;optimized&quot;</span><span class="typ-punct">)</span>
-        Some texts are frustratingly
-        challenging to break in a
-        visually pleasing way. This
-        very aesthetic example is one
-        of them.
-        </code></pre><div class="preview"><img src="/assets/docs/1022708424c9567903cc88f574915527.png" alt="Preview" width="480" height="190"/></div></div>
+        Some texts feature many longer
+        words. Those are often exceedingly
+        challenging to break in a visually
+        pleasing way.
+        </code></pre><div class="preview"><img src="/assets/docs/d47258d3796ed8315cbe2ad4974e1e42.png" alt="Preview" width="480" height="190"/></div></div>
       types:
       - auto
       - string
       strings:
       - string: simple
-        details: <p>以简单的逐行适应方式确定换行位置。</p>
+        details: <p>Determine the line breaks in a simple first-fit style.</p>
       - string: optimized
         details: |-
-          <p>优化整段文字的换行位置。</p>
-          <p>Typst 将尝试通过在计算换行位置时考虑整个段落，以生成更加均匀填充的文本行。</p>
+          <p>Optimize the line breaks for the whole paragraph.</p>
+          <p>Typst will try to produce more evenly filled lines of text by
+          considering the whole paragraph when calculating line breaks.</p>
       default: <code><span class="typ-key">auto</span></code>
       positional: false
       named: true
@@ -126,23 +136,14 @@ body:
       settable: true
     - name: first-line-indent
       details: |-
-        <p>首行缩进。</p>
-        <p>只有连续段落中的第一行会有缩进（而不是块或页面上的第一行）。</p>
-        <p>按照排版规则，段落之间的换行可以通过段落之间的一些空间或段落开头的缩进来表示。
-        请考虑将<a href="/docs/reference/layout/block/#parameters-spacing"">段落间距</a>设置为[<code>leading</code>]，当您使用这个属性时（例如，使用<code><span class="typ-key">#</span><span class="typ-key">show</span> <span class="typ-func">par</span><span class="typ-punct">:</span> <span class="typ-key">set</span> <span class="typ-func">block</span><span class="typ-punct">(</span>spacing<span class="typ-punct">:</span> <span class="typ-num">0.65em</span><span class="typ-punct">)</span></code>）。
-        </p>
-        <p>第一段的第一行不缩进，从第二段才开始缩进。这是first-line-indent默认的，西文排版方式。
-        如果要做到第一行也缩进，变通的解决方案是，在段前加个#h()。
-        解决代码如下所示：
-        <code>
-          #set par(justify: true,first-line-indent: 2em)
-
-          #show heading: it =>  {
-              it
-              par()[#text()[#h(0.0em)]]
-          }
-        </code>
-        </p>
+        <p>The indent the first line of a paragraph should have.</p>
+        <p>Only the first line of a consecutive paragraph will be indented (not
+        the first one in a block or on the page).</p>
+        <p>By typographic convention, paragraph breaks are indicated either by some
+        space between paragraphs or by indented first lines. Consider reducing
+        the <a href="/docs/reference/layout/block/#parameters-spacing">paragraph spacing</a> to the [<code>leading</code>] when
+        using this property (e.g. using
+        <code><span class="typ-key">#</span><span class="typ-key">show</span> <span class="typ-func">par</span><span class="typ-punct">:</span> <span class="typ-key">set</span> <span class="typ-func">block</span><span class="typ-punct">(</span>spacing<span class="typ-punct">:</span> <span class="typ-num">0.65em</span><span class="typ-punct">)</span></code>).</p>
       example: null
       types:
       - length
@@ -154,7 +155,7 @@ body:
       variadic: false
       settable: true
     - name: hanging-indent
-      details: <p>悬挂缩进。段落首行不缩进，其他行缩进。</p>
+      details: <p>The indent all but the first line of a paragraph should have.</p>
       example: null
       types:
       - length
@@ -166,7 +167,7 @@ body:
       variadic: false
       settable: true
     - name: body
-      details: <p>段落内容。</p>
+      details: <p>The contents of the paragraph.</p>
       example: null
       types:
       - content
@@ -179,6 +180,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

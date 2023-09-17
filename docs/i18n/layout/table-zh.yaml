@@ -1,6 +1,6 @@
 route: /docs/reference/layout/table/
 title: Table
-description: Documentation for the `table` function.
+description: '`table` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -45,10 +45,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - table
-    display: Table
-    keywords: null
+    path: []
+    name: table
+    title: Table
+    keywords: []
     oneliner: A table of items.
     element: true
     details: |-
@@ -58,8 +58,8 @@ body:
       Because tables are just grids with configurable cell properties, refer to
       the <a href="/docs/reference/layout/grid/">grid documentation</a> for more information on how to size the
       table tracks.</p>
-      <p>To give a table a caption and make it <a href="/docs/reference/meta/ref/">referenceable</a>, put it
-      into a <a href="/docs/reference/meta/figure/">figure</a>.</p>
+      <p>To give a table a caption and make it <a href="/docs/reference/meta/ref/">referenceable</a>, put it into a
+      <a href="/docs/reference/meta/figure/">figure</a>.</p>
       <h2 id="example">Example</h2>
       <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">table</span><span class="typ-punct">(</span>
         columns<span class="typ-punct">:</span> <span class="typ-punct">(</span><span class="typ-num">1fr</span><span class="typ-punct">,</span> <span class="typ-key">auto</span><span class="typ-punct">,</span> <span class="typ-key">auto</span><span class="typ-punct">)</span><span class="typ-punct">,</span>
@@ -78,6 +78,8 @@ body:
         <span class="typ-punct">[</span><span class="typ-math-delim">$</span>a<span class="typ-math-delim">$</span>: edge length<span class="typ-punct">]</span>
       <span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/def578cdeaad880e80767056b9577c66.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: columns
       details: |-
@@ -86,8 +88,8 @@ body:
       example: null
       types:
       - auto
-      - integer
-      - relative length
+      - int
+      - relative
       - fraction
       - array
       strings: []
@@ -99,13 +101,13 @@ body:
       settable: true
     - name: rows
       details: |-
-        <p>The row sizes. See the <a href="/docs/reference/layout/grid/">grid documentation</a> for more
-        information on track sizing.</p>
+        <p>The row sizes. See the <a href="/docs/reference/layout/grid/">grid documentation</a> for more information
+        on track sizing.</p>
       example: null
       types:
       - auto
-      - integer
-      - relative length
+      - int
+      - relative
       - fraction
       - array
       strings: []
@@ -117,13 +119,13 @@ body:
       settable: true
     - name: gutter
       details: |-
-        <p>The gaps between rows &amp; columns. See the <a href="/docs/reference/layout/grid/">grid
-        documentation</a> for more information on gutters.</p>
+        <p>The gaps between rows &amp; columns. See the <a href="/docs/reference/layout/grid/">grid documentation</a> for
+        more information on gutters.</p>
       example: null
       types:
       - auto
-      - integer
-      - relative length
+      - int
+      - relative
       - fraction
       - array
       strings: []
@@ -135,13 +137,13 @@ body:
       settable: true
     - name: column-gutter
       details: |-
-        <p>The gaps between columns. Takes precedence over <code>gutter</code>. See the <a href="/docs/reference/layout/grid/">grid
-        documentation</a> for more information on gutters.</p>
+        <p>The gaps between columns. Takes precedence over <code>gutter</code>. See the
+        <a href="/docs/reference/layout/grid/">grid documentation</a> for more information on gutters.</p>
       example: null
       types:
       - auto
-      - integer
-      - relative length
+      - int
+      - relative
       - fraction
       - array
       strings: []
@@ -153,13 +155,13 @@ body:
       settable: true
     - name: row-gutter
       details: |-
-        <p>The gaps between rows. Takes precedence over <code>gutter</code>. See the <a href="/docs/reference/layout/grid/">grid
-        documentation</a> for more information on gutters.</p>
+        <p>The gaps between rows. Takes precedence over <code>gutter</code>. See the
+        <a href="/docs/reference/layout/grid/">grid documentation</a> for more information on gutters.</p>
       example: null
       types:
       - auto
-      - integer
-      - relative length
+      - int
+      - relative
       - fraction
       - array
       strings: []
@@ -219,9 +221,8 @@ body:
       types:
       - auto
       - array
-      - function
       - alignment
-      - 2d alignment
+      - function
       strings: []
       default: <code><span class="typ-key">auto</span></code>
       positional: false
@@ -231,19 +232,18 @@ body:
       settable: true
     - name: stroke
       details: |-
-        <p>How to stroke the cells.</p>
-        <p>See the <a href="/docs/reference/visualize/line/#parameters-stroke">line's documentation</a> for more details.
-        Strokes can be disabled by setting this to <code><span class="typ-key">none</span></code>.</p>
+        <p>How to <a href="/docs/reference/visualize/stroke/">stroke</a> the cells.</p>
+        <p>Strokes can be disabled by setting this to <code><span class="typ-key">none</span></code>.</p>
         <p><em>Note:</em> Richer stroke customization for individual cells is not yet
-        implemented, but will be in the future. In the meantime, you can use
-        the third-party <a href="https://github.com/PgBiel/typst-tablex/">tablex library</a>.</p>
+        implemented, but will be in the future. In the meantime, you can use the
+        third-party <a href="https://github.com/PgBiel/typst-tablex/">tablex library</a>.</p>
       example: null
       types:
       - none
       - length
       - color
-      - dictionary
       - stroke
+      - dictionary
       strings: []
       default: <code><span class="typ-num">1pt</span> <span class="typ-op">+</span>
         black</code>
@@ -256,7 +256,7 @@ body:
       details: <p>How much to pad the cells' content.</p>
       example: null
       types:
-      - relative length
+      - relative
       strings: []
       default: <code><span class="typ-num">5pt</span></code>
       positional: false
@@ -278,6 +278,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

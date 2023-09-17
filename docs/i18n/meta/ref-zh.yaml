@@ -1,6 +1,6 @@
 route: /docs/reference/meta/ref/
 title: Reference
-description: Documentation for the `ref` function.
+description: '`ref` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -27,10 +27,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - ref
-    display: Reference
-    keywords: null
+    path: []
+    name: ref
+    title: Reference
+    keywords: []
     oneliner: A reference to a label or bibliography.
     element: true
     details: |-
@@ -40,12 +40,11 @@ body:
       to the first heading. The references are also links to the respective
       element. Reference syntax can also be used to <a href="/docs/reference/meta/cite/">cite</a> from a
       bibliography.</p>
-      <p>Referenceable elements include <a href="/docs/reference/meta/heading/">headings</a>,
-      <a href="/docs/reference/meta/figure/">figures</a>, <a href="/docs/reference/math/equation/">equations</a>, and
-      <a href="/docs/reference/meta/footnote/">footnotes</a>. To create a custom referenceable element like a
-      theorem, you can create a figure of a custom <a href="/docs/reference/meta/figure/#parameters-kind"><code>kind</code></a> and
-      write a show rule for it. In the future, there might be a more direct way to
-      define a custom referenceable element.</p>
+      <p>Referenceable elements include <a href="/docs/reference/meta/heading/">headings</a>, <a href="/docs/reference/meta/figure/">figures</a>,
+      <a href="/docs/reference/math/equation/">equations</a>, and <a href="/docs/reference/meta/footnote/">footnotes</a>. To create a custom
+      referenceable element like a theorem, you can create a figure of a custom
+      <a href="/docs/reference/meta/figure/#parameters-kind"><code>kind</code></a> and write a show rule for it. In the future, there
+      might be a more direct way to define a custom referenceable element.</p>
       <p>If you just want to link to a labelled element and not get an automatic
       textual reference, consider using the <a href="/docs/reference/meta/link/"><code>link</code></a> function instead.</p>
       <h2 id="example">Example</h2>
@@ -103,6 +102,8 @@ body:
       In <span class="typ-ref">@beginning</span> we prove <span class="typ-ref">@pythagoras</span>.
       <span class="typ-math-delim">$</span> a<span class="typ-math-op">^</span>2 + b<span class="typ-math-op">^</span>2 = c<span class="typ-math-op">^</span>2 <span class="typ-math-delim">$</span> <span class="typ-label">&lt;pythagoras&gt;</span>
       </code></pre><div class="preview"><img src="/assets/docs/670ed605e234dd0e2bb76e690e91de9b.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: target
       details: <p>The target label that should be referenced.</p>
@@ -153,6 +154,5 @@ body:
       settable: true
     returns:
     - content
-    methods: []
     scope: []
 children: []

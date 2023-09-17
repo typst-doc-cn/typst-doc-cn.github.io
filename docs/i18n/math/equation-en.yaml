@@ -1,6 +1,6 @@
 route: /docs/reference/math/equation/
 title: Equation
-description: Documentation for the `equation` function.
+description: '`equation` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -31,9 +31,10 @@ body:
   kind: func
   content:
     path:
-    - equation
-    display: Equation
-    keywords: null
+    - math
+    name: equation
+    title: Equation
+    keywords: []
     oneliner: A mathematical equation.
     element: true
     details: |-
@@ -56,12 +57,14 @@ body:
       least one space lifts it into a separate block that is centered
       horizontally. For more details about math syntax, see the
       <a href="/docs/reference/math/">main math page</a>.</p>
+    example: null
+    self: false
     params:
     - name: block
       details: <p>Whether the equation is displayed as a separate block.</p>
       example: null
       types:
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">false</span></code>
       positional: false
@@ -83,7 +86,7 @@ body:
         </code></pre><div class="preview"><img src="/assets/docs/1e42f36b96381f61f6b2399a6c2c3289.png" alt="Preview" width="480" height="190"/></div></div>
       types:
       - none
-      - string
+      - str
       - function
       strings: []
       default: <code><span class="typ-key">none</span></code>
@@ -133,6 +136,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

@@ -1,6 +1,6 @@
 route: /docs/reference/layout/scale/
 title: Scale
-description: Documentation for the `scale` function.
+description: '`scale` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -27,10 +27,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - scale
-    display: Scale
-    keywords: null
+    path: []
+    name: scale
+    title: Scale
+    keywords: []
     oneliner: Scales content without affecting layout.
     element: true
     details: |-
@@ -40,6 +40,8 @@ body:
       <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">align</span><span class="typ-punct">(</span>center<span class="typ-punct">)</span>
       <span class="typ-func">#</span><span class="typ-func">scale</span><span class="typ-punct">(</span>x<span class="typ-punct">:</span> <span class="typ-op">-</span><span class="typ-num">100%</span><span class="typ-punct">)</span><span class="typ-punct">[</span>This is mirrored.<span class="typ-punct">]</span>
       </code></pre><div class="preview"><img src="/assets/docs/4c21783e7c03adcefd350157917031c4.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: x
       details: |-
@@ -77,7 +79,6 @@ body:
         </code></pre><div class="preview"><img src="/assets/docs/338df2c512b59a421f1c16954623e505.png" alt="Preview" width="480" height="190"/></div></div>
       types:
       - alignment
-      - 2d alignment
       strings: []
       default: <code>center <span class="typ-op">+</span> horizon</code>
       positional: false
@@ -99,6 +100,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

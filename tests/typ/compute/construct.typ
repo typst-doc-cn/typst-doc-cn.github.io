@@ -14,6 +14,26 @@
 #test(rgb("#133337").negate(), rgb(236, 204, 200))
 #test(white.lighten(100%), white)
 
+// Color mixing, in Oklab space by default.
+#test(color.mix(rgb("#ff0000"), rgb("#00ff00")), rgb("#d0a800"))
+#test(color.mix(rgb("#ff0000"), rgb("#00ff00"), space: "oklab"), rgb("#d0a800"))
+#test(color.mix(rgb("#ff0000"), rgb("#00ff00"), space: "srgb"), rgb("#808000"))
+
+#test(color.mix(red, green, blue), rgb("#909282"))
+#test(color.mix(red, blue, green), rgb("#909282"))
+#test(color.mix(blue, red, green), rgb("#909282"))
+
+// Mix with weights.
+#test(color.mix((red, 50%), (green, 50%)), rgb("#c0983b"))
+#test(color.mix((red, 0.5), (green, 0.5)), rgb("#c0983b"))
+#test(color.mix((red, 5), (green, 5)), rgb("#c0983b"))
+#test(color.mix((green, 5), (white, 0), (red, 5)), rgb("#c0983b"))
+#test(color.mix((red, 100%), (green, 0%)), red)
+#test(color.mix((red, 0%), (green, 100%)), green)
+#test(color.mix((rgb("#aaff00"), 25%), (rgb("#aa00ff"), 75%), space: "srgb"), rgb("#aa40bf"))
+#test(color.mix((rgb("#aaff00"), 50%), (rgb("#aa00ff"), 50%), space: "srgb"), rgb("#aa8080"))
+#test(color.mix((rgb("#aaff00"), 75%), (rgb("#aa00ff"), 25%), space: "srgb"), rgb("#aabf40"))
+
 ---
 // Test gray color conversion.
 // Ref: true
@@ -39,6 +59,19 @@
 ---
 // Error: 21-26 expected integer or ratio, found boolean
 #rgb(10%, 20%, 30%, false)
+
+---
+// Error: 12-24 expected float or ratio, found string
+// Error: 26-39 expected float or ratio, found string
+#color.mix((red, "yes"), (green, "no"), (green, 10%))
+
+---
+// Error: 12-23 expected a color or color-weight pair
+#color.mix((red, 1, 2))
+
+---
+// Error: 31-38 expected "oklab" or "srgb"
+#color.mix(red, green, space: "cyber")
 
 ---
 // Ref: true
@@ -71,7 +104,7 @@
 #test(str(10 / 3).len() > 10, true)
 
 ---
-// Error: 6-8 expected integer, float, label, or string, found content
+// Error: 6-8 expected integer, float, bytes, label, type, or string, found content
 #str([])
 
 ---
@@ -96,11 +129,11 @@
 #str.to-unicode("ab")
 
 ---
-// Error: 19-21 0xffffffffffffffff is not a valid codepoint
-#str.from-unicode(-1) // negative values are not valid
+// Error: 19-21 number must be at least zero
+#str.from-unicode(-1)
 
 ---
-// Error: 19-27 0x110000 is not a valid codepoint
+// Error: 18-28 0x110000 is not a valid codepoint
 #str.from-unicode(0x110000) // 0x10ffff is the highest valid code point
 
 ---
@@ -173,21 +206,21 @@
 #datetime(year: 2000, month: 2, day: 30)
 
 ---
-// Error: 26-35 missing closing bracket for bracket at index 0
+// Error: 27-34 missing closing bracket for bracket at index 0
 #datetime.today().display("[year")
 
 ---
-// Error: 26-39 invalid component name 'nothing' at index 1
+// Error: 27-38 invalid component name 'nothing' at index 1
 #datetime.today().display("[nothing]")
 
 ---
-// Error: 26-51 invalid modifier 'wrong' at index 6
+// Error: 27-50 invalid modifier 'wrong' at index 6
 #datetime.today().display("[year wrong:last_two]")
 
 ---
-// Error: 26-34 expected component name at index 2
+// Error: 27-33 expected component name at index 2
 #datetime.today().display("  []")
 
 ---
-// Error: 26-36 failed to format datetime in the requested format
+// Error: 2-36 failed to format datetime (insufficient information)
 #datetime.today().display("[hour]")

@@ -1,6 +1,6 @@
 route: /docs/reference/layout/enum/
 title: Numbered List
-description: Documentation for the `enum` function.
+description: '`enum` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -42,25 +42,25 @@ outline:
   - id: parameters-children
     name: children
     children: []
-- id: enum-item
-  name: Numbered List Item
+- id: definitions
+  name: Definitions
   children:
-  - id: enum-item-parameters
-    name: Parameters
+  - id: definitions-item
+    name: Numbered List Item
     children:
-    - id: enum-item-parameters-number
+    - id: definitions-item-number
       name: number
       children: []
-    - id: enum-item-parameters-body
+    - id: definitions-item-body
       name: body
       children: []
 body:
   kind: func
   content:
-    path:
-    - enum
-    display: Numbered List
-    keywords: null
+    path: []
+    name: enum
+    title: Numbered List
+    keywords: []
     oneliner: A numbered list.
     element: true
     details: |-
@@ -77,9 +77,14 @@ body:
       <span class="typ-marker">5.</span> I am confused.
       <span class="typ-marker">+</span>  Moving on <span class="typ-escape">...</span>
 
+      Multiple lines:
+      <span class="typ-marker">+</span> This enum item has multiple
+        lines because the next line
+        is indented.
+
       Function call.
       <span class="typ-func">#</span><span class="typ-func">enum</span><span class="typ-punct">[</span>First<span class="typ-punct">]</span><span class="typ-punct">[</span>Second<span class="typ-punct">]</span>
-      </code></pre><div class="preview"><img src="/assets/docs/6a592ae60c44cadcecdb44e9a39a030b.png" alt="Preview" width="480" height="190"/></div></div>
+      </code></pre><div class="preview"><img src="/assets/docs/7f1849410764a429269845fbfbe70e06.png" alt="Preview" width="480" height="190"/></div></div>
       <p>You can easily switch all your enumerations to a different numbering style
       with a set rule.</p>
       <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">enum</span><span class="typ-punct">(</span>numbering<span class="typ-punct">:</span> <span class="typ-str">&quot;a)&quot;</span><span class="typ-punct">)</span>
@@ -87,8 +92,8 @@ body:
       <span class="typ-marker">+</span> Starting off <span class="typ-escape">...</span>
       <span class="typ-marker">+</span> Don&#39;t forget step two
       </code></pre><div class="preview"><img src="/assets/docs/e99fd30bf2771e1086e84995cb06129f.png" alt="Preview" width="480" height="190"/></div></div>
-      <p>You can also use <a href="/docs/reference/layout/enum/#enum-item"><code>enum.item</code></a> to programmatically
-      customize the number of each item in the enumeration:</p>
+      <p>You can also use <a href="/docs/reference/layout/enum/#definitions-item"><code>enum.item</code></a> to programmatically customize the
+      number of each item in the enumeration:</p>
       <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">enum</span><span class="typ-punct">(</span>
         enum<span class="typ-punct">.</span><span class="typ-func">item</span><span class="typ-punct">(</span><span class="typ-num">1</span><span class="typ-punct">)</span><span class="typ-punct">[</span>First step<span class="typ-punct">]</span><span class="typ-punct">,</span>
         enum<span class="typ-punct">.</span><span class="typ-func">item</span><span class="typ-punct">(</span><span class="typ-num">5</span><span class="typ-punct">)</span><span class="typ-punct">[</span>Fifth step<span class="typ-punct">]</span><span class="typ-punct">,</span>
@@ -104,8 +109,10 @@ body:
       numbered enumeration item.</li>
       </ul>
       <p>Enumeration items can contain multiple paragraphs and other block-level
-      content. All content that is indented more than an item's plus sign or dot
-      becomes part of that item.</p>
+      content. All content that is indented more than an item's marker becomes
+      part of that item.</p>
+    example: null
+    self: false
     params:
     - name: tight
       details: |-
@@ -127,7 +134,7 @@ body:
           items.
         </code></pre><div class="preview"><img src="/assets/docs/c5b946d1e90cf92ed6f50697f0b959a8.png" alt="Preview" width="480" height="190"/></div></div>
       types:
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">true</span></code>
       positional: false
@@ -155,7 +162,7 @@ body:
         <span class="typ-marker">+</span> Numbering!
         </code></pre><div class="preview"><img src="/assets/docs/8bc6c994985ccebd90877361ea72db0c.png" alt="Preview" width="480" height="190"/></div></div>
       types:
-      - string
+      - str
       - function
       strings: []
       default: <code><span class="typ-str">&quot;1.&quot;</span></code>
@@ -174,7 +181,7 @@ body:
         <span class="typ-punct">)</span>
         </code></pre><div class="preview"><img src="/assets/docs/5e6eccec65aef0b3bd248292e08111e2.png" alt="Preview" width="480" height="190"/></div></div>
       types:
-      - integer
+      - int
       strings: []
       default: <code><span class="typ-num">1</span></code>
       positional: false
@@ -194,7 +201,7 @@ body:
         <span class="typ-marker">+</span> Eat
         </code></pre><div class="preview"><img src="/assets/docs/89cae67aed31e7f8a3ade0fdcbb3bc35.png" alt="Preview" width="480" height="190"/></div></div>
       types:
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">false</span></code>
       positional: false
@@ -233,7 +240,7 @@ body:
       example: null
       types:
       - auto
-      - relative length
+      - relative
       - fraction
       strings: []
       default: <code><span class="typ-key">auto</span></code>
@@ -296,23 +303,24 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope:
     - path:
       - enum
-      - item
-      display: Numbered List Item
-      keywords: null
+      name: item
+      title: Numbered List Item
+      keywords: []
       oneliner: An enumeration item.
       element: true
       details: <p>An enumeration item.</p>
+      example: null
+      self: false
       params:
       - name: number
         details: <p>The item's number.</p>
         example: null
         types:
         - none
-        - integer
+        - int
         strings: []
         default: <code><span class="typ-key">none</span></code>
         positional: true
@@ -334,6 +342,5 @@ body:
         settable: false
       returns:
       - content
-      methods: []
       scope: []
 children: []

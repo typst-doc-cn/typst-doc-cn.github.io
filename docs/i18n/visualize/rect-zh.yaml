@@ -1,6 +1,6 @@
 route: /docs/reference/visualize/rect/
 title: Rectangle
-description: Documentation for the `rect` function.
+description: '`rect` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -39,10 +39,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - rect
-    display: Rectangle
-    keywords: null
+    path: []
+    name: rect
+    title: Rectangle
+    keywords: []
     oneliner: A rectangle with optional content.
     element: true
     details: |-
@@ -57,13 +57,15 @@ body:
         to fit the content.
       <span class="typ-punct">]</span>
       </code></pre><div class="preview"><img src="/assets/docs/4a86cfbd13c58784b86f6b8511d05eee.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: width
       details: <p>The rectangle's width, relative to its parent container.</p>
       example: null
       types:
       - auto
-      - relative length
+      - relative
       strings: []
       default: <code><span class="typ-key">auto</span></code>
       positional: false
@@ -76,7 +78,7 @@ body:
       example: null
       types:
       - auto
-      - relative length
+      - relative
       strings: []
       default: <code><span class="typ-key">auto</span></code>
       positional: false
@@ -109,8 +111,7 @@ body:
         <li><code><span class="typ-key">none</span></code> to disable stroking</li>
         <li><code><span class="typ-key">auto</span></code> for a stroke of <code><span class="typ-num">1pt</span> <span class="typ-op">+</span> black</code> if and if only if no fill is
         given.</li>
-        <li>Any kind of stroke that can also be used for
-        <a href="/docs/reference/visualize/line/#parameters-stroke">lines</a>.</li>
+        <li>Any kind of <a href="/docs/reference/visualize/stroke/">stroke</a></li>
         <li>A dictionary describing the stroke for each side inidvidually. The
         dictionary can contain the following keys in order of precedence:
         <ul>
@@ -139,8 +140,8 @@ body:
       - auto
       - length
       - color
-      - dictionary
       - stroke
+      - dictionary
       strings: []
       default: <code><span class="typ-key">auto</span></code>
       positional: false
@@ -188,7 +189,7 @@ body:
         <span class="typ-punct">)</span>
         </code></pre><div class="preview"><img src="/assets/docs/847a9bfaa5533d94e5893bbb5ed30ec6.png" alt="Preview" width="480" height="190"/></div></div>
       types:
-      - relative length
+      - relative
       - dictionary
       strings: []
       default: <code><span class="typ-num">0pt</span></code>
@@ -199,14 +200,11 @@ body:
       settable: true
     - name: inset
       details: |-
-        <p>How much to pad the rectangle's content.</p>
-        <p><em>Note:</em> When the rectangle contains text, its exact size depends on the
-        current <a href="/docs/reference/text/text/#parameters-top-edge">text edges</a>.</p>
-      example: |-
-        <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">rect</span><span class="typ-punct">(</span>inset<span class="typ-punct">:</span> <span class="typ-num">0pt</span><span class="typ-punct">)</span><span class="typ-punct">[</span>Tight<span class="typ-punct">]</span>
-        </code></pre><div class="preview"><img src="/assets/docs/12b05daad4eeea64ffffc63388faaec7.png" alt="Preview" width="480" height="190"/></div></div>
+        <p>How much to pad the rectangle's content.
+        See the <a href="/docs/reference/layout/box/#parameters-outset">box's documentation</a> for more details.</p>
+      example: null
       types:
-      - relative length
+      - relative
       - dictionary
       strings: []
       default: <code><span class="typ-num">5pt</span></code>
@@ -221,7 +219,7 @@ body:
         See the <a href="/docs/reference/layout/box/#parameters-outset">box's documentation</a> for more details.</p>
       example: null
       types:
-      - relative length
+      - relative
       - dictionary
       strings: []
       default: <code><span class="typ-num">0pt</span></code>
@@ -248,6 +246,5 @@ body:
       settable: true
     returns:
     - content
-    methods: []
     scope: []
 children: []

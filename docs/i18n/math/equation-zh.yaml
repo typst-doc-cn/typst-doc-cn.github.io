@@ -1,6 +1,6 @@
 route: /docs/reference/math/equation/
 title: 数学表达式
-description: Documentation for the `equation` function.
+description: '`equation` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -31,9 +31,10 @@ body:
   kind: func
   content:
     path:
-    - equation
-    display: Equation
-    keywords: null
+    - math
+    name: equation
+    title: Equation
+    keywords: []
     oneliner: A mathematical equation.
     element: true
     details: |-
@@ -54,12 +55,14 @@ body:
       <p>该函数也有一个专用语法： 在美元符号内编写数学标记以创建表达式。
       在表达式开头和结尾添加至少一个空格，可以将其提升至水平居中的单独的文本块中显示中。详情请参考：
       <a href="/docs/reference/math/">math 页面</a>.</p>
+    example: null
+    self: false
     params:
     - name: block
-      details: <p>是否显示为单独的文本块。</p>
+      details: <p>Whether the equation is displayed as a separate block.</p>
       example: null
       types:
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">false</span></code>
       positional: false
@@ -83,7 +86,7 @@ body:
         </code></pre><div class="preview"><img src="/assets/docs/1e42f36b96381f61f6b2399a6c2c3289.png" alt="Preview" width="480" height="190"/></div></div>
       types:
       - none
-      - string
+      - str
       - function
       strings: []
       default: <code><span class="typ-key">none</span></code>
@@ -119,7 +122,7 @@ body:
       variadic: false
       settable: true
     - name: body
-      details: <p>表达式的主体内容。</p>
+      details: <p>The contents of the equation.</p>
       example: null
       types:
       - content
@@ -132,6 +135,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

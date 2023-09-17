@@ -1,6 +1,6 @@
 route: /docs/reference/layout/rotate/
 title: Rotate
-description: Documentation for the `rotate` function.
+description: '`rotate` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -24,10 +24,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - rotate
-    display: Rotate
-    keywords: null
+    path: []
+    name: rotate
+    title: Rotate
+    keywords: []
     oneliner: Rotates content without affecting layout.
     element: true
     details: |-
@@ -42,6 +42,8 @@ body:
           <span class="typ-punct">.</span><span class="typ-func">map</span><span class="typ-punct">(</span>i <span class="typ-op">=&gt;</span> <span class="typ-func">rotate</span><span class="typ-punct">(</span><span class="typ-num">24deg</span> <span class="typ-op">*</span> i<span class="typ-punct">)</span><span class="typ-punct">[</span>X<span class="typ-punct">]</span><span class="typ-punct">)</span><span class="typ-punct">,</span>
       <span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/5c869ce92eb45510b0a7c38f00e36c68.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: angle
       details: <p>The amount of rotation.</p>
@@ -73,7 +75,6 @@ body:
         </code></pre><div class="preview"><img src="/assets/docs/299a16d14ec1adb51bcd6d173a93ecac.png" alt="Preview" width="480" height="190"/></div></div>
       types:
       - alignment
-      - 2d alignment
       strings: []
       default: <code>center <span class="typ-op">+</span> horizon</code>
       positional: false
@@ -95,6 +96,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

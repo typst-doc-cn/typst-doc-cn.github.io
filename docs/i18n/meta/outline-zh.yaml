@@ -1,6 +1,6 @@
 route: /docs/reference/meta/outline/
 title: Outline
-description: Documentation for the `outline` function.
+description: '`outline` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -33,37 +33,35 @@ outline:
   - id: parameters-fill
     name: fill
     children: []
-- id: outline-entry
-  name: Outline Entry
+- id: definitions
+  name: Definitions
   children:
-  - id: example
-    name: Example
-    children: []
-  - id: outline-entry-parameters
-    name: Parameters
+  - id: definitions-entry
+    name: Outline Entry
     children:
-    - id: outline-entry-parameters-level
+    - id: definitions-entry-level
       name: level
       children: []
-    - id: outline-entry-parameters-element
+    - id: definitions-entry-element
       name: element
       children: []
-    - id: outline-entry-parameters-body
+    - id: definitions-entry-body
       name: body
       children: []
-    - id: outline-entry-parameters-fill
+    - id: definitions-entry-fill
       name: fill
       children: []
-    - id: outline-entry-parameters-page
+    - id: definitions-entry-page
       name: page
       children: []
 body:
   kind: func
   content:
-    path:
-    - outline
-    display: Outline
-    keywords: Table of Contents
+    path: []
+    name: outline
+    title: Outline
+    keywords:
+    - Table of Contents
     oneliner: A table of contents, figures, or other elements.
     element: true
     details: |-
@@ -86,7 +84,7 @@ body:
       list of other kinds of elements than headings. In the example below, we list
       all figures containing images by setting <code>target</code> to <code>figure<span class="typ-punct">.</span><span class="typ-func">where</span><span class="typ-punct">(</span>kind<span class="typ-punct">:</span> image<span class="typ-punct">)</span></code>. We could have also set it to just <code>figure</code>, but then the list
       would also include figures containing tables or other material. For more
-      details on the <code>where</code> selector, <a href="/docs/reference/types/content/#methods-where">see here</a>.</p>
+      details on the <code>where</code> selector, <a href="/docs/reference/foundations/function/#definitions-where">see here</a>.</p>
       <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">outline</span><span class="typ-punct">(</span>
         title<span class="typ-punct">:</span> <span class="typ-punct">[</span>List of Figures<span class="typ-punct">]</span><span class="typ-punct">,</span>
         target<span class="typ-punct">:</span> figure<span class="typ-punct">.</span><span class="typ-func">where</span><span class="typ-punct">(</span>kind<span class="typ-punct">:</span> image<span class="typ-punct">)</span><span class="typ-punct">,</span>
@@ -99,9 +97,11 @@ body:
       </code></pre><div class="preview"><img src="/assets/docs/24cba25ff538ac4658e836abe5d1e344.png" alt="Preview" width="480" height="190"/></div></div>
       <h2 id="styling-the-outline">Styling the outline</h2>
       <p>The outline element has several options for customization, such as its
-      <code>title</code> and <code>indent</code> parameters. If desired, however, it is possible to
-      have more control over the outline's look and style through the
-      <a href="/docs/reference/meta/outline/#outline-entry"><code>outline.entry</code></a> element.</p>
+      <code>title</code> and <code>indent</code> parameters. If desired, however, it is possible to have
+      more control over the outline's look and style through the
+      <a href="/docs/reference/meta/outline/#definitions-entry"><code>outline.entry</code></a> element.</p>
+    example: null
+    self: false
     params:
     - name: title
       details: |-
@@ -115,8 +115,7 @@ body:
         <p>The outline's heading will not be numbered by default, but you can
         force it to be with a show-set rule:
         <code><span class="typ-key">show</span> <span class="typ-func">outline</span><span class="typ-punct">:</span> <span class="typ-key">set</span> <span class="typ-func">heading</span><span class="typ-punct">(</span>numbering<span class="typ-punct">:</span> <span class="typ-str">&quot;1.&quot;</span><span class="typ-punct">)</span></code></p>
-        <pre></pre>
-      example: null
+      example: <pre></pre>
       types:
       - none
       - auto
@@ -150,8 +149,8 @@ body:
         </code></pre><div class="preview"><img src="/assets/docs/7a4f56e746456431a7a6f260de1c2a53.png" alt="Preview" width="480" height="190"/></div></div>
       types:
       - label
-      - function
       - selector
+      - function
       strings: []
       default: <code>heading<span class="typ-punct">.</span><span class="typ-func">where</span><span
         class="typ-punct">(</span>outlined<span class="typ-punct">:</span> <span class="typ-key">true</span><span
@@ -180,7 +179,7 @@ body:
         </code></pre><div class="preview"><img src="/assets/docs/3e1852334233b65658daf6dfa4c9c4e2.png" alt="Preview" width="480" height="190"/></div></div>
       types:
       - none
-      - integer
+      - int
       strings: []
       default: <code><span class="typ-key">none</span></code>
       positional: false
@@ -196,18 +195,17 @@ body:
         <li><code><span class="typ-key">auto</span></code>: Indents the numbering of the nested entry with the title of
         its parent entry. This only has an effect if the entries are numbered
         (e.g., via <a href="/docs/reference/meta/heading/#parameters-numbering">heading numbering</a>).</li>
-        <li><a href="/docs/reference/types/relative-length/">Relative length</a>: Indents the item by this length
+        <li><a href="/docs/reference/layout/relative/">Relative length</a>: Indents the item by this length
         multiplied by its nesting level. Specifying <code><span class="typ-num">2em</span></code>, for instance,
         would indent top-level headings (not nested) by <code><span class="typ-num">0em</span></code>, second level
         headings by <code><span class="typ-num">2em</span></code> (nested once), third-level headings by <code><span class="typ-num">4em</span></code>
         (nested twice) and so on.</li>
-        <li><a href="/docs/reference/types/function/">Function</a>: You can completely customize this setting
-        with a function. That function receives the nesting level as a
-        parameter (starting at 0 for top-level headings/elements) and can
-        return a relative length or content making up the indent. For example,
-        <code>n <span class="typ-op">=&gt;</span> n <span class="typ-op">*</span> <span class="typ-num">2em</span></code> would be equivalent to just specifying <code><span class="typ-num">2em</span></code>,
-        while <code>n <span class="typ-op">=&gt;</span> <span class="typ-punct">[</span>→ <span class="typ-punct">]</span> <span class="typ-op">*</span> n</code> would indent with one arrow per nesting
-        level.</li>
+        <li><a href="/docs/reference/foundations/function/">Function</a>: You can completely customize this setting with
+        a function. That function receives the nesting level as a parameter
+        (starting at 0 for top-level headings/elements) and can return a
+        relative length or content making up the indent. For example,
+        <code>n <span class="typ-op">=&gt;</span> n <span class="typ-op">*</span> <span class="typ-num">2em</span></code> would be equivalent to just specifying <code><span class="typ-num">2em</span></code>, while
+        <code>n <span class="typ-op">=&gt;</span> <span class="typ-punct">[</span>→ <span class="typ-punct">]</span> <span class="typ-op">*</span> n</code> would indent with one arrow per nesting level.</li>
         </ul>
         <p><em>Migration hints:</em>  Specifying <code><span class="typ-key">true</span></code> (equivalent to <code><span class="typ-key">auto</span></code>) or
         <code><span class="typ-key">false</span></code> (equivalent to <code><span class="typ-key">none</span></code>) for this option is deprecated and
@@ -241,8 +239,8 @@ body:
       types:
       - none
       - auto
-      - boolean
-      - relative length
+      - bool
+      - relative
       - function
       strings: []
       default: <code><span class="typ-key">none</span></code>
@@ -274,13 +272,12 @@ body:
       settable: true
     returns:
     - content
-    methods: []
     scope:
     - path:
       - outline
-      - entry
-      display: Outline Entry
-      keywords: null
+      name: entry
+      title: Outline Entry
+      keywords: []
       oneliner: Represents each entry line in an outline, including the reference
         to the
       element: true
@@ -288,10 +285,10 @@ body:
         <p>Represents each entry line in an outline, including the reference to the
         outlined element, its page number, and the filler content between both.</p>
         <p>This element is intended for use with show rules to control the appearance
-        of outlines.</p>
-        <h2 id="example">Example</h2>
-        <p>The example below shows how to style entries for top-level sections to make
-        them stand out.</p>
+        of outlines. To customize an entry's line, you can build it from scratch by
+        accessing the <code>level</code>, <code>element</code>, <code>body</code>, <code>fill</code> and <code>page</code> fields on the
+        entry.</p>
+      example: |-
         <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">heading</span><span class="typ-punct">(</span>numbering<span class="typ-punct">:</span> <span class="typ-str">&quot;1.&quot;</span><span class="typ-punct">)</span>
 
         <span class="typ-key">#</span><span class="typ-key">show</span> outline<span class="typ-punct">.</span>entry<span class="typ-punct">.</span><span class="typ-func">where</span><span class="typ-punct">(</span>
@@ -310,8 +307,7 @@ body:
         <span class="typ-heading">= Analysis</span>
         <span class="typ-heading">== Setup</span>
         </code></pre><div class="preview"><img src="/assets/docs/cd45cfe4eaea270917dc7a4058e0e946.png" alt="Preview" width="480" height="190"/></div></div>
-        <p>To completely customize an entry's line, you can also build it from scratch
-        by accessing the <code>level</code>, <code>element</code>, <code>body</code>, <code>fill</code> and <code>page</code> fields on the entry.</p>
+      self: false
       params:
       - name: level
         details: |-
@@ -319,7 +315,7 @@ body:
           entries.</p>
         example: null
         types:
-        - integer
+        - int
         strings: []
         default: null
         positional: true
@@ -330,7 +326,7 @@ body:
       - name: element
         details: |-
           <p>The element this entry refers to. Its location will be available
-          through the <a href="/docs/reference/types/content/#methods-location"><code>location</code></a> method on content
+          through the <a href="/docs/reference/foundations/content/#definitions-location"><code>location</code></a> method on content
           and can be <a href="/docs/reference/meta/link/">linked</a> to.</p>
         example: null
         types:
@@ -393,6 +389,5 @@ body:
         settable: false
       returns:
       - content
-      methods: []
       scope: []
 children: []

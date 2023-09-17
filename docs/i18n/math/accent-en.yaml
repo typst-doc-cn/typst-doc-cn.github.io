@@ -1,6 +1,6 @@
 route: /docs/reference/math/accent/
 title: Accent
-description: Documentation for the `accent` function.
+description: '`accent` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -22,9 +22,10 @@ body:
   kind: func
   content:
     path:
-    - accent
-    display: Accent
-    keywords: null
+    - math
+    name: accent
+    title: Accent
+    keywords: []
     oneliner: Attaches an accent to a base.
     element: true
     details: |-
@@ -34,6 +35,8 @@ body:
       <span class="typ-math-delim">$</span><span class="typ-func">arrow</span><span class="typ-punct">(</span>a<span class="typ-punct">)</span> = <span class="typ-func">accent</span><span class="typ-punct">(</span>a<span class="typ-punct">,</span> <span class="typ-pol">arrow</span><span class="typ-punct">)</span><span class="typ-math-delim">$</span> <span class="typ-escape">\</span>
       <span class="typ-math-delim">$</span><span class="typ-func">tilde</span><span class="typ-punct">(</span>a<span class="typ-punct">)</span> = <span class="typ-func">accent</span><span class="typ-punct">(</span>a<span class="typ-punct">,</span> <span class="typ-escape">\u{0303}</span><span class="typ-punct">)</span><span class="typ-math-delim">$</span>
       </code></pre><div class="preview"><img src="/assets/docs/b6947839312f74e20c050d9e6c1e7d17.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: base
       details: |-
@@ -75,7 +78,7 @@ body:
         </tbody></table>
       example: null
       types:
-      - string
+      - str
       - content
       strings: []
       default: null
@@ -86,6 +89,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

@@ -1,10 +1,16 @@
 route: /docs/reference/meta/cite/
-title: Citation
-description: Documentation for the `cite` function.
+title: Cite
+description: '`cite` 函数的文档'
 part: null
 outline:
 - id: summary
   name: Summary
+  children: []
+- id: example
+  name: Example
+  children: []
+- id: syntax
+  name: Syntax
   children: []
 - id: parameters
   name: Parameters
@@ -24,17 +30,17 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - cite
-    display: Citation
-    keywords: null
+    path: []
+    name: cite
+    title: Cite
+    keywords: []
     oneliner: Cite a work from the bibliography.
     element: true
     details: |-
       <p>Cite a work from the bibliography.</p>
-      <p>Before you starting citing, you need to add a
-      <a href="/docs/reference/meta/bibliography/">bibliography</a> somewhere in your document.</p>
-      <h1>Example</h1>
+      <p>Before you starting citing, you need to add a <a href="/docs/reference/meta/bibliography/">bibliography</a>
+      somewhere in your document.</p>
+      <h2 id="example">Example</h2>
       <div class="previewed-code"><pre><code>This was already noted by
       pirates long ago. <span class="typ-ref">@arrgh</span>
 
@@ -43,10 +49,12 @@ body:
 
       <span class="typ-func">#</span><span class="typ-func">bibliography</span><span class="typ-punct">(</span><span class="typ-str">&quot;works.bib&quot;</span><span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/26bb4b139eb79cc5df7b855b46895cee.png" alt="Preview" width="480" height="190"/></div></div>
-      <h1>Syntax</h1>
-      <p>This function indirectly has dedicated syntax. <a href="/docs/reference/meta/ref/">References</a>
-      can be used to cite works from the bibliography. The label then
-      corresponds to the citation key.</p>
+      <h2 id="syntax">Syntax</h2>
+      <p>This function indirectly has dedicated syntax. <a href="/docs/reference/meta/ref/">References</a> can be
+      used to cite works from the bibliography. The label then corresponds to the
+      citation key.</p>
+    example: null
+    self: false
     params:
     - name: keys
       details: |-
@@ -55,7 +63,7 @@ body:
         <p>Reference syntax supports only a single key.</p>
       example: null
       types:
-      - string
+      - str
       strings: []
       default: null
       positional: true
@@ -78,8 +86,8 @@ body:
       - content
       strings: []
       default: <code><span class="typ-key">none</span></code>
-      positional: true
-      named: false
+      positional: false
+      named: true
       required: false
       variadic: false
       settable: true
@@ -97,7 +105,7 @@ body:
         <span class="typ-punct">)</span>
         </code></pre><div class="preview"><img src="/assets/docs/b3fddb6eb6429b197d685eafb8d4cc12.png" alt="Preview" width="480" height="190"/></div></div>
       types:
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">true</span></code>
       positional: false
@@ -149,6 +157,5 @@ body:
       settable: true
     returns:
     - content
-    methods: []
     scope: []
 children: []

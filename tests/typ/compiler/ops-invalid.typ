@@ -87,18 +87,8 @@
 #(3 / 12pt)
 
 ---
-// Error: 3-10 cannot repeat this string -1 times
+// Error: 3-10 number must be at least zero
 #(-1 * "")
-
----
-#{
-  let x = 2
-  for _ in range(61) {
-    (x) *= 2
-  }
-  // Error: 3-17 cannot repeat this string 4611686018427387904 times
-  x * "abcdefgh"
-}
 
 ---
 // Error: 4-5 unknown variable: x

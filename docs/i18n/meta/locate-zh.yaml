@@ -1,6 +1,6 @@
 route: /docs/reference/meta/locate/
 title: Locate
-description: Documentation for the `locate` function.
+description: '`locate` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -12,42 +12,32 @@ outline:
   - id: parameters-func
     name: func
     children: []
-- id: methods
-  name: Methods
-  children:
-  - id: methods-page
-    name: page
-    children: []
-  - id: methods-position
-    name: position
-    children: []
-  - id: methods-page-numbering
-    name: page-numbering
-    children: []
 body:
   kind: func
   content:
-    path:
-    - locate
-    display: Locate
-    keywords: null
+    path: []
+    name: locate
+    title: Locate
+    keywords: []
     oneliner: Provides access to the location of content.
     element: false
     details: |-
       <p>Provides access to the location of content.</p>
-      <p>This is useful in combination with <a href="/docs/reference/meta/query/">queries</a>,
-      <a href="/docs/reference/meta/counter/">counters</a>, <a href="/docs/reference/meta/state/">state</a>, and <a href="/docs/reference/meta/link/">links</a>.
-      See their documentation for more details.</p>
+      <p>This is useful in combination with <a href="/docs/reference/meta/query/">queries</a>, <a href="/docs/reference/meta/counter/">counters</a>,
+      <a href="/docs/reference/meta/state/">state</a>, and <a href="/docs/reference/meta/link/">links</a>. See their documentation for more
+      details.</p>
       <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">locate</span><span class="typ-punct">(</span>loc <span class="typ-op">=&gt;</span> <span class="typ-punct">[</span>
         My location: <span class="typ-escape">\</span>
         <span class="typ-pol">#</span><span class="typ-pol">loc</span><span class="typ-punct">.</span><span class="typ-func">position</span><span class="typ-punct">(</span><span class="typ-punct">)</span>!
       <span class="typ-punct">]</span><span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/d5c00e53d3d78d599f64f77dee4dd799.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: func
       details: |-
-        <p>A function that receives a <code>location</code>. Its return value is displayed
-        in the document.</p>
+        <p>A function that receives a <a href="/docs/reference/meta/location/"><code>location</code></a>. Its return value is
+        displayed in the document.</p>
         <p>This function is called once for each time the content returned by
         <code>locate</code> appears in the document. That makes it possible to generate
         content that depends on its own location in the document.</p>
@@ -63,37 +53,5 @@ body:
       settable: false
     returns:
     - content
-    methods:
-    - name: page
-      details: |-
-        <p>Returns the page number for this location.</p>
-        <p>Note that this does not return the value of the <a href="/docs/reference/meta/counter/">page counter</a>
-        at this location, but the true page number (starting from one).</p>
-        <p>If you want to know the value of the page counter, use
-        <code><span class="typ-func">counter</span><span class="typ-punct">(</span>page<span class="typ-punct">)</span><span class="typ-punct">.</span><span class="typ-func">at</span><span class="typ-punct">(</span>loc<span class="typ-punct">)</span></code> instead.</p>
-      params: []
-      returns:
-      - integer
-    - name: position
-      details: |-
-        <p>Returns a dictionary with the page number and the x, y position for this
-        location. The page number starts at one and the coordinates are measured
-        from the top-left of the page.</p>
-        <p>If you only need the page number, use <code>page()</code> instead as it allows Typst
-        to skip unnecessary work.</p>
-      params: []
-      returns:
-      - dictionary
-    - name: page-numbering
-      details: |-
-        <p>Returns the page numbering pattern of the page at this location. This can be
-        used when displaying the page counter in order to obtain the local numbering.
-        This is useful if you are building custom indices or outlines.</p>
-        <p>If the page numbering is set to <code>none</code> at that location, this function returns <code>none</code>.</p>
-      params: []
-      returns:
-      - string
-      - function
-      - none
     scope: []
 children: []

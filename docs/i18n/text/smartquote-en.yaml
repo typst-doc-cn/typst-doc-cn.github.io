@@ -1,6 +1,6 @@
 route: /docs/reference/text/smartquote/
-title: Smart Quote
-description: Documentation for the `smartquote` function.
+title: Smartquote
+description: '`smartquote` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -21,13 +21,16 @@ outline:
   - id: parameters-enabled
     name: enabled
     children: []
+  - id: parameters-alternative
+    name: alternative
+    children: []
 body:
   kind: func
   content:
-    path:
-    - smartquote
-    display: Smart Quote
-    keywords: null
+    path: []
+    name: smartquote
+    title: Smartquote
+    keywords: []
     oneliner: A language-aware quote that reacts to its context.
     element: true
     details: |-
@@ -46,12 +49,14 @@ body:
       <h2 id="syntax">Syntax</h2>
       <p>This function also has dedicated syntax: The normal quote characters
       (<code>'</code> and <code>&quot;</code>). Typst automatically makes your quotes smart.</p>
+    example: null
+    self: false
     params:
     - name: double
       details: <p>Whether this should be a double quote.</p>
       example: null
       types:
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">true</span></code>
       positional: false
@@ -70,7 +75,7 @@ body:
         These are &quot;dumb&quot; quotes.
         </code></pre><div class="preview"><img src="/assets/docs/97534d7145e2ba0bc7efaabe227e3da0.png" alt="Preview" width="480" height="190"/></div></div>
       types:
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">true</span></code>
       positional: false
@@ -78,8 +83,26 @@ body:
       required: false
       variadic: false
       settable: true
+    - name: alternative
+      details: |-
+        <p>Whether to use alternative quotes.</p>
+        <p>Does nothing for languages that don't have alternative quotes.</p>
+      example: |-
+        <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>lang<span class="typ-punct">:</span> <span class="typ-str">&quot;de&quot;</span><span class="typ-punct">)</span>
+        <span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">smartquote</span><span class="typ-punct">(</span>alternative<span class="typ-punct">:</span> <span class="typ-key">true</span><span class="typ-punct">)</span>
+
+        &quot;Das ist in anderen Anführungszeichen.&quot;
+        </code></pre><div class="preview"><img src="/assets/docs/5c3460227def2ea6db1015c5c127155d.png" alt="Preview" width="480" height="190"/></div></div>
+      types:
+      - bool
+      strings: []
+      default: <code><span class="typ-key">false</span></code>
+      positional: false
+      named: true
+      required: false
+      variadic: false
+      settable: true
     returns:
     - content
-    methods: []
     scope: []
 children: []

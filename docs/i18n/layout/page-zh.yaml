@@ -1,6 +1,6 @@
 route: /docs/reference/layout/page/
 title: Page
-description: Documentation for the `page` function.
+description: '`page` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -66,10 +66,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - page
-    display: Page
-    keywords: null
+    path: []
+    name: page
+    title: Page
+    keywords: []
     oneliner: Layouts its child onto one or multiple pages.
     element: true
     details: |-
@@ -77,13 +77,17 @@ body:
       <p>Although this function is primarily used in set rules to affect page
       properties, it can also be used to explicitly render its argument onto
       a set of pages of its own.</p>
-      <p>Pages can be set to use <code><span class="typ-key">auto</span></code> as their width or height. In this case,
-      the pages will grow to fit their content on the respective axis.</p>
+      <p>Pages can be set to use <code><span class="typ-key">auto</span></code> as their width or height. In this case, the
+      pages will grow to fit their content on the respective axis.</p>
+      <p>The <a href="/docs/guides/page-setup-guide/">Guide for Page Setup</a> explains how to use
+      this and related functions to set up a document with many examples.</p>
       <h2 id="example">Example</h2>
       <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">page</span><span class="typ-punct">(</span><span class="typ-str">&quot;us-letter&quot;</span><span class="typ-punct">)</span>
 
       There you go, US friends!
       </code></pre><div class="preview"><img src="/assets/docs/09c2c49663961dceb000c8610a25c77f.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: paper
       details: <p>A standard paper size to set width and height.</p>
@@ -337,9 +341,9 @@ body:
       details: |-
         <p>The height of the page.</p>
         <p>If this is set to <code><span class="typ-key">auto</span></code>, page breaks can only be triggered manually
-        by inserting a <a href="/docs/reference/layout/pagebreak/">page break</a>. Most examples throughout
-        this documentation use <code><span class="typ-key">auto</span></code> for the height of the page to
-        dynamically grow and shrink to fit their content.</p>
+        by inserting a <a href="/docs/reference/layout/pagebreak/">page break</a>. Most examples throughout this
+        documentation use <code><span class="typ-key">auto</span></code> for the height of the page to dynamically
+        grow and shrink to fit their content.</p>
       example: null
       types:
       - auto
@@ -370,7 +374,7 @@ body:
         +1 555 555 5555
         </code></pre><div class="preview"><img src="/assets/docs/f0239af3b697a5a137b135adbfbd2418.png" alt="Preview" width="480" height="190"/></div></div>
       types:
-      - boolean
+      - bool
       strings: []
       default: <code><span class="typ-key">false</span></code>
       positional: false
@@ -382,8 +386,9 @@ body:
       details: |-
         <p>The page's margins.</p>
         <ul>
+        <li><code><span class="typ-key">auto</span></code>: The margins are set automatically to 2.5/21 times the smaller
+        dimension of the page. This results in 2.5cm margins for an A4 page.</li>
         <li>A single length: The same margin on all sides.</li>
-        <li><code><span class="typ-key">auto</span></code>: The margin is set to the default value for the page's size.</li>
         <li>A dictionary: With a dictionary, the margins can be set individually.
         The dictionary can contain the following keys in order of precedence:
         <ul>
@@ -419,7 +424,7 @@ body:
         </code></pre><div class="preview"><img src="/assets/docs/4f6abc5d57c0fc985815649e372759cb.png" alt="Preview" width="480" height="190"/></div></div>
       types:
       - auto
-      - relative length
+      - relative
       - dictionary
       strings: []
       default: <code><span class="typ-punct">(</span><span class="typ-punct">:</span><span
@@ -452,7 +457,10 @@ body:
       variadic: false
       settable: true
     - name: columns
-      details: <p>How many columns the page has.</p>
+      details: |-
+        <p>How many columns the page has.</p>
+        <p>If you need to insert columns into a page or other container, you can
+        also use the <a href="/docs/reference/layout/columns/"><code>columns</code> function</a>.</p>
       example: |-
         <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">page</span><span class="typ-punct">(</span>columns<span class="typ-punct">:</span> <span class="typ-num">2</span><span class="typ-punct">,</span> height<span class="typ-punct">:</span> <span class="typ-num">4.8cm</span><span class="typ-punct">)</span>
         Climate change is one of the most
@@ -466,7 +474,7 @@ body:
         of a rapidly changing climate.
         </code></pre><div class="preview"><img src="/assets/docs/9ebd23a1355f9eb0ca3c15a68553a4d8.png" alt="Preview" width="480" height="190"/></div></div>
       types:
-      - integer
+      - int
       strings: []
       default: <code><span class="typ-num">1</span></code>
       positional: false
@@ -499,7 +507,8 @@ body:
     - name: numbering
       details: |-
         <p>How to <a href="/docs/reference/meta/numbering/">number</a> the pages.</p>
-        <p>If an explicit <code>footer</code> is given, the numbering is ignored.</p>
+        <p>If an explicit <code>footer</code> (or <code>header</code> for top-aligned numbering) is
+        given, the numbering is ignored.</p>
       example: |-
         <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">page</span><span class="typ-punct">(</span>
           height<span class="typ-punct">:</span> <span class="typ-num">100pt</span><span class="typ-punct">,</span>
@@ -511,7 +520,7 @@ body:
         </code></pre><div class="preview"><img src="/assets/docs/d52c3289f2ed48e39fde3976751f2e20.png" alt="Preview" width="480" height="190"/></div></div>
       types:
       - none
-      - string
+      - str
       - function
       strings: []
       default: <code><span class="typ-key">none</span></code>
@@ -521,7 +530,12 @@ body:
       variadic: false
       settable: true
     - name: number-align
-      details: <p>The alignment of the page numbering.</p>
+      details: |-
+        <p>The alignment of the page numbering.</p>
+        <p>If the vertical component is <code>top</code>, the numbering is placed into the
+        header and if it is <code>bottom</code>, it is placed in the footer. Horizon
+        alignment is forbidden. If an explicit matching <code>header</code> or <code>footer</code> is
+        given, the numbering is ignored.</p>
       example: |-
         <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">page</span><span class="typ-punct">(</span>
           margin<span class="typ-punct">:</span> <span class="typ-punct">(</span>top<span class="typ-punct">:</span> <span class="typ-num">16pt</span><span class="typ-punct">,</span> bottom<span class="typ-punct">:</span> <span class="typ-num">24pt</span><span class="typ-punct">)</span><span class="typ-punct">,</span>
@@ -533,9 +547,8 @@ body:
         </code></pre><div class="preview"><img src="/assets/docs/2b19a4b829186dbdd86d2a2536a69835.png" alt="Preview" width="480" height="190"/></div></div>
       types:
       - alignment
-      - 2d alignment
       strings: []
-      default: <code>center</code>
+      default: <code>center <span class="typ-op">+</span> bottom</code>
       positional: false
       named: true
       required: false
@@ -570,7 +583,7 @@ body:
       details: <p>The amount the header is raised into the top margin.</p>
       example: null
       types:
-      - relative length
+      - relative
       strings: []
       default: <code><span class="typ-num">30%</span></code>
       positional: false
@@ -615,7 +628,7 @@ body:
       details: <p>The amount the footer is lowered into the bottom margin.</p>
       example: null
       types:
-      - relative length
+      - relative
       strings: []
       default: <code><span class="typ-num">30%</span></code>
       positional: false
@@ -688,6 +701,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

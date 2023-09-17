@@ -1,11 +1,41 @@
 Licenses for third party components used by this project can be found below.
 
 ================================================================================
+The 0BSD License applies to:
+
+* The S-Expression sublime-syntax in `assets/files/SExpressions.sublime-syntax`
+  which is adapted from the S-Expression syntax definition in the Sublime Text
+  package `S-Expressions` (https://github.com/whitequark/Sublime-S-Expressions)
+
+BSD Zero Clause License (0BSD)
+
+Permission to use, copy, modify, and/or distribute this software for
+any purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN
+AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT
+OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+================================================================================
+
+================================================================================
 The MIT License applies to:
 
-* The default color set defined in `src/geom/color.rs` which is adapted from
-  the colors.css project
+* The tmTheme in `assets/files/halcyon.tmTheme`
+  Copyright (c) 2018 Brittany Chiang
+  in the Sublime Text package `Halcyon` (https://github.com/bchiang7/Halcyon)
+
+* The default color set defined in `crates/typst/src/geom/color.rs` which is
+  adapted from the colors.css project
   (https://clrs.cc/)
+
+* The `RemoteReader` defined in `crates/typst-cli/src/download.rs` which is 
+   closely modelled after the `DownloadTracker` from rustup 
+   (https://github.com/rust-lang/rustup/blob/master/src/cli/download_tracker.rs)
 
 The MIT License (MIT)
 
@@ -29,8 +59,9 @@ THE SOFTWARE.
 ================================================================================
 
 ================================================================================
-Alpha multiplication and source-over blending in `src/export/render.rs` are
-ported from Skia code which can be found here:
+Alpha multiplication and source-over blending in
+`crates/typst/src/export/render.rs` are ported from Skia code which can be found
+here:
 https://skia.googlesource.com/skia/+/refs/heads/main/include/core/SkColorPriv.h
 
 Copyright (c) 2011 Google Inc. All rights reserved.
@@ -63,8 +94,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ================================================================================
 
 ================================================================================
-Syntaxes in `library/assets/syntect.bin` are generated from syntax definitions
-which can be found here:
+Syntaxes in `crates/typst-library/assets/syntect.bin` are generated from syntax
+definitions which can be found here:
 https://github.com/sharkdp/bat/tree/master/assets/syntaxes
 
 The syntax definitions are used under their respective licenses.

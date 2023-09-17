@@ -1,6 +1,6 @@
 route: /docs/reference/math/cases/
 title: Cases
-description: Documentation for the `cases` function.
+description: '`cases` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -22,9 +22,10 @@ body:
   kind: func
   content:
     path:
-    - cases
-    display: Cases
-    keywords: null
+    - math
+    name: cases
+    title: Cases
+    keywords: []
     oneliner: A case distinction.
     element: true
     details: |-
@@ -38,6 +39,8 @@ body:
         4 <span class="typ-str">&quot;else&quot;</span><span class="typ-punct">,</span>
       <span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
       </code></pre><div class="preview"><img src="/assets/docs/44f8d5158fe3376b109dc8d8e95e2d9e.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: delim
       details: <p>The delimiter to use.</p>
@@ -78,6 +81,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

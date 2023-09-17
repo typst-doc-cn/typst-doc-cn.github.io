@@ -1,6 +1,6 @@
 route: /docs/reference/layout/stack/
 title: Stack
-description: Documentation for the `stack` function.
+description: '`stack` 函数的文档'
 part: null
 outline:
 - id: summary
@@ -24,10 +24,10 @@ outline:
 body:
   kind: func
   content:
-    path:
-    - stack
-    display: Stack
-    keywords: null
+    path: []
+    name: stack
+    title: Stack
+    keywords: []
     oneliner: Arranges content and spacing horizontally or vertically.
     element: true
     details: |-
@@ -42,6 +42,8 @@ body:
         <span class="typ-func">rect</span><span class="typ-punct">(</span>width<span class="typ-punct">:</span> <span class="typ-num">90pt</span><span class="typ-punct">)</span><span class="typ-punct">,</span>
       <span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/d8a656872c969b7afbea467bfed09d42.png" alt="Preview" width="480" height="190"/></div></div>
+    example: null
+    self: false
     params:
     - name: dir
       details: |-
@@ -52,6 +54,13 @@ body:
         <li><code>ttb</code>: Top to bottom.</li>
         <li><code>btt</code>: Bottom to top.</li>
         </ul>
+        <p>You can use the <code>start</code> and <code>end</code> methods to obtain the initial and
+        final points (respectively) of a direction, as <code>alignment</code>. You can also
+        use the <code>axis</code> method to determine whether a direction is
+        <code><span class="typ-str">&quot;horizontal&quot;</span></code> or <code><span class="typ-str">&quot;vertical&quot;</span></code>. The <code>inv</code> method returns a
+        direction's inverse direction.</p>
+        <p>For example, <code>ttb<span class="typ-punct">.</span><span class="typ-func">start</span><span class="typ-punct">(</span><span class="typ-punct">)</span></code> is <code>top</code>, <code>ttb<span class="typ-punct">.</span><span class="typ-func">end</span><span class="typ-punct">(</span><span class="typ-punct">)</span></code> is <code>bottom</code>,
+        <code>ttb<span class="typ-punct">.</span><span class="typ-func">axis</span><span class="typ-punct">(</span><span class="typ-punct">)</span></code> is <code><span class="typ-str">&quot;vertical&quot;</span></code> and <code>ttb<span class="typ-punct">.</span><span class="typ-func">inv</span><span class="typ-punct">(</span><span class="typ-punct">)</span></code> is equal to <code>btt</code>.</p>
       example: null
       types:
       - direction
@@ -67,7 +76,7 @@ body:
       example: null
       types:
       - none
-      - relative length
+      - relative
       - fraction
       strings: []
       default: <code><span class="typ-key">none</span></code>
@@ -80,7 +89,7 @@ body:
       details: <p>The children to stack along the axis.</p>
       example: null
       types:
-      - relative length
+      - relative
       - fraction
       - content
       strings: []
@@ -92,6 +101,5 @@ body:
       settable: false
     returns:
     - content
-    methods: []
     scope: []
 children: []

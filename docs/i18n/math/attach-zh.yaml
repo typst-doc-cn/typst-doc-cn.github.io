@@ -1,76 +1,64 @@
-route: /docs/reference/math/attach/
+route: /docs/reference/math/attach
 title: 附缀
-description: Documentation for attach group of functions.
+description: attach 函数族的文档.
 part: null
 outline:
 - id: summary
   name: Summary
   children: []
-- id: attach
-  name: Attachment
+- id: example
+  name: Example
+  children: []
+- id: syntax
+  name: Syntax
+  children: []
+- id: functions
+  name: Functions
   children:
-  - id: attach-example
-    name: Example
-    children: []
-  - id: attach-syntax
-    name: Syntax
-    children: []
-  - id: attach-parameters
-    name: Parameters
+  - id: functions-attach
+    name: Attach
     children:
-    - id: attach-parameters-base
+    - id: functions-attach-base
       name: base
       children: []
-    - id: attach-parameters-t
+    - id: functions-attach-t
       name: t
       children: []
-    - id: attach-parameters-b
+    - id: functions-attach-b
       name: b
       children: []
-    - id: attach-parameters-tl
+    - id: functions-attach-tl
       name: tl
       children: []
-    - id: attach-parameters-bl
+    - id: functions-attach-bl
       name: bl
       children: []
-    - id: attach-parameters-tr
+    - id: functions-attach-tr
       name: tr
       children: []
-    - id: attach-parameters-br
+    - id: functions-attach-br
       name: br
       children: []
-- id: scripts
-  name: Scripts
-  children:
-  - id: scripts-example
-    name: Example
-    children: []
-  - id: scripts-parameters
-    name: Parameters
+  - id: functions-scripts
+    name: Scripts
     children:
-    - id: scripts-parameters-body
+    - id: functions-scripts-body
       name: body
       children: []
-- id: limits
-  name: Limits
-  children:
-  - id: limits-example
-    name: Example
-    children: []
-  - id: limits-parameters
-    name: Parameters
+  - id: functions-limits
+    name: Limits
     children:
-    - id: limits-parameters-body
+    - id: functions-limits-body
       name: body
       children: []
-    - id: limits-parameters-inline
+    - id: functions-limits-inline
       name: inline
       children: []
 body:
-  kind: funcs
+  kind: group
   content:
     name: attach
-    display: Attach
+    title: Attach
     details: |-
       <p>上下标, 和上下限。</p>
       <p><code>attach</code> 函数支持形如
@@ -81,29 +69,26 @@ body:
       <code>scripts</code> 函数和 <code>limits</code> 函数
       手动调整。
       </p>
+      <h2 id="example">Example</h2>
+      <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-pol">sum</span><span class="typ-math-op">_</span><span class="typ-punct">(</span>i=0<span class="typ-punct">)</span><span class="typ-math-op">^</span>n a<span class="typ-math-op">_</span>i = 2<span class="typ-math-op">^</span><span class="typ-punct">(</span>1+i<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
+      </code></pre><div class="preview"><img src="/assets/docs/575e598ddfc00ee58c3fd2f8379f5718.png" alt="Preview" width="480" height="190"/></div></div>
+      <h2 id="syntax">语法</h2>
+      <p>此函数还具有用于附基之后的附缀的专用语法：使用下划线 (<code>_</code>) 表示下标，即底部附缀，使用帽子 (<code>^</code>) 表示上标，即顶部附缀。</p>
     functions:
-    - path:
-      - attach
-      display: Attachment
-      keywords: null
+    - path: []
+      name: attach
+      title: Attach
+      keywords: []
       oneliner: A base with optional attachments.
       element: true
-      details: |-
-        <p>带有可选附缀的附基。</p>
-        <h3 id="attach-example">Example</h3>
-        <div class="previewed-code"><pre><code><span class="typ-comment">// With syntax.</span>
-        <span class="typ-math-delim">$</span> <span class="typ-pol">sum</span><span class="typ-math-op">_</span><span class="typ-punct">(</span>i=0<span class="typ-punct">)</span><span class="typ-math-op">^</span>n a<span class="typ-math-op">_</span>i = 2<span class="typ-math-op">^</span><span class="typ-punct">(</span>1+i<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
-
-        <span class="typ-comment">// / With function call.</span>
-        <span class="typ-math-delim">$</span> <span class="typ-func">attach</span><span class="typ-punct">(</span>
+      details: <p>带有可选附缀的附基。</p>
+      example: |-
+        <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">attach</span><span class="typ-punct">(</span>
           <span class="typ-pol">Pi</span><span class="typ-punct">,</span> t<span class="typ-punct">:</span> <span class="typ-pol">alpha</span><span class="typ-punct">,</span> b<span class="typ-punct">:</span> <span class="typ-pol">beta</span><span class="typ-punct">,</span>
           tl<span class="typ-punct">:</span> 1<span class="typ-punct">,</span> tr<span class="typ-punct">:</span> 2+3<span class="typ-punct">,</span> bl<span class="typ-punct">:</span> 4+5<span class="typ-punct">,</span> br<span class="typ-punct">:</span> 6<span class="typ-punct">,</span>
         <span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
-        </code></pre><div class="preview"><img src="/assets/docs/c5ec897569c2232d0f7d6902f6452215.png" alt="Preview" width="480" height="190"/></div></div>
-        <h3 id="attach-syntax">语法</h3>
-        <p>对于附基之后的附缀，该函数提供了专用语法： 
-        使用下划线 (<code>_</code>) 表示下标（底部附缀）；使用插入符号 (<code>^</code>) 来表示上标（顶部附缀）。
-        </p>
+        </code></pre><div class="preview"><img src="/assets/docs/6168007e6f554f79c047e406044982de.png" alt="Preview" width="480" height="190"/></div></div>
+      self: false
       params:
       - name: base
         details: <p>供附缀附着的部分。</p>
@@ -137,7 +122,7 @@ body:
         settable: true
       - name: b
         details: |-
-          <p>顶部附缀，智能定位于附基的上方或右上方。</p>
+          <p>底部附缀，智能定位于附基的下方或右下方。</p>
           <p>你也可以将附基包裹在<code><span class="typ-func">limits</span><span class="typ-punct">(</span><span class="typ-punct">)</span></code> 
           或 
           <code><span class="typ-func">scripts</span><span class="typ-punct">(</span><span class="typ-punct">)</span></code> 
@@ -207,19 +192,18 @@ body:
         settable: true
       returns:
       - content
-      methods: []
       scope: []
-    - path:
-      - scripts
-      display: Scripts
-      keywords: null
+    - path: []
+      name: scripts
+      title: Scripts
+      keywords: []
       oneliner: Forces a base to display attachments as scripts.
       element: true
-      details: |-
-        <p>强制将附缀显示为脚本形式（即角标形式）。</p>
-        <h3 id="scripts-example">Example</h3>
+      details: <p>强制将附缀显示为脚本形式（即角标形式）。</p>
+      example: |-
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">scripts</span><span class="typ-punct">(</span><span class="typ-pol">sum</span><span class="typ-punct">)</span><span class="typ-math-op">_</span>1<span class="typ-math-op">^</span>2 <span class="typ-escape">!=</span> <span class="typ-pol">sum</span><span class="typ-math-op">_</span>1<span class="typ-math-op">^</span>2 <span class="typ-math-delim">$</span>
         </code></pre><div class="preview"><img src="/assets/docs/fd2fa3481f1f6d8947d1a6310cd5e827.png" alt="Preview" width="480" height="190"/></div></div>
+      self: false
       params:
       - name: body
         details: <p>供脚本附缀附着的部分。</p>
@@ -235,19 +219,18 @@ body:
         settable: false
       returns:
       - content
-      methods: []
       scope: []
-    - path:
-      - limits
-      display: Limits
-      keywords: null
+    - path: []
+      name: limits
+      title: Limits
+      keywords: []
       oneliner: Forces a base to display attachments as limits.
       element: true
-      details: |-
-        <p>强制将附缀显示为上下限形式（即显示在正上方和正下方）。</p>
-        <h3 id="limits-example">Example</h3>
+      details: <p>强制将附缀显示为上下限形式（即显示在正上方和正下方）。</p>
+      example: |-
         <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">limits</span><span class="typ-punct">(</span>A<span class="typ-punct">)</span><span class="typ-math-op">_</span>1<span class="typ-math-op">^</span>2 <span class="typ-escape">!=</span> A<span class="typ-math-op">_</span>1<span class="typ-math-op">^</span>2 <span class="typ-math-delim">$</span>
         </code></pre><div class="preview"><img src="/assets/docs/a60dcf87b7850ffbb2f702c04761242c.png" alt="Preview" width="480" height="190"/></div></div>
+      self: false
       params:
       - name: body
         details: <p>供上下限附缀附着的部分。</p>
@@ -267,7 +250,7 @@ body:
           <p>全局应用limits时（如使用 set 规则）最好禁用此功能。</p>
         example: null
         types:
-        - boolean
+        - bool
         strings: []
         default: <code><span class="typ-key">true</span></code>
         positional: false
@@ -277,6 +260,5 @@ body:
         settable: true
       returns:
       - content
-      methods: []
       scope: []
 children: []
