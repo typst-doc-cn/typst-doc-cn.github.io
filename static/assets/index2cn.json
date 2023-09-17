@@ -44,7 +44,7 @@
   "polylux": "使用 Typst 制作演示幻灯片",
   "prooftrees": "自然推导和类型理论的证明树",
   "quill": "用于创建量子电路图的库",
-  "rubby": "为基本文本添加振假名（Furigana）",
+  "rubby": "为基本文本添加注音假名（Ruby / Furigana）",
   "showybox": "为 Typst 创建丰富多彩且可自定义的框",
   "splash": "Typst 的颜色调色板库",
   "statastic": "用于计算数值数据统计的库",
