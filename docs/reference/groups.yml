@@ -2,39 +2,35 @@
 # together into one documentation page although they are not part of any scope.
 
 - name: variants
-  display: Variants
-  category: math
+  display: 变体
+  category: 数学
   functions: ["serif", "sans", "frak", "mono", "bb", "cal"]
   description: |
-    Alternate typefaces within formulas.
+    公式内的备用字体。
 
-    These functions are distinct from the [`text`]($text) function because math
-    fonts contain multiple variants of each letter.
+    这些函数与 [`text`]($text) 函数不同，因为数学字体包含每个字母的多个变体。
 
 - name: styles
-  display: Styles
-  category: math
+  display: 样式
+  category: 数学
   functions: ["upright", "italic", "bold"]
   description: |
-    Alternate letterforms within formulas.
+    公式内的备用字母形式。
 
-    These functions are distinct from the [`text`]($text) function because math
-    fonts contain multiple variants of each letter.
+    这些函数与 [`text`]($text) 函数不同，因为数学字体包含每个字母的多个变体。
 
 - name: sizes
-  display: Sizes
-  category: math
+  display: 大小
+  category: 数学
   functions: ["display", "inline", "script", "sscript"]
   description: |
-    Forced size styles for expressions within formulas.
+    强制表达式大小样式。
 
-    These functions allow manual configuration of the size of equation elements
-    to make them look as in a display/inline equation or as if used in a root or
-    sub/superscripts.
+    这些函数允许手动配置方程元素的大小，使其看起来像在显示/内联方程中使用，或者像在根或上/下标中使用。
 
 - name: underover
-  display: Under/Over
-  category: math
+  display: 上/下标
+  category: 数学
   functions: [
     "underline",
     "overline",
@@ -44,60 +40,50 @@
     "overbracket",
   ]
   description: |
-    Delimiters above or below parts of an equation.
+    方程的部分上方或下方的分隔符。
 
-    The braces and brackets further allow you to add an optional annotation
-    below or above themselves.
+    大括号和方括号还允许您在它们自己的下方或上方添加可选注释。
 
 - name: roots
-  display: Roots
-  category: math
+  display: 根号
+  category: 数学
   functions: ["root", "sqrt"]
   description: |
-    Square and non-square roots.
+    平方根和非平方根。
 
-    # Example
+    # 示例
     ```example
     $ sqrt(3 - 2 sqrt(2)) = sqrt(2) - 1 $
     $ root(3, x) $
     ```
 
 - name: attach
-  display: Attach
-  category: math
+  display: 上标/下标
+  category: 数学
   functions: ["attach", "scripts", "limits"]
   description: |
-    Subscript, superscripts, and limits.
+    下标、上标和极限。
 
-    Attachments can be displayed either as sub/superscripts, or limits. Typst
-    automatically decides which is more suitable depending on the base, but you
-    can also control this manually with the `scripts` and `limits` functions.
+    附件可以显示为上标/下标或极限。Typst 根据基数自动决定哪种方式更合适，但您也可以使用 `scripts` 和 `limits` 函数手动控制。
 
-    # Example
+    # 示例
     ```example
     $ sum_(i=0)^n a_i = 2^(1+i) $
     ```
 
-    # Syntax
-    This function also has dedicated syntax for attachments after the base: Use
-    the underscore (`_`) to indicate a subscript i.e. bottom attachment and the
-    hat (`^`) to indicate a superscript i.e. top attachment.
+    # 语法
+    该函数还具有用于在基数之后添加附件的专用语法：使用下划线 (`_`) 表示下标，使用插入符 (`^`) 表示上标。
 
 - name: lr
-  display: Left/Right
-  category: math
+  display: 左/右分隔符
+  category: 数学
   functions: ["lr", "abs", "norm", "floor", "ceil", "round"]
   description: |
-    Delimiter matching.
+    分隔符匹配。
 
-    The `lr` function allows you to match two delimiters and scale them with the
-    content they contain. While this also happens automatically for delimiters
-    that match syntactically, `lr` allows you to match two arbitrary delimiters
-    and control their size exactly. Apart from the `lr` function, Typst provides
-    a few more functions that create delimiter pairings for absolute, ceiled,
-    and floored values as well as norms.
+    `lr` 函数允许您匹配两个分隔符并按其包含的内容进行缩放。虽然对于语法匹配的分隔符会自动执行此操作，但 `lr` 允许您匹配两个任意分隔符并精确控制其大小。除了 `lr` 函数外，Typst 还提供了一些函数，用于创建绝对值、向上取整、向下取整值以及范数的分隔符配对。
 
-    # Example
+    # 示例
     ```example
     $ [a, b/2] $
     $ lr(]sum_(x=1)^n] x, size: #50%) $
@@ -105,12 +91,10 @@
     ```
 
 - name: calc
-  display: Calculation
-  category: foundations
+  display: 计算
+  category: 基础
   path: ["calc"]
   description: |
-    Calculations and processing of numeric values.
+    数值计算和处理。
 
-    These functions are part of the `calc` module and not imported by default.
-    In addition to the functions listed below, the `calc` module also defines
-    the constants `pi`, `tau`, `e`, `inf`, and `nan`.
+    这些函数是 `calc` 模块的一部分，不会默认导入。除了下面列出的函数外，`calc` 模块还定义了常数 `pi`、`tau`、`e`、`inf` 和 `nan`。

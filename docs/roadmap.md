@@ -1,135 +1,131 @@
 ---
-description: What we have planned for Typst.
+description: 我们准备做什么。
 ---
 
 # 路线图
-This page lists planned features for the Typst language, compiler, library and
-web app. Since priorities and development realities change, this roadmap is not
-set in stone. Features that are listed here will not necessarily be implemented
-and features that will be implemented might be missing here. As for bug fixes,
-this roadmap will only list larger, more fundamental ones.
+本页列出了 Typst 语言、编译器、库和 Web App 的计划功能。
+由于优先事项和发展现实可能发生变化，这一路线图并非一成不变。
+另外此处列出的功能不一定会实现，并且此处可能没有写完全将要实现的功能。
+至于 bug 修复，本路线图只会列出更大、更基本的路线图。
 
-Are you missing something on the roadmap? Typst relies on your feedback as a
-user to plan for and prioritize new features. Get started by filing a new issue
-on [GitHub](https://github.com/typst/typst/issues) or discuss your feature
-request with the [community]($community).
+在路线图上是否有遗漏的内容？Typst 需要您作为用户的反馈来规划和优先考虑新功能。
+您可以在 [GitHub](https://github.com/typst/typst/issues) 上提交新问题或与 [社区]($community) 讨论您的功能请求。
 
-## Language and Compiler
-- **Structure and Styling**
-  - Fix show rule recursion
-  - Fix show-set order
-  - Fix show-set where both show and set affect the same kind of element
-    (to set properties on elements that match a selector)
-  - Ancestry selectors (e.g., within)
-  - Custom elements (that work with set and show rules)
-  - Possibly a capability system, e.g. to make your own element referenceable
-- **Layout**
-  - Advanced floating layout
-  - Rework layout engine to a more flexible model that has first-class support
-    for both "normal" text layout and more canvas-like layout
-  - Unified layout primitives across normal content and math
-  - Named alignment to synchronize alignment across different layout hierarchies
-  - Chained layout regions
-  - Page adjustment from within flow
-  - Advanced page break optimization
-  - Grid-based typesetting
-  - Layout with collision
-- **Export**
-  - Implement emoji export
-  - HTML export
-  - EPUB export
-  - Tagged PDF for Accessibility
-  - PDF/A and PDF/X support
-- **Text and Fonts**
-  - Font fallback warnings
-  - Fix SVG font fallback
-  - Proper foundations for i18n
-  - Bold, italic, and smallcaps synthesis
-  - Variable fonts support
-  - Ruby and Warichu
-  - Kashida justification
-- **Scripting**
-  - Allow expressions as dictionary keys
-  - Function hoisting if possible
-  - Get values of set rules
-  - Doc comments
-  - Type hints
-- **Visualization**
-  - Arrows
-  - Gradients
-  - Better path drawing
-  - Color management
-- **Tooling**
-  - Autoformatter
-  - Linter
-  - Documentation generator
-- **Development**
-  - Benchmarking
-  - Better contributor documentation
 
-## Library
-- **Customization**
-  - Integrate CSL (Citation Style Language)
-  - Bibliography and citation customization
-  - Outline customization
-  - Table stroke customization
-- **Numbering**
-  - Relative counters, e.g. for figure numbering per section
-  - Improve equation numbering
-  - Fix issues with numbering patterns
-  - Enum continuation
-- **Layout**
-  - Row span and column span in table
-  - Balanced columns
-  - Drop caps
-  - End notes, maybe margin notes
-- **Math**
-  - Fix syntactic quirks
-  - Fix font handling
-  - Provide more primitives
-  - Smarter automatic delimiter sizing
-  - Big fractions
-- **Other**
-  - Plotting
+## 语言和编译器
+- **结构和样式**
+  - 修复 show 规则递归
+  - 修复 show 和 set 规则的顺序
+  - 修复 show 和 set 规则中 show 和 set 影响相同类型的元素（用于在匹配选择器的元素上设置属性）
+  - 祖先选择器（例如，在内部）
+  - 自定义元素（能够与 set 和 show 规则一起使用）
+  - 可能有一个 capability 系统，例如，使您自己的元素可引用
+- **布局**
+  - 高级浮动布局
+  - 重新设计布局引擎，使其具有对“正常”文本布局和更类似画布的布局的一流支持
+  - 在正常内容和数学中统一布局基元
+  - 命名对齐以同步不同布局层次结构中的对齐
+  - 链式布局区域
+  - 在流内进行页面调整
+  - 高级分页优化
+  - 基于网格的排版
+  - 具有碰撞检测的布局
+- **导出**
+  - 实现 emoji 导出
+  - HTML 导出
+  - EPUB 导出
+  - 用于无障碍性的标记 PDF
+  - PDF/A 和 PDF/X 支持
+- **文本和字体**
+  - 字体 fallback 警告
+  - 修复 SVG 字体 fallback
+  - 国际化（i18n）
+  - 粗体、斜体和小型大写字母的合成
+  - 可变字体支持
+  - 注音（Ruby）和割注（Warichu）
+  - Kashida 对齐
+- **脚本**
+  - 允许表达式作为字典键
+  - 如果可能的话，函数提升
+  - 获取 set 规则的值
+  - 文档注释
+  - 类型提示
+- **可视化**
+  - 箭头
+  - 渐变
+  - 更好的路径绘制
+  - 颜色管理
+- **工具**
+  - 自动格式化程序
+  - 代码检查工具（Linter）
+  - 文档生成器
+- **开发**
+  - 基准测试
+  - 更好的贡献者文档
 
-## Web App
-- **Editing**
-  - Smarter & more action buttons
-  - Basic, built-in image editor (cropping, etc.)
-  - Color Picker
-  - Symbol picker
-  - GUI inspector for editing function calls
-  - Preview autocomplete entry
-  - Cursor in preview
-  - Inline documentation
-  - More export options
-  - Preview in a separate window
-- **Writing**
-  - Spell check
-  - Word count
-  - Structure view
-  - Pomodoro
-  - Text completion by LLM
-- **Collaboration**
-  - Chat-like comments
-  - Change tracking
-  - Version history
-  - Git integration
-- **Project management**
-  - Drag-and-drop for projects
-  - Thumbnails for projects
-  - Template generation by LLM
-  - LaTeX, Word, Markdown import
-- **Settings**
-  - Keyboard shortcuts configuration
-  - Better project settings
-  - System Theme setting
-  - Avatar Cropping
-- **Other**
-  - Offline PWA
-  - Single sign-on
-  - Two-Factor Authentication
-  - Advanced search in projects
-  - Private packages in teams
-  - On-Premise deployment
-  - Mobile improvements
+## 库
+- **自定义**
+  - 集成引文样式语言（CSL）
+  - 参考文献和引用自定义
+  - 大纲自定义
+  - 表格线条自定义
+- **编号**
+  - 相对计数器，例如，每节的图表编号
+  - 改进数学公式编号
+  - 修复编号模式问题
+  - 枚举延续
+- **布局**
+  - 表格中的行 span 和列 span
+  - 平衡列
+  - 首字下沉
+  - 尾注，也许是边注
+- **数学**
+  - 修复句法怪癖
+  - 修复字体处理
+  - 提供更多基元
+  - 更智能的自动分隔符大小调整
+  - 大分数
+- **其他**
+  - 绘图
+
+## Web 应用程序
+- **编辑**
+  - 更智能和更多操作按钮
+  - 基本内置图像编辑器（裁剪等）
+  - 色彩选择器
+  - 符号选择器
+  - 用于编辑函数调用的 GUI 检查器
+  - 预览自动完成条目
+  - 预览中的光标
+  - 内联文档
+  - 更多导出选项
+  - 在单独窗口中预览
+- **写作**
+  - 拼写检查
+  - 字数统计
+  - 结构视图
+  - 番茄工作法
+  - 由 LLM 完成的文本自动完成
+- **协作**
+  - 类似聊天的评论
+  - 更改跟踪
+  - 版本历史
+  - Git 集成
+- **项目管理**
+  - 项目的拖放
+  - 项目的缩略图
+  - 由 LLM 生成的模板
+  - LaTeX、Word、Markdown 导入
+- **设置**
+  - 键盘快捷键配置
+  - 更好的项目设置
+  - 系统主题设置
+  - 头像裁剪
+- **其他**
+  - 离线渐进式 Web 应用程序（PWA）
+  - 单一登录
+  - 双因素认证
+  - 项目中的高级搜索
+  - 团队中的私有包
+  - 本地部署
+  - 移动端改进
