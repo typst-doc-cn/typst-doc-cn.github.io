@@ -1,0 +1,523 @@
+route: /docs/reference/visualize/color/
+title: Color
+description: Color 类型的文档
+part: null
+outline:
+- id: summary
+  name: Summary
+  children: []
+- id: example
+  name: Example
+  children: []
+- id: definitions
+  name: Definitions
+  children:
+  - id: definitions-luma
+    name: Luma
+    children:
+    - id: definitions-luma-gray
+      name: gray
+      children: []
+  - id: definitions-rgb
+    name: RGB
+    children:
+    - id: definitions-rgb-hex
+      name: hex
+      children: []
+    - id: definitions-rgb-red
+      name: red
+      children: []
+    - id: definitions-rgb-green
+      name: green
+      children: []
+    - id: definitions-rgb-blue
+      name: blue
+      children: []
+    - id: definitions-rgb-alpha
+      name: alpha
+      children: []
+  - id: definitions-cmyk
+    name: CMYK
+    children:
+    - id: definitions-cmyk-cyan
+      name: cyan
+      children: []
+    - id: definitions-cmyk-magenta
+      name: magenta
+      children: []
+    - id: definitions-cmyk-yellow
+      name: yellow
+      children: []
+    - id: definitions-cmyk-key
+      name: key
+      children: []
+  - id: definitions-kind
+    name: Kind
+    children: []
+  - id: definitions-to-hex
+    name: To Hex
+    children: []
+  - id: definitions-to-rgba
+    name: To Rgba
+    children: []
+  - id: definitions-to-cmyk
+    name: To Cmyk
+    children: []
+  - id: definitions-to-luma
+    name: To Luma
+    children: []
+  - id: definitions-lighten
+    name: Lighten
+    children:
+    - id: definitions-lighten-factor
+      name: factor
+      children: []
+  - id: definitions-darken
+    name: Darken
+    children:
+    - id: definitions-darken-factor
+      name: factor
+      children: []
+  - id: definitions-negate
+    name: Negate
+    children: []
+  - id: definitions-mix
+    name: Mix
+    children:
+    - id: definitions-mix-colors
+      name: colors
+      children: []
+    - id: definitions-mix-space
+      name: space
+      children: []
+body:
+  kind: type
+  content:
+    name: color
+    title: Color
+    keywords: []
+    oneliner: A color in a specific color space.
+    details: |-
+      <p>A color in a specific color space.</p>
+      <p>Typst supports:</p>
+      <ul>
+      <li>sRGB through the <a href="/docs/reference/calculate/rgb/"><code>rgb</code> function</a></li>
+      <li>Device CMYK through <a href="/docs/reference/calculate/cmyk/"><code>cmyk</code> function</a></li>
+      <li>D65 Gray through the <a href="/docs/reference/calculate/luma/"><code>luma</code> function</a></li>
+      </ul>
+      <p>Typst provides the following built-in colors:</p>
+      <p><code>black</code>, <code>gray</code>, <code>silver</code>, <code>white</code>, <code>navy</code>, <code>blue</code>, <code>aqua</code>, <code>teal</code>,
+      <code>eastern</code>, <code>purple</code>, <code>fuchsia</code>, <code>maroon</code>, <code>red</code>, <code>orange</code>, <code>yellow</code>,
+      <code>olive</code>, <code>green</code>, and <code>lime</code>.</p>
+      <h2 id="example">Example</h2>
+      <p>The predefined colors and the color constructors are available globally and
+      also in the color type's scope, so you can write either of the following
+      two:</p>
+      <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">rect</span><span class="typ-punct">(</span>fill<span class="typ-punct">:</span> aqua<span class="typ-punct">)</span>
+      <span class="typ-func">#</span><span class="typ-func">rect</span><span class="typ-punct">(</span>fill<span class="typ-punct">:</span> color<span class="typ-punct">.</span>aqua<span class="typ-punct">)</span>
+      </code></pre><div class="preview"><img src="/assets/docs/fcbb57e0d96d469ddf7dd27bbd6cfcae.png" alt="Preview" width="480" height="190"/></div></div>
+    constructor: null
+    scope:
+    - path:
+      - color
+      name: luma
+      title: Luma
+      keywords: []
+      oneliner: Create a grayscale color.
+      element: false
+      details: <p>Create a grayscale color.</p>
+      example: |-
+        <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">for</span> x <span class="typ-key">in</span> <span class="typ-func">range</span><span class="typ-punct">(</span><span class="typ-num">250</span><span class="typ-punct">,</span> step<span class="typ-punct">:</span> <span class="typ-num">50</span><span class="typ-punct">)</span> <span class="typ-punct">{</span>
+          <span class="typ-func">box</span><span class="typ-punct">(</span><span class="typ-func">square</span><span class="typ-punct">(</span>fill<span class="typ-punct">:</span> <span class="typ-func">luma</span><span class="typ-punct">(</span>x<span class="typ-punct">)</span><span class="typ-punct">)</span><span class="typ-punct">)</span>
+        <span class="typ-punct">}</span>
+        </code></pre><div class="preview"><img src="/assets/docs/1aa2cf2b25d34b2e2fea8240fab55935.png" alt="Preview" width="480" height="190"/></div></div>
+      self: false
+      params:
+      - name: gray
+        details: <p>The gray component.</p>
+        example: null
+        types:
+        - int
+        - ratio
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      returns:
+      - color
+      scope: []
+    - path:
+      - color
+      name: rgb
+      title: RGB
+      keywords: []
+      oneliner: Create an RGB(A) color.
+      element: false
+      details: |-
+        <p>Create an RGB(A) color.</p>
+        <p>The color is specified in the sRGB color space.</p>
+      example: |-
+        <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">square</span><span class="typ-punct">(</span>fill<span class="typ-punct">:</span> <span class="typ-func">rgb</span><span class="typ-punct">(</span><span class="typ-str">&quot;#b1f2eb&quot;</span><span class="typ-punct">)</span><span class="typ-punct">)</span>
+        <span class="typ-func">#</span><span class="typ-func">square</span><span class="typ-punct">(</span>fill<span class="typ-punct">:</span> <span class="typ-func">rgb</span><span class="typ-punct">(</span><span class="typ-num">87</span><span class="typ-punct">,</span> <span class="typ-num">127</span><span class="typ-punct">,</span> <span class="typ-num">230</span><span class="typ-punct">)</span><span class="typ-punct">)</span>
+        <span class="typ-func">#</span><span class="typ-func">square</span><span class="typ-punct">(</span>fill<span class="typ-punct">:</span> <span class="typ-func">rgb</span><span class="typ-punct">(</span><span class="typ-num">25%</span><span class="typ-punct">,</span> <span class="typ-num">13%</span><span class="typ-punct">,</span> <span class="typ-num">65%</span><span class="typ-punct">)</span><span class="typ-punct">)</span>
+        </code></pre><div class="preview"><img src="/assets/docs/1bc56d7aeef07e0435d66371387f13c0.png" alt="Preview" width="480" height="190"/></div></div>
+      self: false
+      params:
+      - name: hex
+        details: |-
+          <p>The color in hexadecimal notation.</p>
+          <p>Accepts three, four, six or eight hexadecimal digits and optionally
+          a leading hashtag.</p>
+          <p>If this string is given, the individual components should not be given.</p>
+        example: |-
+          <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">text</span><span class="typ-punct">(</span><span class="typ-num">16pt</span><span class="typ-punct">,</span> <span class="typ-func">rgb</span><span class="typ-punct">(</span><span class="typ-str">&quot;#239dad&quot;</span><span class="typ-punct">)</span><span class="typ-punct">)</span><span class="typ-punct">[</span>
+            <span class="typ-strong">*Typst*</span>
+          <span class="typ-punct">]</span>
+          </code></pre><div class="preview"><img src="/assets/docs/4f6b86b72e34b44e39e85fd847f3421b.png" alt="Preview" width="480" height="190"/></div></div>
+        types:
+        - str
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      - name: red
+        details: <p>The red component.</p>
+        example: null
+        types:
+        - int
+        - ratio
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      - name: green
+        details: <p>The green component.</p>
+        example: null
+        types:
+        - int
+        - ratio
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      - name: blue
+        details: <p>The blue component.</p>
+        example: null
+        types:
+        - int
+        - ratio
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      - name: alpha
+        details: <p>The alpha component.</p>
+        example: null
+        types:
+        - int
+        - ratio
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      returns:
+      - color
+      scope: []
+    - path:
+      - color
+      name: cmyk
+      title: CMYK
+      keywords: []
+      oneliner: Create a CMYK color.
+      element: false
+      details: |-
+        <p>Create a CMYK color.</p>
+        <p>This is useful if you want to target a specific printer. The conversion
+        to RGB for display preview might differ from how your printer reproduces
+        the color.</p>
+      example: |-
+        <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">square</span><span class="typ-punct">(</span>
+          fill<span class="typ-punct">:</span> <span class="typ-func">cmyk</span><span class="typ-punct">(</span><span class="typ-num">27%</span><span class="typ-punct">,</span> <span class="typ-num">0%</span><span class="typ-punct">,</span> <span class="typ-num">3%</span><span class="typ-punct">,</span> <span class="typ-num">5%</span><span class="typ-punct">)</span>
+        <span class="typ-punct">)</span>
+        </code></pre><div class="preview"><img src="/assets/docs/ba913143dfc94a799bdaec785400b707.png" alt="Preview" width="480" height="190"/></div></div>
+      self: false
+      params:
+      - name: cyan
+        details: <p>The cyan component.</p>
+        example: null
+        types:
+        - ratio
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      - name: magenta
+        details: <p>The magenta component.</p>
+        example: null
+        types:
+        - ratio
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      - name: yellow
+        details: <p>The yellow component.</p>
+        example: null
+        types:
+        - ratio
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      - name: key
+        details: <p>The key component.</p>
+        example: null
+        types:
+        - ratio
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      returns:
+      - color
+      scope: []
+    - path:
+      - color
+      name: kind
+      title: Kind
+      keywords: []
+      oneliner: Returns the constructor function for this color's kind
+      element: false
+      details: |-
+        <p>Returns the constructor function for this color's kind
+        (<a href="/docs/reference/visualize/color/#definitions-rgb"><code>rgb</code></a>, <a href="/docs/reference/visualize/color/#definitions-cmyk"><code>cmyk</code></a> or <a href="/docs/reference/visualize/color/#definitions-luma"><code>luma</code></a>).</p>
+      example: |-
+        <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> color <span class="typ-op">=</span> <span class="typ-func">cmyk</span><span class="typ-punct">(</span><span class="typ-num">1%</span><span class="typ-punct">,</span> <span class="typ-num">2%</span><span class="typ-punct">,</span> <span class="typ-num">3%</span><span class="typ-punct">,</span> <span class="typ-num">4%</span><span class="typ-punct">)</span>
+        <span class="typ-punct">#</span><span class="typ-punct">(</span>color<span class="typ-punct">.</span><span class="typ-func">kind</span><span class="typ-punct">(</span><span class="typ-punct">)</span> <span class="typ-op">==</span> cmyk<span class="typ-punct">)</span>
+        </code></pre><div class="preview"><img src="/assets/docs/9217482128a8abe7a435ca6f52b5a782.png" alt="Preview" width="480" height="190"/></div></div>
+      self: true
+      params: []
+      returns:
+      - function
+      scope: []
+    - path:
+      - color
+      name: to-hex
+      title: To Hex
+      keywords: []
+      oneliner: Returns the color's RGB(A) hex representation (such as `#ffaa32` or
+      element: false
+      details: |-
+        <p>Returns the color's RGB(A) hex representation (such as <code>#ffaa32</code> or
+        <code>#020304fe</code>). The alpha component (last two digits in <code>#020304fe</code>) is
+        omitted if it is equal to <code>ff</code> (255 / 100%).</p>
+      example: null
+      self: true
+      params: []
+      returns:
+      - str
+      scope: []
+    - path:
+      - color
+      name: to-rgba
+      title: To Rgba
+      keywords: []
+      oneliner: Converts this color to sRGB and returns its components (R, G, B, A)
+        as
+      element: false
+      details: |-
+        <p>Converts this color to sRGB and returns its components (R, G, B, A) as
+        an array of <a href="/docs/reference/foundations/int/">integers</a>.</p>
+      example: null
+      self: true
+      params: []
+      returns:
+      - array
+      scope: []
+    - path:
+      - color
+      name: to-cmyk
+      title: To Cmyk
+      keywords: []
+      oneliner: Converts this color to Digital CMYK and returns its components
+      element: false
+      details: |-
+        <p>Converts this color to Digital CMYK and returns its components
+        (C, M, Y, K) as an array of <a href="/docs/reference/layout/ratio/">ratios</a>. Note that this function
+        will throw an error when applied to an <a href="/docs/reference/calculate/rgb/">rgb</a> color, since its
+        conversion to CMYK is not available.</p>
+      example: null
+      self: true
+      params: []
+      returns:
+      - array
+      scope: []
+    - path:
+      - color
+      name: to-luma
+      title: To Luma
+      keywords: []
+      oneliner: If this color was created with [luma]($luma), returns the
+      element: false
+      details: |-
+        <p>If this color was created with <a href="/docs/reference/calculate/luma/">luma</a>, returns the
+        <a href="/docs/reference/foundations/int/">integer</a> value used on construction. Otherwise (for <a href="/docs/reference/calculate/rgb/">rgb</a>
+        and <a href="/docs/reference/calculate/cmyk/">cmyk</a> colors), throws an error.</p>
+      example: null
+      self: true
+      params: []
+      returns:
+      - int
+      scope: []
+    - path:
+      - color
+      name: lighten
+      title: Lighten
+      keywords: []
+      oneliner: Lightens a color by a given factor.
+      element: false
+      details: <p>Lightens a color by a given factor.</p>
+      example: null
+      self: true
+      params:
+      - name: factor
+        details: <p>The factor to lighten the color by.</p>
+        example: null
+        types:
+        - ratio
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      returns:
+      - color
+      scope: []
+    - path:
+      - color
+      name: darken
+      title: Darken
+      keywords: []
+      oneliner: Darkens a color by a given factor.
+      element: false
+      details: <p>Darkens a color by a given factor.</p>
+      example: null
+      self: true
+      params:
+      - name: factor
+        details: <p>The factor to darken the color by.</p>
+        example: null
+        types:
+        - ratio
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: false
+        settable: false
+      returns:
+      - color
+      scope: []
+    - path:
+      - color
+      name: negate
+      title: Negate
+      keywords: []
+      oneliner: Produces the negative of the color.
+      element: false
+      details: <p>Produces the negative of the color.</p>
+      example: null
+      self: true
+      params: []
+      returns:
+      - color
+      scope: []
+    - path:
+      - color
+      name: mix
+      title: Mix
+      keywords: []
+      oneliner: Create a color by mixing two or more colors.
+      element: false
+      details: <p>Create a color by mixing two or more colors.</p>
+      example: |-
+        <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">block</span><span class="typ-punct">(</span>height<span class="typ-punct">:</span> <span class="typ-num">20pt</span><span class="typ-punct">,</span> width<span class="typ-punct">:</span> <span class="typ-num">100%</span><span class="typ-punct">)</span>
+        <span class="typ-func">#</span><span class="typ-func">block</span><span class="typ-punct">(</span>fill<span class="typ-punct">:</span> red<span class="typ-punct">.</span><span class="typ-func">mix</span><span class="typ-punct">(</span>blue<span class="typ-punct">)</span><span class="typ-punct">)</span>
+        <span class="typ-func">#</span><span class="typ-func">block</span><span class="typ-punct">(</span>fill<span class="typ-punct">:</span> red<span class="typ-punct">.</span><span class="typ-func">mix</span><span class="typ-punct">(</span>blue<span class="typ-punct">,</span> space<span class="typ-punct">:</span> <span class="typ-str">&quot;srgb&quot;</span><span class="typ-punct">)</span><span class="typ-punct">)</span>
+        <span class="typ-func">#</span><span class="typ-func">block</span><span class="typ-punct">(</span>fill<span class="typ-punct">:</span> color<span class="typ-punct">.</span><span class="typ-func">mix</span><span class="typ-punct">(</span>red<span class="typ-punct">,</span> blue<span class="typ-punct">,</span> white<span class="typ-punct">)</span><span class="typ-punct">)</span>
+        <span class="typ-func">#</span><span class="typ-func">block</span><span class="typ-punct">(</span>fill<span class="typ-punct">:</span> color<span class="typ-punct">.</span><span class="typ-func">mix</span><span class="typ-punct">(</span><span class="typ-punct">(</span>red<span class="typ-punct">,</span> <span class="typ-num">70%</span><span class="typ-punct">)</span><span class="typ-punct">,</span> <span class="typ-punct">(</span>blue<span class="typ-punct">,</span> <span class="typ-num">30%</span><span class="typ-punct">)</span><span class="typ-punct">)</span><span class="typ-punct">)</span>
+        </code></pre><div class="preview"><img src="/assets/docs/f54e0b7a8d789cef3832e776a6b62fd2.png" alt="Preview" width="480" height="190"/></div></div>
+      self: false
+      params:
+      - name: colors
+        details: |-
+          <p>The colors, optionally with weights, specified as a pair (array of
+          length two) of color and weight (float or ratio).</p>
+          <p>The weights do not need to add to <code><span class="typ-num">100%</span></code>, they are relative to the
+          sum of all weights.</p>
+        example: null
+        types:
+        - color
+        - array
+        strings: []
+        default: null
+        positional: true
+        named: false
+        required: true
+        variadic: true
+        settable: false
+      - name: space
+        details: |-
+          <p>The color space to mix in. By default, this happens in a perceptual
+          color space (Oklab).</p>
+        example: null
+        types:
+        - string
+        strings:
+        - string: oklab
+          details: <p>A perceptual color space.</p>
+        - string: srgb
+          details: <p>The standard RGB color space.</p>
+        default: <code><span class="typ-str">&quot;oklab&quot;</span></code>
+        positional: false
+        named: true
+        required: false
+        variadic: false
+        settable: false
+      returns:
+      - color
+      scope: []
+children: []

@@ -1,5 +1,5 @@
 route: /docs/reference/layout/align/
-title: Align
+title: 对齐
 description: '`align` 函数的文档'
 part: null
 outline:
@@ -28,7 +28,7 @@ body:
     oneliner: Aligns content horizontally and vertically.
     element: true
     details: |-
-      <p>Aligns content horizontally and vertically.</p>
+      <p>将内容水平和垂直对齐。</p>
       <h2 id="example">Example</h2>
       <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">align</span><span class="typ-punct">(</span>center<span class="typ-punct">)</span>
 
@@ -41,8 +41,7 @@ body:
     self: false
     params:
     - name: alignment
-      details: <p>The <a href="/docs/reference/layout/alignment/">alignment</a> along
-        both axes.</p>
+      details: <p>使用 <a href="/docs/reference/layout/alignment/">对齐参数</a> 在两个轴上进行对齐。</p>
       example: |-
         <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">page</span><span class="typ-punct">(</span>height<span class="typ-punct">:</span> <span class="typ-num">6cm</span><span class="typ-punct">)</span>
         <span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>lang<span class="typ-punct">:</span> <span class="typ-str">&quot;ar&quot;</span><span class="typ-punct">)</span>
@@ -63,7 +62,7 @@ body:
       variadic: false
       settable: true
     - name: body
-      details: <p>The content to align.</p>
+      details: <p>需要对齐的内容。</p>
       example: null
       types:
       - content
