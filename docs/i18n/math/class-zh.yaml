@@ -1,5 +1,5 @@
 route: /docs/reference/math/class/
-title: Class
+title: 类
 description: '`class` 函数的文档'
 part: null
 outline:
@@ -26,12 +26,11 @@ body:
     name: class
     title: Class
     keywords: []
-    oneliner: Forced use of a certain math class.
+    oneliner: 强制使用特定数学类。
     element: true
     details: |-
-      <p>Forced use of a certain math class.</p>
-      <p>This is useful to treat certain symbols as if they were of a different
-      class, e.g. to make a symbol behave like a relation.</p>
+      <p>强制使用特定数学类。</p>
+      <p>这对于将某些符号视为不同的类很有用，例如，使符号的显示行为类似于关系运算符。</p>
       <h2 id="example">Example</h2>
       <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> loves <span class="typ-op">=</span> math<span class="typ-punct">.</span><span class="typ-func">class</span><span class="typ-punct">(</span>
         <span class="typ-str">&quot;relation&quot;</span><span class="typ-punct">,</span>
@@ -44,31 +43,31 @@ body:
     self: false
     params:
     - name: class
-      details: <p>The class to apply to the content.</p>
+      details: <p>应用于内容的类。</p>
       example: null
       types:
       - string
       strings:
       - string: normal
-        details: <p>The default class for non-special things.</p>
+        details: <p>非特殊事物的默认类。</p>
       - string: punctuation
-        details: <p>Punctuation, e.g. a comma.</p>
+        details: <p>标点符号，例如逗号。</p>
       - string: opening
-        details: <p>An opening delimiter, e.g. <code>(</code>.</p>
+        details: <p>起始分隔符，例如 <code>(</code>。</p>
       - string: closing
-        details: <p>A closing delimiter, e.g. <code>)</code>.</p>
+        details: <p>结束分隔符，例如 <code>)</code>。</p>
       - string: fence
-        details: <p>A delimiter that is the same on both sides, e.g. <code>|</code>.</p>
+        details: <p>两边相同的分隔符，例如 <code>|</code>。</p>
       - string: large
-        details: <p>A large operator like <code>sum</code>.</p>
+        details: <p>像 <code>sum</code> 这样的大型运算符。</p>
       - string: relation
-        details: <p>A relation like <code>=</code> or <code>prec</code>.</p>
+        details: <p>像 <code>=</code> 或 <code>prec</code> 这样的关系运算符。</p>
       - string: unary
-        details: <p>A unary operator like <code>not</code>.</p>
+        details: <p>像 <code>not</code> 这样的一元运算符。</p>
       - string: binary
-        details: <p>A binary operator like <code>times</code>.</p>
+        details: <p>像 <code>times</code> 这样的二元运算符。</p>
       - string: vary
-        details: <p>An operator that can be both unary or binary like <code>+</code>.</p>
+        details: <p>一个运算符，可以是一元或二进制的运算符，如 <code>+</code>。</p>
       default: null
       positional: true
       named: false
@@ -76,7 +75,7 @@ body:
       variadic: false
       settable: false
     - name: body
-      details: <p>The content to which the class is applied.</p>
+      details: <p>类所应用的内容。</p>
       example: null
       types:
       - content
