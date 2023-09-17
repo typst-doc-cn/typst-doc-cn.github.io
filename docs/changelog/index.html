@@ -6,16 +6,14 @@
 <head>
   <meta charset="utf-8">
   <title>更新日志 – Typst 中文文档</title>
-  <meta name="description" content="Learn what has changed in the latest Typst releases and move your documents
-forward.
+  <meta name="description" content="了解最新 Typst 版本的变化并将您的文档推进。
 ">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#239dad">
   <meta property="og:url" content="https://typst-doc-cn.github.io/docs/changelog/">
   <meta property="og:title" content="更新日志 – Typst 中文文档">
   <meta property="og:site_name" content="Typst">
-  <meta property="og:description" content="Learn what has changed in the latest Typst releases and move your documents
-forward.
+  <meta property="og:description" content="了解最新 Typst 版本的变化并将您的文档推进。
 ">
   <meta property="og:type">
   <meta property="og:image" content="https://typst-doc-cn.github.io/assets/social.png">
@@ -794,903 +792,735 @@ forward.
       
 
 <h1>更新日志</h1>
-<h2 id="v0.8.0">Version 0.8.0 (September 13, 2023)</h2>
+<p>注：本页面由 ChatGPT 辅助翻译，可能会有错漏。</p>
+<h2 id="v0.8.0">版本 0.8.0（2023年9月13日）</h2>
 <ul>
 <li>
-<p>Scripting</p>
+<p>脚本</p>
 <ul>
-<li>Plugins (thanks to <a href="https://github.com/astrale-sharp">@astrale-sharp</a> and
-<a href="https://github.com/arnaudgolfouse">@arnaudgolfouse</a>)
+<li>插件（感谢 <a href="https://github.com/astrale-sharp">@astrale-sharp</a> 和 <a href="https://github.com/arnaudgolfouse">@arnaudgolfouse</a>）
 <ul>
-<li>Typst can now load <a href="/docs/reference/foundations/plugin/">plugins</a> that are compiled to WebAssembly</li>
-<li>Anything that can be compiled to WebAssembly can thus be loaded as a
-plugin</li>
-<li>These plugins are fully encapsulated (no access to file system or network)</li>
-<li>Plugins can be shipped as part of <a href="/docs/reference/scripting/#packages">packages</a></li>
-<li>Plugins work just the same in the web app</li>
+<li>Typst 现在可以加载编译为 WebAssembly 的<a href="/docs/reference/foundations/plugin/">插件</a></li>
+<li>任何可以编译为 WebAssembly 的内容都可以作为插件加载</li>
+<li>这些插件是完全封装的（无法访问文件系统或网络）</li>
+<li>插件可以作为<a href="/docs/reference/scripting/#packages">包</a>的一部分提供</li>
+<li>插件在 Web App 中也可以正常使用</li>
 </ul>
 </li>
-<li>Types are now first-class values (<strong>Breaking change</strong>)
+<li>类型现在是一等值（<strong>破坏性更改</strong>）
 <ul>
-<li>A <a href="/docs/reference/foundations/type/">type</a> is now itself a value</li>
-<li>Some types can be called like functions (those that have a constructor),
-e.g. <a href="/docs/reference/foundations/int/"><code>int</code></a> and <a href="/docs/reference/foundations/str/"><code>str</code></a></li>
-<li>Type checks are now of the form <code><span class="typ-func">type</span><span class="typ-punct">(</span><span class="typ-num">10</span><span class="typ-punct">)</span> <span class="typ-op">==</span> int</code> instead of the old
-<code><span class="typ-func">type</span><span class="typ-punct">(</span><span class="typ-num">10</span><span class="typ-punct">)</span> <span class="typ-op">==</span> <span class="typ-str">&quot;integer&quot;</span></code>. <a href="/docs/reference/foundations/type//#compatibility">Compatibility</a> with the
-old way will remain for a while to give package authors time to upgrade,
-but it will be removed at some point.</li>
-<li>Methods are now syntax sugar for calling a function scoped to a type,
-meaning that <code><span class="typ-str">&quot;hello&quot;</span><span class="typ-punct">.</span><span class="typ-func">len</span><span class="typ-punct">(</span><span class="typ-punct">)</span></code> is equivalent to <code>str<span class="typ-punct">.</span><span class="typ-func">len</span><span class="typ-punct">(</span><span class="typ-str">&quot;hello&quot;</span><span class="typ-punct">)</span></code></li>
+<li>现在，<a href="/docs/reference/foundations/type/">类型</a>本身也是一个值</li>
+<li>一些类型可以像函数一样调用（具有构造函数的那些类型），例如 <a href="/docs/reference/foundations/int/"><code>int</code></a> 和 <a href="/docs/reference/foundations/str/"><code>str</code></a></li>
+<li>类型检查现在采用 <code><span class="typ-func">type</span><span class="typ-punct">(</span><span class="typ-num">10</span><span class="typ-punct">)</span> <span class="typ-op">==</span> int</code> 这样的形式，而不是旧的 <code><span class="typ-func">type</span><span class="typ-punct">(</span><span class="typ-num">10</span><span class="typ-punct">)</span> <span class="typ-op">==</span> <span class="typ-str">&quot;integer&quot;</span></code>。与旧方式的兼容性将保留一段时间，以便包的作者有时间进行升级，但最终会移除。</li>
+<li>方法现在是调用作用域在类型内的函数的语法糖，这意味着 <code><span class="typ-str">&quot;hello&quot;</span><span class="typ-punct">.</span><span class="typ-func">len</span><span class="typ-punct">(</span><span class="typ-punct">)</span></code> 等价于 <code>str<span class="typ-punct">.</span><span class="typ-func">len</span><span class="typ-punct">(</span><span class="typ-str">&quot;hello&quot;</span><span class="typ-punct">)</span></code></li>
 </ul>
 </li>
-<li>Added support for <a href="/docs/reference/scripting/#modules"><code>import</code></a> renaming with <code>as</code></li>
-<li>Added a <a href="/docs/reference/foundations/duration/"><code>duration</code></a> type</li>
-<li>Added support for <a href="/docs/reference/data-loading/cbor/">CBOR</a> encoding and decoding</li>
-<li>Added encoding and decoding functions from and to bytes for data formats:
-<a href="/docs/reference/data-loading/json/#definitions-decode"><code>json.decode</code></a>, <a href="/docs/reference/data-loading/json/#definitions-encode"><code>json.encode</code></a>, and similar
-functions for other formats</li>
-<li>Added <a href="/docs/reference/foundations/array/#definitions-intersperse"><code>array.intersperse</code></a> function</li>
-<li>Added <a href="/docs/reference/foundations/str/#definitions-rev"><code>str.rev</code></a> function</li>
-<li>Added <code>calc.tau</code> constant</li>
-<li>Made <a href="/docs/reference/foundations/bytes/">bytes</a> joinable and addable</li>
-<li>Made <a href="/docs/reference/foundations/array/#definitions-zip"><code>array.zip</code></a> function variadic</li>
-<li>Fixed bug with <a href="/docs/reference/foundations/eval/"><code>eval</code></a> when the <code>mode</code> was set to <code><span class="typ-str">&quot;math&quot;</span></code></li>
-<li>Fixed bug with <a href="/docs/reference/foundations/str/#definitions-ends-with"><code>ends-with</code></a> function on strings</li>
-<li>Fixed bug with destructuring in combination with break, continue, and return</li>
-<li>Fixed argument types of <a href="/docs/reference/calculate/cosh/">hyperbolic functions</a>, they don't allow
-angles anymore (<strong>Breaking change</strong>)</li>
+<li>添加了使用 <code>as</code> 重命名的 <a href="/docs/reference/scripting/#modules"><code>import</code></a> 支持</li>
+<li>添加了 <a href="/docs/reference/foundations/duration/"><code>duration</code></a> 类型</li>
+<li>添加了 <a href="/docs/reference/data-loading/cbor/">CBOR</a> 编码和解码的支持</li>
+<li>添加了与数据格式的字节编码和解码函数相关的功能：<a href="/docs/reference/data-loading/json/#definitions-decode"><code>json.decode</code></a>、<a href="/docs/reference/data-loading/json/#definitions-encode"><code>json.encode</code></a> 等</li>
+<li>添加了 <a href="/docs/reference/foundations/array/#definitions-intersperse"><code>array.intersperse</code></a> 函数</li>
+<li>添加了 <a href="/docs/reference/foundations/str/#definitions-rev"><code>str.rev</code></a> 函数</li>
+<li>添加了 <code>calc.tau</code> 常量</li>
+<li>使 <a href="/docs/reference/foundations/bytes/">bytes</a> 可连接和可相加</li>
+<li>使 <a href="/docs/reference/foundations/array/#definitions-zip"><code>array.zip</code></a> 函数变为可变元的</li>
+<li>修复了当 <code>mode</code> 设置为 <code><span class="typ-str">&quot;math&quot;</span></code> 时 <a href="/docs/reference/foundations/eval/"><code>eval</code></a> 的错误</li>
+<li>修复了字符串的 <a href="/docs/reference/foundations/str/#definitions-ends-with"><code>ends-with</code></a> 函数的错误</li>
+<li>修复了解构与 break、continue 和 return 结合使用时的错误</li>
+<li>修复了<a href="/docs/reference/calculate/cosh/">双曲线函数</a>的参数类型，它们不再接受角度了（<strong>破坏性更改</strong>）</li>
 </ul>
 </li>
 <li>
-<p>Export</p>
+<p>导出</p>
 <ul>
-<li>Added SVG export
-(thanks to <a href="https://github.com/Enter-tainer">@Enter-tainer</a>)</li>
-<li>Fixed bugs with PDF font embedding</li>
-<li>Added support for page labels that reflect the
-<a href="/docs/reference/layout/page/#parameters-numbering">page numbering</a> style in the PDF</li>
+<li>添加了 SVG 导出（感谢 <a href="https://github.com/Enter-tainer">@Enter-tainer</a>）</li>
+<li>修复了 PDF 字体嵌入的错误</li>
+<li>添加了支持页面标签的功能，反映在 PDF 中的<a href="/docs/reference/layout/page/#parameters-numbering">页码编号</a>样式</li>
 </ul>
 </li>
 <li>
-<p>Text and Layout</p>
+<p>文本和布局</p>
 <ul>
-<li>Added <a href="/docs/reference/text/highlight/"><code>highlight</code></a> function for highlighting text with a
-background color</li>
-<li>Added <a href="/docs/reference/visualize/polygon/#definitions-regular"><code>polygon.regular</code></a> function for drawing a regular
-polygon</li>
-<li>Added support for tabs in <a href="/docs/reference/text/raw/"><code>raw</code></a> elements alongside
-<a href="/docs/reference/text/raw/#parameters-tab-size"><code>tab-width</code></a> parameter</li>
-<li>The layout engine now tries to prevent &quot;runts&quot; (final lines consisting of
-just a single word)</li>
-<li>Added Finnish translations</li>
-<li>Added hyphenation support for Polish</li>
-<li>Improved handling of consecutive smart quotes of different kinds</li>
-<li>Fixed vertical alignments for <a href="/docs/reference/layout/page/#parameters-number-align"><code>number-align</code></a> argument
-on page function (<strong>Breaking change</strong>)</li>
-<li>Fixed weak pagebreaks after counter updates</li>
-<li>Fixed missing text in SVG when the text font is set to &quot;New Computer Modern&quot;</li>
-<li>Fixed translations for Chinese</li>
-<li>Fixed crash for empty text in show rule</li>
-<li>Fixed leading spaces when there's a linebreak after a number and a comma</li>
-<li>Fixed placement of floating elements in columns and other containers</li>
-<li>Fixed sizing of block containing just a single box</li>
+<li>添加了 <a href="/docs/reference/text/highlight/"><code>highlight</code></a> 用于文本高亮的功能</li>
+<li>添加了 <a href="/docs/reference/visualize/polygon/#definitions-regular"><code>polygon.regular</code></a> 用于绘制规则多边形的功能</li>
+<li>添加了在 <a href="/docs/reference/text/raw/"><code>raw</code></a> 元素中支持制表符的功能，同时伴随着 <a href="/docs/reference/text/raw/#parameters-tab-size"><code>tab-width</code></a> 参数</li>
+<li>布局引擎现在会尽量避免产生 &quot;runts&quot;（最后一行只有一个单词）</li>
+<li>添加了芬兰语翻译</li>
+<li>为波兰语添加了断字支持</li>
+<li>改进了不同类型智能引号的连续处理</li>
+<li>修复了页面函数上的 <a href="/docs/reference/layout/page/#parameters-number-align"><code>number-align</code></a> 参数的垂直对齐（<strong>破坏性更改</strong>）</li>
+<li>修复了计数更新后弱页面断页</li>
+<li>修复了当文本字体设置为 &quot;New Computer Modern&quot; 时，SVG 中文本缺失的问题</li>
+<li>修复了中文的翻译问题</li>
+<li>修复了在显示规则中的空文本导致崩溃的问题</li>
+<li>修复了数字和逗号之间有换行符时的前导空格</li>
+<li>修复了在列和其他容器中浮动元素的位置</li>
+<li>修复了只包含单个方块的块的大小</li>
 </ul>
 </li>
 <li>
-<p>Math</p>
+<p>数学</p>
 <ul>
-<li>Added support for <a href="/docs/reference/math/mat/#parameters-augment">augmented matrices</a></li>
-<li>Removed support for automatic matching of fences like <code>|</code> and <code>||</code> as
-there were too many false positives. You can use functions like
-<a href="/docs/reference/math/lr/#functions-abs"><code>abs</code></a> or <a href="/docs/reference/math/lr/#functions-norm"><code>norm</code></a> or an explicit <a href="/docs/reference/math/lr/#functions-lr"><code>lr</code></a>
-call instead. (<strong>Breaking change</strong>)</li>
-<li>Fixed spacing after number with decimal point in math</li>
-<li>Fixed bug with primes in subscript</li>
-<li>Fixed weak spacing</li>
-<li>Fixed crash when text within math contains a newline</li>
+<li>添加了对<a href="/docs/reference/math/mat/#parameters-augment">增广矩阵</a>的支持</li>
+<li>移除了对 <code>|</code> 和 <code>||</code> 等分隔符自动匹配的支持，因为会有太多误报。您可以使用函数如 <a href="/docs/reference/math/lr/#functions-abs"><code>abs</code></a> 或 <a href="/docs/reference/math/lr/#functions-norm"><code>norm</code></a> 或显式的 <a href="/docs/reference/math/lr/#functions-lr"><code>lr</code></a> 调用来代替（<strong>破坏性更改</strong>）</li>
+<li>修复了数学中带小数点数字后的间距问题</li>
+<li>修复了下标中素数的错误</li>
+<li>修复了弱间距</li>
+<li>修复了数学中包含换行符的文本会导致崩溃的问题</li>
 </ul>
 </li>
 <li>
-<p>Tooling and Diagnostics</p>
+<p>工具和诊断</p>
 <ul>
-<li>Added hints when trying to call a function stored in a dictionary without
-extra parentheses</li>
-<li>Fixed hint when referencing an equation without numbering</li>
-<li>Added more details to some diagnostics (e.g. when SVG decoding fails)</li>
+<li>在尝试调用存储在字典中的函数时，现在会给出提示，提示需要额外的括号</li>
+<li>在引用未编号方程式时，现在会给出提示</li>
+<li>为某些诊断添加了更多细节（例如 SVG 解码失败时）</li>
 </ul>
 </li>
 <li>
-<p>Command line interface</p>
+<p>命令行界面</p>
 <ul>
-<li>Added <code>typst update</code> command for self-updating the CLI
-(thanks to <a href="https://github.com/jimvdl">@jimvdl</a>)</li>
-<li>Added download progress indicator for packages and updates</li>
-<li>Added <code>--format</code> argument to explicitly specify the output format</li>
-<li>The CLI now respects proxy configuration through environment variables and
-has a new <code>--cert</code> option for setting a custom CA certificate</li>
-<li>Fixed crash when field wasn't present and <code>--one</code> is passed to <code>typst query</code></li>
+<li>添加了 <code>typst update</code> 命令以自动更新 CLI
+（感谢 <a href="https://github.com/jimvdl">@jimvdl</a>）</li>
+<li>添加了包和更新的下载进度指示器</li>
+<li>添加了 <code>--format</code> 参数以明确指定输出格式</li>
+<li>CLI 现在通过环境变量尊重代理配置，并具有新的 <code>--cert</code> 选项来设置自定义 CA 证书</li>
+<li>修复了字段不存在时，传递 <code>--one</code> 给 <code>typst query</code> 会导致崩溃的问题</li>
 </ul>
 </li>
 <li>
-<p>Miscellaneous Improvements</p>
+<p>其他改进</p>
 <ul>
-<li>Added <a href="/docs/guides/page-setup-guide/">page setup guide</a></li>
-<li>Added <a href="/docs/reference/meta/figure/#definitions-caption"><code>figure.caption</code></a> function that can be used for
-simpler figure customization (<strong>Breaking change</strong> because <code>it.caption</code> now
-renders the full caption with supplement in figure show rules and manual
-outlines)</li>
-<li>Moved <code>caption-pos</code> argument to <code>figure.caption</code> function and renamed it to
-<code>position</code> (<strong>Breaking change</strong>)</li>
-<li>Added <a href="/docs/reference/meta/figure/#definitions-caption"><code>separator</code></a> argument to <code>figure.caption</code>
-function</li>
-<li>Added support for combination of and/or and before/after
-<a href="/docs/reference/meta/selector/">selectors</a></li>
-<li>Packages can now specify a
-<a href="https://github.com/typst/packages#package-format">minimum compiler version</a>
-they require to work</li>
-<li>Fixed parser bug where method calls could be moved onto their own line
-for <code><span class="typ-key">#</span><span class="typ-key">let</span></code> expressions in markup (continues to work in code)</li>
-<li>Fixed bugs in sentence and title case conversion for bibliographies</li>
-<li>Fixed supplements for alphanumeric and author-title bibliography styles</li>
-<li>Fixed off-by-one error in APA bibliography style</li>
+<li>添加了<a href="/docs/guides/page-setup-guide/">页面设置指南</a></li>
+<li>添加了 <a href="/docs/reference/meta/figure/#definitions-caption"><code>figure.caption</code></a> 函数，可用于更简单的图题自定义（<strong>破坏性更改</strong>，因为 <code>it.caption</code> 现在在图表显示规则和手动大纲中呈现完整的图题与补充）</li>
+<li>将 <code>caption-pos</code> 参数移动到 <code>figure.caption</code> 函数中，并将其重命名为 <code>position</code>（<strong>破坏性更改</strong>）</li>
+<li>为 <code>figure.caption</code> 函数添加了 <a href="/docs/reference/meta/figure/#definitions-caption"><code>separator</code></a> 参数</li>
+<li>添加了组合和/或和之前/之后的<a href="/docs/reference/meta/selector/">选择器</a>支持</li>
+<li>包现在可以指定它们所需的<a href="https://github.com/typst/packages#package-format">最小编译器版本</a></li>
+<li>修复了标记中方法调用可以移到它们自己的行中的解析器错误（在标记中继续工作）</li>
+<li>修复了参考文献的句子和标题大小写转换中的错误</li>
+<li>修复了字母数字和作者-标题参考文献样式的补充</li>
+<li>修复了 APA 参考文献样式中的 off-by-one 错误</li>
 </ul>
 </li>
 <li>
-<p>Development</p>
+<p>开发</p>
 <ul>
-<li>Made <code>Span</code> and <code>FileId</code> more type-safe so that all error conditions must be
-handled by <code>World</code> implementors</li>
+<li>使 <code>Span</code> 和 <code>FileId</code> 更具类型安全性，以便 <code>World</code> 的实现者必须处理所有错误条件</li>
 </ul>
 </li>
 </ul>
-<h2 id="v0.7.0">Version 0.7.0 (August 7, 2023)</h2>
+<h2 id="v0.7.0">Version 0.7.0（2023年8月7日）</h2>
 <ul>
 <li>
-<p>Text and Layout</p>
+<p>文本和布局</p>
 <ul>
-<li>Added support for floating figures through the
-<a href="/docs/reference/meta/figure/#parameters-placement"><code>placement</code></a> argument on the figure function</li>
-<li>Added support for arbitrary floating content through the
-<a href="/docs/reference/layout/place/#parameters-float"><code>float</code></a> argument on the place function</li>
-<li>Added support for loading <code>.sublime-syntax</code> files as highlighting
-<a href="/docs/reference/text/raw/#parameters-syntaxes">syntaxes</a> for raw blocks</li>
-<li>Added support for loading <code>.tmTheme</code> files as highlighting
-<a href="/docs/reference/text/raw/#parameters-theme">themes</a> for raw blocks</li>
-<li>Added <em>bounds</em> option to <a href="/docs/reference/text/text/#parameters-top-edge"><code>top-edge</code></a> and
-<a href="/docs/reference/text/text/#parameters-bottom-edge"><code>bottom-edge</code></a> arguments of text function for tight
-bounding boxes</li>
-<li>Removed nonsensical top- and bottom-edge options, e.g. <em>ascender</em> for the
-bottom edge (<strong>Breaking change</strong>)</li>
-<li>Added <a href="/docs/reference/text/text/#parameters-script"><code>script</code></a> argument to text function</li>
-<li>Added <a href="/docs/reference/text/smartquote/#parameters-alternative"><code>alternative</code></a> argument to smart quote
-function</li>
-<li>Added basic i18n for Japanese</li>
-<li>Added hyphenation support for <code>nb</code> and <code>nn</code> language codes in addition to
-<code>no</code></li>
-<li>Fixed positioning of <a href="/docs/reference/layout/place/">placed elements</a> in containers</li>
-<li>Fixed overflowing containers due to optimized line breaks</li>
+<li>通过图像函数的 <a href="/docs/reference/meta/figure/#parameters-placement"><code>placement</code></a> 参数添加了对浮动图像的支持</li>
+<li>通过放置函数的 <a href="/docs/reference/layout/place/#parameters-float"><code>float</code></a> 参数添加了对任意浮动内容的支持</li>
+<li>添加了加载 <code>.sublime-syntax</code> 文件作为原始块的高亮 <a href="/docs/reference/text/raw/#parameters-syntaxes">语法</a> 的支持</li>
+<li>添加了加载 <code>.tmTheme</code> 文件作为原始块的高亮 <a href="/docs/reference/text/raw/#parameters-theme">主题</a> 的支持</li>
+<li>为文本函数的 <code>top-edge</code> 和 <code>bottom-edge</code> 参数添加了 <code>_bounds_</code> 选项，用于创建紧密边界框</li>
+<li>移除了无意义的 <code>top-</code> 和 <code>bottom-edge</code> 选项，例如底部边缘的 <em>ascender</em> (<strong>破坏性更改</strong>)</li>
+<li>为文本函数添加了 <a href="/docs/reference/text/text/#parameters-script"><code>script</code></a> 参数</li>
+<li>为智能引号函数添加了 <a href="/docs/reference/text/smartquote/#parameters-alternative"><code>alternative</code></a> 参数</li>
+<li>添加了日语的基础国际化支持</li>
+<li>除了 <code>no</code> 外，还添加了对 <code>nb</code> 和 <code>nn</code> 语言代码的断词支持</li>
+<li>修复了容器中 <a href="/docs/reference/layout/place/">放置元素</a> 的定位问题</li>
+<li>修复了因优化的换行而导致容器溢出的问题</li>
 </ul>
 </li>
 <li>
-<p>Export</p>
+<p>导出</p>
 <ul>
-<li>Greatly improved export of SVG images to PDF. Many thanks to
-<a href="https://github.com/LaurenzV">@LaurenzV</a> for their work on this.</li>
-<li>Added support for the alpha channel of RGBA colors in PDF export</li>
-<li>Fixed a bug with PPI (pixels per inch) for PNG export</li>
+<li>大幅改进了将 SVG 图像导出为 PDF 的功能。非常感谢 <a href="https://github.com/LaurenzV">@LaurenzV</a> 在此方面的工作</li>
+<li>在 PDF 导出中添加了对 RGBA 颜色的 alpha 通道的支持</li>
+<li>修复了 PNG 导出中 PPI（每英寸像素数）的错误</li>
 </ul>
 </li>
 <li>
-<p>Math</p>
+<p>数学</p>
 <ul>
-<li>Improved layout of primes (e.g. in <code><span class="typ-math-delim">$</span>a<span class="typ-math-op">&#39;</span><span class="typ-math-op">_</span>1<span class="typ-math-delim">$</span></code>)</li>
-<li>Improved display of multi-primes (e.g. in <code><span class="typ-math-delim">$</span>a<span class="typ-math-op">&#39;</span><span class="typ-math-op">&#39;</span><span class="typ-math-delim">$</span></code>)</li>
-<li>Improved layout of <a href="/docs/reference/math/roots/#functions-root">roots</a></li>
-<li>Changed relations to show attachments as <a href="/docs/reference/math/attach/#functions-limits">limits</a> by default
-(e.g. in <code><span class="typ-math-delim">$</span>a <span class="typ-escape">-&gt;</span><span class="typ-math-op">^</span>x b<span class="typ-math-delim">$</span></code>)</li>
-<li>Large operators and delimiters are now always vertically centered</li>
-<li><a href="/docs/reference/layout/box/">Boxes</a> in equations now sit on the baseline instead of being
-vertically centered by default. Notably, this does not affect
-<a href="/docs/reference/layout/block/">blocks</a> because they are not inline elements.</li>
-<li>Added support for <a href="/docs/reference/layout/h/#parameters-weak">weak spacing</a></li>
-<li>Added support for OpenType character variants</li>
-<li>Added support for customizing the <a href="/docs/reference/math/class/">math class</a> of content</li>
-<li>Fixed spacing around <code>.</code>, <code>\/</code>, and <code>...</code></li>
-<li>Fixed spacing between closing delimiters and large operators</li>
-<li>Fixed a bug with math font weight selection</li>
-<li>Symbols and Operators (<strong>Breaking changes</strong>)
+<li>改进了素数的布局（例如在 <code><span class="typ-math-delim">$</span>a<span class="typ-math-op">&#39;</span><span class="typ-math-op">_</span>1<span class="typ-math-delim">$</span></code> 中）</li>
+<li>改进了多重素数的显示（例如在 <code><span class="typ-math-delim">$</span>a<span class="typ-math-op">&#39;</span><span class="typ-math-op">&#39;</span><span class="typ-math-delim">$</span></code> 中）</li>
+<li>改进了 <a href="/docs/reference/math/roots/#functions-root">根</a> 的布局</li>
+<li>默认情况下，将关系改为默认显示为 <a href="/docs/reference/math/attach/#functions-limits">限制</a>（例如在 <code><span class="typ-math-delim">$</span>a <span class="typ-escape">-&gt;</span><span class="typ-math-op">^</span>x b<span class="typ-math-delim">$</span></code> 中）</li>
+<li>大型运算符和分隔符现在始终垂直居中</li>
+<li>方程中的 <a href="/docs/reference/layout/box/">方框</a> 现在默认坐落在基线上，而不是垂直居中。值得注意的是，这不会影响 <a href="/docs/reference/layout/block/">块</a>，因为它们不是内联元素。</li>
+<li>添加了 <a href="/docs/reference/layout/h/#parameters-weak">弱间距</a> 的支持</li>
+<li>添加了 OpenType 字符变体的支持</li>
+<li>添加了自定义内容的 <a href="/docs/reference/math/class/">数学类别</a> 的支持</li>
+<li>修复了 <code>.</code>, <code>\/</code>, 和 <code>...</code> 周围的间距问题</li>
+<li>修复了闭合分隔符与大型运算符之间的间距问题</li>
+<li>修复了数学字体重量选择的错误</li>
+<li>符号和运算符（<strong>破坏性更改</strong>）
 <ul>
-<li>Added <code>id</code>, <code>im</code>, and <code>tr</code> text <a href="/docs/reference/math/op/">operators</a></li>
-<li>Renamed <code>ident</code> to <code>equiv</code> with alias <code>eq.triple</code> and removed
-<code>ident.strict</code> in favor of <code>eq.quad</code></li>
-<li>Renamed <code>ast.sq</code> to <code>ast.square</code> and <code>integral.sq</code> to <code>integral.square</code></li>
-<li>Renamed <code>.eqq</code> modifier to <code>.equiv</code> (and <code>.neqq</code> to <code>.nequiv</code>) for
-<code>tilde</code>, <code>gt</code>, <code>lt</code>, <code>prec</code>, and <code>succ</code></li>
-<li>Added <code>emptyset</code> as alias for <code>nothing</code></li>
-<li>Added <code>lt.curly</code> and <code>gt.curly</code> as aliases for <code>prec</code> and <code>succ</code></li>
-<li>Added <code>aleph</code>, <code>beth</code>, and <code>gimmel</code> as alias for <code>alef</code>, <code>bet</code>, and
-<code>gimel</code></li>
+<li>添加了 <code>id</code>、<code>im</code> 和 <code>tr</code> 文本 <a href="/docs/reference/math/op/">运算符</a></li>
+<li>将 <code>ident</code> 重命名为 <code>equiv</code>，并添加别名 <code>eq.triple</code>，并移除了 <code>ident.strict</code>，改用 <code>eq.quad</code></li>
+<li>将 <code>ast.sq</code> 重命名为 <code>ast.square</code>，将 <code>integral.sq</code> 重命名为 <code>integral.square</code></li>
+<li>将 <code>.eqq</code> 修饰符重命名为 <code>.equiv</code>（并将 <code>.neqq</code> 重命名为 <code>.nequiv</code>），用于 <code>tilde</code>、<code>gt</code>、<code>lt</code>、<code>prec</code> 和 <code>succ</code></li>
+<li>添加了 <code>emptyset</code> 作为 <code>nothing</code> 的别名</li>
+<li>添加了 <code>lt.curly</code> 和 <code>gt.curly</code> 作为 <code>prec</code> 和 <code>succ</code> 的别名</li>
+<li>添加了 <code>aleph</code>、<code>beth</code> 和 <code>gimmel</code> 作为 <code>alef</code>、<code>bet</code> 和 <code>gimel</code> 的别名</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<p>Scripting</p>
+<p>脚本</p>
 <ul>
-<li>Fields
+<li>字段
 <ul>
-<li>Added <code>abs</code> and <code>em</code> field to <a href="/docs/reference/layout/length/">lengths</a></li>
-<li>Added <code>ratio</code> and <code>length</code> field to <a href="/docs/reference/layout/relative/">relative lengths</a></li>
-<li>Added <code>x</code> and <code>y</code> field to <a href="/docs/reference/layout/align/#parameters-alignment">2d alignments</a></li>
-<li>Added <code>paint</code>, <code>thickness</code>, <code>cap</code>, <code>join</code>, <code>dash</code>, and <code>miter-limit</code> field
-to <a href="/docs/reference/visualize/stroke/">strokes</a></li>
+<li>为 <a href="/docs/reference/layout/length/">长度</a> 添加了 <code>abs</code> 和 <code>em</code> 字段</li>
+<li>为 <a href="/docs/reference/layout/relative/">相对长度</a> 添加了 <code>ratio</code> 和 <code>length</code> 字段</li>
+<li>为 <a href="/docs/reference/layout/align/#parameters-alignment">2d 对齐</a> 添加了 <code>x</code> 和 <code>y</code> 字段</li>
+<li>为 <a href="/docs/reference/visualize/stroke/">笔画</a> 添加了 <code>paint</code>、<code>thickness</code>、<code>cap</code>、<code>join</code>、<code>dash</code> 和 <code>miter-limit</code> 字段</li>
 </ul>
 </li>
-<li>Accessor and utility methods
+<li>存取器和实用方法
 <ul>
-<li>Added <a href="/docs/reference/foundations/array/#definitions-dedup"><code>dedup</code></a> method to arrays</li>
-<li>Added <code>pt</code>, <code>mm</code>, <code>cm</code>, and <code>inches</code> method to <a href="/docs/reference/layout/length/">lengths</a></li>
-<li>Added <code>deg</code> and <code>rad</code> method to <a href="/docs/reference/layout/angle/">angles</a></li>
-<li>Added <code>kind</code>, <code>hex</code>, <code>rgba</code>, <code>cmyk</code>, and <code>luma</code> method to <a href="/docs/reference/visualize/color/">colors</a></li>
-<li>Added <code>axis</code>, <code>start</code>, <code>end</code>, and <code>inv</code> method to <a href="/docs/reference/layout/stack/#parameters-dir">directions</a></li>
-<li>Added <code>axis</code> and <code>inv</code> method to <a href="/docs/reference/layout/align/#parameters-alignment">alignments</a></li>
-<li>Added <code>inv</code> method to <a href="/docs/reference/layout/align/#parameters-alignment">2d alignments</a></li>
-<li>Added <code>start</code> argument to <a href="/docs/reference/foundations/array/#definitions-enumerate"><code>enumerate</code></a> method on arrays</li>
+<li>添加了 <a href="/docs/reference/foundations/array/#definitions-dedup"><code>dedup</code></a> 数组方法</li>
+<li>添加了 <a href="/docs/reference/layout/length/">长度</a> 的 <code>pt</code>、<code>mm</code>、<code>cm</code> 和 <code>inches</code> 方法</li>
+<li>添加了 <a href="/docs/reference/layout/angle/">角度</a> 的 <code>deg</code> 和 <code>rad</code> 方法</li>
+<li>添加了 <a href="/docs/reference/visualize/color/">颜色</a> 的 <code>kind</code>、<code>hex</code>、<code>rgba</code>、<code>cmyk</code> 和 <code>luma</code> 方法</li>
+<li>添加了 <a href="/docs/reference/layout/stack/#parameters-dir">方向</a> 的 <code>axis</code>、<code>start</code>、<code>end</code> 和 <code>inv</code> 方法</li>
+<li>添加了 <a href="/docs/reference/layout/align/#parameters-alignment">对齐</a> 的 <code>axis</code> 和 <code>inv</code> 方法</li>
+<li>添加了 <a href="/docs/reference/layout/align/#parameters-alignment">2d 对齐</a> 的 <code>inv</code> 方法</li>
+<li>在数组的 <a href="/docs/reference/foundations/array/#definitions-enumerate"><code>enumerate</code></a> 方法上添加了 <code>start</code> 参数</li>
 </ul>
 </li>
-<li>Added <a href="/docs/reference/visualize/color/#definitions-mix"><code>color.mix</code></a> function</li>
-<li>Added <code>mode</code> and <code>scope</code> arguments to <a href="/docs/reference/foundations/eval/"><code>eval</code></a> function</li>
-<li>Added <a href="/docs/reference/foundations/bytes/"><code>bytes</code></a> type for holding large byte buffers
+<li>添加了 <a href="/docs/reference/visualize/color/#definitions-mix"><code>color.mix</code></a> 函数</li>
+<li>为 <a href="/docs/reference/foundations/eval/"><code>eval</code></a> 函数添加了 <code>mode</code> 和 <code>scope</code> 参数</li>
+<li>添加了 <a href="/docs/reference/foundations/bytes/"><code>bytes</code></a> 类型，用于保存大字节缓冲区
 <ul>
-<li>Added <a href="/docs/reference/data-loading/read/#parameters-encoding"><code>encoding</code></a> argument to read function to read a
-file as bytes instead of a string</li>
-<li>Added <a href="/docs/reference/visualize/image/#definitions-decode"><code>image.decode</code></a> function for decoding an image
-directly from a string or bytes</li>
-<li>Added <a href="/docs/reference/foundations/bytes/"><code>bytes</code></a> function for converting a string or an array of
-integers to bytes</li>
-<li>Added <a href="/docs/reference/foundations/array/"><code>array</code></a> function for converting bytes to an array of
-integers</li>
-<li>Added support for converting bytes to a string with the <a href="/docs/reference/foundations/str/"><code>str</code></a>
-function</li>
+<li>在读取函数中添加了 <a href="/docs/reference/data-loading/read/#parameters-encoding"><code>encoding</code></a> 参数，以读取字节而不是字符串</li>
+<li>添加了 <a href="/docs/reference/visualize/image/#definitions-decode"><code>image.decode</code></a> 函数，用于直接从字符串或字节解码图像</li>
+<li>添加了 <a href="/docs/reference/foundations/bytes/"><code>bytes</code></a> 函数，用于将字符串或整数数组转换为字节</li>
+<li>添加了 <a href="/docs/reference/foundations/array/"><code>array</code></a> 函数，用于将字节转换为整数数组</li>
+<li>添加了使用 <a href="/docs/reference/foundations/str/"><code>str</code></a> 函数将字节转换为字符串的支持</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<p>Tooling and Diagnostics</p>
+<p>工具和诊断</p>
 <ul>
-<li>Added support for compiler warnings</li>
-<li>Added warning when compilation does not converge within five attempts due to
-intense use of introspection features</li>
-<li>Added warnings for empty emphasis (<code>__</code> and <code>**</code>)</li>
-<li>Improved error message for invalid field assignments</li>
-<li>Improved error message after single <code>#</code></li>
-<li>Improved error message when a keyword is used where an identifier is
-expected</li>
-<li>Fixed parameter autocompletion for functions that are in modules</li>
-<li>Import autocompletion now only shows the latest package version until a
-colon is typed</li>
-<li>Fixed autocompletion for dictionary key containing a space</li>
-<li>Fixed autocompletion for for loops</li>
+<li>添加了对编译器警告的支持</li>
+<li>当编译由于强烈使用内省功能而在五次尝试内不收敛时，添加了警告</li>
+<li>对空强调 (<code>__</code> 和 <code>**</code>) 添加了警告</li>
+<li>改进了无效字段分配的错误消息</li>
+<li>改进了单个 <code>#</code> 后的错误消息</li>
+<li>当关键字用于期望标识符的位置时，改进了错误消息</li>
+<li>修复了模块中的函数的参数自动补全</li>
+<li>现在，导入自动补全仅在键入冒号之前显示最新的包版本</li>
+<li>修复了包含空格的字典键的自动补全</li>
+<li>修复了 for 循环的自动补全</li>
 </ul>
 </li>
 <li>
-<p>Command line interface</p>
+<p>命令行界面</p>
 <ul>
-<li>Added <code>typst query</code> subcommand to execute a
-<a href="/docs/reference/meta/query/#command-line-queries">query</a> on the command line</li>
-<li>The <code>--root</code> and <code>--font-paths</code> arguments cannot appear in front of the
-command anymore (<strong>Breaking change</strong>)</li>
-<li>Local and cached packages are now stored in directories of the form
-<code>{namespace}/{name}/{version}</code> instead of <code>{namespace}/{name}-{version}</code>
-(<strong>Breaking change</strong>)</li>
-<li>Now prioritizes explicitly given fonts (via <code>--font-paths</code>) over system and
-embedded fonts when both exist</li>
-<li>Fixed <code>typst watch</code> not working with some text editors</li>
-<li>Fixed displayed compilation time (now includes export)</li>
+<li>添加了 <code>typst query</code> 子命令，用于在命令行上执行查询</li>
+<li>不再支持在命令之前使用 <code>--root</code> 和 <code>--font-paths</code> 参数（<strong>破坏性更改</strong>）</li>
+<li>现在，本地和缓存的包存储在形式为 <code>namespace}/{name}/{version}</code> 的目录中，而不再是 <code>namespace}/{name}-{version}</code>（<strong>破坏性更改</strong>）</li>
+<li>现在，显式给定的字体（通过 <code>--font-paths</code>）优先于系统和嵌入字体</li>
+<li>修复了在某些文本编辑器中 <code>typst watch</code> 不起作用的问题</li>
+<li>修复了显示的编译时间（现在包括导出）</li>
 </ul>
 </li>
 <li>
-<p>Miscellaneous Improvements</p>
+<p>其他改进</p>
 <ul>
-<li>Added <a href="/docs/reference/meta/heading/#parameters-bookmarked"><code>bookmarked</code></a> argument to heading to control
-whether a heading becomes part of the PDF outline</li>
-<li>Added <a href="/docs/reference/meta/figure/#definitions-caption"><code>caption-pos</code></a> argument to control the
-position of a figure's caption</li>
-<li>Added <a href="/docs/reference/meta/metadata/"><code>metadata</code></a> function for exposing an arbitrary value to
-the introspection system</li>
-<li>Fixed that a <a href="/docs/reference/meta/state/"><code>state</code></a> was identified by the pair <code>(key, init)</code>
-instead of just its <code>key</code></li>
-<li>Improved indent logic of <a href="/docs/reference/layout/enum/">enumerations</a>. Instead of requiring at
-least as much indent as the end of the marker, they now require only one
-more space indent than the start of the marker. As a result, even long
-markers like <code>12.</code> work with just 2 spaces of indent.</li>
-<li>Fixed bug with indent logic of <a href="/docs/reference/text/raw/"><code>raw</code></a> blocks</li>
-<li>Fixed a parsing bug with dictionaries</li>
+<li>在标题中添加了 <a href="/docs/reference/meta/heading/#parameters-bookmarked"><code>bookmarked</code></a> 参数，用于控制标题是否成为PDF大纲的一部分</li>
+<li>添加了 <a href="/docs/reference/meta/figure/#definitions-caption"><code>caption-pos</code></a> 参数，用于控制图像标题的位置</li>
+<li>添加了 <a href="/docs/reference/meta/metadata/"><code>metadata</code></a> 函数，用于将任意值暴露给内省系统</li>
+<li>修复了 <a href="/docs/reference/meta/state/"><code>state</code></a> 被识别为 <code>(key, init)</code> 对而不仅仅是其 <code>key</code> 的问题</li>
+<li>改进了 <a href="/docs/reference/layout/enum/">枚举</a> 的缩进逻辑。现在，它们只需要比标记的起始缩进多一个空格缩进。因此，即使是长标记如 <code>12.</code> 也只需要 2 个空格缩进。</li>
+<li>修复了 <a href="/docs/reference/text/raw/"><code>raw</code></a> 块的缩进逻辑问题</li>
+<li>修复了字典的解析问题</li>
 </ul>
 </li>
 <li>
-<p>Development</p>
+<p>开发</p>
 <ul>
-<li>Extracted parser and syntax tree into <code>typst-syntax</code> crate</li>
-<li>The <code>World::today</code> implementation of Typst dependants may need fixing if
-they have the same <a href="https://github.com/typst/typst/issues/1842">bug</a> that
-the CLI world had</li>
+<li>将解析器和语法树提取到 <code>typst-syntax</code> 包中</li>
+<li>如果 Typst 的依赖关系中有相同的 <a href="https://github.com/typst/typst/issues/1842">bug</a>，则 Typst 依赖项的 <code>World::today</code> 实现可能需要修复</li>
 </ul>
 </li>
 </ul>
-<h2 id="v0.6.0">Version 0.6.0 (June 30, 2023)</h2>
+<h2 id="v0.6.0">Version 0.6.0（2023年6月30日）</h2>
 <ul>
 <li>
-<p>Package Management</p>
+<p>包管理</p>
 <ul>
-<li>Typst now has built-in <a href="/docs/reference/scripting/#packages">package management</a></li>
-<li>You can import <a href="/docs/packages/">published</a> community packages or create and use
-<a href="https://github.com/typst/packages#local-packages">system-local</a> ones</li>
-<li>Published packages are also supported in the web app</li>
+<li>Typst 现在内置了<a href="/docs/reference/scripting/#packages">包管理</a></li>
+<li>您可以导入<a href="/docs/packages/">已发布的</a>社区包或创建并使用
+<a href="https://github.com/typst/packages#local-packages">系统本地</a>包</li>
+<li>已发布的包也受 Web 应用程序支持</li>
 </ul>
 </li>
 <li>
-<p>Math</p>
+<p>数学</p>
 <ul>
-<li>Added support for optical size variants of glyphs in math mode</li>
-<li>Added argument to enable <a href="/docs/reference/math/attach/#functions-limits"><code>limits</code></a> conditionally depending on
-whether the equation is set in <a href="/docs/reference/math/sizes/#functions-display"><code>display</code></a> or
-<a href="/docs/reference/math/sizes/#functions-inline"><code>inline</code></a> style</li>
-<li>Added <code>gt.eq.slant</code> and <code>lt.eq.slant</code> symbols</li>
-<li>Increased precedence of factorials in math mode (<code><span class="typ-math-delim">$</span>1<span class="typ-math-op">/</span>n!<span class="typ-math-delim">$</span></code> works correctly
-now)</li>
-<li>Improved <a href="/docs/reference/math/underover/#functions-underline">underlines</a> and <a href="/docs/reference/math/underover/#functions-overline">overlines</a> in
-math mode</li>
-<li>Fixed usage of <a href="/docs/reference/math/attach/#functions-limits"><code>limits</code></a> function in show rules</li>
-<li>Fixed bugs with line breaks in equations</li>
+<li>在数学模式中添加了对字形的<a href="https://en.wikipedia.org/wiki/Optical_size">光学尺寸变体</a>的支持</li>
+<li>添加了参数，以根据方程式是以<a href="/docs/reference/math/sizes/#functions-display"><code>display</code></a>或
+<a href="/docs/reference/math/sizes/#functions-inline"><code>inline</code></a>风格设置的情况下有条件地启用<a href="/docs/reference/math/attach/#functions-limits"><code>limits</code></a></li>
+<li>添加了 <code>gt.eq.slant</code> 和 <code>lt.eq.slant</code> 符号</li>
+<li>在数学模式中增加了阶乘的优先级（<code><span class="typ-math-delim">$</span>1<span class="typ-math-op">/</span>n!<span class="typ-math-delim">$</span></code> 现在可以正常工作了）</li>
+<li>改进了数学模式中的<a href="/docs/reference/math/underover/#functions-underline">下划线</a>和<a href="/docs/reference/math/underover/#functions-overline">上划线</a></li>
+<li>修复了在显示规则中使用<a href="/docs/reference/math/attach/#functions-limits"><code>limits</code></a>函数的问题</li>
+<li>修复了方程式中的换行问题</li>
 </ul>
 </li>
 <li>
-<p>Text and Layout</p>
+<p>文本和布局</p>
 <ul>
-<li>Added support for alternating page <a href="/docs/reference/layout/page/#parameters-margin">margins</a> with the <code>inside</code>
-and <code>outside</code> keys</li>
-<li>Added support for specifying the page <a href="/docs/reference/layout/page/#parameters-binding"><code>binding</code></a></li>
-<li>Added <a href="/docs/reference/layout/pagebreak/#parameters-to"><code>to</code></a> argument to pagebreak function to skip to the
-next even or odd page</li>
-<li>Added basic i18n for a few more languages (TR, SQ, TL)</li>
-<li>Fixed bug with missing table row at page break</li>
-<li>Fixed bug with <a href="/docs/reference/text/underline/">underlines</a></li>
-<li>Fixed bug superfluous table lines</li>
-<li>Fixed smart quotes after line breaks</li>
-<li>Fixed a crash related to text layout</li>
+<li>添加了支持交替的页面<a href="/docs/reference/layout/page/#parameters-margin">页边距</a>，使用 <code>inside</code> 和 <code>outside</code> 键</li>
+<li>添加了指定页面<a href="/docs/reference/layout/page/#parameters-binding"><code>binding</code></a>的支持</li>
+<li>为 pagebreak 函数添加了 <a href="/docs/reference/layout/pagebreak/#parameters-to"><code>to</code></a> 参数，以跳到下一个偶数页或奇数页</li>
+<li>为更多语言（TR、SQ、TL）添加了基本的国际化支持</li>
+<li>修复了分页时缺失表格行的问题</li>
+<li>修复了<a href="/docs/reference/text/underline/">下划线</a>的问题</li>
+<li>修复了多余的表格线问题</li>
+<li>修复了在换行后智能引号的问题</li>
+<li>修复了与文本布局相关的崩溃问题</li>
 </ul>
 </li>
 <li>
-<p>Command line interface</p>
+<p>命令行界面</p>
 <ul>
-<li><strong>Breaking change:</strong> Added requirement for <code>--root</code>/<code>TYPST_ROOT</code> directory
-to contain the input file because it designates the <em>project</em> root. Existing
-setups that use <code>TYPST_ROOT</code> to emulate package management should switch to
-<a href="https://github.com/typst/packages#local-packages">local packages</a></li>
-<li><strong>Breaking change:</strong> Now denies file access outside of the project root</li>
-<li>Added support for local packages and on-demand package download</li>
-<li>Now watches all relevant files, within the root and all packages</li>
-<li>Now displays compilation time</li>
+<li><strong>破坏性更改：</strong> 添加了 <code>--root</code>/<code>TYPST_ROOT</code> 目录必须包含输入文件的要求，因为它指定了 <em>项目</em> 根目录。现有设置中使用 <code>TYPST_ROOT</code> 来模拟包管理的应更改为使用<a href="https://github.com/typst/packages#local-packages">本地包</a></li>
+<li><strong>破坏性更改：</strong> 现在拒绝在项目根目录之外访问文件</li>
+<li>添加了对本地包和按需包下载的支持</li>
+<li>现在监视根目录和所有包内的所有相关文件</li>
+<li>现在显示编译时间</li>
 </ul>
 </li>
 <li>
-<p>Miscellaneous Improvements</p>
+<p>其他改进</p>
 <ul>
-<li>Added <a href="/docs/reference/meta/outline/#definitions-entry"><code>outline.entry</code></a> to customize outline entries with
-show rules</li>
-<li>Added some hints for error messages</li>
-<li>Added some missing syntaxes for <a href="/docs/reference/text/raw/"><code>raw</code></a> highlighting</li>
-<li>Improved rendering of rotated images in PNG export and web app</li>
-<li>Made <a href="/docs/reference/meta/footnote/">footnotes</a> reusable and referenceable</li>
-<li>Fixed bug with citations and bibliographies in <a href="/docs/reference/meta/locate/"><code>locate</code></a></li>
-<li>Fixed inconsistent tense in documentation</li>
+<li>添加了 <a href="/docs/reference/meta/outline/#definitions-entry"><code>outline.entry</code></a> 以自定义大纲条目与显示规则</li>
+<li>为错误消息添加了一些提示</li>
+<li>为<a href="/docs/reference/text/raw/"><code>raw</code></a>高亮添加了一些缺失的语法</li>
+<li>改进了在 PNG 导出和 Web 应用程序中渲染旋转图像的效果</li>
+<li>使<a href="/docs/reference/meta/footnote/">脚注</a>可重复使用和可引用</li>
+<li>修复了<a href="/docs/reference/meta/locate/"><code>locate</code></a>中的引用和参考文献的问题</li>
+<li>修复了文档中时态不一致的问题</li>
 </ul>
 </li>
 <li>
-<p>Development</p>
+<p>开发</p>
 <ul>
-<li>Added <a href="https://github.com/typst/typst/blob/main/CONTRIBUTING.md">contribution guide</a></li>
-<li>Reworked <code>World</code> interface to accommodate for package management and make
-it a bit simpler to implement <em>(Breaking change for implementors)</em></li>
+<li>添加了<a href="https://github.com/typst/typst/blob/main/CONTRIBUTING.md">贡献指南</a></li>
+<li>重新设计了 <code>World</code> 接口以适应包管理，并使其更简单实现（对于实现者的<strong>破坏性更改</strong>）</li>
 </ul>
 </li>
 </ul>
-<h2 id="v0.5.0">Version 0.5.0 (June 9, 2023)</h2>
+<h2 id="v0.5.0">Version 0.5.0（2023年6月9日）</h2>
 <ul>
 <li>
-<p>Text and Layout</p>
+<p>文本和布局</p>
 <ul>
-<li>Added <a href="/docs/reference/text/raw/"><code>raw</code></a> syntax highlighting for many more languages</li>
-<li>Added support for Korean <a href="/docs/reference/meta/numbering/">numbering</a></li>
-<li>Added basic i18n for a few more languages (NL, SV, DA)</li>
-<li>Improved line breaking for East Asian languages</li>
-<li>Expanded functionality of outline <a href="/docs/reference/meta/outline/#parameters-indent"><code>indent</code></a> property</li>
-<li>Fixed footnotes in columns</li>
-<li>Fixed page breaking bugs with <a href="/docs/reference/meta/footnote/">footnotes</a></li>
-<li>Fixed bug with handling of footnotes in lists, tables, and figures</li>
-<li>Fixed a bug with CJK punctuation adjustment</li>
-<li>Fixed a crash with rounded rectangles</li>
-<li>Fixed alignment of <a href="/docs/reference/visualize/line/"><code>line</code></a> elements</li>
-</ul>
-</li>
-<li>
-<p>Math</p>
-<ul>
-<li><strong>Breaking change:</strong> The syntax rules for mathematical
-<a href="/docs/reference/math/attach/#functions-attach">attachments</a> were improved: <code><span class="typ-math-delim">$</span>f<span class="typ-math-op">^</span><span class="typ-func">abs</span><span class="typ-punct">(</span>3<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code> now parses as
-<code><span class="typ-math-delim">$</span>f<span class="typ-math-op">^</span><span class="typ-punct">(</span><span class="typ-func">abs</span><span class="typ-punct">(</span>3<span class="typ-punct">)</span><span class="typ-punct">)</span><span class="typ-math-delim">$</span></code> instead of <code><span class="typ-math-delim">$</span>(f<span class="typ-math-op">^</span><span class="typ-pol">abs</span>)(3)<span class="typ-math-delim">$</span></code>. To disambiguate, add a space:
-<code><span class="typ-math-delim">$</span>f<span class="typ-math-op">^</span><span class="typ-pol">zeta</span> (3)<span class="typ-math-delim">$</span></code>.</li>
-<li>Added <a href="/docs/reference/math/sizes/">forced size</a> commands for math (e.g.,
-<a href="/docs/reference/math/sizes/#functions-display"><code>display</code></a>)</li>
-<li>Added <a href="/docs/reference/math/equation/#parameters-supplement"><code>supplement</code></a> parameter to
-<a href="/docs/reference/math/equation/"><code>equation</code></a>, used by <a href="/docs/reference/meta/ref/">references</a></li>
-<li>New <a href="/docs/reference/symbols/sym/">symbols</a>: <code>bullet</code>, <code>xor</code>, <code>slash.big</code>,
-<code>sigma.alt</code>, <code>tack.r.not</code>, <code>tack.r.short</code>, <code>tack.r.double.not</code></li>
-<li>Fixed a bug with symbols in matrices</li>
-<li>Fixed a crash in the <a href="/docs/reference/math/attach/#functions-attach"><code>attach</code></a> function</li>
+<li>为更多语言添加了<a href="/docs/reference/text/raw/"><code>raw</code></a>语法高亮</li>
+<li>添加了对韩语<a href="/docs/reference/meta/numbering/">编号</a>的支持</li>
+<li>为更多语言（NL、SV、DA）添加了基本国际化支持</li>
+<li>改进了东亚语言的分行</li>
+<li>扩展了大纲<a href="/docs/reference/meta/outline/#parameters-indent"><code>indent</code></a>属性的功能</li>
+<li>修复了列中的脚注</li>
+<li>修复了<a href="/docs/reference/meta/footnote/">脚注</a>的分页错误</li>
+<li>修复了在列表、表格和图表中处理脚注的错误</li>
+<li>修复了CJK标点符号调整的问题</li>
+<li>修复了带有圆角矩形的崩溃问题</li>
+<li>修复了<a href="/docs/reference/visualize/line/"><code>line</code></a>元素的对齐问题</li>
 </ul>
 </li>
 <li>
-<p>Scripting</p>
+<p>数学</p>
 <ul>
-<li>Added new <a href="/docs/reference/foundations/datetime/"><code>datetime</code></a> type and
-<a href="/docs/reference/foundations/datetime/#definitions-today"><code>datetime.today</code></a> to retrieve the current date</li>
-<li>Added <a href="/docs/reference/foundations/str/#definitions-from-unicode"><code>str.from-unicode</code></a> and
-<a href="/docs/reference/foundations/str/#definitions-to-unicode"><code>str.to-unicode</code></a> functions</li>
-<li>Added <a href="/docs/reference/foundations/content/#definitions-fields"><code>fields</code></a> method on content</li>
-<li>Added <code>base</code> parameter to <a href="/docs/reference/foundations/str/"><code>str</code></a> function</li>
-<li>Added <a href="/docs/reference/calculate/exp/"><code>calc.exp</code></a> and <a href="/docs/reference/calculate/ln/"><code>calc.ln</code></a></li>
-<li>Improved accuracy of <a href="/docs/reference/calculate/pow/"><code>calc.pow</code></a> and <a href="/docs/reference/calculate/log/"><code>calc.log</code></a> for
-specific bases</li>
-<li>Fixed <a href="/docs/reference/foundations/dictionary/#definitions-remove">removal</a> order for dictionary</li>
-<li>Fixed <code>.at(default: ..)</code> for <a href="/docs/reference/foundations/str/#definitions-at">strings</a> and <a href="/docs/reference/foundations/content/#definitions-at">content</a></li>
-<li>Fixed field access on styled elements</li>
-<li>Removed deprecated <code>calc.mod</code> function</li>
+<li><strong>破坏性更改：</strong> 数学<a href="/docs/reference/math/attach/#functions-attach">附件</a>的语法规则得到改进：<code><span class="typ-math-delim">$</span>f<span class="typ-math-op">^</span><span class="typ-func">abs</span><span class="typ-punct">(</span>3<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code>现在解析为 <code><span class="typ-math-delim">$</span>f<span class="typ-math-op">^</span><span class="typ-punct">(</span><span class="typ-func">abs</span><span class="typ-punct">(</span>3<span class="typ-punct">)</span><span class="typ-punct">)</span><span class="typ-math-delim">$</span></code> 而不是 <code><span class="typ-math-delim">$</span>(f<span class="typ-math-op">^</span><span class="typ-pol">abs</span>)(3)<span class="typ-math-delim">$</span></code>。要消除歧义，请添加一个空格：<code><span class="typ-math-delim">$</span>f<span class="typ-math-op">^</span><span class="typ-pol">zeta</span> (3)<span class="typ-math-delim">$</span></code>。</li>
+<li>为数学（例如，<a href="/docs/reference/math/sizes/#functions-display"><code>display</code></a>）添加了<a href="/docs/reference/math/sizes/">强制大小</a>命令</li>
+<li>为<a href="/docs/reference/math/equation/"><code>equation</code></a>添加了<a href="/docs/reference/math/equation/#parameters-supplement"><code>supplement</code></a>参数，被<a href="/docs/reference/meta/ref/">引用</a>使用</li>
+<li>新<a href="/docs/reference/symbols/sym/">符号</a>：<code>bullet</code>、<code>xor</code>、<code>slash.big</code>、<code>sigma.alt</code>、<code>tack.r.not</code>、<code>tack.r.short</code>、<code>tack.r.double.not</code></li>
+<li>修复了矩阵中的符号错误</li>
+<li>修复了<a href="/docs/reference/math/attach/#functions-attach"><code>attach</code></a>函数中的崩溃</li>
 </ul>
 </li>
 <li>
-<p>Command line interface</p>
+<p>脚本</p>
 <ul>
-<li>Added PNG export via <code>typst compile source.typ output-{n}.png</code>. The output
-path must contain <code>{n}</code> if the document has multiple pages.</li>
-<li>Added <code>--diagnostic-format=short</code> for Unix-style short diagnostics</li>
-<li>Doesn't emit color codes anymore if stderr isn't a TTY</li>
-<li>Now sets the correct exit when invoked with a non-existent file</li>
-<li>Now ignores UTF-8 BOM in Typst files</li>
+<li>添加了新的<a href="/docs/reference/foundations/datetime/"><code>datetime</code></a>类型和<a href="/docs/reference/foundations/datetime/#definitions-today"><code>datetime.today</code></a>以获取当前日期</li>
+<li>添加了<a href="/docs/reference/foundations/str/#definitions-from-unicode"><code>str.from-unicode</code></a>和<a href="/docs/reference/foundations/str/#definitions-to-unicode"><code>str.to-unicode</code></a>函数</li>
+<li>在内容上添加了<a href="/docs/reference/foundations/content/#definitions-fields"><code>fields</code></a>方法</li>
+<li>为<a href="/docs/reference/foundations/str/"><code>str</code></a>函数添加了<code>base</code>参数</li>
+<li>添加了<a href="/docs/reference/calculate/exp/"><code>calc.exp</code></a>和<a href="/docs/reference/calculate/ln/"><code>calc.ln</code></a></li>
+<li>改进了特定基数的<a href="/docs/reference/calculate/pow/"><code>calc.pow</code></a>和<a href="/docs/reference/calculate/log/"><code>calc.log</code></a>的精度</li>
+<li>修复了字典的<a href="/docs/reference/foundations/dictionary/#definitions-remove">删除</a>顺序</li>
+<li>修复了字符串[$str.at]和内容[$content.at]的<code>.at(default: ..)</code>问题</li>
+<li>修复了对带有样式元素的字段访问</li>
+<li>移除了已弃用的<code>calc.mod</code>函数</li>
 </ul>
 </li>
 <li>
-<p>Miscellaneous Improvements</p>
+<p>命令行界面</p>
 <ul>
-<li>Improved errors for mismatched delimiters</li>
-<li>Improved error message for failed length comparisons</li>
-<li>Fixed a bug with images not showing up in Apple Preview</li>
-<li>Fixed multiple bugs with the PDF outline</li>
-<li>Fixed citations and other searchable elements in <a href="/docs/reference/layout/hide/"><code>hide</code></a></li>
-<li>Fixed bugs with <a href="/docs/reference/meta/ref/#parameters-supplement">reference supplements</a></li>
-<li>Fixed Nix flake</li>
-</ul>
-</li>
-</ul>
-<h2 id="v0.4.0">Version 0.4.0 (May 20, 2023)</h2>
-<ul>
-<li>
-<p>Footnotes</p>
-<ul>
-<li>Implemented support for footnotes</li>
-<li>The <a href="/docs/reference/meta/footnote/"><code>footnote</code></a> function inserts a footnote</li>
-<li>The <a href="/docs/reference/meta/footnote/#definitions-entry"><code>footnote.entry</code></a> function can be used to customize
-the footnote listing</li>
-<li>The <code><span class="typ-str">&quot;chicago-notes&quot;</span></code> <a href="/docs/reference/meta/cite/#parameters-style">citation style</a> is now available</li>
+<li>通过 <code>typst compile source.typ output-{n}.png</code> 添加了PNG导出。如果文档有多个页面，则输出路径必须包含 <code>{n}</code>。</li>
+<li>添加了 <code>--diagnostic-format=short</code> 以进行类似Unix的简短诊断</li>
+<li>如果 stderr 不是 TTY，则不再发出颜色代码</li>
+<li>当以不存在的文件调用时，现在设置了正确的退出状态</li>
+<li>不再忽略Typst文件中的UTF-8 BOM</li>
 </ul>
 </li>
 <li>
-<p>Documentation</p>
+<p>其他改进</p>
 <ul>
-<li>Added a <a href="/docs/guides/guide-for-latex-users/">Guide for LaTeX users</a></li>
-<li>Now shows default values for optional arguments</li>
-<li>Added richer outlines in &quot;On this Page&quot;</li>
-<li>Added initial support for search keywords: &quot;Table of Contents&quot; will now find
-the <a href="/docs/reference/meta/outline/">outline</a> function. Suggestions for more keywords are welcome!</li>
-<li>Fixed issue with search result ranking</li>
-<li>Fixed many more small issues</li>
+<li>改进了不匹配分隔符的错误</li>
+<li>改进了长度比较失败的错误消息</li>
+<li>修复了在Apple Preview中图像未显示的问题</li>
+<li>修复了PDF大纲的多个错误</li>
+<li>修复了在<a href="/docs/reference/layout/hide/"><code>hide</code></a>中的引用和其他可搜索元素的错误</li>
+<li>修复了Nix flake问题</li>
+</ul>
+</li>
+</ul>
+## Version 0.4.0（2023年5月20日）{#v0.4.0}
+- 脚注
+  - 实现了对脚注的支持
+  - [`footnote`]($footnote) 函数插入脚注
+  - [`footnote.entry`]($footnote.entry) 函数可用于自定义脚注列表
+  - 现在支持 `{"chicago-notes"}` [引用样式]($cite.style)
+<ul>
+<li>
+<p>文档</p>
+<ul>
+<li>添加了<a href="/docs/guides/guide-for-latex-users/">LaTeX用户指南</a></li>
+<li>现在显示可选参数的默认值</li>
+<li>在“本页内容”中添加了更丰富的大纲</li>
+<li>初步支持搜索关键字：现在可以通过“目录”找到<a href="/docs/reference/meta/outline/">大纲</a>函数。欢迎提出更多关键字的建议！</li>
+<li>修复了搜索结果排序问题</li>
+<li>修复了许多其他小问题</li>
 </ul>
 </li>
 <li>
-<p>Math</p>
+<p>数学</p>
 <ul>
-<li><strong>Breaking change</strong>: Alignment points (<code>&amp;</code>) in equations now alternate
-between left and right alignment</li>
-<li>Added support for writing roots with Unicode: For example, <code><span class="typ-math-delim">$</span><span class="typ-func">root</span><span class="typ-punct">(</span>x+y<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code>
-can now also be written as <code><span class="typ-math-delim">$</span><span class="typ-math-op">√</span><span class="typ-punct">(</span>x+y<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code></li>
-<li>Fixed uneven vertical <a href="/docs/reference/math/attach/#functions-attach"><code>attachment</code></a> alignment</li>
-<li>Fixed spacing on decorated elements (e.g., spacing around a
-<a href="/docs/reference/math/cancel/">canceled</a> operator)</li>
-<li>Fixed styling for stretchable symbols</li>
-<li>Added <code>tack.r.double</code>, <code>tack.l.double</code>, <code>dotless.i</code> and <code>dotless.j</code>
-<a href="/docs/reference/symbols/sym/">symbols</a></li>
-<li>Fixed show rules on symbols (e.g. <code><span class="typ-key">show</span> sym<span class="typ-punct">.</span><span class="typ-func">tack</span><span class="typ-punct">:</span> <span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>blue<span class="typ-punct">)</span></code>)</li>
-<li>Fixed missing rename from <code>ast.op</code> to <code>ast</code> that should have been in the
-previous release</li>
+<li><strong>破坏性更改</strong>：方程中的对齐点 (<code>&amp;</code>) 现在在左对齐和右对齐之间交替</li>
+<li>添加了对使用Unicode编写根号的支持：例如，<code><span class="typ-math-delim">$</span><span class="typ-func">root</span><span class="typ-punct">(</span>x+y<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code> 现在也可以写成 <code><span class="typ-math-delim">$</span><span class="typ-math-op">√</span><span class="typ-punct">(</span>x+y<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code></li>
+<li>修复了不均匀的垂直<a href="/docs/reference/math/attach/#functions-attach"><code>attachment</code></a>对齐</li>
+<li>修复了装饰元素的间距（例如，<a href="/docs/reference/math/cancel/">canceled</a>运算符周围的间距）</li>
+<li>修复了可伸缩符号的样式</li>
+<li>添加了 <code>tack.r.double</code>、<code>tack.l.double</code>、<code>dotless.i</code> 和 <code>dotless.j</code> <a href="/docs/reference/symbols/sym/">符号</a></li>
+<li>修复了符号的显示规则（例如，<code><span class="typ-key">show</span> sym<span class="typ-punct">.</span><span class="typ-func">tack</span><span class="typ-punct">:</span> <span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>blue<span class="typ-punct">)</span></code>）</li>
+<li>修复了应该在之前版本中进行的从 <code>ast.op</code> 到 <code>ast</code> 的重命名遗漏</li>
 </ul>
 </li>
 <li>
-<p>Scripting</p>
+<p>脚本</p>
 <ul>
-<li>Added function scopes: A function can now hold related definitions in its
-own scope, similar to a module. The new <a href="/docs/reference/foundations/assert/#definitions-eq"><code>assert.eq</code></a> function,
-for instance, is part of the <a href="/docs/reference/foundations/assert/"><code>assert</code></a> function's scope. Note that
-function scopes are currently only available for built-in functions.</li>
-<li>Added <a href="/docs/reference/foundations/assert/#definitions-eq"><code>assert.eq</code></a> and <a href="/docs/reference/foundations/assert/#definitions-ne"><code>assert.ne</code></a> functions for
-simpler equality and inequality assertions with more helpful error messages</li>
-<li>Exposed <a href="/docs/reference/layout/list/#definitions-item">list</a>, <a href="/docs/reference/layout/enum/#definitions-item">enum</a>, and <a href="/docs/reference/layout/terms/#definitions-item">term list</a>
-items in their respective functions' scope</li>
-<li>The <code>at</code> methods on <a href="/docs/reference/foundations/str/#definitions-at">strings</a>, <a href="/docs/reference/foundations/array/#definitions-at">arrays</a>,
-<a href="/docs/reference/foundations/dictionary/#definitions-at">dictionaries</a>, and <a href="/docs/reference/foundations/content/#definitions-at">content</a> now support
-specifying a default value</li>
-<li>Added support for passing a function to <a href="/docs/reference/foundations/str/#definitions-replace"><code>replace</code></a> that is
-called with each match.</li>
-<li>Fixed <a href="/docs/reference/foundations/str/#definitions-replace">replacement</a> strings: They are now inserted completely
-verbatim instead of supporting the previous (unintended) magic dollar syntax
-for capture groups</li>
-<li>Fixed bug with trailing placeholders in destructuring patterns</li>
-<li>Fixed bug with underscore in parameter destructuring</li>
-<li>Fixed crash with nested patterns and when hovering over an invalid pattern</li>
-<li>Better error messages when casting to an <a href="/docs/reference/foundations/int/">integer</a> or <a href="/docs/reference/foundations/float/">float</a>
-fails</li>
+<li>添加了函数作用域：现在，函数可以在其自己的作用域中保存相关定义，类似于模块。例如，新的 <a href="/docs/reference/foundations/assert/#definitions-eq"><code>assert.eq</code></a> 函数是 <a href="/docs/reference/foundations/assert/"><code>assert</code></a> 函数作用域的一部分。请注意，目前仅内置函数支持函数作用域。</li>
+<li>添加了 <a href="/docs/reference/foundations/assert/#definitions-eq"><code>assert.eq</code></a> 和 <a href="/docs/reference/foundations/assert/#definitions-ne"><code>assert.ne</code></a> 函数，用于更简单的相等性和不等性断言，并提供更有帮助的错误消息</li>
+<li>在它们各自的函数作用域中公开了 <a href="/docs/reference/layout/list/#definitions-item">list</a>、<a href="/docs/reference/layout/enum/#definitions-item">enum</a> 和 <a href="/docs/reference/layout/terms/#definitions-item">term list</a> 项目</li>
+<li>在 <a href="/docs/reference/foundations/str/#definitions-at">strings</a>、<a href="/docs/reference/foundations/array/#definitions-at">arrays</a>、<a href="/docs/reference/foundations/dictionary/#definitions-at">dictionaries</a> 和 <a href="/docs/reference/foundations/content/#definitions-at">content</a> 上的 <code>at</code> 方法现在支持指定默认值</li>
+<li>添加了将函数传递给 <a href="/docs/reference/foundations/str/#definitions-replace"><code>replace</code></a> 的支持，每次匹配时调用函数</li>
+<li>修复了<a href="/docs/reference/foundations/str/#definitions-replace">替换</a>字符串：现在，它们被完全原样插入，而不再支持以前（不打算的）魔术美元符号语法来捕获组</li>
+<li>修复了在解构模式中的尾随占位符问题</li>
+<li>修复了参数解构中下划线的问题</li>
+<li>修复了嵌套模式和在无效模式上悬停时的崩溃</li>
+<li>在将类型转换为 <a href="/docs/reference/foundations/int/">integer</a> 或 <a href="/docs/reference/foundations/float/">float</a> 失败时提供更好的错误消息</li>
 </ul>
 </li>
 <li>
-<p>Text and Layout</p>
+<p>文本和布局</p>
 <ul>
-<li>Implemented sophisticated CJK punctuation adjustment</li>
-<li>Disabled <a href="/docs/reference/text/text/#parameters-overhang">overhang</a> for CJK punctuation</li>
-<li>Added basic translations for Traditional Chinese</li>
-<li>Fixed <a href="/docs/reference/text/raw/#parameters-align">alignment</a> of text inside raw blocks (centering a raw
-block, e.g. through a figure, will now keep the text itself left-aligned)</li>
-<li>Added support for passing a array instead of a function to configure table
-cell <a href="/docs/reference/layout/table/#parameters-align">alignment</a> and <a href="/docs/reference/layout/table/#parameters-fill">fill</a> per column</li>
-<li>Fixed automatic figure <a href="/docs/reference/meta/figure/#parameters-kind"><code>kind</code></a> detection</li>
-<li>Made alignment of <a href="/docs/reference/layout/enum/#parameters-number-align">enum numbers</a> configurable,
-defaulting to <code>end</code></li>
-<li>Figures can now be made breakable with a show-set rule for blocks in figure</li>
-<li>Initial fix for smart quotes in RTL languages</li>
+<li>实现了复杂的CJK标点符号调整</li>
+<li>禁用了CJK标点的<a href="/docs/reference/text/text/#parameters-overhang">悬挂</a></li>
+<li>为繁体中文添加了基本翻译</li>
+<li>修复了原始块内文本的<a href="/docs/reference/text/raw/#parameters-align">对齐</a>（现在保持文本自身的左对齐，例如通过图像将原始块居中对齐）</li>
+<li>添加了支持通过数组而不是函数配置表格单元<a href="/docs/reference/layout/table/#parameters-align">对齐</a>和<a href="/docs/reference/layout/table/#parameters-fill">填充</a></li>
+<li>修复了自动图像<a href="/docs/reference/meta/figure/#parameters-kind"><code>kind</code></a>检测</li>
+<li>使<a href="/docs/reference/layout/enum/#parameters-number-align">枚举编号</a>的对齐可配置，默认为 <code>end</code></li>
+<li>图像现在可以通过块中的显示设置规则进行分页</li>
+<li>RTL语言中智能引号的初始修复</li>
 </ul>
 </li>
 <li>
-<p>Export</p>
+<p>导出</p>
 <ul>
-<li>Fixed ligatures in PDF export: They are now copyable and searchable</li>
-<li>Exported PDFs now embed ICC profiles for images that have them</li>
-<li>Fixed export of strokes with zero thickness</li>
+<li>修复了PDF导出中的连字：它们现在可以复制和搜索</li>
+<li>导出的PDF现在嵌入了具有ICC配置文件的图像</li>
+<li>修复了零厚度笔画的导出</li>
 </ul>
 </li>
 <li>
-<p>Web app</p>
+<p>Web应用</p>
 <ul>
-<li>Projects can now contain folders</li>
-<li>Added upload by drag-and-drop into the file panel</li>
-<li>Files from the file panel can now be dragged into the editor to insert them
-into a Typst file</li>
-<li>You can now copy-paste images and other files from your computer directly
-into the editor</li>
-<li>Added a button to resend confirmation email</li>
-<li>Added an option to invert preview colors in dark mode</li>
-<li>Added tips to the loading screen and the Help menu. Feel free to propose
-more!</li>
-<li>Added syntax highlighting for YAML files</li>
-<li>Allowed middle mouse button click on many buttons to navigate into a new tab</li>
-<li>Allowed more project names</li>
-<li>Fixed overridden Vim mode keybindings</li>
-<li>Fixed many bugs regarding file upload and more</li>
+<li>项目现在可以包含文件夹</li>
+<li>添加了通过拖放到文件面板上传的功能</li>
+<li>现在可以将文件面板中的文件拖放到编辑器中以将它们插入Typst文件</li>
+<li>您现在可以直接从计算机中复制粘贴图像和其他文件到编辑器中</li>
+<li>添加了重新发送确认电子邮件的按钮</li>
+<li>在深色模式下添加了反转预览颜色的选项</li>
+<li>在加载屏幕和帮助菜单中添加了提示信息。欢迎提出更多建议！</li>
+<li>为YAML文件添加了语法高亮</li>
+<li>允许在许多按钮上使用中间鼠标按钮单击以导航到新标签页</li>
+<li>允许更多项目名称</li>
+<li>修复了覆盖的Vim模式键绑定</li>
+<li>修复了关于文件上传等方面的许多错误</li>
 </ul>
 </li>
 <li>
-<p>Miscellaneous Improvements</p>
+<p>杂项改进</p>
 <ul>
-<li>Improved performance of counters, state, and queries</li>
-<li>Improved incremental parsing for more efficient recompilations</li>
-<li>Added support for <code>.yaml</code> extension in addition to <code>.yml</code> for bibliographies</li>
-<li>The CLI now emits escape codes only if the output is a TTY</li>
-<li>For users of the <code>typst</code> crate: The <code>Document</code> is now <code>Sync</code> again and the
-<code>World</code> doesn't have to be <code>'static</code> anymore</li>
+<li>提高了计数器、状态和查询的性能</li>
+<li>改进了更高效的增量解析以进行重新编译</li>
+<li>现在支持 <code>.yaml</code> 扩展名，除了 <code>.yml</code> 用于参考文献</li>
+<li>CLI现在只在输出是TTY时发出转义代码</li>
+<li>对于 <code>typst</code> crate 的用户：<code>Document</code> 现在再次是 <code>Sync</code>，而 <code>World</code> 不再需要 <code>'static</code></li>
 </ul>
 </li>
 </ul>
-<h2 id="v0.3.0">Version 0.3.0 (April 26, 2023)</h2>
+<h2 id="v0.3.0">Version 0.3.0 (2023年4月26日)</h2>
 <ul>
 <li>
-<p><strong>Breaking changes:</strong></p>
+<p><strong>重大变更:</strong></p>
 <ul>
-<li>Renamed a few symbols: What was previous <code>dot.op</code> is now just <code>dot</code> and the
-basic dot is <code>dot.basic</code>. The same applies to <code>ast</code> and <code>tilde</code>.</li>
-<li>Renamed <code>mod</code> to <a href="/docs/reference/calculate/rem/"><code>rem</code></a> to more accurately reflect the
-behaviour. It will remain available as <code>mod</code> until the next update as a
-grace period.</li>
-<li>A lone underscore is not a valid identifier anymore, it can now only be used
-in patterns</li>
-<li>Removed <code>before</code> and <code>after</code> arguments from <a href="/docs/reference/meta/query/"><code>query</code></a>. This is now
-handled through flexible <a href="/docs/reference/meta/selector/">selectors</a> combinator methods</li>
-<li>Added support for <a href="/docs/reference/math/attach/#functions-attach">attachments</a> (sub-, superscripts) that
-precede the base symbol. The <code>top</code> and <code>bottom</code> arguments have been renamed
-to <code>t</code> and <code>b</code>.</li>
+<li>重命名了一些符号：以前的 <code>dot.op</code> 现在只是 <code>dot</code>，而基本的点是 <code>dot.basic</code>。<code>ast</code> 和 <code>tilde</code> 也是如此。</li>
+<li>将 <code>mod</code> 重命名为 <a href="/docs/reference/calculate/rem/"><code>rem</code></a> 以更准确地反映行为。在下一次更新之前，将保留 <code>mod</code> 作为宽限期。</li>
+<li>单独的下划线不再是有效的标识符，现在只能在模式中使用</li>
+<li>从 <a href="/docs/reference/meta/query/"><code>query</code></a> 中删除了 <code>before</code> 和 <code>after</code> 参数。现在可以通过灵活的<a href="/docs/reference/meta/selector/">选择器</a>组合方法来处理这些。</li>
+<li>添加了对<a href="/docs/reference/math/attach/#functions-attach">附件</a>（下标、上标）的支持，它们位于基本符号之前。<code>top</code> 和 <code>bottom</code> 参数已重命名为 <code>t</code> 和 <code>b</code>。</li>
 </ul>
 </li>
 <li>
-<p>New features</p>
+<p>新功能</p>
 <ul>
-<li>Added support for more complex <a href="/docs/reference/visualize/stroke/">strokes</a> (configurable caps, joins,
-and dash patterns)</li>
-<li>Added <a href="/docs/reference/math/cancel/"><code>cancel</code></a> function for equations</li>
-<li>Added support for <a href="/docs/reference/scripting/#bindings">destructuring</a> in argument lists
-and assignments</li>
-<li>Added <a href="/docs/reference/visualize/image/#parameters-alt"><code>alt</code></a> text argument to image function</li>
-<li>Added <a href="/docs/reference/data-loading/toml/"><code>toml</code></a> function for loading data from a TOML file</li>
-<li>Added <a href="/docs/reference/foundations/array/#definitions-zip"><code>zip</code></a>, <a href="/docs/reference/foundations/array/#definitions-sum"><code>sum</code></a>, and
-<a href="/docs/reference/foundations/array/#definitions-product"><code>product</code></a> methods for arrays</li>
-<li>Added <code>fact</code>, <code>perm</code>, <code>binom</code>, <code>gcd</code>, <code>lcm</code>, <code>atan2</code>, <code>quo</code>, <code>trunc</code>, and
-<code>fract</code> <a href="/docs/reference/calculate/">calculation</a></li>
+<li>增加了对更复杂的<a href="/docs/reference/visualize/stroke/">笔画</a>的支持（可配置的端点、连接和虚线模式）</li>
+<li>添加了用于方程的 <a href="/docs/reference/math/cancel/"><code>cancel</code></a> 函数</li>
+<li>在参数列表和赋值中添加了<a href="/docs/reference/scripting/#bindings">解构</a>的支持</li>
+<li>为图像函数添加了 <a href="/docs/reference/visualize/image/#parameters-alt"><code>alt</code></a> 文本参数</li>
+<li>添加了从 TOML 文件加载数据的 <a href="/docs/reference/data-loading/toml/"><code>toml</code></a> 函数</li>
+<li>为数组添加了 <a href="/docs/reference/foundations/array/#definitions-zip"><code>zip</code></a>、<a href="/docs/reference/foundations/array/#definitions-sum"><code>sum</code></a> 和 <a href="/docs/reference/foundations/array/#definitions-product"><code>product</code></a> 方法</li>
+<li>添加了 <code>fact</code>、<code>perm</code>、<code>binom</code>、<code>gcd</code>、<code>lcm</code>、<code>atan2</code>、<code>quo</code>、<code>trunc</code> 和 <code>fract</code> <a href="/docs/reference/calculate/">计算</a></li>
 </ul>
 </li>
 <li>
-<p>Improvements</p>
+<p>改进</p>
 <ul>
-<li>Text in SVGs now displays properly</li>
-<li>Typst now generates a PDF heading outline</li>
-<li><a href="/docs/reference/meta/ref/">References</a> now provides the referenced element as a field in show
-rules</li>
-<li>Refined linebreak algorithm for better Chinese justification</li>
-<li>Locations are now a valid kind of selector</li>
-<li>Added a few symbols for algebra</li>
-<li>Added Spanish smart quote support</li>
-<li>Added <a href="/docs/reference/meta/selector/"><code>selector</code></a> function to turn a selector-like value into a
-selector on which combinator methods can be called</li>
-<li>Improved some error messages</li>
-<li>The outline and bibliography headings can now be styled with show-set rules</li>
-<li>Operations on numbers now produce an error instead of overflowing</li>
+<li>SVG 中的文本现在可以正常显示</li>
+<li>Typst 现在生成了一个PDF目录大纲</li>
+<li><a href="/docs/reference/meta/ref/">引用</a> 现在在显示规则中提供了被引用元素作为字段</li>
+<li>优化了换行算法，以获得更好的中文对齐</li>
+<li>位置现在是有效的选择器种类</li>
+<li>添加了一些代数符号</li>
+<li>添加了西班牙智能引号支持</li>
+<li>添加了 <a href="/docs/reference/meta/selector/"><code>selector</code></a> 函数，将选择器类似的值转换为可以调用组合方法的选择器</li>
+<li>改进了一些错误消息</li>
+<li>大纲和参考文献标题现在可以使用显示设置规则进行样式设置</li>
+<li>数字运算现在产生错误，而不是溢出</li>
 </ul>
 </li>
 <li>
-<p>Bug fixes</p>
+<p>Bug 修复</p>
 <ul>
-<li>Fixed wrong linebreak before punctuation that follows inline equations,
-citations, and other elements</li>
-<li>Fixed a bug with <a href="/docs/reference/foundations/arguments/">argument sinks</a></li>
-<li>Fixed strokes with thickness zero</li>
-<li>Fixed hiding and show rules in math</li>
-<li>Fixed alignment in matrices</li>
-<li>Fixed some alignment bugs in equations</li>
-<li>Fixed grid cell alignment</li>
-<li>Fixed alignment of list marker and enum markers in presence of global
-alignment settings</li>
-<li>Fixed <a href="/docs/reference/visualize/path/">path</a> closing</li>
-<li>Fixed compiler crash with figure references</li>
-<li>A single trailing line breaks is now ignored in math, just like in text</li>
+<li>修复了行内方程、引用和其他元素后面的标点符号之前的错误断行</li>
+<li>修复了关于<a href="/docs/reference/foundations/arguments/">参数接收器</a>的错误</li>
+<li>修复了线条厚度为零的问题</li>
+<li>修复了数学中隐藏和显示规则的问题</li>
+<li>修复了矩阵中的对齐问题</li>
+<li>修复了方程中的一些对齐错误</li>
+<li>修复了网格单元格的对齐问题</li>
+<li>在全局对齐设置存在的情况下，修复了列表标记和枚举标记的对齐</li>
+<li>修复了<a href="/docs/reference/visualize/path/">路径</a>的闭合</li>
+<li>修复了与图形引用相关的编译器崩溃</li>
+<li>数学中现在忽略单个尾随换行，就像在文本中一样</li>
 </ul>
 </li>
 <li>
-<p>Command line interface</p>
+<p>命令行界面</p>
 <ul>
-<li>Font path and compilation root can now be set with the environment variables
-<code>TYPST_FONT_PATHS</code> and <code>TYPST_ROOT</code></li>
-<li>The output of <code>typst fonts</code> now includes the embedded fonts</li>
+<li>现在可以使用环境变量 <code>TYPST_FONT_PATHS</code> 和 <code>TYPST_ROOT</code> 设置字体路径和编译根目录</li>
+<li><code>typst fonts</code> 的输出现在包括了嵌入式字体</li>
 </ul>
 </li>
 <li>
-<p>Development</p>
+<p>开发</p>
 <ul>
-<li>Added instrumentation for debugging and optimization</li>
-<li>Added <code>--update</code> flag and <code>UPDATE_EXPECT</code> environment variable to update
-reference images for tests</li>
-<li>You can now run a specific subtest with <code>--subtest</code></li>
-<li>Tests now run on multiple threads</li>
+<li>添加了用于调试和优化的工具</li>
+<li>添加了 <code>--update</code> 标志和 <code>UPDATE_EXPECT</code> 环境变量以更新测试的参考图像</li>
+<li>现在可以使用 <code>--subtest</code> 运行特定的子测试</li>
+<li>测试现在在多个线程上运行</li>
 </ul>
 </li>
 </ul>
-<h2 id="v0.2.0">Version 0.2.0 (April 11, 2023)</h2>
+<h2 id="v0.2.0">Version 0.2.0 (2023年4月11日)</h2>
 <ul>
 <li>
-<p><strong>Breaking changes:</strong></p>
+<p><strong>重大变更:</strong></p>
 <ul>
-<li>Removed support for iterating over index and value in
-<a href="/docs/reference/scripting/#loops">for loops</a>. This is now handled via unpacking and
-enumerating. Same goes for the <a href="/docs/reference/foundations/array/#definitions-map"><code>map</code></a> method.</li>
-<li><a href="/docs/reference/foundations/dictionary/">Dictionaries</a> now iterate in insertion order instead of
-alphabetical order.</li>
+<li>移除了在<a href="/docs/reference/scripting/#loops">for循环</a>中遍历索引和值的支持。现在通过解包和枚举来处理。<code>map</code> 方法也是如此。</li>
+<li><a href="/docs/reference/foundations/dictionary/">字典</a> 现在按插入顺序进行迭代，而不是按字母顺序。</li>
 </ul>
 </li>
 <li>
-<p>New features</p>
+<p>新功能</p>
 <ul>
-<li>Added <a href="/docs/reference/scripting/#bindings">unpacking syntax</a> for let bindings, which
-allows things like <code><span class="typ-key">let</span> <span class="typ-punct">(</span>1<span class="typ-punct">,</span> 2<span class="typ-punct">)</span> <span class="typ-op">=</span> array</code></li>
-<li>Added <a href="/docs/reference/foundations/array/#definitions-enumerate"><code>enumerate</code></a> method</li>
-<li>Added <a href="/docs/reference/visualize/path/"><code>path</code></a> function for drawing Bézier paths</li>
-<li>Added <a href="/docs/reference/meta/layout/"><code>layout</code></a> function to access the size of the surrounding
-page or container</li>
-<li>Added <code>key</code> parameter to <a href="/docs/reference/foundations/array/#definitions-sorted"><code>sorted</code></a> method</li>
+<li>为 let 绑定添加了<a href="/docs/reference/scripting/#bindings">解包语法</a>，允许类似 <code><span class="typ-key">let</span> <span class="typ-punct">(</span>1<span class="typ-punct">,</span> 2<span class="typ-punct">)</span> <span class="typ-op">=</span> array</code> 这样的操作。</li>
+<li>添加了 <a href="/docs/reference/foundations/array/#definitions-enumerate"><code>enumerate</code></a> 方法</li>
+<li>添加了 <a href="/docs/reference/visualize/path/"><code>path</code></a> 函数用于绘制贝塞尔路径</li>
+<li>添加了 <a href="/docs/reference/meta/layout/"><code>layout</code></a> 函数以访问周围页面或容器的大小</li>
+<li>在 <a href="/docs/reference/foundations/array/#definitions-sorted"><code>sorted</code></a> 方法中添加了 <code>key</code> 参数</li>
 </ul>
 </li>
 <li>
-<p>Command line interface</p>
+<p>命令行界面</p>
 <ul>
-<li>Fixed <code>--open</code> flag blocking the program</li>
-<li>New Computer Modern font is now embedded into the binary</li>
-<li>Shell completions and man pages can now be generated by setting the
-<code>GEN_ARTIFACTS</code> environment variable to a target directory and then building
-Typst</li>
+<li>修复了 <code>--open</code> 标志阻塞程序的问题</li>
+<li>新的 Computer Modern 字体现在嵌入到二进制文件中</li>
+<li>可以通过将 <code>GEN_ARTIFACTS</code> 环境变量设置为目标目录，然后构建 Typst 来生成 shell 自动完成和 man 页面</li>
 </ul>
 </li>
 <li>
-<p>Miscellaneous improvements</p>
+<p>杂项改进</p>
 <ul>
-<li>Fixed page numbering in outline</li>
-<li>Added basic i18n for a few more languages
-(AR, NB, CS, NN, PL, SL, ES, UA, VI)</li>
-<li>Added a few numbering patterns (Ihora, Chinese)</li>
-<li>Added <code>sinc</code> <a href="/docs/reference/math/op/">operator</a></li>
-<li>Fixed bug where math could not be hidden with <a href="/docs/reference/layout/hide/"><code>hide</code></a></li>
-<li>Fixed sizing issues with box, block, and shapes</li>
-<li>Fixed some translations</li>
-<li>Fixed inversion of &quot;R&quot; in <a href="/docs/reference/math/variants/#functions-cal"><code>cal</code></a> and <a href="/docs/reference/math/variants/#functions-frak"><code>frak</code></a> styles</li>
-<li>Fixed some styling issues in math</li>
-<li>Fixed supplements of references to headings</li>
-<li>Fixed syntax highlighting of identifiers in certain scenarios</li>
-<li><a href="/docs/reference/layout/ratio/">Ratios</a> can now be multiplied with more types and be converted to
-<a href="/docs/reference/foundations/float/">floats</a> with the <a href="/docs/reference/foundations/float/"><code>float</code></a> function</li>
+<li>修复了大纲中的页码显示问题</li>
+<li>为更多语言添加了基本的国际化支持
+(阿拉伯语、挪威卑尔根语、捷克语、挪威尼诺斯克语、波兰语、斯洛文尼亚语、西班牙语、乌克兰语、越南语)</li>
+<li>添加了一些编号模式（伊霍拉、中文）</li>
+<li>添加了 <code>sinc</code> <a href="/docs/reference/math/op/">运算符</a></li>
+<li>修复了数学无法使用 <a href="/docs/reference/layout/hide/"><code>hide</code></a> 隐藏的错误</li>
+<li>修复了盒子、块和形状的大小问题</li>
+<li>修复了一些翻译问题</li>
+<li>修复了 <a href="/docs/reference/math/variants/#functions-cal"><code>cal</code></a> 和 <a href="/docs/reference/math/variants/#functions-frak"><code>frak</code></a> 样式中 &quot;R&quot; 的反转问题</li>
+<li>修复了数学中的一些样式问题</li>
+<li>修复了引用到标题的补充问题</li>
+<li>修复了某些情况下标识符的语法高亮显示问题</li>
+<li><a href="/docs/reference/layout/ratio/">比例</a> 现在可以与更多类型相乘，并使用 <a href="/docs/reference/foundations/float/"><code>float</code></a> 函数转换为<a href="/docs/reference/foundations/float/">浮点数</a></li>
 </ul>
 </li>
 </ul>
-<h2 id="v0.1.0">Version 0.1.0 (April 04, 2023)</h2>
+<h2 id="v0.1.0">版本 0.1.0 (2023年4月4日)</h2>
 <ul>
 <li>
-<p><strong>Breaking changes:</strong></p>
+<p><strong>重大变更:</strong></p>
 <ul>
-<li>When using the CLI, you now have to use subcommands:
+<li>当使用 CLI 时，现在必须使用子命令:
 <ul>
-<li><code>typst compile file.typ</code> or <code>typst c file.typ</code> to create a PDF</li>
-<li><code>typst watch file.typ</code> or <code>typst w file.typ</code> to compile and watch</li>
-<li><code>typst fonts</code> to list all fonts</li>
+<li>使用 <code>typst compile file.typ</code> 或 <code>typst c file.typ</code> 创建 PDF</li>
+<li>使用 <code>typst watch file.typ</code> 或 <code>typst w file.typ</code> 编译并监视</li>
+<li>使用 <code>typst fonts</code> 列出所有字体</li>
 </ul>
 </li>
-<li>Manual counters now start at zero. Read the &quot;How to step&quot; section
-<a href="/docs/reference/meta/counter/">here</a> for more details</li>
-<li>The <a href="/docs/reference/meta/bibliography/#parameters-style">bibliography styles</a> <code><span class="typ-str">&quot;author-date&quot;</span></code> and
-<code><span class="typ-str">&quot;author-title&quot;</span></code> were renamed to <code><span class="typ-str">&quot;chicago-author-date&quot;</span></code> and
-<code><span class="typ-str">&quot;chicago-author-title&quot;</span></code></li>
+<li>手动计数器现在从零开始。阅读<a href="/docs/reference/meta/counter/">此处</a>的 &quot;如何设置&quot; 部分了解更多详情。</li>
+<li><a href="/docs/reference/meta/bibliography/#parameters-style">参考文献样式</a> <code><span class="typ-str">&quot;author-date&quot;</span></code> 和 <code><span class="typ-str">&quot;author-title&quot;</span></code> 已重命名为 <code><span class="typ-str">&quot;chicago-author-date&quot;</span></code> 和 <code><span class="typ-str">&quot;chicago-author-title&quot;</span></code>。</li>
 </ul>
 </li>
 <li>
-<p>Figure improvements</p>
+<p>图表改进</p>
 <ul>
-<li>Figures now automatically detect their content and adapt their behaviour.
-Figures containing tables, for instance, are automatically prefixed with
-&quot;Table X&quot; and have a separate counter</li>
-<li>The figure's supplement (e.g. &quot;Figure&quot; or &quot;Table&quot;) can now be customized</li>
-<li>In addition, figures can now be completely customized because the show rule
-gives access to the automatically resolved kind, supplement, and counter</li>
+<li>图表现在可以自动检测其内容并调整其行为。例如，包含表格的图表现在会自动加上前缀 &quot;表 X&quot; 并具有单独的计数器。</li>
+<li>图表的补充部分（例如 &quot;图&quot; 或 &quot;表&quot;）现在可以自定义。</li>
+<li>此外，图表现在可以完全自定义，因为显示规则提供了对自动解析的种类、补充和计数器的访问权限。</li>
 </ul>
 </li>
 <li>
-<p>Bibliography improvements</p>
+<p>参考文献改进</p>
 <ul>
-<li>The <a href="/docs/reference/meta/bibliography/"><code>bibliography</code></a> now also accepts multiple bibliography
-paths (as an array)</li>
-<li>Parsing of BibLaTeX files is now more permissive (accepts non-numeric
-edition, pages, volumes, dates, and Jabref-style comments; fixed
-abbreviation parsing)</li>
-<li>Labels and references can now include <code>:</code> and <code>.</code> except at the end</li>
-<li>Fixed APA bibliography ordering</li>
+<li><a href="/docs/reference/meta/bibliography/"><code>bibliography</code></a> 现在还接受多个参考文献路径（作为数组）。</li>
+<li>BibLaTeX 文件的解析现在更加宽松（接受非数字的版本、页数、卷数、日期和 Jabref 样式的注释；修复了缩写解析）。</li>
+<li>标签和引用现在可以包含 <code>:</code> 和 <code>.</code>，除了末尾。</li>
+<li>修复了 APA 参考文献排序问题。</li>
 </ul>
 </li>
 <li>
-<p>Drawing additions</p>
+<p>绘图新增功能</p>
 <ul>
-<li>Added <a href="/docs/reference/visualize/polygon/"><code>polygon</code></a> function for drawing polygons</li>
-<li>Added support for clipping in <a href="/docs/reference/layout/box/#parameters-clip">boxes</a> and <a href="/docs/reference/layout/block/#parameters-clip">blocks</a></li>
+<li>添加了 <a href="/docs/reference/visualize/polygon/"><code>polygon</code></a> 函数用于绘制多边形。</li>
+<li>在 <a href="/docs/reference/layout/box/#parameters-clip">boxes</a> 和 <a href="/docs/reference/layout/block/#parameters-clip">blocks</a> 中添加了剪裁支持。</li>
 </ul>
 </li>
 <li>
-<p>Command line interface</p>
+<p>命令行界面</p>
 <ul>
-<li>Now returns with non-zero status code if there is an error</li>
-<li>Now watches the root directory instead of the current one</li>
-<li>Now puts the PDF file next to input file by default</li>
-<li>Now accepts more kinds of input files (e.g. <code>/dev/stdin</code>)</li>
-<li>Added <code>--open</code> flag to directly open the PDF</li>
+<li>如果存在错误，现在返回非零状态码。</li>
+<li>现在默认监视根目录，而不是当前目录。</li>
+<li>默认情况下，现在将 PDF 文件放在输入文件旁边。</li>
+<li>现在接受更多类型的输入文件（例如 <code>/dev/stdin</code>）。</li>
+<li>添加了 <code>--open</code> 标志，可以直接打开 PDF。</li>
 </ul>
 </li>
 <li>
-<p>Miscellaneous improvements</p>
+<p>其他改进</p>
 <ul>
-<li>Added <a href="/docs/reference/data-loading/yaml/"><code>yaml</code></a> function to load data from YAML files</li>
-<li>Added basic i18n for a few more languages (IT, RU, ZH, FR, PT)</li>
-<li>Added numbering support for Hebrew</li>
-<li>Added support for <a href="/docs/reference/foundations/int/">integers</a> with base 2, 8, and 16</li>
-<li>Added symbols for double bracket and laplace operator</li>
-<li>The <a href="/docs/reference/meta/link/"><code>link</code></a> function now accepts <a href="/docs/reference/meta/label/">labels</a></li>
-<li>The link syntax now allows more characters</li>
-<li>Improved justification of Japanese and Chinese text</li>
-<li>Calculation functions behave more consistently w.r.t to non-real results</li>
-<li>Replaced deprecated angle brackets</li>
-<li>Reduced maximum function call depth from 256 to 64</li>
-<li>Fixed <a href="/docs/reference/layout/par/#parameters-first-line-indent"><code>first-line-indent</code></a> being not applied when a
-paragraph starts with styled text</li>
-<li>Fixed extraneous spacing in unary operators in equations</li>
-<li>Fixed block spacing, e.g. in <code><span class="typ-func">block</span><span class="typ-punct">(</span>above<span class="typ-punct">:</span> <span class="typ-num">1cm</span><span class="typ-punct">,</span> below<span class="typ-punct">:</span> <span class="typ-num">1cm</span><span class="typ-punct">,</span> <span class="typ-op">..</span><span class="typ-punct">)</span></code></li>
-<li>Fixed styling of text operators in math</li>
-<li>Fixed invalid parsing of language tag in raw block with a single backtick</li>
-<li>Fixed bugs with displaying counters and state</li>
-<li>Fixed crash related to page counter</li>
-<li>Fixed crash when <a href="/docs/reference/symbols/symbol/"><code>symbol</code></a> function was called without arguments</li>
-<li>Fixed crash in bibliography generation</li>
-<li>Fixed access to label of certain content elements</li>
-<li>Fixed line number in error message for CSV parsing</li>
-<li>Fixed invalid autocompletion after certain markup elements</li>
+<li>添加了 <a href="/docs/reference/data-loading/yaml/"><code>yaml</code></a> 函数，用于从 YAML 文件加载数据。</li>
+<li>为更多语言添加了基本的国际化支持（意大利语、俄语、中文、法语、葡萄牙语）。</li>
+<li>添加了对希伯来语的编号支持。</li>
+<li>添加了支持以 2、8 和 16 为基数的<a href="/docs/reference/foundations/int/">整数</a>。</li>
+<li>添加了双括号和拉普拉斯运算符的符号。</li>
+<li><a href="/docs/reference/meta/link/"><code>link</code></a> 函数现在接受<a href="/docs/reference/meta/label/">标签</a>。</li>
+<li>现在链接语法允许更多字符。</li>
+<li>改进了日语和中文文本的对齐。</li>
+<li>计算函数在处理非实数结果时更一致。</li>
+<li>替换了不推荐使用的尖括号。</li>
+<li>将最大函数调用深度从 256 减少到 64。</li>
+<li>修复了在段落以样式化文本开头时 <a href="/docs/reference/layout/par/#parameters-first-line-indent"><code>first-line-indent</code></a> 不被应用的问题。</li>
+<li>修复了等式中一元操作符周围的额外空格，例如 <code><span class="typ-func">block</span><span class="typ-punct">(</span>above<span class="typ-punct">:</span> <span class="typ-num">1cm</span><span class="typ-punct">,</span> below<span class="typ-punct">:</span> <span class="typ-num">1cm</span><span class="typ-punct">,</span> <span class="typ-op">..</span><span class="typ-punct">)</span></code> 中的问题。</li>
+<li>修复了数学中文本操作符的样式问题。</li>
+<li>修复了对带有单个反引号的原始块中的语言标签的无效解析。</li>
+<li>修复了在某些标记元素之后进行无效自动完成的问题。</li>
 </ul>
 </li>
 </ul>
-<h2 id="_">March 28, 2023</h2>
+<p>以下是日期为 2023 年 3 月 28 日的更新内容的中文翻译：</p>
+<p>markdown
+Copy code</p>
+<h2 id="_">2023年3月28日</h2>
 <ul>
 <li>
-<p><strong>Breaking changes:</strong></p>
+<p><strong>重大变更:</strong></p>
 <ul>
-<li>Enumerations now require a space after their marker, that is, <code>1.ok</code> must
-now be written as <code><span class="typ-marker">1.</span> ok</code></li>
-<li>Changed default style for <a href="/docs/reference/layout/terms/">term lists</a>: Does not include a colon
-anymore and has a bit more indent</li>
+<li>枚举现在需要在它们的标记后面加一个空格，也就是说，<code>1.ok</code> 现在必须写成 <code><span class="typ-marker">1.</span> ok</code>。</li>
+<li>更改了<a href="/docs/reference/layout/terms/">术语列表</a>的默认样式：不再包含冒号，并且缩进更多。</li>
 </ul>
 </li>
 <li>
-<p>Command line interface</p>
+<p>命令行界面</p>
 <ul>
-<li>Added <code>--font-path</code> argument for CLI</li>
-<li>Embedded default fonts in CLI binary</li>
-<li>Fixed build of CLI if <code>git</code> is not installed</li>
+<li>为 CLI 添加了 <code>--font-path</code> 参数。</li>
+<li>在 CLI 二进制文件中嵌入了默认字体。</li>
+<li>修复了如果未安装 <code>git</code> 则 CLI 无法构建的问题。</li>
 </ul>
 </li>
 <li>
-<p>Miscellaneous improvements</p>
+<p>其他改进</p>
 <ul>
-<li>Added support for disabling <a href="/docs/reference/math/mat/">matrix</a> and <a href="/docs/reference/math/vec/">vector</a>
-delimiters. Generally with <code><span class="typ-key">#</span><span class="typ-key">set</span> math<span class="typ-punct">.</span><span class="typ-func">mat</span><span class="typ-punct">(</span>delim<span class="typ-punct">:</span> <span class="typ-key">none</span><span class="typ-punct">)</span></code> or one-off with
-<code><span class="typ-math-delim">$</span><span class="typ-func">mat</span><span class="typ-punct">(</span>delim<span class="typ-punct">:</span> <span class="typ-key">#</span><span class="typ-key">none</span><span class="typ-punct">,</span> 1<span class="typ-punct">,</span> 2<span class="typ-punct">;</span> 3<span class="typ-punct">,</span> 4<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code>.</li>
-<li>Added <a href="/docs/reference/layout/terms/#parameters-separator"><code>separator</code></a> argument to term lists</li>
-<li>Added <a href="/docs/reference/math/lr/#functions-round"><code>round</code></a> function for equations</li>
-<li>Numberings now allow zeros. To reset a counter, you can write
-<code><span class="typ-func">#</span><span class="typ-func">counter</span><span class="typ-punct">(</span><span class="typ-op">..</span><span class="typ-punct">)</span><span class="typ-punct">.</span><span class="typ-func">update</span><span class="typ-punct">(</span><span class="typ-num">0</span><span class="typ-punct">)</span></code></li>
-<li>Added documentation for <code><span class="typ-func">page</span><span class="typ-punct">(</span><span class="typ-punct">)</span></code> and <code><span class="typ-func">position</span><span class="typ-punct">(</span><span class="typ-punct">)</span></code> methods on
-<a href="/docs/reference/meta/location/"><code>location</code></a> type</li>
-<li>Added symbols for double, triple, and quadruple dot accent</li>
-<li>Added smart quotes for Norwegian Bokmål</li>
-<li>Added Nix flake</li>
-<li>Fixed bibliography ordering in IEEE style</li>
-<li>Fixed parsing of decimals in math: <code><span class="typ-math-delim">$</span>1.2<span class="typ-math-op">/</span>3.4<span class="typ-math-delim">$</span></code></li>
-<li>Fixed parsing of unbalanced delimiters in fractions: <code><span class="typ-math-delim">$</span>1<span class="typ-math-op">/</span>(2 (x)<span class="typ-math-delim">$</span></code></li>
-<li>Fixed unexpected parsing of numbers as enumerations, e.g. in <code>1.2</code></li>
-<li>Fixed combination of page fill and header</li>
-<li>Fixed compiler crash if <a href="/docs/reference/layout/repeat/"><code>repeat</code></a> is used in page with automatic
-width</li>
-<li>Fixed <a href="/docs/reference/math/mat/">matrices</a> with explicit delimiter</li>
-<li>Fixed <a href="/docs/reference/layout/terms/#parameters-indent"><code>indent</code></a> property of term lists</li>
-<li>Numerous documentation fixes</li>
-<li>Links in bibliographies are now affected by link styling</li>
-<li>Fixed hovering over comments in web app</li>
+<li>添加了禁用 <a href="/docs/reference/math/mat/">矩阵</a> 和 <a href="/docs/reference/math/vec/">向量</a> 分隔符的支持。通常使用 <code><span class="typ-key">#</span><span class="typ-key">set</span> math<span class="typ-punct">.</span><span class="typ-func">mat</span><span class="typ-punct">(</span>delim<span class="typ-punct">:</span> <span class="typ-key">none</span><span class="typ-punct">)</span></code> 或单独使用 <code><span class="typ-math-delim">$</span><span class="typ-func">mat</span><span class="typ-punct">(</span>delim<span class="typ-punct">:</span> <span class="typ-key">#</span><span class="typ-key">none</span><span class="typ-punct">,</span> 1<span class="typ-punct">,</span> 2<span class="typ-punct">;</span> 3<span class="typ-punct">,</span> 4<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code>。</li>
+<li>为术语列表添加了 <a href="/docs/reference/layout/terms/#parameters-separator"><code>separator</code></a> 参数。</li>
+<li>为等式添加了 <a href="/docs/reference/math/lr/#functions-round"><code>round</code></a> 函数。</li>
+<li>编号现在允许零。要重置计数器，您可以编写 <code><span class="typ-func">#</span><span class="typ-func">counter</span><span class="typ-punct">(</span><span class="typ-op">..</span><span class="typ-punct">)</span><span class="typ-punct">.</span><span class="typ-func">update</span><span class="typ-punct">(</span><span class="typ-num">0</span><span class="typ-punct">)</span></code>。</li>
+<li>添加了 <a href="/docs/reference/meta/location/"><code>location</code></a> 类型上的 <code><span class="typ-func">page</span><span class="typ-punct">(</span><span class="typ-punct">)</span></code> 和 <code><span class="typ-func">position</span><span class="typ-punct">(</span><span class="typ-punct">)</span></code> 方法的文档。</li>
+<li>添加了双点、三点和四点重音符号的符号。</li>
+<li>为挪威博克马尔语添加了智能引号支持。</li>
+<li>添加了 Nix flake。</li>
+<li>修复了 IEEE 样式下的参考文献排序问题。</li>
+<li>修复了数学中小数的解析：<code><span class="typ-math-delim">$</span>1.2<span class="typ-math-op">/</span>3.4<span class="typ-math-delim">$</span></code>。</li>
+<li>修复了分数中不平衡分隔符的解析问题：<code><span class="typ-math-delim">$</span>1<span class="typ-math-op">/</span>(2 (x)<span class="typ-math-delim">$</span></code>。</li>
+<li>修复了将数字意外解析为枚举，例如 <code>1.2</code>。</li>
+<li>修复了页面填充和页眉的组合问题。</li>
+<li>修复了如果在具有自动宽度的页面中使用 <a href="/docs/reference/layout/repeat/"><code>repeat</code></a> 会导致编译器崩溃的问题。</li>
+<li>修复了具有显式分隔符的<a href="/docs/reference/math/mat/">矩阵</a>。</li>
+<li>修复了术语列表的 <a href="/docs/reference/layout/terms/#parameters-indent"><code>indent</code></a> 属性。</li>
+<li>大量文档修复。</li>
+<li>参考文献中的链接现在受到链接样式的影响。</li>
+<li>修复了在 Web 应用程序中悬停在注释上的问题。</li>
 </ul>
 </li>
 </ul>
-<h2 id="_">March 21, 2023</h2>
+<h2 id="_">2023年3月21日</h2>
 <ul>
 <li>
-<p>Reference and bibliography management</p>
+<p>引用和参考文献管理</p>
 <ul>
-<li><a href="/docs/reference/meta/bibliography/">Bibliographies</a> and <a href="/docs/reference/meta/cite/">citations</a> (currently supported
-styles are APA, Chicago Author Date, IEEE, and MLA)</li>
-<li>You can now <a href="/docs/reference/meta/ref/">reference</a> sections, figures, formulas, and works from
-the bibliography with <code><span class="typ-ref">@label</span></code></li>
-<li>You can make an element referenceable with a label:
+<li><a href="/docs/reference/meta/bibliography/">参考文献</a> 和 <a href="/docs/reference/meta/cite/">引用</a>（目前支持的样式包括 APA、芝加哥作者日期、IEEE 和 MLA）</li>
+<li>您现在可以使用 <code><span class="typ-ref">@label</span></code> 来<a href="/docs/reference/meta/ref/">引用</a>章节、图形、公式和文献。</li>
+<li>您可以通过标签使元素具有引用功能：
 <ul>
 <li><code><span class="typ-heading">= Introduction</span> <span class="typ-label">&lt;intro&gt;</span></code></li>
 <li><code><span class="typ-math-delim">$</span> A = <span class="typ-pol">pi</span> r<span class="typ-math-op">^</span>2 <span class="typ-math-delim">$</span> <span class="typ-label">&lt;area&gt;</span></code></li>
@@ -1699,330 +1529,285 @@ the bibliography with <code><span class="typ-ref">@label</span></code></li>
 </ul>
 </li>
 <li>
-<p>Introspection system for interactions between different parts of the document</p>
+<p>文档不同部分之间的交互检测系统</p>
 <ul>
-<li><a href="/docs/reference/meta/counter/"><code>counter</code></a> function
+<li><a href="/docs/reference/meta/counter/"><code>counter</code></a> 函数
 <ul>
-<li>Access and modify counters for pages, headings, figures, and equations</li>
-<li>Define and use your own custom counters</li>
-<li>Time travel: Find out what the counter value was or will be at some other
-point in the document (e.g. when you're building a list of figures, you
-can determine the value of the figure counter at any given figure).</li>
-<li>Counters count in layout order and not in code order</li>
+<li>访问和修改页面、标题、图形和方程的计数器</li>
+<li>定义并使用自定义计数器</li>
+<li>时间旅行：查找文档中其他位置（例如，在构建图表时，您可以确定在给定图表的任何位置的图表计数器的值）的计数器值。</li>
+<li>计数器按布局顺序计数，而不是按代码顺序计数。</li>
 </ul>
 </li>
-<li><a href="/docs/reference/meta/state/"><code>state</code></a> function
+<li><a href="/docs/reference/meta/state/"><code>state</code></a> 函数
 <ul>
-<li>Manage arbitrary state across your document</li>
-<li>Time travel: Find out the value of your state at any position in the
-document</li>
-<li>State is modified in layout order and not in code order</li>
+<li>管理文档中的任意状态</li>
+<li>时间旅行：查找文档中任何位置的状态值</li>
+<li>状态按布局顺序修改，而不是按代码顺序。</li>
 </ul>
 </li>
-<li><a href="/docs/reference/meta/query/"><code>query</code></a> function
+<li><a href="/docs/reference/meta/query/"><code>query</code></a> 函数
 <ul>
-<li>Find all occurrences of an element or a label, either in the whole
-document or before/after some location</li>
-<li>Link to elements, find out their position on the pages and access their
-fields</li>
-<li>Example use cases: Custom list of figures or page header with current
-chapter title</li>
+<li>查找元素或标签的所有出现位置，可以是整个文档或某个位置之前/之后。</li>
+<li>链接到元素，查找其在页面上的位置并访问其字段。</li>
+<li>示例用例：自定义图表或包含当前章节标题的页面页眉。</li>
 </ul>
 </li>
-<li><a href="/docs/reference/meta/locate/"><code>locate</code></a> function
+<li><a href="/docs/reference/meta/locate/"><code>locate</code></a> 函数
 <ul>
-<li>Determines the location of itself in the final layout</li>
-<li>Can be accessed to get the <code>page</code> and <code>x</code>, <code>y</code> coordinates</li>
-<li>Can be used with counters and state to find out their values at that
-location</li>
-<li>Can be used with queries to find elements before or after its location</li>
+<li>确定自身在最终布局中的位置。</li>
+<li>可以访问以获取 <code>page</code> 和 <code>x</code>、<code>y</code> 坐标。</li>
+<li>可以与计数器和状态一起使用，以查找其在该位置的值。</li>
+<li>可以与查询一起使用，以查找其位置之前或之后的元素。</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<p>New <a href="/docs/reference/layout/measure/"><code>measure</code></a> function</p>
+<p>新的 <a href="/docs/reference/layout/measure/"><code>measure</code></a> 函数</p>
 <ul>
-<li>Measure the layouted size of elements</li>
-<li>To be used in combination with the new <a href="/docs/reference/meta/style/"><code>style</code></a> function that lets
-you generate different content based on the style context something is
-inserted into (because that affects the measured size of content)</li>
+<li>测量元素的布局尺寸。</li>
+<li>与新的 <a href="/docs/reference/meta/style/"><code>style</code></a> 函数一起使用，该函数使您能够基于将要插入的内容的样式上下文生成不同的内容（因为这会影响内容的测量尺寸）。</li>
 </ul>
 </li>
 <li>
-<p>Exposed content representation</p>
+<p>暴露的内容表示</p>
 <ul>
-<li>Content is not opaque anymore</li>
-<li>Content can be compared for equality</li>
-<li>The tree of content elements can be traversed with code</li>
-<li>Can be observed in hover tooltips or with <a href="/docs/reference/foundations/repr/"><code>repr</code></a></li>
-<li>New <a href="/docs/reference/foundations/content/">methods</a> on content: <code>func</code>, <code>has</code>, <code>at</code>, and <code>location</code></li>
-<li>All optional fields on elements are now settable</li>
-<li>More uniform field names (<code>heading.title</code> becomes <code>heading.body</code>,
-<code>list.items</code> becomes <code>list.children</code>, and a few more changes)</li>
+<li>内容不再是不透明的。</li>
+<li>内容可以进行比较以确定是否相等。</li>
+<li>内容元素的树可以通过代码进行遍历。</li>
+<li>可以在悬停提示中或使用 <a href="/docs/reference/foundations/repr/"><code>repr</code></a> 查看内容。</li>
+<li>内容上的新方法: <code>func</code>、<code>has</code>、<code>at</code> 和 <code>location</code>。</li>
+<li>现在可以设置元素上的所有可选字段。</li>
+<li>更统一的字段名称（例如，<code>heading.title</code> 变成了 <code>heading.body</code>，<code>list.items</code> 变成了 <code>list.children</code>，还有其他一些更改）。</li>
 </ul>
 </li>
 <li>
-<p>Further improvements</p>
+<p>进一步的改进</p>
 <ul>
-<li>Added <a href="/docs/reference/meta/figure/"><code>figure</code></a> function</li>
-<li>Added <a href="/docs/reference/math/equation/#parameters-numbering"><code>numbering</code></a> parameter on equation function</li>
-<li>Added <a href="/docs/reference/layout/page/#parameters-numbering"><code>numbering</code></a> and
-<a href="/docs/reference/layout/page/#parameters-number-align"><code>number-align</code></a> parameters on page function</li>
-<li>The page function's <a href="/docs/reference/layout/page/#parameters-header"><code>header</code></a> and <a href="/docs/reference/layout/page/#parameters-footer"><code>footer</code></a>
-parameters do not take functions anymore. If you want to customize them
-based on the page number, use the new <a href="/docs/reference/layout/page/#parameters-numbering"><code>numbering</code></a>
-parameter or <a href="/docs/reference/meta/counter/"><code>counter</code></a> function instead.</li>
-<li>Added <a href="/docs/reference/layout/page/#parameters-footer-descent"><code>footer-descent</code></a> and
-<a href="/docs/reference/layout/page/#parameters-header-ascent"><code>header-ascent</code></a> parameters</li>
-<li>Better default alignment in header and footer</li>
-<li>Fixed Arabic vowel placement</li>
-<li>Fixed PDF font embedding issues</li>
-<li>Renamed <code>math.formula</code> to <a href="/docs/reference/math/equation/"><code>math.equation</code></a></li>
-<li>Font family must be a named argument now: <code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>font<span class="typ-punct">:</span> <span class="typ-str">&quot;..&quot;</span><span class="typ-punct">)</span></code></li>
-<li>Added support for <a href="/docs/reference/layout/par/#parameters-hanging-indent">hanging indent</a></li>
-<li>Renamed paragraph <code>indent</code> to <a href="/docs/reference/layout/par/#parameters-first-line-indent"><code>first-line-indent</code></a></li>
-<li>More accurate <a href="/docs/reference/calculate/log/">logarithm</a> when base is <code>2</code> or <code>10</code></li>
-<li>Improved some error messages</li>
-<li>Fixed layout of <a href="/docs/reference/layout/terms/"><code>terms</code></a> list</li>
+<li>添加了 <a href="/docs/reference/meta/figure/"><code>figure</code></a> 函数。</li>
+<li>在方程函数上添加了 <a href="/docs/reference/math/equation/#parameters-numbering"><code>numbering</code></a> 参数。</li>
+<li>在页面函数上添加了 <a href="/docs/reference/layout/page/#parameters-numbering"><code>numbering</code></a> 和 <a href="/docs/reference/layout/page/#parameters-number-align"><code>number-align</code></a> 参数。</li>
+<li>页面函数的 <a href="/docs/reference/layout/page/#parameters-header"><code>header</code></a> 和 <a href="/docs/reference/layout/page/#parameters-footer"><code>footer</code></a> 参数不再接受函数。如果要根据页码自定义它们，请改用新的 <a href="/docs/reference/layout/page/#parameters-numbering"><code>numbering</code></a> 参数或 <a href="/docs/reference/meta/counter/"><code>counter</code></a> 函数。</li>
+<li>添加了 <a href="/docs/reference/layout/page/#parameters-footer-descent"><code>footer-descent</code></a> 和 <a href="/docs/reference/layout/page/#parameters-header-ascent"><code>header-ascent</code></a> 参数。</li>
+<li>改进了页眉和页脚的默认对齐方式。</li>
+<li>修复了阿拉伯语元音的位置。</li>
+<li>修复了 PDF 字体嵌入问题。</li>
+<li>将 <code>math.formula</code> 重命名为 <a href="/docs/reference/math/equation/"><code>math.equation</code></a>。</li>
+<li>现在必须将字体系列作为命名参数：<code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>font<span class="typ-punct">:</span> <span class="typ-str">&quot;..&quot;</span><span class="typ-punct">)</span></code>。</li>
+<li>添加了 <a href="/docs/reference/layout/par/#parameters-hanging-indent">悬挂缩进</a> 的支持。</li>
+<li>将段落 <code>indent</code> 重命名为 <a href="/docs/reference/layout/par/#parameters-first-line-indent"><code>first-line-indent</code></a>。</li>
+<li>当基数为 <code>2</code> 或 <code>10</code> 时，<a href="/docs/reference/calculate/log/">对数</a> 更加准确。</li>
+<li>改进了一些错误消息。</li>
+<li>修复了<a href="/docs/reference/layout/terms/"><code>terms</code></a> 列表的布局。</li>
 </ul>
 </li>
 <li>
-<p>Web app improvements</p>
+<p>Web 应用程序改进</p>
 <ul>
-<li>Added template gallery</li>
-<li>Added buttons to insert headings, equations, raw blocks, and references</li>
-<li>Jump to the source of something by clicking on it in the preview panel
-(works for text, equations, images, and more)</li>
-<li>You can now upload your own fonts and use them in your project</li>
-<li>Hover debugging and autocompletion now takes multiple files into account and
-works in show rules</li>
-<li>Hover tooltips now automatically collapse multiple consecutive equal values</li>
-<li>The preview now automatically scrolls to the right place when you type</li>
-<li>Links are now clickable in the preview area</li>
-<li>Toolbar, preview, and editor can now all be hidden</li>
-<li>Added autocompletion for raw block language tags</li>
-<li>Added autocompletion in SVG files</li>
-<li>New back button instead of four-dots button</li>
-<li>Lots of bug fixes</li>
+<li>添加了模板库。</li>
+<li>添加了插入标题、方程、原始块和引用的按钮。</li>
+<li>通过单击预览面板中的内容（适用于文本、方程、图像等）可以跳转到其源。</li>
+<li>您现在可以上传自己的字体并在项目中使用它们。</li>
+<li>悬停调试和自动完成现在考虑了多个文件，并在显示规则中工作。</li>
+<li>悬停工具提示现在会自动折叠多个连续相等的值。</li>
+<li>当输入时，预览现在会自动滚动到正确的位置。</li>
+<li>预览区域中的链接现在可以点击。</li>
+<li>工具栏、预览和编辑器现在都可以隐藏。</li>
+<li>添加了原始块语言标签的自动完成。</li>
+<li>在 SVG 文件中添加了自动完成。</li>
+<li>新的返回按钮替代了四点按钮。</li>
+<li>大量错误修复。</li>
 </ul>
 </li>
 </ul>
-<h2 id="_">February 25, 2023</h2>
+<h2 id="_">2023年2月25日</h2>
 <ul>
-<li>Font changes
+<li>字体变更
 <ul>
-<li>New default font: Linux Libertine</li>
-<li>New default font for raw blocks: DejaVu Sans Mono</li>
-<li>New default font for math: Book weight of New Computer Modern Math</li>
-<li>Lots of new math fonts available</li>
-<li>Removed Latin Modern fonts in favor of New Computer Modern family</li>
-<li>Removed unnecessary smallcaps fonts which are already accessible through the
-corresponding main font and the <a href="/docs/reference/text/smallcaps/"><code>smallcaps</code></a> function</li>
+<li>新的默认字体：Linux Libertine</li>
+<li>原始块的新默认字体：DejaVu Sans Mono</li>
+<li>数学公式的新默认字体：New Computer Modern Math 的 Book 版本</li>
+<li>提供了许多新的数学字体</li>
+<li>删除了 Latin Modern 字体，采用了 New Computer Modern 字体系列</li>
+<li>移除了不必要的小型大写字母字体，因为它们已经可以通过相应的主要字体和 <a href="/docs/reference/text/smallcaps/"><code>smallcaps</code></a> 函数访问</li>
 </ul>
 </li>
-<li>Improved default spacing for headings</li>
-<li>Added <a href="/docs/reference/foundations/panic/"><code>panic</code></a> function</li>
-<li>Added <a href="/docs/reference/foundations/str/#definitions-clusters"><code>clusters</code></a> and <a href="/docs/reference/foundations/str/#definitions-codepoints"><code>codepoints</code></a> methods
-for strings</li>
-<li>Support for multiple authors in <a href="/docs/reference/meta/document/#parameters-author"><code>set document</code></a></li>
-<li>Fixed crash when string is accessed at a position that is not a char boundary</li>
-<li>Fixed semicolon parsing in <code><span class="typ-pol">#</span><span class="typ-pol">var</span> ;</code></li>
-<li>Fixed incremental parsing when inserting backslash at end of <code><span class="typ-str">#</span><span class="typ-str">&quot;abc&quot;</span></code></li>
-<li>Fixed names of a few font families (including Noto Sans Symbols and New
-Computer Modern families)</li>
-<li>Fixed autocompletion for font families</li>
-<li>Improved incremental compilation for user-defined functions</li>
+<li>改进了标题的默认间距</li>
+<li>添加了 <a href="/docs/reference/foundations/panic/"><code>panic</code></a> 函数</li>
+<li>为字符串添加了 <a href="/docs/reference/foundations/str/#definitions-clusters"><code>clusters</code></a> 和 <a href="/docs/reference/foundations/str/#definitions-codepoints"><code>codepoints</code></a> 方法</li>
+<li>在 <a href="/docs/reference/meta/document/#parameters-author"><code>set document</code></a> 中支持多个作者</li>
+<li>修复了访问字符串的位置不是字符边界时的崩溃问题</li>
+<li>修复了在 <code><span class="typ-str">#</span><span class="typ-str">&quot;abc&quot;</span></code> 末尾插入反斜杠时的增量解析问题</li>
+<li>修复了一些字体系列的名称（包括 Noto Sans Symbols 和 New Computer Modern 等系列）</li>
+<li>修复了字体系列的自动完成</li>
+<li>改进了用户自定义函数的增量编译</li>
 </ul>
-<h2 id="_">February 15, 2023</h2>
+<h2 id="_">2023年2月15日</h2>
 <ul>
-<li><a href="/docs/reference/layout/box/">Box</a> and <a href="/docs/reference/layout/block/">block</a> have gained <code>fill</code>, <code>stroke</code>, <code>radius</code>, and
-<code>inset</code> properties</li>
-<li>Blocks may now be explicitly sized, fixed-height blocks can still break across
-pages</li>
-<li>Blocks can now be configured to be <a href="/docs/reference/layout/block/#parameters-breakable"><code>breakable</code></a> or not</li>
-<li><a href="/docs/reference/layout/enum/#parameters-numbering">Numbering style</a> can now be configured for nested enums</li>
-<li><a href="/docs/reference/layout/list/#parameters-marker">Markers</a> can now be configured for nested lists</li>
-<li>The <a href="/docs/reference/foundations/eval/"><code>eval</code></a> function now expects code instead of markup and returns an
-arbitrary value. Markup can still be evaluated by surrounding the string with
-brackets.</li>
-<li>PDFs generated by Typst now contain XMP metadata</li>
-<li>Link boxes are now disabled in PDF output</li>
-<li>Tables don't produce small empty cells before a pagebreak anymore</li>
-<li>Fixed raw block highlighting bug</li>
+<li><a href="/docs/reference/layout/box/">盒子</a> 和 <a href="/docs/reference/layout/block/">块</a> 现在具有 <code>fill</code>、<code>stroke</code>、<code>radius</code> 和 <code>inset</code> 属性</li>
+<li>块现在可以显式设置大小，固定高度的块仍然可以跨页面分页</li>
+<li>块现在可以配置为可分页或不可分页，使用 <a href="/docs/reference/layout/block/#parameters-breakable"><code>breakable</code></a> 属性</li>
+<li>现在可以为嵌套的枚举配置 <a href="/docs/reference/layout/enum/#parameters-numbering">编号样式</a></li>
+<li>现在可以为嵌套的列表配置 <a href="/docs/reference/layout/list/#parameters-marker">标记</a></li>
+<li><a href="/docs/reference/foundations/eval/"><code>eval</code></a> 函数现在需要代码而不是标记，并返回任意值。仍然可以通过用括号括起字符串来评估标记。</li>
+<li>Typst 生成的 PDF 现在包含 XMP 元数据</li>
+<li>PDF 输出中现在禁用了链接框</li>
+<li>表格在分页之前不再生成小的空单元格</li>
+<li>修复了原始块高亮显示的错误问题</li>
 </ul>
-<h2 id="_">February 12, 2023</h2>
+<h2 id="_">2023年2月12日</h2>
 <ul>
-<li>Shapes, images, and transformations (move/rotate/scale/repeat) are now
-block-level. To integrate them into a paragraph, use a <a href="/docs/reference/layout/box/"><code>box</code></a> as with
-other elements.</li>
-<li>A colon is now required in an &quot;everything&quot; show rule: Write <code><span class="typ-key">show</span><span class="typ-punct">:</span> it <span class="typ-op">=&gt;</span> ..</code>
-instead of <code><span class="typ-key">show</span> it <span class="typ-op">=&gt;</span> ..</code>. This prevents intermediate states that ruin your
-whole document.</li>
-<li>Non-math content like a shape or table in a math formula is now centered
-vertically</li>
-<li>Support for widow and orphan prevention within containers</li>
-<li>Support for <a href="/docs/reference/text/text/#parameters-dir">RTL</a> in lists, grids, and tables</li>
-<li>Support for explicit <code><span class="typ-key">auto</span></code> sizing for boxes and shapes</li>
-<li>Support for fractional (i.e. <code><span class="typ-num">1fr</span></code>) widths for boxes</li>
-<li>Fixed bug where columns jump to next page</li>
-<li>Fixed bug where list items have no leading</li>
-<li>Fixed relative sizing in lists, squares and grid auto columns</li>
-<li>Fixed relative displacement in <a href="/docs/reference/layout/place/"><code>place</code></a> function</li>
-<li>Fixed that lines don't have a size</li>
-<li>Fixed bug where <code><span class="typ-key">set</span> <span class="typ-func">document</span><span class="typ-punct">(</span><span class="typ-op">..</span><span class="typ-punct">)</span></code> complains about being after content</li>
-<li>Fixed parsing of <code><span class="typ-key">not</span> <span class="typ-key">in</span></code> operation</li>
-<li>Fixed hover tooltips in math</li>
-<li>Fixed bug where a heading show rule may not contain a pagebreak when an
-outline is present</li>
-<li>Added <a href="/docs/reference/layout/box/#parameters-baseline"><code>baseline</code></a> property on <a href="/docs/reference/layout/box/"><code>box</code></a></li>
-<li>Added <a href="/docs/reference/math/op/"><code>tg</code></a> and <a href="/docs/reference/math/op/"><code>ctg</code></a> operators in math</li>
-<li>Added delimiter setting for <a href="/docs/reference/math/cases/"><code>cases</code></a> function</li>
-<li>Parentheses are now included when accepting a function autocompletion</li>
+<li>形状、图像和变换（移动/旋转/缩放/重复）现在都是块级元素。要将它们整合到段落中，使用 <a href="/docs/reference/layout/box/"><code>box</code></a> 与其他元素一样。</li>
+<li>&quot;everything&quot; 展示规则现在需要冒号：写成 <code><span class="typ-key">show</span><span class="typ-punct">:</span> it <span class="typ-op">=&gt;</span> ..</code>，而不是 <code><span class="typ-key">show</span> it <span class="typ-op">=&gt;</span> ..</code>。这样可以防止中间状态破坏整个文档。</li>
+<li>数学公式中的非数学内容，如形状或表格，现在在垂直方向上居中显示。</li>
+<li>容器内的孤行和孤字防止支持</li>
+<li>列表、网格和表格支持 <a href="/docs/reference/text/text/#parameters-dir">RTL（从右到左）</a></li>
+<li>盒子和形状现在支持显式的 <code><span class="typ-key">auto</span></code> 大小设置</li>
+<li>盒子支持分数宽度（例如 <code><span class="typ-num">1fr</span></code>）</li>
+<li>修复列跳到下一页的错误问题</li>
+<li>修复列表项没有行首间距的问题</li>
+<li>修复列表、正方形和网格自动列的相对大小问题</li>
+<li>修复 <a href="/docs/reference/layout/place/"><code>place</code></a> 函数中的相对位移问题</li>
+<li>修复行没有大小的问题</li>
+<li>修复<code><span class="typ-key">set</span> <span class="typ-func">document</span><span class="typ-punct">(</span><span class="typ-op">..</span><span class="typ-punct">)</span></code> 后跟内容的错误问题</li>
+<li>修复 <code><span class="typ-key">not</span> <span class="typ-key">in</span></code> 操作的解析问题</li>
+<li>修复数学中的悬停工具提示问题</li>
+<li>修复当大纲存在时，标题显示规则可能不包含分页符的错误问题</li>
+<li>在 <a href="/docs/reference/layout/box/"><code>box</code></a> 上添加了 <a href="/docs/reference/layout/box/#parameters-baseline"><code>baseline</code></a> 属性</li>
+<li>在数学中添加了 <a href="/docs/reference/math/op/"><code>tg</code></a> 和 <a href="/docs/reference/math/op/"><code>ctg</code></a> 运算符</li>
+<li>为 <a href="/docs/reference/math/cases/"><code>cases</code></a> 函数添加了分隔符设置</li>
+<li>在接受函数自动完成时现在包括括号</li>
 </ul>
-<h2 id="_">February 2, 2023</h2>
+<h2 id="_">2023年2月2日</h2>
 <ul>
-<li>Merged text and math symbols, renamed a few symbols (including <code>infty</code> to
-<code>infinity</code> with the alias <code>oo</code>)</li>
-<li>Fixed missing italic mappings</li>
-<li>Math italics correction is now applied properly</li>
-<li>Parentheses now scale in <code><span class="typ-math-delim">$</span><span class="typ-func">zeta</span><span class="typ-punct">(</span>x<span class="typ-math-op">/</span>2<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code></li>
-<li>Fixed placement of large root index</li>
-<li>Fixed spacing in <code><span class="typ-math-delim">$</span><span class="typ-func">abs</span><span class="typ-punct">(</span><span class="typ-escape">-</span>x<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code></li>
-<li>Fixed inconsistency between text and identifiers in math</li>
-<li>Accents are now ignored when positioning superscripts</li>
-<li>Fixed vertical alignment in matrices</li>
-<li>Fixed <code>text</code> set rule in <code>raw</code> show rule</li>
-<li>Heading and list markers now parse consistently</li>
-<li>Allow arbitrary math directly in content</li>
+<li>合并文本和数学符号，重命名了一些符号（包括将 <code>infty</code> 重命名为 <code>infinity</code>，并使用别名 <code>oo</code>）</li>
+<li>修复了缺失的斜体映射</li>
+<li>数学斜体校正现在应用正确</li>
+<li>括号现在在 <code><span class="typ-math-delim">$</span><span class="typ-func">zeta</span><span class="typ-punct">(</span>x<span class="typ-math-op">/</span>2<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code> 中按比例缩放</li>
+<li>修复了大型根指数的位置</li>
+<li>修复了 <code><span class="typ-math-delim">$</span><span class="typ-func">abs</span><span class="typ-punct">(</span><span class="typ-escape">-</span>x<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code> 中的间距问题</li>
+<li>修复了数学中文本和标识符之间的不一致性</li>
+<li>当定位上标时，现在会忽略重音符号</li>
+<li>修复了矩阵中的垂直对齐问题</li>
+<li>修复了 <code>raw</code> 显示规则中的 <code>text</code> 设置规则</li>
+<li>标题和列表标记现在解析一致</li>
+<li>允许在内容中直接使用任意数学公式</li>
 </ul>
-<h2 id="_">January 30, 2023</h2>
-<p><a href="https://typst.app/blog/2023/january-update">Go to the announcement blog post.</a></p>
+<h2 id="_">2023年1月30日</h2>
+<p><a href="https://typst.app/blog/2023/january-update">查看发布博客帖子。</a></p>
 <ul>
-<li>New expression syntax in markup/math
+<li>在标记/数学中的新表达式语法
 <ul>
-<li>Blocks cannot be directly embedded in markup anymore</li>
-<li>Like other expressions, they now require a leading hashtag</li>
-<li>More expressions available with hashtag, including literals (<code><span class="typ-str">#</span><span class="typ-str">&quot;string&quot;</span></code>)
-as well as field access and method call without space: <code><span class="typ-pol">#</span><span class="typ-pol">emoji</span><span class="typ-punct">.</span><span class="typ-pol">face</span></code></li>
+<li>不再可以直接嵌入块到标记中</li>
+<li>与其他表达式一样，现在需要以井号（#）开头</li>
+<li>井号（#）可用于更多的表达式，包括字面量（<code><span class="typ-str">#</span><span class="typ-str">&quot;string&quot;</span></code>）以及字段访问和方法调用，无需空格：<code><span class="typ-pol">#</span><span class="typ-pol">emoji</span><span class="typ-punct">.</span><span class="typ-pol">face</span></code></li>
 </ul>
 </li>
-<li>New import syntax
+<li>新的导入语法
 <ul>
-<li><code><span class="typ-key">#</span><span class="typ-key">import</span> <span class="typ-str">&quot;module.typ&quot;</span></code> creates binding named <code>module</code></li>
-<li><code><span class="typ-key">#</span><span class="typ-key">import</span> <span class="typ-str">&quot;module.typ&quot;</span><span class="typ-punct">:</span> a<span class="typ-punct">,</span> b</code> or <code><span class="typ-key">#</span><span class="typ-key">import</span> <span class="typ-str">&quot;module.typ&quot;</span><span class="typ-punct">:</span> <span class="typ-op">*</span></code> to import
-items</li>
-<li><code><span class="typ-key">#</span><span class="typ-key">import</span> emoji<span class="typ-punct">:</span> face<span class="typ-punct">,</span> turtle</code> to import from already bound module</li>
+<li><code><span class="typ-key">#</span><span class="typ-key">import</span> <span class="typ-str">&quot;module.typ&quot;</span></code> 创建名为 <code>module</code> 的绑定</li>
+<li><code><span class="typ-key">#</span><span class="typ-key">import</span> <span class="typ-str">&quot;module.typ&quot;</span><span class="typ-punct">:</span> a<span class="typ-punct">,</span> b</code> 或 <code><span class="typ-key">#</span><span class="typ-key">import</span> <span class="typ-str">&quot;module.typ&quot;</span><span class="typ-punct">:</span> <span class="typ-op">*</span></code> 以导入项目</li>
+<li><code><span class="typ-key">#</span><span class="typ-key">import</span> emoji<span class="typ-punct">:</span> face<span class="typ-punct">,</span> turtle</code> 以从已绑定的模块导入</li>
 </ul>
 </li>
-<li>New symbol handling
+<li>新的符号处理方式
 <ul>
-<li>Removed symbol notation</li>
-<li>Symbols are now in modules: <code>sym</code>, <code>emoji</code>, and <code>math</code></li>
-<li>Math module also reexports all of <code>sym</code></li>
-<li>Modified through field access, still order-independent</li>
-<li>Unknown modifiers are not allowed anymore</li>
-<li>Support for custom symbol definitions with <code>symbol</code> function</li>
-<li>Symbols now listed in documentation</li>
+<li>移除了符号表示法</li>
+<li>现在符号位于模块中：<code>sym</code>，<code>emoji</code> 和 <code>math</code></li>
+<li>数学模块也重新导出了 <code>sym</code> 的所有内容</li>
+<li>通过字段访问进行修改，仍然不受顺序影响</li>
+<li>不再允许未知修饰符</li>
+<li>通过 <code>symbol</code> 函数支持自定义符号定义</li>
+<li>现在在文档中列出了符号</li>
 </ul>
 </li>
-<li>New <code>math</code> module
+<li>新的 <code>math</code> 模块
 <ul>
-<li>Contains all math-related functions</li>
-<li>Variables and function calls directly in math (without hashtag) access this
-module instead of the global scope, but can also access local variables</li>
-<li>Can be explicitly used in code, e.g. <code><span class="typ-key">#</span><span class="typ-key">set</span> math<span class="typ-punct">.</span><span class="typ-func">vec</span><span class="typ-punct">(</span>delim<span class="typ-punct">:</span> <span class="typ-str">&quot;[&quot;</span><span class="typ-punct">)</span></code></li>
+<li>包含所有与数学相关的函数</li>
+<li>直接位于数学中的变量和函数调用（无需井号）将访问此模块，但也可以访问本地变量</li>
+<li>可以在代码中明确使用，例如 <code><span class="typ-key">#</span><span class="typ-key">set</span> math<span class="typ-punct">.</span><span class="typ-func">vec</span><span class="typ-punct">(</span>delim<span class="typ-punct">:</span> <span class="typ-str">&quot;[&quot;</span><span class="typ-punct">)</span></code></li>
 </ul>
 </li>
-<li>Delimiter matching in math
+<li>数学中的分隔符匹配
 <ul>
-<li>Any opening delimiters matches any closing one</li>
-<li>When matched, they automatically scale</li>
-<li>To prevent scaling, escape them</li>
-<li>To forcibly match two delimiters, use <code>lr</code> function</li>
-<li>Line breaks may occur between matched delimiters</li>
-<li>Delimiters may also be unbalanced</li>
-<li>You can also use the <code>lr</code> function to scale the brackets (or just one
-bracket) to a specific size manually</li>
+<li>任何开放分隔符都匹配任何闭合分隔符</li>
+<li>当匹配时，它们会自动缩放</li>
+<li>为了防止缩放，可以对它们进行转义</li>
+<li>为了强制匹配两个分隔符，请使用 <code>lr</code> 函数</li>
+<li>匹配的分隔符之间可以发生换行</li>
+<li>分隔符也可以不平衡</li>
+<li>您还可以使用 <code>lr</code> 函数手动将括号（或只有一个括号）缩放到特定大小</li>
 </ul>
 </li>
-<li>Multi-line math with alignment
+<li>具有对齐的多行数学
 <ul>
-<li>The <code>\</code> character inserts a line break</li>
-<li>The <code>&amp;</code> character defines an alignment point</li>
-<li>Alignment points also work for underbraces, vectors, cases, and matrices</li>
-<li>Multiple alignment points are supported</li>
+<li>反斜杠（\）字符插入换行符</li>
+<li><code>&amp;</code> 字符定义对齐点</li>
+<li>对齐点还适用于下标、矢量、分情况和矩阵</li>
+<li>支持多个对齐点</li>
 </ul>
 </li>
-<li>More capable math function calls
+<li>更多功能丰富的数学函数调用
 <ul>
-<li>Function calls directly in math can now take code expressions with hashtag</li>
-<li>They can now also take named arguments</li>
-<li>Within math function calls, semicolons turn preceding arguments to arrays to
-support matrices: <code><span class="typ-math-delim">$</span><span class="typ-func">mat</span><span class="typ-punct">(</span>1<span class="typ-punct">,</span> 2<span class="typ-punct">;</span> 3<span class="typ-punct">,</span> 4<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code></li>
+<li>数学中的函数调用现在可以使用带有井号的代码表达式</li>
+<li>现在还可以接受命名参数</li>
+<li>在数学函数调用内部，分号将前面的参数转换为数组，以支持矩阵：<code><span class="typ-math-delim">$</span><span class="typ-func">mat</span><span class="typ-punct">(</span>1<span class="typ-punct">,</span> 2<span class="typ-punct">;</span> 3<span class="typ-punct">,</span> 4<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code></li>
 </ul>
 </li>
-<li>Arbitrary content in math
+<li>数学中的任意内容
 <ul>
-<li>Text, images, and other arbitrary content can now be embedded in math</li>
-<li>Math now also supports font fallback to support e.g. CJK and emoji</li>
+<li>现在可以在数学中嵌入文本、图像和其他任意内容</li>
+<li>数学现在还支持字体回退以支持例如 CJK 和表情符号</li>
 </ul>
 </li>
-<li>More math features
+<li>更多数学功能
 <ul>
-<li>New text operators: <code>op</code> function, <code>lim</code>, <code>max</code>, etc.</li>
-<li>New matrix function: <code>mat</code></li>
-<li>New n-ary roots with <code>root</code> function: <code><span class="typ-math-delim">$</span><span class="typ-func">root</span><span class="typ-punct">(</span>3<span class="typ-punct">,</span> x<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code></li>
-<li>New under- and overbraces, -brackets, and -lines</li>
-<li>New <code>abs</code> and <code>norm</code> functions</li>
-<li>New shorthands: <code>[|</code>, <code>|]</code>, and <code>||</code></li>
-<li>New <code>attach</code> function, overridable attachments with <code>script</code> and <code>limit</code></li>
-<li>Manual spacing in math, with <code>h</code>, <code>thin</code>, <code>med</code>, <code>thick</code> and <code>quad</code></li>
-<li>Symbols and other content may now be used like a function, e.g.
-<code><span class="typ-math-delim">$</span><span class="typ-func">zeta</span><span class="typ-punct">(</span>x<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code></li>
-<li>Added Fira Math font, removed Noto Sans Math font</li>
-<li>Support for alternative math fonts through <code><span class="typ-key">#</span><span class="typ-key">show</span> math<span class="typ-punct">.</span><span class="typ-func">formula</span><span class="typ-punct">:</span> <span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span><span class="typ-str">&quot;Fira Math&quot;</span><span class="typ-punct">)</span></code></li>
+<li>新的文本运算符：<code>op</code> 函数，<code>lim</code>，<code>max</code> 等</li>
+<li>新的矩阵函数：<code>mat</code></li>
+<li>使用 <code>root</code> 函数的新的 n 元根：<code><span class="typ-math-delim">$</span><span class="typ-func">root</span><span class="typ-punct">(</span>3<span class="typ-punct">,</span> x<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code></li>
+<li>新的下标上标、上下括号、上下线</li>
+<li>新的 <code>abs</code> 和 <code>norm</code> 函数</li>
+<li>新的快捷方式：<code>[|</code>，<code>|]</code> 和 <code>||</code></li>
+<li>新的 <code>attach</code> 函数，可通过 <code>script</code> 和 <code>limit</code> 进行覆盖附件</li>
+<li>数学中的手动间距，使用 <code>h</code>，<code>thin</code>，<code>med</code>，<code>thick</code> 和 <code>quad</code></li>
+<li>符号和其他内容现在可以像函数一样使用，例如 <code><span class="typ-math-delim">$</span><span class="typ-func">zeta</span><span class="typ-punct">(</span>x<span class="typ-punct">)</span><span class="typ-math-delim">$</span></code></li>
+<li>添加了 Fira Math 字体，移除了 Noto Sans Math 字体</li>
+<li>通过 <code><span class="typ-key">#</span><span class="typ-key">show</span> math<span class="typ-punct">.</span><span class="typ-func">formula</span><span class="typ-punct">:</span> <span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span><span class="typ-str">&quot;Fira Math&quot;</span><span class="typ-punct">)</span></code> 支持替代数学字体</li>
 </ul>
 </li>
-<li>More library improvements
+<li>更多库改进
 <ul>
-<li>New <code>calc</code> module, <code>abs</code>, <code>min</code>, <code>max</code>, <code>even</code>, <code>odd</code> and <code>mod</code> moved there</li>
-<li>New <code>message</code> argument on <code>assert</code> function</li>
-<li>The <code>pairs</code> method on dictionaries now returns an array of length-2 arrays
-instead of taking a closure</li>
-<li>The method call <code>dict<span class="typ-punct">.</span><span class="typ-func">at</span><span class="typ-punct">(</span><span class="typ-str">&quot;key&quot;</span><span class="typ-punct">)</span></code> now always fails if <code>&quot;key&quot;</code> doesn't exist
-Previously, it was allowed in assignments. Alternatives are <code>dict<span class="typ-punct">.</span>key <span class="typ-op">=</span> x</code>
-and <code>dict<span class="typ-punct">.</span><span class="typ-func">insert</span><span class="typ-punct">(</span><span class="typ-str">&quot;key&quot;</span><span class="typ-punct">,</span> x<span class="typ-punct">)</span></code>.</li>
+<li>新的 <code>calc</code> 模块，<code>abs</code>，<code>min</code>，<code>max</code>，<code>even</code>，<code>odd</code> 和 <code>mod</code> 移动到该模块</li>
+<li><code>assert</code> 函数上的新的 <code>message</code> 参数</li>
+<li>字典上的 <code>pairs</code> 方法现在返回长度为 2 的数组数组，而不是使用闭包</li>
+<li>方法调用 <code>dict<span class="typ-punct">.</span><span class="typ-func">at</span><span class="typ-punct">(</span><span class="typ-str">&quot;key&quot;</span><span class="typ-punct">)</span></code> 如果 <code>&quot;key&quot;</code> 不存在，现在总是失败，以前允许在赋值中使用。替代方法是 <code>dict<span class="typ-punct">.</span>key <span class="typ-op">=</span> x</code> 和 <code>dict<span class="typ-punct">.</span><span class="typ-func">insert</span><span class="typ-punct">(</span><span class="typ-str">&quot;key&quot;</span><span class="typ-punct">,</span> x<span class="typ-punct">)</span></code></li>
 </ul>
 </li>
-<li>Smarter editor functionality
+<li>更智能的编辑器功能
 <ul>
-<li>Autocompletion for local variables</li>
-<li>Autocompletion for methods available on a value</li>
-<li>Autocompletion for symbols and modules</li>
-<li>Autocompletion for imports</li>
-<li>Hover over an identifier to see its value(s)</li>
+<li>本地变量的自动补全</li>
+<li>值可用的方法的自动补全</li>
+<li>符号和模块的自动补全</li>
+<li>导入的自动补全</li>
+<li>在标识符上悬停以查看其值</li>
 </ul>
 </li>
-<li>Further editor improvements
+<li>更多编辑器改进
 <ul>
-<li>New Font menu with previews</li>
-<li>Single projects may now be shared with share links</li>
-<li>New dashboard experience if projects are shared with you</li>
-<li>Keyboard Shortcuts are now listed in the menus and there are more of them</li>
-<li>New Offline indicator</li>
-<li>Tooltips for all buttons</li>
-<li>Improved account protection</li>
-<li>Moved Status indicator into the error list button</li>
+<li>新的离线指示器</li>
+<li>所有按钮都有工具提示</li>
+<li>改进的账户保护</li>
+<li>将状态指示器移动到错误列表按钮内</li>
 </ul>
 </li>
-<li>Further fixes
+<li>更多修复
 <ul>
-<li>Multiple bug fixes for incremental parser</li>
-<li>Fixed closure parameter capturing</li>
-<li>Fixed tons of math bugs</li>
-<li>Bugfixes for performance, file management, editing reliability</li>
-<li>Added redirection to the page originally navigated to after signin</li>
+<li>增量解析器的多个错误修复</li>
+<li>修复了闭包参数捕获问题</li>
+<li>修复了大量数学错误</li>
+<li>性能、文件管理和编辑可靠性的错误修复</li>
+<li>添加了登录后重新导航到原始导航页面的重定向</li>
 </ul>
 </li>
 </ul>
@@ -2056,10 +1841,6 @@ and <code>dict<span class="typ-punct">.</span><span class="typ-func">insert</spa
         </li>
         
         <li data-assoc="v0.5.0"><a href="#v0.5.0">v0.5.0</a>
-          <ul></ul>
-        </li>
-        
-        <li data-assoc="v0.4.0"><a href="#v0.4.0">v0.4.0</a>
           <ul></ul>
         </li>
         
