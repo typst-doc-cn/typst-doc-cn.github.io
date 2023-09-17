@@ -1,5 +1,5 @@
 route: /docs/reference/text/raw/
-title: Raw Text / Code
+title: 原始文本/代码块
 description: '`raw` 函数的文档'
 part: null
 outline:
@@ -46,9 +46,8 @@ body:
     oneliner: Raw text with optional syntax highlighting.
     element: true
     details: |-
-      <p>Raw text with optional syntax highlighting.</p>
-      <p>Displays the text verbatim and in a monospace font. This is typically used
-      to embed computer code into your document.</p>
+      <p>带有可选语法高亮的原始文本。</p>
+      <p>使用等宽字体逐字显示文本，通常用于将代码嵌入文档中。</p>
       <h2 id="example">Example</h2>
       <div class="previewed-code"><pre><code>Adding <span class="typ-raw">`rbx`</span> to <span class="typ-raw">`rcx`</span> gives
       the desired result.
@@ -85,9 +84,8 @@ body:
     params:
     - name: text
       details: |-
-        <p>The raw text.</p>
-        <p>You can also use raw blocks creatively to create custom syntaxes for
-        your automations.</p>
+        <p>原始文本块。</p>
+        <p>你还可以创造性地使用原始块为你的自动化创建自定义语法。</p>
       example: |-
         <div class="previewed-code"><pre><code><span class="typ-comment">// Parse numbers in raw blocks with the</span>
         <span class="typ-comment">// `mydsl` tag and sum them up.</span>
@@ -114,10 +112,11 @@ body:
       settable: false
     - name: block
       details: |-
-        <p>Whether the raw text is displayed as a separate block.</p>
-        <p>In markup mode, using one-backtick notation makes this <code><span class="typ-key">false</span></code>.
-        Using three-backtick notation makes it <code><span class="typ-key">true</span></code> if the enclosed content
-        contains at least one line break.</p>
+        <p>是否将原始文本显示在一个单独的块中。</p>
+        <p>
+        在标记模式中，使用一个反引号会将此值设置为 <code><span class="typ-key">false</span></code>。
+        如果包含的内容至少包含一个换行符，则使用三个反引号会将其设置为 <code><span class="typ-key">true</span></code>。
+        </p>
       example: |-
         <div class="previewed-code"><pre><code><span class="typ-comment">// Display inline code in a small box</span>
         <span class="typ-comment">// that retains the correct baseline.</span>
@@ -155,10 +154,9 @@ body:
       settable: true
     - name: lang
       details: |-
-        <p>The language to syntax-highlight in.</p>
-        <p>Apart from typical language tags known from Markdown, this supports the
-        <code><span class="typ-str">&quot;typ&quot;</span></code> and <code><span class="typ-str">&quot;typc&quot;</span></code> tags for Typst markup and Typst code,
-        respectively.</p>
+          <p>要在其中突出显示语法的语言。</p>
+          <p>要在其中突出显示语法的语言。
+            除了Markdown中的典型语言标签外，它还分别支持Typst标记和Typst代码的“typ”和“typc”标签。</p>
       example: |-
         <div class="previewed-code"><pre><code><span class="typ-raw">```typ
         This is *Typst!*

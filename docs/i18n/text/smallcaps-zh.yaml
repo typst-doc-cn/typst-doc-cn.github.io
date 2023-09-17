@@ -1,5 +1,5 @@
 route: /docs/reference/text/smallcaps/
-title: Small Capitals
+title: 显示为小写
 description: '`smallcaps` 函数的文档'
 part: null
 outline:
@@ -25,12 +25,11 @@ body:
     oneliner: Displays text in small capitals.
     element: false
     details: |-
-      <p>Displays text in small capitals.</p>
-      <p><em>Note:</em> This enables the OpenType <code>smcp</code> feature for the font. Not all fonts
-      support this feature. Sometimes smallcaps are part of a dedicated font and
-      sometimes they are not available at all. In the future, this function will
-      support selecting a dedicated smallcaps font as well as synthesizing
-      smallcaps from normal letters, but this is not yet implemented.</p>
+      <p>将文本显示为小写形式。</p>
+      <p>
+      <em>注：</em>这将为字体启用OpenType <code>smcp</code>功能。并非所有字体都支持此功能。
+      有时小写字母是专用字体的一部分，有时根本不可用。将来，此函数将支持选择专用小写字体以及从普通字母合成小写字母，但尚未实现。
+      </p>
       <h2 id="example">Example</h2>
       <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">par</span><span class="typ-punct">(</span>justify<span class="typ-punct">:</span> <span class="typ-key">true</span><span class="typ-punct">)</span>
       <span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">heading</span><span class="typ-punct">(</span>numbering<span class="typ-punct">:</span> <span class="typ-str">&quot;I.&quot;</span><span class="typ-punct">)</span>
@@ -48,7 +47,7 @@ body:
     self: false
     params:
     - name: body
-      details: <p>The text to display to small capitals.</p>
+      details: <p>显示为小写形式的文本。</p>
       example: null
       types:
       - content

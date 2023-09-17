@@ -1,5 +1,5 @@
 route: /docs/reference/text/smartquote/
-title: Smartquote
+title: 智能引号
 description: '`smartquote` 函数的文档'
 part: null
 outline:
@@ -34,9 +34,13 @@ body:
     oneliner: A language-aware quote that reacts to its context.
     element: true
     details: |-
-      <p>A language-aware quote that reacts to its context.</p>
-      <p>Automatically turns into an appropriate opening or closing quote based on
-      the active <a href="/docs/reference/text/text/#parameters-lang">text language</a>.</p>
+      <p>
+      感知上下文的语言感知引号。
+      A language-aware quote that reacts to its context.
+      </p>
+      <p>
+      根据<a href="/docs/reference/text/text/#parameters-lang">文本语言</a>自动转换为适当的开头或结尾引号。
+      </p>
       <h2 id="example">Example</h2>
       <div class="previewed-code"><pre><code>&quot;This is in quotes.&quot;
 
@@ -47,13 +51,14 @@ body:
       &quot;C&#39;est entre guillemets.&quot;
       </code></pre><div class="preview"><img src="/assets/docs/d8ae0e27ceabe7db27a5d570785d0e09.png" alt="Preview" width="480" height="190"/></div></div>
       <h2 id="syntax">Syntax</h2>
-      <p>This function also has dedicated syntax: The normal quote characters
-      (<code>'</code> and <code>&quot;</code>). Typst automatically makes your quotes smart.</p>
+      <p>
+      该函数还有专用语法：普通引号（<code>'</code>和<code>&quot;</code>）。Typst会自动转换引号形式。
+      </p>
     example: null
     self: false
     params:
     - name: double
-      details: <p>Whether this should be a double quote.</p>
+      details: <p>是否应当是双引号。</p>
       example: null
       types:
       - bool
@@ -66,9 +71,8 @@ body:
       settable: true
     - name: enabled
       details: |-
-        <p>Whether smart quotes are enabled.</p>
-        <p>To disable smartness for a single quote, you can also escape it with a
-        backslash.</p>
+        <p>是否启用智能引号。</p>
+        <p>要禁用智能引号，还可以用反斜杠进行转义。</p>
       example: |-
         <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">smartquote</span><span class="typ-punct">(</span>enabled<span class="typ-punct">:</span> <span class="typ-key">false</span><span class="typ-punct">)</span>
 

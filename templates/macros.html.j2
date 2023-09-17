@@ -82,12 +82,12 @@
 <p>默认：{{ param['default'] | safe }}</p>
 {% endif %}
 {% if param['example'] %}
-<div class="folding-example"><button class="folding-example-header"><img src="/assets/icons/16-arrow-right.svg" alt=""
-      width="16" height="16">查看示例</button>
+<details class="folding-example">
+  <summary><img src="/assets/icons/16-arrow-right.svg" alt="" width="16" height="16">查看示例</summary>
   <div class="folding">
     {{ param['example'] | safe }}
   </div>
-</div>
+</details>
 {% endif %}
 {% endfor %}
 {%- endmacro %}
@@ -96,12 +96,12 @@
 {{ function['details'] | safe }}
 {{ function_definition_display(function, type2class, gen_path, prefix) }}
 {% if function['example'] and is_example_folding %}
-  <div class="folding-example"><button class="folding-example-header"><img src="/assets/icons/16-arrow-right.svg" alt=""
-        width="16" height="16">查看示例</button>
+  <details class="folding-example">
+    <summary><img src="/assets/icons/16-arrow-right.svg" alt="" width="16" height="16">查看示例</summary>
     <div class="folding">
-      {{ function['example'] | safe }}
+    {{ function['example'] | safe }}
     </div>
-  </div>
+  </details>
 {% endif %}
 {% if function['example'] and not is_example_folding %}
   {{ function['example'] | safe }}
