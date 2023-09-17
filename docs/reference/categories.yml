@@ -82,52 +82,45 @@ visualize: |
   _注：_ 绘图和图标函数尚不可用，未来将会添加该功能。
 
 meta: |
-  Document structuring, introspection, and metadata configuration.
+  文档结构、自省（在计算机科学中，自省是指计算机程序在运行时查对象类型的一种能力）和元数据配置。
 
-  Here, you can find functions to structure your document and interact with that
-  structure. This includes section headings and figures, bibliography
-  management, cross-referencing and more.
+  在这里，您可以找到用于结构化文档并与该结构进行交互的函数。
+  这包括章节标题和图表、参考文献管理、交叉引用等等。
 
-  Moreover, this category is home to Typst's introspection capabilities: With
-  the `counter` function, you can access and manipulate page, section, figure,
-  and equation counters or create custom ones. And the `query` function lets you
-  search for elements in the document to construct things like a list of
-  figures or headers which show the current chapter title.
+  此外，这个类别还包含了 Typst 的自省能力：使用 `counter` 函数，
+  您可以访问和操作页面、章节、图表和方程的计数器，或者创建自定义计数器。
+  而 `query` 函数允许您在文档中搜索元素，以构建诸如图表列表或显示当前章节标题的页眉等内容。
 
 symbols: |
-  These two modules give names to symbols and emoji to make them easy to insert
-  with a normal keyboard. Alternatively, you can also always directly enter
-  Unicode symbols into your text and formulas. In addition to the symbols listed
-  below, math mode defines `dif` and `Dif`. These are not normal symbol values
-  because they also affect spacing and font style.
+  这两个模块为符号和表情符号提供名称，以便于使用普通键盘插入。
+  或者，您也可以直接在文本和公式中输入 Unicode 符号。
+  除了下面列出的符号之外，数学模式还定义了 `dif` 和 `Dif`。
+  这些不是普通的符号值，因为它们还会影响间距和字体样式。
 
 sym: |
-  Named general symbols.
+  命名的常用符号。
 
-  For example, `#sym.arrow` produces the → symbol. Within
-  [formulas]($category/math), these symbols can be used without the `#sym.`
-  prefix.
+  例如，`#sym.arrow` 会生成 → 符号。
+  在[公式]($category/math)中，这些符号可以在没有 `#sym.` 前缀的情况下使用。
 
-  The `d` in an integral's `dx` can be written as `[$dif x$]`.
-  Outside math formulas, `dif` can be accessed as `math.dif`.
+  积分符号中的 `dx` 中的 `d` 可以写作 `[$dif x$]`。
+  在数学公式之外，`dif` 可以通过 `math.dif` 进行访问。
 
 emoji: |
-  Named emoji.
+  命名的表情符号。
 
-  For example, `#emoji.face` produces the 😀 emoji. If you frequently use
-  certain emojis, you can also import them from the `emoji` module (`[#import
-  emoji: face]`) to use them without the `#emoji.` prefix.
+  例如，`#emoji.face` 会生成 😀 表情符号。
+  如果您经常使用某些表情符号，您可以从 `emoji` 模块导入它们（`[#import emoji: face]`），
+  以便在没有 `#emoji.` 前缀的情况下使用它们。
 
 data-loading: |
-  Data loading from external files.
+  从外部文件加载数据。
 
-  These functions help you with loading and embedding data, for example from
-  the results of an experiment.
+  这些函数可以帮助您加载和嵌入数据，例如从实验结果中加载数据。
 
 packages: |
-  Typst [packages]($scripting/#packages) encapsulate reusable building blocks
-  and make them reusable across projects. Below is a list of Typst packages
-  created by the community. Due to the early and experimental nature of Typst's
-  package management, they all live in a `preview` namespace. Click on a
-  package's name to view its documentation and use the copy button on the right
-  to get a full import statement for it.
+  Typst [packages]($scripting/#packages) 封装了可重复使用的构建块，
+  并使它们可以在不同项目中重用。
+  下面是由 Typst 社区创建的 Typst 包列表。
+  由于 Typst 的包管理处于早期和实验性阶段，它们都位于 `preview` 命名空间下。
+  点击包的名称以查看其文档，并使用右侧的复制按钮获取完整的导入语句。
