@@ -1,230 +1,71 @@
-<h1 align="center">
-  <img alt="Typst" src="https://user-images.githubusercontent.com/17899797/226108480-722b770e-6313-40d7-84f2-26bebb55a281.png">
-</h1>
+# Typst 中文文档网站
 
-<p align="center">
-  <a href="https://typst.app/docs/">
-    <img alt="Documentation" src="https://img.shields.io/website?down_message=offline&label=docs&up_color=007aff&up_message=online&url=https%3A%2F%2Ftypst.app%2Fdocs"/>
-  </a>
-  <a href="https://typst.app/">
-    <img alt="Typst App" src="https://img.shields.io/website?down_message=offline&label=typst.app&up_color=239dad&up_message=online&url=https%3A%2F%2Ftypst.app"/>
-  </a>
-  <a href="https://discord.gg/2uDybryKPe">
-    <img alt="Discord Server" src="https://img.shields.io/discord/1054443721975922748?color=5865F2&label=discord&labelColor=555"/>
-  </a>
-  <a href="https://github.com/typst/typst/blob/main/LICENSE">
-    <img alt="Apache-2 License" src="https://img.shields.io/badge/license-Apache%202-brightgreen"/>
-  </a>
-  <a href="https://typst.app/jobs/">
-    <img alt="Jobs at Typst" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Ftypst.app%2Fassets%2Fdata%2Fshields.json&query=%24.jobs.text&label=jobs&color=%23A561FF&cacheSeconds=1800">
-  </a>
-</p>
+社区驱动的非官方 Typst 中文文档.
 
-Typst is a new markup-based typesetting system that is designed to be as powerful
-as LaTeX while being much easier to learn and use. Typst has:
+https://typst-doc-cn.github.io/docs/
 
-- Built-in markup for the most common formatting tasks
-- Flexible functions for everything else
-- A tightly integrated scripting system
-- Math typesetting, bibliography management, and more
-- Fast compile times thanks to incremental compilation
-- Friendly error messages in case something goes wrong
+GitHub Repo：https://github.com/typst-doc-cn/typst-doc-cn.github.io
 
-This repository contains the Typst compiler and its CLI, which is everything you
-need to compile Typst documents locally. For the best writing experience,
-consider signing up to our [collaborative online editor][app] for free. It is
-currently in public beta.
+Gitee 镜像：https://gitee.com/orangex4/typst-doc-cn.github.io
 
-## Example
-A [gentle introduction][tutorial] to Typst is available in our documentation.
-However, if you want to see the power of Typst encapsulated in one image, here
-it is:
-<p align="center">
- <img alt="Example" width="900" src="https://user-images.githubusercontent.com/17899797/228031796-ced0e452-fcee-4ae9-92da-b9287764ff25.png"/>
-</p>
+## 贡献
+
+1. Fork 仓库
+2. 更改 `./docs/src` 目录下的 Markdown 文件
+3. 更改 `./docs/i18n` 目录下的 Yaml 文件
+4. 如果你想为「第三方包」（packages）页面的包添加对应翻译，可以修改 `./static/assets/index2cn.json` 文件
+5. 遵守翻译规范：
+  1. 中英文之间添加一个空格
+  2. 尽量使用中文标点符号
+  3. 不确定的术语可以参考术语表或者其他页面的翻译
+  4. 示例 (example) 里的英文不需要翻译成中文
+6. 发起一个 Pull Request
+7. 如果需要的话，也可以在文档的末尾处留下翻译者的名字
+
+如果想要贡献, 并且有任何问题的话, 可以加入 QQ 群 793548390 联系 OrangeX4.
+
+当然也可以直接尝试翻译和发起 Pull Request.
 
 
-Let's dissect what's going on:
+## 技术细节
 
-- We use _set rules_ to configure element properties like the size of pages or
-  the numbering of headings. By setting the page height to `auto`, it scales to
-  fit the content. Set rules accommodate the most common configurations. If you
-  need full control, you can also use [show rules][show] to completely redefine
-  the appearance of an element.
+Typst 的文档生成是与 Typst 源码紧耦合的, 具体体现在:
 
-- We insert a heading with the `= Heading` syntax. One equals sign creates a top
-  level heading, two create a subheading and so on. Typst has more lightweight
-  markup like this, see the [syntax] reference for a full list.
+1. Typst 开发者使用 Rust 写了一个 `docs` 模块, 文档生成的大部分工作都在这里进行;
+2. Typst 的文档是使用一种 Markdown 的方言以及 Yaml 文件生成的, `docs/src` 路径下的文件;
+3. `docs` 模块里的函数被执行后, 会动态地生成示例图片, 就像你们示例代码对应的右边的示例图片, 均为编译时生成的;
+4. 参考部分对应的大部分页面, 例如 [`lorem`](https://typst-doc-cn.github.io/docs/reference/text/lorem/) 函数, 对应的 Markdown 部分是写在 `lorem` 函数对应的 Rust 代码文件的注释里的, 有点像 `docstring`;
+5. Typst Repo 里面只有 `docs` 模块的代码, 没有对应的文档网页生成的代码, 那部分还没有开源;
 
-- [Mathematical equations][math] are enclosed in dollar signs. By adding extra
-  spaces around the contents of a equation, we can put it into a separate block.
-  Multi-letter identifiers are interpreted as Typst definitions and functions
-  unless put into quotes. This way, we don't need backslashes for things like
-  `floor` and `sqrt`. And `phi.alt` applies the `alt` modifier to the `phi` to
-  select a particular symbol variant.
+因此我做了以下事情以生成这个 Typst 中文文档网页:
 
-- Now, we get to some [scripting]. To input code into a Typst document, we can
-  write a hashtag followed by an expression. We define two variables and a
-  recursive function to compute the n-th fibonacci number. Then, we display the
-  results in a center-aligned table. The table function takes its cells
-  row-by-row. Therefore, we first pass the formulas `$F_1$` to `$F_8$` and then
-  the computed fibonacci numbers. We apply the spreading operator (`..`) to both
-  because they are arrays and we want to pass the arrays' items as individual
-  arguments.
+1. 修改了 `docs` 模块的部分代码, 在 `assets` 路径下生成了一个所有文档对应的 `docs.json` 文件, 这个文件里面的结构相对复杂, 但是包含了生成一个文档网站的全部内容;
+2. `docs.json` 里面有多种类型的结构:
+    1. 最简单的是 `html` 类型, 对应概览和教程, 以及参考的 `LANGUAGE` 大部分;
+    2. 还有 `type` 类型, 对应的就是类型对应的页面;
+    3. 还有 `func` 类型, 对应的就是函数对应的页面, 里面内容繁杂, 东西很多;
+    4. 其他还有三种类型 `category`, `funcs`, `symbol`;
+3. 我依照官网的 HTML 和 CSS 文件, 使用 `jinja2` 的语法写了几个 HTML 模板, 放在 `templates` 路径下;
+4. 然后我写了 `gen.py`, 用于将 `docs.json` 使用模板转换为最终的 Web 网站, 放在 `dist` 路径下;
+5. 根据 `docs.json` 里的内容, 生成了 `i18n` 目录便于翻译;
+6. 写了一个 GitHub Action 用于将生成 `dist` 部署到 GitHub Pages 上.
 
-<details>
-  <summary>Text version of the code example.</summary>
+![](https://picgo-1258602555.cos.ap-nanjing.myqcloud.com/20230625213846.png)
 
-  ```typst
-  #set page(width: 10cm, height: auto)
-  #set heading(numbering: "1.")
 
-  = Fibonacci sequence
-  The Fibonacci sequence is defined through the
-  recurrence relation $F_n = F_(n-1) + F_(n-2)$.
-  It can also be expressed in _closed form:_
+## 本地生成
 
-  $ F_n = round(1 / sqrt(5) phi.alt^n), quad
-    phi.alt = (1 + sqrt(5)) / 2 $
+本地生成是非必须的, 但是它很适合你在本地查看生成的网页是否正确.
 
-  #let count = 8
-  #let nums = range(1, count + 1)
-  #let fib(n) = (
-    if n <= 2 { 1 }
-    else { fib(n - 1) + fib(n - 2) }
-  )
-
-  The first #count numbers of the sequence are:
-
-  #align(center, table(
-    columns: count,
-    ..nums.map(n => $F_#n$),
-    ..nums.map(n => str(fib(n))),
-  ))
-  ```
-</details>
-
-## Installation
-Typst's CLI is available from different sources:
-
-- You can get sources and pre-built binaries for the latest release of Typst
-  from the [releases page][releases].
-
-- You can install Typst through different package managers. Note that the
-  versions in the package managers might lag behind the latest release.
-  - macOS/Linux: `brew install typst`
-  - Arch Linux: `pacman -S typst`
-  - Void Linux: `xbps-install typst`
-  - Windows Package Manager: `winget install --id Typst.Typst`
-
-- If you have a [Rust][rust] toolchain installed, you can also install the
-  latest development version with
-  `cargo install --git https://github.com/typst/typst`. Note that this will
-  be a "nightly" version that may be broken or not yet properly documented.
-
-- Nix users can use the `typst` package with `nix-shell -p typst` or build and
-  run the bleeding edge version with `nix run github:typst/typst -- --version`.
-
-- Docker users can run a prebuilt image with
-  `docker run -it ghcr.io/typst/typst:latest`.
-
-## Usage
-Once you have installed Typst, you can use it like this:
-```sh
-# Creates `file.pdf` in working directory.
-typst compile file.typ
-
-# Creates PDF file at the desired path.
-typst compile path/to/source.typ path/to/output.pdf
-```
-
-You can also watch source files and automatically recompile on changes. This is
-faster than compiling from scratch each time because Typst has incremental
-compilation.
-```sh
-# Watches source files and recompiles on changes.
-typst watch file.typ
-```
-
-Typst further allows you to add custom font paths for your project and list all
-of the fonts it discovered:
-```sh
-# Adds additional directories to search for fonts.
-typst --font-path path/to/fonts compile file.typ
-
-# Lists all of the discovered fonts in the system and the given directory.
-typst --font-path path/to/fonts fonts
-
-# Or via environment variable (Linux syntax).
-TYPST_FONT_PATHS=path/to/fonts typst fonts
-```
-
-If you prefer an integrated IDE-like experience with autocompletion and instant
-preview, you can also check out the [Typst web app][app], which is currently in
-public beta.
-
-## Contributing
-We would love to see contributions from the community. If you experience bugs,
-feel free to open an issue. If you would like to implement a new feature or bug
-fix, please follow the steps outlined in the [contribution guide][contributing].
-
-To build Typst yourself, first ensure that you have the
-[latest stable Rust][rust] installed. Then, clone this repository and build the
-CLI with the following commands:
+首先你需要 clone 本仓库, 并安装 `cargo` 工具链, 以及 Python 和 Python 包 `jinja2`.
 
 ```sh
-git clone https://github.com/typst/typst
-cd typst
-cargo build --release
+# 修改了 `./docs/src` 目录则需要运行这两行命令
+cargo test --package typst-docs --lib -- tests::test_docs --exact --nocapture
+# 如果只是修改 `./docs/i18n` 目录则只需要运行这行命令
+python ./gen.py
 ```
 
-The optimized binary will be stored in `target/release/`.
+最后编译得到的文件位于 `./dist`.
 
-Another good way to contribute is by [sharing packages][packages] with the
-community.
-
-## Pronunciation and Spelling
-IPA: /taɪpst/. "Ty" like in **Ty**pesetting and "pst" like in Hi**pst**er. When
-writing about Typst, capitalize its name as a proper noun, with a capital "T".
-
-## Design Principles
-All of Typst has been designed with three key goals in mind: Power,
-simplicity, and performance. We think it's time for a system that matches the
-power of LaTeX, is easy to learn and use, all while being fast enough to realize
-instant preview. To achieve these goals, we follow three core design principles:
-
-- **Simplicity through Consistency:**
-  If you know how to do one thing in Typst, you should be able to transfer that
-  knowledge to other things. If there are multiple ways to do the same thing,
-  one of them should be at a different level of abstraction than the other. E.g.
-  it's okay that `= Introduction` and `#heading[Introduction]` do the same thing
-  because the former is just syntax sugar for the latter.
-
-- **Power through Composability:**
-  There are two ways to make something flexible: Have a knob for everything or
-  have a few knobs that you can combine in many ways. Typst is designed with the
-  second way in mind. We provide systems that you can compose in ways we've
-  never even thought of. TeX is also in the second category, but it's a bit
-  low-level and therefore people use LaTeX instead. But there, we don't really
-  have that much composability. Instead, there's a package for everything
-  (`\usepackage{knob}`).
-
-- **Performance through Incrementality:**
-  All Typst language features must accommodate for incremental compilation.
-  Luckily we have [`comemo`], a system for incremental compilation which does
-  most of the hard work in the background.
-
-[docs]: https://typst.app/docs/
-[app]: https://typst.app/
-[discord]: https://discord.gg/2uDybryKPe
-[tutorial]: https://typst.app/docs/tutorial/
-[show]: https://typst.app/docs/reference/styling/#show-rules
-[math]: https://typst.app/docs/reference/math/
-[syntax]: https://typst.app/docs/reference/syntax/
-[scripting]: https://typst.app/docs/reference/scripting/
-[rust]: https://rustup.rs/
-[releases]: https://github.com/typst/typst/releases/
-[architecture]: https://github.com/typst/typst/blob/main/docs/dev/architecture.md
-[contributing]: https://github.com/typst/typst/blob/main/CONTRIBUTING.md
-[packages]: https://github.com/typst/packages/
-[`comemo`]: https://github.com/typst/comemo/
+如果你有安装 nodejs, 则你可以通过 `npx serve ./dist` 快速地在本地开启一个 web 静态服务器预览结果.
