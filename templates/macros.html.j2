@@ -7,7 +7,7 @@
   </svg>
   <div role="tooltip" id="{{ prefix }}-tooltip" tabindex="-1">{{ desc }}</div>
 </div>
-{%- endmacro %}
+{% endmacro %}
 
 {% macro function_definition_display(function, type2class, gen_path, prefix='') %}
 <div class="code code-definition {{ 'single-arg' if function['params'].__len__() <= 1 else '' }}">{% if function['self'] %}self.{% else %}{{ gen_path(function) }}{% endif %}<span
@@ -17,7 +17,7 @@
       for t in param['types'] %}<a href="/docs/reference/types/{{ t }}" class="pill {{ type2class(t) }}">{{ t }}</a>{% endfor %}{{',' if
       function['params'].__len__() > 1 else '' }} </span>{% endfor %}</div>) {% if function['returns'] %}<!-- -->-&gt; {% for ret in function['returns']
   %}<a href="/docs/reference/types/{{ ret }}" class="pill {{ type2class(ret) }}">{{ ret }}</a>{% endfor %}{% endif %}</div>
-{%- endmacro %}
+{% endmacro %}
 
 {% macro function_params_display(function, type2class, gen_path, prefix='') %}
 {% for param in function['params'] %}
@@ -90,7 +90,7 @@
 </details>
 {% endif %}
 {% endfor %}
-{%- endmacro %}
+{% endmacro %}
 
 {% macro function_display(function, type2class, gen_path, prefix='', is_example_folding=true) %}
 {{ function['details'] | safe }}
@@ -107,4 +107,4 @@
   {{ function['example'] | safe }}
 {% endif %}
 {{ function_params_display(function, type2class, gen_path, prefix) }}
-{%- endmacro %}
+{% endmacro %}
