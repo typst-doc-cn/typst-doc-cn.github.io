@@ -249,10 +249,8 @@ body:
     name: calc
     title: Calculation
     details: |-
-      <p>Calculations and processing of numeric values.</p>
-      <p>These functions are part of the <code>calc</code> module and not imported by default.
-      In addition to the functions listed below, the <code>calc</code> module also defines
-      the constants <code>pi</code>, <code>tau</code>, <code>e</code>, <code>inf</code>, and <code>nan</code>.</p>
+      <p>数值计算和处理。</p>
+      <p>这些函数是 <code>calc</code> 模块的一部分，不会默认导入。除了下面列出的函数外，<code>calc</code> 模块还定义了常数 <code>pi</code>、<code>tau</code>、<code>e</code>、<code>inf</code> 和 <code>nan</code>。</p>
     functions:
     - path:
       - calc

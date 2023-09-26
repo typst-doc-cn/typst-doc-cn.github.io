@@ -6,8 +6,8 @@ outline:
 - id: summary
   name: Summary
   children: []
-- id: example
-  name: Example
+- id: ''
+  name: ''
   children: []
 - id: functions
   name: Functions
@@ -33,8 +33,8 @@ body:
     name: roots
     title: Roots
     details: |-
-      <p>Square and non-square roots.</p>
-      <h2 id="example">Example</h2>
+      <p>平方根和非平方根。</p>
+      <h2>示例</h2>
       <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">sqrt</span><span class="typ-punct">(</span>3 <span class="typ-escape">-</span> 2 <span class="typ-func">sqrt</span><span class="typ-punct">(</span>2<span class="typ-punct">)</span><span class="typ-punct">)</span> = <span class="typ-func">sqrt</span><span class="typ-punct">(</span>2<span class="typ-punct">)</span> <span class="typ-escape">-</span> 1 <span class="typ-math-delim">$</span>
       <span class="typ-math-delim">$</span> <span class="typ-func">root</span><span class="typ-punct">(</span>3<span class="typ-punct">,</span> x<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
       </code></pre><div class="preview"><img src="/assets/docs/5f6156e04c9fbbe6376dbcd9a88490f3.png" alt="Preview" width="480" height="190"/></div></div>

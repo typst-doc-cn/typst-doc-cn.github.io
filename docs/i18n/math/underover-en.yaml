@@ -63,9 +63,8 @@ body:
     name: underover
     title: Under/Over
     details: |-
-      <p>Delimiters above or below parts of an equation.</p>
-      <p>The braces and brackets further allow you to add an optional annotation
-      below or above themselves.</p>
+      <p>方程的部分上方或下方的分隔符。</p>
+      <p>大括号和方括号还允许您在它们自己的下方或上方添加可选注释。</p>
     functions:
     - path: []
       name: underline

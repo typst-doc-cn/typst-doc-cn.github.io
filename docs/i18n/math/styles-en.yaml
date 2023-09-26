@@ -33,9 +33,8 @@ body:
     name: styles
     title: Styles
     details: |-
-      <p>Alternate letterforms within formulas.</p>
-      <p>These functions are distinct from the <a href="/docs/reference/text/text/"><code>text</code></a> function because math
-      fonts contain multiple variants of each letter.</p>
+      <p>公式内的备用字母形式。</p>
+      <p>这些函数与 <a href="/docs/reference/text/text/"><code>text</code></a> 函数不同，因为数学字体包含每个字母的多个变体。</p>
     functions:
     - path: []
       name: upright

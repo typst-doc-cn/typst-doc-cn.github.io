@@ -6,11 +6,11 @@ outline:
 - id: summary
   name: Summary
   children: []
-- id: example
-  name: Example
+- id: ''
+  name: ''
   children: []
-- id: syntax
-  name: Syntax
+- id: ''
+  name: ''
   children: []
 - id: functions
   name: Functions
@@ -60,17 +60,13 @@ body:
     name: attach
     title: Attach
     details: |-
-      <p>Subscript, superscripts, and limits.</p>
-      <p>Attachments can be displayed either as sub/superscripts, or limits. Typst
-      automatically decides which is more suitable depending on the base, but you
-      can also control this manually with the <code>scripts</code> and <code>limits</code> functions.</p>
-      <h2 id="example">Example</h2>
+      <p>下标、上标和极限。</p>
+      <p>附件可以显示为上标/下标或极限。Typst 根据基数自动决定哪种方式更合适，但您也可以使用 <code>scripts</code> 和 <code>limits</code> 函数手动控制。</p>
+      <h2>示例</h2>
       <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-pol">sum</span><span class="typ-math-op">_</span><span class="typ-punct">(</span>i=0<span class="typ-punct">)</span><span class="typ-math-op">^</span>n a<span class="typ-math-op">_</span>i = 2<span class="typ-math-op">^</span><span class="typ-punct">(</span>1+i<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
       </code></pre><div class="preview"><img src="/assets/docs/575e598ddfc00ee58c3fd2f8379f5718.png" alt="Preview" width="480" height="190"/></div></div>
-      <h2 id="syntax">Syntax</h2>
-      <p>This function also has dedicated syntax for attachments after the base: Use
-      the underscore (<code>_</code>) to indicate a subscript i.e. bottom attachment and the
-      hat (<code>^</code>) to indicate a superscript i.e. top attachment.</p>
+      <h2>语法</h2>
+      <p>该函数还具有用于在基数之后添加附件的专用语法：使用下划线 (<code>_</code>) 表示下标，使用插入符 (<code>^</code>) 表示上标。</p>
     functions:
     - path: []
       name: attach

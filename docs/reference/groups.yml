@@ -2,8 +2,8 @@
 # together into one documentation page although they are not part of any scope.
 
 - name: variants
-  display: 变体
-  category: 数学
+  display: Variants
+  category: math
   functions: ["serif", "sans", "frak", "mono", "bb", "cal"]
   description: |
     公式内的备用字体。
@@ -11,8 +11,8 @@
     这些函数与 [`text`]($text) 函数不同，因为数学字体包含每个字母的多个变体。
 
 - name: styles
-  display: 样式
-  category: 数学
+  display: Styles
+  category: math
   functions: ["upright", "italic", "bold"]
   description: |
     公式内的备用字母形式。
@@ -20,8 +20,8 @@
     这些函数与 [`text`]($text) 函数不同，因为数学字体包含每个字母的多个变体。
 
 - name: sizes
-  display: 大小
-  category: 数学
+  display: Sizes
+  category: math
   functions: ["display", "inline", "script", "sscript"]
   description: |
     强制表达式大小样式。
@@ -29,8 +29,8 @@
     这些函数允许手动配置方程元素的大小，使其看起来像在显示/内联方程中使用，或者像在根或上/下标中使用。
 
 - name: underover
-  display: 上/下标
-  category: 数学
+  display: Under/Over
+  category: math
   functions: [
     "underline",
     "overline",
@@ -45,8 +45,8 @@
     大括号和方括号还允许您在它们自己的下方或上方添加可选注释。
 
 - name: roots
-  display: 根号
-  category: 数学
+  display: Roots
+  category: math
   functions: ["root", "sqrt"]
   description: |
     平方根和非平方根。
@@ -58,8 +58,8 @@
     ```
 
 - name: attach
-  display: 上标/下标
-  category: 数学
+  display: Attach
+  category: math
   functions: ["attach", "scripts", "limits"]
   description: |
     下标、上标和极限。
@@ -75,8 +75,8 @@
     该函数还具有用于在基数之后添加附件的专用语法：使用下划线 (`_`) 表示下标，使用插入符 (`^`) 表示上标。
 
 - name: lr
-  display: 左/右分隔符
-  category: 数学
+  display: Left/Right
+  category: math
   functions: ["lr", "abs", "norm", "floor", "ceil", "round"]
   description: |
     分隔符匹配。
@@ -91,8 +91,8 @@
     ```
 
 - name: calc
-  display: 计算
-  category: 基础
+  display: Calculation
+  category: foundations
   path: ["calc"]
   description: |
     数值计算和处理。

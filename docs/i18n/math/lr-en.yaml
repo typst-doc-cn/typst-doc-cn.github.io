@@ -6,8 +6,8 @@ outline:
 - id: summary
   name: Summary
   children: []
-- id: example
-  name: Example
+- id: ''
+  name: ''
   children: []
 - id: functions
   name: Functions
@@ -57,14 +57,9 @@ body:
     name: lr
     title: Left/Right
     details: |-
-      <p>Delimiter matching.</p>
-      <p>The <code>lr</code> function allows you to match two delimiters and scale them with the
-      content they contain. While this also happens automatically for delimiters
-      that match syntactically, <code>lr</code> allows you to match two arbitrary delimiters
-      and control their size exactly. Apart from the <code>lr</code> function, Typst provides
-      a few more functions that create delimiter pairings for absolute, ceiled,
-      and floored values as well as norms.</p>
-      <h2 id="example">Example</h2>
+      <p>分隔符匹配。</p>
+      <p><code>lr</code> 函数允许您匹配两个分隔符并按其包含的内容进行缩放。虽然对于语法匹配的分隔符会自动执行此操作，但 <code>lr</code> 允许您匹配两个任意分隔符并精确控制其大小。除了 <code>lr</code> 函数外，Typst 还提供了一些函数，用于创建绝对值、向上取整、向下取整值以及范数的分隔符配对。</p>
+      <h2>示例</h2>
       <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> [a, b<span class="typ-math-op">/</span>2] <span class="typ-math-delim">$</span>
       <span class="typ-math-delim">$</span> <span class="typ-func">lr</span><span class="typ-punct">(</span>]<span class="typ-pol">sum</span><span class="typ-math-op">_</span><span class="typ-punct">(</span>x=1<span class="typ-punct">)</span><span class="typ-math-op">^</span>n] x<span class="typ-punct">,</span> size<span class="typ-punct">:</span> <span class="typ-num">#</span><span class="typ-num">50%</span><span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
       <span class="typ-math-delim">$</span> <span class="typ-func">abs</span><span class="typ-punct">(</span><span class="typ-punct">(</span>x + y<span class="typ-punct">)</span> <span class="typ-math-op">/</span> 2<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>

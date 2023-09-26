@@ -51,10 +51,8 @@ body:
     name: sizes
     title: Sizes
     details: |-
-      <p>Forced size styles for expressions within formulas.</p>
-      <p>These functions allow manual configuration of the size of equation elements
-      to make them look as in a display/inline equation or as if used in a root or
-      sub/superscripts.</p>
+      <p>强制表达式大小样式。</p>
+      <p>这些函数允许手动配置方程元素的大小，使其看起来像在显示/内联方程中使用，或者像在根或上/下标中使用。</p>
     functions:
     - path: []
       name: display
