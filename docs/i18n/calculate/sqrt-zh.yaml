@@ -1,6 +1,6 @@
 route: /docs/reference/calculate/sqrt/
-title: Square Root
-description: Documentation for the `sqrt` function.
+title: 开平方函数
+description: 开平方函数 `sqrt` 的文档。
 part: null
 outline:
 - id: summary
@@ -26,14 +26,14 @@ body:
     oneliner: Extracts the square root of a number.
     element: false
     details: |-
-      <p>Extracts the square root of a number.</p>
-      <h2 id="example">Example</h2>
+      <p>计算一个数的平方根</p>
+      <h2 id="example">举例</h2>
       <div class="previewed-code"><pre><code><span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">sqrt</span><span class="typ-punct">(</span><span class="typ-num">16</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
       <span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">sqrt</span><span class="typ-punct">(</span><span class="typ-num">2.5</span><span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/5b931ca2767047a142be8cc72f87d802.png" alt="Preview" width="480" height="190"/></div></div>
     params:
     - name: value
-      details: <p>The number whose square root to calculate. Must be non-negative.</p>
+      details: <p>用于计算平方根的数，必须为非负值。</p>
       example: null
       types:
       - integer

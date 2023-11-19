@@ -1,6 +1,6 @@
 route: /docs/reference/calculate/tanh/
-title: Hyperbolic tangent
-description: Documentation for the `tanh` function.
+title: 双曲正切函数
+description: 双曲正切函数 `tanh` 的文档。
 part: null
 outline:
 - id: summary
@@ -26,15 +26,15 @@ body:
     oneliner: Calculates the hyperbolic tangent of an angle.
     element: false
     details: |-
-      <p>Calculates the hyperbolic tangent of an angle.</p>
-      <p>When called with an integer or a float, they will be interpreted as radians.</p>
-      <h2 id="example">Example</h2>
+      <p>计算一个角度的双曲正切值。</p>
+      <p>当传入整数或浮点数时，将会转化为弧度制</p>
+      <h2 id="example">举例</h2>
       <div class="previewed-code"><pre><code><span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">tanh</span><span class="typ-punct">(</span><span class="typ-num">0</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
       <span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">tanh</span><span class="typ-punct">(</span><span class="typ-num">45deg</span><span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/2019097194e2b6d5c9c31ebb8ca6143d.png" alt="Preview" width="480" height="190"/></div></div>
     params:
     - name: angle
-      details: <p>The angle whose hyperbolic tangent to calculate.</p>
+      details: <p>用于计算双曲正切值的角度</p>
       example: null
       types:
       - integer

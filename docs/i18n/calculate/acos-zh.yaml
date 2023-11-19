@@ -1,6 +1,6 @@
 route: /docs/reference/calculate/acos/
-title: Arccosine
-description: Documentation for the `acos` function.
+title: 反余弦函数
+description: 反余弦函数 `acos` 的文档。
 part: null
 outline:
 - id: summary
@@ -26,14 +26,14 @@ body:
     oneliner: Calculates the arccosine of a number.
     element: false
     details: |-
-      <p>Calculates the arccosine of a number.</p>
-      <h2 id="example">Example</h2>
+      <p>计算一个数的反余弦值</p>
+      <h2 id="example">举例</h2>
       <div class="previewed-code"><pre><code><span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">acos</span><span class="typ-punct">(</span><span class="typ-num">0</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
       <span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">acos</span><span class="typ-punct">(</span><span class="typ-num">1</span><span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/0423e3e221058490a01d9be936113706.png" alt="Preview" width="480" height="190"/></div></div>
     params:
     - name: value
-      details: <p>The number whose arcsine to calculate. Must be between -1 and 1.</p>
+      details: <p>用于计算反余弦的数，应在 -1 到 1 之间</p>
       example: null
       types:
       - integer

@@ -1,6 +1,6 @@
 route: /docs/reference/calculate/asin/
-title: Arcsine
-description: Documentation for the `asin` function.
+title: 反正弦函数
+description: 反正弦函数 `asin` 的文档。
 part: null
 outline:
 - id: summary
@@ -26,14 +26,14 @@ body:
     oneliner: Calculates the arcsine of a number.
     element: false
     details: |-
-      <p>Calculates the arcsine of a number.</p>
-      <h2 id="example">Example</h2>
+      <p>计算一个数字的反正弦值<p>
+      <h2 id="example">举例</h2>
       <div class="previewed-code"><pre><code><span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">asin</span><span class="typ-punct">(</span><span class="typ-num">0</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
       <span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">asin</span><span class="typ-punct">(</span><span class="typ-num">1</span><span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/4e3534f3677072cae71d2151b1ea3cca.png" alt="Preview" width="480" height="190"/></div></div>
     params:
     - name: value
-      details: <p>The number whose arcsine to calculate. Must be between -1 and 1.</p>
+      details: <p>用于计算反正弦的数，应在 -1 到 1 之间</p>
       example: null
       types:
       - integer
