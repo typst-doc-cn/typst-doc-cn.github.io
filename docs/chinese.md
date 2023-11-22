@@ -199,17 +199,6 @@ Hello World 你好世界
 
 类 Markdown 表格：可以使用 [tablem](https://github.com/OrangeX4/typst-tablem) 包。
 
-```example
-#import "@preview/tablem:0.1.0": tablem
-
-#tablem[
-  | *Name* | *Location* | *Height* | *Score* |
-  | ------ | ---------- | -------- | ------- |
-  | John   | Second St. | 180 cm   |  5      |
-  | Wally  | Third Av.  | 160 cm   |  10     |
-]
-```
-
 
 ## 一些 Typst 中文资源列表 { #resources }
 
