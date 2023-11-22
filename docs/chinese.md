@@ -31,6 +31,21 @@ Typst 是可用于出版的可编程标记语言，拥有变量、函数与包�
 
 ## 常见 Q&A { #question-and-answer }
 
+### 如何进一步进阶？
+
+除了参考，还可以考虑阅读 [typst-examples-book](https://sitandr.github.io/typst-examples-book/book/)，里面包含了一些 Typst 的高级知识、简单示例，以及一些最佳实践。
+
+例如简单地实现类似 Markdown 中的引用文本样式：
+
+```example
++ #lorem(10) \
+  #rect(fill: luma(240), stroke: (left: 0.25em))[
+    *Solution:* #lorem(10)
+
+    $ a_(n+1)x^n = 2... $
+  ]
+```
+
 ### 如何使用 VS Code 进行本地编辑？
 
 1. 在 [VS Code](https://code.visualstudio.com/) 中打开任意工作目录。
