@@ -805,6 +805,17 @@
 <p>参考索引最后一部分描述的 Typst 代码模式内的函数，用来操作及转换数据的。
 和第二部分一样，每一个函数均已同样的形式表述，
 有些是表述函数基本功能，有些列举函数参数，有些举例如何使用函数。</p>
+<h2 id="advanced">进阶</h2>
+<p>译者注：这部分官方文档没有，是译者自主添加的。</p>
+<p>除了参考，还可以考虑阅读 <a href="https://sitandr.github.io/typst-examples-book/book/">typst-examples-book</a>，里面包含了一些 Typst 的高级知识、简单示例，以及一些最佳实践。</p>
+<p>例如简单地实现类似 Markdown 中的引用文本样式：</p>
+<div class="previewed-code"><pre><code><span class="typ-marker">+</span> <span class="typ-func">#</span><span class="typ-func">lorem</span><span class="typ-punct">(</span><span class="typ-num">10</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
+  <span class="typ-func">#</span><span class="typ-func">rect</span><span class="typ-punct">(</span>fill<span class="typ-punct">:</span> <span class="typ-func">luma</span><span class="typ-punct">(</span><span class="typ-num">240</span><span class="typ-punct">)</span><span class="typ-punct">,</span> stroke<span class="typ-punct">:</span> <span class="typ-punct">(</span>left<span class="typ-punct">:</span> <span class="typ-num">0.25em</span><span class="typ-punct">)</span><span class="typ-punct">)</span><span class="typ-punct">[</span>
+    <span class="typ-strong">*Solution:*</span> <span class="typ-func">#</span><span class="typ-func">lorem</span><span class="typ-punct">(</span><span class="typ-num">10</span><span class="typ-punct">)</span>
+
+    <span class="typ-math-delim">$</span> a<span class="typ-math-op">_</span><span class="typ-punct">(</span>n+1<span class="typ-punct">)</span>x<span class="typ-math-op">^</span>n = 2<span class="typ-escape">...</span> <span class="typ-math-delim">$</span>
+  <span class="typ-punct">]</span>
+</code></pre><div class="preview"><img src="/assets/docs/a0901a24b13e8d46b39a8f84d18045c0.png" alt="Preview" width="480" height="190"/></div></div>
 
 
 
@@ -827,6 +838,10 @@
         </li>
         
         <li data-assoc="functions"><a href="#functions">Functions</a>
+          <ul></ul>
+        </li>
+        
+        <li data-assoc="advanced"><a href="#advanced">Advanced</a>
           <ul></ul>
         </li>
         

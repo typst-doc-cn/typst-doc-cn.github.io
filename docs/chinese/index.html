@@ -813,6 +813,16 @@
 <li>有时候段落开始的 CJK 标点符号没有被调整 <a href="https://github.com/typst/typst/issues/2348">#2348</a>。</li>
 </ul>
 <h2 id="question-and-answer">常见 Q&amp;A</h2>
+<h3>如何进一步进阶？</h3>
+<p>除了参考，还可以考虑阅读 <a href="https://sitandr.github.io/typst-examples-book/book/">typst-examples-book</a>，里面包含了一些 Typst 的高级知识、简单示例，以及一些最佳实践。</p>
+<p>例如简单地实现类似 Markdown 中的引用文本样式：</p>
+<div class="previewed-code"><pre><code><span class="typ-marker">+</span> <span class="typ-func">#</span><span class="typ-func">lorem</span><span class="typ-punct">(</span><span class="typ-num">10</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
+  <span class="typ-func">#</span><span class="typ-func">rect</span><span class="typ-punct">(</span>fill<span class="typ-punct">:</span> <span class="typ-func">luma</span><span class="typ-punct">(</span><span class="typ-num">240</span><span class="typ-punct">)</span><span class="typ-punct">,</span> stroke<span class="typ-punct">:</span> <span class="typ-punct">(</span>left<span class="typ-punct">:</span> <span class="typ-num">0.25em</span><span class="typ-punct">)</span><span class="typ-punct">)</span><span class="typ-punct">[</span>
+    <span class="typ-strong">*Solution:*</span> <span class="typ-func">#</span><span class="typ-func">lorem</span><span class="typ-punct">(</span><span class="typ-num">10</span><span class="typ-punct">)</span>
+
+    <span class="typ-math-delim">$</span> a<span class="typ-math-op">_</span><span class="typ-punct">(</span>n+1<span class="typ-punct">)</span>x<span class="typ-math-op">^</span>n = 2<span class="typ-escape">...</span> <span class="typ-math-delim">$</span>
+  <span class="typ-punct">]</span>
+</code></pre><div class="preview"><img src="/assets/docs/a0901a24b13e8d46b39a8f84d18045c0.png" alt="Preview" width="480" height="190"/></div></div>
 <h3 id="vs-code">如何使用 VS Code 进行本地编辑？</h3>
 <ol>
 <li>在 <a href="https://code.visualstudio.com/">VS Code</a> 中打开任意工作目录。</li>
