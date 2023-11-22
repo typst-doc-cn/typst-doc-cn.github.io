@@ -852,12 +852,12 @@ Hello World 你好世界
 </ol>
 <h3>如何添加中文斜体？</h3>
 <p>中文斜体一般使用楷体替代，你可以 <a href="https://github.com/typst/typst/issues/725">通过 show-set 规则实现</a>：</p>
-<pre>#show emph: text.with(font: (&quot;Linux Libertine&quot;, &quot;STKaiti&quot;))
+<div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">show</span> <span class="typ-func">emph</span><span class="typ-punct">:</span> text<span class="typ-punct">.</span><span class="typ-func">with</span><span class="typ-punct">(</span>font<span class="typ-punct">:</span> <span class="typ-punct">(</span><span class="typ-str">&quot;Linux Libertine&quot;</span><span class="typ-punct">,</span> <span class="typ-str">&quot;STKaiti&quot;</span><span class="typ-punct">)</span><span class="typ-punct">)</span>
 
-孔乙己#emph[上大人]
+孔乙己<span class="typ-func">#</span><span class="typ-func">emph</span><span class="typ-punct">[</span>上大人<span class="typ-punct">]</span>
 
-A quick _brown_
-</pre>
+A quick <span class="typ-emph">_brown_</span>
+</code></pre><div class="preview"><img src="/assets/docs/c9d7398f4e53e287ac7c15e038bd020d.png" alt="Preview" width="480" height="190"/></div></div>
 <p>如果你真的需要伪斜体，可以考虑使用 <a href="https://github.com/Enivex">@Enivex</a> 在 <a href="https://discord.com/channels/1054443721975922748/1054443722592497796/1175967383630921848">Discord</a> 给出的一段 hack 代码：</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> <span class="typ-func">skew</span><span class="typ-punct">(</span>angle<span class="typ-punct">,</span> vscale<span class="typ-punct">:</span> <span class="typ-num">1</span><span class="typ-punct">,</span> body<span class="typ-punct">)</span> <span class="typ-op">=</span> <span class="typ-punct">{</span>
   <span class="typ-key">let</span> <span class="typ-punct">(</span>a<span class="typ-punct">,</span> b<span class="typ-punct">,</span> c<span class="typ-punct">,</span> d<span class="typ-punct">)</span> <span class="typ-op">=</span> <span class="typ-punct">(</span><span class="typ-num">1</span><span class="typ-punct">,</span> vscale <span class="typ-op">*</span> calc<span class="typ-punct">.</span><span class="typ-func">tan</span><span class="typ-punct">(</span>angle<span class="typ-punct">)</span><span class="typ-punct">,</span> <span class="typ-num">0</span><span class="typ-punct">,</span> vscale<span class="typ-punct">)</span>
