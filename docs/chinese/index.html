@@ -850,6 +850,44 @@ Hello World 你好世界
 <li><code>typst fonts --variants</code> 查看字体变体。</li>
 <li>检查中文字体是否已经完全安装。</li>
 </ol>
+<h3>如何添加中文斜体？</h3>
+<p>中文斜体一般使用楷体替代，你可以 <a href="https://github.com/typst/typst/issues/725">通过 show-set 规则实现</a>：</p>
+<pre>#show emph: text.with(font: (&quot;Linux Libertine&quot;, &quot;STKaiti&quot;))
+
+孔乙己#emph[上大人]
+
+A quick _brown_
+</pre>
+<p>如果你真的需要伪斜体，可以考虑使用 <a href="https://github.com/Enivex">@Enivex</a> 在 <a href="https://discord.com/channels/1054443721975922748/1054443722592497796/1175967383630921848">Discord</a> 给出的一段 hack 代码：</p>
+<div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> <span class="typ-func">skew</span><span class="typ-punct">(</span>angle<span class="typ-punct">,</span> vscale<span class="typ-punct">:</span> <span class="typ-num">1</span><span class="typ-punct">,</span> body<span class="typ-punct">)</span> <span class="typ-op">=</span> <span class="typ-punct">{</span>
+  <span class="typ-key">let</span> <span class="typ-punct">(</span>a<span class="typ-punct">,</span> b<span class="typ-punct">,</span> c<span class="typ-punct">,</span> d<span class="typ-punct">)</span> <span class="typ-op">=</span> <span class="typ-punct">(</span><span class="typ-num">1</span><span class="typ-punct">,</span> vscale <span class="typ-op">*</span> calc<span class="typ-punct">.</span><span class="typ-func">tan</span><span class="typ-punct">(</span>angle<span class="typ-punct">)</span><span class="typ-punct">,</span> <span class="typ-num">0</span><span class="typ-punct">,</span> vscale<span class="typ-punct">)</span>
+  <span class="typ-key">let</span> E <span class="typ-op">=</span> <span class="typ-punct">(</span>a <span class="typ-op">+</span> d<span class="typ-punct">)</span> <span class="typ-op">/</span> <span class="typ-num">2</span>
+  <span class="typ-key">let</span> F <span class="typ-op">=</span> <span class="typ-punct">(</span>a <span class="typ-op">-</span> d<span class="typ-punct">)</span> <span class="typ-op">/</span> <span class="typ-num">2</span>
+  <span class="typ-key">let</span> G <span class="typ-op">=</span> <span class="typ-punct">(</span>b <span class="typ-op">+</span> c<span class="typ-punct">)</span> <span class="typ-op">/</span> <span class="typ-num">2</span>
+  <span class="typ-key">let</span> H <span class="typ-op">=</span> <span class="typ-punct">(</span>c <span class="typ-op">-</span> b<span class="typ-punct">)</span> <span class="typ-op">/</span> <span class="typ-num">2</span>
+  <span class="typ-key">let</span> Q <span class="typ-op">=</span> calc<span class="typ-punct">.</span><span class="typ-func">sqrt</span><span class="typ-punct">(</span>E <span class="typ-op">*</span> E <span class="typ-op">+</span> H <span class="typ-op">*</span> H<span class="typ-punct">)</span>
+  <span class="typ-key">let</span> R <span class="typ-op">=</span> calc<span class="typ-punct">.</span><span class="typ-func">sqrt</span><span class="typ-punct">(</span>F <span class="typ-op">*</span> F <span class="typ-op">+</span> G <span class="typ-op">*</span> G<span class="typ-punct">)</span>
+  <span class="typ-key">let</span> sx <span class="typ-op">=</span> Q <span class="typ-op">+</span> R
+  <span class="typ-key">let</span> sy <span class="typ-op">=</span> Q <span class="typ-op">-</span> R
+  <span class="typ-key">let</span> a1 <span class="typ-op">=</span> calc<span class="typ-punct">.</span><span class="typ-func">atan2</span><span class="typ-punct">(</span>F<span class="typ-punct">,</span> G<span class="typ-punct">)</span>
+  <span class="typ-key">let</span> a2 <span class="typ-op">=</span> calc<span class="typ-punct">.</span><span class="typ-func">atan2</span><span class="typ-punct">(</span>E<span class="typ-punct">,</span> H<span class="typ-punct">)</span>
+  <span class="typ-key">let</span> theta <span class="typ-op">=</span> <span class="typ-punct">(</span>a2 <span class="typ-op">-</span> a1<span class="typ-punct">)</span> <span class="typ-op">/</span> <span class="typ-num">2</span>
+  <span class="typ-key">let</span> phi <span class="typ-op">=</span> <span class="typ-punct">(</span>a2 <span class="typ-op">+</span> a1<span class="typ-punct">)</span> <span class="typ-op">/</span> <span class="typ-num">2</span>
+  
+  <span class="typ-key">set</span> <span class="typ-func">rotate</span><span class="typ-punct">(</span>origin<span class="typ-punct">:</span> bottom <span class="typ-op">+</span> center<span class="typ-punct">)</span>
+  <span class="typ-key">set</span> <span class="typ-func">scale</span><span class="typ-punct">(</span>origin<span class="typ-punct">:</span> bottom <span class="typ-op">+</span> center<span class="typ-punct">)</span>
+  
+  <span class="typ-func">rotate</span><span class="typ-punct">(</span>phi<span class="typ-punct">,</span> <span class="typ-func">scale</span><span class="typ-punct">(</span>x<span class="typ-punct">:</span> sx <span class="typ-op">*</span> <span class="typ-num">100%</span><span class="typ-punct">,</span> y<span class="typ-punct">:</span> sy <span class="typ-op">*</span> <span class="typ-num">100%</span><span class="typ-punct">,</span> <span class="typ-func">rotate</span><span class="typ-punct">(</span>theta<span class="typ-punct">,</span> body<span class="typ-punct">)</span><span class="typ-punct">)</span><span class="typ-punct">)</span>
+<span class="typ-punct">}</span>
+
+<span class="typ-key">#</span><span class="typ-key">let</span> <span class="typ-func">fake-italic</span><span class="typ-punct">(</span>body<span class="typ-punct">)</span> <span class="typ-op">=</span> <span class="typ-func">skew</span><span class="typ-punct">(</span><span class="typ-op">-</span><span class="typ-num">12deg</span><span class="typ-punct">,</span> body<span class="typ-punct">)</span>
+
+<span class="typ-key">#</span><span class="typ-key">let</span> <span class="typ-func">shadowed</span><span class="typ-punct">(</span>body<span class="typ-punct">)</span> <span class="typ-op">=</span> <span class="typ-func">box</span><span class="typ-punct">(</span><span class="typ-func">place</span><span class="typ-punct">(</span><span class="typ-func">skew</span><span class="typ-punct">(</span><span class="typ-op">-</span><span class="typ-num">50deg</span><span class="typ-punct">,</span> vscale<span class="typ-punct">:</span> <span class="typ-num">0.8</span><span class="typ-punct">,</span> <span class="typ-func">text</span><span class="typ-punct">(</span>fill<span class="typ-punct">:</span> <span class="typ-func">luma</span><span class="typ-punct">(</span><span class="typ-num">200</span><span class="typ-punct">)</span><span class="typ-punct">,</span> body<span class="typ-punct">)</span><span class="typ-punct">)</span><span class="typ-punct">)</span> <span class="typ-op">+</span> <span class="typ-func">place</span><span class="typ-punct">(</span>body<span class="typ-punct">)</span><span class="typ-punct">)</span>
+
+<span class="typ-func">#</span><span class="typ-func">fake-italic</span><span class="typ-punct">[</span>中文伪斜体<span class="typ-punct">]</span>
+
+<span class="typ-func">#</span><span class="typ-func">shadowed</span><span class="typ-punct">[</span>还可以用来实现文字阴影效果<span class="typ-punct">]</span>
+</code></pre><div class="preview"><img src="/assets/docs/bf562f6ed00ab00f2ef7b5d8e8f21ca0.png" alt="Preview" width="480" height="190"/></div></div>
 <h3>如何为设置各行段落的缩进？</h3>
 <p>使用 <code>#set par(first-line-indent: 2em)</code>：</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">par</span><span class="typ-punct">(</span>first-line-indent<span class="typ-punct">:</span> <span class="typ-num">2em</span><span class="typ-punct">)</span>
