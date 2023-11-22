@@ -798,10 +798,9 @@
 <p>Typst 是可用于出版的可编程标记语言，拥有变量、函数与包管理等现代编程语言的特性，注重于科学写作 (science writing)，定位与 LaTeX 相似。</p>
 <ul>
 <li><strong>语法简洁</strong>：上手难度跟 Markdown 相当，文本源码阅读性高，不会像 LaTeX 一样充斥着反斜杠与花括号。</li>
-<li><strong>编译速度快</strong>：Typst 使用 Rust 语言编写，即 typ(e+ru)st，目标运行平台是WASM，即浏览器本地离线运行；也可以编译成命令行工具，采用一种 <strong>增量编译</strong> 算法和一种有约束的版面缓存方案，<strong>文档长度基本不会影响编译速度，且编译速度与常见 Markdown 渲染引擎渲染速度相当</strong>。</li>
-<li><strong>环境搭建简单</strong>：不需要像 LaTeX 一样折腾几个 G 的开发环境，原生支持中日韩等非拉丁语言，无论是官方 Web App 在线编辑，还是使用 VS Code 安装插件本地开发，都是 <strong>即开即用</strong>。</li>
-<li><strong>现代编程语言</strong>：Typst 是可用于出版的可编程标记语言，拥有 <strong>变量、函数、包管理与错误检查</strong> 等现代编程语言的特性，同时也提供了 <strong>闭包</strong> 等特性，便于进行 <strong>函数式编程</strong>。以及包括了 <code>标记模式</code>、<code>脚本模式</code> 与 <code>$数学模式$</code> 等多种模式的作用域，并且它们可以不限深度地、交互地嵌套。并且通过 <strong><a href="https://typst-doc-cn.github.io/docs/packages/">包管理</a></strong>，你不再需要像 TexLive 一样在本地安装一大堆并不必要的宏包，而是 <strong>按需自动从云端下载</strong>。</li>
-<li></li>
+<li><strong>编译速度快</strong>：Typst 使用 Rust 语言编写，即 typ(e+ru)st，目标运行平台是WASM，即浏览器本地离线运行；也可以编译成命令行工具，采用一种增量编译算法和一种有约束的版面缓存方案，文档长度基本不会影响编译速度，且编译速度与常见 Markdown 渲染引擎渲染速度相当。</li>
+<li><strong>环境搭建简单</strong>：不需要像 LaTeX 一样折腾几个 G 的开发环境，原生支持中日韩等非拉丁语言，无论是官方 Web App 在线编辑，还是使用 VS Code 安装插件本地开发，都是即开即用。</li>
+<li><strong>现代编程语言</strong>：Typst 是可用于出版的可编程标记语言，拥有变量、函数、包管理与错误检查等现代编程语言的特性，同时也提供了闭包等特性，便于进行函数式编程。以及包括了 [标记模式]、{脚本模式} 与 $数学模式$ 等多种模式的作用域，并且它们可以不限深度地、交互地嵌套。并且通过 <a href="https://typst-doc-cn.github.io/docs/packages/">包管理</a>，你不再需要像 TexLive 一样在本地安装一大堆并不必要的宏包，而是按需自动从云端下载。</li>
 </ul>
 <h2 id="question">目前仍存在的 CJK 问题</h2>
 <p>参考 <a href="https://discord.com/channels/1054443721975922748/1176062736514429008">Discord</a> 的记录，可知目前仍存在：</p>
@@ -824,7 +823,7 @@
 </ul>
 </li>
 <li>新建一个 <code>test.typ</code> 文件，写入内容 <code># Hello World</code>。</li>
-<li>按下 <code>Shift + Ctrl + P</code>，然后输入命令 <code>Typst Preview: Preview current file</code>，即可 <strong>同步增量渲染与预览</strong>，还提供了 <strong>光标双向定位功能</strong>。</li>
+<li>按下 <code>Shift + Ctrl + P</code>，然后输入命令 <code>Typst Preview: Preview current file</code>，即可同步增量渲染与预览，还提供了光标双向定位功能。</li>
 </ol>
 <h3>如何为中英文设置不同的字体？</h3>
 <p>可以使用 text 里面的 fallback 特性。
@@ -839,10 +838,10 @@ Typst 中的 font 参数可以接收一个数组，会根据字体里有无当�
 <span class="typ-punct">]</span>
 </code></pre><div class="preview"><img src="/assets/docs/78db46a15e197508357130997fc6c769.png" alt="Preview" width="480" height="190"/></div></div>
 <p>如果你还需要对中文字体进行特殊处理，例如只缩小中文字体的大小，可以考虑用正则表达式进行 hack：</p>
-<pre>#show regex(&quot;\p{sc=Hani}+&quot;): set text(size: 0.8em)
+<div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">show</span> <span class="typ-func">regex</span><span class="typ-punct">(</span><span class="typ-str">&quot;\p{sc=Hani}+&quot;</span><span class="typ-punct">)</span><span class="typ-punct">:</span> <span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>size<span class="typ-punct">:</span> <span class="typ-num">0.8em</span><span class="typ-punct">)</span>
 
 Hello World 你好世界
-</pre>
+</code></pre><div class="preview"><img src="/assets/docs/d1939aacd9a5f51f8339cc7b0c76faa3.png" alt="Preview" width="480" height="190"/></div></div>
 <h3>为什么我设置的字体没有生效？</h3>
 <p>如果中文字体不符合 typst 要求，那么它不会选择你声明的字体，例如字体的变体数量不够，参考更详细的 <a href="https://github.com/typst/typst/issues/725">issue</a>。</p>
 <ol>
@@ -933,7 +932,9 @@ Hello World 你好世界
     <span class="typ-punct">[</span><span class="typ-math-delim">$</span><span class="typ-func">display</span><span class="typ-punct">(</span><span class="typ-pol">it</span><span class="typ-punct">)</span><span class="typ-math-delim">$</span><span class="typ-label">&lt;displayed-inline-math-equation&gt;</span><span class="typ-punct">]</span>
   <span class="typ-punct">}</span>
 <span class="typ-punct">}</span>
-</code></pre><div class="preview"><img src="/assets/docs/4657930a421e401363936773eb5d31db.png" alt="Preview" width="480" height="190"/></div></div>
+
+行内数学公式（展示模式） <span class="typ-math-delim">$</span><span class="typ-func">display</span><span class="typ-punct">(</span><span class="typ-pol">integral</span> x <span class="typ-pol">dif</span> x<span class="typ-punct">)</span><span class="typ-math-delim">$</span>
+</code></pre><div class="preview"><img src="/assets/docs/fc3d2c42dc4b48c7806abadd5148bb76.png" alt="Preview" width="480" height="190"/></div></div>
 <h3 id="pdf">如何嵌入 PDF 文件？</h3>
 <p>你暂时没有办法在 Typst 里嵌入 PDF 文件，但是你可以先使用 <a href="https://cloudconvert.com/pdf-to-svg">在线工具</a> 将 PDF 文件转换为 SVG 文件，然后嵌入 svg 文件。</p>
 <h3>如何根据章节对图表和公式进行编码？</h3>
