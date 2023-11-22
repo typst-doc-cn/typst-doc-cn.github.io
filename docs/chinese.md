@@ -79,7 +79,7 @@ Hello World 你好世界
 
 中文斜体一般使用楷体替代，你可以 [通过 show-set 规则实现](https://github.com/typst/typst/issues/725)：
 
-```
+```example
 #show emph: text.with(font: ("Linux Libertine", "STKaiti"))
 
 孔乙己#emph[上大人]
