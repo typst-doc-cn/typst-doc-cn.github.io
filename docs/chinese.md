@@ -75,6 +75,52 @@ Hello World 你好世界
 4. 检查中文字体是否已经完全安装。
 
 
+### 如何添加中文斜体？
+
+中文斜体一般使用楷体替代，你可以 [通过 show-set 规则实现](https://github.com/typst/typst/issues/725)：
+
+```
+#show emph: text.with(font: ("Linux Libertine", "STKaiti"))
+
+孔乙己#emph[上大人]
+
+A quick _brown_
+```
+
+如果你真的需要伪斜体，可以考虑使用 [@Enivex](https://github.com/Enivex) 在 [Discord](https://discord.com/channels/1054443721975922748/1054443722592497796/1175967383630921848) 给出的一段 hack 代码：
+
+```example
+#let skew(angle, vscale: 1, body) = {
+  let (a, b, c, d) = (1, vscale * calc.tan(angle), 0, vscale)
+  let E = (a + d) / 2
+  let F = (a - d) / 2
+  let G = (b + c) / 2
+  let H = (c - b) / 2
+  let Q = calc.sqrt(E * E + H * H)
+  let R = calc.sqrt(F * F + G * G)
+  let sx = Q + R
+  let sy = Q - R
+  let a1 = calc.atan2(F, G)
+  let a2 = calc.atan2(E, H)
+  let theta = (a2 - a1) / 2
+  let phi = (a2 + a1) / 2
+  
+  set rotate(origin: bottom + center)
+  set scale(origin: bottom + center)
+  
+  rotate(phi, scale(x: sx * 100%, y: sy * 100%, rotate(theta, body)))
+}
+
+#let fake-italic(body) = skew(-12deg, body)
+
+#let shadowed(body) = box(place(skew(-50deg, vscale: 0.8, text(fill: luma(200), body))) + place(body))
+
+#fake-italic[中文伪斜体]
+
+#shadowed[还可以用来实现文字阴影效果]
+```
+
+
 ### 如何为设置各行段落的缩进？
 
 使用 `#set par(first-line-indent: 2em)`：
