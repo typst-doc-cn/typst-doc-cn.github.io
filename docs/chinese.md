@@ -12,10 +12,10 @@ description: |
 Typst 是可用于出版的可编程标记语言，拥有变量、函数与包管理等现代编程语言的特性，注重于科学写作 (science writing)，定位与 LaTeX 相似。
 
 - **语法简洁**：上手难度跟 Markdown 相当，文本源码阅读性高，不会像 LaTeX 一样充斥着反斜杠与花括号。
-- **编译速度快**：Typst 使用 Rust 语言编写，即 typ(e+ru)st，目标运行平台是WASM，即浏览器本地离线运行；也可以编译成命令行工具，采用一种 **增量编译** 算法和一种有约束的版面缓存方案，**文档长度基本不会影响编译速度，且编译速度与常见 Markdown 渲染引擎渲染速度相当**。
-- **环境搭建简单**：不需要像 LaTeX 一样折腾几个 G 的开发环境，原生支持中日韩等非拉丁语言，无论是官方 Web App 在线编辑，还是使用 VS Code 安装插件本地开发，都是 **即开即用**。
-- **现代编程语言**：Typst 是可用于出版的可编程标记语言，拥有 **变量、函数、包管理与错误检查** 等现代编程语言的特性，同时也提供了 **闭包** 等特性，便于进行 **函数式编程**。以及包括了 `[标记模式]`、`{脚本模式}` 与 `$数学模式$` 等多种模式的作用域，并且它们可以不限深度地、交互地嵌套。并且通过 **[包管理](https://typst-doc-cn.github.io/docs/packages/)**，你不再需要像 TexLive 一样在本地安装一大堆并不必要的宏包，而是 **按需自动从云端下载**。
-- 
+- **编译速度快**：Typst 使用 Rust 语言编写，即 typ(e+ru)st，目标运行平台是WASM，即浏览器本地离线运行；也可以编译成命令行工具，采用一种增量编译算法和一种有约束的版面缓存方案，文档长度基本不会影响编译速度，且编译速度与常见 Markdown 渲染引擎渲染速度相当。
+- **环境搭建简单**：不需要像 LaTeX 一样折腾几个 G 的开发环境，原生支持中日韩等非拉丁语言，无论是官方 Web App 在线编辑，还是使用 VS Code 安装插件本地开发，都是即开即用。
+- **现代编程语言**：Typst 是可用于出版的可编程标记语言，拥有变量、函数、包管理与错误检查等现代编程语言的特性，同时也提供了闭包等特性，便于进行函数式编程。以及包括了 [标记模式]、{脚本模式} 与 $数学模式$ 等多种模式的作用域，并且它们可以不限深度地、交互地嵌套。并且通过 [包管理](https://typst-doc-cn.github.io/docs/packages/)，你不再需要像 TexLive 一样在本地安装一大堆并不必要的宏包，而是按需自动从云端下载。
+
 
 ## 目前仍存在的 CJK 问题 { #question }
 
@@ -38,7 +38,7 @@ Typst 是可用于出版的可编程标记语言，拥有变量、函数与包�
     - 也推荐下载 [Typst Companion](https://marketplace.visualstudio.com/items?itemName=CalebFiggers.typst-companion) 插件，其提供了例如 `Ctrl + B` 进行加粗等便捷的快捷键。
     - 你还可以下载我开发的 [Typst Sync](https://marketplace.visualstudio.com/items?itemName=OrangeX4.vscode-typst-sync) 和 [Typst Sympy Calculator](https://marketplace.visualstudio.com/items?itemName=OrangeX4.vscode-typst-sympy-calculator) 插件，前者提供了本地包的云同步功能，后者提供了基于 Typst 语法的科学计算器功能。
 3. 新建一个 `test.typ` 文件，写入内容 `# Hello World`。
-4. 按下 `Shift + Ctrl + P`，然后输入命令 `Typst Preview: Preview current file`，即可 **同步增量渲染与预览**，还提供了 **光标双向定位功能**。
+4. 按下 `Shift + Ctrl + P`，然后输入命令 `Typst Preview: Preview current file`，即可同步增量渲染与预览，还提供了光标双向定位功能。
 
 
 ### 如何为中英文设置不同的字体？
@@ -59,7 +59,7 @@ Hello World 你好世界
 
 如果你还需要对中文字体进行特殊处理，例如只缩小中文字体的大小，可以考虑用正则表达式进行 hack：
 
-```
+```example
 #show regex("\p{sc=Hani}+"): set text(size: 0.8em)
 
 Hello World 你好世界
@@ -178,6 +178,8 @@ Hello World 你好世界
     [$display(it)$<displayed-inline-math-equation>]
   }
 }
+
+行内数学公式（展示模式） $display(integral x dif x)$
 ```
 
 
@@ -196,6 +198,17 @@ Hello World 你好世界
 复杂表格：可以使用 [tablex](https://github.com/PgBiel/typst-tablex) 包。
 
 类 Markdown 表格：可以使用 [tablem](https://github.com/OrangeX4/typst-tablem) 包。
+
+```example
+#import "@preview/tablem:0.1.0": tablem
+
+#tablem[
+  | *Name* | *Location* | *Height* | *Score* |
+  | ------ | ---------- | -------- | ------- |
+  | John   | Second St. | 180 cm   |  5      |
+  | Wally  | Third Av.  | 160 cm   |  10     |
+]
+```
 
 
 ## 一些 Typst 中文资源列表 { #resources }
