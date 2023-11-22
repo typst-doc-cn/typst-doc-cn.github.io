@@ -794,7 +794,38 @@
 <h1>中文用户指南</h1>
 <p>本页面并不属于官方文档的内容，而是 Typst 中文社区所撰写的面向中文用户的指南。
 如果您对在 Typst 中使用中文有什么使用心得，也欢迎在参与贡献！</p>
+<h2 id="typst">Typst 的优势</h2>
+<p>Typst 是可用于出版的可编程标记语言，拥有变量、函数与包管理等现代编程语言的特性，注重于科学写作 (science writing)，定位与 LaTeX 相似。</p>
+<ul>
+<li><strong>语法简洁</strong>：上手难度跟 Markdown 相当，文本源码阅读性高，不会像 LaTeX 一样充斥着反斜杠与花括号。</li>
+<li><strong>编译速度快</strong>：Typst 使用 Rust 语言编写，即 typ(e+ru)st，目标运行平台是WASM，即浏览器本地离线运行；也可以编译成命令行工具，采用一种 <strong>增量编译</strong> 算法和一种有约束的版面缓存方案，<strong>文档长度基本不会影响编译速度，且编译速度与常见 Markdown 渲染引擎渲染速度相当</strong>。</li>
+<li><strong>环境搭建简单</strong>：不需要像 LaTeX 一样折腾几个 G 的开发环境，原生支持中日韩等非拉丁语言，无论是官方 Web App 在线编辑，还是使用 VS Code 安装插件本地开发，都是 <strong>即开即用</strong>。</li>
+<li><strong>现代编程语言</strong>：Typst 是可用于出版的可编程标记语言，拥有 <strong>变量、函数、包管理与错误检查</strong> 等现代编程语言的特性，同时也提供了 <strong>闭包</strong> 等特性，便于进行 <strong>函数式编程</strong>。以及包括了 <code>标记模式</code>、<code>脚本模式</code> 与 <code>$数学模式$</code> 等多种模式的作用域，并且它们可以不限深度地、交互地嵌套。并且通过 <strong><a href="https://typst-doc-cn.github.io/docs/packages/">包管理</a></strong>，你不再需要像 TexLive 一样在本地安装一大堆并不必要的宏包，而是 <strong>按需自动从云端下载</strong>。</li>
+<li></li>
+</ul>
+<h2 id="question">目前仍存在的 CJK 问题</h2>
+<p>参考 <a href="https://discord.com/channels/1054443721975922748/1176062736514429008">Discord</a> 的记录，可知目前仍存在：</p>
+<ul>
+<li>行内代码或行内数学公式与中文之间的自动空格 <a href="https://github.com/typst/typst/issues/2702">#2702</a> <a href="https://github.com/typst/typst/issues/2703">#2703</a>。</li>
+<li>CJK 字符的无空格加粗 <a href="https://github.com/typst/typst/pull/2648">#2648</a>。</li>
+<li>变体字体、伪粗体、斜体等字体支持 <a href="https://github.com/typst/typst/issues/725">#725</a>。</li>
+<li>不能简单地实现首段缩进 <a href="https://github.com/typst/typst/issues/311">#311</a>。</li>
+<li>暂时无法忽略 CJK 字符之间的单个换行符自动转换成的空格 <a href="https://github.com/typst/typst/issues/792">#792</a>。</li>
+<li>有时候段落开始的 CJK 标点符号没有被调整 <a href="https://github.com/typst/typst/issues/2348">#2348</a>。</li>
+</ul>
 <h2 id="question-and-answer">常见 Q&amp;A</h2>
+<h3 id="vs-code">如何使用 VS Code 进行本地编辑？</h3>
+<ol>
+<li>在 <a href="https://code.visualstudio.com/">VS Code</a> 中打开任意工作目录。</li>
+<li>在 VS Code 中安装 <a href="https://marketplace.visualstudio.com/items?itemName=nvarner.typst-lsp">Typst LSP</a> 和 <a href="https://marketplace.visualstudio.com/items?itemName=mgt19937.typst-preview">Typst Preview</a> 插件。前者负责语法高亮和错误检查，后者负责预览。
+<ul>
+<li>也推荐下载 <a href="https://marketplace.visualstudio.com/items?itemName=CalebFiggers.typst-companion">Typst Companion</a> 插件，其提供了例如 <code>Ctrl + B</code> 进行加粗等便捷的快捷键。</li>
+<li>你还可以下载我开发的 <a href="https://marketplace.visualstudio.com/items?itemName=OrangeX4.vscode-typst-sync">Typst Sync</a> 和 <a href="https://marketplace.visualstudio.com/items?itemName=OrangeX4.vscode-typst-sympy-calculator">Typst Sympy Calculator</a> 插件，前者提供了本地包的云同步功能，后者提供了基于 Typst 语法的科学计算器功能。</li>
+</ul>
+</li>
+<li>新建一个 <code>test.typ</code> 文件，写入内容 <code># Hello World</code>。</li>
+<li>按下 <code>Shift + Ctrl + P</code>，然后输入命令 <code>Typst Preview: Preview current file</code>，即可 <strong>同步增量渲染与预览</strong>，还提供了 <strong>光标双向定位功能</strong>。</li>
+</ol>
 <h3>如何为中英文设置不同的字体？</h3>
 <p>可以使用 text 里面的 fallback 特性。
 Typst 中的 font 参数可以接收一个数组，会根据字体里有无当前字符来依次选择字体。
@@ -807,11 +838,17 @@ Typst 中的 font 参数可以接收一个数组，会根据字体里有无当�
   Hello World 你好世界
 <span class="typ-punct">]</span>
 </code></pre><div class="preview"><img src="/assets/docs/78db46a15e197508357130997fc6c769.png" alt="Preview" width="480" height="190"/></div></div>
+<p>如果你还需要对中文字体进行特殊处理，例如只缩小中文字体的大小，可以考虑用正则表达式进行 hack：</p>
+<pre>#show regex(&quot;\p{sc=Hani}+&quot;): set text(size: 0.8em)
+
+Hello World 你好世界
+</pre>
 <h3>为什么我设置的字体没有生效？</h3>
-<p>如果中文字体不符合typst要求，那么它不会选择你声明的字体，例如字体的变体数量不够等原因。</p>
+<p>如果中文字体不符合 typst 要求，那么它不会选择你声明的字体，例如字体的变体数量不够，参考更详细的 <a href="https://github.com/typst/typst/issues/725">issue</a>。</p>
 <ol>
 <li><code>typst fonts</code> 查看系统字体，确保字体名字没有错误。</li>
 <li><code>typst fonts --font-path path/to/your-fonts</code> 指定字体目录。</li>
+<li><code>typst fonts --variants</code> 查看字体变体。</li>
 <li>检查中文字体是否已经完全安装。</li>
 </ol>
 <h3>如何为设置各行段落的缩进？</h3>
@@ -888,18 +925,27 @@ Typst 中的 font 参数可以接收一个数组，会根据字体里有无当�
 行内数学公式（展示模式） <span class="typ-math-delim">$</span><span class="typ-func">display</span><span class="typ-punct">(</span><span class="typ-pol">integral</span> x <span class="typ-pol">dif</span> x<span class="typ-punct">)</span><span class="typ-math-delim">$</span>
 </code></pre><div class="preview"><img src="/assets/docs/9ec51aaa42832a86e6e18818e80f9629.png" alt="Preview" width="480" height="190"/></div></div>
 <p>注意，由于 <code>display</code> 也是一个函数，所以在其内部的逗号 <code>,</code> 要进行转义 <code>\,</code>。</p>
-<p>每次都要手动打 <code>display</code> 感觉很麻烦，能不能默认自动加上呢？</p>
-<p>其实是有办法实现的，如下所示，借助 <code>label</code>、<code>box</code>、<code>show</code> 和块状公式，就可以实现了。</p>
-<div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">show</span> math<span class="typ-punct">.</span>equation<span class="typ-punct">.</span><span class="typ-func">where</span><span class="typ-punct">(</span>block<span class="typ-punct">:</span> <span class="typ-key">false</span><span class="typ-punct">)</span><span class="typ-punct">:</span> it <span class="typ-op">=&gt;</span> <span class="typ-punct">[</span><span class="typ-pol">#</span><span class="typ-pol">math</span><span class="typ-punct">.</span><span class="typ-func">equation</span><span class="typ-punct">(</span>block<span class="typ-punct">:</span> <span class="typ-key">true</span><span class="typ-punct">,</span> numbering<span class="typ-punct">:</span> <span class="typ-key">none</span><span class="typ-punct">,</span> it<span class="typ-punct">)</span><span class="typ-label">&lt;inline-math-equation&gt;</span><span class="typ-punct">]</span>
-<span class="typ-key">#</span><span class="typ-key">show</span> <span class="typ-label">&lt;inline-math-equation&gt;</span><span class="typ-punct">:</span> it <span class="typ-op">=&gt;</span> <span class="typ-func">box</span><span class="typ-punct">(</span>it<span class="typ-punct">)</span>
-
-行内数学公式（自动变为展示模式） <span class="typ-math-delim">$</span><span class="typ-pol">integral</span> x <span class="typ-pol">dif</span> x<span class="typ-math-delim">$</span>
-</code></pre><div class="preview"><img src="/assets/docs/0c0e0adaa52ed8ed8dbf2c338ee62290.png" alt="Preview" width="480" height="190"/></div></div>
+<p>每次都要手动打 <code>display</code> 感觉很麻烦，能不能默认自动加上呢？如下所示，借助 <code>label</code> 和 <code>show</code> 即可实现。</p>
+<div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">show</span> math<span class="typ-punct">.</span>equation<span class="typ-punct">.</span><span class="typ-func">where</span><span class="typ-punct">(</span>block<span class="typ-punct">:</span> <span class="typ-key">false</span><span class="typ-punct">)</span><span class="typ-punct">:</span> it <span class="typ-op">=&gt;</span> <span class="typ-punct">{</span>
+  <span class="typ-key">if</span> it<span class="typ-punct">.</span><span class="typ-func">has</span><span class="typ-punct">(</span><span class="typ-str">&quot;label&quot;</span><span class="typ-punct">)</span> <span class="typ-key">and</span> it<span class="typ-punct">.</span>label <span class="typ-op">==</span> <span class="typ-func">label</span><span class="typ-punct">(</span><span class="typ-str">&quot;displayed-inline-math-equation&quot;</span><span class="typ-punct">)</span> <span class="typ-punct">{</span>
+    it
+  <span class="typ-punct">}</span> <span class="typ-key">else</span> <span class="typ-punct">{</span>
+    <span class="typ-punct">[</span><span class="typ-math-delim">$</span><span class="typ-func">display</span><span class="typ-punct">(</span><span class="typ-pol">it</span><span class="typ-punct">)</span><span class="typ-math-delim">$</span><span class="typ-label">&lt;displayed-inline-math-equation&gt;</span><span class="typ-punct">]</span>
+  <span class="typ-punct">}</span>
+<span class="typ-punct">}</span>
+</code></pre><div class="preview"><img src="/assets/docs/4657930a421e401363936773eb5d31db.png" alt="Preview" width="480" height="190"/></div></div>
+<h3 id="pdf">如何嵌入 PDF 文件？</h3>
+<p>你暂时没有办法在 Typst 里嵌入 PDF 文件，但是你可以先使用 <a href="https://cloudconvert.com/pdf-to-svg">在线工具</a> 将 PDF 文件转换为 SVG 文件，然后嵌入 svg 文件。</p>
+<h3>如何根据章节对图表和公式进行编码？</h3>
+<p>可以使用 <a href="https://github.com/RubixDev/typst-i-figured">i-figured</a> 包。</p>
+<h3>如何编写复杂表格或编写简洁的表格？</h3>
+<p>复杂表格：可以使用 <a href="https://github.com/PgBiel/typst-tablex">tablex</a> 包。</p>
+<p>类 Markdown 表格：可以使用 <a href="https://github.com/OrangeX4/typst-tablem">tablem</a> 包。</p>
 <h2 id="resources">一些 Typst 中文资源列表</h2>
+<p>可以查看 <a href="https://github.com/typst-doc-cn/awesome-typst-cn">Awesome Typst 中文版</a> 中文版，以及浏览 <a href="https://typst-doc-cn.github.io/docs/packages/">第三方包</a>。</p>
+<p><strong>中国大学论文</strong>：</p>
 <ul>
-<li>中国大学论文
-<ul>
-<li><a href="https://github.com/lucifer1004/pkuthss-typst">pkuthss-typst</a>: 北京大学学位论文模板,Typst template for dissertations in Peking University (PKU).</li>
+<li><a href="https://github.com/lucifer1004/pkuthss-typst">pkuthss-typst</a>: 北京大学学位论文模板</li>
 <li><a href="https://github.com/cherichy/BUAA-typst">BUAA-typst</a>: 北京航空航天大学学位论文模板</li>
 <li><a href="https://github.com/QQKdeGit/bupt-typst">bupt-typst</a>: 北京邮电大学本科学士学位论文模板</li>
 <li><a href="https://github.com/werifu/HUST-typst-template">HUST-typst-template</a>: 用于华科毕业设计（本科）的 typst 模板。</li>
@@ -907,18 +953,23 @@ Typst 中的 font 参数可以接收一个数组，会根据字体里有无当�
 <li><a href="https://github.com/howardlau1999/sysu-thesis-typst">sysu-thesis-typst</a>: 中山大学学位论文 Typst 模板</li>
 <li><a href="https://github.com/jujimeizuo/ZJGSU-typst-template">ZJGSU-typst-template</a>: 浙江工商大学毕业设计（本科）的 typst 模板。</li>
 <li><a href="https://github.com/jerrita/CQUPTypst">CQUPTypst</a>: 一个 Typest 模板，但是大专 </li>
-<li><a href="https://github.com/zjutjh/zjut-report-typst">zjut-report-typst</a>: 浙江工业大学一些实验报告的 Typst 模板, Some report templates of Zhejiang University of Technology.</li>
+<li><a href="https://github.com/zjutjh/zjut-report-typst">zjut-report-typst</a>: 浙江工业大学一些实验报告的 Typst 模板</li>
 <li><a href="https://github.com/chosertech/HIT-Thesis-Typst">HIT-Thesis-Typst</a>: 适用于哈尔滨工业大学学位论文的 Typst 模板</li>
+<li><a href="https://github.com/nju-lug/nju-thesis-typst">nju-thesis-typst</a>: 南京大学学位论文 Typst 模板，使用 Typst 包管理、闭包等现代编程语言特性开发，一个更方便编辑和拓展的模板</li>
 </ul>
-</li>
-<li>简历
+<p><strong>中文简历</strong>：</p>
 <ul>
-<li><a href="https://github.com/gaoachao/uniquecv-typst">uniquecv-typst</a>: 一个使用Typst编写的简历模板，基于uniquecv。</li>
-<li><a href="https://github.com/ice-kylin/typst-cv-miku">typst-cv-miku</a>: 简历模板，有多种版本，包括中文 ,This is a simple, elegant, academic style CV template for typst. Support for English and Chinese (and more).</li>
-<li><a href="https://github.com/mintyfrankie/awesomeCV-Typst">awesomeCV-Typst</a> - 一份参考 <code>Awesome-CV</code> 的简历模版，支持多语言简历管理, An opinionated, relived CV template inspired by the LaTeX <code>Awesome-CV</code> project, but with multilingual support and more</li>
+<li><a href="https://github.com/gaoachao/uniquecv-typst">uniquecv-typst</a>: 一个使用 Typst 编写的简历模板，基于 uniquecv</li>
+<li><a href="https://github.com/ice-kylin/typst-cv-miku">typst-cv-miku</a>: 简历模板，有多种版本，包括中文</li>
+<li><a href="https://github.com/mintyfrankie/awesomeCV-Typst">awesomeCV-Typst</a>: 一份参考 <code>Awesome-CV</code> 的简历模版，支持多语言简历管理</li>
 <li><a href="https://github.com/OrangeX4/Chinese-Resume-in-Typst">Chinese-Resume-in-Typst</a>: 使用 Typst 编写的中文简历, 语法简洁, 样式美观, 开箱即用, 可选是否显示照片</li>
+<li><a href="https://github.com/kznr02/neet-cv">neet-cv</a>: 作者自用后开源的一份使用 typst 自制的中文简历模板，具有简单的使用方法，其中有部分参考 <code>wondercv</code>，开箱即用，简洁美观</li>
 </ul>
-</li>
+<p><strong>幻灯片</strong>：</p>
+<ul>
+<li><a href="https://github.com/lvignoli/diapo">diapo</a> - 一种极简和简约的演示模板</li>
+<li><a href="https://github.com/andreasKroepelin/polylux">polylux</a> - 在 Typst 中创建演示幻灯片</li>
+<li><a href="https://github.com/OrangeX4/typst-pinit">pinit</a> - 用于更好地在 Typst 中编写 Slides 的相对定位工具包</li>
 </ul>
 
 
@@ -936,6 +987,14 @@ Typst 中的 font 参数可以接收一个数组，会根据字体里有无当�
     
     <nav id="page-overview"><strong>目录</strong>
       <ul>
+        
+        <li data-assoc="typst"><a href="#typst">Typst</a>
+          <ul></ul>
+        </li>
+        
+        <li data-assoc="question"><a href="#question">Question</a>
+          <ul></ul>
+        </li>
         
         <li data-assoc="question-and-answer"><a href="#question-and-answer">Question And Answer</a>
           <ul></ul>
