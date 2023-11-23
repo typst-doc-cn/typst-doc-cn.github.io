@@ -40,12 +40,11 @@ body:
     oneliner: Reads structured data from a CSV file.
     element: false
     details: |-
-      <p>Reads structured data from a CSV file.</p>
-      <p>The CSV file will be read and parsed into a 2-dimensional array of strings:
-      Each row in the CSV file will be represented as an array of strings, and all
-      rows will be collected into a single array. Header rows will not be
-      stripped.</p>
-      <h2 id="example">Example</h2>
+      <p>从 CSV 文件中读取结构化数据。</p>
+      <p>CSV 文件将被读取并解析为二维字符串数组：CSV 文件中的每一行都将表示为一个字符串数组，并且所有
+      行将被收集到单个数组中。标题行不会被忽略。
+      剥夺。</p>
+      <h2 id="example">举例</h2>
       <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> results <span class="typ-op">=</span> <span class="typ-func">csv</span><span class="typ-punct">(</span><span class="typ-str">&quot;data.csv&quot;</span><span class="typ-punct">)</span>
 
       <span class="typ-func">#</span><span class="typ-func">table</span><span class="typ-punct">(</span>
@@ -58,7 +57,7 @@ body:
     self: false
     params:
     - name: path
-      details: <p>Path to a CSV file.</p>
+      details: <p>CSV 文件路径</p>
       example: null
       types:
       - str
@@ -71,8 +70,7 @@ body:
       settable: false
     - name: delimiter
       details: |-
-        <p>The delimiter that separates columns in the CSV file.
-        Must be a single ASCII character.</p>
+        <p>CSV 文件的列分隔符必须时单个 ASCII 字符。</p>
       example: null
       types:
       - str
@@ -93,12 +91,12 @@ body:
       keywords: []
       oneliner: Reads structured data from a CSV string/bytes.
       element: false
-      details: <p>Reads structured data from a CSV string/bytes.</p>
+      details: <p>从 CSV 字符串/字节流读取结构化数据。</p>
       example: null
       self: false
       params:
       - name: data
-        details: <p>CSV data.</p>
+        details: <p>CSV 数据。</p>
         example: null
         types:
         - str
@@ -112,8 +110,7 @@ body:
         settable: false
       - name: delimiter
         details: |-
-          <p>The delimiter that separates columns in the CSV file.
-          Must be a single ASCII character.</p>
+          <p>CSV 文件的列分隔符必须时单个 ASCII 字符。</p>
         example: null
         types:
         - str
