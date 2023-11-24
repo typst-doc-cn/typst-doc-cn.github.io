@@ -1,6 +1,6 @@
 route: /docs/reference/calculate/sin/
-title: 正弦函数
-description: 正弦函数 `sin` 的文档。
+title: Sin
+description: '正弦函数 `sin` 的文档。'
 part: null
 outline:
 - id: summary

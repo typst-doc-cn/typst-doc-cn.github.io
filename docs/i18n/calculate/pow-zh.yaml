@@ -1,6 +1,6 @@
 route: /docs/reference/calculate/pow/
 title: Power
-description: Documentation for the `pow` function.
+description: '幂函数 `pow` 的文档。'
 part: null
 outline:
 - id: summary
@@ -29,13 +29,13 @@ body:
     oneliner: Raises a value to some exponent.
     element: false
     details: |-
-      <p>Raises a value to some exponent.</p>
-      <h2 id="example">Example</h2>
+      <p>计算一个数的幂。</p>
+      <h2 id="example">举例</h2>
       <div class="previewed-code"><pre><code><span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">pow</span><span class="typ-punct">(</span><span class="typ-num">2</span><span class="typ-punct">,</span> <span class="typ-num">3</span><span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/d58c2fba1429f6271ecfa7220f6d8199.png" alt="Preview" width="480" height="190"/></div></div>
     params:
     - name: base
-      details: <p>The base of the power.</p>
+      details: <p>幂的底数。</p>
       example: null
       types:
       - integer
@@ -48,7 +48,7 @@ body:
       variadic: false
       settable: false
     - name: exponent
-      details: <p>The exponent of the power.</p>
+      details: <p>幂的指数。</p>
       example: null
       types:
       - integer

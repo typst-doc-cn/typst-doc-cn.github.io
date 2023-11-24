@@ -1,6 +1,6 @@
 route: /docs/reference/calculate/log/
 title: Logarithm
-description: Documentation for the `log` function.
+description: '对数函数 `log` 的文档。'
 part: null
 outline:
 - id: summary
@@ -29,14 +29,14 @@ body:
     oneliner: Calculates the logarithm of a number.
     element: false
     details: |-
-      <p>Calculates the logarithm of a number.</p>
-      <p>If the base is not specified, the logarithm is calculated in base 10.</p>
-      <h2 id="example">Example</h2>
+      <p>计算一个数的对数值。</p>
+      <p>如果没有指明底数，默认以 10 为对数的低数。</p>
+      <h2 id="example">举例</h2>
       <div class="previewed-code"><pre><code><span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">log</span><span class="typ-punct">(</span><span class="typ-num">100</span><span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/f280746542998704b07551b9c4f7a334.png" alt="Preview" width="480" height="190"/></div></div>
     params:
     - name: value
-      details: <p>The number whose logarithm to calculate. Must be strictly positive.</p>
+      details: <p>用于计算对数的数，必须为正数。</p>
       example: null
       types:
       - integer
@@ -49,7 +49,7 @@ body:
       variadic: false
       settable: false
     - name: base
-      details: <p>The base of the logarithm. May not be zero.</p>
+      details: <p>对数的底数，不能为 0。</p>
       example: null
       types:
       - float

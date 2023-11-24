@@ -1,6 +1,6 @@
 route: /docs/reference/calculate/sinh/
-title: 双曲正弦函数
-description: 双曲正弦函数 `sinh` 的文档
+title: Sinh
+description: '双曲正弦函数 `sinh` 的文档。'
 part: null
 outline:
 - id: summary

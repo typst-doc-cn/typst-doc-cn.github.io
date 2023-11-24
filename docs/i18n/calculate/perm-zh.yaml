@@ -1,6 +1,6 @@
 route: /docs/reference/calculate/perm/
 title: Permutation
-description: Documentation for the `perm` function.
+description: '排列数 `perm` 的文档。'
 part: null
 outline:
 - id: summary
@@ -29,13 +29,13 @@ body:
     oneliner: Calculates a permutation.
     element: false
     details: |-
-      <p>Calculates a permutation.</p>
-      <h2 id="example">Example</h2>
+      <p>计算一个排列数。</p>
+      <h2 id="example">举例</h2>
       <div class="previewed-code"><pre><code><span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">perm</span><span class="typ-punct">(</span><span class="typ-num">10</span><span class="typ-punct">,</span> <span class="typ-num">5</span><span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/e08ebad1921241f737425d3cb296f886.png" alt="Preview" width="480" height="190"/></div></div>
     params:
     - name: base
-      details: <p>The base number. Must be non-negative.</p>
+      details: <p>元素的总数，必须为非负整数。</p>
       example: null
       types:
       - integer
@@ -47,7 +47,7 @@ body:
       variadic: false
       settable: false
     - name: numbers
-      details: <p>The number of permutations. Must be non-negative.</p>
+      details: <p>参与排列的元素个数，必须为非负整数。</p>
       example: null
       types:
       - integer

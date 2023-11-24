@@ -1,6 +1,6 @@
 route: /docs/reference/calculate/tanh/
-title: 双曲正切函数
-description: 双曲正切函数 `tanh` 的文档。
+title: Tanh
+description: '双曲正切函数 `tanh` 的文档。'
 part: null
 outline:
 - id: summary

@@ -1,6 +1,6 @@
 route: /docs/reference/calculate/tan/
-title: 正切函数
-description: 正切函数 `tan` 的文档。
+title: Tan
+description: '正切函数 `tan` 的文档。'
 part: null
 outline:
 - id: summary

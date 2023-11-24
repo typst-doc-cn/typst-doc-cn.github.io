@@ -1,6 +1,6 @@
 route: /docs/reference/calculate/cos/
-title: 余弦函数
-description: 余弦函数 `cos` 的文档。
+title: Cos
+description: '余弦函数 `cos` 的文档。'
 part: null
 outline:
 - id: summary
@@ -26,8 +26,8 @@ body:
     oneliner: Calculates the cosine of an angle.
     element: false
     details: |-
-      <p>计算一个角度的余弦值</p>
-      <p>当传入整数或浮点数时，将会转化为弧度制</p>
+      <p>计算一个角度的余弦值。</p>
+      <p>当传入整数或浮点数时，将会转化为弧度制。</p>
       <h2 id="example">举例</h2>
       <div class="previewed-code"><pre><code><span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">cos</span><span class="typ-punct">(</span><span class="typ-num">90deg</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
       <span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">cos</span><span class="typ-punct">(</span><span class="typ-num">1.5</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
@@ -35,7 +35,7 @@ body:
       </code></pre><div class="preview"><img src="/assets/docs/5eefa7a2d93c8b89041d62c4187a2c30.png" alt="Preview" width="480" height="190"/></div></div>
     params:
     - name: angle
-      details: <p>用于计算余弦值的角度</p>
+      details: <p>用于计算余弦值的角度。</p>
       example: null
       types:
       - integer

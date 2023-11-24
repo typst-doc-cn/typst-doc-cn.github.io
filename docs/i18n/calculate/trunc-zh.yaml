@@ -1,6 +1,6 @@
 route: /docs/reference/calculate/trunc/
 title: Truncate
-description: Documentation for the `trunc` function.
+description: '取整函数 `trunc` 的文档。'
 part: null
 outline:
 - id: summary
@@ -26,16 +26,16 @@ body:
     oneliner: Returns the integer part of a number.
     element: false
     details: |-
-      <p>Returns the integer part of a number.</p>
-      <p>If the number is already an integer, it is returned unchanged.</p>
-      <h2 id="example">Example</h2>
+      <p>返回一个数整数部分的值。</p>
+      <p>如果传入值已经是整数，那么它将保持不变。</p>
+      <h2 id="example">举例</h2>
       <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">assert</span><span class="typ-punct">(</span>calc<span class="typ-punct">.</span><span class="typ-func">trunc</span><span class="typ-punct">(</span><span class="typ-num">3</span><span class="typ-punct">)</span> <span class="typ-op">==</span> <span class="typ-num">3</span><span class="typ-punct">)</span>
       <span class="typ-func">#</span><span class="typ-func">assert</span><span class="typ-punct">(</span>calc<span class="typ-punct">.</span><span class="typ-func">trunc</span><span class="typ-punct">(</span><span class="typ-op">-</span><span class="typ-num">3.7</span><span class="typ-punct">)</span> <span class="typ-op">==</span> <span class="typ-op">-</span><span class="typ-num">3</span><span class="typ-punct">)</span>
       <span class="typ-func">#</span><span class="typ-func">assert</span><span class="typ-punct">(</span>calc<span class="typ-punct">.</span><span class="typ-func">trunc</span><span class="typ-punct">(</span><span class="typ-num">15.9</span><span class="typ-punct">)</span> <span class="typ-op">==</span> <span class="typ-num">15</span><span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/9e53836f79cdc7a198bb4cd907b99b7a.png" alt="Preview" width="480" height="190"/></div></div>
     params:
     - name: value
-      details: <p>The number to truncate.</p>
+      details: <p>用于取整的值。</p>
       example: null
       types:
       - integer

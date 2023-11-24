@@ -1,6 +1,6 @@
 route: /docs/reference/calculate/min/
-title: 最小值函数
-description: 最小值函数 `min` 的文档。
+title: Min
+description: '最小值函数 `min` 的文档。'
 part: null
 outline:
 - id: summary
@@ -34,7 +34,7 @@ body:
     params:
     - name: values
       details: |-
-        <p>待求取最小值的一组数，不能为空值</p>
+        <p>待求取最小值的一组数，不能为空值。</p>
       example: null
       types:
       - any

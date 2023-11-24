@@ -1,6 +1,6 @@
 route: /docs/reference/calculate/ceil/
 title: Round up
-description: Documentation for the `ceil` function.
+description: '向上取整函数 `ceil` 的文档。'
 part: null
 outline:
 - id: summary
@@ -26,16 +26,16 @@ body:
     oneliner: Rounds a number up to the nearest integer.
     element: false
     details: |-
-      <p>Rounds a number up to the nearest integer.</p>
-      <p>If the number is already an integer, it is returned unchanged.</p>
-      <h2 id="example">Example</h2>
+      <p>将一个数向上取整为最近的整数。</p>
+      <p>如果传入值已经是整数，那么它将保持不变。</p>
+      <h2 id="example">举例</h2>
       <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">assert</span><span class="typ-punct">(</span>calc<span class="typ-punct">.</span><span class="typ-func">ceil</span><span class="typ-punct">(</span><span class="typ-num">3.14</span><span class="typ-punct">)</span> <span class="typ-op">==</span> <span class="typ-num">4</span><span class="typ-punct">)</span>
       <span class="typ-func">#</span><span class="typ-func">assert</span><span class="typ-punct">(</span>calc<span class="typ-punct">.</span><span class="typ-func">ceil</span><span class="typ-punct">(</span><span class="typ-num">3</span><span class="typ-punct">)</span> <span class="typ-op">==</span> <span class="typ-num">3</span><span class="typ-punct">)</span>
       <span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">ceil</span><span class="typ-punct">(</span><span class="typ-num">500.1</span><span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/69b2ab694eb4909e595d80cf4942bd27.png" alt="Preview" width="480" height="190"/></div></div>
     params:
     - name: value
-      details: <p>The number to round up.</p>
+      details: <p>用于向上取整的数。</p>
       example: null
       types:
       - integer

@@ -1,6 +1,6 @@
 route: /docs/reference/calculate/floor/
-title: 向下取整函数
-description: 向下取整函数 `floor` 的文档。
+title: Floor
+description: '向下取整函数 `floor` 的文档。'
 part: null
 outline:
 - id: summary
@@ -27,7 +27,7 @@ body:
     element: false
     details: |-
       <p>将数字向下舍入到最接近的整数。</p>
-      <p>如果传入值已经是整数，那么它将保持不变</p>
+      <p>如果传入值已经是整数，那么它将保持不变。</p>
       <h2 id="example">举例</h2>
       <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">assert</span><span class="typ-punct">(</span>calc<span class="typ-punct">.</span><span class="typ-func">floor</span><span class="typ-punct">(</span><span class="typ-num">3.14</span><span class="typ-punct">)</span> <span class="typ-op">==</span> <span class="typ-num">3</span><span class="typ-punct">)</span>
       <span class="typ-func">#</span><span class="typ-func">assert</span><span class="typ-punct">(</span>calc<span class="typ-punct">.</span><span class="typ-func">floor</span><span class="typ-punct">(</span><span class="typ-num">3</span><span class="typ-punct">)</span> <span class="typ-op">==</span> <span class="typ-num">3</span><span class="typ-punct">)</span>
@@ -35,7 +35,7 @@ body:
       </code></pre><div class="preview"><img src="/assets/docs/61eb20d7f3cd6373b777b4b105768cc6.png" alt="Preview" width="480" height="190"/></div></div>
     params:
     - name: value
-      details: <p>用于向下取整的数</p>
+      details: <p>用于向下取整的数。</p>
       example: null
       types:
       - integer
