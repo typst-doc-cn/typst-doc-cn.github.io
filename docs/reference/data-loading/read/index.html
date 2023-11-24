@@ -798,10 +798,10 @@
       
 
 <h1 id="summary"><code>read</code><small></small></h1>
-<p>Reads plain text or data from a file.</p>
-<p>By default, the file will be read as UTF-8 and returned as a <a href="/docs/reference/foundations/str/">string</a>.</p>
-<p>If you specify <code>encoding: <span class="typ-key">none</span></code>, this returns raw <a href="/docs/reference/foundations/bytes/">bytes</a> instead.</p>
-<h2 id="example">Example</h2>
+<p>从文件中读取纯文本或数据。</p>
+<p>默认情况下，将用 UTF-8 编码读取文件，并以 <a href=“/docs/reference/foundations/str/”>字符串</a> 的形式返回。</p>
+<p>如果指定 <code>encoding: <span class=“typ-key”>none</span></code>，则将返回原始 <a href=“/docs/reference/foundations/bytes/”>字节</a>。</p>
+<h2 id="example">举例</h2>
 <div class="previewed-code"><pre><code>An example for a HTML file: <span class="typ-escape">\</span>
 <span class="typ-key">#</span><span class="typ-key">let</span> text <span class="typ-op">=</span> <span class="typ-func">read</span><span class="typ-punct">(</span><span class="typ-str">&quot;data.html&quot;</span><span class="typ-punct">)</span>
 <span class="typ-func">#</span><span class="typ-func">raw</span><span class="typ-punct">(</span>text<span class="typ-punct">,</span> lang<span class="typ-punct">:</span> <span class="typ-str">&quot;html&quot;</span><span class="typ-punct">)</span>
@@ -851,7 +851,7 @@ Raw bytes:
     </small>
   </div>
 </h4>
-<p>Path to a file.</p>
+<p>文件路径。</p>
 
 
 
@@ -868,8 +868,8 @@ Raw bytes:
     
   </div>
 </h4>
-<p>The encoding to read the file with.</p>
-<p>If set to <code><span class="typ-key">none</span></code>, this function returns raw bytes.</p>
+<p>读取文件时采用的编码格式。</p>
+<p>设置为 <code><span class="typ-key">none</span></code> 时将返回原始字节。</p>
 
 <ul class="type-args">
   
@@ -877,7 +877,7 @@ Raw bytes:
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->utf8<!-- -->&quot;</code></div>
       <div>
-        <p>The Unicode UTF-8 encoding.</p>
+        <p>Unicode UTF-8 编码格式。</p>
       </div>
     </div>
   </li>

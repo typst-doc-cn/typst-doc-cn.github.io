@@ -798,15 +798,13 @@
       
 
 <h1 id="summary"><code>toml</code><small></small></h1>
-<p>Reads structured data from a TOML file.</p>
-<p>The file must contain a valid TOML table. TOML tables will be converted into
-Typst dictionaries, and TOML arrays will be converted into Typst arrays.
-Strings, booleans and datetimes will be converted into the Typst equivalents
-and numbers will be converted to floats or integers depending on whether
-they are whole numbers.</p>
-<p>The TOML file in the example consists of a table with the keys <code>title</code>,
-<code>version</code>, and <code>authors</code>.</p>
-<h2 id="example">Example</h2>
+<p>从 TOML 文件读取结构化数据。</p>
+<p>文件必须包含有效的 TOML 表。
+TOML 表将被转换为 Typst 字典，TOML 数组将被转换为 Typst 数组。
+字符串、布尔值和日期时间将被转换为相应的 Typst 类型值。
+数字将根据是否为整数转化为浮点值或整数值。</p>
+<p>示例中的 TOML 文件为一个带有 <code>title</code>，<code>version</code> 和 <code>authors</code> 键值的表。</p>
+<h2 id="example">举例</h2>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> details <span class="typ-op">=</span> <span class="typ-func">toml</span><span class="typ-punct">(</span><span class="typ-str">&quot;details.toml&quot;</span><span class="typ-punct">)</span>
 
 Title: <span class="typ-pol">#</span><span class="typ-pol">details</span><span class="typ-punct">.</span><span class="typ-pol">title</span> <span class="typ-escape">\</span>
@@ -855,7 +853,7 @@ Authors: <span class="typ-punct">#</span><span class="typ-punct">(</span>details
     </small>
   </div>
 </h4>
-<p>Path to a TOML file.</p>
+<p>TOML 文件路径。</p>
 
 
 
@@ -880,7 +878,7 @@ Authors: <span class="typ-punct">#</span><span class="typ-punct">(</span>details
 
   <h3 id="-decode" class="method-head"><span><code>decode</code></span></h3>
   
-<p>Reads structured data from a TOML string/bytes.</p>
+<p>从 TOML 字符串/字节流读取结构化数据。</p>
 
 <div class="code code-definition single-arg">toml.<span
     class="typ-func">decode</span>(<div class="arguments"><span
@@ -913,7 +911,7 @@ Authors: <span class="typ-punct">#</span><span class="typ-punct">(</span>details
     </small>
   </div>
 </h4>
-<p>TOML data.</p>
+<p>TOML 数据。</p>
 
 
 
@@ -923,7 +921,7 @@ Authors: <span class="typ-punct">#</span><span class="typ-punct">(</span>details
 
   <h3 id="-encode" class="method-head"><span><code>encode</code></span></h3>
   
-<p>Encodes structured data into a TOML string.</p>
+<p>将结构化数据编码为 TOML 字符串。</p>
 
 <div class="code code-definition ">toml.<span
     class="typ-func">encode</span>(<div class="arguments"><span
@@ -955,7 +953,7 @@ Authors: <span class="typ-punct">#</span><span class="typ-punct">(</span>details
     </small>
   </div>
 </h4>
-<p>Value to be encoded.</p>
+<p>被编码的值。</p>
 
 
 
@@ -970,7 +968,7 @@ Authors: <span class="typ-punct">#</span><span class="typ-punct">(</span>details
     
   </div>
 </h4>
-<p>Whether to pretty-print the resulting TOML.</p>
+<p>是否结构化输出编码后的 TOML 字符串</p>
 
 
 <p>默认：<code><span class="typ-key">true</span></code></p>
