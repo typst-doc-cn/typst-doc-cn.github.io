@@ -1,6 +1,6 @@
 route: /docs/reference/calculate/ln/
 title: Natural Logarithm
-description: Documentation for the `ln` function.
+description: '自然对数函数 `ln` 的文档。'
 part: null
 outline:
 - id: summary
@@ -26,13 +26,13 @@ body:
     oneliner: Calculates the natural logarithm of a number.
     element: false
     details: |-
-      <p>Calculates the natural logarithm of a number.</p>
-      <h2 id="example">Example</h2>
+      <p>计算一个数的自然对数值。</p>
+      <h2 id="example">举例。</h2>
       <div class="previewed-code"><pre><code><span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">ln</span><span class="typ-punct">(</span>calc<span class="typ-punct">.</span>e<span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/e809f2f5235f582e80badf01f1c5ec1b.png" alt="Preview" width="480" height="190"/></div></div>
     params:
     - name: value
-      details: <p>The number whose logarithm to calculate. Must be strictly positive.</p>
+      details: <p>用于计算自然对数的数，必须为正数。</p>
       example: null
       types:
       - integer

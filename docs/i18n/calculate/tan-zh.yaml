@@ -1,6 +1,6 @@
 route: /docs/reference/calculate/tan/
-title: Tangent
-description: Documentation for the `tan` function.
+title: Tan
+description: '正切函数 `tan` 的文档。'
 part: null
 outline:
 - id: summary
@@ -26,16 +26,15 @@ body:
     oneliner: Calculates the tangent of an angle.
     element: false
     details: |-
-      <p>Calculates the tangent of an angle.</p>
-      <p>When called with an integer or a float, they will be interpreted as
-      radians.</p>
-      <h2 id="example">Example</h2>
+      <p>计算一个角度的正切值。<p>
+      <p>当传入整数或浮点数时，将会转化为弧度制</p>
+      <h2 id="example">举例</h2>
       <div class="previewed-code"><pre><code><span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">tan</span><span class="typ-punct">(</span><span class="typ-num">1.5</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
       <span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">tan</span><span class="typ-punct">(</span><span class="typ-num">90deg</span><span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/b0d4d791b53918afd48eadd8d8a486c6.png" alt="Preview" width="480" height="190"/></div></div>
     params:
     - name: angle
-      details: <p>The angle whose tangent to calculate.</p>
+      details: <p>用于计算正切值的角度</p>
       example: null
       types:
       - integer

@@ -1,6 +1,6 @@
 route: /docs/reference/calculate/binom/
 title: Binomial
-description: Documentation for the `binom` function.
+description: '二项式系数（组合数） `binom` 的文档。'
 part: null
 outline:
 - id: summary
@@ -29,13 +29,13 @@ body:
     oneliner: Calculates a binomial coefficient.
     element: false
     details: |-
-      <p>Calculates a binomial coefficient.</p>
-      <h2 id="example">Example</h2>
+      <p>计算一个二项式系数（组合数）。</p>
+      <h2 id="example">举例</h2>
       <div class="previewed-code"><pre><code><span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">binom</span><span class="typ-punct">(</span><span class="typ-num">10</span><span class="typ-punct">,</span> <span class="typ-num">5</span><span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/09fcfb4060edd792a9285daa8214210e.png" alt="Preview" width="480" height="190"/></div></div>
     params:
     - name: n
-      details: <p>The upper coefficient. Must be non-negative.</p>
+      details: <p>上方系数（组合数中元素总数），必须为非负整数。</p>
       example: null
       types:
       - integer
@@ -47,7 +47,7 @@ body:
       variadic: false
       settable: false
     - name: k
-      details: <p>The lower coefficient. Must be non-negative.</p>
+      details: <p>下方系数（组合数中被组合的元素个数），必须为非负整数。</p>
       example: null
       types:
       - integer

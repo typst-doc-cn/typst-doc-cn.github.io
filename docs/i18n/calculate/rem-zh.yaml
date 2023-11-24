@@ -1,6 +1,6 @@
 route: /docs/reference/calculate/rem/
 title: Remainder
-description: Documentation for the `rem` function.
+description: '余数 `rem` 的文档。'
 part: null
 outline:
 - id: summary
@@ -29,14 +29,14 @@ body:
     oneliner: Calculates the remainder of two numbers.
     element: false
     details: |-
-      <p>Calculates the remainder of two numbers.</p>
-      <h2 id="example">Example</h2>
+      <p>计算两个数的余数。</p>
+      <h2 id="example">举例</h2>
       <div class="previewed-code"><pre><code><span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">rem</span><span class="typ-punct">(</span><span class="typ-num">20</span><span class="typ-punct">,</span> <span class="typ-num">6</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
       <span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">rem</span><span class="typ-punct">(</span><span class="typ-num">1.75</span><span class="typ-punct">,</span> <span class="typ-num">0.5</span><span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/c803650fee61ed2265540669d6db7d29.png" alt="Preview" width="480" height="190"/></div></div>
     params:
     - name: dividend
-      details: <p>The dividend of the remainder.</p>
+      details: <p>被除数。</p>
       example: null
       types:
       - integer
@@ -49,7 +49,7 @@ body:
       variadic: false
       settable: false
     - name: divisor
-      details: <p>The divisor of the remainder.</p>
+      details: <p>除数。</p>
       example: null
       types:
       - integer

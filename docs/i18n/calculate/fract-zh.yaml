@@ -1,6 +1,6 @@
 route: /docs/reference/calculate/fract/
 title: Fractional
-description: Documentation for the `fract` function.
+description: '取小数部分函数 `fract` 的文档。'
 part: null
 outline:
 - id: summary
@@ -26,15 +26,15 @@ body:
     oneliner: Returns the fractional part of a number.
     element: false
     details: |-
-      <p>Returns the fractional part of a number.</p>
-      <p>If the number is an integer, returns <code>0</code>.</p>
-      <h2 id="example">Example</h2>
+      <p>返回一个数的小数部分。</p>
+      <p>如果传入值为整数，那么它将返回 <code>0</code>。</p>
+      <h2 id="example">举例</h2>
       <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">assert</span><span class="typ-punct">(</span>calc<span class="typ-punct">.</span><span class="typ-func">fract</span><span class="typ-punct">(</span><span class="typ-num">3</span><span class="typ-punct">)</span> <span class="typ-op">==</span> <span class="typ-num">0</span><span class="typ-punct">)</span>
       <span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">fract</span><span class="typ-punct">(</span><span class="typ-op">-</span><span class="typ-num">3.1</span><span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/e95d212f509a3f674b880f65d01a720a.png" alt="Preview" width="480" height="190"/></div></div>
     params:
     - name: value
-      details: <p>The number to truncate.</p>
+      details: <p>用于截取小数的数。</p>
       example: null
       types:
       - integer

@@ -1,6 +1,6 @@
 route: /docs/reference/calculate/sinh/
-title: Hyperbolic sine
-description: Documentation for the `sinh` function.
+title: Sinh
+description: '双曲正弦函数 `sinh` 的文档。'
 part: null
 outline:
 - id: summary
@@ -26,15 +26,15 @@ body:
     oneliner: Calculates the hyperbolic sine of an angle.
     element: false
     details: |-
-      <p>Calculates the hyperbolic sine of an angle.</p>
-      <p>When called with an integer or a float, they will be interpreted as radians.</p>
-      <h2 id="example">Example</h2>
+      <p>用于计算一个角度的双曲正弦值</p>
+      <p>当传入整数或浮点数时，将会转化为弧度制</p>
+      <h2 id="example">举例</h2>
       <div class="previewed-code"><pre><code><span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">sinh</span><span class="typ-punct">(</span><span class="typ-num">0</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
       <span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">sinh</span><span class="typ-punct">(</span><span class="typ-num">45deg</span><span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/3d337d572b3998cbdd468a1422829bb9.png" alt="Preview" width="480" height="190"/></div></div>
     params:
     - name: angle
-      details: <p>The angle whose hyperbolic sine to calculate.</p>
+      details: <p>用于计算双曲正弦值的角度</p>
       example: null
       types:
       - integer

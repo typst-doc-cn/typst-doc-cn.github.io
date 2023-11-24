@@ -28,3 +28,6 @@ package-lock.json
 /assets/docs
 /assets/docs.json
 /dist
+
+# local history
+.history/

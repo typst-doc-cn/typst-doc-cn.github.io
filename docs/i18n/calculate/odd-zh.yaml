@@ -1,6 +1,6 @@
 route: /docs/reference/calculate/odd/
 title: Odd
-description: Documentation for the `odd` function.
+description: '奇数 `odd` 的文档。'
 part: null
 outline:
 - id: summary
@@ -26,15 +26,15 @@ body:
     oneliner: Determines whether an integer is odd.
     element: false
     details: |-
-      <p>Determines whether an integer is odd.</p>
-      <h2 id="example">Example</h2>
+      <p>确定一个整数是否是奇数。</p>
+      <h2 id="example">举例</h2>
       <div class="previewed-code"><pre><code><span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">odd</span><span class="typ-punct">(</span><span class="typ-num">4</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
       <span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">odd</span><span class="typ-punct">(</span><span class="typ-num">5</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
       <span class="typ-func">#</span><span class="typ-func">range</span><span class="typ-punct">(</span><span class="typ-num">10</span><span class="typ-punct">)</span><span class="typ-punct">.</span><span class="typ-func">filter</span><span class="typ-punct">(</span>calc<span class="typ-punct">.</span>odd<span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/afd09ad4fbff9a70a0c9a4458e52bb14.png" alt="Preview" width="480" height="190"/></div></div>
     params:
     - name: value
-      details: <p>The number to check for oddness.</p>
+      details: <p>用于检查奇偶性的数。</p>
       example: null
       types:
       - integer

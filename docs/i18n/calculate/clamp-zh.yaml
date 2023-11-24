@@ -1,6 +1,6 @@
 route: /docs/reference/calculate/clamp/
 title: Clamp
-description: Documentation for the `clamp` function.
+description: '`clamp` 的文档。'
 part: null
 outline:
 - id: summary
@@ -32,15 +32,15 @@ body:
     oneliner: Clamps a number between a minimum and maximum value.
     element: false
     details: |-
-      <p>Clamps a number between a minimum and maximum value.</p>
-      <h2 id="example">Example</h2>
+      <p>计算最大值与最小值的中间数。</p>
+      <h2 id="example">举例</h2>
       <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">assert</span><span class="typ-punct">(</span>calc<span class="typ-punct">.</span><span class="typ-func">clamp</span><span class="typ-punct">(</span><span class="typ-num">5</span><span class="typ-punct">,</span> <span class="typ-num">0</span><span class="typ-punct">,</span> <span class="typ-num">10</span><span class="typ-punct">)</span> <span class="typ-op">==</span> <span class="typ-num">5</span><span class="typ-punct">)</span>
       <span class="typ-func">#</span><span class="typ-func">assert</span><span class="typ-punct">(</span>calc<span class="typ-punct">.</span><span class="typ-func">clamp</span><span class="typ-punct">(</span><span class="typ-num">5</span><span class="typ-punct">,</span> <span class="typ-num">6</span><span class="typ-punct">,</span> <span class="typ-num">10</span><span class="typ-punct">)</span> <span class="typ-op">==</span> <span class="typ-num">6</span><span class="typ-punct">)</span>
       <span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">clamp</span><span class="typ-punct">(</span><span class="typ-num">5</span><span class="typ-punct">,</span> <span class="typ-num">0</span><span class="typ-punct">,</span> <span class="typ-num">4</span><span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/73b6c954f13326954ddededb400d41c2.png" alt="Preview" width="480" height="190"/></div></div>
     params:
     - name: value
-      details: <p>The number to clamp.</p>
+      details: <p>用于比较大小的数。</p>
       example: null
       types:
       - integer
@@ -53,7 +53,7 @@ body:
       variadic: false
       settable: false
     - name: min
-      details: <p>The inclusive minimum value.</p>
+      details: <p>包含的最小值。</p>
       example: null
       types:
       - integer
@@ -66,7 +66,7 @@ body:
       variadic: false
       settable: false
     - name: max
-      details: <p>The inclusive maximum value.</p>
+      details: <p>包含的最大值。</p>
       example: null
       types:
       - integer

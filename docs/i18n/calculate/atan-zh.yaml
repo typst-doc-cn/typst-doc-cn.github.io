@@ -1,6 +1,6 @@
 route: /docs/reference/calculate/atan/
-title: Arctangent
-description: Documentation for the `atan` function.
+title: Atan
+description: '反正切函数 `atan` 的文档。'
 part: null
 outline:
 - id: summary
@@ -26,14 +26,14 @@ body:
     oneliner: Calculates the arctangent of a number.
     element: false
     details: |-
-      <p>Calculates the arctangent of a number.</p>
-      <h2 id="example">Example</h2>
+      <p>计算一个数字的反正切值。</p>
+      <h2 id="example">举例</h2>
       <div class="previewed-code"><pre><code><span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">atan</span><span class="typ-punct">(</span><span class="typ-num">0</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
       <span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">atan</span><span class="typ-punct">(</span><span class="typ-num">1</span><span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/0c307d4fe6fb00142b84518f3bb1869a.png" alt="Preview" width="480" height="190"/></div></div>
     params:
     - name: value
-      details: <p>The number whose arctangent to calculate.</p>
+      details: <p>用于计算反正切值的数。</p>
       example: null
       types:
       - integer

@@ -1,6 +1,6 @@
 route: /docs/reference/calculate/gcd/
 title: Greatest Common Divisor
-description: Documentation for the `gcd` function.
+description: '最大公约数 `gcd` 的文档。'
 part: null
 outline:
 - id: summary
@@ -29,13 +29,13 @@ body:
     oneliner: Calculates the greatest common divisor of two integers.
     element: false
     details: |-
-      <p>Calculates the greatest common divisor of two integers.</p>
-      <h2 id="example">Example</h2>
+      <p>计算两个整数的最大公约数。</p>
+      <h2 id="example">举例</h2>
       <div class="previewed-code"><pre><code><span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">gcd</span><span class="typ-punct">(</span><span class="typ-num">7</span><span class="typ-punct">,</span> <span class="typ-num">42</span><span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/c0d8d5caa2ef320457568f72d8e52e67.png" alt="Preview" width="480" height="190"/></div></div>
     params:
     - name: a
-      details: <p>The first integer.</p>
+      details: <p>第一个整数。</p>
       example: null
       types:
       - integer
@@ -47,7 +47,7 @@ body:
       variadic: false
       settable: false
     - name: b
-      details: <p>The second integer.</p>
+      details: <p>第二个整数。</p>
       example: null
       types:
       - integer

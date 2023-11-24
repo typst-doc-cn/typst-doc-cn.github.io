@@ -1,6 +1,6 @@
 route: /docs/reference/calculate/min/
-title: Minimum
-description: Documentation for the `min` function.
+title: Min
+description: '最小值函数 `min` 的文档。'
 part: null
 outline:
 - id: summary
@@ -26,16 +26,15 @@ body:
     oneliner: Determines the minimum of a sequence of values.
     element: false
     details: |-
-      <p>Determines the minimum of a sequence of values.</p>
-      <h2 id="example">Example</h2>
+      <p>确定一组数中的最小值。</p>
+      <h2 id="example">举例</h2>
       <div class="previewed-code"><pre><code><span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">min</span><span class="typ-punct">(</span><span class="typ-num">1</span><span class="typ-punct">,</span> <span class="typ-op">-</span><span class="typ-num">3</span><span class="typ-punct">,</span> <span class="typ-op">-</span><span class="typ-num">5</span><span class="typ-punct">,</span> <span class="typ-num">20</span><span class="typ-punct">,</span> <span class="typ-num">3</span><span class="typ-punct">,</span> <span class="typ-num">6</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
       <span class="typ-pol">#</span><span class="typ-pol">calc</span><span class="typ-punct">.</span><span class="typ-func">min</span><span class="typ-punct">(</span><span class="typ-str">&quot;typst&quot;</span><span class="typ-punct">,</span> <span class="typ-str">&quot;in&quot;</span><span class="typ-punct">,</span> <span class="typ-str">&quot;beta&quot;</span><span class="typ-punct">)</span>
       </code></pre><div class="preview"><img src="/assets/docs/fb22eeb2bde8fae1b41f607e630f4657.png" alt="Preview" width="480" height="190"/></div></div>
     params:
     - name: values
       details: |-
-        <p>The sequence of values from which to extract the minimum.
-        Must not be empty.</p>
+        <p>待求取最小值的一组数，不能为空值。</p>
       example: null
       types:
       - any
