@@ -5,14 +5,14 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Introspection – Typst 中文文档</title>
-  <meta name="description" content="Typst 中与 Introspection 有关联的函数族的文档">
+  <title>内省 – Typst 中文文档</title>
+  <meta name="description" content="Typst 中与内省有关联的函数族的文档">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#239dad">
   <meta property="og:url" content="https://typst-doc-cn.github.io/docs/reference/introspection/">
-  <meta property="og:title" content="Introspection – Typst 中文文档">
+  <meta property="og:title" content="内省 – Typst 中文文档">
   <meta property="og:site_name" content="Typst">
-  <meta property="og:description" content="Typst 中与 Introspection 有关联的函数族的文档">
+  <meta property="og:description" content="Typst 中与内省有关联的函数族的文档">
   <meta property="og:type">
   <meta property="og:image" content="https://typst-doc-cn.github.io/assets/social.png">
   <meta property="og:image:width" content="1200">
@@ -252,7 +252,7 @@
             <li class="category">Library</li>
             
             <li>
-              <a href="/docs/reference/foundations/" >Foundations</a>
+              <a href="/docs/reference/foundations/" >基础</a>
               
               <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
               <ul>
@@ -341,7 +341,7 @@
             
             
             <li>
-              <a href="/docs/reference/model/" >Model</a>
+              <a href="/docs/reference/model/" >模型</a>
               
               <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
               <ul>
@@ -409,7 +409,7 @@
             
             
             <li>
-              <a href="/docs/reference/text/" >Text</a>
+              <a href="/docs/reference/text/" >文本</a>
               
               <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
               <ul>
@@ -462,7 +462,7 @@
             
             
             <li>
-              <a href="/docs/reference/math/" >Math</a>
+              <a href="/docs/reference/math/" >数学</a>
               
               <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
               <ul>
@@ -521,7 +521,7 @@
             
             
             <li>
-              <a href="/docs/reference/symbols/" >Symbols</a>
+              <a href="/docs/reference/symbols/" >符号</a>
               
               <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
               <ul>
@@ -541,7 +541,7 @@
             
             
             <li>
-              <a href="/docs/reference/layout/" >Layout</a>
+              <a href="/docs/reference/layout/" >布局</a>
               
               <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
               <ul>
@@ -633,7 +633,7 @@
             
             
             <li>
-              <a href="/docs/reference/visualize/" >Visualize</a>
+              <a href="/docs/reference/visualize/" >可视化</a>
               
               <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
               <ul>
@@ -680,7 +680,7 @@
             
             
             <li>
-              <a href="/docs/reference/introspection/"  aria-current="page" >Introspection</a>
+              <a href="/docs/reference/introspection/"  aria-current="page" >内省</a>
               
               <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
               <ul>
@@ -709,7 +709,7 @@
             
             
             <li>
-              <a href="/docs/reference/data-loading/" >Data Loading</a>
+              <a href="/docs/reference/data-loading/" >数据加载</a>
               
               <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
               <ul>
@@ -809,49 +809,45 @@
         <li><a href="/docs/reference/">参考</a></li>
         
         <li aria-hidden="true"><img src="/assets/icons/16-arrow-right.svg" width="16" height="16" alt=""></li>
-        <li><a href="/docs/reference/introspection/">Introspection</a></li>
+        <li><a href="/docs/reference/introspection/">内省</a></li>
         
       </ul>
 
       
 
 <h1 id="summary">introspection</h1>
-<p>Interactions between document parts.</p>
-<p>This category is home to Typst's introspection capabilities: With the
-<code>counter</code> function, you can access and manipulate page, section, figure, and
-equation counters or create custom ones. Meanwhile, the <code>query</code> function
-lets you search for elements in the document to construct things like a list
-of figures or headers which show the current chapter title.</p>
+<p>文档部分之间的交互。</p>
+<p>这个类别是 Typst 的内省能力的所在：通过<code>counter</code>函数，您可以访问和操作页面、节、图表和方程计数器，或创建自定义计数器。与此同时，<code>query</code>函数允许您在文档中搜索元素，以构建诸如图表列表或显示当前章节标题的标题等内容。</p>
 <h2 id="definitions">定义</h2>
 <ul class="subgridded">
   
   
-  <li><a href="/docs/reference/introspection/counter/"><code>counter</code></a><span>Counts through pages, elements, and more.</span>
+  <li><a href="/docs/reference/introspection/counter/"><code>counter</code></a><span>对页面、元素等进行计数。</span>
   </li>
   
   
   
-  <li><a href="/docs/reference/introspection/locate/"><code>locate</code></a><span>Provides access to the location of content.</span>
+  <li><a href="/docs/reference/introspection/locate/"><code>locate</code></a><span>提供对内容位置的访问。</span>
   </li>
   
   
   
-  <li><a href="/docs/reference/introspection/location/"><code>location</code></a><span>Identifies an element in the document.</span>
+  <li><a href="/docs/reference/introspection/location/"><code>location</code></a><span>标识文档中的元素。</span>
   </li>
   
   
   
-  <li><a href="/docs/reference/introspection/metadata/"><code>metadata</code></a><span>Exposes a value to the query system without producing visible content.</span>
+  <li><a href="/docs/reference/introspection/metadata/"><code>metadata</code></a><span>在不产生可见内容的情况下向查询系统公开一个值。</span>
   </li>
   
   
   
-  <li><a href="/docs/reference/introspection/query/"><code>query</code></a><span>Finds elements in the document.</span>
+  <li><a href="/docs/reference/introspection/query/"><code>query</code></a><span>在文档中查找元素。</span>
   </li>
   
   
   
-  <li><a href="/docs/reference/introspection/state/"><code>state</code></a><span>Manages stateful parts of your document.</span>
+  <li><a href="/docs/reference/introspection/state/"><code>state</code></a><span>管理文档中具有状态的部分。</span>
   </li>
   
   

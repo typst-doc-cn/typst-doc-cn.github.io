@@ -5,14 +5,14 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Math – Typst 中文文档</title>
-  <meta name="description" content="Typst 中与 Math 有关联的函数族的文档">
+  <title>数学 – Typst 中文文档</title>
+  <meta name="description" content="Typst 中与数学有关联的函数族的文档">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#239dad">
   <meta property="og:url" content="https://typst-doc-cn.github.io/docs/reference/math/">
-  <meta property="og:title" content="Math – Typst 中文文档">
+  <meta property="og:title" content="数学 – Typst 中文文档">
   <meta property="og:site_name" content="Typst">
-  <meta property="og:description" content="Typst 中与 Math 有关联的函数族的文档">
+  <meta property="og:description" content="Typst 中与数学有关联的函数族的文档">
   <meta property="og:type">
   <meta property="og:image" content="https://typst-doc-cn.github.io/assets/social.png">
   <meta property="og:image:width" content="1200">
@@ -252,7 +252,7 @@
             <li class="category">Library</li>
             
             <li>
-              <a href="/docs/reference/foundations/" >Foundations</a>
+              <a href="/docs/reference/foundations/" >基础</a>
               
               <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
               <ul>
@@ -341,7 +341,7 @@
             
             
             <li>
-              <a href="/docs/reference/model/" >Model</a>
+              <a href="/docs/reference/model/" >模型</a>
               
               <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
               <ul>
@@ -409,7 +409,7 @@
             
             
             <li>
-              <a href="/docs/reference/text/" >Text</a>
+              <a href="/docs/reference/text/" >文本</a>
               
               <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
               <ul>
@@ -462,7 +462,7 @@
             
             
             <li>
-              <a href="/docs/reference/math/"  aria-current="page" >Math</a>
+              <a href="/docs/reference/math/"  aria-current="page" >数学</a>
               
               <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
               <ul>
@@ -521,7 +521,7 @@
             
             
             <li>
-              <a href="/docs/reference/symbols/" >Symbols</a>
+              <a href="/docs/reference/symbols/" >符号</a>
               
               <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
               <ul>
@@ -541,7 +541,7 @@
             
             
             <li>
-              <a href="/docs/reference/layout/" >Layout</a>
+              <a href="/docs/reference/layout/" >布局</a>
               
               <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
               <ul>
@@ -633,7 +633,7 @@
             
             
             <li>
-              <a href="/docs/reference/visualize/" >Visualize</a>
+              <a href="/docs/reference/visualize/" >可视化</a>
               
               <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
               <ul>
@@ -680,7 +680,7 @@
             
             
             <li>
-              <a href="/docs/reference/introspection/" >Introspection</a>
+              <a href="/docs/reference/introspection/" >内省</a>
               
               <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
               <ul>
@@ -709,7 +709,7 @@
             
             
             <li>
-              <a href="/docs/reference/data-loading/" >Data Loading</a>
+              <a href="/docs/reference/data-loading/" >数据加载</a>
               
               <button><img alt="Expand" src="/assets/icons/16-arrow-right.svg" width="16" height="16"></button>
               <ul>
@@ -809,22 +809,20 @@
         <li><a href="/docs/reference/">参考</a></li>
         
         <li aria-hidden="true"><img src="/assets/icons/16-arrow-right.svg" width="16" height="16" alt=""></li>
-        <li><a href="/docs/reference/math/">Math</a></li>
+        <li><a href="/docs/reference/math/">数学</a></li>
         
       </ul>
 
       
 
 <h1 id="summary">math</h1>
-<p>Typst has special <a href="/docs/reference/syntax/#math">syntax</a> and library functions to typeset
-mathematical formulas. Math formulas can be displayed inline with text or as
-separate blocks. They will be typeset into their own block if they start and
-end with at least one space (e.g. <code><span class="typ-math-delim">$</span> x<span class="typ-math-op">^</span>2 <span class="typ-math-delim">$</span></code>).</p>
-<h2 id="variables">Variables</h2>
-<p>In math, single letters are always displayed as is. Multiple letters,
-however, are interpreted as variables and functions. To display multiple
-letters verbatim, you can place them into quotes and to access single letter
-variables, you can use the <a href="/docs/reference/scripting/#expressions">hash syntax</a>.</p>
+<p>Typst具有特殊的<a href="/docs/reference/syntax/#math">数学</a>语法和库函数，用于排版数学公式。
+数学公式可以嵌入文本中显示，也可以作为单独的块显示。
+如果数学公式的起始和结束都至少包含一个空格（例如<code><span class="typ-math-delim">$</span> x<span class="typ-math-op">^</span>2 <span class="typ-math-delim">$</span></code>），它们将被排版为自己的块。</p>
+<h2 id="variables">变量</h2>
+<p>在数学中，单个字母始终按原样显示。
+然而，多个字母会被解释为变量和函数。
+要逐字显示多个字母，可以将它们放入引号中，并且要访问单个字母变量，可以使用<a href="/docs/reference/scripting/#expressions">哈希语法</a>。</p>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> A = <span class="typ-pol">pi</span> r<span class="typ-math-op">^</span>2 <span class="typ-math-delim">$</span>
 <span class="typ-math-delim">$</span> <span class="typ-str">&quot;area&quot;</span> = <span class="typ-pol">pi</span> <span class="typ-pol">dot</span> <span class="typ-str">&quot;radius&quot;</span><span class="typ-math-op">^</span>2 <span class="typ-math-delim">$</span>
 <span class="typ-math-delim">$</span> <span class="typ-func">cal</span><span class="typ-punct">(</span>A<span class="typ-punct">)</span> <span class="typ-escape">:=</span>
@@ -832,34 +830,30 @@ variables, you can use the <a href="/docs/reference/scripting/#expressions">hash
 <span class="typ-key">#</span><span class="typ-key">let</span> x <span class="typ-op">=</span> <span class="typ-num">5</span>
 <span class="typ-math-delim">$</span> <span class="typ-pol">#</span><span class="typ-pol">x</span> &lt; 17 <span class="typ-math-delim">$</span>
 </code></pre><div class="preview"><img src="/assets/docs/99ab9a9118b0d502ef5040b0a7d667c1.png" alt="Preview" width="480" height="190"/></div></div>
-<h2 id="symbols">Symbols</h2>
-<p>Math mode makes a wide selection of <a href="/docs/reference/symbols/sym/">symbols</a> like
-<code>pi</code>, <code>dot</code>, or <code>RR</code> available. Many mathematical symbols are available in
-different variants. You can select between different variants by applying
-<a href="/docs/reference/symbols/symbol/">modifiers</a> to the symbol. Typst further recognizes a number of
-shorthand sequences like <code>=&gt;</code> that approximate a symbol. When such a
-shorthand exists, the symbol's documentation lists it.</p>
+<h2 id="symbols">符号</h2>
+<p>数学模式提供多种<a href="/docs/reference/symbols/sym/">符号</a>，如<code>pi</code>、<code>dot</code>或<code>RR</code>。
+许多数学符号有不同的变体。
+您可以通过对符号应用<a href="/docs/reference/symbols/symbol/">修饰符</a>来选择不同的变体。
+Typst还识别许多简写序列，如<code>=&gt;</code>，它们近似表示一个符号。
+当存在此类简写时，符号的文档中会列出它。</p>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> x &lt; y <span class="typ-escape">=&gt;</span> x <span class="typ-pol">gt</span><span class="typ-punct">.</span><span class="typ-pol">eq</span><span class="typ-punct">.</span><span class="typ-pol">not</span> y <span class="typ-math-delim">$</span>
 </code></pre><div class="preview"><img src="/assets/docs/4fd47496c7c8dda5da33f250f15f7fde.png" alt="Preview" width="480" height="190"/></div></div>
-<h2 id="line-breaks">Line Breaks</h2>
-<p>Formulas can also contain line breaks. Each line can contain one or multiple
-<em>alignment points</em> (<code>&amp;</code>) which are then aligned.</p>
+<h2 id="line-breaks">换行</h2>
+<p>公式也可以包含换行。
+每一行可以包含一个或多个<em>对齐点</em>（<code>&amp;</code>），然后这些点将被对齐。</p>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-pol">sum</span><span class="typ-math-op">_</span><span class="typ-punct">(</span>k=0<span class="typ-punct">)</span><span class="typ-math-op">^</span>n k
     <span class="typ-math-op">&amp;</span>= 1 + <span class="typ-escape">...</span> + n <span class="typ-escape">\</span>
     <span class="typ-math-op">&amp;</span>= <span class="typ-punct">(</span>n(n+1)<span class="typ-punct">)</span> <span class="typ-math-op">/</span> 2 <span class="typ-math-delim">$</span>
 </code></pre><div class="preview"><img src="/assets/docs/909ff8704ddbe7f5616cc6ea915a07aa.png" alt="Preview" width="480" height="190"/></div></div>
-<h2 id="function-calls">Function calls</h2>
-<p>Math mode supports special function calls without the hash prefix. In these
-&quot;math calls&quot;, the argument list works a little differently than in code:</p>
+<h2 id="function-calls">函数调用</h2>
+<p>数学模式支持特殊的没有哈希前缀的函数调用。
+在这些“数学调用”中，参数列表的工作方式与代码中的有点不同：</p>
 <ul>
-<li>Within them, Typst is still in &quot;math mode&quot;. Thus, you can write math
-directly into them, but need to use hash syntax to pass code expressions
-(except for strings, which are available in the math syntax).</li>
-<li>They support positional and named arguments, but don't support trailing
-content blocks and argument spreading.</li>
-<li>They provide additional syntax for 2-dimensional argument lists. The
-semicolon (<code>;</code>) merges preceding arguments separated by commas into an
-array argument.</li>
+<li>在其中，Typst仍然处于“数学模式”中。
+因此，您可以直接将数学写入其中，但需要使用哈希语法传递代码表达式（字符串除外，在数学语法中可用）。</li>
+<li>它们支持位置参数和命名参数，但不支持尾部内容块和参数扩展。</li>
+<li>它们为二维参数列表提供附加的语法。
+分号（<code>;</code>）将逗号分隔的前导参数合并为数组参数。</li>
 </ul>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-func">frac</span><span class="typ-punct">(</span>a<span class="typ-math-op">^</span>2<span class="typ-punct">,</span> 2<span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
 <span class="typ-math-delim">$</span> <span class="typ-func">vec</span><span class="typ-punct">(</span>1<span class="typ-punct">,</span> 2<span class="typ-punct">,</span> delim<span class="typ-punct">:</span> <span class="typ-str">&quot;[&quot;</span><span class="typ-punct">)</span> <span class="typ-math-delim">$</span>
@@ -867,42 +861,28 @@ array argument.</li>
 <span class="typ-math-delim">$</span> <span class="typ-pol">lim</span><span class="typ-math-op">_</span>x =
     <span class="typ-func">op</span><span class="typ-punct">(</span><span class="typ-str">&quot;lim&quot;</span><span class="typ-punct">,</span> limits<span class="typ-punct">:</span> <span class="typ-key">#</span><span class="typ-key">true</span><span class="typ-punct">)</span><span class="typ-math-op">_</span>x <span class="typ-math-delim">$</span>
 </code></pre><div class="preview"><img src="/assets/docs/06124e14b0283641c7181ff875ad0b74.png" alt="Preview" width="480" height="190"/></div></div>
-<p>To write a verbatim comma or semicolon in a math call, escape it with a
-backslash. The colon on the other hand is only recognized in a special way
-if directly preceded by an identifier, so to display it verbatim in those
-cases, you can just insert a space before it.</p>
-<p>Functions calls preceded by a hash are normal code function calls and not
-affected by these rules.</p>
-<h2 id="alignment">Alignment</h2>
-<p>When equations include multiple <em>alignment points</em> (<code>&amp;</code>), this creates
-blocks of alternatingly right- and left-aligned columns. In the example
-below, the expression <code>(3x + y) / 7</code> is right-aligned and <code>= 9</code> is
-left-aligned. The word &quot;given&quot; is also left-aligned because <code>&amp;&amp;</code> creates two
-alignment points in a row, alternating the alignment twice. <code>&amp; &amp;</code> and <code>&amp;&amp;</code>
-behave exactly the same way. Meanwhile, &quot;multiply by 7&quot; is right-aligned
-because just one <code>&amp;</code> precedes it. Each alignment point simply alternates
-between right-aligned/left-aligned.</p>
+<p>要在数学调用中写入逐字的逗号或分号，请用反斜杠进行转义。
+另一方面，如果冒号直接在标识符之前，则只有在特定方式直接前置的情况下才会被特殊识别，因此在这些情况下逐字显示它，可以在其前插入一个空格。</p>
+<p>由哈希前缀引导的函数调用是正常的代码函数调用，不受这些规则的影响。</p>
+<h2 id="alignment">对齐</h2>
+<p>当方程包含多个<em>对齐点</em>（<code>&amp;</code>）时，这将创建交替右对齐和左对齐的列块。在下面的示例中，表达式<code>(3x + y) / 7</code>是右对齐的，<code>= 9</code>是左对齐的。单词“given”也是左对齐的，因为<code>&amp;&amp;</code>在一行中创建两个对齐点，交替对齐两次。<code>&amp; &amp;</code>和<code>&amp;&amp;</code>行为完全相同。与此同时，“multiply by 7”右对齐，因为只有一个<code>&amp;</code>位于其前面。每个对齐点简单地交替在右对齐和左对齐之间。</p>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-punct">(</span>3x + y<span class="typ-punct">)</span> <span class="typ-math-op">/</span> 7 <span class="typ-math-op">&amp;</span>= 9 <span class="typ-math-op">&amp;</span><span class="typ-math-op">&amp;</span> <span class="typ-str">&quot;given&quot;</span> <span class="typ-escape">\</span>
-  3x + y <span class="typ-math-op">&amp;</span>= 63 <span class="typ-math-op">&amp;</span> <span class="typ-str">&quot;multiply by 7&quot;</span> <span class="typ-escape">\</span>
-  3x <span class="typ-math-op">&amp;</span>= 63 <span class="typ-escape">-</span> y <span class="typ-math-op">&amp;</span><span class="typ-math-op">&amp;</span> <span class="typ-str">&quot;subtract y&quot;</span> <span class="typ-escape">\</span>
-  x <span class="typ-math-op">&amp;</span>= 21 <span class="typ-escape">-</span> y<span class="typ-math-op">/</span>3 <span class="typ-math-op">&amp;</span> <span class="typ-str">&quot;divide by 3&quot;</span> <span class="typ-math-delim">$</span>
+    3x + y <span class="typ-math-op">&amp;</span>= 63 <span class="typ-math-op">&amp;</span> <span class="typ-str">&quot;multiply by 7&quot;</span> <span class="typ-escape">\</span>
+    3x <span class="typ-math-op">&amp;</span>= 63 <span class="typ-escape">-</span> y <span class="typ-math-op">&amp;</span><span class="typ-math-op">&amp;</span> <span class="typ-str">&quot;subtract y&quot;</span> <span class="typ-escape">\</span>
+    x <span class="typ-math-op">&amp;</span>= 21 <span class="typ-escape">-</span> y<span class="typ-math-op">/</span>3 <span class="typ-math-op">&amp;</span> <span class="typ-str">&quot;divide by 3&quot;</span> <span class="typ-math-delim">$</span>
 </code></pre><div class="preview"><img src="/assets/docs/11a200e0bedd9e7f64485b10781b8c9f.png" alt="Preview" width="480" height="190"/></div></div>
-<h2 id="math-fonts">Math fonts</h2>
-<p>You can set the math font by with a <a href="/docs/reference/styling/#show-rules">show-set rule</a> as
-demonstrated below. Note that only special OpenType math fonts are suitable
-for typesetting maths.</p>
+<h2 id="math-fonts">数学字体</h2>
+<p>您可以通过<a href="/docs/reference/styling/#show-rules">show-set规则</a>来设置数学字体，如下所示。请注意，只有特殊的OpenType数学字体适用于数学排版。</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">show</span> math<span class="typ-punct">.</span><span class="typ-func">equation</span><span class="typ-punct">:</span> <span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>font<span class="typ-punct">:</span> <span class="typ-str">&quot;Fira Math&quot;</span><span class="typ-punct">)</span>
 <span class="typ-math-delim">$</span> <span class="typ-pol">sum</span><span class="typ-math-op">_</span><span class="typ-punct">(</span>i <span class="typ-pol">in</span> <span class="typ-pol">NN</span><span class="typ-punct">)</span> 1 + i <span class="typ-math-delim">$</span>
 </code></pre><div class="preview"><img src="/assets/docs/319069eb903742474e4fe798c5482b0c.png" alt="Preview" width="480" height="190"/></div></div>
-<h2 id="math-module">Math module</h2>
-<p>All math functions are part of the <code>math</code> <a href="/docs/reference/scripting/#modules">module</a>,
-which is available by default in equations. Outside of equations, they can
-be accessed with the <code>math.</code> prefix.</p>
+<h2 id="math-module">数学模块</h2>
+<p>所有数学函数都属于<code>math</code> <a href="/docs/reference/scripting/#modules">模块</a>，在方程中默认可用。在方程之外，可以使用<code>math.</code>前缀访问它们。</p>
 <h2 id="definitions">定义</h2>
 <ul class="subgridded">
   
   
-  <li><a href="/docs/reference/math/accent/"><code>accent</code></a><span>Attaches an accent to a base.</span>
+  <li><a href="/docs/reference/math/accent/"><code>accent</code></a><span>将重音附加到基底。</span>
   </li>
   
   
@@ -911,27 +891,27 @@ be accessed with the <code>math.</code> prefix.</p>
   
   
   
-  <li><a href="/docs/reference/math/cancel/"><code>cancel</code></a><span>Displays a diagonal line over a part of an equation.</span>
+  <li><a href="/docs/reference/math/cancel/"><code>cancel</code></a><span>在方程的一部分上显示对角删除线。</span>
   </li>
   
   
   
-  <li><a href="/docs/reference/math/cases/"><code>cases</code></a><span>A case distinction.</span>
+  <li><a href="/docs/reference/math/cases/"><code>cases</code></a><span>左大括号 / 分支。</span>
   </li>
   
   
   
-  <li><a href="/docs/reference/math/class/"><code>class</code></a><span>Forced use of a certain math class.</span>
+  <li><a href="/docs/reference/math/class/"><code>class</code></a><span>强制使用特定的数学类。</span>
   </li>
   
   
   
-  <li><a href="/docs/reference/math/equation/"><code>equation</code></a><span>A mathematical equation.</span>
+  <li><a href="/docs/reference/math/equation/"><code>equation</code></a><span>数学方程。</span>
   </li>
   
   
   
-  <li><a href="/docs/reference/math/frac/"><code>frac</code></a><span>A mathematical fraction.</span>
+  <li><a href="/docs/reference/math/frac/"><code>frac</code></a><span>数学分数。</span>
   </li>
   
   
@@ -940,17 +920,17 @@ be accessed with the <code>math.</code> prefix.</p>
   
   
   
-  <li><a href="/docs/reference/math/mat/"><code>mat</code></a><span>A matrix.</span>
+  <li><a href="/docs/reference/math/mat/"><code>mat</code></a><span>矩阵。</span>
   </li>
   
   
   
-  <li><a href="/docs/reference/math/op/"><code>op</code></a><span>A text operator in an equation.</span>
+  <li><a href="/docs/reference/math/op/"><code>op</code></a><span>方程中的文本运算符。</span>
   </li>
   
   
   
-  <li><a href="/docs/reference/math/roots">roots</a><span>平方根和非平方根。</span></li>
+  <li><a href="/docs/reference/math/roots">roots</a><span>平方根和其他方根。</span></li>
   
   
   
@@ -958,7 +938,7 @@ be accessed with the <code>math.</code> prefix.</p>
   
   
   
-  <li><a href="/docs/reference/math/styles">styles</a><span>公式中的备用字形。</span></li>
+  <li><a href="/docs/reference/math/styles">styles</a><span>显示样式。</span></li>
   
   
   
@@ -970,7 +950,7 @@ be accessed with the <code>math.</code> prefix.</p>
   
   
   
-  <li><a href="/docs/reference/math/vec/"><code>vec</code></a><span>A column vector.</span>
+  <li><a href="/docs/reference/math/vec/"><code>vec</code></a><span>列向量。</span>
   </li>
   
   
