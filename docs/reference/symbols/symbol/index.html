@@ -7,12 +7,12 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Symbol – Typst 中文文档</title>
+  <title>符号 – Typst 中文文档</title>
   <meta name="description" content="Symbol 类型的文档">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#239dad">
   <meta property="og:url" content="https://typst-doc-cn.github.io/docs/reference/symbols/symbol/">
-  <meta property="og:title" content="Symbol – Typst 中文文档">
+  <meta property="og:title" content="符号 – Typst 中文文档">
   <meta property="og:site_name" content="Typst">
   <meta property="og:description" content="Symbol 类型的文档">
   <meta property="og:type">
@@ -535,7 +535,7 @@
                 <li><a href="/docs/reference/symbols/emoji/" >表情符号</a></li>
                 
                 
-                <li><a href="/docs/reference/symbols/symbol/"  aria-current="page" >Symbol</a></li>
+                <li><a href="/docs/reference/symbols/symbol/"  aria-current="page" >符号</a></li>
                 
               </ul>
               
@@ -814,32 +814,26 @@
         <li><a href="/docs/reference/symbols/">符号</a></li>
         
         <li aria-hidden="true"><img src="/assets/icons/16-arrow-right.svg" width="16" height="16" alt=""></li>
-        <li><a href="/docs/reference/symbols/symbol/">Symbol</a></li>
+        <li><a href="/docs/reference/symbols/symbol/">符号</a></li>
         
       </ul>
 
       
 
 <h1 id="summary"><span class="pill pill-obj">symbol</span></h1>
-<p>A Unicode symbol.</p>
-<p>Typst defines common symbols so that they can easily be written with
-standard keyboards. The symbols are defined in modules, from which they can
-be accessed using <a href="/docs/reference/scripting/#fields">field access notation</a>:</p>
+<p>一个 Unicode 符号。</p>
+<p>Typst 定义了常见符号，以便可以使用标准键盘轻松书写。这些符号在模块中定义，可以使用 <a href="/docs/reference/scripting/#fields">字段访问符号</a> 进行访问：</p>
 <ul>
-<li>General symbols are defined in the <a href="/docs/reference/symbols/sym/"><code>sym</code> module</a></li>
-<li>Emoji are defined in the <a href="/docs/reference/symbols/emoji/"><code>emoji</code> module</a></li>
+<li>一般符号定义在 <a href="/docs/reference/symbols/sym/"><code>sym</code> 模块</a></li>
+<li>Emoji 定义在 <a href="/docs/reference/symbols/emoji/"><code>emoji</code> 模块</code></a></li>
 </ul>
-<p>Moreover, you can define custom symbols with this type's constructor
-function.</p>
+<p>此外，您还可以使用此类型的构造函数定义自定义符号。</p>
 <div class="previewed-code"><pre><code><span class="typ-pol">#</span><span class="typ-pol">sym</span><span class="typ-punct">.</span><span class="typ-pol">arrow</span><span class="typ-punct">.</span><span class="typ-pol">r</span> <span class="typ-escape">\</span>
 <span class="typ-pol">#</span><span class="typ-pol">sym</span><span class="typ-punct">.</span><span class="typ-pol">gt</span><span class="typ-punct">.</span><span class="typ-pol">eq</span><span class="typ-punct">.</span><span class="typ-pol">not</span> <span class="typ-escape">\</span>
 <span class="typ-math-delim">$</span><span class="typ-pol">gt</span><span class="typ-punct">.</span><span class="typ-pol">eq</span><span class="typ-punct">.</span><span class="typ-pol">not</span><span class="typ-math-delim">$</span> <span class="typ-escape">\</span>
 <span class="typ-pol">#</span><span class="typ-pol">emoji</span><span class="typ-punct">.</span><span class="typ-pol">face</span><span class="typ-punct">.</span><span class="typ-pol">halo</span>
 </code></pre><div class="preview"><img src="/assets/docs/bb68a65e391fa7ac5366cd6743423ecb.png" alt="Preview" width="480" height="190"/></div></div>
-<p>Many symbols have different variants, which can be selected by appending the
-modifiers with dot notation. The order of the modifiers is not relevant.
-Visit the documentation pages of the symbol modules and click on a symbol to
-see its available variants.</p>
+<p>许多符号具有不同的变体，可以通过附加修改符并使用点符号进行选择。修改符的顺序不相关。访问符号模块的文档页面，单击符号，以查看其可用的变体。</p>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span><span class="typ-pol">arrow</span><span class="typ-punct">.</span><span class="typ-pol">l</span><span class="typ-math-delim">$</span> <span class="typ-escape">\</span>
 <span class="typ-math-delim">$</span><span class="typ-pol">arrow</span><span class="typ-punct">.</span><span class="typ-pol">r</span><span class="typ-math-delim">$</span> <span class="typ-escape">\</span>
 <span class="typ-math-delim">$</span><span class="typ-pol">arrow</span><span class="typ-punct">.</span><span class="typ-pol">t</span><span class="typ-punct">.</span><span class="typ-pol">quad</span><span class="typ-math-delim">$</span>
@@ -859,7 +853,7 @@ see its available variants.</p>
 
 </h2>
 
-<p>Create a custom symbol with modifiers.</p>
+<p>创建带有修改符的自定义符号。</p>
 
 <div class="code code-definition single-arg"><span
     class="typ-func">symbol</span>(<div class="arguments"><span
@@ -918,12 +912,8 @@ see its available variants.</p>
     </small>
   </div>
 </h4>
-<p>The variants of the symbol.</p>
-<p>Can be a just a string consisting of a single character for the
-modifierless variant or an array with two strings specifying the modifiers
-and the symbol. Individual modifiers should be separated by dots. When
-displaying a symbol, Typst selects the first from the variants that have
-all attached modifiers and the minimum number of other modifiers.</p>
+<p>符号的变体。</p>
+<p>可以是仅由单个字符组成的字符串，表示无修改符的变体，也可以是包含两个字符串的数组，指定修改符和符号。各个修改符之间应使用点号分隔。在显示符号时，Typst 选择具有所有附加修改符和最少其他修改符的变体中的第一个变体。</p>
 
 
 

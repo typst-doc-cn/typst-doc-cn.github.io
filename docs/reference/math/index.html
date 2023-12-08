@@ -533,7 +533,7 @@
                 <li><a href="/docs/reference/symbols/emoji/" >表情符号</a></li>
                 
                 
-                <li><a href="/docs/reference/symbols/symbol/" >Symbol</a></li>
+                <li><a href="/docs/reference/symbols/symbol/" >符号</a></li>
                 
               </ul>
               
@@ -816,13 +816,13 @@
       
 
 <h1 id="summary">math</h1>
-<p>Typst具有特殊的<a href="/docs/reference/syntax/#math">数学</a>语法和库函数，用于排版数学公式。
-数学公式可以嵌入文本中显示，也可以作为单独的块显示。
-如果数学公式的起始和结束都至少包含一个空格（例如<code><span class="typ-math-delim">$</span> x<span class="typ-math-op">^</span>2 <span class="typ-math-delim">$</span></code>），它们将被排版为自己的块。</p>
+<p>Typst 具有特殊的 <a href="/docs/reference/syntax/#math">数学</a> 语法和库函数，用于排版数学公式。
+数学公式可以嵌入文本中显示，也可以作为单独的块状公式显示。
+如果数学公式的起始和结束都至少包含一个空格（例如 <code><span class="typ-math-delim">$</span> x<span class="typ-math-op">^</span>2 <span class="typ-math-delim">$</span></code>），它们将被显示为块状公式。</p>
 <h2 id="variables">变量</h2>
 <p>在数学中，单个字母始终按原样显示。
 然而，多个字母会被解释为变量和函数。
-要逐字显示多个字母，可以将它们放入引号中，并且要访问单个字母变量，可以使用<a href="/docs/reference/scripting/#expressions">哈希语法</a>。</p>
+要逐字显示多个字母，可以将它们放入引号中，并且要访问单个字母变量，可以使用 <a href="/docs/reference/scripting/#expressions">哈希标签语法</a>。</p>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> A = <span class="typ-pol">pi</span> r<span class="typ-math-op">^</span>2 <span class="typ-math-delim">$</span>
 <span class="typ-math-delim">$</span> <span class="typ-str">&quot;area&quot;</span> = <span class="typ-pol">pi</span> <span class="typ-pol">dot</span> <span class="typ-str">&quot;radius&quot;</span><span class="typ-math-op">^</span>2 <span class="typ-math-delim">$</span>
 <span class="typ-math-delim">$</span> <span class="typ-func">cal</span><span class="typ-punct">(</span>A<span class="typ-punct">)</span> <span class="typ-escape">:=</span>
@@ -831,10 +831,10 @@
 <span class="typ-math-delim">$</span> <span class="typ-pol">#</span><span class="typ-pol">x</span> &lt; 17 <span class="typ-math-delim">$</span>
 </code></pre><div class="preview"><img src="/assets/docs/99ab9a9118b0d502ef5040b0a7d667c1.png" alt="Preview" width="480" height="190"/></div></div>
 <h2 id="symbols">符号</h2>
-<p>数学模式提供多种<a href="/docs/reference/symbols/sym/">符号</a>，如<code>pi</code>、<code>dot</code>或<code>RR</code>。
+<p>数学模式提供多种 <a href="/docs/reference/symbols/sym/">符号</a>，如 <code>pi</code>、<code>dot</code> 或 <code>RR</code>。
 许多数学符号有不同的变体。
 您可以通过对符号应用<a href="/docs/reference/symbols/symbol/">修饰符</a>来选择不同的变体。
-Typst还识别许多简写序列，如<code>=&gt;</code>，它们近似表示一个符号。
+Typst 还识别许多简写序列，如 <code>=&gt;</code>，它们近似表示一个符号。
 当存在此类简写时，符号的文档中会列出它。</p>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> x &lt; y <span class="typ-escape">=&gt;</span> x <span class="typ-pol">gt</span><span class="typ-punct">.</span><span class="typ-pol">eq</span><span class="typ-punct">.</span><span class="typ-pol">not</span> y <span class="typ-math-delim">$</span>
 </code></pre><div class="preview"><img src="/assets/docs/4fd47496c7c8dda5da33f250f15f7fde.png" alt="Preview" width="480" height="190"/></div></div>
@@ -849,7 +849,7 @@ Typst还识别许多简写序列，如<code>=&gt;</code>，它们近似表示一
 <p>数学模式支持特殊的没有哈希前缀的函数调用。
 在这些“数学调用”中，参数列表的工作方式与代码中的有点不同：</p>
 <ul>
-<li>在其中，Typst仍然处于“数学模式”中。
+<li>在其中，Typst 仍然处于“数学模式”中。
 因此，您可以直接将数学写入其中，但需要使用哈希语法传递代码表达式（字符串除外，在数学语法中可用）。</li>
 <li>它们支持位置参数和命名参数，但不支持尾部内容块和参数扩展。</li>
 <li>它们为二维参数列表提供附加的语法。
@@ -865,19 +865,19 @@ Typst还识别许多简写序列，如<code>=&gt;</code>，它们近似表示一
 另一方面，如果冒号直接在标识符之前，则只有在特定方式直接前置的情况下才会被特殊识别，因此在这些情况下逐字显示它，可以在其前插入一个空格。</p>
 <p>由哈希前缀引导的函数调用是正常的代码函数调用，不受这些规则的影响。</p>
 <h2 id="alignment">对齐</h2>
-<p>当方程包含多个<em>对齐点</em>（<code>&amp;</code>）时，这将创建交替右对齐和左对齐的列块。在下面的示例中，表达式<code>(3x + y) / 7</code>是右对齐的，<code>= 9</code>是左对齐的。单词“given”也是左对齐的，因为<code>&amp;&amp;</code>在一行中创建两个对齐点，交替对齐两次。<code>&amp; &amp;</code>和<code>&amp;&amp;</code>行为完全相同。与此同时，“multiply by 7”右对齐，因为只有一个<code>&amp;</code>位于其前面。每个对齐点简单地交替在右对齐和左对齐之间。</p>
+<p>当方程包含多个<em>对齐点</em>（<code>&amp;</code>）时，这将创建交替右对齐和左对齐的列块。在下面的示例中，表达式<code>(3x + y) / 7</code>是右对齐的，<code>= 9</code>是左对齐的。单词“given”也是左对齐的，因为 <code>&amp;&amp;</code> 在一行中创建两个对齐点，交替对齐两次。<code>&amp; &amp;</code> 和 <code>&amp;&amp;</code> 行为完全相同。与此同时，“multiply by 7”右对齐，因为只有一个 <code>&amp;</code> 位于其前面。每个对齐点简单地交替在右对齐和左对齐之间。</p>
 <div class="previewed-code"><pre><code><span class="typ-math-delim">$</span> <span class="typ-punct">(</span>3x + y<span class="typ-punct">)</span> <span class="typ-math-op">/</span> 7 <span class="typ-math-op">&amp;</span>= 9 <span class="typ-math-op">&amp;</span><span class="typ-math-op">&amp;</span> <span class="typ-str">&quot;given&quot;</span> <span class="typ-escape">\</span>
     3x + y <span class="typ-math-op">&amp;</span>= 63 <span class="typ-math-op">&amp;</span> <span class="typ-str">&quot;multiply by 7&quot;</span> <span class="typ-escape">\</span>
     3x <span class="typ-math-op">&amp;</span>= 63 <span class="typ-escape">-</span> y <span class="typ-math-op">&amp;</span><span class="typ-math-op">&amp;</span> <span class="typ-str">&quot;subtract y&quot;</span> <span class="typ-escape">\</span>
     x <span class="typ-math-op">&amp;</span>= 21 <span class="typ-escape">-</span> y<span class="typ-math-op">/</span>3 <span class="typ-math-op">&amp;</span> <span class="typ-str">&quot;divide by 3&quot;</span> <span class="typ-math-delim">$</span>
 </code></pre><div class="preview"><img src="/assets/docs/11a200e0bedd9e7f64485b10781b8c9f.png" alt="Preview" width="480" height="190"/></div></div>
 <h2 id="math-fonts">数学字体</h2>
-<p>您可以通过<a href="/docs/reference/styling/#show-rules">show-set规则</a>来设置数学字体，如下所示。请注意，只有特殊的OpenType数学字体适用于数学排版。</p>
+<p>您可以通过 <a href="/docs/reference/styling/#show-rules">show-set规则</a> 来设置数学字体，如下所示。请注意，只有特殊的 OpenType 数学字体适用于数学排版。</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">show</span> math<span class="typ-punct">.</span><span class="typ-func">equation</span><span class="typ-punct">:</span> <span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>font<span class="typ-punct">:</span> <span class="typ-str">&quot;Fira Math&quot;</span><span class="typ-punct">)</span>
 <span class="typ-math-delim">$</span> <span class="typ-pol">sum</span><span class="typ-math-op">_</span><span class="typ-punct">(</span>i <span class="typ-pol">in</span> <span class="typ-pol">NN</span><span class="typ-punct">)</span> 1 + i <span class="typ-math-delim">$</span>
 </code></pre><div class="preview"><img src="/assets/docs/319069eb903742474e4fe798c5482b0c.png" alt="Preview" width="480" height="190"/></div></div>
 <h2 id="math-module">数学模块</h2>
-<p>所有数学函数都属于<code>math</code> <a href="/docs/reference/scripting/#modules">模块</a>，在方程中默认可用。在方程之外，可以使用<code>math.</code>前缀访问它们。</p>
+<p>所有数学函数都属于 <code>math</code> <a href="/docs/reference/scripting/#modules">模块</a>，在方程中默认可用。在方程之外，可以使用 <code>math.</code> 前缀访问它们。</p>
 <h2 id="definitions">定义</h2>
 <ul class="subgridded">
   
