@@ -7,12 +7,12 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Emphasis – Typst 中文文档</title>
+  <title>强调（斜体） – Typst 中文文档</title>
   <meta name="description" content="`emph` 函数的文档">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#239dad">
   <meta property="og:url" content="https://typst-doc-cn.github.io/docs/reference/model/emph/">
-  <meta property="og:title" content="Emphasis – Typst 中文文档">
+  <meta property="og:title" content="强调（斜体） – Typst 中文文档">
   <meta property="og:site_name" content="Typst">
   <meta property="og:description" content="`emph` 函数的文档">
   <meta property="og:type">
@@ -349,25 +349,25 @@
               <ul>
                 
                 
-                <li><a href="/docs/reference/model/bibliography/" >Bibliography</a></li>
+                <li><a href="/docs/reference/model/bibliography/" >参考文献</a></li>
                 
                 
                 <li><a href="/docs/reference/model/list/" >Bullet List</a></li>
                 
                 
-                <li><a href="/docs/reference/model/cite/" >Cite</a></li>
+                <li><a href="/docs/reference/model/cite/" >引用</a></li>
                 
                 
-                <li><a href="/docs/reference/model/document/" >Document</a></li>
+                <li><a href="/docs/reference/model/document/" >文档</a></li>
                 
                 
-                <li><a href="/docs/reference/model/emph/"  aria-current="page" >Emphasis</a></li>
+                <li><a href="/docs/reference/model/emph/"  aria-current="page" >强调（斜体）</a></li>
                 
                 
-                <li><a href="/docs/reference/model/figure/" >Figure</a></li>
+                <li><a href="/docs/reference/model/figure/" >图表</a></li>
                 
                 
-                <li><a href="/docs/reference/model/footnote/" >Footnote</a></li>
+                <li><a href="/docs/reference/model/footnote/" >脚注</a></li>
                 
                 
                 <li><a href="/docs/reference/model/heading/" >Heading</a></li>
@@ -376,7 +376,7 @@
                 <li><a href="/docs/reference/model/link/" >Link</a></li>
                 
                 
-                <li><a href="/docs/reference/model/enum/" >Numbered List</a></li>
+                <li><a href="/docs/reference/model/enum/" >有序列表</a></li>
                 
                 
                 <li><a href="/docs/reference/model/numbering/" >Numbering</a></li>
@@ -397,7 +397,7 @@
                 <li><a href="/docs/reference/model/ref/" >Reference</a></li>
                 
                 
-                <li><a href="/docs/reference/model/strong/" >Strong Emphasis</a></li>
+                <li><a href="/docs/reference/model/strong/" >着重强调（加粗）</a></li>
                 
                 
                 <li><a href="/docs/reference/model/table/" >Table</a></li>
@@ -814,7 +814,7 @@
         <li><a href="/docs/reference/model/">模型</a></li>
         
         <li aria-hidden="true"><img src="/assets/icons/16-arrow-right.svg" width="16" height="16" alt=""></li>
-        <li><a href="/docs/reference/model/emph/">Emphasis</a></li>
+        <li><a href="/docs/reference/model/emph/">强调（斜体）</a></li>
         
       </ul>
 
@@ -830,12 +830,12 @@
   <div role="tooltip" id="-tooltip" tabindex="-1">元素函数可以通过 set 和 show 规则进行样式自定义。</div>
 </div>
 </small></h1>
-<p>Emphasizes content by toggling italics.</p>
+<p>用斜体来突出内容。</p>
 <ul>
-<li>If the current <a href="/docs/reference/text/text/#parameters-style">text style</a> is <code><span class="typ-str">&quot;normal&quot;</span></code>, this turns it
-into <code><span class="typ-str">&quot;italic&quot;</span></code>.</li>
-<li>If it is already <code><span class="typ-str">&quot;italic&quot;</span></code> or <code><span class="typ-str">&quot;oblique&quot;</span></code>, it turns it back to
-<code><span class="typ-str">&quot;normal&quot;</span></code>.</li>
+<li>如果当前的 <a href="/docs/reference/text/text/#parameters-style">文本样式</a> 是 <code><span class="typ-str">&quot;normal&quot;</span></code>，
+则将其变为 <code><span class="typ-str">&quot;italic&quot;</span></code>。</li>
+<li>如果已经是 <code><span class="typ-str">&quot;italic&quot;</span></code> 或者 <code><span class="typ-str">&quot;oblique&quot;</span></code>，
+则将其恢复为 <code><span class="typ-str">&quot;normal&quot;</span></code>。</li>
 </ul>
 <h2 id="example">Example</h2>
 <div class="previewed-code"><pre><code>This is <span class="typ-emph">_emphasized._</span> <span class="typ-escape">\</span>
@@ -848,9 +848,7 @@ This is <span class="typ-func">#</span><span class="typ-func">emph</span><span c
 This is <span class="typ-emph">_emphasized_</span> differently.
 </code></pre><div class="preview"><img src="/assets/docs/e994151e9b1baafdc57d2fb5046ee42b.png" alt="Preview" width="480" height="190"/></div></div>
 <h2 id="syntax">Syntax</h2>
-<p>This function also has dedicated syntax: To emphasize content, simply
-enclose it in underscores (<code>_</code>). Note that this only works at word
-boundaries. To emphasize part of a word, you have to use the function.</p>
+<p>这个功能还有特定的语法：要强调内容，只需用下划线 (_) 将其括起来。请注意，这仅在词边界起作用。要强调单词的一部分，必须使用这个函数，例如"#emph[eng]lish"，而"_eng_lish"会报错。</p>
 <h2 id="parameters">
   
 <span aria-describedby="parameters-tooltip">参数</span>
@@ -892,7 +890,7 @@ boundaries. To emphasize part of a word, you have to use the function.</p>
     </small>
   </div>
 </h4>
-<p>The content to emphasize.</p>
+<p>要强调的内容。</p>
 
 
 
@@ -908,9 +906,9 @@ boundaries. To emphasize part of a word, you have to use the function.</p>
       
       <div class="page-end-buttons"><a href="/docs/reference/model/document/" class="previous"><img
             src="/assets/icons/16-arrow-right.svg" alt="←">
-          <div><span class="page-title">Document</span><span class="hint">上一页</span></div>
+          <div><span class="page-title">文档</span><span class="hint">上一页</span></div>
         </a><a href="/docs/reference/model/figure/" class="next"><img src="/assets/icons/16-arrow-right.svg" alt="→">
-          <div><span class="page-title">Figure</span><span class="hint">下一页</span></div>
+          <div><span class="page-title">图表</span><span class="hint">下一页</span></div>
         </a></div>
       
     </main>

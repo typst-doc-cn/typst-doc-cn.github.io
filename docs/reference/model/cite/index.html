@@ -7,12 +7,12 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Cite – Typst 中文文档</title>
+  <title>引用 – Typst 中文文档</title>
   <meta name="description" content="`cite` 函数的文档">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#239dad">
   <meta property="og:url" content="https://typst-doc-cn.github.io/docs/reference/model/cite/">
-  <meta property="og:title" content="Cite – Typst 中文文档">
+  <meta property="og:title" content="引用 – Typst 中文文档">
   <meta property="og:site_name" content="Typst">
   <meta property="og:description" content="`cite` 函数的文档">
   <meta property="og:type">
@@ -349,25 +349,25 @@
               <ul>
                 
                 
-                <li><a href="/docs/reference/model/bibliography/" >Bibliography</a></li>
+                <li><a href="/docs/reference/model/bibliography/" >参考文献</a></li>
                 
                 
                 <li><a href="/docs/reference/model/list/" >Bullet List</a></li>
                 
                 
-                <li><a href="/docs/reference/model/cite/"  aria-current="page" >Cite</a></li>
+                <li><a href="/docs/reference/model/cite/"  aria-current="page" >引用</a></li>
                 
                 
-                <li><a href="/docs/reference/model/document/" >Document</a></li>
+                <li><a href="/docs/reference/model/document/" >文档</a></li>
                 
                 
-                <li><a href="/docs/reference/model/emph/" >Emphasis</a></li>
+                <li><a href="/docs/reference/model/emph/" >强调（斜体）</a></li>
                 
                 
-                <li><a href="/docs/reference/model/figure/" >Figure</a></li>
+                <li><a href="/docs/reference/model/figure/" >图表</a></li>
                 
                 
-                <li><a href="/docs/reference/model/footnote/" >Footnote</a></li>
+                <li><a href="/docs/reference/model/footnote/" >脚注</a></li>
                 
                 
                 <li><a href="/docs/reference/model/heading/" >Heading</a></li>
@@ -376,7 +376,7 @@
                 <li><a href="/docs/reference/model/link/" >Link</a></li>
                 
                 
-                <li><a href="/docs/reference/model/enum/" >Numbered List</a></li>
+                <li><a href="/docs/reference/model/enum/" >有序列表</a></li>
                 
                 
                 <li><a href="/docs/reference/model/numbering/" >Numbering</a></li>
@@ -397,7 +397,7 @@
                 <li><a href="/docs/reference/model/ref/" >Reference</a></li>
                 
                 
-                <li><a href="/docs/reference/model/strong/" >Strong Emphasis</a></li>
+                <li><a href="/docs/reference/model/strong/" >着重强调（加粗）</a></li>
                 
                 
                 <li><a href="/docs/reference/model/table/" >Table</a></li>
@@ -814,7 +814,7 @@
         <li><a href="/docs/reference/model/">模型</a></li>
         
         <li aria-hidden="true"><img src="/assets/icons/16-arrow-right.svg" width="16" height="16" alt=""></li>
-        <li><a href="/docs/reference/model/cite/">Cite</a></li>
+        <li><a href="/docs/reference/model/cite/">引用</a></li>
         
       </ul>
 
@@ -830,25 +830,22 @@
   <div role="tooltip" id="-tooltip" tabindex="-1">元素函数可以通过 set 和 show 规则进行样式自定义。</div>
 </div>
 </small></h1>
-<p>Cite a work from the bibliography.</p>
-<p>Before you starting citing, you need to add a <a href="/docs/reference/model/bibliography/">bibliography</a>
-somewhere in your document.</p>
-<h2 id="example">Example</h2>
-<div class="previewed-code"><pre><code>This was already noted by
-pirates long ago. <span class="typ-ref">@arrgh</span>
+<p>从参考文献中引用一项作品。</p>
+<p>在开始引用之前，您需要在文档的某个位置添加一个<a href="/docs/reference/model/bibliography/">参考文献</a>。</p>
+<h2 id="example">示例</h2>
+<div class="previewed-code"><pre><code>这早在海盗时代就已经被注意到了。
+<span class="typ-ref">@arrgh</span>
 
-Multiple sources say <span class="typ-escape">...</span>
-<span class="typ-ref">@arrgh</span> <span class="typ-ref">@netwok</span>.
+多个来源说 <span class="typ-escape">...</span>
+<span class="typ-ref">@arrgh</span> <span class="typ-ref">@netwok</span>。
 
-You can also call <span class="typ-raw">`cite`</span>
-explicitly. <span class="typ-func">#</span><span class="typ-func">cite</span><span class="typ-punct">(</span><span class="typ-label">&lt;arrgh&gt;</span><span class="typ-punct">)</span>
+您还可以显式调用 <span class="typ-raw">`cite`</span>。
+<span class="typ-func">#</span><span class="typ-func">cite</span><span class="typ-punct">(</span><span class="typ-label">&lt;arrgh&gt;</span><span class="typ-punct">)</span>
 
 <span class="typ-func">#</span><span class="typ-func">bibliography</span><span class="typ-punct">(</span><span class="typ-str">&quot;works.bib&quot;</span><span class="typ-punct">)</span>
 </code></pre><div class="preview"><img src="/assets/docs/bb07d2a9021052ed3feb5a6b11284f4a.png" alt="Preview" width="480" height="190"/></div></div>
-<h2 id="syntax">Syntax</h2>
-<p>This function indirectly has dedicated syntax. <a href="/docs/reference/model/ref/">References</a> can be
-used to cite works from the bibliography. The label then corresponds to the
-citation key.</p>
+<h2 id="syntax">语法</h2>
+<p>此函数间接具有专用语法。可以使用<a href="/docs/reference/model/ref/">引用</a>来引用参考文献中的作品。然后，标签对应于引用键。</p>
 <h2 id="parameters">
   
 <span aria-describedby="parameters-tooltip">参数</span>
@@ -893,15 +890,14 @@ citation key.</p>
     </small>
   </div>
 </h4>
-<p>The citation key that identifies the entry in the bibliography that
-shall be cited, as a label.</p>
+<p>标识在参考文献中的要引用的条目的引用键。</p>
 
 
 
 <details class="folding-example">
   <summary><img src="/assets/icons/16-arrow-right.svg" alt="" width="16" height="16">查看示例</summary>
   <div class="folding">
-    <div class="previewed-code"><pre><code><span class="typ-comment">// All the same</span>
+    <div class="previewed-code"><pre><code><span class="typ-comment">// 都是相同的</span>
 <span class="typ-ref">@netwok</span> <span class="typ-escape">\</span>
 <span class="typ-func">#</span><span class="typ-func">cite</span><span class="typ-punct">(</span><span class="typ-label">&lt;netwok&gt;</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
 <span class="typ-func">#</span><span class="typ-func">cite</span><span class="typ-punct">(</span><span class="typ-func">label</span><span class="typ-punct">(</span><span class="typ-str">&quot;netwok&quot;</span><span class="typ-punct">)</span><span class="typ-punct">)</span>
@@ -932,8 +928,8 @@ shall be cited, as a label.</p>
     </small>
   </div>
 </h4>
-<p>A supplement for the citation such as page or chapter number.</p>
-<p>In reference syntax, the supplement can be added in square brackets:</p>
+<p>引文的补充，例如页码或章节编号。</p>
+<p>在引用语法中，可以在方括号中添加补充：</p>
 
 
 <p>默认：<code><span class="typ-key">none</span></code></p>
@@ -942,7 +938,7 @@ shall be cited, as a label.</p>
 <details class="folding-example">
   <summary><img src="/assets/icons/16-arrow-right.svg" alt="" width="16" height="16">查看示例</summary>
   <div class="folding">
-    <div class="previewed-code"><pre><code>This has been proven. <span class="typ-ref">@distress<span class="typ-punct">[</span>p.<span class="typ-escape">~</span>7<span class="typ-punct">]</span></span>
+    <div class="previewed-code"><pre><code>这已经被证明了。 <span class="typ-ref">@distress<span class="typ-punct">[</span>p.<span class="typ-escape">~</span>7<span class="typ-punct">]</span></span>
 
 <span class="typ-func">#</span><span class="typ-func">bibliography</span><span class="typ-punct">(</span><span class="typ-str">&quot;works.bib&quot;</span><span class="typ-punct">)</span>
 </code></pre><div class="preview"><img src="/assets/docs/481a7a6614e1edde3e16e2961c72a1e2.png" alt="Preview" width="480" height="190"/></div></div>
@@ -972,12 +968,8 @@ shall be cited, as a label.</p>
     </small>
   </div>
 </h4>
-<p>The kind of citation to produce. Different forms are useful in different
-scenarios: A normal citation is useful as a source at the end of a
-sentence, while a &quot;prose&quot; citation is more suitable for inclusion in the
-flow of text.</p>
-<p>If set to <code><span class="typ-key">none</span></code>, the cited work is included in the bibliography, but
-nothing will be displayed.</p>
+<p>要生成的引文类型。不同的形式在不同情境中很有用：标准引文适用于句子末尾的来源，而“散文”引文更适合在文本流中包含。</p>
+<p>如果设置为<code><span class="typ-key">none</span></code>，则引用的作品将包含在参考文献中，但不会显示任何内容。</p>
 
 <ul class="type-args">
   
@@ -985,7 +977,7 @@ nothing will be displayed.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->normal<!-- -->&quot;</code></div>
       <div>
-        <p>Display in the standard way for the active style.</p>
+        <p>以活动样式的标准方式显示。</p>
       </div>
     </div>
   </li>
@@ -994,7 +986,7 @@ nothing will be displayed.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->prose<!-- -->&quot;</code></div>
       <div>
-        <p>Produces a citation that is suitable for inclusion in a sentence.</p>
+        <p>生成适用于句子中包含的引文。</p>
       </div>
     </div>
   </li>
@@ -1003,7 +995,7 @@ nothing will be displayed.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->full<!-- -->&quot;</code></div>
       <div>
-        <p>Mimics a bibliography entry, with full information about the cited work.</p>
+        <p>模拟参考文献条目，提供有关引用作品的完整信息。</p>
       </div>
     </div>
   </li>
@@ -1012,7 +1004,7 @@ nothing will be displayed.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->author<!-- -->&quot;</code></div>
       <div>
-        <p>Shows only the cited work's author(s).</p>
+        <p>仅显示引用作品的作者。</p>
       </div>
     </div>
   </li>
@@ -1021,7 +1013,7 @@ nothing will be displayed.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->year<!-- -->&quot;</code></div>
       <div>
-        <p>Shows only the cited work's year.</p>
+        <p>仅显示引用作品的年份。</p>
       </div>
     </div>
   </li>
@@ -1036,8 +1028,7 @@ nothing will be displayed.</p>
   <summary><img src="/assets/icons/16-arrow-right.svg" alt="" width="16" height="16">查看示例</summary>
   <div class="folding">
     <div class="previewed-code"><pre><code><span class="typ-func">#</span><span class="typ-func">cite</span><span class="typ-punct">(</span><span class="typ-label">&lt;netwok&gt;</span><span class="typ-punct">,</span> form<span class="typ-punct">:</span> <span class="typ-str">&quot;prose&quot;</span><span class="typ-punct">)</span>
-show the outsized effects of
-pirate life on the human psyche.
+显示海盗生活对人类心灵的巨大影响。
 </code></pre><div class="preview"><img src="/assets/docs/ab93f7b6b59da5ccd3007651be75c5e9.png" alt="Preview" width="480" height="190"/></div></div>
   </div>
 </details>
@@ -1065,13 +1056,9 @@ pirate life on the human psyche.
     </small>
   </div>
 </h4>
-<p>The citation style.</p>
-<p>Should be either <code><span class="typ-key">auto</span></code>, one of the built-in styles (see below) or a
-path to a <a href="https://citationstyles.org/">CSL file</a>. Some of the styles
-listed below appear twice, once with their full name and once with a
-short alias.</p>
-<p>When set to <code><span class="typ-key">auto</span></code>, automatically use the
-<a href="/docs/reference/model/bibliography/#parameters-style">bibliography's style</a> for the citations.</p>
+<p>引文样式。</p>
+<p>应为<code><span class="typ-key">auto</span></code>、内置样式之一（见下文）或<a href="https://citationstyles.org/">CSL文件</a>的路径。下面列出的一些样式名称可能会出现两次，一次是完整名称，一次是短别名。</p>
+<p>当设置为<code><span class="typ-key">auto</span></code>时，引用将自动使用<a href="/docs/reference/model/bibliography/#parameters-style">参考文献的样式</a>。</p>
 
 <ul class="type-args">
   
@@ -1079,7 +1066,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->american-anthropological-association<!-- -->&quot;</code></div>
       <div>
-        <p>American Anthropological Association</p>
+        <p>美国人类学协会</p>
       </div>
     </div>
   </li>
@@ -1088,7 +1075,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->springer-lecture-notes-in-computer-science<!-- -->&quot;</code></div>
       <div>
-        <p>Springer - Lecture Notes in Computer Science</p>
+        <p>Springer - 计算机科学讲义</p>
       </div>
     </div>
   </li>
@@ -1097,7 +1084,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->american-medical-association<!-- -->&quot;</code></div>
       <div>
-        <p>American Medical Association 11th edition</p>
+        <p>美国医学协会 第11版</p>
       </div>
     </div>
   </li>
@@ -1106,7 +1093,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->sage-vancouver<!-- -->&quot;</code></div>
       <div>
-        <p>SAGE - Vancouver</p>
+        <p>SAGE - 温哥华样式</p>
       </div>
     </div>
   </li>
@@ -1124,7 +1111,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->american-society-of-civil-engineers<!-- -->&quot;</code></div>
       <div>
-        <p>American Society of Civil Engineers</p>
+        <p>美国土木工程师协会</p>
       </div>
     </div>
   </li>
@@ -1133,7 +1120,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->taylor-and-francis-chicago-author-date<!-- -->&quot;</code></div>
       <div>
-        <p>Taylor &amp; Francis - Chicago Manual of Style (author-date)</p>
+        <p>Taylor &amp; Francis - 芝加哥风格手册（作者-日期）</p>
       </div>
     </div>
   </li>
@@ -1142,7 +1129,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->gb-7714-2015-note<!-- -->&quot;</code></div>
       <div>
-        <p>China National Standard GB/T 7714-2015 (note, 中文)</p>
+        <p>中国国家标准 GB/T 7714-2015（注释，中文）</p>
       </div>
     </div>
   </li>
@@ -1151,7 +1138,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->american-society-for-microbiology<!-- -->&quot;</code></div>
       <div>
-        <p>American Society for Microbiology</p>
+        <p>美国微生物学会</p>
       </div>
     </div>
   </li>
@@ -1160,7 +1147,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->american-meteorological-society<!-- -->&quot;</code></div>
       <div>
-        <p>American Meteorological Society</p>
+        <p>美国气象学会</p>
       </div>
     </div>
   </li>
@@ -1169,7 +1156,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->future-medicine<!-- -->&quot;</code></div>
       <div>
-        <p>Future Medicine journals</p>
+        <p>未来医学期刊</p>
       </div>
     </div>
   </li>
@@ -1178,7 +1165,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->bristol-university-press<!-- -->&quot;</code></div>
       <div>
-        <p>Bristol University Press</p>
+        <p>布里斯托大学出版社</p>
       </div>
     </div>
   </li>
@@ -1187,7 +1174,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->public-library-of-science<!-- -->&quot;</code></div>
       <div>
-        <p>Public Library of Science</p>
+        <p>科学公共图书馆</p>
       </div>
     </div>
   </li>
@@ -1196,7 +1183,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->pensoft<!-- -->&quot;</code></div>
       <div>
-        <p>Pensoft Journals</p>
+        <p>Pensoft 期刊</p>
       </div>
     </div>
   </li>
@@ -1205,7 +1192,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->american-institute-of-aeronautics-and-astronautics<!-- -->&quot;</code></div>
       <div>
-        <p>American Institute of Aeronautics and Astronautics</p>
+        <p>美国航空航天学会</p>
       </div>
     </div>
   </li>
@@ -1214,7 +1201,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->mary-ann-liebert-vancouver<!-- -->&quot;</code></div>
       <div>
-        <p>Mary Ann Liebert - Vancouver</p>
+        <p>Mary Ann Liebert - 温哥华样式</p>
       </div>
     </div>
   </li>
@@ -1223,7 +1210,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->modern-humanities-research-association<!-- -->&quot;</code></div>
       <div>
-        <p>Modern Humanities Research Association 3rd edition (note with bibliography)</p>
+        <p>现代人文研究协会 第3版（带参考文献的注释）</p>
       </div>
     </div>
   </li>
@@ -1232,7 +1219,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->springer-socpsych-author-date<!-- -->&quot;</code></div>
       <div>
-        <p>Springer - SocPsych (author-date)</p>
+        <p>Springer - 社会心理学（作者-日期）</p>
       </div>
     </div>
   </li>
@@ -1241,7 +1228,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->trends<!-- -->&quot;</code></div>
       <div>
-        <p>Trends journals</p>
+        <p>Trends 期刊</p>
       </div>
     </div>
   </li>
@@ -1250,7 +1237,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->gost-r-705-2008-numeric<!-- -->&quot;</code></div>
       <div>
-        <p>Russian GOST R 7.0.5-2008 (numeric)</p>
+        <p>俄罗斯 GOST R 7.0.5-2008（数字）</p>
       </div>
     </div>
   </li>
@@ -1259,7 +1246,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->american-political-science-association<!-- -->&quot;</code></div>
       <div>
-        <p>American Political Science Association</p>
+        <p>美国政治科学协会</p>
       </div>
     </div>
   </li>
@@ -1268,7 +1255,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->future-science<!-- -->&quot;</code></div>
       <div>
-        <p>Future Science Group</p>
+        <p>未来科学集团</p>
       </div>
     </div>
   </li>
@@ -1277,7 +1264,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->association-for-computing-machinery<!-- -->&quot;</code></div>
       <div>
-        <p>Association for Computing Machinery</p>
+        <p>计算机协会</p>
       </div>
     </div>
   </li>
@@ -1286,7 +1273,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->elsevier-harvard<!-- -->&quot;</code></div>
       <div>
-        <p>Elsevier - Harvard (with titles)</p>
+        <p>爱思唯尔 - 哈佛样式（带标题）</p>
       </div>
     </div>
   </li>
@@ -1295,7 +1282,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->american-chemical-society<!-- -->&quot;</code></div>
       <div>
-        <p>American Chemical Society</p>
+        <p>美国化学学会</p>
       </div>
     </div>
   </li>
@@ -1304,7 +1291,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->cell<!-- -->&quot;</code></div>
       <div>
-        <p>Cell</p>
+        <p>Cell 期刊</p>
       </div>
     </div>
   </li>
@@ -1313,7 +1300,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->royal-society-of-chemistry<!-- -->&quot;</code></div>
       <div>
-        <p>Royal Society of Chemistry</p>
+        <p>皇家化学学会</p>
       </div>
     </div>
   </li>
@@ -1322,7 +1309,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->sist02<!-- -->&quot;</code></div>
       <div>
-        <p>SIST02 (日本語)</p>
+        <p>SIST02（日语）</p>
       </div>
     </div>
   </li>
@@ -1331,7 +1318,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->gb-7714-2005-numeric<!-- -->&quot;</code></div>
       <div>
-        <p>China National Standard GB/T 7714-2005 (numeric, 中文)</p>
+        <p>中国国家标准 GB/T 7714-2005（数字，中文）</p>
       </div>
     </div>
   </li>
@@ -1349,7 +1336,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->springer-humanities-author-date<!-- -->&quot;</code></div>
       <div>
-        <p>Springer - Humanities (author-date)</p>
+        <p>Springer - 人文学科（作者-日期）</p>
       </div>
     </div>
   </li>
@@ -1358,7 +1345,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->deutsche-gesellschaft-für-psychologie<!-- -->&quot;</code></div>
       <div>
-        <p>Deutsche Gesellschaft für Psychologie 5. Auflage (Deutsch)</p>
+        <p>德国心理学协会 第5版（德语）</p>
       </div>
     </div>
   </li>
@@ -1367,7 +1354,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->springer-basic-author-date<!-- -->&quot;</code></div>
       <div>
-        <p>Springer - Basic (author-date)</p>
+        <p>Springer - 基础（作者-日期）</p>
       </div>
     </div>
   </li>
@@ -1376,7 +1363,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->institute-of-physics-numeric<!-- -->&quot;</code></div>
       <div>
-        <p>Institute of Physics (numeric)</p>
+        <p>物理学会 (数字)</p>
       </div>
     </div>
   </li>
@@ -1385,7 +1372,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->vancouver<!-- -->&quot;</code></div>
       <div>
-        <p>Vancouver</p>
+        <p>温哥华</p>
       </div>
     </div>
   </li>
@@ -1394,7 +1381,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->nature<!-- -->&quot;</code></div>
       <div>
-        <p>Nature</p>
+        <p>自然</p>
       </div>
     </div>
   </li>
@@ -1403,7 +1390,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->current-opinion<!-- -->&quot;</code></div>
       <div>
-        <p>Current Opinion journals</p>
+        <p>Current Opinion 期刊</p>
       </div>
     </div>
   </li>
@@ -1412,7 +1399,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->annual-reviews-author-date<!-- -->&quot;</code></div>
       <div>
-        <p>Annual Reviews (author-date)</p>
+        <p>Annual Reviews（作者-日期）</p>
       </div>
     </div>
   </li>
@@ -1421,7 +1408,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->american-institute-of-physics<!-- -->&quot;</code></div>
       <div>
-        <p>American Institute of Physics 4th edition</p>
+        <p>美国物理学会第4版</p>
       </div>
     </div>
   </li>
@@ -1430,7 +1417,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->gb-7714-2015-numeric<!-- -->&quot;</code></div>
       <div>
-        <p>China National Standard GB/T 7714-2015 (numeric, 中文)</p>
+        <p>中国国家标准 GB/T 7714-2015（数字，中文）</p>
       </div>
     </div>
   </li>
@@ -1448,7 +1435,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->springer-basic<!-- -->&quot;</code></div>
       <div>
-        <p>Springer - Basic (numeric, brackets)</p>
+        <p>斯普林格 - 基础版（数字，括号）</p>
       </div>
     </div>
   </li>
@@ -1457,7 +1444,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->american-geophysical-union<!-- -->&quot;</code></div>
       <div>
-        <p>American Geophysical Union</p>
+        <p>美国地球物理联合会</p>
       </div>
     </div>
   </li>
@@ -1466,7 +1453,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->turabian-fullnote-8<!-- -->&quot;</code></div>
       <div>
-        <p>Turabian 8th edition (full note)</p>
+        <p>图拉宾第8版（全注释）</p>
       </div>
     </div>
   </li>
@@ -1475,7 +1462,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->taylor-and-francis-national-library-of-medicine<!-- -->&quot;</code></div>
       <div>
-        <p>Taylor &amp; Francis - National Library of Medicine</p>
+        <p>Taylor & Francis - 国家医学图书馆</p>
       </div>
     </div>
   </li>
@@ -1484,7 +1471,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->american-physiological-society<!-- -->&quot;</code></div>
       <div>
-        <p>American Physiological Society</p>
+        <p>美国生理学会</p>
       </div>
     </div>
   </li>
@@ -1493,7 +1480,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->thieme<!-- -->&quot;</code></div>
       <div>
-        <p>Thieme-German (Deutsch)</p>
+        <p>Thieme-German（德语）</p>
       </div>
     </div>
   </li>
@@ -1502,7 +1489,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->copernicus<!-- -->&quot;</code></div>
       <div>
-        <p>Copernicus Publications</p>
+        <p>哥白尼出版社</p>
       </div>
     </div>
   </li>
@@ -1511,7 +1498,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->the-institution-of-engineering-and-technology<!-- -->&quot;</code></div>
       <div>
-        <p>The Institution of Engineering and Technology</p>
+        <p>工程与技术学会</p>
       </div>
     </div>
   </li>
@@ -1520,7 +1507,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->annual-reviews<!-- -->&quot;</code></div>
       <div>
-        <p>Annual Reviews (sorted by order of appearance)</p>
+        <p>Annual Reviews（按出现顺序排序）</p>
       </div>
     </div>
   </li>
@@ -1529,7 +1516,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->deutsche-sprache<!-- -->&quot;</code></div>
       <div>
-        <p>Deutsche Sprache (Deutsch)</p>
+        <p>德国语言学会（德语）</p>
       </div>
     </div>
   </li>
@@ -1538,7 +1525,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->harvard-cite-them-right<!-- -->&quot;</code></div>
       <div>
-        <p>Cite Them Right 12th edition - Harvard</p>
+        <p>引用正确的哈佛大学第12版</p>
       </div>
     </div>
   </li>
@@ -1547,7 +1534,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->chicago-fullnotes<!-- -->&quot;</code></div>
       <div>
-        <p>Chicago Manual of Style 17th edition (full note)</p>
+        <p>芝加哥风格手册第17版（全注释）</p>
       </div>
     </div>
   </li>
@@ -1556,7 +1543,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->iso-690-author-date<!-- -->&quot;</code></div>
       <div>
-        <p>ISO-690 (author-date, English)</p>
+        <p>ISO-690（作者-日期，英语）</p>
       </div>
     </div>
   </li>
@@ -1565,7 +1552,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->council-of-science-editors-author-date<!-- -->&quot;</code></div>
       <div>
-        <p>Council of Science Editors, Name-Year (author-date)</p>
+        <p>科学编辑协会，姓名-年份（作者-日期）</p>
       </div>
     </div>
   </li>
@@ -1574,7 +1561,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->springer-mathphys<!-- -->&quot;</code></div>
       <div>
-        <p>Springer - MathPhys (numeric, brackets)</p>
+        <p>斯普林格 - 数学物理（数字，括号）</p>
       </div>
     </div>
   </li>
@@ -1583,7 +1570,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->american-society-of-mechanical-engineers<!-- -->&quot;</code></div>
       <div>
-        <p>American Society of Mechanical Engineers</p>
+        <p>美国机械工程师学会</p>
       </div>
     </div>
   </li>
@@ -1592,7 +1579,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->karger<!-- -->&quot;</code></div>
       <div>
-        <p>Karger journals</p>
+        <p>Karger 期刊</p>
       </div>
     </div>
   </li>
@@ -1601,7 +1588,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->multidisciplinary-digital-publishing-institute<!-- -->&quot;</code></div>
       <div>
-        <p>Multidisciplinary Digital Publishing Institute</p>
+        <p>多学科数字出版协会</p>
       </div>
     </div>
   </li>
@@ -1610,7 +1597,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->american-psychological-association<!-- -->&quot;</code></div>
       <div>
-        <p>American Psychological Association 7th edition</p>
+        <p>美国心理学会第7版</p>
       </div>
     </div>
   </li>
@@ -1619,7 +1606,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->modern-language-association-8<!-- -->&quot;</code></div>
       <div>
-        <p>Modern Language Association 8th edition</p>
+        <p>现代语言协会第8版</p>
       </div>
     </div>
   </li>
@@ -1628,7 +1615,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->gb-7714-2015-author-date<!-- -->&quot;</code></div>
       <div>
-        <p>China National Standard GB/T 7714-2015 (author-date, 中文)</p>
+        <p>中国国家标准 GB/T 7714-2015（作者-日期，中文）</p>
       </div>
     </div>
   </li>
@@ -1637,7 +1624,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->springer-vancouver<!-- -->&quot;</code></div>
       <div>
-        <p>Springer - Vancouver (brackets)</p>
+        <p>斯普林格 - 温哥华（括号）</p>
       </div>
     </div>
   </li>
@@ -1646,7 +1633,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->british-medical-journal<!-- -->&quot;</code></div>
       <div>
-        <p>BMJ</p>
+        <p>英国医学杂志</p>
       </div>
     </div>
   </li>
@@ -1655,7 +1642,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->turabian-author-date<!-- -->&quot;</code></div>
       <div>
-        <p>Turabian 9th edition (author-date)</p>
+        <p>图拉宾第9版（作者-日期）</p>
       </div>
     </div>
   </li>
@@ -1664,7 +1651,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->chicago-author-date<!-- -->&quot;</code></div>
       <div>
-        <p>Chicago Manual of Style 17th edition (author-date)</p>
+        <p>芝加哥风格手册第17版（作者-日期）</p>
       </div>
     </div>
   </li>
@@ -1673,7 +1660,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->associacao-brasileira-de-normas-tecnicas<!-- -->&quot;</code></div>
       <div>
-        <p>Associação Brasileira de Normas Técnicas (Português - Brasil)</p>
+        <p>巴西技术标准协会（葡萄牙语 - 巴西）</p>
       </div>
     </div>
   </li>
@@ -1682,7 +1669,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->vancouver-superscript<!-- -->&quot;</code></div>
       <div>
-        <p>Vancouver (superscript)</p>
+        <p>温哥华（上标）</p>
       </div>
     </div>
   </li>
@@ -1691,7 +1678,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->angewandte-chemie<!-- -->&quot;</code></div>
       <div>
-        <p>Angewandte Chemie International Edition</p>
+        <p>应用化学国际版</p>
       </div>
     </div>
   </li>
@@ -1700,7 +1687,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->elsevier-with-titles<!-- -->&quot;</code></div>
       <div>
-        <p>Elsevier (numeric, with titles)</p>
+        <p>爱思唯尔（数字，带标题）</p>
       </div>
     </div>
   </li>
@@ -1709,7 +1696,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->iso-690-numeric<!-- -->&quot;</code></div>
       <div>
-        <p>ISO-690 (numeric, English)</p>
+        <p>ISO-690（数字，英语）</p>
       </div>
     </div>
   </li>
@@ -1718,7 +1705,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->modern-language-association<!-- -->&quot;</code></div>
       <div>
-        <p>Modern Language Association 9th edition</p>
+        <p>现代语言协会第9版</p>
       </div>
     </div>
   </li>
@@ -1727,7 +1714,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->council-of-science-editors<!-- -->&quot;</code></div>
       <div>
-        <p>Council of Science Editors, Citation-Sequence (numeric, brackets)</p>
+        <p>科学编辑协会，引文顺序（数字，括号）</p>
       </div>
     </div>
   </li>
@@ -1736,7 +1723,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->spie<!-- -->&quot;</code></div>
       <div>
-        <p>SPIE journals</p>
+        <p>SPIE 期刊</p>
       </div>
     </div>
   </li>
@@ -1745,7 +1732,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->springer-fachzeitschriften-medizin-psychologie<!-- -->&quot;</code></div>
       <div>
-        <p>Springer - Fachzeitschriften Medizin Psychologie (Deutsch)</p>
+        <p>斯普林格 - 专业期刊医学心理学（德语）</p>
       </div>
     </div>
   </li>
@@ -1754,7 +1741,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->frontiers<!-- -->&quot;</code></div>
       <div>
-        <p>Frontiers journals</p>
+        <p>Frontiers 期刊</p>
       </div>
     </div>
   </li>
@@ -1763,7 +1750,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->american-physics-society<!-- -->&quot;</code></div>
       <div>
-        <p>American Physical Society</p>
+        <p>美国物理学会</p>
       </div>
     </div>
   </li>
@@ -1772,7 +1759,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->american-sociological-association<!-- -->&quot;</code></div>
       <div>
-        <p>American Sociological Association 6th edition</p>
+        <p>美国社会学会第6版</p>
       </div>
     </div>
   </li>
@@ -1781,7 +1768,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->elsevier-vancouver<!-- -->&quot;</code></div>
       <div>
-        <p>Elsevier - Vancouver</p>
+        <p>爱思唯尔 - 温哥华</p>
       </div>
     </div>
   </li>
@@ -1790,7 +1777,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->chicago-notes<!-- -->&quot;</code></div>
       <div>
-        <p>Chicago Manual of Style 17th edition (note)</p>
+        <p>芝加哥风格手册第17版（注释）</p>
       </div>
     </div>
   </li>
@@ -1799,7 +1786,7 @@ short alias.</p>
     <div class="break-box">
       <div><code class="typ-str">&quot;<!-- -->alphanumeric<!-- -->&quot;</code></div>
       <div>
-        <p>Alphanumeric</p>
+        <p>字母数字混合</p>
       </div>
     </div>
   </li>
@@ -1824,7 +1811,7 @@ short alias.</p>
             src="/assets/icons/16-arrow-right.svg" alt="←">
           <div><span class="page-title">Bullet List</span><span class="hint">上一页</span></div>
         </a><a href="/docs/reference/model/document/" class="next"><img src="/assets/icons/16-arrow-right.svg" alt="→">
-          <div><span class="page-title">Document</span><span class="hint">下一页</span></div>
+          <div><span class="page-title">文档</span><span class="hint">下一页</span></div>
         </a></div>
       
     </main>

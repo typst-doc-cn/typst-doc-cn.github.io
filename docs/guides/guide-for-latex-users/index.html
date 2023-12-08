@@ -349,25 +349,25 @@
               <ul>
                 
                 
-                <li><a href="/docs/reference/model/bibliography/" >Bibliography</a></li>
+                <li><a href="/docs/reference/model/bibliography/" >参考文献</a></li>
                 
                 
                 <li><a href="/docs/reference/model/list/" >Bullet List</a></li>
                 
                 
-                <li><a href="/docs/reference/model/cite/" >Cite</a></li>
+                <li><a href="/docs/reference/model/cite/" >引用</a></li>
                 
                 
-                <li><a href="/docs/reference/model/document/" >Document</a></li>
+                <li><a href="/docs/reference/model/document/" >文档</a></li>
                 
                 
-                <li><a href="/docs/reference/model/emph/" >Emphasis</a></li>
+                <li><a href="/docs/reference/model/emph/" >强调（斜体）</a></li>
                 
                 
-                <li><a href="/docs/reference/model/figure/" >Figure</a></li>
+                <li><a href="/docs/reference/model/figure/" >图表</a></li>
                 
                 
-                <li><a href="/docs/reference/model/footnote/" >Footnote</a></li>
+                <li><a href="/docs/reference/model/footnote/" >脚注</a></li>
                 
                 
                 <li><a href="/docs/reference/model/heading/" >Heading</a></li>
@@ -376,7 +376,7 @@
                 <li><a href="/docs/reference/model/link/" >Link</a></li>
                 
                 
-                <li><a href="/docs/reference/model/enum/" >Numbered List</a></li>
+                <li><a href="/docs/reference/model/enum/" >有序列表</a></li>
                 
                 
                 <li><a href="/docs/reference/model/numbering/" >Numbering</a></li>
@@ -397,7 +397,7 @@
                 <li><a href="/docs/reference/model/ref/" >Reference</a></li>
                 
                 
-                <li><a href="/docs/reference/model/strong/" >Strong Emphasis</a></li>
+                <li><a href="/docs/reference/model/strong/" >着重强调（加粗）</a></li>
                 
                 
                 <li><a href="/docs/reference/model/table/" >Table</a></li>
@@ -1023,7 +1023,7 @@ paragraphs right here!
 <p>要让一个函数为你的整个文档提供样式，显示规则会处理它后面的所有内容，并以结果为参数调用冒号后面指定的函数。
 <code>.with</code> 部分是一个方法，它接收 <code>conf</code> 函数，并在传递给显示规则之前预先配置它的一些参数。</p>
 <p>为了将一个样式应用到整个文档，Show 规则会把后续的所有内容都作为参数，传递给冒号后面定义的函数。<code>.with</code> 是函数对象的一个方法，它可以预设一些其他的默认参数（类似于柯里化），在传递给 Show 规则之前进行一些设置更改。</p>
-<p>译者注：<code>#show: conf.with(title: [标题])</code> 等价于 Lambda 表达式形式的 <code>#show: it =&gt; conf.with(title: [标题], it)</code></p>
+<p>译者注：<code>#show: conf.with(title: [标题])</code> 等价于 Lambda 表达式形式的 <code>#show: it =&gt; conf(title: [标题], it)</code></p>
 </div>
 <p>在 Web App 中，你可以选择一些预先定义好的模板，甚至可以通过模板向导创建自己的模板。
 你也可以访问 <a href="https://github.com/qjcg/awesome-typst">Awesome Typst 仓库</a> 来查看一些社区提供的模板。我们正在筹备为包管理器增加托管模板的能力（目前只能托管工具类包），在那之后这一切都会更加容易分享！</p>
