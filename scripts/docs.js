@@ -186,7 +186,6 @@ function setUpTooltip(t) {
 }
 function alertClose(t) {
     t.addEventListener("click", () => {
-        t.preventDefault()
         var alertElement = document.querySelector(".alert");
             alertElement.style.display = "none";
     }
