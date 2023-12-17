@@ -184,6 +184,14 @@ function setUpTooltip(t) {
     }
     )
 }
+function alertClose(t) {
+    t.addEventListener("click", () => {
+        t.preventDefault()
+        var alertElement = document.querySelector(".alert");
+            alertElement.style.display = "none";
+    }
+    )
+}
 function setUpCollapsingSidebar(t) {
     const e = document.querySelector("button.hamburger")
       , s = t.querySelector("button.close");
@@ -625,7 +633,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
         setUpAccordeon(n);
     const t = document.querySelector("#page-overview > ul");
     t && setUpOnPageNavigation(t),
-    setUpCollapsingSidebar(document.querySelector("nav.folding"));
+    // setUpCollapsingSidebar(document.querySelector("nav.folding")),
+    alertClose(document.querySelector("button.close"));
     for (const n of document.querySelectorAll("div.tooltip-context"))
         setUpTooltip(n);
     const e = document.querySelector(".page-end-buttons a.previous")
