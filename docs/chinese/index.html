@@ -852,11 +852,11 @@
 <li>在 VS Code 中安装 <a href="https://marketplace.visualstudio.com/items?itemName=nvarner.typst-lsp">Typst LSP</a> 和 <a href="https://marketplace.visualstudio.com/items?itemName=mgt19937.typst-preview">Typst Preview</a> 插件。前者负责语法高亮和错误检查，后者负责预览。
 <ul>
 <li>也推荐下载 <a href="https://marketplace.visualstudio.com/items?itemName=CalebFiggers.typst-companion">Typst Companion</a> 插件，其提供了例如 <code>Ctrl + B</code> 进行加粗等便捷的快捷键。</li>
-<li>你还可以下载我开发的 <a href="https://marketplace.visualstudio.com/items?itemName=OrangeX4.vscode-typst-sync">Typst Sync</a> 和 <a href="https://marketplace.visualstudio.com/items?itemName=OrangeX4.vscode-typst-sympy-calculator">Typst Sympy Calculator</a> 插件，前者提供了本地包的云同步功能，后者提供了基于 Typst 语法的科学计算器功能。</li>
+<li>还可以下载 <a href="https://marketplace.visualstudio.com/items?itemName=OrangeX4.vscode-typst-sync">Typst Sync</a> 和 <a href="https://marketplace.visualstudio.com/items?itemName=OrangeX4.vscode-typst-sympy-calculator">Typst Sympy Calculator</a> 插件，前者提供了本地包的云同步功能，后者提供了基于 Typst 语法的科学计算器功能。</li>
 </ul>
 </li>
 <li>新建一个 <code>test.typ</code> 文件，写入内容 <code># Hello World</code>。</li>
-<li>按下 <code>Shift + Ctrl + P</code>，然后输入命令 <code>Typst Preview: Preview current file</code>，即可同步增量渲染与预览，还提供了光标双向定位功能。</li>
+<li>按下 <code>Ctrl + K V</code>，即可同步增量渲染与预览，还提供了光标双向定位功能。</li>
 </ol>
 <h3>如何为中英文设置不同的字体？</h3>
 <p>可以使用 text 里面的 fallback 特性。
@@ -883,6 +883,8 @@ Hello World 你好世界
 <li><code>typst fonts --variants</code> 查看字体变体。</li>
 <li>检查中文字体是否已经完全安装。</li>
 </ol>
+<h3>为什么连续标点会挤压在一起？</h3>
+<p>如果字体与 <code>text(lang: .., region: ..)</code> 不匹配，可能会导致连续标点的挤压。例如字体不是中国大陆的，标点压缩会出错；反之亦然。</p>
 <h3>如何添加中文斜体？</h3>
 <p>中文斜体一般使用楷体替代，你可以 <a href="https://github.com/typst/typst/issues/725">通过 show-set 规则实现</a>：</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">show</span> <span class="typ-func">emph</span><span class="typ-punct">:</span> text<span class="typ-punct">.</span><span class="typ-func">with</span><span class="typ-punct">(</span>font<span class="typ-punct">:</span> <span class="typ-punct">(</span><span class="typ-str">&quot;Linux Libertine&quot;</span><span class="typ-punct">,</span> <span class="typ-str">&quot;STKaiti&quot;</span><span class="typ-punct">)</span><span class="typ-punct">)</span>
