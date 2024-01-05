@@ -22,7 +22,6 @@ Typst 是可用于出版的可编程标记语言，拥有变量、函数与包�
 参考 [Discord](https://discord.com/channels/1054443721975922748/1176062736514429008) 的记录，可知目前仍存在：
 
 - 行内代码或行内数学公式与中文之间的自动空格 [#2702](https://github.com/typst/typst/issues/2702) [#2703](https://github.com/typst/typst/issues/2703)。
-- CJK 字符的无空格加粗 [#2648](https://github.com/typst/typst/pull/2648)。
 - 变体字体、伪粗体、斜体等字体支持 [#725](https://github.com/typst/typst/issues/725)。
 - 不能简单地实现首段缩进 [#311](https://github.com/typst/typst/issues/311)。
 - 暂时无法忽略 CJK 字符之间的单个换行符自动转换成的空格 [#792](https://github.com/typst/typst/issues/792)。
@@ -66,7 +65,7 @@ Typst 中的 font 参数可以接收一个数组，会根据字体里有无当�
 Hello World 你好世界
 
 #[
-  #set text(font: ("IBM Plex Serif", "Noto Sans CJK SC"))
+  #set text(font: ("IBM Plex Serif", "Noto Sans CJK SC"), lang: "zh", region: "cn")
 
   Hello World 你好世界
 ]
