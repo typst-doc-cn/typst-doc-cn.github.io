@@ -829,7 +829,6 @@
 <p>参考 <a href="https://discord.com/channels/1054443721975922748/1176062736514429008">Discord</a> 的记录，可知目前仍存在：</p>
 <ul>
 <li>行内代码或行内数学公式与中文之间的自动空格 <a href="https://github.com/typst/typst/issues/2702">#2702</a> <a href="https://github.com/typst/typst/issues/2703">#2703</a>。</li>
-<li>CJK 字符的无空格加粗 <a href="https://github.com/typst/typst/pull/2648">#2648</a>。</li>
 <li>变体字体、伪粗体、斜体等字体支持 <a href="https://github.com/typst/typst/issues/725">#725</a>。</li>
 <li>不能简单地实现首段缩进 <a href="https://github.com/typst/typst/issues/311">#311</a>。</li>
 <li>暂时无法忽略 CJK 字符之间的单个换行符自动转换成的空格 <a href="https://github.com/typst/typst/issues/792">#792</a>。</li>
@@ -865,11 +864,11 @@ Typst 中的 font 参数可以接收一个数组，会根据字体里有无当�
 <div class="previewed-code"><pre><code>Hello World 你好世界
 
 <span class="typ-punct">#</span><span class="typ-punct">[</span>
-  <span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>font<span class="typ-punct">:</span> <span class="typ-punct">(</span><span class="typ-str">&quot;IBM Plex Serif&quot;</span><span class="typ-punct">,</span> <span class="typ-str">&quot;Noto Sans CJK SC&quot;</span><span class="typ-punct">)</span><span class="typ-punct">)</span>
+  <span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>font<span class="typ-punct">:</span> <span class="typ-punct">(</span><span class="typ-str">&quot;IBM Plex Serif&quot;</span><span class="typ-punct">,</span> <span class="typ-str">&quot;Noto Sans CJK SC&quot;</span><span class="typ-punct">)</span><span class="typ-punct">,</span> lang<span class="typ-punct">:</span> <span class="typ-str">&quot;zh&quot;</span><span class="typ-punct">,</span> region<span class="typ-punct">:</span> <span class="typ-str">&quot;cn&quot;</span><span class="typ-punct">)</span>
 
   Hello World 你好世界
 <span class="typ-punct">]</span>
-</code></pre><div class="preview"><img src="/assets/docs/78db46a15e197508357130997fc6c769.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/294f354038ce305ba4a3e6b9372f290f.png" alt="Preview" width="480" height="190"/></div></div>
 <p>如果你还需要对中文字体进行特殊处理，例如只缩小中文字体的大小，可以考虑用正则表达式进行 hack：</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">show</span> <span class="typ-func">regex</span><span class="typ-punct">(</span><span class="typ-str">&quot;\p{sc=Hani}+&quot;</span><span class="typ-punct">)</span><span class="typ-punct">:</span> <span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>size<span class="typ-punct">:</span> <span class="typ-num">0.8em</span><span class="typ-punct">)</span>
 
