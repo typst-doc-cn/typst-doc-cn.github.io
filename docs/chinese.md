@@ -283,6 +283,7 @@ A quick _brown_
 - [zjut-report-typst](https://github.com/zjutjh/zjut-report-typst): 浙江工业大学一些实验报告的 Typst 模板
 - [HIT-Thesis-Typst](https://github.com/chosertech/HIT-Thesis-Typst): 适用于哈尔滨工业大学学位论文的 Typst 模板
 - [nju-thesis-typst](https://github.com/nju-lug/nju-thesis-typst): 南京大学学位论文 Typst 模板，使用 Typst 包管理、闭包等现代编程语言特性开发，一个更方便编辑和拓展的模板
+- [nuist-thesis-typst](https://github.com/Dustella/nuist-thesis-typst): 南京信息工程大学本科生毕业论文/设计 Typst 模板，分叉自 nju-thesis-typst
 
 **中文简历**：
 
