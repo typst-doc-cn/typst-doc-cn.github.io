@@ -829,7 +829,6 @@
 <p>参考 <a href="https://discord.com/channels/1054443721975922748/1176062736514429008">Discord</a> 的记录，可知目前仍存在：</p>
 <ul>
 <li>行内代码或行内数学公式与中文之间的自动空格 <a href="https://github.com/typst/typst/issues/2702">#2702</a> <a href="https://github.com/typst/typst/issues/2703">#2703</a>。</li>
-<li>变体字体、伪粗体、斜体等字体支持 <a href="https://github.com/typst/typst/issues/725">#725</a>。</li>
 <li>不能简单地实现首段缩进 <a href="https://github.com/typst/typst/issues/311">#311</a>。</li>
 <li>暂时无法忽略 CJK 字符之间的单个换行符自动转换成的空格 <a href="https://github.com/typst/typst/issues/792">#792</a>。</li>
 <li>有时候段落开始的 CJK 标点符号没有被调整 <a href="https://github.com/typst/typst/issues/2348">#2348</a>。</li>
@@ -884,7 +883,8 @@ Hello World 你好世界
 </ol>
 <h3>为什么连续标点会挤压在一起？</h3>
 <p>如果字体与 <code>text(lang: .., region: ..)</code> 不匹配，可能会导致连续标点的挤压。例如字体不是中国大陆的，标点压缩会出错；反之亦然。</p>
-<h3>如何添加中文斜体？</h3>
+<h3>如何添加中文粗体和斜体？</h3>
+<p>可以使用 <a href="https://github.com/csimide/cuti">cuti</a> 包。</p>
 <p>中文斜体一般使用楷体替代，你可以 <a href="https://github.com/typst/typst/issues/725">通过 show-set 规则实现</a>：</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">show</span> <span class="typ-func">emph</span><span class="typ-punct">:</span> text<span class="typ-punct">.</span><span class="typ-func">with</span><span class="typ-punct">(</span>font<span class="typ-punct">:</span> <span class="typ-punct">(</span><span class="typ-str">&quot;Linux Libertine&quot;</span><span class="typ-punct">,</span> <span class="typ-str">&quot;STKaiti&quot;</span><span class="typ-punct">)</span><span class="typ-punct">)</span>
 
@@ -964,14 +964,17 @@ A quick <span class="typ-emph">_brown_</span>
 <p><strong>第二种办法：使用假段落自动加入缩进。</strong></p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">par</span><span class="typ-punct">(</span>first-line-indent<span class="typ-punct">:</span> <span class="typ-num">2em</span><span class="typ-punct">)</span>
 
-<span class="typ-key">#</span><span class="typ-key">let</span> fake_par <span class="typ-op">=</span> <span class="typ-punct">{</span>
-  <span class="typ-func">v</span><span class="typ-punct">(</span><span class="typ-op">-</span><span class="typ-num">1em</span><span class="typ-punct">)</span>
-  <span class="typ-func">box</span><span class="typ-punct">(</span><span class="typ-punct">)</span>
-<span class="typ-punct">}</span>
+<span class="typ-key">#</span><span class="typ-key">let</span> fake-par <span class="typ-op">=</span> <span class="typ-func">style</span><span class="typ-punct">(</span>styles <span class="typ-op">=&gt;</span> <span class="typ-punct">{</span>
+  <span class="typ-key">let</span> b <span class="typ-op">=</span> <span class="typ-func">par</span><span class="typ-punct">[</span><span class="typ-func">#</span><span class="typ-func">box</span><span class="typ-punct">(</span><span class="typ-punct">)</span><span class="typ-punct">]</span>
+  <span class="typ-key">let</span> t <span class="typ-op">=</span> <span class="typ-func">measure</span><span class="typ-punct">(</span>b <span class="typ-op">+</span> b<span class="typ-punct">,</span> styles<span class="typ-punct">)</span><span class="typ-punct">;</span>
+
+  b
+  <span class="typ-func">v</span><span class="typ-punct">(</span><span class="typ-op">-</span>t<span class="typ-punct">.</span>height<span class="typ-punct">)</span>
+<span class="typ-punct">}</span><span class="typ-punct">)</span>
 
 <span class="typ-key">#</span><span class="typ-key">show</span> <span class="typ-func">heading</span><span class="typ-punct">:</span> it <span class="typ-op">=&gt;</span> <span class="typ-punct">{</span>
   it
-  fake_par
+  fake-par
 <span class="typ-punct">}</span>
 
 <span class="typ-heading">= 一级标题</span>
@@ -987,8 +990,8 @@ A quick <span class="typ-emph">_brown_</span>
 时维九月，序属三秋。潦水尽而寒潭清，烟光凝而暮山紫。俨骖騑于上路，访风景于崇阿。临帝子之长洲，得天人之旧馆。
 
 层峦耸翠，上出重霄；飞阁流丹，下临无地。鹤汀凫渚，穷岛屿之萦回；桂殿兰宫，即冈峦之体势。
-</code></pre><div class="preview"><img src="/assets/docs/d3684fd09d8615036da03a9506d6da7e.png" alt="Preview" width="480" height="190"/></div></div>
-<p>这样做的优点是可以自动首行缩进，缺点是其中的 <code>v(-1em)</code> 会造成标题和首行段落的间距出现问题。</p>
+</code></pre><div class="preview"><img src="/assets/docs/c08b779986c6bd94a86b8b21ef5138db.png" alt="Preview" width="480" height="190"/></div></div>
+<p>PS: 例子来源于 <a href="https://github.com/Myriad-Dreamin">Myriad-Dreamin</a></p>
 <h3>如何让行内数学公式显示为行间数学公式的大小？</h3>
 <p>可以通过 <code>display()</code> 函数实现。</p>
 <div class="previewed-code"><pre><code>行内数学公式（脚本模式） <span class="typ-math-delim">$</span><span class="typ-pol">integral</span> x <span class="typ-pol">dif</span> x<span class="typ-math-delim">$</span>
@@ -1005,8 +1008,8 @@ A quick <span class="typ-emph">_brown_</span>
   <span class="typ-punct">}</span>
 <span class="typ-punct">}</span>
 
-行内数学公式（展示模式） <span class="typ-math-delim">$</span><span class="typ-func">display</span><span class="typ-punct">(</span><span class="typ-pol">integral</span> x <span class="typ-pol">dif</span> x<span class="typ-punct">)</span><span class="typ-math-delim">$</span>
-</code></pre><div class="preview"><img src="/assets/docs/fc3d2c42dc4b48c7806abadd5148bb76.png" alt="Preview" width="480" height="190"/></div></div>
+行内数学公式（展示模式） <span class="typ-math-delim">$</span><span class="typ-pol">integral</span> x <span class="typ-pol">dif</span> x<span class="typ-math-delim">$</span>
+</code></pre><div class="preview"><img src="/assets/docs/f3b6fc3a59f7c5f4c3a73d3d4f626a8b.png" alt="Preview" width="480" height="190"/></div></div>
 <h3 id="pdf">如何嵌入 PDF 文件？</h3>
 <p>你暂时没有办法在 Typst 里嵌入 PDF 文件，但是你可以先使用 <a href="https://cloudconvert.com/pdf-to-svg">在线工具</a> 将 PDF 文件转换为 SVG 文件，然后嵌入 svg 文件。</p>
 <h3>如何根据章节对图表和公式进行编码？</h3>
