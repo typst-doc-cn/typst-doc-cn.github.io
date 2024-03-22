@@ -254,7 +254,7 @@ Good results can only be obtained by
 你可以通过 [`font`]($text.font), [`style`]($text.style), 和 [`weight`]($text.weight) 参数
 来实现 LaTeX 命令 `\textbf`, `\textsf`, `\rmfamily`, `\mdseries`, 和 `\itshape` 的效果。
 `text` 函数可以在 set 规则（声明风格）中使用，也可以带有内容参数。
-为了替换 `\textsc`，你可以使用 [`smallcaps`] 函数，它会将其内容参数渲染为小型大写字母。
+为了替换 `\textsc`，你可以使用 `smallcaps` 函数，它会将其内容参数渲染为小型大写字母。
 如果你想要使用它的声明风格（类似于 `\scshape`），你可以使用一个 [_everything_ show 规则]($styling/#show-rules) 来将这个函数应用到作用域的其余部分：
 
 ```example
@@ -384,7 +384,7 @@ paragraphs right here!
 
 在 Web App 中，你可以选择一些预先定义好的模板，甚至可以通过模板向导创建自己的模板。
 在本地命令行中，你也可以使用 `typst init` 来从模板创建项目。
-查看发布在 Typst Universe 上的[模板列表]($universe/search/?kind=templates), 这是官方的包管理库。
+查看发布在 Typst Universe 上的[模板列表](https://typst.app/universe/search?kind=templates), 这是官方的包管理库。
 你也可以访问 [Awesome Typst 仓库](https://github.com/qjcg/awesome-typst) 来查看一些社区提供，尚没有以包发布的模板。
 
 你也可以 [创建你自己的自定义的模板]($tutorial/making-a-template)。它们比相应的 LaTeX 的 `.sty` 文件短得多，可读性也高得多，所以不妨一试！
@@ -449,7 +449,7 @@ Typst 在数学模式下预先定义了很多有用的变量。所有希腊字�
 如果你想在你的表达式中插入多字母纯文本，可以用双引号将其括起来：
 
 ```example
-delta "if" x <= 5 $
+$ delta "if" x <= 5 $
 ```
 
 在 Typst 中，定界符将根据内部表达式自动缩放大小，就像在 LaTeX 中自动添加了隐藏的 `\left` 和 `\right` 命令一样。
@@ -458,7 +458,7 @@ delta "if" x <= 5 $
 在不破坏运算优先级的前提下，Typst 会自动将斜线 `/` 的两端内容识别成分数。所有没必要的括号将不会出现在编译结果中：
 
 ```example
-f(x) = (x + 1) / x $
+$ f(x) = (x + 1) / x $
 ```
 
 [下标和上标]($math.attach) 在 Typst 和 LaTeX 中的作用是相似的。`{$x^2$}` 将产生一个上标，`{$x_2$}` 产生一个下标。
