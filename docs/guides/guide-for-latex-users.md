@@ -254,7 +254,7 @@ Good results can only be obtained by
 你可以通过 [`font`]($text.font), [`style`]($text.style), 和 [`weight`]($text.weight) 参数
 来实现 LaTeX 命令 `\textbf`, `\textsf`, `\rmfamily`, `\mdseries`, 和 `\itshape` 的效果。
 `text` 函数可以在 set 规则（声明风格）中使用，也可以带有内容参数。
-为了替换 `\textsc`，你可以使用 [`smallcaps`]($text.smallcaps) 函数，它会将其内容参数渲染为小型大写字母。
+为了替换 `\textsc`，你可以使用 [`smallcaps`] 函数，它会将其内容参数渲染为小型大写字母。
 如果你想要使用它的声明风格（类似于 `\scshape`），你可以使用一个 [_everything_ show 规则]($styling/#show-rules) 来将这个函数应用到作用域的其余部分：
 
 ```example
