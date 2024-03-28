@@ -57,7 +57,7 @@ Typst 的文档生成是与 Typst 源码紧耦合的, 具体体现在:
 
 本地生成是非必须的, 但是它很适合你在本地查看生成的网页是否正确.
 
-首先你需要 clone 本仓库, 并安装 `cargo` 工具链, 以及 Python 和 Python 包 `jinja2`.
+首先你需要 clone 本仓库, 并安装 `cargo` 工具链, 以及 Python 和 Python 包 `jinja2` 和 `pyyaml`.
 
 ```sh
 # 修改了 `./docs/src` 目录则需要运行这两行命令
