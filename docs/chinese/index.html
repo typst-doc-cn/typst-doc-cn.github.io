@@ -821,7 +821,7 @@
 <p>Typst 是可用于出版的可编程标记语言，拥有变量、函数与包管理等现代编程语言的特性，注重于科学写作 (science writing)，定位与 LaTeX 相似。</p>
 <ul>
 <li><strong>语法简洁</strong>：上手难度跟 Markdown 相当，文本源码阅读性高，不会像 LaTeX 一样充斥着反斜杠与花括号。</li>
-<li><strong>编译速度快</strong>：Typst 使用 Rust 语言编写，即 typ(e+ru)st，目标运行平台是WASM，即浏览器本地离线运行；也可以编译成命令行工具，采用一种增量编译算法和一种有约束的版面缓存方案，文档长度基本不会影响编译速度，且编译速度与常见 Markdown 渲染引擎渲染速度相当。</li>
+<li><strong>编译速度快</strong>：Typst 使用 Rust 语言编写，即 typ(esetting+ru)st，目标运行平台是WASM，即浏览器本地离线运行；也可以编译成命令行工具，采用一种增量编译算法和一种有约束的版面缓存方案，文档长度基本不会影响编译速度，且编译速度与常见 Markdown 渲染引擎渲染速度相当。</li>
 <li><strong>环境搭建简单</strong>：不需要像 LaTeX 一样折腾几个 G 的开发环境，原生支持中日韩等非拉丁语言，无论是官方 Web App 在线编辑，还是使用 VS Code 安装插件本地开发，都是即开即用。</li>
 <li><strong>现代编程语言</strong>：Typst 是可用于出版的可编程标记语言，拥有变量、函数、包管理与错误检查等现代编程语言的特性，同时也提供了闭包等特性，便于进行函数式编程。以及包括了 [标记模式]、{脚本模式} 与 $数学模式$ 等多种模式的作用域，并且它们可以不限深度地、交互地嵌套。并且通过 <a href="https://typst-doc-cn.github.io/docs/packages/">包管理</a>，你不再需要像 TexLive 一样在本地安装一大堆并不必要的宏包，而是按需自动从云端下载。</li>
 </ul>
@@ -847,10 +847,10 @@
 <h3 id="vs-code">如何使用 VS Code 进行本地编辑？</h3>
 <ol>
 <li>在 <a href="https://code.visualstudio.com/">VS Code</a> 中打开任意工作目录。</li>
-<li>在 VS Code 中安装 <a href="https://marketplace.visualstudio.com/items?itemName=nvarner.typst-lsp">Typst LSP</a> 和 <a href="https://marketplace.visualstudio.com/items?itemName=mgt19937.typst-preview">Typst Preview</a> 插件。前者负责语法高亮和错误检查，后者负责预览。
+<li>在 VS Code 中安装 <a href="https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist">Tinymist Typst</a> 和 <a href="https://marketplace.visualstudio.com/items?itemName=mgt19937.typst-preview">Typst Preview</a> 插件。前者负责语法高亮和错误检查等功能，后者负责预览。
 <ul>
 <li>也推荐下载 <a href="https://marketplace.visualstudio.com/items?itemName=CalebFiggers.typst-companion">Typst Companion</a> 插件，其提供了例如 <code>Ctrl + B</code> 进行加粗等便捷的快捷键。</li>
-<li>还可以下载 <a href="https://marketplace.visualstudio.com/items?itemName=OrangeX4.vscode-typst-sync">Typst Sync</a> 和 <a href="https://marketplace.visualstudio.com/items?itemName=OrangeX4.vscode-typst-sympy-calculator">Typst Sympy Calculator</a> 插件，前者提供了本地包的云同步功能，后者提供了基于 Typst 语法的科学计算器功能。</li>
+<li>你还可以下载我开发的 <a href="https://marketplace.visualstudio.com/items?itemName=OrangeX4.vscode-typst-sync">Typst Sync</a> 和 <a href="https://marketplace.visualstudio.com/items?itemName=OrangeX4.vscode-typst-sympy-calculator">Typst Sympy Calculator</a> 插件，前者提供了本地包的云同步功能，后者提供了基于 Typst 语法的科学计算器功能。</li>
 </ul>
 </li>
 <li>新建一个 <code>test.typ</code> 文件，写入内容 <code># Hello World</code>。</li>
