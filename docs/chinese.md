@@ -12,7 +12,7 @@ description: |
 Typst 是可用于出版的可编程标记语言，拥有变量、函数与包管理等现代编程语言的特性，注重于科学写作 (science writing)，定位与 LaTeX 相似。
 
 - **语法简洁**：上手难度跟 Markdown 相当，文本源码阅读性高，不会像 LaTeX 一样充斥着反斜杠与花括号。
-- **编译速度快**：Typst 使用 Rust 语言编写，即 typ(e+ru)st，目标运行平台是WASM，即浏览器本地离线运行；也可以编译成命令行工具，采用一种增量编译算法和一种有约束的版面缓存方案，文档长度基本不会影响编译速度，且编译速度与常见 Markdown 渲染引擎渲染速度相当。
+- **编译速度快**：Typst 使用 Rust 语言编写，即 typ(esetting+ru)st，目标运行平台是WASM，即浏览器本地离线运行；也可以编译成命令行工具，采用一种增量编译算法和一种有约束的版面缓存方案，文档长度基本不会影响编译速度，且编译速度与常见 Markdown 渲染引擎渲染速度相当。
 - **环境搭建简单**：不需要像 LaTeX 一样折腾几个 G 的开发环境，原生支持中日韩等非拉丁语言，无论是官方 Web App 在线编辑，还是使用 VS Code 安装插件本地开发，都是即开即用。
 - **现代编程语言**：Typst 是可用于出版的可编程标记语言，拥有变量、函数、包管理与错误检查等现代编程语言的特性，同时也提供了闭包等特性，便于进行函数式编程。以及包括了 [标记模式]、{脚本模式} 与 $数学模式$ 等多种模式的作用域，并且它们可以不限深度地、交互地嵌套。并且通过 [包管理](https://typst-doc-cn.github.io/docs/packages/)，你不再需要像 TexLive 一样在本地安装一大堆并不必要的宏包，而是按需自动从云端下载。
 
@@ -47,10 +47,10 @@ Typst 是可用于出版的可编程标记语言，拥有变量、函数与包�
 ### 如何使用 VS Code 进行本地编辑？
 
 1. 在 [VS Code](https://code.visualstudio.com/) 中打开任意工作目录。
-2. 在 VS Code 中安装 [Typst LSP](https://marketplace.visualstudio.com/items?itemName=nvarner.typst-lsp) 和 [Typst Preview](https://marketplace.visualstudio.com/items?itemName=mgt19937.typst-preview) 插件。前者负责语法高亮和错误检查，后者负责预览。
+2. 在 VS Code 中安装 [Tinymist Typst](https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist) 和 [Typst Preview](https://marketplace.visualstudio.com/items?itemName=mgt19937.typst-preview) 插件。前者负责语法高亮和错误检查等功能，后者负责预览。
     - 也推荐下载 [Typst Companion](https://marketplace.visualstudio.com/items?itemName=CalebFiggers.typst-companion) 插件，其提供了例如 `Ctrl + B` 进行加粗等便捷的快捷键。
-    - 还可以下载 [Typst Sync](https://marketplace.visualstudio.com/items?itemName=OrangeX4.vscode-typst-sync) 和 [Typst Sympy Calculator](https://marketplace.visualstudio.com/items?itemName=OrangeX4.vscode-typst-sympy-calculator) 插件，前者提供了本地包的云同步功能，后者提供了基于 Typst 语法的科学计算器功能。
-3. 新建一个 `test.typ` 文件，写入内容 `# Hello World`。
+    - 你还可以下载我开发的 [Typst Sync](https://marketplace.visualstudio.com/items?itemName=OrangeX4.vscode-typst-sync) 和 [Typst Sympy Calculator](https://marketplace.visualstudio.com/items?itemName=OrangeX4.vscode-typst-sympy-calculator) 插件，前者提供了本地包的云同步功能，后者提供了基于 Typst 语法的科学计算器功能。
+3. 新建一个 `test.typ` 文件，写入内容 `= Hello World`。
 4. 按下 `Ctrl + K V`，即可同步增量渲染与预览，还提供了光标双向定位功能。
 
 
@@ -269,6 +269,81 @@ PS: 例子来源于 [Myriad-Dreamin](https://github.com/Myriad-Dreamin)
 
 类 Markdown 表格：可以使用 [tablem](https://github.com/OrangeX4/typst-tablem) 包。
 
+### 如何更换不同的参考文献格式？
+
+Typst (>=0.10.0) 可以使用 csl 文件指定参考文献格式，见 [`bibliography` 的文档](https://typst.app/docs/reference/model/bibliography/#parameters-style)。
+
+Typst 内置了中文常用的 GB/T-7714-2015 格式，其他 GB/T-7714-2015 变体可以查看 [GB/T 7714—2015 相关的 CSL 样式](https://github.com/redleafnew/Chinese-STD-GB-T-7714-related-csl)。
+
+### 为什么指定参考文献 csl 后，报错 `failed to load CSL style`？
+
+**报错1：** ``(duplicate field `layout`)``
+
+Typst 暂不支持 CSL-M 标准，可以注释掉多余的 `<layout>` **临时**解决。
+
+在 csl 文件里搜索 `bibliography`，这里通常有多个 `<layout>` ，一般建议注释掉 `<layout locale="en">` 这一段 `<layout>` 。例子如下
+
+```xml
+<bibliography entry-spacing="0" et-al-min="4" et-al-use-first="3" second-field-align="flush">
+  <!--
+  <layout locale="en">
+    <text variable="citation-number" prefix="[" suffix="]"/>
+    <text macro="entry-layout"/>
+  </layout>
+  -->
+  <layout>
+    <text variable="citation-number" prefix="[" suffix="]"/>
+    <text macro="entry-layout"/>
+  </layout>
+</bibliography>
+```
+
+（示例来自 http://www.zotero.org/styles/china-national-standard-gb-t-7714-2015-numeric ，原作者见此文件，依 CC-BY-SA 3.0 协议使用）
+
+这样修改之后，csl 根据文献语言自动使用“等”或“et al.”的功能会失效，请见下一条 Q&A 的问题1。
+
+**报错2：** ``(unknown variant `institution`, expected one of `name`, `et-al`, `label`, `substitute`)`` 
+
+在 csl 文件里注释掉不支持的部分。
+
+### 为什么参考文献格式与预期不符？
+
+**问题1：** 希望在中文文献使用 `等`、在西文文献使用 `et al.`，但 Typst 均显示为 `等`（或均显示为 `et al.`）。
+
+Typst 暂不支持 CSL-M 标准，因此暂时无法通过修改 csl 文件实现中文西文自动使用不同的文字（[typst/typst#2793](https://github.com/typst/typst/issues/2793), [typst/citationberg#5](https://github.com/typst/citationberg/issues/5), [typst/hayagriva#126](https://github.com/typst/hayagriva/pull/126)）。
+
+如果参考文献均为同一种语言，可以为参考文献部分设定语言，如：
+
+```example
+#set text(lang: "zh")
+一些内容 @tbs1 。
+
+#heading(level: 1, numbering: none)[参考文献]
+#{
+  set text(lang: "en")
+  bibliography(
+    "many-authors.bib",
+    style: "gb-7714-2015-numeric",
+    title: none
+  )
+}
+```
+
+如果需要实现中文西文自动使用不同的文字，可以使用正则替换魔法，请见 [nju-lug/modern-nju-thesis#3](https://github.com/nju-lug/modern-nju-thesis/issues/3)。
+
+**问题2：** (numeric 格式) 连续引用多条文献时，应当折叠为 `[1-4]` ，但是 Typst 折叠为 `[1,4]` 。
+
+hayagriva 已知 bug [typst/hayagriva#154](https://github.com/typst/hayagriva/issues/154)。
+
+可以通过将 csl 文件里的 `after-collapse-delimiter=","` 改成 `after-collapse-delimiter="-"` 临时解决。请注意，这样做并不符合 CSL 规范，修改后的文件不应当用于 Zotero 等文献管理软件。待 hayagriva 修复此 bug 后，需要改回。
+
+**问题3：** 引文条目中 `. ` 部分丢失。
+
+在 csl 中修改生成引文条目的 `macro`，向缺少 `. ` 的部分添加 `<group delimiter=". ">`。
+
+**问题4：** 参考文献不显示 bib 中的 `note` 。
+
+目前暂不支持（[typst/hayagriva#91](https://github.com/typst/hayagriva/issues/91)）。
 
 ## 一些 Typst 中文资源列表 { #resources }
 
