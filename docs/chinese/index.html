@@ -1017,6 +1017,56 @@ A quick <span class="typ-emph">_brown_</span>
 <h3>如何编写复杂表格或编写简洁的表格？</h3>
 <p>复杂表格：可以使用 <a href="https://github.com/PgBiel/typst-tablex">tablex</a> 包。</p>
 <p>类 Markdown 表格：可以使用 <a href="https://github.com/OrangeX4/typst-tablem">tablem</a> 包。</p>
+<h3>如何更换不同的参考文献格式？</h3>
+<p>Typst (&gt;=0.10.0) 可以使用 csl 文件指定参考文献格式，见 <a href="https://typst.app/docs/reference/model/bibliography/#parameters-style"><code>bibliography</code> 的文档</a>。</p>
+<p>Typst 内置了中文常用的 GB/T-7714-2015 格式，其他 GB/T-7714-2015 变体可以查看 <a href="https://github.com/redleafnew/Chinese-STD-GB-T-7714-related-csl">GB/T 7714—2015 相关的 CSL 样式</a>。</p>
+<h3 id="csl">为什么指定参考文献 csl 后，报错 <code>failed to load CSL style</code>？</h3>
+<p><strong>报错1：</strong> <code>(duplicate field `layout`)</code></p>
+<p>Typst 暂不支持 CSL-M 标准，可以注释掉多余的 <code>&lt;layout&gt;</code> <strong>临时</strong>解决。</p>
+<p>在 csl 文件里搜索 <code>bibliography</code>，这里通常有多个 <code>&lt;layout&gt;</code> ，一般建议注释掉 <code>&lt;layout locale=&quot;en&quot;&gt;</code> 这一段 <code>&lt;layout&gt;</code> 。例子如下</p>
+<pre style="background-color:#ffffff;">
+<span style="color:#000000;">&lt;</span><span style="color:#4b69c6;">bibliography </span><span style="color:#8b41b1;">entry-spacing</span><span style="color:#000000;">=</span><span style="color:#298e0d;">&quot;0&quot; </span><span style="color:#8b41b1;">et-al-min</span><span style="color:#000000;">=</span><span style="color:#298e0d;">&quot;4&quot; </span><span style="color:#8b41b1;">et-al-use-first</span><span style="color:#000000;">=</span><span style="color:#298e0d;">&quot;3&quot; </span><span style="color:#8b41b1;">second-field-align</span><span style="color:#000000;">=</span><span style="color:#298e0d;">&quot;flush&quot;</span><span style="color:#000000;">&gt;
+</span><span style="color:#000000;">  </span><span style="color:#8a8a8a;">&lt;!--
+</span><span style="color:#8a8a8a;">  &lt;layout locale=&quot;en&quot;&gt;
+</span><span style="color:#8a8a8a;">    &lt;text variable=&quot;citation-number&quot; prefix=&quot;[&quot; suffix=&quot;]&quot;/&gt;
+</span><span style="color:#8a8a8a;">    &lt;text macro=&quot;entry-layout&quot;/&gt;
+</span><span style="color:#8a8a8a;">  &lt;/layout&gt;
+</span><span style="color:#8a8a8a;">  --&gt;
+</span><span style="color:#000000;">  &lt;</span><span style="color:#4b69c6;">layout</span><span style="color:#000000;">&gt;
+</span><span style="color:#000000;">    &lt;</span><span style="color:#4b69c6;">text </span><span style="color:#8b41b1;">variable</span><span style="color:#000000;">=</span><span style="color:#298e0d;">&quot;citation-number&quot; </span><span style="color:#8b41b1;">prefix</span><span style="color:#000000;">=</span><span style="color:#298e0d;">&quot;[&quot; </span><span style="color:#8b41b1;">suffix</span><span style="color:#000000;">=</span><span style="color:#298e0d;">&quot;]&quot;</span><span style="color:#000000;">/&gt;
+</span><span style="color:#000000;">    &lt;</span><span style="color:#4b69c6;">text </span><span style="color:#8b41b1;">macro</span><span style="color:#000000;">=</span><span style="color:#298e0d;">&quot;entry-layout&quot;</span><span style="color:#000000;">/&gt;
+</span><span style="color:#000000;">  &lt;/</span><span style="color:#4b69c6;">layout</span><span style="color:#000000;">&gt;
+</span><span style="color:#000000;">&lt;/</span><span style="color:#4b69c6;">bibliography</span><span style="color:#000000;">&gt;
+</span></pre>
+<p>（示例来自 http://www.zotero.org/styles/china-national-standard-gb-t-7714-2015-numeric ，原作者见此文件，依 CC-BY-SA 3.0 协议使用）</p>
+<p>这样修改之后，csl 根据文献语言自动使用“等”或“et al.”的功能会失效，请见下一条 Q&amp;A 的问题1。</p>
+<p><strong>报错2：</strong> <code>(unknown variant `institution`, expected one of `name`, `et-al`, `label`, `substitute`)</code> </p>
+<p>在 csl 文件里注释掉不支持的部分。</p>
+<h3>为什么参考文献格式与预期不符？</h3>
+<p><strong>问题1：</strong> 希望在中文文献使用 <code>等</code>、在西文文献使用 <code>et al.</code>，但 Typst 均显示为 <code>等</code>（或均显示为 <code>et al.</code>）。</p>
+<p>Typst 暂不支持 CSL-M 标准，因此暂时无法通过修改 csl 文件实现中文西文自动使用不同的文字（<a href="https://github.com/typst/typst/issues/2793">typst/typst#2793</a>, <a href="https://github.com/typst/citationberg/issues/5">typst/citationberg#5</a>, <a href="https://github.com/typst/hayagriva/pull/126">typst/hayagriva#126</a>）。</p>
+<p>如果参考文献均为同一种语言，可以为参考文献部分设定语言，如：</p>
+<div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>lang<span class="typ-punct">:</span> <span class="typ-str">&quot;zh&quot;</span><span class="typ-punct">)</span>
+一些内容 <span class="typ-ref">@tbs1</span> 。
+
+<span class="typ-func">#</span><span class="typ-func">heading</span><span class="typ-punct">(</span>level<span class="typ-punct">:</span> <span class="typ-num">1</span><span class="typ-punct">,</span> numbering<span class="typ-punct">:</span> <span class="typ-key">none</span><span class="typ-punct">)</span><span class="typ-punct">[</span>参考文献<span class="typ-punct">]</span>
+<span class="typ-punct">#</span><span class="typ-punct">{</span>
+  <span class="typ-key">set</span> <span class="typ-func">text</span><span class="typ-punct">(</span>lang<span class="typ-punct">:</span> <span class="typ-str">&quot;en&quot;</span><span class="typ-punct">)</span>
+  <span class="typ-func">bibliography</span><span class="typ-punct">(</span>
+    <span class="typ-str">&quot;many-authors.bib&quot;</span><span class="typ-punct">,</span>
+    style<span class="typ-punct">:</span> <span class="typ-str">&quot;gb-7714-2015-numeric&quot;</span><span class="typ-punct">,</span>
+    title<span class="typ-punct">:</span> <span class="typ-key">none</span>
+  <span class="typ-punct">)</span>
+<span class="typ-punct">}</span>
+</code></pre><div class="preview"><img src="/assets/docs/dbc76612629c1fdec34b113a28632f37.png" alt="Preview" width="480" height="190"/></div></div>
+<p>如果需要实现中文西文自动使用不同的文字，可以使用正则替换魔法，请见 <a href="https://github.com/nju-lug/modern-nju-thesis/issues/3">nju-lug/modern-nju-thesis#3</a>。</p>
+<p><strong>问题2：</strong> (numeric 格式) 连续引用多条文献时，应当折叠为 <code>1-4</code> ，但是 Typst 折叠为 <code>1,4</code> 。</p>
+<p>hayagriva 已知 bug <a href="https://github.com/typst/hayagriva/issues/154">typst/hayagriva#154</a>。</p>
+<p>可以通过将 csl 文件里的 <code>after-collapse-delimiter=&quot;,&quot;</code> 改成 <code>after-collapse-delimiter=&quot;-&quot;</code> 临时解决。请注意，这样做并不符合 CSL 规范，修改后的文件不应当用于 Zotero 等文献管理软件。待 hayagriva 修复此 bug 后，需要改回。</p>
+<p><strong>问题3：</strong> 引文条目中 <code>. </code> 部分丢失。</p>
+<p>在 csl 中修改生成引文条目的 <code>macro</code>，向缺少 <code>. </code> 的部分添加 <code>&lt;group delimiter=&quot;. &quot;&gt;</code>。</p>
+<p><strong>问题4：</strong> 参考文献不显示 bib 中的 <code>note</code> 。</p>
+<p>目前暂不支持（<a href="https://github.com/typst/hayagriva/issues/91">typst/hayagriva#91</a>）。</p>
 <h2 id="resources">一些 Typst 中文资源列表</h2>
 <p>可以查看 <a href="https://github.com/typst-doc-cn/awesome-typst-cn">Awesome Typst 中文版</a> 中文版，以及浏览 <a href="https://typst-doc-cn.github.io/docs/packages/">第三方包</a>。</p>
 <p><strong>中国大学论文</strong>：</p>
@@ -1033,6 +1083,7 @@ A quick <span class="typ-emph">_brown_</span>
 <li><a href="https://github.com/chosertech/HIT-Thesis-Typst">HIT-Thesis-Typst</a>: 适用于哈尔滨工业大学学位论文的 Typst 模板</li>
 <li><a href="https://github.com/nju-lug/nju-thesis-typst">nju-thesis-typst</a>: 南京大学学位论文 Typst 模板，使用 Typst 包管理、闭包等现代编程语言特性开发，一个更方便编辑和拓展的模板</li>
 <li><a href="https://github.com/Dustella/nuist-thesis-typst">nuist-thesis-typst</a>: 南京信息工程大学本科生毕业论文/设计 Typst 模板，分叉自 nju-thesis-typst</li>
+<li><a href="https://github.com/csimide/SEU-Typst-Template">SEU-Typst-Template</a>: 东南大学本科毕业设计与学位论文模板</li>
 </ul>
 <p><strong>中文简历</strong>：</p>
 <ul>
