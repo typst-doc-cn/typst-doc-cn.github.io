@@ -265,7 +265,7 @@ PS: 例子来源于 [Myriad-Dreamin](https://github.com/Myriad-Dreamin)
 
 ### 如何编写复杂表格或编写简洁的表格？
 
-复杂表格：可以使用 [tablex](https://github.com/PgBiel/typst-tablex) 包。
+复杂表格：可以查看 [Table Guide](https://typst.app/docs/guides/table-guide/)。
 
 类 Markdown 表格：可以使用 [tablem](https://github.com/OrangeX4/typst-tablem) 包。
 
@@ -335,7 +335,7 @@ Typst 暂不支持 CSL-M 标准，因此暂时无法通过修改 csl 文件实�
 
 hayagriva 已知 bug [typst/hayagriva#154](https://github.com/typst/hayagriva/issues/154)。
 
-可以通过将 csl 文件里的 `after-collapse-delimiter=","` 改成 `after-collapse-delimiter="-"` 临时解决。请注意，这样做并不符合 CSL 规范，修改后的文件不应当用于 Zotero 等文献管理软件。待 hayagriva 修复此 bug 后，需要改回。
+可以通过将 csl 文件里的 `after-collapse-delimiter=","` 改成 `after-collapse-delimiter="-"` 临时解决。请注意，这样做并不符合 CSL 规范，修改后的文件不应当用于 Zotero 等文献管理软件。**待 hayagriva 修复此 bug 后，需要改回**。
 
 **问题3：** 引文条目中 `. ` 部分丢失。
 
@@ -344,6 +344,22 @@ hayagriva 已知 bug [typst/hayagriva#154](https://github.com/typst/hayagriva/is
 **问题4：** 参考文献不显示 bib 中的 `note` 。
 
 目前暂不支持（[typst/hayagriva#91](https://github.com/typst/hayagriva/issues/91)）。
+
+**问题5：** 学位论文 `[D]` 后不显示 `地点: 学校名称, 年份.` 。
+
+Typst 暂不支持 `school` `institution` 作为 `publisher` 的别名，亦不支持解析 csl 中的 `institution`（[typst/hayagriva#112](https://github.com/typst/hayagriva/issues/112)）。如需修复，请手动修改 bib 文件内对应条目，在 `school = {学校名称},` 下加一行 `publisher = {学校名称},` ，如：
+
+```biblatex
+@phdthesis{alterego,
+  type = {{超高校级学位论文}},
+  title = {{基于图书室的笔记本电脑的 Alter Ego 系统}},
+  author = {不二咲, 千尋},
+  year = {2010},
+  address = {某地},
+  school = {私立希望ヶ峰学園},
+  publisher = {私立希望ヶ峰学園},
+}
+```
 
 ## 一些 Typst 中文资源列表 { #resources }
 
