@@ -349,7 +349,7 @@ hayagriva 已知 bug [typst/hayagriva#154](https://github.com/typst/hayagriva/is
 
 Typst 暂不支持 `school` `institution` 作为 `publisher` 的别名，亦不支持解析 csl 中的 `institution`（[typst/hayagriva#112](https://github.com/typst/hayagriva/issues/112)）。如需修复，请手动修改 bib 文件内对应条目，在 `school = {学校名称},` 下加一行 `publisher = {学校名称},` ，如：
 
-```biblatex
+```
 @phdthesis{alterego,
   type = {{超高校级学位论文}},
   title = {{基于图书室的笔记本电脑的 Alter Ego 系统}},
