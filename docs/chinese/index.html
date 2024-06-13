@@ -1015,7 +1015,7 @@ A quick <span class="typ-emph">_brown_</span>
 <h3>如何根据章节对图表和公式进行编码？</h3>
 <p>可以使用 <a href="https://github.com/RubixDev/typst-i-figured">i-figured</a> 包。</p>
 <h3>如何编写复杂表格或编写简洁的表格？</h3>
-<p>复杂表格：可以使用 <a href="https://github.com/PgBiel/typst-tablex">tablex</a> 包。</p>
+<p>复杂表格：可以查看 <a href="https://typst.app/docs/guides/table-guide/">Table Guide</a>。</p>
 <p>类 Markdown 表格：可以使用 <a href="https://github.com/OrangeX4/typst-tablem">tablem</a> 包。</p>
 <h3>如何更换不同的参考文献格式？</h3>
 <p>Typst (&gt;=0.10.0) 可以使用 csl 文件指定参考文献格式，见 <a href="https://typst.app/docs/reference/model/bibliography/#parameters-style"><code>bibliography</code> 的文档</a>。</p>
@@ -1062,11 +1062,23 @@ A quick <span class="typ-emph">_brown_</span>
 <p>如果需要实现中文西文自动使用不同的文字，可以使用正则替换魔法，请见 <a href="https://github.com/nju-lug/modern-nju-thesis/issues/3">nju-lug/modern-nju-thesis#3</a>。</p>
 <p><strong>问题2：</strong> (numeric 格式) 连续引用多条文献时，应当折叠为 <code>1-4</code> ，但是 Typst 折叠为 <code>1,4</code> 。</p>
 <p>hayagriva 已知 bug <a href="https://github.com/typst/hayagriva/issues/154">typst/hayagriva#154</a>。</p>
-<p>可以通过将 csl 文件里的 <code>after-collapse-delimiter=&quot;,&quot;</code> 改成 <code>after-collapse-delimiter=&quot;-&quot;</code> 临时解决。请注意，这样做并不符合 CSL 规范，修改后的文件不应当用于 Zotero 等文献管理软件。待 hayagriva 修复此 bug 后，需要改回。</p>
+<p>可以通过将 csl 文件里的 <code>after-collapse-delimiter=&quot;,&quot;</code> 改成 <code>after-collapse-delimiter=&quot;-&quot;</code> 临时解决。请注意，这样做并不符合 CSL 规范，修改后的文件不应当用于 Zotero 等文献管理软件。<strong>待 hayagriva 修复此 bug 后，需要改回</strong>。</p>
 <p><strong>问题3：</strong> 引文条目中 <code>. </code> 部分丢失。</p>
 <p>在 csl 中修改生成引文条目的 <code>macro</code>，向缺少 <code>. </code> 的部分添加 <code>&lt;group delimiter=&quot;. &quot;&gt;</code>。</p>
 <p><strong>问题4：</strong> 参考文献不显示 bib 中的 <code>note</code> 。</p>
 <p>目前暂不支持（<a href="https://github.com/typst/hayagriva/issues/91">typst/hayagriva#91</a>）。</p>
+<p><strong>问题5：</strong> 学位论文 <code>D</code> 后不显示 <code>地点: 学校名称, 年份.</code> 。</p>
+<p>Typst 暂不支持 <code>school</code> <code>institution</code> 作为 <code>publisher</code> 的别名，亦不支持解析 csl 中的 <code>institution</code>（<a href="https://github.com/typst/hayagriva/issues/112">typst/hayagriva#112</a>）。如需修复，请手动修改 bib 文件内对应条目，在 <code>school = {学校名称},</code> 下加一行 <code>publisher = {学校名称},</code> ，如：</p>
+<pre>@phdthesis{alterego,
+  type = {{超高校级学位论文}},
+  title = {{基于图书室的笔记本电脑的 Alter Ego 系统}},
+  author = {不二咲, 千尋},
+  year = {2010},
+  address = {某地},
+  school = {私立希望ヶ峰学園},
+  publisher = {私立希望ヶ峰学園},
+}
+</pre>
 <h2 id="resources">一些 Typst 中文资源列表</h2>
 <p>可以查看 <a href="https://github.com/typst-doc-cn/awesome-typst-cn">Awesome Typst 中文版</a> 中文版，以及浏览 <a href="https://typst-doc-cn.github.io/docs/packages/">第三方包</a>。</p>
 <p><strong>中国大学论文</strong>：</p>
