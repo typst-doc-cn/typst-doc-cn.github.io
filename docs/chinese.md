@@ -238,10 +238,16 @@ PS: 例子来源于 [Myriad-Dreamin](https://github.com/Myriad-Dreamin)
 
 注意，由于 `display` 也是一个函数，所以在其内部的逗号 `,` 要进行转义 `\,`。
 
-每次都要手动打 `display` 感觉很麻烦，我们可以默认自动加上:
+每次都要手动打 `display` 感觉很麻烦，我们可以
 
 ```example
-#show math.equation.where(block: false): math.display
+#show math.equation.where(block: false): it => {
+  if it.has("label") and it.label == label("displayed-inline-math-equation") {
+    it
+  } else {
+    [$display(it)$<displayed-inline-math-equation>]
+  }
+}
 
 行内数学公式（展示模式） $integral x dif x$
 ```
