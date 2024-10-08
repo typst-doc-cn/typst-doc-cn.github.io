@@ -44,6 +44,8 @@
 <body class="no-js docs has-outline">
   <div class="alert">
     <div class="alert-content">
+      <span><b>提示：</b>本教程存在过时问题，更详细教程请阅读 <a href="https://typst-doc-cn.github.io/tutorial/">小蓝书</a> 和 <a href="https://typst-doc-cn.github.io/guide/">Typst 中文社区导航 FAQ</a></span>
+      <br />
       <span><b>注意：</b>该中文文档为社区驱动的非官网文档，可能存在错译、漏译或过时等问题，请以官网文档 <a href="https://typst.app/docs/">Documentation</a>
         为准，如发现错漏，也欢迎 <a href="https://github.com/typst-doc-cn/typst-doc-cn.github.io">您的贡献</a>（<a href="https://gitee.com/orangex4/typst-doc-cn.github.io">镜像</a>）。Typst 非官方中文交流 QQ 群：793548390</span>
       <br />
@@ -836,25 +838,22 @@
 <h2 id="question-and-answer">常见 Q&amp;A</h2>
 <h3>如何进一步进阶？</h3>
 <p>除了参考，还可以考虑阅读 <a href="https://sitandr.github.io/typst-examples-book/book/">typst-examples-book</a>，里面包含了一些 Typst 的高级知识、简单示例，以及一些最佳实践。</p>
-<p>例如简单地实现类似 Markdown 中的引用文本样式：</p>
-<div class="previewed-code"><pre><code><span class="typ-marker">+</span> <span class="typ-func">#</span><span class="typ-func">lorem</span><span class="typ-punct">(</span><span class="typ-num">10</span><span class="typ-punct">)</span> <span class="typ-escape">\</span>
-  <span class="typ-func">#</span><span class="typ-func">rect</span><span class="typ-punct">(</span>fill<span class="typ-punct">:</span> <span class="typ-func">luma</span><span class="typ-punct">(</span><span class="typ-num">240</span><span class="typ-punct">)</span><span class="typ-punct">,</span> stroke<span class="typ-punct">:</span> <span class="typ-punct">(</span>left<span class="typ-punct">:</span> <span class="typ-num">0.25em</span><span class="typ-punct">)</span><span class="typ-punct">)</span><span class="typ-punct">[</span>
-    <span class="typ-strong">*Solution:*</span> <span class="typ-func">#</span><span class="typ-func">lorem</span><span class="typ-punct">(</span><span class="typ-num">10</span><span class="typ-punct">)</span>
-
-    <span class="typ-math-delim">$</span> a<span class="typ-math-op">_</span><span class="typ-punct">(</span>n+1<span class="typ-punct">)</span>x<span class="typ-math-op">^</span>n = 2<span class="typ-escape">...</span> <span class="typ-math-delim">$</span>
-  <span class="typ-punct">]</span>
-</code></pre><div class="preview"><img src="/assets/docs/a0901a24b13e8d46b39a8f84d18045c0.png" alt="Preview" width="480" height="190"/></div></div>
+<hr />
+<p><strong>请阅读 <a href="https://typst-doc-cn.github.io/tutorial/">小蓝书</a> 和 <a href="https://typst-doc-cn.github.io/guide/">Typst 中文社区导航 FAQ</a>。</strong></p>
+<p><strong>请阅读 <a href="https://typst-doc-cn.github.io/tutorial/">小蓝书</a> 和 <a href="https://typst-doc-cn.github.io/guide/">Typst 中文社区导航 FAQ</a>。</strong></p>
+<p><strong>请阅读 <a href="https://typst-doc-cn.github.io/tutorial/">小蓝书</a> 和 <a href="https://typst-doc-cn.github.io/guide/">Typst 中文社区导航 FAQ</a>。</strong></p>
+<hr />
 <h3 id="vs-code">如何使用 VS Code 进行本地编辑？</h3>
 <ol>
 <li>在 <a href="https://code.visualstudio.com/">VS Code</a> 中打开任意工作目录。</li>
-<li>在 VS Code 中安装 <a href="https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist">Tinymist Typst</a> 和 <a href="https://marketplace.visualstudio.com/items?itemName=mgt19937.typst-preview">Typst Preview</a> 插件。前者负责语法高亮和错误检查等功能，后者负责预览。
+<li>在 VS Code 中安装 <a href="https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist">Tinymist Typst</a> 插件，其提供了语法高亮、错误检查和预览等功能。<strong>不要安装 Typst LSP 插件，该插件已过时。</strong>
 <ul>
 <li>也推荐下载 <a href="https://marketplace.visualstudio.com/items?itemName=CalebFiggers.typst-companion">Typst Companion</a> 插件，其提供了例如 <code>Ctrl + B</code> 进行加粗等便捷的快捷键。</li>
 <li>你还可以下载我开发的 <a href="https://marketplace.visualstudio.com/items?itemName=OrangeX4.vscode-typst-sync">Typst Sync</a> 和 <a href="https://marketplace.visualstudio.com/items?itemName=OrangeX4.vscode-typst-sympy-calculator">Typst Sympy Calculator</a> 插件，前者提供了本地包的云同步功能，后者提供了基于 Typst 语法的科学计算器功能。</li>
 </ul>
 </li>
 <li>新建一个 <code>test.typ</code> 文件，写入内容 <code>= Hello World</code>。</li>
-<li>按下 <code>Ctrl + K V</code>，即可同步增量渲染与预览，还提供了光标双向定位功能。</li>
+<li>按下 <code>Ctrl + K V</code>，即可同步增量渲染与预览。</li>
 </ol>
 <h3>如何为中英文设置不同的字体？</h3>
 <p>可以使用 text 里面的 fallback 特性。
@@ -885,43 +884,6 @@ Hello World 你好世界
 <p>如果字体与 <code>text(lang: .., region: ..)</code> 不匹配，可能会导致连续标点的挤压。例如字体不是中国大陆的，标点压缩会出错；反之亦然。</p>
 <h3>如何添加中文粗体和斜体？</h3>
 <p>可以使用 <a href="https://github.com/csimide/cuti">cuti</a> 包。</p>
-<p>中文斜体一般使用楷体替代，你可以 <a href="https://github.com/typst/typst/issues/725">通过 show-set 规则实现</a>：</p>
-<div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">show</span> <span class="typ-func">emph</span><span class="typ-punct">:</span> text<span class="typ-punct">.</span><span class="typ-func">with</span><span class="typ-punct">(</span>font<span class="typ-punct">:</span> <span class="typ-punct">(</span><span class="typ-str">&quot;Linux Libertine&quot;</span><span class="typ-punct">,</span> <span class="typ-str">&quot;STKaiti&quot;</span><span class="typ-punct">)</span><span class="typ-punct">)</span>
-
-孔乙己<span class="typ-func">#</span><span class="typ-func">emph</span><span class="typ-punct">[</span>上大人<span class="typ-punct">]</span>
-
-A quick <span class="typ-emph">_brown_</span>
-</code></pre><div class="preview"><img src="/assets/docs/c9d7398f4e53e287ac7c15e038bd020d.png" alt="Preview" width="480" height="190"/></div></div>
-<p>如果你真的需要伪斜体，可以考虑使用 <a href="https://github.com/Enivex">@Enivex</a> 在 <a href="https://discord.com/channels/1054443721975922748/1054443722592497796/1175967383630921848">Discord</a> 给出的一段 hack 代码：</p>
-<div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">let</span> <span class="typ-func">skew</span><span class="typ-punct">(</span>angle<span class="typ-punct">,</span> vscale<span class="typ-punct">:</span> <span class="typ-num">1</span><span class="typ-punct">,</span> body<span class="typ-punct">)</span> <span class="typ-op">=</span> <span class="typ-punct">{</span>
-  <span class="typ-key">let</span> <span class="typ-punct">(</span>a<span class="typ-punct">,</span> b<span class="typ-punct">,</span> c<span class="typ-punct">,</span> d<span class="typ-punct">)</span> <span class="typ-op">=</span> <span class="typ-punct">(</span><span class="typ-num">1</span><span class="typ-punct">,</span> vscale <span class="typ-op">*</span> calc<span class="typ-punct">.</span><span class="typ-func">tan</span><span class="typ-punct">(</span>angle<span class="typ-punct">)</span><span class="typ-punct">,</span> <span class="typ-num">0</span><span class="typ-punct">,</span> vscale<span class="typ-punct">)</span>
-  <span class="typ-key">let</span> E <span class="typ-op">=</span> <span class="typ-punct">(</span>a <span class="typ-op">+</span> d<span class="typ-punct">)</span> <span class="typ-op">/</span> <span class="typ-num">2</span>
-  <span class="typ-key">let</span> F <span class="typ-op">=</span> <span class="typ-punct">(</span>a <span class="typ-op">-</span> d<span class="typ-punct">)</span> <span class="typ-op">/</span> <span class="typ-num">2</span>
-  <span class="typ-key">let</span> G <span class="typ-op">=</span> <span class="typ-punct">(</span>b <span class="typ-op">+</span> c<span class="typ-punct">)</span> <span class="typ-op">/</span> <span class="typ-num">2</span>
-  <span class="typ-key">let</span> H <span class="typ-op">=</span> <span class="typ-punct">(</span>c <span class="typ-op">-</span> b<span class="typ-punct">)</span> <span class="typ-op">/</span> <span class="typ-num">2</span>
-  <span class="typ-key">let</span> Q <span class="typ-op">=</span> calc<span class="typ-punct">.</span><span class="typ-func">sqrt</span><span class="typ-punct">(</span>E <span class="typ-op">*</span> E <span class="typ-op">+</span> H <span class="typ-op">*</span> H<span class="typ-punct">)</span>
-  <span class="typ-key">let</span> R <span class="typ-op">=</span> calc<span class="typ-punct">.</span><span class="typ-func">sqrt</span><span class="typ-punct">(</span>F <span class="typ-op">*</span> F <span class="typ-op">+</span> G <span class="typ-op">*</span> G<span class="typ-punct">)</span>
-  <span class="typ-key">let</span> sx <span class="typ-op">=</span> Q <span class="typ-op">+</span> R
-  <span class="typ-key">let</span> sy <span class="typ-op">=</span> Q <span class="typ-op">-</span> R
-  <span class="typ-key">let</span> a1 <span class="typ-op">=</span> calc<span class="typ-punct">.</span><span class="typ-func">atan2</span><span class="typ-punct">(</span>F<span class="typ-punct">,</span> G<span class="typ-punct">)</span>
-  <span class="typ-key">let</span> a2 <span class="typ-op">=</span> calc<span class="typ-punct">.</span><span class="typ-func">atan2</span><span class="typ-punct">(</span>E<span class="typ-punct">,</span> H<span class="typ-punct">)</span>
-  <span class="typ-key">let</span> theta <span class="typ-op">=</span> <span class="typ-punct">(</span>a2 <span class="typ-op">-</span> a1<span class="typ-punct">)</span> <span class="typ-op">/</span> <span class="typ-num">2</span>
-  <span class="typ-key">let</span> phi <span class="typ-op">=</span> <span class="typ-punct">(</span>a2 <span class="typ-op">+</span> a1<span class="typ-punct">)</span> <span class="typ-op">/</span> <span class="typ-num">2</span>
-  
-  <span class="typ-key">set</span> <span class="typ-func">rotate</span><span class="typ-punct">(</span>origin<span class="typ-punct">:</span> bottom <span class="typ-op">+</span> center<span class="typ-punct">)</span>
-  <span class="typ-key">set</span> <span class="typ-func">scale</span><span class="typ-punct">(</span>origin<span class="typ-punct">:</span> bottom <span class="typ-op">+</span> center<span class="typ-punct">)</span>
-  
-  <span class="typ-func">rotate</span><span class="typ-punct">(</span>phi<span class="typ-punct">,</span> <span class="typ-func">scale</span><span class="typ-punct">(</span>x<span class="typ-punct">:</span> sx <span class="typ-op">*</span> <span class="typ-num">100%</span><span class="typ-punct">,</span> y<span class="typ-punct">:</span> sy <span class="typ-op">*</span> <span class="typ-num">100%</span><span class="typ-punct">,</span> <span class="typ-func">rotate</span><span class="typ-punct">(</span>theta<span class="typ-punct">,</span> body<span class="typ-punct">)</span><span class="typ-punct">)</span><span class="typ-punct">)</span>
-<span class="typ-punct">}</span>
-
-<span class="typ-key">#</span><span class="typ-key">let</span> <span class="typ-func">fake-italic</span><span class="typ-punct">(</span>body<span class="typ-punct">)</span> <span class="typ-op">=</span> <span class="typ-func">skew</span><span class="typ-punct">(</span><span class="typ-op">-</span><span class="typ-num">12deg</span><span class="typ-punct">,</span> body<span class="typ-punct">)</span>
-
-<span class="typ-key">#</span><span class="typ-key">let</span> <span class="typ-func">shadowed</span><span class="typ-punct">(</span>body<span class="typ-punct">)</span> <span class="typ-op">=</span> <span class="typ-func">box</span><span class="typ-punct">(</span><span class="typ-func">place</span><span class="typ-punct">(</span><span class="typ-func">skew</span><span class="typ-punct">(</span><span class="typ-op">-</span><span class="typ-num">50deg</span><span class="typ-punct">,</span> vscale<span class="typ-punct">:</span> <span class="typ-num">0.8</span><span class="typ-punct">,</span> <span class="typ-func">text</span><span class="typ-punct">(</span>fill<span class="typ-punct">:</span> <span class="typ-func">luma</span><span class="typ-punct">(</span><span class="typ-num">200</span><span class="typ-punct">)</span><span class="typ-punct">,</span> body<span class="typ-punct">)</span><span class="typ-punct">)</span><span class="typ-punct">)</span> <span class="typ-op">+</span> <span class="typ-func">place</span><span class="typ-punct">(</span>body<span class="typ-punct">)</span><span class="typ-punct">)</span>
-
-<span class="typ-func">#</span><span class="typ-func">fake-italic</span><span class="typ-punct">[</span>中文伪斜体<span class="typ-punct">]</span>
-
-<span class="typ-func">#</span><span class="typ-func">shadowed</span><span class="typ-punct">[</span>还可以用来实现文字阴影效果<span class="typ-punct">]</span>
-</code></pre><div class="preview"><img src="/assets/docs/bf562f6ed00ab00f2ef7b5d8e8f21ca0.png" alt="Preview" width="480" height="190"/></div></div>
 <h3>如何为设置各行段落的缩进？</h3>
 <p>使用 <code>#set par(first-line-indent: 2em)</code>：</p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">par</span><span class="typ-punct">(</span>first-line-indent<span class="typ-punct">:</span> <span class="typ-num">2em</span><span class="typ-punct">)</span>
@@ -964,7 +926,7 @@ A quick <span class="typ-emph">_brown_</span>
 <p><strong>第二种办法：使用假段落自动加入缩进。</strong></p>
 <div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">set</span> <span class="typ-func">par</span><span class="typ-punct">(</span>first-line-indent<span class="typ-punct">:</span> <span class="typ-num">2em</span><span class="typ-punct">)</span>
 
-<span class="typ-key">#</span><span class="typ-key">let</span> fake-par <span class="typ-op">=</span> <span class="typ-func">style</span><span class="typ-punct">(</span>styles <span class="typ-op">=&gt;</span> <span class="typ-punct">{</span>
+<span class="typ-key">#</span><span class="typ-key">let</span> fakepar <span class="typ-op">=</span> <span class="typ-func">style</span><span class="typ-punct">(</span>styles <span class="typ-op">=&gt;</span> <span class="typ-punct">{</span>
   <span class="typ-key">let</span> b <span class="typ-op">=</span> <span class="typ-func">par</span><span class="typ-punct">[</span><span class="typ-func">#</span><span class="typ-func">box</span><span class="typ-punct">(</span><span class="typ-punct">)</span><span class="typ-punct">]</span>
   <span class="typ-key">let</span> t <span class="typ-op">=</span> <span class="typ-func">measure</span><span class="typ-punct">(</span>b <span class="typ-op">+</span> b<span class="typ-punct">,</span> styles<span class="typ-punct">)</span><span class="typ-punct">;</span>
 
@@ -974,7 +936,7 @@ A quick <span class="typ-emph">_brown_</span>
 
 <span class="typ-key">#</span><span class="typ-key">show</span> <span class="typ-func">heading</span><span class="typ-punct">:</span> it <span class="typ-op">=&gt;</span> <span class="typ-punct">{</span>
   it
-  fake-par
+  fakepar
 <span class="typ-punct">}</span>
 
 <span class="typ-heading">= 一级标题</span>
@@ -990,26 +952,8 @@ A quick <span class="typ-emph">_brown_</span>
 时维九月，序属三秋。潦水尽而寒潭清，烟光凝而暮山紫。俨骖騑于上路，访风景于崇阿。临帝子之长洲，得天人之旧馆。
 
 层峦耸翠，上出重霄；飞阁流丹，下临无地。鹤汀凫渚，穷岛屿之萦回；桂殿兰宫，即冈峦之体势。
-</code></pre><div class="preview"><img src="/assets/docs/c08b779986c6bd94a86b8b21ef5138db.png" alt="Preview" width="480" height="190"/></div></div>
+</code></pre><div class="preview"><img src="/assets/docs/6e341327217215e6cea3ae0c606c9f7b.png" alt="Preview" width="480" height="190"/></div></div>
 <p>PS: 例子来源于 <a href="https://github.com/Myriad-Dreamin">Myriad-Dreamin</a></p>
-<h3>如何让行内数学公式显示为行间数学公式的大小？</h3>
-<p>可以通过 <code>display()</code> 函数实现。</p>
-<div class="previewed-code"><pre><code>行内数学公式（脚本模式） <span class="typ-math-delim">$</span><span class="typ-pol">integral</span> x <span class="typ-pol">dif</span> x<span class="typ-math-delim">$</span>
-
-行内数学公式（展示模式） <span class="typ-math-delim">$</span><span class="typ-func">display</span><span class="typ-punct">(</span><span class="typ-pol">integral</span> x <span class="typ-pol">dif</span> x<span class="typ-punct">)</span><span class="typ-math-delim">$</span>
-</code></pre><div class="preview"><img src="/assets/docs/9ec51aaa42832a86e6e18818e80f9629.png" alt="Preview" width="480" height="190"/></div></div>
-<p>注意，由于 <code>display</code> 也是一个函数，所以在其内部的逗号 <code>,</code> 要进行转义 <code>\,</code>。</p>
-<p>每次都要手动打 <code>display</code> 感觉很麻烦，我们可以</p>
-<div class="previewed-code"><pre><code><span class="typ-key">#</span><span class="typ-key">show</span> math<span class="typ-punct">.</span>equation<span class="typ-punct">.</span><span class="typ-func">where</span><span class="typ-punct">(</span>block<span class="typ-punct">:</span> <span class="typ-key">false</span><span class="typ-punct">)</span><span class="typ-punct">:</span> it <span class="typ-op">=&gt;</span> <span class="typ-punct">{</span>
-  <span class="typ-key">if</span> it<span class="typ-punct">.</span><span class="typ-func">has</span><span class="typ-punct">(</span><span class="typ-str">&quot;label&quot;</span><span class="typ-punct">)</span> <span class="typ-key">and</span> it<span class="typ-punct">.</span>label <span class="typ-op">==</span> <span class="typ-func">label</span><span class="typ-punct">(</span><span class="typ-str">&quot;displayed-inline-math-equation&quot;</span><span class="typ-punct">)</span> <span class="typ-punct">{</span>
-    it
-  <span class="typ-punct">}</span> <span class="typ-key">else</span> <span class="typ-punct">{</span>
-    <span class="typ-punct">[</span><span class="typ-math-delim">$</span><span class="typ-func">display</span><span class="typ-punct">(</span><span class="typ-pol">it</span><span class="typ-punct">)</span><span class="typ-math-delim">$</span><span class="typ-label">&lt;displayed-inline-math-equation&gt;</span><span class="typ-punct">]</span>
-  <span class="typ-punct">}</span>
-<span class="typ-punct">}</span>
-
-行内数学公式（展示模式） <span class="typ-math-delim">$</span><span class="typ-pol">integral</span> x <span class="typ-pol">dif</span> x<span class="typ-math-delim">$</span>
-</code></pre><div class="preview"><img src="/assets/docs/f3b6fc3a59f7c5f4c3a73d3d4f626a8b.png" alt="Preview" width="480" height="190"/></div></div>
 <h3 id="pdf">如何嵌入 PDF 文件？</h3>
 <p>你暂时没有办法在 Typst 里嵌入 PDF 文件，但是你可以先使用 <a href="https://cloudconvert.com/pdf-to-svg">在线工具</a> 将 PDF 文件转换为 SVG 文件，然后嵌入 svg 文件。</p>
 <h3>如何根据章节对图表和公式进行编码？</h3>
@@ -1096,6 +1040,7 @@ A quick <span class="typ-emph">_brown_</span>
 <li><a href="https://github.com/nju-lug/nju-thesis-typst">nju-thesis-typst</a>: 南京大学学位论文 Typst 模板，使用 Typst 包管理、闭包等现代编程语言特性开发，一个更方便编辑和拓展的模板</li>
 <li><a href="https://github.com/Dustella/nuist-thesis-typst">nuist-thesis-typst</a>: 南京信息工程大学本科生毕业论文/设计 Typst 模板，分叉自 nju-thesis-typst</li>
 <li><a href="https://github.com/csimide/SEU-Typst-Template">SEU-Typst-Template</a>: 东南大学本科毕业设计与学位论文模板</li>
+<li><a href="https://github.com/wagaaa/HZAU_Typst?tab=readme-ov-file">HZAU_Typst</a>: 华中农业大学本科生/研究生学位论文模板（非官方）</li>
 </ul>
 <p><strong>中文简历</strong>：</p>
 <ul>
@@ -1108,7 +1053,6 @@ A quick <span class="typ-emph">_brown_</span>
 <p><strong>幻灯片</strong>：</p>
 <ul>
 <li><a href="https://github.com/touying-typ/touying">touying</a> - 拥有强大功能和丰富模板的幻灯片包，包括详细的<a href="https://touying-typ.github.io/touying/zh/docs/intro/">中文文档</a></li>
-<li><a href="https://github.com/andreasKroepelin/polylux">polylux</a> - 在 Typst 中创建演示幻灯片包</li>
 <li><a href="https://github.com/OrangeX4/typst-pinit">pinit</a> - 并非幻灯片包，而是一个好用的相对定位工具包</li>
 </ul>
 
