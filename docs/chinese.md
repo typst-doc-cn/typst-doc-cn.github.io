@@ -33,25 +33,24 @@ Typst 是可用于出版的可编程标记语言，拥有变量、函数与包�
 
 除了参考，还可以考虑阅读 [typst-examples-book](https://sitandr.github.io/typst-examples-book/book/)，里面包含了一些 Typst 的高级知识、简单示例，以及一些最佳实践。
 
-例如简单地实现类似 Markdown 中的引用文本样式：
+---
 
-```example
-+ #lorem(10) \
-  #rect(fill: luma(240), stroke: (left: 0.25em))[
-    *Solution:* #lorem(10)
+**请阅读 [小蓝书](https://typst-doc-cn.github.io/tutorial/) 和 [Typst 中文社区导航 FAQ](https://typst-doc-cn.github.io/guide/)。**
 
-    $ a_(n+1)x^n = 2... $
-  ]
-```
+**请阅读 [小蓝书](https://typst-doc-cn.github.io/tutorial/) 和 [Typst 中文社区导航 FAQ](https://typst-doc-cn.github.io/guide/)。**
+
+**请阅读 [小蓝书](https://typst-doc-cn.github.io/tutorial/) 和 [Typst 中文社区导航 FAQ](https://typst-doc-cn.github.io/guide/)。**
+
+---
 
 ### 如何使用 VS Code 进行本地编辑？
 
 1. 在 [VS Code](https://code.visualstudio.com/) 中打开任意工作目录。
-2. 在 VS Code 中安装 [Tinymist Typst](https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist) 插件，其提供了语法高亮、错误检查和预览等功能。
+2. 在 VS Code 中安装 [Tinymist Typst](https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist) 插件，其提供了语法高亮、错误检查和预览等功能。**不要安装 Typst LSP 插件，该插件已过时。**
     - 也推荐下载 [Typst Companion](https://marketplace.visualstudio.com/items?itemName=CalebFiggers.typst-companion) 插件，其提供了例如 `Ctrl + B` 进行加粗等便捷的快捷键。
     - 你还可以下载我开发的 [Typst Sync](https://marketplace.visualstudio.com/items?itemName=OrangeX4.vscode-typst-sync) 和 [Typst Sympy Calculator](https://marketplace.visualstudio.com/items?itemName=OrangeX4.vscode-typst-sympy-calculator) 插件，前者提供了本地包的云同步功能，后者提供了基于 Typst 语法的科学计算器功能。
 3. 新建一个 `test.typ` 文件，写入内容 `= Hello World`。
-4. 按下 `Ctrl + K V`，即可同步增量渲染与预览，还提供了光标双向定位功能。
+4. 按下 `Ctrl + K V`，即可同步增量渲染与预览。
 
 
 ### 如何为中英文设置不同的字体？
@@ -97,49 +96,6 @@ Hello World 你好世界
 ### 如何添加中文粗体和斜体？
 
 可以使用 [cuti](https://github.com/csimide/cuti) 包。
-
-中文斜体一般使用楷体替代，你可以 [通过 show-set 规则实现](https://github.com/typst/typst/issues/725)：
-
-```example
-#show emph: text.with(font: ("Linux Libertine", "STKaiti"))
-
-孔乙己#emph[上大人]
-
-A quick _brown_
-```
-
-如果你真的需要伪斜体，可以考虑使用 [@Enivex](https://github.com/Enivex) 在 [Discord](https://discord.com/channels/1054443721975922748/1054443722592497796/1175967383630921848) 给出的一段 hack 代码：
-
-```example
-#let skew(angle, vscale: 1, body) = {
-  let (a, b, c, d) = (1, vscale * calc.tan(angle), 0, vscale)
-  let E = (a + d) / 2
-  let F = (a - d) / 2
-  let G = (b + c) / 2
-  let H = (c - b) / 2
-  let Q = calc.sqrt(E * E + H * H)
-  let R = calc.sqrt(F * F + G * G)
-  let sx = Q + R
-  let sy = Q - R
-  let a1 = calc.atan2(F, G)
-  let a2 = calc.atan2(E, H)
-  let theta = (a2 - a1) / 2
-  let phi = (a2 + a1) / 2
-  
-  set rotate(origin: bottom + center)
-  set scale(origin: bottom + center)
-  
-  rotate(phi, scale(x: sx * 100%, y: sy * 100%, rotate(theta, body)))
-}
-
-#let fake-italic(body) = skew(-12deg, body)
-
-#let shadowed(body) = box(place(skew(-50deg, vscale: 0.8, text(fill: luma(200), body))) + place(body))
-
-#fake-italic[中文伪斜体]
-
-#shadowed[还可以用来实现文字阴影效果]
-```
 
 
 ### 如何为设置各行段落的缩进？
@@ -195,17 +151,14 @@ A quick _brown_
 ```example
 #set par(first-line-indent: 2em)
 
-#let fake-par = style(styles => {
-  let b = par[#box()]
-  let t = measure(b + b, styles);
-
-  b
-  v(-t.height)
-})
+#let fakepar = context {
+  box()
+  v(-measure(block() + block()).height)
+}
 
 #show heading: it => {
   it
-  fake-par
+  fakepar
 }
 
 = 一级标题
@@ -224,33 +177,6 @@ A quick _brown_
 ```
 
 PS: 例子来源于 [Myriad-Dreamin](https://github.com/Myriad-Dreamin)
-
-
-### 如何让行内数学公式显示为行间数学公式的大小？
-
-可以通过 `display()` 函数实现。
-
-```example
-行内数学公式（脚本模式） $integral x dif x$
-
-行内数学公式（展示模式） $display(integral x dif x)$
-```
-
-注意，由于 `display` 也是一个函数，所以在其内部的逗号 `,` 要进行转义 `\,`。
-
-每次都要手动打 `display` 感觉很麻烦，我们可以
-
-```example
-#show math.equation.where(block: false): it => {
-  if it.has("label") and it.label == label("displayed-inline-math-equation") {
-    it
-  } else {
-    [$display(it)$<displayed-inline-math-equation>]
-  }
-}
-
-行内数学公式（展示模式） $integral x dif x$
-```
 
 
 ### 如何嵌入 PDF 文件？
@@ -393,5 +319,4 @@ Typst 暂不支持 `school` `institution` 作为 `publisher` 的别名，亦不�
 **幻灯片**：
 
 - [touying](https://github.com/touying-typ/touying) - 拥有强大功能和丰富模板的幻灯片包，包括详细的[中文文档](https://touying-typ.github.io/touying/zh/docs/intro/)
-- [polylux](https://github.com/andreasKroepelin/polylux) - 在 Typst 中创建演示幻灯片包
 - [pinit](https://github.com/OrangeX4/typst-pinit) - 并非幻灯片包，而是一个好用的相对定位工具包

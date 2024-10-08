@@ -4,6 +4,17 @@ description: |
 ---
 
 # 概览
+
+---
+
+**请阅读 [小蓝书](https://typst-doc-cn.github.io/tutorial/) 和 [Typst 中文社区导航 FAQ](https://typst-doc-cn.github.io/guide/)。**
+
+**请阅读 [小蓝书](https://typst-doc-cn.github.io/tutorial/) 和 [Typst 中文社区导航 FAQ](https://typst-doc-cn.github.io/guide/)。**
+
+**请阅读 [小蓝书](https://typst-doc-cn.github.io/tutorial/) 和 [Typst 中文社区导航 FAQ](https://typst-doc-cn.github.io/guide/)。**
+
+---
+
 欢迎阅读 Typst 的中文文档！Typst 是为科学写作而诞生的基于标记的排版系统。
 它被设计之初就是作为一种替代品，用于替代像 LaTeX 这样的高级工具，又或者是像 Word 和 Google Docs 这样的简单工具。
 我们对 Typst 的目标是构建一个功能强大的排版工具，并且让用户可以愉快地使用它。

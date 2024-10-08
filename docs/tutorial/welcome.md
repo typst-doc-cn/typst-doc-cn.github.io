@@ -3,6 +3,17 @@ description: Typst 的教程。
 ---
 
 # 教程
+
+---
+
+**请阅读 [小蓝书](https://typst-doc-cn.github.io/tutorial/) 和 [Typst 中文社区导航 FAQ](https://typst-doc-cn.github.io/guide/)。**
+
+**请阅读 [小蓝书](https://typst-doc-cn.github.io/tutorial/) 和 [Typst 中文社区导航 FAQ](https://typst-doc-cn.github.io/guide/)。**
+
+**请阅读 [小蓝书](https://typst-doc-cn.github.io/tutorial/) 和 [Typst 中文社区导航 FAQ](https://typst-doc-cn.github.io/guide/)。**
+
+---
+
 欢迎来到 Typst 的教程！在本教程中，您将学习如何在 Typst 中编写和格式化文档。
 我们将从一些日常的任务开始，逐步引入更高级的功能。
 本教程并不事先假定您了解 Typst、其他标记语言或相关的编程技术。
