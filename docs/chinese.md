@@ -151,10 +151,13 @@ Hello World 你好世界
 ```example
 #set par(first-line-indent: 2em)
 
-#let fakepar = context {
-  box()
-  v(-measure(block() + block()).height)
-}
+#let fakepar = style(styles => {
+  let b = par[#box()]
+  let t = measure(b + b, styles);
+
+  b
+  v(-t.height)
+})
 
 #show heading: it => {
   it
