@@ -310,6 +310,7 @@ Typst 暂不支持 `school` `institution` 作为 `publisher` 的别名，亦不�
 - [nuist-thesis-typst](https://github.com/Dustella/nuist-thesis-typst): 南京信息工程大学本科生毕业论文/设计 Typst 模板，分叉自 nju-thesis-typst
 - [SEU-Typst-Template](https://github.com/csimide/SEU-Typst-Template): 东南大学本科毕业设计与学位论文模板
 - [HZAU_Typst](https://github.com/wagaaa/HZAU_Typst?tab=readme-ov-file): 华中农业大学本科生/研究生学位论文模板（非官方）
+- [cug-thesis-typst](https://github.com/Rsweater/cug-thesis-typst)：中国地质大学（武汉）学位论文 Typst 模板
 
 **中文简历**：
 
