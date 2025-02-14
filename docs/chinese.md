@@ -22,7 +22,6 @@ Typst 是可用于出版的可编程标记语言，拥有变量、函数与包�
 参考 [Discord](https://discord.com/channels/1054443721975922748/1176062736514429008) 的记录，可知目前仍存在：
 
 - 行内代码或行内数学公式与中文之间的自动空格 [#2702](https://github.com/typst/typst/issues/2702) [#2703](https://github.com/typst/typst/issues/2703)。
-- 不能简单地实现首段缩进 [#311](https://github.com/typst/typst/issues/311)。
 - 暂时无法忽略 CJK 字符之间的单个换行符自动转换成的空格 [#792](https://github.com/typst/typst/issues/792)。
 - 有时候段落开始的 CJK 标点符号没有被调整 [#2348](https://github.com/typst/typst/issues/2348)。
 
@@ -100,10 +99,10 @@ Hello World 你好世界
 
 ### 如何为设置各行段落的缩进？
 
-使用 `#set par(first-line-indent: 2em)`：
+使用 `#set par(first-line-indent: (amount: 2em, all: true))`：
 
 ```example
-#set par(first-line-indent: 2em)
+#set par(first-line-indent: (amount: 2em, all: true))
 
 = 一级标题
 
@@ -120,64 +119,7 @@ Hello World 你好世界
 层峦耸翠，上出重霄；飞阁流丹，下临无地。鹤汀凫渚，穷岛屿之萦回；桂殿兰宫，即冈峦之体势。
 ```
 
-缺点是标题下的第一行没有缩进。为了解决这个问题，我们有两种办法：
-
-**第一种办法：手动加入缩进。**
-
-```example
-#set par(first-line-indent: 2em)
-
-#let indent = h(2em)
-
-= 一级标题
-
-#indent 豫章故郡，洪都新府。星分翼轸，地接衡庐。襟三江而带五湖，控蛮荆而引瓯越。物华天宝，龙光射牛斗之墟；人杰地灵，徐孺下陈蕃之榻。雄州雾列，俊采星驰。
-
-台隍枕夷夏之交，宾主尽东南之美。都督阎公之雅望，棨戟遥临；宇文新州之懿范，襜帷暂驻。
-
-十旬休假，胜友如云；千里逢迎，高朋满座。腾蛟起凤，孟学士之词宗；紫电青霜，王将军之武库。家君作宰，路出名区；童子何知，躬逢胜饯。
-
-== 二级标题
-
-#indent 时维九月，序属三秋。潦水尽而寒潭清，烟光凝而暮山紫。俨骖騑于上路，访风景于崇阿。临帝子之长洲，得天人之旧馆。
-
-层峦耸翠，上出重霄；飞阁流丹，下临无地。鹤汀凫渚，穷岛屿之萦回；桂殿兰宫，即冈峦之体势。
-```
-
-这样做的优点是可以手动控制缩进，缺点是手动缩进不太方便。
-
-**第二种办法：使用假段落自动加入缩进。**
-
-```example
-#set par(first-line-indent: 2em)
-
-#let fakepar = style(styles => {
-  let b = par[#box()]
-  let t = measure(b + b, styles);
-
-  b
-  v(-t.height)
-})
-
-#show heading: it => {
-  it
-  fakepar
-}
-
-= 一级标题
-
-豫章故郡，洪都新府。星分翼轸，地接衡庐。襟三江而带五湖，控蛮荆而引瓯越。物华天宝，龙光射牛斗之墟；人杰地灵，徐孺下陈蕃之榻。雄州雾列，俊采星驰。
-
-台隍枕夷夏之交，宾主尽东南之美。都督阎公之雅望，棨戟遥临；宇文新州之懿范，襜帷暂驻。
-
-十旬休假，胜友如云；千里逢迎，高朋满座。腾蛟起凤，孟学士之词宗；紫电青霜，王将军之武库。家君作宰，路出名区；童子何知，躬逢胜饯。
-
-== 二级标题
-
-时维九月，序属三秋。潦水尽而寒潭清，烟光凝而暮山紫。俨骖騑于上路，访风景于崇阿。临帝子之长洲，得天人之旧馆。
-
-层峦耸翠，上出重霄；飞阁流丹，下临无地。鹤汀凫渚，穷岛屿之萦回；桂殿兰宫，即冈峦之体势。
-```
+需要 typst 0.13.0 。
 
 PS: 例子来源于 [Myriad-Dreamin](https://github.com/Myriad-Dreamin)
 
@@ -231,7 +173,7 @@ Typst 暂不支持 CSL-M 标准，可以注释掉多余的 `<layout>` **临时**
 
 这样修改之后，csl 根据文献语言自动使用“等”或“et al.”的功能会失效，请见下一条 Q&A 的问题1。
 
-**报错2：** ``(unknown variant `institution`, expected one of `name`, `et-al`, `label`, `substitute`)`` 
+**报错2：** ``(unknown variant `institution`, expected one of `name`, `et-al`, `label`, `substitute`)``
 
 在 csl 文件里注释掉不支持的部分。
 
@@ -303,7 +245,7 @@ Typst 暂不支持 `school` `institution` 作为 `publisher` 的别名，亦不�
 - [SHU-Bachelor-Thesis-Typst](https://github.com/shuosc/SHU-Bachelor-Thesis-Typst): 上海大学本科毕业论文 typst 模板 (开发ing)
 - [sysu-thesis-typst](https://github.com/howardlau1999/sysu-thesis-typst): 中山大学学位论文 Typst 模板
 - [ZJGSU-typst-template](https://github.com/jujimeizuo/ZJGSU-typst-template): 浙江工商大学毕业设计（本科）的 typst 模板。
-- [CQUPTypst](https://github.com/jerrita/CQUPTypst): 一个 Typest 模板，但是大专 
+- [CQUPTypst](https://github.com/jerrita/CQUPTypst): 一个 Typest 模板，但是大专
 - [zjut-report-typst](https://github.com/zjutjh/zjut-report-typst): 浙江工业大学一些实验报告的 Typst 模板
 - [HIT-Thesis-Typst](https://github.com/chosertech/HIT-Thesis-Typst): 适用于哈尔滨工业大学学位论文的 Typst 模板
 - [nju-thesis-typst](https://github.com/nju-lug/nju-thesis-typst): 南京大学学位论文 Typst 模板，使用 Typst 包管理、闭包等现代编程语言特性开发，一个更方便编辑和拓展的模板
